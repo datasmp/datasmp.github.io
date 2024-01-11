@@ -1,0 +1,1259 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Variables &#8212; Python in Plain Terms</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'variables';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Variables Debugging" href="variables_debug.html" />
+    <link rel="prev" title="Code Cell" href="colab_code.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.svg" class="logo__image only-light" alt="Python in Plain Terms - Home"/>
+    <script>document.write(`<img src="_static/logo.svg" class="logo__image only-dark" alt="Python in Plain Terms - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Python in Plain Terms
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="acknowledge.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Introduction</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="colab.html">Google Colab</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="colab_text.html">Text Cell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="colab_code.html">Code Cell</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Variables</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="variables_debug.html">Variables Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables_output.html">Variables Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables_code.html">Variables Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="inout.html">Input and Output</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="inout_debug.html">Input and Output Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inout_output.html">Input and Output  Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inout_code.html">Input and Output Code</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fvariables.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/variables.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Variables</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose">Purpose</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id">id()</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#values-and-types">Values and Types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type">type()</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-names">Variable names</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reassignment">Reassignment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-assignment">Multiple assignment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#print-variables-and-constants">Print variables and constants</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type-related-errors">Type Related Errors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-the-type-of-a-variable">Changing the type of a variable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-operations">String Operations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenation">Concatenation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#repetition">Repetition</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="variables">
+<h1>Variables<a class="headerlink" href="#variables" title="Permalink to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Learning Objectives</p>
+<ul>
+<li><p>..</p></li>
+<li><p>..</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>A variable is a name that refers to a value, such as a number (e.g., 25) or a name (e.g., Michael).</p></li>
+<li><p>It functions like a container for storing data values.</p></li>
+<li><p>Variables allow you to store and manipulate data in your programs.</p></li>
+<li><p>To create a variable:</p>
+<ol class="arabic simple">
+<li><p>Choose a name.</p></li>
+<li><p>Assign a value to it using the <code class="docutils literal notranslate"><span class="pre">=</span></code> operator.</p></li>
+</ol>
+</li>
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">age</span> <span class="pre">=</span> <span class="pre">25</span></code></p>
+<ul>
+<li><p>name of variable is age</p></li>
+<li><p>value of age variable is 25</p></li>
+</ul>
+</li>
+</ul>
+<section id="purpose">
+<h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Why do we need variables?</p></li>
+</ul>
+<p>For the code below:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">40</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">40</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">40</span><span class="o">*</span><span class="mi">7</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">40</span><span class="o">-</span><span class="mi">13</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>How many changes do you need to make to get a similar output for 20 instead of 40?</p>
+<ul>
+<li><p>Answer: 5</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>       <span class="c1"># 1st change</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">20</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>     <span class="c1"># 2nd change</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">20</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>    <span class="c1"># 3rd change</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">20</span><span class="o">*</span><span class="mi">7</span><span class="p">)</span>     <span class="c1"># 4th change</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">20</span><span class="o">-</span><span class="mi">13</span><span class="p">)</span>    <span class="c1"># 5th change</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>In a lengthy program, you might need to make numerous changes, which can be time-consuming.</p></li>
+<li><p>There is a risk of forgetting to update some of them, leading to errors or incorrect output.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Variable version of the previous code</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">40</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="o">*</span><span class="mi">7</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="o">-</span><span class="mi">13</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>If you use the variable <code class="docutils literal notranslate"><span class="pre">number</span></code>, then to obtain the output for 20, you only need to make one change, as follows:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">20</span>          <span class="c1"># 1st change</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="o">*</span><span class="mi">7</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="o">-</span><span class="mi">13</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id">
+<h2>id()<a class="headerlink" href="#id" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>built-in function</p></li>
+<li><p>returns the location of the variable in memory</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">age</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4380209000
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="s1">&#39;Florida&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">state</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4436171120
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="values-and-types">
+<h2>Values and Types<a class="headerlink" href="#values-and-types" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Value examples: 2, 4.5, ‘USA’</p></li>
+<li><p>Types:</p>
+<ul>
+<li><p>int: integer (…,-3,-2,-1,0,1,2,3,…)</p></li>
+<li><p>float: decimal number (including 4.0)</p></li>
+<li><p>str: string (enclosed in quotes and ordered sequence of characters)</p></li>
+</ul>
+</li>
+<li><p>You can check the type with the <code class="docutils literal notranslate"><span class="pre">type()</span></code> function.</p></li>
+<li><p>In Python, there’s no need to explicitly specify the type of a variable.</p></li>
+<li><p>The type is determined automatically based on the assigned value.</p></li>
+</ul>
+</section>
+<section id="type">
+<h2>type()<a class="headerlink" href="#type" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>built-in function</p></li>
+<li><p>returns the data type of a variable or value</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># type of  2</span>
+<span class="nb">type</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>int
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># type of  2.97</span>
+<span class="nb">type</span><span class="p">(</span><span class="mf">2.97</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>float
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># type of  2.0</span>
+<span class="nb">type</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>float
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># type of  Florida</span>
+<span class="nb">type</span><span class="p">(</span><span class="s1">&#39;Florida&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>str
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># type of  &#39;2&#39;</span>
+<span class="nb">type</span><span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>str
+</pre></div>
+</div>
+</div>
+</div>
+<p>Warning:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">2</span></code> is an integer, making it a number</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'2'</span></code>  is a string; it represents the character 2 and is not considered a number.</p></li>
+</ul>
+</section>
+<section id="variable-names">
+<h2>Variable names<a class="headerlink" href="#variable-names" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Python is case-sensitive.</p></li>
+<li><p>Variable names can contain lowercase and uppercase characters, digits, and underscores.</p></li>
+<li><p>A variable name cannot start with a digit.</p></li>
+<li><p>Variable names cannot be keywords (reserved words).</p></li>
+<li><p>The underscore character <code class="docutils literal notranslate"><span class="pre">_</span></code> can be used in a name as a substitute for a space.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Jim&#39;</span>
+<span class="n">Name</span> <span class="o">=</span> <span class="s1">&#39;Joe&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jim
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The value of the &#39;Name&#39; variable is different from the &#39;name&#39; variable.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Joe
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># keywords in Python</span>
+<span class="n">help</span><span class="p">(</span><span class="s1">&#39;keywords&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Here is a list of the Python keywords.  Enter any keyword to get more help.
+
+False               class               from                or
+None                continue            global              pass
+True                def                 if                  raise
+and                 del                 import              return
+as                  elif                in                  try
+assert              else                is                  while
+async               except              lambda              with
+await               finally             nonlocal            yield
+break               for                 not                 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ERROR: 5x is not a valid variable name</span>
+<span class="mi">5</span><span class="n">x</span><span class="o">=</span><span class="mi">9</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ERROR: keyword error</span>
+<span class="kc">False</span> <span class="o">=</span> <span class="mi">5</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ERROR: symbol error</span>
+<span class="nd">@fun</span><span class="o">=</span><span class="mi">4</span>
+</pre></div>
+</div>
+</section>
+<section id="reassignment">
+<h2>Reassignment<a class="headerlink" href="#reassignment" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>The value of a variable can be changed by assigning it a new value.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">25</span>   <span class="c1"># value of age has been changed</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>50
+25
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="multiple-assignment">
+<h2>Multiple assignment<a class="headerlink" href="#multiple-assignment" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Multiple variables can be created in a single line.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># a=1, b=10, c=100</span>
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+10
+100
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># the values of x any y are 7</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">7</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
+7
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="print-variables-and-constants">
+<h2>Print variables and constants<a class="headerlink" href="#print-variables-and-constants" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Variable values and constant strings can be displayed using a single print() function.</p></li>
+<li><p>There are different ways to achieve this.</p></li>
+<li><p>One way is to separate variables and constant strings with commas.</p></li>
+<li><p>By default, there will be a space in the output between each comma-separated item.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="p">,</span> <span class="n">age</span> <span class="o">=</span> <span class="s1">&#39;Michael&#39;</span><span class="p">,</span> <span class="mi">25</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;My name is&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>My name is Michael
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;I am&#39;</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="s1">&#39;years old.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I am 25 years old.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;My name is&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s1">&#39;.I am&#39;</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="s1">&#39;years old.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>My name is Michael .I am 25 years old.
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>You can do algebration operations in the print function</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">2024</span><span class="o">-</span><span class="n">age</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1999
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="type-related-errors">
+<h2>Type Related Errors<a class="headerlink" href="#type-related-errors" title="Permalink to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">+</span></code> can not be used between numbers and strings</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="p">,</span> <span class="n">age</span> <span class="o">=</span> <span class="s1">&#39;Michael&#39;</span><span class="p">,</span> <span class="mi">25</span>
+
+<span class="c1"># ERROR: str + int</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="o">+</span><span class="n">age</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</section>
+<section id="changing-the-type-of-a-variable">
+<h2>Changing the type of a variable<a class="headerlink" href="#changing-the-type-of-a-variable" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>int(): converts appropriate floats and strings into integers</p></li>
+<li><p>float(): converts appropriate integers and strings into floats</p></li>
+<li><p>str(): converts appropriate integers and floats into strings</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># float to int</span>
+<span class="nb">int</span><span class="p">(</span><span class="mf">3.45</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># float to int</span>
+<span class="nb">int</span><span class="p">(</span><span class="o">-</span><span class="mf">3.2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># str to int</span>
+<span class="nb">int</span><span class="p">(</span><span class="s1">&#39;3&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># int to float</span>
+<span class="nb">float</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># str to float</span>
+<span class="nb">float</span><span class="p">(</span><span class="s1">&#39;3.5&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># int to str</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># float to str</span>
+<span class="nb">str</span><span class="p">(</span><span class="mf">3.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;3.5&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;I am &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">age</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39; years old.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I am 25 years old.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="string-operations">
+<h2>String Operations<a class="headerlink" href="#string-operations" title="Permalink to this heading">#</a></h2>
+<section id="concatenation">
+<h3>Concatenation<a class="headerlink" href="#concatenation" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Combining or joining two or more strings into a single string by using the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_name</span> <span class="o">=</span> <span class="s1">&#39;Michael&#39;</span>
+<span class="n">last_name</span> <span class="o">=</span><span class="s1">&#39;Jordan&#39;</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">25</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>In this example, the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator concatenates (joins) the value of <code class="docutils literal notranslate"><span class="pre">first_value</span></code> and <code class="docutils literal notranslate"><span class="pre">last_name</span></code> variables to create a new string stored in the variable <code class="docutils literal notranslate"><span class="pre">name</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span>  <span class="o">=</span> <span class="n">first_name</span> <span class="o">+</span> <span class="n">last_name</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MichaelJordan
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Use the string <code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">'</span></code> to add a space between the first and last names.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span>  <span class="o">=</span> <span class="n">first_name</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">last_name</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Michael Jordan
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>constant string + variable</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;My name is &#39;</span> <span class="o">+</span> <span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>My name is Michael Jordan
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>To perform concatenation, conversion should be done in the following code.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;I am &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">age</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; years old.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I am 25 years old.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="repetition">
+<h3>Repetition<a class="headerlink" href="#repetition" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Repeating a string using the <code class="docutils literal notranslate"><span class="pre">*</span></code> operator.</p></li>
+<li><p>It takes the form of integer<em>string or string</em>integer</p></li>
+<li><p>String repetition cannot be performed by using floats.</p></li>
+</ul>
+<ul class="simple">
+<li><p>In this example, the * operator repeats the string ‘U’ four times.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;U&#39;</span><span class="o">*</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UUUU
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>In this example, the * operator repeats the string ‘Joe’ five times.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Joe&#39;</span><span class="o">*</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>JoeJoeJoeJoeJoe
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Since 4.0 is not an integer, you will get an error message in the following code.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;U&#39;</span><span class="o">*</span><span class="mf">4.0</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># triangle by using the $ character</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;$&#39;</span><span class="p">)</span>         <span class="c1"># one   $ sign</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;$&#39;</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>       <span class="c1"># two   $ signs</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;$&#39;</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span>       <span class="c1"># three $ signs</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;$&#39;</span><span class="o">*</span><span class="mi">4</span><span class="p">)</span>       <span class="c1"># four  $ signs</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;$&#39;</span><span class="o">*</span><span class="mi">5</span><span class="p">)</span>       <span class="c1"># five  $ signs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>$
+$$
+$$$
+$$$$
+$$$$$
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># triangle by using the space and $ characters</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">4</span> <span class="o">+</span> <span class="s1">&#39;$&#39;</span><span class="p">)</span>      <span class="c1"># four  spaces and one $ sign</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">3</span> <span class="o">+</span><span class="s1">&#39;$&#39;</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>     <span class="c1"># three spaces and two $ signs</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">2</span> <span class="o">+</span><span class="s1">&#39;$&#39;</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span>     <span class="c1"># two   spaces and three $ signs</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">1</span> <span class="o">+</span><span class="s1">&#39;$&#39;</span><span class="o">*</span><span class="mi">4</span><span class="p">)</span>     <span class="c1"># one   space  and four $ signs</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;$&#39;</span><span class="o">*</span><span class="mi">5</span><span class="p">)</span>            <span class="c1">#                  five $ signs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    $
+   $$
+  $$$
+ $$$$
+$$$$$
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="colab_code.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Code Cell</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="variables_debug.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Variables Debugging</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose">Purpose</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id">id()</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#values-and-types">Values and Types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type">type()</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-names">Variable names</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reassignment">Reassignment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-assignment">Multiple assignment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#print-variables-and-constants">Print variables and constants</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type-related-errors">Type Related Errors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-the-type-of-a-variable">Changing the type of a variable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-operations">String Operations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenation">Concatenation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#repetition">Repetition</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Yusuf Danisman
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
