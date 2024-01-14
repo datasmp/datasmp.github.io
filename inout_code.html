@@ -65,6 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'inout_code';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Chp-3: Numbers" href="numbers_arithmetic.html" />
     <link rel="prev" title="Input and Output Output" href="inout_output.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -174,16 +175,28 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="colab_code.html">Code Cell</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="variables.html">Variables</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="variables.html">Chp-1: Variables</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="variables_debug.html">Variables Debugging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="variables_output.html">Variables Output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="variables_code.html">Variables Code</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="inout.html">Input and Output</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="inout.html">Chp-2: Input and Output</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="inout_debug.html">Input and Output Debugging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="inout_output.html">Input and Output  Output</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Input and Output Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="numbers_arithmetic.html">Chp-3: Numbers</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="numbers_arithmetic_debug.html">Numbers Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numbers_arithmetic_output.html">Numbers Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numbers_arithmetic_code.html">Numbers Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="strings.html">Chp-4: Strings</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="strings_debug.html">Strings Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings_output.html">Strings Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings_code.html">Strings Code</a></li>
 </ul>
 </li>
 </ul>
@@ -456,6 +469,7 @@ Hint: use print()<br />
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Michael&#39;</span>
 <span class="n">age</span> <span class="o">=</span> <span class="mi">25</span>
 <span class="n">country</span> <span class="o">=</span> <span class="s1">&#39;Germany&#39;</span>
+
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;My name is &#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s1">&#39;. I am from &#39;</span><span class="p">,</span> <span class="n">country</span><span class="p">,</span> <span class="s1">&#39;. I am &#39;</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="s1">&#39; years old.&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -470,12 +484,8 @@ Hint: use print()<br />
 </section>
 <section id="id2">
 <h2>Question<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p>Write a program which prompts the user for 4 numbers using 4 input functions</p>
 <ul class="simple">
-<li><p>Write a program which prompts the user for 4 numbers.</p>
-<ul>
-<li><p>Use 4 input functions</p></li>
-</ul>
-</li>
 <li><p>Find the sum of this numbers and assign it to a variable</p></li>
 <li><p>Find the product of this numbers and assign it to a variable</p></li>
 <li><p>print the sum and product of these numbers in two separate lines but by using a single print function</p></li>
@@ -486,9 +496,11 @@ Hint: use print()<br />
 <span class="n">num2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Number2: &#39;</span><span class="p">))</span>
 <span class="n">num3</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Number3: &#39;</span><span class="p">))</span>
 <span class="n">num4</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Number4: &#39;</span><span class="p">))</span>
+
 <span class="n">total</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span> <span class="o">+</span> <span class="n">num3</span> <span class="o">+</span> <span class="n">num4</span>
 <span class="n">product</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">*</span> <span class="n">num2</span> <span class="o">*</span> <span class="n">num3</span> <span class="o">*</span> <span class="n">num4</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Sum: </span><span class="si">{</span><span class="n">total</span><span class="si">}</span><span class="s1"> </span><span class="se">\n</span><span class="s1">Product: </span><span class="si">{</span><span class="n">product</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sum: &#39;</span><span class="p">,</span> <span class="n">total</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Product:&#39;</span><span class="p">,</span> <span class="n">product</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -535,8 +547,8 @@ Bill- -Gates
 </section>
 <section id="id4">
 <h2>Question<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<p>Write a program which prompts the user for an integer.</p>
 <ul class="simple">
-<li><p>Write a program which prompts the user for an integer.</p></li>
 <li><p>Find the square of the given number.</p></li>
 <li><p>Print the following statement:</p>
 <ul>
@@ -549,7 +561,9 @@ Bill- -Gates
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter an integer: &#39;</span><span class="p">))</span>
+
 <span class="n">square</span> <span class="o">=</span> <span class="n">number</span><span class="o">**</span><span class="mi">2</span>
+
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;square(&#39;</span><span class="p">,</span> <span class="n">number</span><span class="p">,</span> <span class="s1">&#39;)=&#39;</span><span class="p">,</span> <span class="n">square</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -595,6 +609,15 @@ Bill- -Gates
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">Input and Output  Output</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="numbers_arithmetic.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Chp-3: Numbers</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
