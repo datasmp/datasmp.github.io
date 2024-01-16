@@ -65,6 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'strings_code';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Chp-5: Conditionals" href="conditionals.html" />
     <link rel="prev" title="Strings Output" href="strings_output.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -196,6 +197,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="strings_debug.html">Strings Debugging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="strings_output.html">Strings Output</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Strings Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="conditionals.html">Chp-5: Conditionals</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="conditionals_debug.html">Conditionals Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conditionals_output.html">Conditionals Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conditionals_code.html">Conditionals Code</a></li>
 </ul>
 </li>
 </ul>
@@ -531,12 +538,16 @@ For example: Michael Jordan</p>
 <p><strong>Solution</strong></p>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<p>name = input(‘Enter your first name and last name: ‘)</p>
-<p>index_space = name.find(’ ‘)
-first_name = name[:index_space]
-last_name = name[index_space+1:]</p>
-<p>print(‘First Name:’, first_name)
-print(‘Last Name:’, last_name.upper())</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter your first name and last name: &#39;</span><span class="p">)</span>
+
+<span class="n">index_space</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+<span class="n">first_name</span> <span class="o">=</span> <span class="n">name</span><span class="p">[:</span><span class="n">index_space</span><span class="p">]</span>
+<span class="n">last_name</span> <span class="o">=</span> <span class="n">name</span><span class="p">[</span><span class="n">index_space</span><span class="o">+</span><span class="mi">1</span><span class="p">:]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;First Name:&#39;</span><span class="p">,</span> <span class="n">first_name</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Last Name:&#39;</span><span class="p">,</span> <span class="n">last_name</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+</pre></div>
+</div>
 </div>
 </section>
 <section id="id3">
@@ -856,6 +867,15 @@ print(‘Last Name:’, last_name.upper())</p>
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">Strings Output</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="conditionals.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Chp-5: Conditionals</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>

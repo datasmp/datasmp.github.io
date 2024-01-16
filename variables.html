@@ -199,6 +199,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="strings_code.html">Strings Code</a></li>
 </ul>
 </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="conditionals.html">Chp-5: Conditionals</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="conditionals_debug.html">Conditionals Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conditionals_output.html">Conditionals Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conditionals_code.html">Conditionals Code</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -428,10 +434,12 @@ document.write(`
 </ul>
 </li>
 </ul>
+<p>A variable is a name that refers to a value, such as a number (e.g., 25) or a name (e.g., Michael).</p>
 <ul class="simple">
-<li><p>A variable is a name that refers to a value, such as a number (e.g., 25) or a name (e.g., Michael).</p></li>
 <li><p>It functions like a container for storing data values.</p></li>
 <li><p>Variables allow you to store and manipulate data in your programs.</p></li>
+</ul>
+<ul class="simple">
 <li><p>To create a variable:</p>
 <ol class="arabic simple">
 <li><p>Choose a name.</p></li>
@@ -513,7 +521,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4376948584
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4303613800
 </pre></div>
 </div>
 </div>
@@ -526,7 +534,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4432911920
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4357166256
 </pre></div>
 </div>
 </div>
@@ -541,7 +549,13 @@ document.write(`
 <li><p>int: integer (…,-3,-2,-1,0,1,2,3,…)</p></li>
 <li><p>float: decimal number (including 4.0)</p></li>
 <li><p>str: string (enclosed in quotes and ordered sequence of characters)</p></li>
-<li><p>bool: boolean values (only two values: ‘True’ and ‘False’)</p></li>
+<li><p>bool: boolean values (only two values: <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code>)</p>
+<ul>
+<li><p>They are keywords in Python and cannot be used as variable names.</p></li>
+<li><p>boolean <code class="docutils literal notranslate"><span class="pre">True</span></code> and string <code class="docutils literal notranslate"><span class="pre">'True'</span></code> are different.</p></li>
+<li><p>boolean <code class="docutils literal notranslate"><span class="pre">False</span></code> and string <code class="docutils literal notranslate"><span class="pre">'False'</span></code> are different.</p></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><p>You can check the type with the <code class="docutils literal notranslate"><span class="pre">type()</span></code> function.</p></li>
@@ -629,6 +643,19 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;bool&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># type of  &#39;True&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="s1">&#39;True&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;str&#39;&gt;
 </pre></div>
 </div>
 </div>

@@ -67,6 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'conditionals_code';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Conditionals Output" href="conditionals_output.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -167,7 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="acknowledge.html">Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python.html">Python Introduction</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="colab.html">Google Colab</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -197,6 +198,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="strings_debug.html">Strings Debugging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="strings_output.html">Strings Output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="strings_code.html">Strings Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="conditionals.html">Chp-5: Conditionals</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="conditionals_debug.html">Conditionals Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conditionals_output.html">Conditionals Output</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Conditionals Code</a></li>
 </ul>
 </li>
 </ul>
@@ -420,10 +427,10 @@ document.write(`
 </ul>
 <section id="question">
 <h2>Question<a class="headerlink" href="#question" title="Permalink to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>Write a program that asks the user to enter a 6 digit number.</p></li>
+<p>Write a program that asks the user to enter a 6-digit number.</p>
+<ul class="simple">
 <li><p>Check whether the digit in the thousands place is even.</p></li>
-</ol>
+</ul>
 <p><strong>Solution</strong></p>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
@@ -441,10 +448,10 @@ document.write(`
 </section>
 <section id="id1">
 <h2>Question<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>Write a program that asks the user to enter a percent grade.</p></li>
+<p>Write a program that asks the user to enter a percent grade.</p>
+<ul class="simple">
 <li><p>Display the corresponding “Letter Grade” according to the following grading scale.</p></li>
-</ol>
+</ul>
 <table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>Letter Grade</p></th>
@@ -493,7 +500,7 @@ document.write(`
 <p><strong>Solution</strong></p>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grade</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter your percentage grade: &#39;</span><span class="p">))</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grade</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter your percent grade: &#39;</span><span class="p">))</span>
 
 <span class="k">if</span> <span class="n">grade</span> <span class="o">&gt;=</span> <span class="mi">96</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
 <span class="k">elif</span> <span class="n">grade</span> <span class="o">&gt;=</span> <span class="mi">90</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A-&#39;</span><span class="p">)</span>
@@ -513,6 +520,7 @@ document.write(`
 </section>
 <section id="id2">
 <h2>Question<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p>The piecewise-defined function <span class="math notranslate nohighlight">\(f(n)\)</span> is given  as follows:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split} f(n) =
   \begin{cases}
@@ -522,18 +530,18 @@ document.write(`
                                    3-4n     &amp;  \text{otherwise}\\
   \end{cases}
 \end{split}\]</div>
-<ol class="arabic simple">
-<li><p>Write a program that asks the user to enter an integer</p></li>
-<li><p>If the integer entered is n then display f(n).<br />
-Hint: <span class="math notranslate nohighlight">\(f(n)\)</span> is a piecewise defined function.</p>
 <ul class="simple">
-<li><p>If n is greater than 7 then f(n)= <span class="math notranslate nohighlight">\(n^2+3n+4\)</span></p></li>
-<li><p>If n is between 4 (4 is not included) and 7 (7 is included)  then f(n)=3n-7</p></li>
-<li><p>If n is between 2 (2 is not included) and 4 (4 is included)  then f(n)=10</p></li>
-<li><p>If n is less than 2 then f(n)=3-4n</p></li>
+<li><p>Write a program that asks the user to enter an integer.</p></li>
+<li><p>If the integer entered is n then display f(n).</p></li>
+<li><p>Hint:</p>
+<ul>
+<li><p>If n is greater than 7 then f(n)= <span class="math notranslate nohighlight">\(n^2+3n+4\)</span>.</p></li>
+<li><p>If n is between 4 (4 is not included) and 7 (7 is included)  then f(n)=3n-7.</p></li>
+<li><p>If n is between 2 (2 is not included) and 4 (4 is included)  then f(n)=10.</p></li>
+<li><p>If n is less than 2 then f(n)=3-4n.</p></li>
 </ul>
 </li>
-</ol>
+</ul>
 <p><strong>Solution</strong></p>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
@@ -553,31 +561,29 @@ Hint: <span class="math notranslate nohighlight">\(f(n)\)</span> is a piecewise 
 </section>
 <section id="id3">
 <h2>Question<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<p>Temperature Converter: Fahrenheit (F) &lt;—&gt; Celsius (C).</p>
 <ul class="simple">
-<li><p>Temperature Converter</p></li>
-</ul>
-<ol class="arabic simple">
-<li><p>Ask temperature with unit (F or C) from the user.</p></li>
-</ol>
-<ul class="simple">
-<li><p>use only one input function</p></li>
-<li><p>user should enter the temperature in the form (int)F or (int)C</p>
+<li><p>Ask for temperature with unit (F or C) from the user.</p>
 <ul>
-<li><p>Ex: 37F or 42C</p></li>
+<li><p>Use only one input function.</p></li>
+<li><p>The user should enter the temperature in the form (int)F or (int)C.</p>
+<ul>
+<li><p>Example: 37F or 42C</p></li>
 </ul>
 </li>
 </ul>
-<ol class="arabic simple" start="2">
-<li><p>If F temperature is given by the user then convert it to C</p></li>
-<li><p>If C temperature is given by the user then convert it to F</p></li>
-</ol>
+</li>
+<li><p>If the temperature is given in Fahrenheit (F) by the user, then convert it to Celsius (C).</p></li>
+<li><p>If the temperature is given in Celsius (C) by the user, then convert it to Fahrenheit (F).</p></li>
+<li><p>Display the converted temperature with its unit.</p></li>
+</ul>
 <p><strong>Solution</strong></p>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">temperature_unit</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter the temperature with unit: &#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">temperature_unit</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter the temperature with the unit: &#39;</span><span class="p">)</span>
 
-<span class="n">temp</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">temperature_unit</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>     <span class="c1"># the slice except the last character is the numerical value of the temperature</span>
-<span class="n">unit</span> <span class="o">=</span> <span class="n">temperature_unit</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>           <span class="c1"># last character is the unit</span>
+<span class="n">temp</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">temperature_unit</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>     <span class="c1"># the slice, except for the last character, represents the numerical value of the temperature.</span>
+<span class="n">unit</span> <span class="o">=</span> <span class="n">temperature_unit</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>           <span class="c1"># the last character is the unit</span>
 
 <span class="k">if</span> <span class="n">unit</span> <span class="o">==</span> <span class="s1">&#39;F&#39;</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;It is </span><span class="si">{</span><span class="p">(</span><span class="n">temp</span><span class="o">-</span><span class="mi">32</span><span class="p">)</span><span class="o">/</span><span class="mf">1.8</span><span class="si">}</span><span class="s1">C.&#39;</span><span class="p">)</span>
@@ -589,25 +595,24 @@ Hint: <span class="math notranslate nohighlight">\(f(n)\)</span> is a piecewise 
 </section>
 <section id="id4">
 <h2>Question<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<p>Ask the user to input a non-negative integer.</p>
 <ul class="simple">
-<li><p>Ask for a non-negative integer from the user.</p></li>
 <li><p>Check if this integer is a perfect square and print your conclusion.</p>
 <ul>
-<li><p>Perfect squares are squares of integers.</p></li>
-<li><p>Example: 0, 1, 4, 9, 16, 25, 36, 49,…..</p></li>
+<li><p>Perfect squares are squares of integers, for example: 0, 1, 4, 9, 16, 25, 36, 49, etc.</p></li>
 </ul>
 </li>
-<li><p>If the given number is a negative integer print a warning message.</p></li>
-<li><p>numpy and math have sqrt functions</p></li>
+<li><p>If the given number is a negative integer, print a warning message.</p></li>
+<li><p>Utilize the sqrt function from numpy or math.</p></li>
 <li><p>Example:</p>
 <ul>
-<li><p>number = -3. Output: -3 &lt; 0. Please enter a non-negative integer.</p></li>
-<li><p>number =  4. Output: 4 is a perfect square.</p></li>
-<li><p>number = 12. Output: 12 is NOT a perfect square.</p></li>
+<li><p>For number = -3, output: -3 &lt; 0. Please enter a non-negative integer.</p></li>
+<li><p>For number = 4, output: 4 is a perfect square.</p></li>
+<li><p>For number = 12, output: 12 is NOT a perfect square.</p></li>
 </ul>
 </li>
 </ul>
-<p><strong>Solution</strong>|</p>
+<p><strong>Solution</strong></p>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
@@ -616,8 +621,8 @@ Hint: <span class="math notranslate nohighlight">\(f(n)\)</span> is a piecewise 
 <span class="k">if</span> <span class="n">number</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
   <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s1"> &lt; 0. Please enter a non-negative integer.&#39;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-  <span class="n">int_sqrt</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">number</span><span class="p">))</span>
-  <span class="k">if</span> <span class="n">int_sqrt</span><span class="o">**</span><span class="mi">2</span> <span class="o">==</span> <span class="n">number</span><span class="p">:</span>
+  <span class="n">int_sqrt</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">number</span><span class="p">))</span>           <span class="c1"># if a number is a perfect square, its square root is an integer</span>
+  <span class="k">if</span> <span class="n">int_sqrt</span><span class="o">**</span><span class="mi">2</span> <span class="o">==</span> <span class="n">number</span><span class="p">:</span>                   <span class="c1"># so the square root&#39;s integer part is itself</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s1"> is a perfect square.&#39;</span><span class="p">)</span>
   <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s1"> is a NOT perfect square.&#39;</span><span class="p">)</span>
@@ -627,15 +632,15 @@ Hint: <span class="math notranslate nohighlight">\(f(n)\)</span> is a piecewise 
 </section>
 <section id="id5">
 <h2>Question<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<p>Ask for a name from the user.</p>
 <ul class="simple">
-<li><p>Ask for a name from the user.</p></li>
-<li><p>Check if it contanins the letters <code class="docutils literal notranslate"><span class="pre">k</span></code> or <code class="docutils literal notranslate"><span class="pre">K</span></code> and the length of the name is an odd number.</p></li>
-<li><p>If this is the case then replace <code class="docutils literal notranslate"><span class="pre">k</span></code> with <code class="docutils literal notranslate"><span class="pre">y</span></code> and <code class="docutils literal notranslate"><span class="pre">K</span></code> with <code class="docutils literal notranslate"><span class="pre">Y</span></code>.</p></li>
-<li><p>Display the new name</p></li>
+<li><p>Check if it contains the letters ‘k’ or ‘K’ and if the length of the name is an odd number.</p></li>
+<li><p>If this is the case, then replace ‘k’ with ‘y’ and ‘K’ with ‘Y’.</p></li>
+<li><p>Display the new name.</p></li>
 <li><p>Example:</p>
 <ul>
 <li><p>name = Tom   Output: Tom</p></li>
-<li><p>name = Jack  Output: Jack</p></li>
+<li><p>name = Jack  Output: Jack     (length is even)</p></li>
 <li><p>name = KaThy Output: YaThy</p></li>
 <li><p>name = katHy Output: yatHy</p></li>
 </ul>
@@ -656,9 +661,9 @@ Hint: <span class="math notranslate nohighlight">\(f(n)\)</span> is a piecewise 
 </section>
 <section id="id6">
 <h2>Question<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<p>Ask for a number from the user</p>
 <ul class="simple">
-<li><p>Ask a number from the user</p></li>
-<li><p>Check whether the given number satisfies the following inequalty
+<li><p>Check whether the given number satisfies the following inequalty:
 $<span class="math notranslate nohighlight">\(x^2-3x+6&gt;192\)</span>$</p></li>
 <li><p>Display the conclusion.</p></li>
 </ul>
@@ -679,18 +684,15 @@ $<span class="math notranslate nohighlight">\(x^2-3x+6&gt;192\)</span>$</p></li>
 </section>
 <section id="id7">
 <h2>Question<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
+<p>Ask for Test-1, Test-2, and Final exam grades from the user.</p>
 <ul class="simple">
-<li><p>Ask for Test-1, Test-2 and Final exam grades from the user</p>
+<li><p>Use three input functions.</p></li>
+<li><p>Compute the weighted average by using the following formula:</p>
 <ul>
-<li><p>Use three input functions</p></li>
+<li><p>Weighted Average = 0.2 x Test-1 + 0.3 x Test-2 + 0.5 x Test-3</p></li>
 </ul>
 </li>
-<li><p>Compute the weigted average  by using the following formula</p>
-<ul>
-<li><p>Weigted Average = 0.2 x Test-1 + 0.3 x Test-2 + 0.5 x Test-3</p></li>
-</ul>
-</li>
-<li><p>Find the letter grade by using the following grading scale</p></li>
+<li><p>Find the letter grade by using the following grading scale.</p></li>
 </ul>
 <table class="table">
 <thead>
@@ -719,6 +721,7 @@ $<span class="math notranslate nohighlight">\(x^2-3x+6&gt;192\)</span>$</p></li>
 <li><p>Test-1 grade: 70</p></li>
 <li><p>Test-2 grade: 80</p></li>
 <li><p>Final  grade: 90</p></li>
+<li><p>Weighted average = <span class="math notranslate nohighlight">\(0.2 \times 70 + 0.3 \times 80 + 0.5 \times 90 = 14 + 24 + 45 = 83\)</span></p></li>
 <li><p>Output:</p>
 <ul>
 <li><p>Weighted Average 83.0   —-&gt;   Letter Grade: A</p></li>
@@ -741,9 +744,9 @@ $<span class="math notranslate nohighlight">\(x^2-3x+6&gt;192\)</span>$</p></li>
 
 <span class="k">if</span>   <span class="mi">100</span> <span class="o">&gt;=</span> <span class="n">weighted_grade</span> <span class="o">&gt;=</span> <span class="mi">75</span><span class="p">:</span> 
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="mi">74</span>  <span class="o">&gt;=</span> <span class="n">weighted_grade</span> <span class="o">&gt;=</span> <span class="mi">60</span><span class="p">:</span> 
+<span class="k">elif</span> <span class="n">weighted_grade</span> <span class="o">&gt;=</span> <span class="mi">60</span><span class="p">:</span> 
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="mi">59</span>  <span class="o">&gt;=</span> <span class="n">weighted_grade</span> <span class="o">&gt;=</span> <span class="mi">40</span><span class="p">:</span>
+<span class="k">elif</span> <span class="n">weighted_grade</span> <span class="o">&gt;=</span> <span class="mi">40</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;F&#39;</span><span class="p">)</span>
@@ -754,25 +757,23 @@ $<span class="math notranslate nohighlight">\(x^2-3x+6&gt;192\)</span>$</p></li>
 <section id="id8">
 <h2>Question<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>print the statement: Basic Calculator</p></li>
-<li><p>Ask two numbers from the user</p>
+<li><p>Print the statement: Basic Calculator</p></li>
+<li><p>Print 20 dashes (-)</p></li>
+<li><p>Ask the user for two numbers using two input functions</p></li>
+<li><p>Ask the user for the operation to perform</p>
 <ul>
-<li><p>Use two input functions</p></li>
-</ul>
-</li>
-<li><p>Ask the operation to perform</p>
-<ul>
-<li><p>Give the options: +, -, *, /</p></li>
-<li><p>User should choose one of them</p></li>
+<li><p>Provide the options: +, -, *, /</p></li>
+<li><p>The user should choose one of them.</p></li>
 </ul>
 </li>
 <li><p>Find the result</p>
 <ul>
-<li><p>First Number operation Second Number</p></li>
-<li><p>If the second number is zero then do not do the division operation and display a warning message</p></li>
-<li><p>If operation is a division also do rounding</p></li>
+<li><p>Perform the operation: First Number operation Second Number.</p></li>
+<li><p>If the second number is zero, do not perform the division operation and display a warning message.</p></li>
+<li><p>If the operation is division, also round the result.</p></li>
 </ul>
 </li>
+<li><p>Example: num1=5, num2=7, operation=’<em>’ —&gt; Output: 5</em>7=35</p></li>
 </ul>
 <p><strong>Solution</strong></p>
 <div class="toggle admonition">
@@ -801,9 +802,9 @@ $<span class="math notranslate nohighlight">\(x^2-3x+6&gt;192\)</span>$</p></li>
 </section>
 <section id="id9">
 <h2>Question<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
+<p>Ask the user for a number with at most 8 digits.</p>
 <ul class="simple">
-<li><p>Ask a number from the user which has at most 8 digits.</p></li>
-<li><p>If the given number has less than 8 digits, do zero padding to the left to convert the given number to a 8 digit number.</p></li>
+<li><p>If the given number has fewer than 8 digits, pad zeros to the left to make it an 8-digit number.</p></li>
 <li><p>Example:</p>
 <ul>
 <li><p>Given number: 123 —&gt; Output: 00000123</p></li>
@@ -859,6 +860,15 @@ $<span class="math notranslate nohighlight">\(x^2-3x+6&gt;192\)</span>$</p></li>
                 <footer class="prev-next-footer">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="conditionals_output.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Conditionals Output</p>
+      </div>
+    </a>
 </div>
                 </footer>
               
