@@ -213,6 +213,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="iterations_code.html">Iterations Code</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="tuples.html">Chp-7: Tuples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lists.html">Chp-8: Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sets.html">Chp-9: Sets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dictionaries.html">Chp-10 Dictionaries</a></li>
 </ul>
 
     </div>
@@ -406,6 +410,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">Motivation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#triangle">Triangle</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strings">Strings</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterations">Iterations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#range-function">Range Function</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loop">for loop</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#break-and-continue">break and continue</a></li>
@@ -426,6 +436,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#factors-1">Factors-1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#factors-2">Factors-2</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#countdown">Countdown</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#count-digits">Count digits</a></li>
 </ul>
 </li>
 </ul>
@@ -449,15 +460,242 @@ document.write(`
 </ul>
 </li>
 </ul>
+<section id="motivation">
+<h2>Motivation<a class="headerlink" href="#motivation" title="Permalink to this heading">#</a></h2>
+<section id="triangle">
+<h3>Triangle<a class="headerlink" href="#triangle" title="Permalink to this heading">#</a></h3>
+<p>As a motivational exercise, let’s recall the code we previously encountered for printing a triangle using the <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> character and the <em>print()</em> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&amp;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&amp;&amp;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&amp;&amp;&amp;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&amp;&amp;&amp;&amp;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&amp;&amp;&amp;&amp;&amp;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&amp;&amp;&amp;&amp;&amp;&amp;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&amp;
+&amp;&amp;
+&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+</pre></div>
+</div>
+</div>
+</div>
+<p>This code follows a pattern where the number of <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> characters increases by one in each line, simplifying the code through repetition.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&amp;&#39;</span><span class="o">*</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&amp;&#39;</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&amp;&#39;</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&amp;&#39;</span><span class="o">*</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&amp;&#39;</span><span class="o">*</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&amp;&#39;</span><span class="o">*</span><span class="mi">6</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&amp;&#39;</span><span class="o">*</span><span class="mi">7</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&amp;&#39;</span><span class="o">*</span><span class="mi">8</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&amp;&#39;</span><span class="o">*</span><span class="mi">9</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&amp;&#39;</span><span class="o">*</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&amp;
+&amp;&amp;
+&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>The second version, utilizing string repetition, is simpler than the first.</p></li>
+<li><p>However, further simplification is possible as there are still repetitions, such as the presence of the print() function in each line.</p></li>
+<li><p>To address this, iterations can be employed to avoid using the <em>print()</em> function ten times.</p></li>
+<li><p>The iteration version is as follows:</p>
+<ul>
+<li><p>It eliminates repetition.</p></li>
+<li><p>It does not become longer even with a larger triangle.</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">):</span>    <span class="c1"># iteration</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&amp;&#39;</span><span class="o">*</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&amp;
+&amp;&amp;
+&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="strings">
+<h3>Strings<a class="headerlink" href="#strings" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>We have explored various methods for working with strings, yet a crucial aspect remains unaddressed — how to iterate through all characters of a string individually.</p></li>
+<li><p>While indexes and slices allow access to specific characters or portions of a string, the challenge lies in accessing each character sequentially.</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p><strong>Question:</strong> What is the occurrence of a certain character, such as ‘r’, in a string?</p>
+<ul class="simple">
+<li><p>How can we address this question without utilizing the <em>count()</em> method of strings?</p></li>
+<li><p>The solution involves checking whether each character in the string matches ‘r’.</p></li>
+</ul>
+</li>
+</ol>
+<ul class="simple">
+<li><p>Let’s attempt to write code that answers this question using a short string and only the information we have gathered from the previous chapters.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;radar&#39;</span>
+<span class="n">count_r</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">if</span> <span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;r&#39;</span><span class="p">:</span>
+    <span class="n">count_r</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="k">if</span> <span class="n">text</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;r&#39;</span><span class="p">:</span>
+    <span class="n">count_r</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="k">if</span> <span class="n">text</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;r&#39;</span><span class="p">:</span>
+    <span class="n">count_r</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="k">if</span> <span class="n">text</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;r&#39;</span><span class="p">:</span>
+    <span class="n">count_r</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="k">if</span> <span class="n">text</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;r&#39;</span><span class="p">:</span>
+    <span class="n">count_r</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;There are </span><span class="si">{</span><span class="n">count_r</span><span class="si">}</span><span class="s1"> &quot;r&quot; characters in </span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>There are 2 &quot;r&quot; characters in radar.
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>As evident, there are numerous repetitions in this code, making it overwhelming for long strings.</p></li>
+<li><p>To mitigate this, iterations can be employed to avoid the need for using the <em>if</em> statements multiple times.</p></li>
+<li><p>The iteration version is as follows, it eliminates repetition and does not become longer even with an extended string.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;radar&#39;</span>
+<span class="n">count_r</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>            <span class="c1"># iteration</span>
+    <span class="k">if</span> <span class="n">char</span> <span class="o">==</span> <span class="s1">&#39;r&#39;</span><span class="p">:</span>
+        <span class="n">count_r</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;There are </span><span class="si">{</span><span class="n">count_r</span><span class="si">}</span><span class="s1"> &quot;r&quot; characters in </span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>There are 2 &quot;r&quot; characters in radar.
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Question:</strong> Now let’s work on a more complicated question. What are the digits in a string which are greater than 6?</p></li>
+</ol>
+<ul class="simple">
+<li><p>Let’s attempt to write code that answers this question using a  string which consists of digits and only the information we have gathered from the previous chapters.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;192736&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The digits in </span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s1"> which are greater than 6:&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">6</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">6</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">6</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">6</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">6</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+<span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">6</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The digits in 192736 which are greater than 6:
+9
+7
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>The code above exhibits repetition, which can be overwhelming for long strings.</p></li>
+<li><p>The iteration version, provided below, eliminates this repetition and does not become longer even with an extended string.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;192736&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The digits greater than 6 in </span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s1">:&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">char</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">6</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The digits greater than 6 in 192736:
+9
+7
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="iterations">
+<h2>Iterations<a class="headerlink" href="#iterations" title="Permalink to this heading">#</a></h2>
 <p>Iterations are used to perform the same or similar tasks in a more efficient way.</p>
 <ul class="simple">
 <li><p>Similar tasks usually follow a pattern that can be used to write the code in a shorter and more readable way.</p></li>
-<li><p>There are two types of iterations available in programming languages:</p>
-<ul>
+</ul>
+<p>There are two types of iterations available in programming languages:</p>
+<ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">while</span></code> loop: This is used for indefinite repetition, executing a block code for a possibly unknown number of times.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">for</span></code> loop: This is used for definite repetition, executing a code for a known number of times.</p></li>
-</ul>
-</li>
 </ul>
 <ol class="arabic simple">
 <li><p>The <code class="docutils literal notranslate"><span class="pre">for</span></code> loop executes its block code repeatedly for every element of a sequence.</p>
@@ -474,6 +712,7 @@ document.write(`
 </ul>
 </li>
 </ol>
+</section>
 <section id="range-function">
 <h2>Range Function<a class="headerlink" href="#range-function" title="Permalink to this heading">#</a></h2>
 <p>The built-in <code class="docutils literal notranslate"><span class="pre">range()</span></code> function returns a sequence of integers.</p>
@@ -1568,6 +1807,45 @@ Enter a positive integer n: 12<br />
 0<br />
 START</p>
 </section>
+<section id="count-digits">
+<h3>Count digits<a class="headerlink" href="#count-digits" title="Permalink to this heading">#</a></h3>
+<p>Write a program which prints the digits which are greater than 6 in given string which might include any character.</p>
+<ul class="simple">
+<li><p>Use a <em>for</em> loop and <em>try-except</em>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;a9b4dh6e1_%**8371__dthYFR8G12po7+&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Solution:</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The digits greater than 6 in </span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s1">:&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">char</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">6</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The digits greater than 6 in a9b4dh6e1_%**8371__dthYFR8G12po7+:
+9
+8
+7
+8
+7
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 <div class="toctree-wrapper compound">
 </div>
@@ -1636,6 +1914,12 @@ START</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">Motivation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#triangle">Triangle</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strings">Strings</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterations">Iterations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#range-function">Range Function</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loop">for loop</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#break-and-continue">break and continue</a></li>
@@ -1656,6 +1940,7 @@ START</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#factors-1">Factors-1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#factors-2">Factors-2</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#countdown">Countdown</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#count-digits">Count digits</a></li>
 </ul>
 </li>
 </ul>

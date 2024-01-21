@@ -207,7 +207,17 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="conditionals_code.html">Conditionals Code</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="iterations.html">Iterations</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="iterations.html">Chp-6: Iterations</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="iterations_debug.html">Iterations Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterations_output.html">Iterations Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterations_code.html">Iterations Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tuples.html">Chp-7: Tuples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lists.html">Chp-8: Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions.html">Chp-9 Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sets.html">Chp-10: Sets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dictionaries.html">Chp-11 Dictionaries</a></li>
 </ul>
 
     </div>
@@ -401,6 +411,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">Motivation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditionals">Conditionals</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#booleans">Booleans</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion">Conversion</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bool-int">bool &lt;–&gt; int</a></li>
@@ -448,6 +460,25 @@ document.write(`
 </ul>
 </li>
 </ul>
+<section id="motivation">
+<h2>Motivation<a class="headerlink" href="#motivation" title="Permalink to this heading">#</a></h2>
+<p>In our daily lives, our actions often depend on various conditions. For instance:</p>
+<ol class="arabic simple">
+<li><p>If the temperature is above 60, I will go hiking; otherwise, I will stay at home.</p></li>
+<li><p>If I work less than 40 hours per week, my hourly rate is <span class="math notranslate nohighlight">\(25. For each additional hour, I earn \)</span>40.</p></li>
+<li><p>Depending on my financial situation:</p>
+<ul class="simple">
+<li><p>If I have more than $5,000, I will go on a cruise.</p></li>
+<li><p>If I have between $3,000 and $5,000, I will go to Florida.</p></li>
+<li><p>If I have less than $3,000, I will spend time in my city.</p></li>
+</ul>
+</li>
+<li><p>In my math course, the letter grade is determined by a grading scale. For instance, getting 76 results in a C+.</p></li>
+</ol>
+<p>The central question in this chapter is how to write a program that performs different tasks under various conditions. This allows us to answer questions such as whether to go outside or stay at home based on the temperature, how much to earn depending on weekly working hours, where to travel, or what grade a student will receive according to the grading scale.</p>
+</section>
+<section id="conditionals">
+<h2>Conditionals<a class="headerlink" href="#conditionals" title="Permalink to this heading">#</a></h2>
 <p>We have seen the following data types so far:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">int</span></code>: Integers</p></li>
@@ -458,9 +489,10 @@ document.write(`
 <p>Since conditionals are the main subject of this chapter, booleans will be the commonly used data type.<br />
 We have already encountered boolean values when working with:</p>
 <ul class="simple">
-<li><p>in and not in operators for strings, which return boolean values.</p></li>
-<li><p>startswith(), isdigit(), and isalpha() string methods, which return boolean values.</p></li>
+<li><p><em>in</em> and <em>not in</em> operators for strings return boolean values.</p></li>
+<li><p><em>startswith()</em>, <em>isdigit()</em>, and <em>isalpha()</em> string methods also return boolean values.</p></li>
 </ul>
+</section>
 <section id="booleans">
 <h2>Booleans<a class="headerlink" href="#booleans" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
@@ -2003,6 +2035,24 @@ Go outside!
 </div>
 </div>
 </div>
+<p><strong>Remark</strong></p>
+<ul class="simple">
+<li><p>You must include the except part along with some code when using the try statement.</p></li>
+<li><p>If you don’t intend to perform any specific actions in the except part, you can use the <code class="docutils literal notranslate"><span class="pre">pass</span></code> keyword to prevent an error.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span>  <span class="s1">&#39;5s&#39;</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>                                 <span class="c1"># error: &#39;5s&#39; can not be converted to an int</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Square of </span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s1"> is </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>                <span class="c1"># skipped</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="k">pass</span>                                            <span class="c1"># does not do anything</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>No output</p>
 </section>
 <section id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">#</a></h2>
@@ -2231,6 +2281,8 @@ Go outside!
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">Motivation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditionals">Conditionals</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#booleans">Booleans</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion">Conversion</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bool-int">bool &lt;–&gt; int</a></li>
