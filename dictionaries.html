@@ -214,18 +214,26 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="tuples.html">Chp-7: Tuples</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="tuples_debug.html">Tuples Debugging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tuples_output.html">Tuples Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tuples_code.html">Tuples Code</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="lists.html">Chp-8: Lists</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="lists_debug.html">Lists Debugging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lists_output.html">Lists Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lists_code.html">Lists Code</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="functions.html">Chp-9: Functions</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="functions.html">Chp-9: Functions</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="functions_debug.html">Functions Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions_output.html">Functions Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions_code.html">Functions Code</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="sets.html">Chp-10: Sets</a></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Chp-11 Dictionaries</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Chp-11 Dictionaries</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="dictionaries_debug.html">Dictionaries Debugging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dictionaries_output.html">Dictionaries Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictionaries_code.html">Dictionaries Code</a></li>
 </ul>
 </li>
 </ul>
@@ -445,6 +453,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iterations-and-dictionaries">Iterations and Dictionaries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionary-comprehension">Dictionary Comprehension</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#word-lengths">Word Lengths</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#count-characters">Count Characters</a></li>
@@ -1114,6 +1123,37 @@ History 65
 </div>
 </div>
 </section>
+<section id="dictionary-comprehension">
+<h3>Dictionary Comprehension<a class="headerlink" href="#dictionary-comprehension" title="Permalink to this heading">#</a></h3>
+<p>It is a fast and concise way of creating dictionaries in a single line using <em>for</em> loops and <em>if</em> statements.</p>
+<ul class="simple">
+<li><p>It is similar to list comprehensions.</p></li>
+<li><p>It is in the form of: <code class="docutils literal notranslate"><span class="pre">{expression</span> <span class="pre">for</span> <span class="pre">item</span> <span class="pre">in</span> <span class="pre">list}</span></code></p>
+<ul>
+<li><p>Here, the <em>expression</em> represents the <em>kek_value</em> pairs of the dictionary being constructed.</p></li>
+</ul>
+</li>
+<li><p>An <em>if</em> statement can also be included in a dictionary comprehension in the form of: <code class="docutils literal notranslate"><span class="pre">[expression</span> <span class="pre">for</span> <span class="pre">item</span> <span class="pre">in</span> <span class="pre">list</span> <span class="pre">if</span> <span class="pre">condition]</span></code></p></li>
+</ul>
+<p><strong>Example</strong></p>
+<ul class="simple">
+<li><p>The following code constructs a dictionary with <code class="docutils literal notranslate"><span class="pre">key:value</span></code> pairs where keys are the numbers between 1 and 5, and values are the cubes of the keys.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cube_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">**</span><span class="mi">3</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">)}</span>   <span class="c1"># i is a key, i**3 is a value in the expression</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">cube_dict</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1: 1, 2: 8, 3: 27, 4: 64, 5: 125}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="examples">
 <h3>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">#</a></h3>
 <section id="word-lengths">
@@ -1321,6 +1361,7 @@ History 65
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iterations-and-dictionaries">Iterations and Dictionaries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionary-comprehension">Dictionary Comprehension</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#word-lengths">Word Lengths</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#count-characters">Count Characters</a></li>
