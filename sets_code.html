@@ -62,11 +62,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'sets_code';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Chp-11 Dictionaries" href="dictionaries.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -167,7 +166,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="acknowledge.html">Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python.html">Python Introduction</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="colab.html">Google Colab</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -229,8 +228,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="functions_code.html">Functions Code</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="sets.html">Chp-10: Sets</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="dictionaries.html">Chp-11 Dictionaries</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="sets.html">Chp-10: Sets</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="sets_debug.html">Sets Debugging</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Sets Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="dictionaries.html">Chp-11 Dictionaries</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="dictionaries_debug.html">Dictionaries Debugging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dictionaries_output.html">Dictionaries Output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dictionaries_code.html">Dictionaries Code</a></li>
@@ -431,16 +434,6 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question">Question</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Question</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Question</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Question</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Question</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Question</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Question</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Question</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Question</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Question</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Question</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Question</a></li>
 </ul>
             </nav>
         </div>
@@ -459,263 +452,53 @@ document.write(`
 </ul>
 <section id="question">
 <h2>Question<a class="headerlink" href="#question" title="Permalink to this heading">#</a></h2>
-<p>Using only one <em>for</em> loop and one <em>print()</em> function, display the following triangle.</p>
-<p><img alt="" src="_images/triangle_range.png" /></p>
-<div class="toggle admonition">
-<p class="admonition-title">Solution</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">3</span><span class="p">):</span>
-  <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="s1">&#39;*&#39;</span><span class="p">)</span>
+<p>Identify the unique names in the list <em>names</em> below (not case-sensitive), and store them in a new list with dictionary order and capitalized.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Ben&#39;</span><span class="p">,</span> <span class="s1">&#39;ElI&#39;</span><span class="p">,</span> <span class="s1">&#39;Ben&#39;</span><span class="p">,</span> <span class="s1">&#39;Ian&#39;</span><span class="p">,</span> <span class="s1">&#39;MIa&#39;</span><span class="p">,</span> <span class="s1">&#39;Eva&#39;</span><span class="p">,</span> <span class="s1">&#39;Ana&#39;</span><span class="p">,</span> <span class="s1">&#39;Leo&#39;</span><span class="p">,</span>  <span class="s1">&#39;Tim&#39;</span><span class="p">,</span> <span class="s1">&#39;liz&#39;</span><span class="p">,</span> <span class="s1">&#39;ben&#39;</span><span class="p">,</span> <span class="s1">&#39;ana&#39;</span><span class="p">,</span> <span class="s1">&#39;ben&#39;</span> <span class="p">]</span>
 </pre></div>
 </div>
+</div>
+</div>
+<p><strong>Solution</strong></p>
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names_cap</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">names</span><span class="p">]</span>
+<span class="n">names_cap</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">names_cap</span><span class="p">)</span>
+<span class="n">names_cap</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">names_cap</span><span class="p">)</span>
+<span class="n">names_cap</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">names_cap</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Ana&#39;, &#39;Ben&#39;, &#39;Eli&#39;, &#39;Eva&#39;, &#39;Ian&#39;, &#39;Leo&#39;, &#39;Liz&#39;, &#39;Mia&#39;, &#39;Tim&#39;]
+</pre></div>
+</div>
+</div>
+</details>
 </div>
 </section>
 <section id="id1">
 <h2>Question<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
-<p>Find the sum of the squares of the following numbers in two different ways: <span class="math notranslate nohighlight">\(3, 7, 11, 15, 19, 23, \ldots, 107\)</span>.</p>
+<p>Remove names that start with a capital letter from the lists below.</p>
 <ul class="simple">
-<li><p>Use a <em>for</em> loop.</p></li>
-<li><p>Use a <em>while</em> loop.</p></li>
+<li><p>Store the unique names (not case-sensitive) in a new list, ensuring they are capitalized and ordered.</p></li>
 </ul>
-<p><strong>Solution</strong></p>
-<div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
-</summary>
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># for loop</span>
-<span class="n">total_for</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">108</span><span class="p">,</span><span class="mi">4</span><span class="p">):</span>
-    <span class="n">total_for</span> <span class="o">+=</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span>
-
-<span class="c1"># while loop</span>
-<span class="n">total_while</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">n</span><span class="o">=</span> <span class="mi">3</span>
-
-<span class="k">while</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">108</span><span class="p">:</span>
-    <span class="n">total_while</span> <span class="o">+=</span> <span class="n">n</span><span class="o">**</span><span class="mi">2</span>
-    <span class="n">n</span> <span class="o">+=</span> <span class="mi">4</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;for   loop answer: </span><span class="si">{</span><span class="n">total_for</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;while loop answer: </span><span class="si">{</span><span class="n">total_while</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>for   loop answer: 107883
-while loop answer: 107883
-</pre></div>
-</div>
-</div>
-</details>
-</div>
-</section>
-<section id="id2">
-<h2>Question<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
-<p>Write a program that asks the user to enter integers until the sum of the given integers exceeds 100.</p>
-<ul class="simple">
-<li><p>Display the sum and count of the entered numbers.</p></li>
-<li><p>Use a <em>while</em> loop.</p></li>
-</ul>
-<div class="toggle admonition">
-<p class="admonition-title">Solution</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="k">while</span> <span class="n">total</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
-    <span class="n">number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter an integer: &#39;</span><span class="p">))</span>
-    <span class="n">total</span> <span class="o">+=</span> <span class="n">number</span>
-    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Sum = </span><span class="si">{</span><span class="n">total</span><span class="si">}</span><span class="s1">, Count = </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<p><strong>Sample Output</strong><br />
-Enter an integer:  3<br />
-Enter an integer:  90<br />
-Enter an integer:  6<br />
-Enter an integer:  10<br />
-&lt;——————–&gt;<br />
-Sum = 109, Count = 4</p>
-</section>
-<section id="id3">
-<h2>Question<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
-<p>Find the following product using a <em>for</em> loop and round the final answer to the nearest hundredth.</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\displaystyle \frac{10}{100}\frac{90}{99}\frac{89}{98}\frac{88}{97}\frac{87}{96}\frac{86}{95}\frac{85}{94}\frac{84}{93}\)</span></p></li>
-</ul>
-<p><strong>Solution</strong></p>
-<div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
-</summary>
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">product</span> <span class="o">=</span> <span class="mi">10</span><span class="o">/</span><span class="mi">100</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">):</span>
-    <span class="n">product</span> <span class="o">*=</span> <span class="p">(</span><span class="mi">90</span><span class="o">-</span><span class="n">i</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">99</span><span class="o">-</span><span class="n">i</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Product: </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">product</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Product: 0.05
-</pre></div>
-</div>
-</div>
-</details>
-</div>
-</section>
-<section id="id4">
-<h2>Question<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
-<p>Write a program that displays a rectangle using the characters <code class="docutils literal notranslate"><span class="pre">*</span></code> and <code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">'</span></code> (space).</p>
-<ul class="simple">
-<li><p>The rectangle has <em>width</em> many <code class="docutils literal notranslate"><span class="pre">*</span></code> characters on its upper and lower sides.</p></li>
-<li><p>The rectangle has <em>length</em> many <code class="docutils literal notranslate"><span class="pre">*</span></code> characters on its left and right sides.</p></li>
-<li><p>There is a <code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">'</span></code> space character between the <code class="docutils literal notranslate"><span class="pre">*</span></code> characters.</p></li>
-</ul>
-<p><img alt="" src="_images/rect_three_building.png" /></p>
-<p><strong>Solution</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># use the following variables</span>
-<span class="n">width</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names1</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Ben&#39;</span><span class="p">,</span> <span class="s1">&#39;ElI&#39;</span><span class="p">,</span> <span class="s1">&#39;Ben&#39;</span><span class="p">,</span> <span class="s1">&#39;Ian&#39;</span><span class="p">,</span> <span class="s1">&#39;MIa&#39;</span><span class="p">,</span> <span class="s1">&#39;Eva&#39;</span><span class="p">,</span> <span class="s1">&#39;Ana&#39;</span><span class="p">,</span> <span class="s1">&#39;Leo&#39;</span><span class="p">,</span>  <span class="s1">&#39;Tim&#39;</span><span class="p">,</span> <span class="s1">&#39;liz&#39;</span><span class="p">,</span> <span class="s1">&#39;ben&#39;</span><span class="p">,</span> <span class="s1">&#39;ana&#39;</span><span class="p">,</span> <span class="s1">&#39;ben&#39;</span> <span class="p">]</span>
+<span class="n">names2</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Max&#39;</span><span class="p">,</span> <span class="s1">&#39;Eli&#39;</span><span class="p">,</span> <span class="s1">&#39;Ben&#39;</span><span class="p">,</span> <span class="s1">&#39;Ian&#39;</span><span class="p">,</span> <span class="s1">&#39;Amy&#39;</span><span class="p">,</span> <span class="s1">&#39;mia&#39;</span><span class="p">,</span> <span class="s1">&#39;Eva&#39;</span><span class="p">,</span> <span class="s1">&#39;anA&#39;</span><span class="p">,</span> <span class="s1">&#39;Leo&#39;</span><span class="p">,</span> <span class="s1">&#39;Joe&#39;</span><span class="p">,</span> <span class="s1">&#39;Liz&#39;</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">,</span> <span class="s1">&#39;iAn&#39;</span> <span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
-</summary>
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">height</span><span class="p">):</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">i</span><span class="o">!=</span><span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">i</span><span class="o">!=</span><span class="n">height</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">width</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;*&#39;</span><span class="p">))</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;* &#39;</span> <span class="o">*</span> <span class="n">width</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* * * * * * * * 
-*             *
-*             *
-*             *
-* * * * * * * * 
-</pre></div>
-</div>
-</div>
-</details>
-</div>
-</section>
-<section id="id5">
-<h2>Question<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
-<p>Write a program that displays a wide, one-floor building using the characters <code class="docutils literal notranslate"><span class="pre">*</span></code> and <code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">'</span></code> (space).</p>
-<ul class="simple">
-<li><p>The building consists of <em>room</em> many rectangles, each with a size of <em>width</em> by <em>height</em>, stacked horizontally.</p></li>
-<li><p>Some examples are as follows:</p></li>
-</ul>
-<p><img alt="" src="_images/wide_two_buildings.png" /></p>
-<p><strong>Solution</strong></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># use the following variables</span>
-<span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">room</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
-</summary>
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">height</span><span class="p">):</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">i</span> <span class="o">!=</span> <span class="n">height</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">width</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;*&#39;</span><span class="p">)</span><span class="o">*</span><span class="n">room</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;* &#39;</span> <span class="o">*</span> <span class="p">((</span><span class="n">width</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">room</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
-*     *     *     *     *     *     *     *     *     *     *
-*     *     *     *     *     *     *     *     *     *     *
-*     *     *     *     *     *     *     *     *     *     *
-*     *     *     *     *     *     *     *     *     *     *
-* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
-</pre></div>
-</div>
-</div>
-</details>
-</div>
-</section>
-<section id="id6">
-<h2>Question<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
-<p>Write a program that displays a tall building using the characters <code class="docutils literal notranslate"><span class="pre">*</span></code> and <code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">'</span></code> (space).</p>
-<ul class="simple">
-<li><p>The building consists of <em>floor</em> many rectangles, each with a size of <em>width</em> by <em>height</em>, stacked vertically.</p></li>
-<li><p>Some examples are as follows:</p></li>
-</ul>
-<p><img alt="" src="_images/four_buildings.png" /></p>
-<p><strong>Solution</strong></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># use the following variables</span>
-<span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">floor</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">2</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
-</summary>
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">floor</span><span class="o">*</span><span class="p">(</span><span class="n">height</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="p">(</span><span class="n">height</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;* &#39;</span> <span class="o">*</span> <span class="n">width</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;*&#39;</span> <span class="o">+</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">width</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;*&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* * * * * 
-*       *
-*       *
-*       *
-*       *
-* * * * * 
-*       *
-*       *
-*       *
-*       *
-* * * * * 
-</pre></div>
-</div>
-</div>
-</details>
-</div>
-</section>
-<section id="id7">
-<h2>Question<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
-<p>Find the sum of the first <span class="math notranslate nohighlight">\(1000\)</span> terms of the following sequence:</p>
-<p><span class="math notranslate nohighlight">\(\displaystyle \frac{1}{1\times 2}, \frac{1}{2\times 3}, \frac{1}{3\times 4}, \frac{1}{4\times 5}, ...\)</span></p>
 <p><strong>Solution</strong></p>
 <div class="cell tag_hide-cell docutils container">
 <details class="hide above-input">
@@ -724,164 +507,33 @@ Sum = 109, Count = 4</p>
 <span class="expanded">Hide code cell content</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="n">names1</span> <span class="o">+</span> <span class="n">names2</span>
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1001</span><span class="p">):</span>
-  <span class="n">total</span> <span class="o">+=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
-    
-<span class="nb">print</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
+<span class="n">remove_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">name</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">isupper</span><span class="p">():</span>
+        <span class="n">remove_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        
+<span class="n">names_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">names</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">remove_list</span><span class="p">)</span>
+
+<span class="n">names_cap</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">names_set</span><span class="p">]</span>
+
+<span class="n">names_cap</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">names_cap</span><span class="p">))</span>
+
+<span class="n">names_cap</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">names_cap</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9990009990009997
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Ana&#39;, &#39;Ben&#39;, &#39;Ian&#39;, &#39;Liz&#39;, &#39;Max&#39;, &#39;Mia&#39;]
 </pre></div>
 </div>
 </div>
 </details>
 </div>
-</section>
-<section id="id8">
-<h2>Question<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
-<p>Write a program that prompts the user to enter any text, which may include characters such as digits and punctuations.</p>
-<ul class="simple">
-<li><p>Find the number of alphabet characters (a-z) in the given string.</p></li>
-<li><p>You can use the constant <em>ascii_letters</em> from the <em>string</em> module to access all lowercase and uppercase alphabet letters.</p></li>
-<li><p>Example:</p>
-<ul>
-<li><p>Enter a string: Wer34</p></li>
-<li><p>There are 3 alphabet letters in Wer34.</p></li>
-</ul>
-</li>
-</ul>
-<div class="toggle admonition">
-<p class="admonition-title">Solution</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">string</span>
-
-<span class="n">text</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter a text: &#39;</span><span class="p">)</span>
-<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
-  <span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">string</span><span class="o">.</span><span class="n">ascii_letters</span><span class="p">:</span>
-    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;There are </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s1"> alphabet letters in </span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<p><strong>Sample Output</strong><br />
-Enter a string:  sD12&amp;<br />
-There are 2 alphabet letters in sD12&amp;</p>
-</section>
-<section id="id9">
-<h2>Question<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
-<p>Write a program that generates a random word with 5 characters using lowercase alphabet letters.</p>
-<ul class="simple">
-<li><p>You can use <em>random.choice()</em> to randomly choose a letter.</p></li>
-<li><p>The generated word does not have to be meaningful.</p></li>
-</ul>
-<p><strong>Solution</strong></p>
-<div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
-</summary>
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">string</span>
-<span class="kn">import</span> <span class="nn">random</span>
-
-<span class="n">random_word</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-    <span class="n">random_word</span> <span class="o">+=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">ascii_lowercase</span><span class="p">)</span>
-           
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Randomly generated word: </span><span class="si">{</span><span class="n">random_word</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Randomly generated word: pkjvs
-</pre></div>
-</div>
-</div>
-</details>
-</div>
-</section>
-<section id="id10">
-<h2>Question<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
-<p>Write a program that prompts the user to enter an integer.</p>
-<ul class="simple">
-<li><p>Find the number of zeroes at the end of the given number.</p></li>
-<li><p>Use a while loop.”</p></li>
-<li><p>Example:</p>
-<ul>
-<li><p>Input: 1234500 —-&gt; Output: 2</p></li>
-</ul>
-</li>
-</ul>
-<div class="toggle admonition">
-<p class="admonition-title">Solution-1</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter an integer: &#39;</span><span class="p">))</span>
-<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="n">n</span> <span class="o">=</span> <span class="n">number</span>
-<span class="k">while</span> <span class="n">n</span><span class="o">%</span><span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-  <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
-  <span class="n">n</span> <span class="o">/=</span> <span class="mi">10</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;There are </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s1"> zeroes at the end of </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<p><strong>Sample Output</strong><br />
-Enter an integer:  278140000000000<br />
-There are 10 zeroes at the end of 278140000000000.</p>
-<div class="toggle admonition">
-<p class="admonition-title">Solution-2</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter an integer: &#39;</span><span class="p">)</span>
-<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="n">i</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
-<span class="k">while</span> <span class="n">number</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;0&#39;</span><span class="p">:</span>
-  <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
-  <span class="n">i</span> <span class="o">-=</span> <span class="mi">1</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;There are </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s1"> zeroes at the end of </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<p><strong>Sample Output</strong><br />
-Enter an integer:  278140000000000<br />
-There are 10 zeroes at the end of 278140000000000.</p>
-</section>
-<section id="id11">
-<h2>Question<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h2>
-<p>Write a program that selects a 3-digit random number (dividend) and a 1-digit random number (divisor).</p>
-<ul class="simple">
-<li><p>After 10 seconds, display the remainder and quotient.</p></li>
-<li><p>Use <em>random.randint()</em> to generate random integers.</p></li>
-</ul>
-<div class="toggle admonition">
-<p class="admonition-title">Solution</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
-<span class="kn">import</span> <span class="nn">time</span>
-
-<span class="n">divisor</span>  <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">)</span>
-<span class="n">dividend</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">999</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Divide </span><span class="si">{</span><span class="n">dividend</span><span class="si">}</span><span class="s1"> by </span><span class="si">{</span><span class="n">divisor</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-
-<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Quotient  : </span><span class="si">{</span><span class="n">dividend</span><span class="o">//</span><span class="n">divisor</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Remainder : </span><span class="si">{</span><span class="n">dividend</span><span class="o">%</span><span class="n">divisor</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<p><strong>Sample Output</strong><br />
-Divide 495 by 4<br />
-Quotient  : 123<br />
-Remainder : 3</p>
 </section>
 </section>
 
@@ -915,6 +567,15 @@ Remainder : 3</p>
                 <footer class="prev-next-footer">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="right-next"
+       href="dictionaries.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Chp-11 Dictionaries</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -932,16 +593,6 @@ Remainder : 3</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question">Question</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Question</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Question</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Question</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Question</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Question</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Question</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Question</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Question</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Question</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Question</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Question</a></li>
 </ul>
   </nav></div>
 

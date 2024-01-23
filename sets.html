@@ -65,8 +65,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'sets';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Chp-11 Dictionaries" href="dictionaries.html" />
-    <link rel="prev" title="Chp-9: Functions" href="functions.html" />
+    <link rel="next" title="Sets Debugging" href="sets_debug.html" />
+    <link rel="prev" title="Functions Code" href="functions_code.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -211,11 +211,36 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="iterations_code.html">Iterations Code</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="tuples.html">Chp-7: Tuples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lists.html">Chp-8: Lists</a></li>
-<li class="toctree-l1"><a class="reference internal" href="functions.html">Chp-9: Functions</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Chp-10: Sets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dictionaries.html">Chp-11 Dictionaries</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="tuples.html">Chp-7: Tuples</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="tuples_debug.html">Tuples Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tuples_output.html">Tuples Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tuples_code.html">Tuples Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="lists.html">Chp-8: Lists</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="lists_debug.html">Lists Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lists_output.html">Lists Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lists_code.html">Lists Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="functions.html">Chp-9: Functions</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="functions_debug.html">Functions Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions_output.html">Functions Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions_code.html">Functions Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Chp-10: Sets</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="sets_debug.html">Sets Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sets_output.html">Strings Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sets_code.html">Sets Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="dictionaries.html">Chp-11 Dictionaries</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="dictionaries_debug.html">Dictionaries Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictionaries_output.html">Dictionaries Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictionaries_code.html">Dictionaries Code</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -532,7 +557,7 @@ Type of emppty_set: &lt;class &#39;set&#39;&gt;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{True, 2, &#39;USA&#39;, 9.123}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;USA&#39;, True, 2, 9.123}
 </pre></div>
 </div>
 </div>
@@ -577,7 +602,7 @@ Type of emppty_set: &lt;class &#39;set&#39;&gt;
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Type of char_set: &lt;class &#39;set&#39;&gt;
-char_set        : {&#39;e&#39;, &#39;l&#39;, &#39;H&#39;, &#39;o&#39;}
+char_set        : {&#39;o&#39;, &#39;H&#39;, &#39;e&#39;, &#39;l&#39;}
 </pre></div>
 </div>
 </div>
@@ -831,7 +856,7 @@ s2 - s1: {6, 7}
 <h3>Symmetric Difference<a class="headerlink" href="#symmetric-difference" title="Permalink to this heading">#</a></h3>
 <p>The ^ (caret) operator returns a new set consisting of elements in either one of the two sets but not both.</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">s1</span> <span class="pre">^</span> <span class="pre">s2</span></code> and  <code class="docutils literal notranslate"><span class="pre">s2</span> <span class="pre">-</span> <span class="pre">s1</span></code> are same.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">s1</span> <span class="pre">^</span> <span class="pre">s2</span></code> and  <code class="docutils literal notranslate"><span class="pre">s2</span> <span class="pre">^</span> <span class="pre">s1</span></code> are same.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -851,7 +876,7 @@ s2 ^ s1: {1, 2, 6, 7}
 </div>
 </div>
 <ul class="simple">
-<li><p>The symmetric_difference() method of sets can also be used to obtain a new set consisting of the elementsin either one of the two sets but not both.</p></li>
+<li><p>The symmetric_difference() method of sets can also be used to obtain a new set consisting of the elements in either one of the two sets but not both.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1210,16 +1235,18 @@ set s  after using remove(): {1, 2, 4, 5}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>California
-Florida
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Florida
+California
+Oklahoma
 Arizona
 Texas
-Oklahoma
 </pre></div>
 </div>
 </div>
 </div>
 </section>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1253,20 +1280,20 @@ Oklahoma
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="functions.html"
+       href="functions_code.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Chp-9: Functions</p>
+        <p class="prev-next-title">Functions Code</p>
       </div>
     </a>
     <a class="right-next"
-       href="dictionaries.html"
+       href="sets_debug.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Chp-11 Dictionaries</p>
+        <p class="prev-next-title">Sets Debugging</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

@@ -229,8 +229,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="functions_code.html">Functions Code</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="sets.html">Chp-10: Sets</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="dictionaries.html">Chp-11 Dictionaries</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="sets.html">Chp-10: Sets</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="sets_debug.html">Sets Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sets_output.html">Strings Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sets_code.html">Sets Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="dictionaries.html">Chp-11 Dictionaries</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="dictionaries_debug.html">Dictionaries Debugging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dictionaries_output.html">Dictionaries Output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dictionaries_code.html">Dictionaries Code</a></li>
@@ -611,6 +616,13 @@ Numbers in list as float: [3.0, 8.0, 5.0, 1.0, 7.0]</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reverse_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">char_list</span><span class="p">[</span><span class="o">-</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">char_list</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">reverse_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;a&#39;, &#39;t&#39;, &#39;g&#39;, &#39;u&#39;, &#39;l&#39;, &#39;j&#39;, &#39;l&#39;, &#39;f&#39;, &#39;p&#39;, &#39;k&#39;]
 </pre></div>
 </div>
 </div>
@@ -805,8 +817,8 @@ Output:</p>
 </section>
 <section id="id9">
 <h2>Question<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
-<p>Prompt the user for a name and store its lowercase letters in one list and uppercase letters in another, excluding any non-alphabetical characters
-<strong>Solution</strong></p>
+<p>Prompt the user for a name and store its lowercase letters in one list and uppercase letters in another, excluding any non-alphabetical characters.</p>
+<p><strong>Solution</strong></p>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter a name: &#39;</span><span class="p">)</span>
@@ -873,11 +885,11 @@ Upper Case Letters: [‘C’, ‘H’, ‘E’]</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-------
-|6|8|4|
+|3|9|6|
 -------
-|7|2|3|
+|1|4|2|
 -------
-|5|1|9|
+|5|7|8|
 -------
 </pre></div>
 </div>
@@ -909,11 +921,11 @@ Upper Case Letters: [‘C’, ‘H’, ‘E’]</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-------
-|4|5|3|
+|5|7|2|
 -------
-|1|6|2|
+|1|9|6|
 -------
-|9|8|7|
+|4|3|8|
 -------
 </pre></div>
 </div>
@@ -960,8 +972,8 @@ Upper Case Letters: [‘C’, ‘H’, ‘E’]</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Old List: [&#39;N&#39; &#39;N&#39; &#39;N&#39; &#39;N&#39; &#39;P&#39; &#39;P&#39; &#39;P&#39; &#39;P&#39; &#39;N&#39; &#39;P&#39;]
-New List: [0, 0, 0, 0, 1, 1, 1, 1, 0, 1]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Old List: [&#39;N&#39; &#39;N&#39; &#39;N&#39; &#39;P&#39; &#39;P&#39; &#39;N&#39; &#39;P&#39; &#39;P&#39; &#39;N&#39; &#39;P&#39;]
+New List: [0, 0, 0, 1, 1, 0, 1, 1, 0, 1]
 </pre></div>
 </div>
 </div>
@@ -1078,9 +1090,6 @@ New List: [0, 0, 0, 0, 1, 1, 1, 1, 0, 1]
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.9363821838346236, 0.5533167449931865, -1.2343219696001857, 0.8512565307587485, -0.6384423980690616, 1.7450758880554345, -0.34050261230349954]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 </div>
 </details>
 </div>
@@ -1151,7 +1160,6 @@ New List: [0, 0, 0, 0, 1, 1, 1, 1, 0, 1]
 </div>
 </div>
 </div>
-<p><strong>Solution</strong></p>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">char</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter a character:&#39;</span><span class="p">)</span>
@@ -1206,7 +1214,7 @@ Indexes: [169, 220, 254, 388, 460, 1354]</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;xkeva&#39;, &#39;tighe&#39;, &#39;rximi&#39;, &#39;huspt&#39;, &#39;wzmve&#39;, &#39;rvvzk&#39;, &#39;womjt&#39;, &#39;pokri&#39;, &#39;fwmkf&#39;, &#39;ugiis&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;ttlge&#39;, &#39;gbsgs&#39;, &#39;plahq&#39;, &#39;znlaf&#39;, &#39;mmouj&#39;, &#39;kjviq&#39;, &#39;xqrwe&#39;, &#39;omlac&#39;, &#39;jraui&#39;, &#39;bpyea&#39;]
 </pre></div>
 </div>
 </div>
