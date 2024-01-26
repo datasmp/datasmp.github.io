@@ -706,11 +706,11 @@ document.write(`
 <h2>Question<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
 <p>Ask for a number from the user</p>
 <ul class="simple">
-<li><p>Check whether the given number satisfies the following inequalty:
+<li><p>Check whether the given number satisfies the following inequality:
 $<span class="math notranslate nohighlight">\(x^2-3x+6&gt;192\)</span>$</p></li>
 <li><p>Display the conclusion.</p></li>
 </ul>
-<p><strong>Solution</strong></p>
+<p><strong>Solution-1</strong></p>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter a number: &#39;</span><span class="p">))</span>
@@ -718,6 +718,20 @@ $<span class="math notranslate nohighlight">\(x^2-3x+6&gt;192\)</span>$</p></li>
 <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">6</span>
 
 <span class="k">if</span> <span class="n">y</span> <span class="o">&gt;</span> <span class="mi">192</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> satisfies the inequality&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> does NOT satisfy the inequality&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p><strong>Solution-2</strong></p>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter a number: &#39;</span><span class="p">))</span>
+
+<span class="n">inequality</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">6</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">192</span>
+
+<span class="k">if</span> <span class="n">inequality</span><span class="p">:</span>
   <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> satisfies the inequality&#39;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
   <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> does NOT satisfy the inequality&#39;</span><span class="p">)</span>
