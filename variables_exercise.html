@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Google Colab &#8212; Python in Plain Terms</title>
+    <title>Variables Exercises &#8212; Python in Plain Terms</title>
   
   
   
@@ -62,11 +62,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'colab';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'variables_exercise';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Text Cell" href="colab_text.html" />
-    <link rel="prev" title="Python Introduction" href="python.html" />
+    <link rel="next" title="Chp-2: Input and Output" href="inout.html" />
+    <link rel="prev" title="Variables Code" href="variables_code.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -170,7 +172,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="acknowledge.html">Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python.html">Python Introduction</a></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Google Colab</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="colab.html">Google Colab</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="colab_text.html">Text Cell</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="colab_text_questions.html">Text Cell Questions</a></li>
 </ul>
@@ -183,11 +185,11 @@ const thebe_selector_output = ".output, .cell_output"
 
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="variables.html">Chp-1: Variables</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="variables.html">Chp-1: Variables</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="variables_debug.html">Variables Debugging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="variables_output.html">Variables Output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="variables_code.html">Variables Code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="variables_exercise.html">Variables Exercises</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Variables Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="inout.html">Chp-2: Input and Output</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -321,7 +323,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/datasmp/datasmp.github.io/issues/new?title=Issue%20on%20page%20%2Fcolab.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/datasmp/datasmp.github.io/issues/new?title=Issue%20on%20page%20%2Fvariables_exercise.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -351,7 +353,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/colab.ipynb" target="_blank"
+      <li><a href="_sources/variables_exercise.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -433,7 +435,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Google Colab</h1>
+    <h1>Variables Exercises</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -443,22 +445,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#google-drive">Google Drive</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-colab-to-your-google-drive">Installing Colab to your Google Drive</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-colab-notebook">Create a new Colab notebook</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rename-a-colab-file">Rename a Colab File</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#share-a-colab-file">Share a Colab File</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-tools">More Tools</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#theme">Theme</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#power-level-and-kitty-corgi-crab">Power Level, and Kitty, Corgi, Crab</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cells-in-colab">Cells in Colab</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-cells">Adding Cells</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#delete-move-and-comment">Delete, Move and Comment</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#short-cuts">Short cuts</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question-1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question-2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question-3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question-4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question-5</a></li>
 </ul>
             </nav>
         </div>
@@ -470,161 +461,68 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="google-colab">
-<h1>Google Colab<a class="headerlink" href="#google-colab" title="Permalink to this heading">#</a></h1>
-<p>Google Colab (Colaboratory) is a cloud-based notebook for writing and executing Python code.</p>
-<ul class="simple">
-<li><p>You need to sign into your Google account to execute code and save your notebook.</p></li>
-<li><p>There’s no requirement to install any software on your computer.</p></li>
-<li><p>Sharing your notebooks is easy, and Colab files are automatically saved to Google Drive.</p></li>
-</ul>
-<section id="google-drive">
-<h2>Google Drive<a class="headerlink" href="#google-drive" title="Permalink to this heading">#</a></h2>
-<p>Google Drive is used for storing files in the cloud.</p>
-<ul class="simple">
-<li><p>You can manage, modify, and share your files.</p></li>
-<li><p>By default, you have 15 GB of free storage, but there are also options for paid storage, such as 100 GB, 200 GB, and so on.</p></li>
-<li><p>Within your Google or Gmail account, you can access Google Drive and other applications by clicking on the Google Apps Icon, which has nine dots and resembles a square.</p></li>
-<li><p>By clicking on <code class="docutils literal notranslate"><span class="pre">+New</span></code> in the upper left corner of your Google Drive (located underneath the Drive icon), you can:</p>
-<ul>
-<li><p>Upload a folder or file to Drive</p></li>
-<li><p>Create Google Docs, Google Sheets, Google Slides, Google Forms, etc.</p></li>
-<li><p>When you click on the <code class="docutils literal notranslate"><span class="pre">More</span> <span class="pre">Actions</span></code> icon (three vertical dots on the right), you will see options to modify your folder.</p></li>
-<li><p>You can move, download, share, rename, or delete your files and folders.</p></li>
-</ul>
-</li>
-</ul>
-<p><img alt="" src="_images/four_drive2.png" /></p>
-</section>
-<section id="installing-colab-to-your-google-drive">
-<h2>Installing Colab to your Google Drive<a class="headerlink" href="#installing-colab-to-your-google-drive" title="Permalink to this heading">#</a></h2>
-<p>You can easily create Colab notebooks on your Google Drive by installing Colab onto your Google Drive (not onto your computer).</p>
-<ul class="simple">
-<li><p>Follow the following steps for installation:</p>
-<ol class="arabic simple">
-<li><p>Click on <code class="docutils literal notranslate"><span class="pre">+New</span></code> in the upper left corner of your Google Drive (located underneath the Drive icon).</p></li>
-<li><p>Choose the <code class="docutils literal notranslate"><span class="pre">More</span></code> option at the end.</p></li>
-<li><p>In the new menu, if you see the Google Colaboratory icon, it means you already have Colab installed on your drive.</p></li>
-<li><p>If there is no Google Colaboratory icon, then click on <code class="docutils literal notranslate"><span class="pre">Connect</span> <span class="pre">More</span> <span class="pre">Apps.</span></code></p></li>
-<li><p>Search for Google Colaboratory.</p></li>
-<li><p>Click on Google Colaboratory in the search results and install Colab on your drive.</p></li>
-</ol>
-</li>
-</ul>
-<p><img alt="" src="_images/four_colab_install2.png" /></p>
-</section>
-<section id="create-a-new-colab-notebook">
-<h2>Create a new Colab notebook<a class="headerlink" href="#create-a-new-colab-notebook" title="Permalink to this heading">#</a></h2>
-<p>Follow these steps:</p>
-<ol class="arabic simple">
-<li><p>Click on <code class="docutils literal notranslate"><span class="pre">+New</span></code> in the upper left corner of your Google Drive (located underneath the Drive icon).</p></li>
-<li><p>Choose the <code class="docutils literal notranslate"><span class="pre">More</span></code> option at the end.</p></li>
-<li><p>In the new menu, click on <code class="docutils literal notranslate"><span class="pre">Google</span> <span class="pre">Colaboratory</span></code>.</p></li>
-</ol>
-<p>Additionally, instead of using <code class="docutils literal notranslate"><span class="pre">+New,</span></code> you can right-click to access its contents.</p>
-</section>
-<section id="rename-a-colab-file">
-<h2>Rename a Colab File<a class="headerlink" href="#rename-a-colab-file" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>There are two ways to rename a Colab notebook:</p>
-<ul>
-<li><p>Use the <code class="docutils literal notranslate"><span class="pre">More</span> <span class="pre">Actions</span></code> icon (three vertical dots on the right).</p></li>
-<li><p>Open the Colab notebook (the default name is Untitled0) and click on its name in the upper left corner, next to the Google Drive icon.</p></li>
-</ul>
-</li>
-</ul>
-<p><img alt="" src="_images/rename2.png" /></p>
-</section>
-<section id="share-a-colab-file">
-<h2>Share a Colab File<a class="headerlink" href="#share-a-colab-file" title="Permalink to this heading">#</a></h2>
-<p>To access the share options, you can do one of the following:</p>
-<ol class="arabic simple">
-<li><p>Use the <code class="docutils literal notranslate"><span class="pre">More</span> <span class="pre">Actions</span></code> icon (three vertical dots on the right).</p></li>
-<li><p>Open the Colab notebook and click on <code class="docutils literal notranslate"><span class="pre">Share</span></code> in the upper right corner.</p></li>
-</ol>
-<hr class="docutils" />
-<p>There are two ways to share a Colab notebook:</p>
-<ol class="arabic simple">
-<li><p>Enter the Gmail address of the person you want to share the notebook with.</p></li>
-<li><p>Copy the link and share it, but change the last part from <code class="docutils literal notranslate"><span class="pre">Restricted</span></code> to <code class="docutils literal notranslate"><span class="pre">Anyone</span> <span class="pre">with</span> <span class="pre">the</span> <span class="pre">link.</span></code></p></li>
-</ol>
-<hr class="docutils" />
-<p>You have the following options to assign the person:</p>
-<ul class="simple">
-<li><p>Editor: Can change everything in the document.</p></li>
-<li><p>Commenter: Can write comments.</p></li>
-<li><p>Viewer: Can download a copy of the file but cannot modify your original file</p></li>
-</ul>
-<p><img alt="" src="_images/share_four3.png" /></p>
-</section>
-<section id="more-tools">
-<h2>More Tools<a class="headerlink" href="#more-tools" title="Permalink to this heading">#</a></h2>
-<section id="theme">
-<h3>Theme<a class="headerlink" href="#theme" title="Permalink to this heading">#</a></h3>
-<p>There are three theme options:</p>
-<ul class="simple">
-<li><p>light (white background)</p></li>
-<li><p>dark (black background)</p></li>
-<li><p>adaptive (color depends on time)</p></li>
-</ul>
-<p>Follow these steps on the toolbar to change the theme:  <code class="docutils literal notranslate"><span class="pre">Tools</span></code> –&gt; <code class="docutils literal notranslate"><span class="pre">Settings</span></code> –&gt; <code class="docutils literal notranslate"><span class="pre">Theme</span></code></p>
-</section>
-<section id="power-level-and-kitty-corgi-crab">
-<h3>Power Level, and Kitty, Corgi, Crab<a class="headerlink" href="#power-level-and-kitty-corgi-crab" title="Permalink to this heading">#</a></h3>
-<p>These are some fun tools to make the notebook more fancy:</p>
-<ul class="simple">
-<li><p>Go to <code class="docutils literal notranslate"><span class="pre">Tools</span></code> –&gt; <code class="docutils literal notranslate"><span class="pre">Settings</span></code> –&gt; <code class="docutils literal notranslate"><span class="pre">Miscellaneous</span></code></p></li>
-<li><p>You can adjust the power level to add sparks when you write or execute code.</p></li>
-<li><p>You can add walking Kitty, Corgi, and Crab characters to your notebook.</p></li>
-<li><p><img alt="" src="_images/theme_kitty2.png" /></p></li>
-</ul>
-</section>
-</section>
-<section id="cells-in-colab">
-<h2>Cells in Colab<a class="headerlink" href="#cells-in-colab" title="Permalink to this heading">#</a></h2>
-<p>These are rectangular-shaped boxes that come in two types:</p>
-<ul class="simple">
-<li><p>Text Cell: Used for writing explanatory text.</p></li>
-<li><p>Code Cell: Used for writing and executing Python code.</p></li>
-</ul>
-<hr class="docutils" />
-<ul class="simple">
-<li><p>By default, a new notebook contains one code cell.</p></li>
-<li><p>You can add, delete, and move cells up or down.</p></li>
-<li><p>A Colab notebook is essentially a list of cells.</p></li>
-</ul>
-<section id="adding-cells">
-<h3>Adding Cells<a class="headerlink" href="#adding-cells" title="Permalink to this heading">#</a></h3>
-<p>You can add a text or code cell by using the <code class="docutils literal notranslate"><span class="pre">+Code</span></code> and <code class="docutils literal notranslate"><span class="pre">+Text</span></code> buttons on the toolbar (upper left corner).</p>
-<ul class="simple">
-<li><p>You can use these buttons to add a cell below.</p></li>
-</ul>
-<p>When you move the cursor to the upper (lower) middle of a cell, you will also see <code class="docutils literal notranslate"><span class="pre">+Code</span></code> and <code class="docutils literal notranslate"><span class="pre">+Text</span></code> buttons.</p>
-<ul class="simple">
-<li><p>You can use them to add a cell above (below).</p></li>
-</ul>
-<p><img alt="" src="_images/cell_three2.png" /></p>
-</section>
-<section id="delete-move-and-comment">
-<h3>Delete, Move and Comment<a class="headerlink" href="#delete-move-and-comment" title="Permalink to this heading">#</a></h3>
-<p>When you click on a cell, a menu will appear in the upper right corner of the cell. Using this menu:</p>
-<ul class="simple">
-<li><p>You can delete the cell.</p></li>
-<li><p>You can move the cell up or down.</p></li>
-<li><p>You can add a comment to the cell.</p></li>
-</ul>
-</section>
-<section id="short-cuts">
-<h3>Short cuts<a class="headerlink" href="#short-cuts" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">A</span></code>: Add a code cell above</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">B</span></code>: Add a code cell below</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">shift</span></code>+<code class="docutils literal notranslate"><span class="pre">Enter</span></code>: Execute a code cell</p></li>
-</ul>
-</section>
-</section>
-<div class="toctree-wrapper compound">
+  <section class="tex2jax_ignore mathjax_ignore" id="variables-exercises">
+<h1>Variables Exercises<a class="headerlink" href="#variables-exercises" title="Permalink to this heading">#</a></h1>
+<section id="question-1">
+<h2>Question-1<a class="headerlink" href="#question-1" title="Permalink to this heading">#</a></h2>
+<p>By using the variables <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> given below, print 353535 using 4 different pieces of code.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span>
+</pre></div>
 </div>
+</div>
+</div>
+</section>
+<section id="question-2">
+<h2>Question-2<a class="headerlink" href="#question-2" title="Permalink to this heading">#</a></h2>
+<p>Print the letter <em>U</em> using the character <code class="docutils literal notranslate"><span class="pre">+</span></code>.</p>
+<ul class="simple">
+<li><p>The vertical left and right parts of <em>U</em> have five <code class="docutils literal notranslate"><span class="pre">+</span></code> characters each.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">horizontal</span> <span class="o">=</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>The variable <em>horizontal</em> represents the number of <code class="docutils literal notranslate"><span class="pre">+</span></code> characters with one space between them in the bottom horizontal part.</p></li>
+</ul>
+<p><strong>Examples</strong>
+<img alt="" src="_images/horizontal.png" /></p>
+</section>
+<section id="question-3">
+<h2>Question-3<a class="headerlink" href="#question-3" title="Permalink to this heading">#</a></h2>
+<p>Print the statement “I went to Italy in 2015.” using the country and year variables below.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">country</span> <span class="o">=</span> <span class="s1">&#39;Italy&#39;</span>
+<span class="n">year</span> <span class="o">=</span> <span class="mi">2015</span>
+</pre></div>
+</div>
+<p><em>Warning: There is no space before the period.</em></p>
+</section>
+<section id="question-4">
+<h2>Question-4<a class="headerlink" href="#question-4" title="Permalink to this heading">#</a></h2>
+<p>Create a variable named <code class="docutils literal notranslate"><span class="pre">r</span></code> and assign the value of <span class="math notranslate nohighlight">\(5\)</span> to it.</p>
+<ul class="simple">
+<li><p>Print the area and perimeter of the circle with a radius equal to <code class="docutils literal notranslate"><span class="pre">r</span></code>.</p></li>
+<li><p>Round them to the nearest hundredth.</p></li>
+<li><p>Hint:</p>
+<ul>
+<li><p>Perimeter = <span class="math notranslate nohighlight">\(2\pi r\)</span>, Area = <span class="math notranslate nohighlight">\(\pi r^2\)</span></p></li>
+<li><p>Import <span class="math notranslate nohighlight">\(\pi\)</span> from a module.</p></li>
+</ul>
+</li>
+<li><p>Output:</p>
+<ul>
+<li><p>Perimeter: 31.42</p></li>
+<li><p>Area     : 78.54</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="question-5">
+<h2>Question-5<a class="headerlink" href="#question-5" title="Permalink to this heading">#</a></h2>
+<p>Print the following using the character <code class="docutils literal notranslate"><span class="pre">*</span></code>, spaces and the variable <code class="docutils literal notranslate"><span class="pre">n=5</span></code>.</p>
+<p><img alt="" src="_images/v_stars.png" /></p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -658,20 +556,20 @@ document.write(`
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="python.html"
+       href="variables_code.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Python Introduction</p>
+        <p class="prev-next-title">Variables Code</p>
       </div>
     </a>
     <a class="right-next"
-       href="colab_text.html"
+       href="inout.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Text Cell</p>
+        <p class="prev-next-title">Chp-2: Input and Output</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -690,22 +588,11 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#google-drive">Google Drive</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-colab-to-your-google-drive">Installing Colab to your Google Drive</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-colab-notebook">Create a new Colab notebook</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rename-a-colab-file">Rename a Colab File</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#share-a-colab-file">Share a Colab File</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-tools">More Tools</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#theme">Theme</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#power-level-and-kitty-corgi-crab">Power Level, and Kitty, Corgi, Crab</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cells-in-colab">Cells in Colab</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-cells">Adding Cells</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#delete-move-and-comment">Delete, Move and Comment</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#short-cuts">Short cuts</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question-1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question-2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question-3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question-4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question-5</a></li>
 </ul>
   </nav></div>
 
