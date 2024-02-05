@@ -447,8 +447,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#receipt-example">Receipt Example</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#whitespaces">Whitespaces</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#print">print()</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#whitespaces">Whitespaces</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sep-parameter">sep parameter</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#end-parameter">end parameter</a></li>
 </ul>
@@ -476,102 +476,103 @@ document.write(`
 </ul>
 <section id="input">
 <h2>input()<a class="headerlink" href="#input" title="Permalink to this heading">#</a></h2>
-<p>The input() function is a built-in function utilized to obtain data or information from the user.</p>
+<p>The <em>input()</em> function is a built-in function used to obtain data or information from the user.</p>
 <ul class="simple">
 <li><p>It returns a string.</p></li>
-<li><p>To receive a number from the user, you’ll need to convert the output of the input() function to an integer or float.</p></li>
+<li><p>To receive a number from the user, you’ll need to convert the output of the <em>input()</em> function to an integer or float.</p></li>
 <li><p>You can include a message as a string to provide directions to the user.</p></li>
 <li><p>Upon running the code, your message will be displayed, and a box will prompt the user for input.</p></li>
 <li><p>After entering the input, the user should press the enter key.</p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ask for the user&#39;s birth year</span>
-<span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter your birth year: &#39;</span><span class="p">)</span>
+<p>In the following code, the user is prompted with the message <code class="docutils literal notranslate"><span class="pre">Enter</span> <span class="pre">your</span> <span class="pre">birth</span> <span class="pre">year:</span> </code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter your birth year: &#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>Two important points in the above code:</p>
+<p>Two important points in the above code:</p>
 <ol class="arabic simple">
-<li><p>Even though the user enters a number, the input() function returns a string.</p>
-<ul>
+<li><p>Even though the user enters a number, the <em>input()</em> function returns a string.</p>
+<ul class="simple">
 <li><p>To perform algebraic operations, you’ll need to convert it to an integer or float.</p></li>
 </ul>
 </li>
 <li><p>We must assign the value given by the user to a variable to store and use it.</p>
-<ul>
+<ul class="simple">
 <li><p>In the provided code, as no variable is used, there’s no way to access the given birth year in subsequent lines.</p></li>
 </ul>
 </li>
 </ol>
-</li>
+<p>In the following code, we will once again ask for the user’s birth year, but this time we will assign it to a variable.</p>
+<ul class="simple">
+<li><p>This way, we will be able to access the birth year through the variable <code class="docutils literal notranslate"><span class="pre">birth_year</span></code> in any cell.</p></li>
+<li><p>Note that the type of the <code class="docutils literal notranslate"><span class="pre">birth_year</span></code> variable is <em>string</em> because the <em>input()</em> function returns any entered value as a string.</p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ask for the user&#39;s birth year</span>
-<span class="c1"># assign the given value to the birth_year variable.</span>
-<span class="c1"># the type of the birth_year variable is a string.</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">birth_year</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter your birth year: &#39;</span><span class="p">)</span>
 
-<span class="n">birth_year</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter your birth year: &#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Birth year type:&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">birth_year</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;birth_year type:&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">birth_year</span><span class="p">))</span>
 </pre></div>
 </div>
 <p><strong>Output</strong><br />
-<code class="docutils literal notranslate"><span class="pre">Enter</span> <span class="pre">your</span> <span class="pre">birth</span> <span class="pre">year:</span>&#160; <span class="pre">2000</span>&#160;&#160;&#160; </code><br />
-<code class="docutils literal notranslate"><span class="pre">Birth</span> <span class="pre">year</span> <span class="pre">type:</span> <span class="pre">&lt;class</span> <span class="pre">'str'&gt;</span>&#160; </code></p>
+Enter your birth year:  2000<br />
+birth_year type: &lt;class ‘str’&gt;</p>
 <ul class="simple">
 <li><p>If you intend to perform algebraic operations, such as calculating age, using the <code class="docutils literal notranslate"><span class="pre">birth_year</span></code> variable, you’ll need to convert it to a numerical type.</p></li>
 <li><p>Otherwise, an error message will be generated.</p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ERROR</span>
-<span class="c1"># in the second line a string value (&#39;2000&#39;) is subtracted from an integer (2024)</span>
-<span class="n">birth_year</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter your birth year: &#39;</span><span class="p">)</span>
-<span class="n">age</span> <span class="o">=</span> <span class="mi">2024</span> <span class="o">-</span> <span class="n">birth_year</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">birth_year</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter your birth year: &#39;</span><span class="p">)</span>
+
+<span class="n">age</span> <span class="o">=</span> <span class="mi">2024</span> <span class="o">-</span> <span class="n">birth_year</span>  <span class="c1"># ERROR: integer 2024 -  string birth_year</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>To avoid this, convert <code class="docutils literal notranslate"><span class="pre">birth_year</span></code> to an integer.</p></li>
-<li><p>This can be done in a couple of different ways.</p></li>
+<li><p>To avoid this, convert <code class="docutils literal notranslate"><span class="pre">birth_year</span></code> to an integer. This can be done in a couple of different ways.</p></li>
+<li><p>In the second line of the following code, the integer value of <em>birth_year</em> is used in subtraction.</p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># convert the value of birth_year to integer</span>
-<span class="c1"># type of birth_year is still string</span>
-<span class="n">birth_year</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter your birth year: &#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">birth_year</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter your birth year: &#39;</span><span class="p">)</span>
+
 <span class="n">age</span> <span class="o">=</span> <span class="mi">2024</span> <span class="o">-</span> <span class="nb">int</span><span class="p">(</span><span class="n">birth_year</span><span class="p">)</span>    
+
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Your age is&#39;</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Birth year type:&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">birth_year</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;birth_year type:&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">birth_year</span><span class="p">))</span>
 </pre></div>
 </div>
 <p><strong>Output</strong><br />
-<code class="docutils literal notranslate"><span class="pre">Enter</span> <span class="pre">your</span> <span class="pre">birth</span> <span class="pre">year:</span>&#160; <span class="pre">2000</span>&#160;&#160;&#160; </code><br />
-<code class="docutils literal notranslate"><span class="pre">Your</span> <span class="pre">age</span> <span class="pre">is</span> <span class="pre">24</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code><br />
-<code class="docutils literal notranslate"><span class="pre">Birth</span> <span class="pre">year</span> <span class="pre">type:</span> <span class="pre">&lt;class</span> <span class="pre">'str'&gt;</span>&#160; </code></p>
+Enter your birth year:  2000<br />
+Your age is 24<br />
+birth_year type: &lt;class ‘str’&gt;</p>
 <ul class="simple">
 <li><p>In the above code, the type of <code class="docutils literal notranslate"><span class="pre">birth_year</span></code> was not changed; it remains a string because we did not assign a new value to it.</p></li>
 <li><p>This can be accomplished in a concise manner at the very beginning of the code.</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">birth_year</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter your birth year: &#39;</span><span class="p">)</span>
-<span class="n">birth_year</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">birth_year</span><span class="p">)</span>   <span class="c1"># assign a new value to birth_year variable</span>
+<span class="n">birth_year</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">birth_year</span><span class="p">)</span>   <span class="c1"># assign a new value to the birth_year variable</span>
+
 <span class="n">age</span> <span class="o">=</span> <span class="mi">2024</span> <span class="o">-</span> <span class="n">birth_year</span> 
+
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Your age is&#39;</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Birth year type:&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">birth_year</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;birth_year type:&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">birth_year</span><span class="p">))</span>
 </pre></div>
 </div>
 <p><strong>Output</strong><br />
-<code class="docutils literal notranslate"><span class="pre">Enter</span> <span class="pre">your</span> <span class="pre">birth</span> <span class="pre">year:</span> <span class="pre">2000</span>&#160;&#160;&#160; </code><br />
-<code class="docutils literal notranslate"><span class="pre">Your</span> <span class="pre">age</span> <span class="pre">is</span> <span class="pre">24</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code><br />
-<code class="docutils literal notranslate"><span class="pre">Birth</span> <span class="pre">year</span> <span class="pre">type:</span> <span class="pre">&lt;class</span> <span class="pre">'int'&gt;</span> </code></p>
+Enter your birth year: 2000<br />
+Your age is 24<br />
+birth_year type: &lt;class ‘int’&gt;</p>
 <ul class="simple">
 <li><p>There is a shortcut for performing this conversion.</p></li>
 <li><p>Upon receiving input from the user, we can immediately convert that value to an integer.</p></li>
+<li><p>In the following code, the <em>input()</em> function returns a string, and the <em>int()</em> function converts this string to an integer.</p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># input() function returns a string </span>
-<span class="c1"># int() takes this string and returns an integer</span>
-<span class="n">birth_year</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter your birth year: &#39;</span><span class="p">))</span>  
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">birth_year</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter your birth year: &#39;</span><span class="p">))</span>  
+
 <span class="n">age</span> <span class="o">=</span> <span class="mi">2024</span> <span class="o">-</span> <span class="n">birth_year</span> 
+
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Your age is&#39;</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Birth year type:&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">birth_year</span><span class="p">))</span>
 </pre></div>
 </div>
 <p><strong>Output</strong><br />
-<code class="docutils literal notranslate"><span class="pre">Enter</span> <span class="pre">your</span> <span class="pre">birth</span> <span class="pre">year:</span> <span class="pre">2000</span>&#160;&#160;&#160; </code><br />
-<code class="docutils literal notranslate"><span class="pre">Your</span> <span class="pre">age</span> <span class="pre">is</span> <span class="pre">24</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code><br />
-<code class="docutils literal notranslate"><span class="pre">Birth</span> <span class="pre">year</span> <span class="pre">type:</span> <span class="pre">&lt;class</span> <span class="pre">'int'&gt;</span> </code></p>
+Enter your birth year: 2000<br />
+Your age is 24<br />
+Birth year type: &lt;class ‘int’&gt;</p>
 <section id="receipt-example">
 <h3>Receipt Example<a class="headerlink" href="#receipt-example" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
@@ -600,50 +601,70 @@ document.write(`
 <span class="n">total</span> <span class="o">=</span> <span class="n">subtotal</span><span class="o">+</span><span class="n">tip</span><span class="o">+</span><span class="n">tax</span>
 
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="o">*</span><span class="mi">30</span><span class="p">)</span>     <span class="c1"># use repetition: 30 many * characters</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;+&#39;</span><span class="o">*</span><span class="mi">30</span><span class="p">)</span>     <span class="c1"># use repetition: 30 many * characters</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hamburger:&#39;</span><span class="p">,</span><span class="n">hamburger</span><span class="p">,</span><span class="s1">&#39;x 5= $&#39;</span><span class="p">,</span><span class="n">hamburger</span><span class="o">*</span><span class="mi">5</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Coke     :&#39;</span><span class="p">,</span><span class="n">coke</span><span class="p">,</span><span class="s1">&#39;x 2= $&#39;</span><span class="p">,</span><span class="n">coke</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Tip      :         $&#39;</span><span class="p">,</span><span class="n">tip</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Tax      :         $&#39;</span><span class="p">,</span><span class="n">tax</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">30</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;+&#39;</span><span class="o">*</span><span class="mi">30</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Total    :         $&#39;</span><span class="p">,</span><span class="n">total</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="o">*</span><span class="mi">30</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;+&#39;</span><span class="o">*</span><span class="mi">30</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>Output</strong></p>
-<p><code class="docutils literal notranslate"><span class="pre">Number</span> <span class="pre">of</span> <span class="pre">hamburgers:10</span>&#160;&#160;&#160;&#160;&#160;&#160; </code><br />
-<code class="docutils literal notranslate"><span class="pre">Number</span> <span class="pre">of</span> <span class="pre">cokes:20</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code><br />
-<code class="docutils literal notranslate"><span class="pre">******************************</span></code><br />
-<code class="docutils literal notranslate"><span class="pre">Hamburger:</span> <span class="pre">10</span> <span class="pre">x</span> <span class="pre">5=</span> <span class="pre">$</span> <span class="pre">50</span>&#160;&#160;&#160;&#160;&#160;&#160; </code><br />
-<code class="docutils literal notranslate"><span class="pre">Coke</span>&#160;&#160;&#160;&#160; <span class="pre">:</span> <span class="pre">20</span> <span class="pre">x</span> <span class="pre">2=</span> <span class="pre">$</span> <span class="pre">40</span>&#160;&#160;&#160;&#160;&#160;&#160; </code><br />
-<code class="docutils literal notranslate"><span class="pre">Tip</span>&#160;&#160;&#160;&#160;&#160; <span class="pre">:</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">$</span> <span class="pre">13.5</span>&#160;&#160;&#160;&#160; </code><br />
-<code class="docutils literal notranslate"><span class="pre">Tax</span>&#160;&#160;&#160;&#160;&#160; <span class="pre">:</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">$</span> <span class="pre">9.0</span>&#160;&#160;&#160;&#160;&#160; </code><br />
-<code class="docutils literal notranslate"><span class="pre">------------------------------</span></code><br />
-<code class="docutils literal notranslate"><span class="pre">Total</span>&#160;&#160;&#160; <span class="pre">:</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">$</span> <span class="pre">112.5</span>&#160;&#160;&#160; </code><br />
-<code class="docutils literal notranslate"><span class="pre">******************************</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Number</span> <span class="pre">of</span> <span class="pre">hamburgers:10</span>&#160;&#160;&#160;&#160; </code><br />
+<code class="docutils literal notranslate"><span class="pre">Number</span> <span class="pre">of</span> <span class="pre">cokes</span>&#160;&#160;&#160;&#160; <span class="pre">:20</span>&#160;&#160;&#160;&#160; </code><br />
+<code class="docutils literal notranslate"><span class="pre">++++++++++++++++++++++++++++++</span></code><br />
+<code class="docutils literal notranslate"><span class="pre">Hamburger:</span> <span class="pre">10</span> <span class="pre">x</span> <span class="pre">5=</span> <span class="pre">$</span> <span class="pre">50</span>&#160;&#160;&#160;&#160; </code><br />
+<code class="docutils literal notranslate"><span class="pre">Coke</span>&#160;&#160;&#160;&#160; <span class="pre">:</span> <span class="pre">20</span> <span class="pre">x</span> <span class="pre">2=</span> <span class="pre">$</span> <span class="pre">40</span>&#160;&#160;&#160;&#160; </code><br />
+<code class="docutils literal notranslate"><span class="pre">Tip</span>&#160;&#160;&#160;&#160;&#160; <span class="pre">:</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">$</span> <span class="pre">13.5</span>&#160;&#160; </code><br />
+<code class="docutils literal notranslate"><span class="pre">Tax</span>&#160;&#160;&#160;&#160;&#160; <span class="pre">:</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">$</span> <span class="pre">9.0</span>&#160;&#160;&#160; </code><br />
+<code class="docutils literal notranslate"><span class="pre">++++++++++++++++++++++++++++++</span></code><br />
+<code class="docutils literal notranslate"><span class="pre">Total</span>&#160;&#160;&#160; <span class="pre">:</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">$</span> <span class="pre">112.5</span>&#160; </code><br />
+<code class="docutils literal notranslate"><span class="pre">++++++++++++++++++++++++++++++</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;+&#39;</span><span class="o">*</span><span class="mi">30</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>++++++++++++++++++++++++++++++
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
-<section id="print">
-<h2>print()<a class="headerlink" href="#print" title="Permalink to this heading">#</a></h2>
-<p>The print() function is a built-in function that displays output on the screen.</p>
-<ul class="simple">
-<li><p>It posseses two significant parameters: <code class="docutils literal notranslate"><span class="pre">sep</span></code> and <code class="docutils literal notranslate"><span class="pre">end</span></code>.</p></li>
-</ul>
 <section id="whitespaces">
-<h3>Whitespaces<a class="headerlink" href="#whitespaces" title="Permalink to this heading">#</a></h3>
+<h2>Whitespaces<a class="headerlink" href="#whitespaces" title="Permalink to this heading">#</a></h2>
+<p>The following whitespace characters are frequently used in print statements for spacing.</p>
 <ul class="simple">
-<li><p>The following whitespace characters are frequently used in print statements.</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">\n</span></code>: new line</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">\n</span></code>: new linw</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">\t</span></code>: tab (seven spaces)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">\b</span></code>: backspace</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">\r</span></code>: carriage return (goes to the beginning of the line)</p></li>
+<li><p>Moves to the next line.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\t</span></code>: tab</p>
+<ul>
+<li><p>Inserts a tabulation, equivalent to seven spaces.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\b</span></code>: backspace</p>
+<ul>
+<li><p>Deletes the character to the left.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\r</span></code>: carriage return</p>
+<ul>
+<li><p>Moves to the beginning of the line.</p></li>
+<li><p>Does not delete any characters.</p></li>
 </ul>
 </li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A</span><span class="se">\n</span><span class="s1">B&#39;</span><span class="p">)</span> <span class="c1"># after A it goes to the next line</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A</span><span class="se">\n</span><span class="s1">B&#39;</span><span class="p">)</span> <span class="c1"># after A it moves to the next line</span>
 </pre></div>
 </div>
 </div>
@@ -657,8 +678,8 @@ B
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A       B&#39;</span><span class="p">)</span>     <span class="c1"># 7 spaces</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">7</span><span class="o">+</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>   <span class="c1"># repetition of the string &#39; &#39; seven times</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A</span><span class="se">\t</span><span class="s1">B&#39;</span><span class="p">)</span>          <span class="c1"># using \t</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">7</span><span class="o">+</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>   <span class="c1"># repetition of the string &#39; &#39; (one space) seven times</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A</span><span class="se">\t</span><span class="s1">B&#39;</span><span class="p">)</span>          <span class="c1"># tab</span>
 </pre></div>
 </div>
 </div>
@@ -672,7 +693,7 @@ A	B
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ABC</span><span class="se">\b</span><span class="s1">D&#39;</span><span class="p">)</span> <span class="c1"># C is deleted by \b</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ABC</span><span class="se">\b</span><span class="s1">D&#39;</span><span class="p">)</span> <span class="c1"># C is deleted by &#39;\b&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -684,7 +705,7 @@ A	B
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ABC</span><span class="se">\b\b</span><span class="s1">D&#39;</span><span class="p">)</span> <span class="c1"># C and B are deleted by two \b s</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ABC</span><span class="se">\b\b</span><span class="s1">D&#39;</span><span class="p">)</span> <span class="c1"># C and B are deleted by two &#39;\b&#39; s</span>
 </pre></div>
 </div>
 </div>
@@ -694,9 +715,12 @@ A	B
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>In the following code, after the character ‘C’, the carriage return <code class="docutils literal notranslate"><span class="pre">\r</span></code> moves the cursor to the beginning of the line, and ‘D’ overwrites ‘A’.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ABC</span><span class="se">\r</span><span class="s1">D&#39;</span><span class="p">)</span> <span class="c1"># After C it goes back to the beginning therefore A, B, and C are deleted</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ABC</span><span class="se">\r</span><span class="s1">D&#39;</span><span class="p">)</span> <span class="c1"># carriage return</span>
 </pre></div>
 </div>
 </div>
@@ -708,6 +732,12 @@ D
 </div>
 </div>
 </section>
+<section id="print">
+<h2>print()<a class="headerlink" href="#print" title="Permalink to this heading">#</a></h2>
+<p>The print() function is a built-in function that displays output on the screen.</p>
+<ul class="simple">
+<li><p>It has two significant parameters: <code class="docutils literal notranslate"><span class="pre">sep</span></code> and <code class="docutils literal notranslate"><span class="pre">end</span></code>.</p></li>
+</ul>
 <section id="sep-parameter">
 <h3>sep parameter<a class="headerlink" href="#sep-parameter" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
@@ -733,7 +763,7 @@ D
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Tom&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>   <span class="c1">#  values are separated by one - (dash)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>   <span class="c1">#  values are separated by one &#39;-&#39; (dash)</span>
 </pre></div>
 </div>
 </div>
@@ -746,7 +776,7 @@ D
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Tom&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;***&#39;</span><span class="p">)</span> <span class="c1">#  values are separated by three asterisks</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;***&#39;</span><span class="p">)</span> <span class="c1">#  values are separated by three &#39;*&#39;s (asterisk)</span>
 </pre></div>
 </div>
 </div>
@@ -767,10 +797,10 @@ D
 <p><strong>Example</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>  <span class="c1"># end=&#39;\n&#39; by default, after printing A it goes to next line</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>  <span class="c1"># end=&#39;\n&#39; by default, after printing B it goes to next line</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>  <span class="c1"># end=&#39;\n&#39; by default, after printing C it goes to next line</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>  <span class="c1"># end=&#39;\n&#39; by default, after printing C it goes to next line</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>  <span class="c1"># end=&#39;\n&#39; by default, after printing A it moes to next line</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>  <span class="c1"># end=&#39;\n&#39; by default, after printing B it moes to next line</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>  <span class="c1"># end=&#39;\n&#39; by default, after printing C it moes to next line</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>  <span class="c1"># end=&#39;\n&#39; by default, after printing C it moes to next line</span>
 </pre></div>
 </div>
 </div>
@@ -787,9 +817,9 @@ D
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>  <span class="c1"># end=&#39;--&#39;           , after printing A it prints &#39;--&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>            <span class="c1"># end=&#39;\n&#39; by default, after printing B it goes to next line</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>            <span class="c1"># end=&#39;\n&#39; by default, after printing C it goes to next line</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>            <span class="c1"># end=&#39;\n&#39; by default, after printing C it goes to next line</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>            <span class="c1"># end=&#39;\n&#39; by default, after printing B it moes to next line</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>            <span class="c1"># end=&#39;\n&#39; by default, after printing C it moes to next line</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>            <span class="c1"># end=&#39;\n&#39; by default, after printing C it moes to next line</span>
 </pre></div>
 </div>
 </div>
@@ -806,8 +836,8 @@ D
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>  <span class="c1"># end=&#39;--&#39;           , after printing A it prints --</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">)</span>   <span class="c1"># end=&#39;+&#39;            , after printing B it prints +</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>            <span class="c1"># end=&#39;\n&#39; by default, after printing C it goes to next line</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>            <span class="c1"># end=&#39;\n&#39; by default, after printing C it goes to next line</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>            <span class="c1"># end=&#39;\n&#39; by default, after printing C it moes to next line</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>            <span class="c1"># end=&#39;\n&#39; by default, after printing C it moes to next line</span>
 </pre></div>
 </div>
 </div>
@@ -821,10 +851,10 @@ D
 <p><strong>Example</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>            <span class="c1"># end=&#39;\n&#39; by default, after printing A it goes to next line</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>            <span class="c1"># end=&#39;\n&#39; by default, after printing A it moes to next line</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">)</span>   <span class="c1"># end=&#39;+&#39;            , after printing B it prints +</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;?&#39;</span><span class="p">)</span>   <span class="c1"># end=&#39;+&#39;            , after printing C it prints ?</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>            <span class="c1"># end=&#39;\n&#39; by default, after printing C it goes to next line</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>            <span class="c1"># end=&#39;\n&#39; by default, after printing C it moes to next line</span>
 </pre></div>
 </div>
 </div>
@@ -908,8 +938,8 @@ B+C?D
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#receipt-example">Receipt Example</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#whitespaces">Whitespaces</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#print">print()</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#whitespaces">Whitespaces</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sep-parameter">sep parameter</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#end-parameter">end parameter</a></li>
 </ul>

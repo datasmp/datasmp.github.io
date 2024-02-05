@@ -569,7 +569,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4315672424
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4300337000
 </pre></div>
 </div>
 </div>
@@ -582,7 +582,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4371653616
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4356362800
 </pre></div>
 </div>
 </div>
@@ -823,6 +823,18 @@ break               for                 not
 <span class="nd">@fun</span><span class="o">=</span><span class="mi">4</span>
 </pre></div>
 </div>
+<p><strong>Remark:</strong> Function names can be used as a  variable name but function properties will be lost.</p>
+<ul class="simple">
+<li><p>Therefore, it is not recommended to use the function names as variable names</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="nb">sum</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span> <span class="c1"># ERROR: sum can not do addition</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>In the first line of the code above, <em>sum</em> becomes a variable and its value is 6.</p></li>
+<li><p>In the second line, <em>sum</em> is attempted to be used as a function, but it is no longer a function, resulting in an error message.</p></li>
+</ul>
 </section>
 <section id="reassignment">
 <h2>Reassignment<a class="headerlink" href="#reassignment" title="Permalink to this heading">#</a></h2>
