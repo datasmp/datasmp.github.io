@@ -68,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Numbers Debugging" href="numbers_arithmetic_debug.html" />
-    <link rel="prev" title="Input and Output Code" href="inout_code.html" />
+    <link rel="prev" title="Input and Output Exercises and Solutions" href="inout_exercise.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -196,12 +196,14 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="inout_debug.html">Input and Output Debugging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="inout_output.html">Input and Output  Output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="inout_code.html">Input and Output Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inout_exercise.html">Input and Output Exercises and Solutions</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Chp-3: Numbers</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="numbers_arithmetic_debug.html">Numbers Debugging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="numbers_arithmetic_output.html">Numbers Output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="numbers_arithmetic_code.html">Numbers Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numbers_arithmetic_exercise.html">Numbers Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="strings.html">Chp-4: Strings</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -480,8 +482,7 @@ document.write(`
 </ul>
 <section id="number-types">
 <h2>Number Types<a class="headerlink" href="#number-types" title="Permalink to this heading">#</a></h2>
-<p>In this section, three different number types in Python will be covered. Throughout this book, integers and floats will be the primary number types used.</p>
-<p><em>If the sections on Floats, Complex Numbers, and Scientific Notation seem too technical for you, feel free to skip them.</em></p>
+<p>In this chapter, three different types of numbers in Python will be covered, but integers and floats will be the primary types used in this book. <em>If the sections on Floats, Complex Numbers, and Scientific Notation seem too technical for you, feel free to skip them.</em></p>
 <ol class="arabic simple">
 <li><p>Integers: …,-2,-1,0,1,2,…</p>
 <ul class="simple">
@@ -497,8 +498,7 @@ document.write(`
 <li><p>Decimal numbers (They have decimal point).</p></li>
 <li><p>4.0 is a float</p></li>
 <li><p>Type: float</p></li>
-<li><p>Approximately stored but close enough to real value.</p></li>
-<li><p>Float vlues are approximately stored, but they are close enough to their real values to maintain practical accuracy.</p></li>
+<li><p>Float values are approximately stored, but they are close enough to their real values to maintain practical accuracy.</p></li>
 </ul>
 </li>
 </ol>
@@ -603,6 +603,9 @@ document.write(`
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>0.375 is stored exactly in Python.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 30 digits after decimal point</span>
@@ -746,8 +749,8 @@ document.write(`
 </section>
 <section id="scientific-notation">
 <h2>Scientific Notation<a class="headerlink" href="#scientific-notation" title="Permalink to this heading">#</a></h2>
+<p>It is used to represent very large or very small numbers in a more compact form.</p>
 <ul class="simple">
-<li><p>It is used to represent very large or very small numbers in a more compact form.</p></li>
 <li><p>In scientific notation, a number is written in the form of:</p>
 <ul>
 <li><p>(a number between 1 and 10) x e(a power of 10)</p>
@@ -761,10 +764,10 @@ document.write(`
 <li><p>In scientific notation,</p>
 <ul>
 <li><p>e+04 means <span class="math notranslate nohighlight">\(10^4\)</span></p></li>
-<li><p>e-03 means <span class="math notranslate nohighlight">\(10^{-3}\)</span>
-“Instead of e, you can also use E for scientific notation.”</p></li>
+<li><p>e-03 means <span class="math notranslate nohighlight">\(10^{-3}\)</span></p></li>
 </ul>
 </li>
+<li><p>Instead of e, you can also use E for scientific notation.</p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">format()</span></code> function can be used to represent a number using scientific notation.</p></li>
 </ul>
 <div class="cell docutils container">
@@ -812,7 +815,7 @@ document.write(`
 <h2>Large Numbers<a class="headerlink" href="#large-numbers" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(1,234,578\)</span> is a large number, and commas are used to facilitate a better understanding of this number.</p></li>
-<li><p>In Python, underscores (_) are used instead of commas.</p></li>
+<li><p>In Python, underscores <em>(_)</em> are used instead of commas due to the special functionalities associated with commas in Python.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -826,13 +829,13 @@ document.write(`
 </div>
 </div>
 </div>
+<p>In the following code, comma-separated three values are printed.</p>
+<ul class="simple">
+<li><p>Since the sep parameter is by default one space,  these three values are displayed with one space between them.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Comma-separated three values: 1, 234, and 578</span>
-<span class="c1"># Since the sep parameter is by default one space, </span>
-<span class="c1"># these three values are displayed with one space between them.</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">234</span><span class="p">,</span><span class="mi">578</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">234</span><span class="p">,</span><span class="mi">578</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -882,7 +885,7 @@ document.write(`
 <li><p>12/4 = 3.0</p></li>
 </ul>
 </li>
-<li><p>Integer division rounds down to the nearest smaller integer.”</p>
+<li><p>Integer division rounds down to the nearest smaller integer.</p>
 <ul>
 <li><p>Example:</p>
 <ul>
@@ -1033,7 +1036,7 @@ document.write(`
 <li><p>In the code above we expect to have only <span class="math notranslate nohighlight">\(1j\)</span> which is <span class="math notranslate nohighlight">\(j\)</span>.</p></li>
 <li><p>There is a real part in this complex number, which is supposed to be 0.</p></li>
 <li><p>The real part <span class="math notranslate nohighlight">\(6.123233995736766e-17\)</span> is in scientific notation, representing <span class="math notranslate nohighlight">\(6.123233995736766\times 10^{-17}\)</span></p></li>
-<li><p>This is a very small number close 0.</p></li>
+<li><p>This is a very small number close to 0.</p></li>
 <li><p>We have this small number as the real part because floats are stored approximately.</p></li>
 </ul>
 </section>
@@ -1096,7 +1099,7 @@ y = 7
 </div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ERROR: &#39;Tom&#39; cannot be converted to an integer.</span>
-<span class="nb">int</span><span class="p">(</span><span class="s1">&#39;Tom)</span>
+<span class="nb">int</span><span class="p">(</span><span class="s1">&#39;Tom&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -1133,18 +1136,37 @@ y = 7.53
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>You cannot convert decimal numbers in string type to an integer.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ERROR: string &#39;7.63&#39; cannot be converted to an integer.</span>
+<span class="nb">int</span><span class="p">(</span><span class="s1">&#39;7.53&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Extra spaces on the left or right do not affect the conversion process.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;     234   &#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>234
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="precedence-pemdas">
 <h2>Precedence (PEMDAS)<a class="headerlink" href="#precedence-pemdas" title="Permalink to this heading">#</a></h2>
+<p>The operation precedence of the operations in Python follows the following order:</p>
 <ul class="simple">
-<li><p>The operation precedence of the operations in Python follows the following order:</p>
-<ul>
 <li><p>Parenthesis</p></li>
 <li><p>Exponents</p></li>
 <li><p>Multiplication, Division, Integer Division, Remainder</p></li>
 <li><p>Addition, Subtraction</p></li>
-</ul>
-</li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1188,12 +1210,12 @@ y = 7.53
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># first exponent, then addition </span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">2</span><span class="o">+</span><span class="mi">5</span><span class="o">//</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">2</span><span class="o">+</span><span class="mi">5</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>127
 </pre></div>
 </div>
 </div>
@@ -1202,20 +1224,19 @@ y = 7.53
 <section id="abbreviated-operators">
 <h2>Abbreviated operators<a class="headerlink" href="#abbreviated-operators" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>In mathematics, the expression x=x+1 represents an equation. By subtracting x from both sides, the equation can be solved.</p></li>
-<li><p>In programming languages, x=x+1 is an assignment, not an equation. Remember that = is an assignment operator.</p></li>
-<li><p>Keep in mind that in programming, = is used as an assignment operator.</p></li>
-<li><p>In the assignment x=x+1, the following steps occur:</p>
+<li><p>In mathematics, the expression <span class="math notranslate nohighlight">\(x=x+1\)</span> represents an equation. By subtracting <span class="math notranslate nohighlight">\(x\)</span> from both sides, the equation can be solved.</p></li>
+<li><p>In programming languages, <span class="math notranslate nohighlight">\(x=x+1\)</span> is an assignment, not an equation. Remember that <code class="docutils literal notranslate"><span class="pre">=</span></code> is an assignment operator.</p></li>
+<li><p>In the assignment <span class="math notranslate nohighlight">\(x=x+1\)</span>, the following steps occur:</p>
 <ol class="arabic simple">
-<li><p>The expression on the left-hand side, x+1, is computed first using the current value of x.</p></li>
-<li><p>The result becomes the new value of x.”</p></li>
+<li><p>The expression on the right-hand side, <span class="math notranslate nohighlight">\(x+1\)</span>, is computed first using the current value of <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
+<li><p>The result becomes the new value of <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
 </ol>
 </li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="mi">3</span>        <span class="c1"># value of x is 3</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">+</span><span class="mi">1</span>    <span class="c1"># x = 3+1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>        <span class="c1"># value of x is 3</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">+</span><span class="mi">1</span>      <span class="c1"># x = 3+1</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>   
 </pre></div>
 </div>
@@ -1351,17 +1372,17 @@ y = 7.53
 </section>
 <section id="built-in-functions">
 <h2>Built-in Functions<a class="headerlink" href="#built-in-functions" title="Permalink to this heading">#</a></h2>
+<p>Python has many useful functions available for use without importing additional modules.</p>
 <ul class="simple">
-<li><p>Python has many useful functions available for use without importing additional modules.</p></li>
 <li><p>You can find the list of built-in functions in the <a class="reference external" href="https://docs.python.org/3/library/functions.html">official Python documentation</a>.</p></li>
 <li><p>Some of the built-in functions related to mathematics include:</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">abs()</span></code>: returns the absolute value</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">max()</span></code>: returns the maximum value in a given list of numbers</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">min()</span></code>: returns the minimum value in a given list of numbers</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">sum()</span></code>: returns the sum of the values in a given list of numbers</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">pow()</span></code>: returns a number (base) raised to a certain power</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">round()</span></code>: rounds a number to a certain decimal place</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">abs()</span></code>: returns the absolute value.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max()</span></code>: returns the maximum value in a given list of numbers.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">min()</span></code>: returns the minimum value in a given list of numbers.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sum()</span></code>: returns the sum of the values in a given list of numbers.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pow()</span></code>: returns a number (base) raised to a certain power.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">round()</span></code>: rounds a number to a certain decimal place.</p></li>
 </ul>
 </li>
 </ul>
@@ -1407,7 +1428,7 @@ y = 7.53
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sum of 1,9,2,4 is 16</span>
-<span class="c1"># numbers in a square bracket</span>
+<span class="c1"># numbers in square brackets or parenthesis</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">]))</span>
 </pre></div>
 </div>
@@ -1420,13 +1441,26 @@ y = 7.53
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># rounding to the nearest thousandths</span>
-<span class="nb">round</span><span class="p">(</span><span class="mf">3.4678</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2 to the 3rd power</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.468
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># rounding to the nearest thousandths</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="mf">3.4678</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.468
 </pre></div>
 </div>
 </div>
@@ -1434,10 +1468,14 @@ y = 7.53
 </section>
 <section id="math-module">
 <h2>Math Module<a class="headerlink" href="#math-module" title="Permalink to this heading">#</a></h2>
+<p>Modules will be imported as needed, not loaded by default.</p>
 <ul class="simple">
-<li><p>Modules will be imported as needed, not loaded by default.</p></li>
 <li><p>This minimizes memory requirements and improves performance.</p></li>
 <li><p>Modules are single Python files with a .py extension, which may contain functions and constants.</p></li>
+</ul>
+<p>The Math module contains commonly used mathematical functions and constants, including trigonometric functions and the constant <span class="math notranslate nohighlight">\(\pi\)</span>.</p>
+<ul class="simple">
+<li><p>The <em>math</em> module should be imported first.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">dir(math)</span></code> returns a list of all functions and constants in the math module.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">help(math)</span></code> provides more details, including explanations of functions and constants.</p></li>
 <li><p>You do not need to memorize these functions. Whenever you need any of them, you can import them from the module.</p></li>
@@ -1452,77 +1490,12 @@ y = 7.53
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># list of constants and functions in math module </span>
-<span class="nb">dir</span><span class="p">(</span><span class="n">math</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="n">math</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;__doc__&#39;,
- &#39;__file__&#39;,
- &#39;__loader__&#39;,
- &#39;__name__&#39;,
- &#39;__package__&#39;,
- &#39;__spec__&#39;,
- &#39;acos&#39;,
- &#39;acosh&#39;,
- &#39;asin&#39;,
- &#39;asinh&#39;,
- &#39;atan&#39;,
- &#39;atan2&#39;,
- &#39;atanh&#39;,
- &#39;cbrt&#39;,
- &#39;ceil&#39;,
- &#39;comb&#39;,
- &#39;copysign&#39;,
- &#39;cos&#39;,
- &#39;cosh&#39;,
- &#39;degrees&#39;,
- &#39;dist&#39;,
- &#39;e&#39;,
- &#39;erf&#39;,
- &#39;erfc&#39;,
- &#39;exp&#39;,
- &#39;exp2&#39;,
- &#39;expm1&#39;,
- &#39;fabs&#39;,
- &#39;factorial&#39;,
- &#39;floor&#39;,
- &#39;fmod&#39;,
- &#39;frexp&#39;,
- &#39;fsum&#39;,
- &#39;gamma&#39;,
- &#39;gcd&#39;,
- &#39;hypot&#39;,
- &#39;inf&#39;,
- &#39;isclose&#39;,
- &#39;isfinite&#39;,
- &#39;isinf&#39;,
- &#39;isnan&#39;,
- &#39;isqrt&#39;,
- &#39;lcm&#39;,
- &#39;ldexp&#39;,
- &#39;lgamma&#39;,
- &#39;log&#39;,
- &#39;log10&#39;,
- &#39;log1p&#39;,
- &#39;log2&#39;,
- &#39;modf&#39;,
- &#39;nan&#39;,
- &#39;nextafter&#39;,
- &#39;perm&#39;,
- &#39;pi&#39;,
- &#39;pow&#39;,
- &#39;prod&#39;,
- &#39;radians&#39;,
- &#39;remainder&#39;,
- &#39;sin&#39;,
- &#39;sinh&#39;,
- &#39;sqrt&#39;,
- &#39;tan&#39;,
- &#39;tanh&#39;,
- &#39;tau&#39;,
- &#39;trunc&#39;,
- &#39;ulp&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;__doc__&#39;, &#39;__file__&#39;, &#39;__loader__&#39;, &#39;__name__&#39;, &#39;__package__&#39;, &#39;__spec__&#39;, &#39;acos&#39;, &#39;acosh&#39;, &#39;asin&#39;, &#39;asinh&#39;, &#39;atan&#39;, &#39;atan2&#39;, &#39;atanh&#39;, &#39;cbrt&#39;, &#39;ceil&#39;, &#39;comb&#39;, &#39;copysign&#39;, &#39;cos&#39;, &#39;cosh&#39;, &#39;degrees&#39;, &#39;dist&#39;, &#39;e&#39;, &#39;erf&#39;, &#39;erfc&#39;, &#39;exp&#39;, &#39;exp2&#39;, &#39;expm1&#39;, &#39;fabs&#39;, &#39;factorial&#39;, &#39;floor&#39;, &#39;fmod&#39;, &#39;frexp&#39;, &#39;fsum&#39;, &#39;gamma&#39;, &#39;gcd&#39;, &#39;hypot&#39;, &#39;inf&#39;, &#39;isclose&#39;, &#39;isfinite&#39;, &#39;isinf&#39;, &#39;isnan&#39;, &#39;isqrt&#39;, &#39;lcm&#39;, &#39;ldexp&#39;, &#39;lgamma&#39;, &#39;log&#39;, &#39;log10&#39;, &#39;log1p&#39;, &#39;log2&#39;, &#39;modf&#39;, &#39;nan&#39;, &#39;nextafter&#39;, &#39;perm&#39;, &#39;pi&#39;, &#39;pow&#39;, &#39;prod&#39;, &#39;radians&#39;, &#39;remainder&#39;, &#39;sin&#39;, &#39;sinh&#39;, &#39;sqrt&#39;, &#39;tan&#39;, &#39;tanh&#39;, &#39;tau&#39;, &#39;trunc&#39;, &#39;ulp&#39;]
 </pre></div>
 </div>
 </div>
@@ -1584,7 +1557,7 @@ y = 7.53
 <h2>Combine Strings and Numbers<a class="headerlink" href="#combine-strings-and-numbers" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>There are different ways of combining strings and numbers.</p></li>
-<li><p>One easy way is to convert numbers to a string using the str() function and then concatenate strings using the + operator.</p></li>
+<li><p>One easy way is to convert numbers to a string using the <em>str()</em> function and then concatenate strings using the <em>+</em> operator.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1649,12 +1622,12 @@ y = 7.53
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="inout_code.html"
+       href="inout_exercise.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Input and Output Code</p>
+        <p class="prev-next-title">Input and Output Exercises and Solutions</p>
       </div>
     </a>
     <a class="right-next"
