@@ -194,7 +194,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="inout_debug.html">Input and Output Debugging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="inout_output.html">Input and Output  Output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="inout_code.html">Input and Output Code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="inout_exercise.html">Input and Output Exercises and Solutions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inout_exercise.html">Input and Output Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="numbers_arithmetic.html">Chp-3: Numbers</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -486,6 +486,24 @@ document.write(`
 </section>
 <section id="question-2">
 <h2>Question-2<a class="headerlink" href="#question-2" title="Permalink to this heading">#</a></h2>
+<p>In a single line of code, compute <span class="math notranslate nohighlight">\(\displaystyle  |ln( 2^{sin(|-100|)})|\)</span> and round it to the nearest hundredth.</p>
+<p><strong>Solution</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="nb">round</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">))))),</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.35
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-3">
+<h2>Question-3<a class="headerlink" href="#question-3" title="Permalink to this heading">#</a></h2>
 <p>Write a program that prompts the user for three numbers using three input functions. Assign the entered values to variables with the names x, y, and z.</p>
 <ul class="simple">
 <li><p>Find <span class="math notranslate nohighlight">\(\displaystyle f(x, y,z) = \frac{5xy}{2+x^2}+\frac{x+y+z}{y^4+x^2y^2}\)</span></p></li>
@@ -508,8 +526,8 @@ f(1,2,3)=3.63</p></li>
 </pre></div>
 </div>
 </section>
-<section id="question-3">
-<h2>Question-3<a class="headerlink" href="#question-3" title="Permalink to this heading">#</a></h2>
+<section id="question-4">
+<h2>Question-4<a class="headerlink" href="#question-4" title="Permalink to this heading">#</a></h2>
 <p>Write a program that prompts the user to enter their height using two input() functions for the feet and inch parts separately. Assign the entered values to variables named feet and inch.</p>
 <ul class="simple">
 <li><p>Convert the given height into centimeters using the following conversion formulas: <em>1 foot = 12 inches</em> and <em>1 inch = 2.54 cm</em></p></li>
@@ -529,17 +547,73 @@ Enter the inch part of your height: 4<br />
 </pre></div>
 </div>
 </section>
-<section id="question-4">
-<h2>Question-4<a class="headerlink" href="#question-4" title="Permalink to this heading">#</a></h2>
-<p><strong>Solution</strong></p>
-</section>
 <section id="question-5">
 <h2>Question-5<a class="headerlink" href="#question-5" title="Permalink to this heading">#</a></h2>
-<p><strong>Solution</strong></p>
+<p>Write a program that prompts the user for a 4-digit positive number. Swap the first two digits of the given number with the last two digits and print it.</p>
+<ul class="simple">
+<li><p>Do not use string indexing that will be covered in the next chapter.</p></li>
+<li><p>Example 1: If the given number is 1234, then print 3412.</p>
+<ul>
+<li><p>Print format: 1234 —- swap—&gt; 3412</p></li>
+</ul>
+</li>
+<li><p>Example 2: If the given number is 6789, then print 8967.</p>
+<ul>
+<li><p>Print format: 6789 —- swap—&gt; 8967</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Solution-1</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter a four digit number:&#39;</span><span class="p">))</span>
+
+<span class="n">first_two_digit</span> <span class="o">=</span> <span class="n">number</span><span class="o">//</span><span class="mi">100</span>
+<span class="n">last_two_digit</span>  <span class="o">=</span> <span class="n">number</span><span class="o">%</span><span class="mi">100</span>
+
+<span class="n">result_str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">last_two_digit</span><span class="p">)</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">first_two_digit</span><span class="p">)</span>  
+
+<span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="s1">&#39;---- swap ---&gt;&#39;</span><span class="p">,</span><span class="n">result_str</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Solution-2</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter a four digit number:&#39;</span><span class="p">))</span>
+
+<span class="n">first_two_digit</span> <span class="o">=</span> <span class="n">number</span><span class="o">//</span><span class="mi">100</span>
+<span class="n">last_two_digit</span>  <span class="o">=</span> <span class="n">number</span><span class="o">%</span><span class="mi">100</span>
+
+<span class="n">result_num</span> <span class="o">=</span> <span class="n">last_two_digit</span><span class="o">*</span><span class="mi">100</span> <span class="o">+</span> <span class="n">first_two_digit</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="s1">&#39;---- swap ---&gt;&#39;</span><span class="p">,</span><span class="n">result_num</span> <span class="p">)</span>
+</pre></div>
+</div>
 </section>
 <section id="question-6">
 <h2>Question-6<a class="headerlink" href="#question-6" title="Permalink to this heading">#</a></h2>
+<p>In a coordinate plane, each point is represented by its x and y components in the form of <span class="math notranslate nohighlight">\((x,y)\)</span>.<br />
+The distance between two points <span class="math notranslate nohighlight">\(P=(x_1,y_1)\)</span> and <span class="math notranslate nohighlight">\(Q=(x_2,y_2)\)</span> is given by the following distance formula:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle dist(P,Q) = \sqrt{(x_2-x_1)^2+(y_2-y_1)^2}\)</span></p></li>
+</ul>
+<p>Write a program that prompts the user for the x and y components of a point using two <em>input()</em> functions and computes the distance between the given point and the point <span class="math notranslate nohighlight">\((-5,6)\)</span>.</p>
+<ul class="simple">
+<li><p>Round the distance to the nearest hundreth.</p></li>
+</ul>
+<p>Sample Output:<br />
+Enter the x-component of the point: -2<br />
+Enter the y-component of the point: 10<br />
+The distance between (-5,6) and (-2.0,10.0) is 5.0</p>
 <p><strong>Solution</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="n">x1</span><span class="p">,</span> <span class="n">y1</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span>
+
+<span class="n">x2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter the x-component of the point:&#39;</span><span class="p">))</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter the y-component of the point:&#39;</span><span class="p">))</span>
+
+<span class="n">dist</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">x2</span><span class="o">-</span><span class="n">x1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">y2</span><span class="o">-</span><span class="n">y1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The distance between (&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span> <span class="o">+</span><span class="s1">&#39;,&#39;</span><span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">y1</span><span class="p">)</span> <span class="o">+</span><span class="s1">&#39;) and (&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span> <span class="o">+</span><span class="s1">&#39;,&#39;</span><span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">y2</span><span class="p">)</span> <span class="o">+</span><span class="s1">&#39;) is &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">dist</span><span class="p">,</span><span class="mi">2</span><span class="p">)))</span>
+</pre></div>
+</div>
 </section>
 <section id="question-7">
 <h2>Question-7<a class="headerlink" href="#question-7" title="Permalink to this heading">#</a></h2>
