@@ -600,35 +600,29 @@ Birth year type: &lt;class ‘int’&gt;</p>
 </li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">hamburger</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Number of hamburgers:&#39;</span><span class="p">))</span>  
-<span class="n">coke</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Number of cokes:&#39;</span><span class="p">))</span>            
+<span class="n">soda</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Number of sodas:&#39;</span><span class="p">))</span>            
 
-<span class="n">subtotal</span> <span class="o">=</span> <span class="n">hamburger</span><span class="o">*</span><span class="mi">5</span><span class="o">+</span><span class="n">coke</span><span class="o">*</span><span class="mi">2</span>   
+<span class="n">subtotal</span> <span class="o">=</span> <span class="n">hamburger</span><span class="o">*</span><span class="mi">5</span><span class="o">+</span><span class="n">soda</span><span class="o">*</span><span class="mi">2</span>   
 <span class="n">tip</span> <span class="o">=</span> <span class="n">subtotal</span><span class="o">*</span><span class="mf">0.15</span>
 <span class="n">tax</span> <span class="o">=</span> <span class="n">subtotal</span><span class="o">*</span><span class="mf">0.10</span>
 <span class="n">total</span> <span class="o">=</span> <span class="n">subtotal</span><span class="o">+</span><span class="n">tip</span><span class="o">+</span><span class="n">tax</span>
 
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;+&#39;</span><span class="o">*</span><span class="mi">30</span><span class="p">)</span>     <span class="c1"># use repetition: 30 many * characters</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hamburger:&#39;</span><span class="p">,</span><span class="n">hamburger</span><span class="p">,</span><span class="s1">&#39;x 5= $&#39;</span><span class="p">,</span><span class="n">hamburger</span><span class="o">*</span><span class="mi">5</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Coke     :&#39;</span><span class="p">,</span><span class="n">coke</span><span class="p">,</span><span class="s1">&#39;x 2= $&#39;</span><span class="p">,</span><span class="n">coke</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Tip      :         $&#39;</span><span class="p">,</span><span class="n">tip</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Tax      :         $&#39;</span><span class="p">,</span><span class="n">tax</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;+&#39;</span><span class="o">*</span><span class="mi">30</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Total    :         $&#39;</span><span class="p">,</span><span class="n">total</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;+&#39;</span><span class="o">*</span><span class="mi">30</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hamburger:&#39;</span><span class="p">,</span><span class="n">hamburger</span><span class="p">,</span><span class="s1">&#39;x 5= &#39;</span><span class="p">,</span><span class="n">hamburger</span><span class="o">*</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Soda     :&#39;</span><span class="p">,</span><span class="n">soda</span><span class="p">,</span><span class="s1">&#39;x 2= &#39;</span><span class="p">,</span><span class="n">soda</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Tip      :         &#39;</span><span class="p">,</span><span class="n">tip</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Tax      :         &#39;</span><span class="p">,</span><span class="n">tax</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Total    :         &#39;</span><span class="p">,</span><span class="n">total</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>Output</strong></p>
-<p><code class="docutils literal notranslate"><span class="pre">Number</span> <span class="pre">of</span> <span class="pre">hamburgers:10</span>&#160;&#160;&#160;&#160; </code><br />
-<code class="docutils literal notranslate"><span class="pre">Number</span> <span class="pre">of</span> <span class="pre">cokes</span>&#160;&#160;&#160;&#160; <span class="pre">:20</span>&#160;&#160;&#160;&#160; </code><br />
-<code class="docutils literal notranslate"><span class="pre">++++++++++++++++++++++++++++++</span></code><br />
-<code class="docutils literal notranslate"><span class="pre">Hamburger:</span> <span class="pre">10</span> <span class="pre">x</span> <span class="pre">5=</span> <span class="pre">$</span> <span class="pre">50</span>&#160;&#160;&#160;&#160; </code><br />
-<code class="docutils literal notranslate"><span class="pre">Coke</span>&#160;&#160;&#160;&#160; <span class="pre">:</span> <span class="pre">20</span> <span class="pre">x</span> <span class="pre">2=</span> <span class="pre">$</span> <span class="pre">40</span>&#160;&#160;&#160;&#160; </code><br />
-<code class="docutils literal notranslate"><span class="pre">Tip</span>&#160;&#160;&#160;&#160;&#160; <span class="pre">:</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">$</span> <span class="pre">13.5</span>&#160;&#160; </code><br />
-<code class="docutils literal notranslate"><span class="pre">Tax</span>&#160;&#160;&#160;&#160;&#160; <span class="pre">:</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">$</span> <span class="pre">9.0</span>&#160;&#160;&#160; </code><br />
-<code class="docutils literal notranslate"><span class="pre">++++++++++++++++++++++++++++++</span></code><br />
-<code class="docutils literal notranslate"><span class="pre">Total</span>&#160;&#160;&#160; <span class="pre">:</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">$</span> <span class="pre">112.5</span>&#160; </code><br />
-<code class="docutils literal notranslate"><span class="pre">++++++++++++++++++++++++++++++</span></code></p>
+<p>Number of hamburgers:10<br />
+Number of sodas     :20<br />
+Hamburger: 10 x 5= * 50<br />
+Soda     : 20 x 2=  40<br />
+Tip      :          13.5<br />
+Tax      :          9.0<br />
+Total    :          112.5</p>
 </section>
 </section>
 <section id="whitespaces">
@@ -642,7 +636,8 @@ Birth year type: &lt;class ‘int’&gt;</p>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">\t</span></code>: tab</p>
 <ul>
-<li><p>Inserts a tabulation, equivalent to seven spaces.</p></li>
+<li><p>Inserts a tabulation</p></li>
+<li><p>Inserts spaces up to the next tab stop, which occurs every 8th character.</p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">\b</span></code>: backspace</p>
@@ -653,7 +648,8 @@ Birth year type: &lt;class ‘int’&gt;</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">\r</span></code>: carriage return</p>
 <ul>
 <li><p>Moves to the beginning of the line.</p></li>
-<li><p>Does not delete any characters.</p></li>
+<li><p>In Jupyter notebook, it does not delete any characters.</p></li>
+<li><p>In Google Colab, it deletes all characters.</p></li>
 </ul>
 </li>
 </ul>
@@ -688,6 +684,38 @@ A	B
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;AA      B&#39;</span><span class="p">)</span>      <span class="c1"># 6 spaces</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;AA&#39;</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">6</span><span class="o">+</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>   <span class="c1"># repetition of the string &#39; &#39; (one space) six times</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;AA</span><span class="se">\t</span><span class="s1">B&#39;</span><span class="p">)</span>          <span class="c1"># tab</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AA      B
+AA      B
+AA	B
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;AAA     B&#39;</span><span class="p">)</span>       <span class="c1"># 5 spaces</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;AAA&#39;</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">5</span><span class="o">+</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>   <span class="c1"># repetition of the string &#39; &#39; (one space) five times</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;AAA</span><span class="se">\t</span><span class="s1">B&#39;</span><span class="p">)</span>          <span class="c1"># tab</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AAA     B
+AAA     B
+AAA	B
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ABC</span><span class="se">\b</span><span class="s1">D&#39;</span><span class="p">)</span> <span class="c1"># C is deleted by &#39;\b&#39;</span>
 </pre></div>
 </div>
@@ -710,22 +738,19 @@ A	B
 </div>
 </div>
 </div>
+<p>For Jupter Notebook:</p>
 <ul class="simple">
 <li><p>In the following code, after the character ‘C’, the carriage return <code class="docutils literal notranslate"><span class="pre">\r</span></code> moves the cursor to the beginning of the line, and ‘D’ overwrites ‘A’.</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ABC</span><span class="se">\r</span><span class="s1">D&#39;</span><span class="p">)</span> <span class="c1"># carriage return</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ABC</span><span class="se">\r</span><span class="s1">D&#39;</span><span class="p">)</span> <span class="c1"># carriage return </span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ABC
-D
-</pre></div>
-</div>
-</div>
-</div>
+<ul class="simple">
+<li><p>Output: DBC</p></li>
+</ul>
+<ul class="simple">
+<li><p><strong>Warning:</strong> In Google Colab, the output of the provided code is D.</p></li>
+</ul>
 </section>
 <section id="print">
 <h2>print()<a class="headerlink" href="#print" title="Permalink to this heading">#</a></h2>

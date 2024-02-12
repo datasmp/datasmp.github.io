@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Strings Debugging &#8212; Python in Plain Terms</title>
+    <title>Strings Exercises and Solutions &#8212; Python in Plain Terms</title>
   
   
   
@@ -62,11 +62,9 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'strings_debug';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'strings_exercise_solution';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Strings Output" href="strings_output.html" />
-    <link rel="prev" title="Chp-4: Strings" href="strings.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -167,7 +165,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="acknowledge.html">Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python.html">Python Introduction</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="colab.html">Google Colab</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -204,8 +202,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="numbers_arithmetic_exercise.html">Numbers Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="strings.html">Chp-4: Strings</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Strings Debugging</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="strings.html">Chp-4: Strings</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="strings_debug.html">Strings Debugging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="strings_output.html">Strings Output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="strings_code.html">Strings Code</a></li>
 </ul>
@@ -323,7 +321,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/datasmp/datasmp.github.io/issues/new?title=Issue%20on%20page%20%2Fstrings_debug.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/datasmp/datasmp.github.io/issues/new?title=Issue%20on%20page%20%2Fstrings_exercise_solution.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -353,7 +351,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/strings_debug.ipynb" target="_blank"
+      <li><a href="_sources/strings_exercise_solution.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -435,7 +433,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Strings Debugging</h1>
+    <h1>Strings Exercises and Solutions</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -448,9 +446,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question-1</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question-2</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question-3</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question-4</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question-5</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6">Question-6</a></li>
 </ul>
             </nav>
         </div>
@@ -462,78 +457,83 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="strings-debugging">
-<h1>Strings Debugging<a class="headerlink" href="#strings-debugging" title="Permalink to this heading">#</a></h1>
-<ul class="simple">
-<li><p>Each of the following short code contains one or more bugs.     </p></li>
-<li><p>Please identify and correct these bugs.</p></li>
-<li><p>Provide an explanation for your answer.</p></li>
-</ul>
+  <section class="tex2jax_ignore mathjax_ignore" id="strings-exercises-and-solutions">
+<h1>Strings Exercises and Solutions<a class="headerlink" href="#strings-exercises-and-solutions" title="Permalink to this heading">#</a></h1>
 <section id="question-1">
 <h2>Question-1<a class="headerlink" href="#question-1" title="Permalink to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mf">3.0</span><span class="o">*</span><span class="s1">&#39;HI&#39;</span>
+<p>Write a program that prompts the user for a 6-digit positive number. Find the sum of the digits of this number without using algebraic operations other then addition.</p>
+<ul class="simple">
+<li><p>Example: If the given number is 123456, then the sum of digits is 1+2+3+4+5+6=21</p></li>
+</ul>
+<p><strong>Solution</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number_str</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter a six digit number:&#39;</span><span class="p">)</span>
+
+<span class="n">total</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">number_str</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">+</span><span class="nb">int</span><span class="p">(</span><span class="n">number_str</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">+</span><span class="nb">int</span><span class="p">(</span><span class="n">number_str</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="o">+</span><span class="nb">int</span><span class="p">(</span><span class="n">number_str</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span><span class="o">+</span><span class="nb">int</span><span class="p">(</span><span class="n">number_str</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span><span class="o">+</span><span class="nb">int</span><span class="p">(</span><span class="n">number_str</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The sum of digits of </span><span class="si">{</span><span class="n">number_str</span><span class="si">}</span><span class="s1"> is </span><span class="si">{</span><span class="n">total</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
 </pre></div>
-</div>
-<div class="toggle admonition">
-<p class="admonition-title">Solution</p>
-<p>Only integers can be used for repetition; 3.0 is a float.</p>
 </div>
 </section>
 <section id="question-2">
 <h2>Question-2<a class="headerlink" href="#question-2" title="Permalink to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span><span class="o">+</span><span class="s1">&#39;HI&#39;</span>
+<p>Write a program that prompts the user for a 4-digit positive number. Swap the first two digits of the given number with the last two digits and print it.</p>
+<ul class="simple">
+<li><p>Avoid using algebraic operations and instead use string indexing.</p></li>
+<li><p>Example 1: If the given number is 1234, then print 3412.</p>
+<ul>
+<li><p>Print format: 1234 —- swap—&gt; 3412</p></li>
+</ul>
+</li>
+<li><p>Example 2: If the given number is 6789, then print 8967.</p>
+<ul>
+<li><p>Print format: 6789 —- swap—&gt; 8967</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Solution</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number_str</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter a four digit number:&#39;</span><span class="p">)</span>
+
+<span class="n">first_two_digit</span> <span class="o">=</span> <span class="n">number_str</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">last_two_digit</span>  <span class="o">=</span> <span class="n">number_str</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>
+
+<span class="n">result_str</span> <span class="o">=</span> <span class="n">last_two_digit</span> <span class="o">+</span> <span class="n">first_two_digit</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">number_str</span><span class="p">,</span> <span class="s1">&#39;---- swap ---&gt;&#39;</span><span class="p">,</span><span class="n">result_str</span> <span class="p">)</span>
 </pre></div>
-</div>
-<div class="toggle admonition">
-<p class="admonition-title">Solution</p>
-<p>Concatenation can be done with two strings, but 3 is not a string. You can convert 3 to a string, and after that, you can perform concatenation: <code class="docutils literal notranslate"><span class="pre">str(3)</span> <span class="pre">+</span> <span class="pre">'HI'.</span></code></p>
 </div>
 </section>
 <section id="question-3">
 <h2>Question-3<a class="headerlink" href="#question-3" title="Permalink to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;michael&quot;</span>
+<p>Use the three variables provided below to construct the string ‘XFoas’</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="s1">&#39;fLoRida&#39;</span><span class="p">,</span> <span class="s1">&#39;tExaS&#39;</span><span class="p">,</span> <span class="s1">&#39;aRizOna&#39;</span>
 </pre></div>
 </div>
-<div class="toggle admonition">
-<p class="admonition-title">Solution</p>
-<p>Both of the quotes on the left and right must be the same. Either <code class="docutils literal notranslate"><span class="pre">'michael'</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;michael&quot;</span></code>  will solve the problem.</p>
-</div>
-</section>
-<section id="question-4">
-<h2>Question-4<a class="headerlink" href="#question-4" title="Permalink to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;he&#39;</span><span class="n">s</span> <span class="n">coming</span><span class="s1">&#39;)</span>
+<p><strong>Solution</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="s1">&#39;fLoRida&#39;</span><span class="p">,</span> <span class="s1">&#39;tExaS&#39;</span><span class="p">,</span> <span class="s1">&#39;aRizOna&#39;</span>
+<span class="n">result_str</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">y</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result_str</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="toggle admonition">
-<p class="admonition-title">Solution</p>
-<p>The single quote of the string causes the problem since the string is also created by using single quotes.</p>
-<ul class="simple">
-<li><p>To fix the problem you can either use <code class="docutils literal notranslate"><span class="pre">\</span></code> to make the single quote of the string a character: <code class="docutils literal notranslate"><span class="pre">'he\'s</span> <span class="pre">coming'</span></code></p></li>
-<li><p>Instead of single quotes, use double ones: <code class="docutils literal notranslate"><span class="pre">&quot;he\'s</span> <span class="pre">coming&quot;</span></code></p></li>
-</ul>
 </div>
-</section>
-<section id="question-5">
-<h2>Question-5<a class="headerlink" href="#question-5" title="Permalink to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Michael</span>
-<span class="n">Jordan</span><span class="s1">&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>XFoas
 </pre></div>
 </div>
-<div class="toggle admonition">
-<p class="admonition-title">Solution</p>
-<p>Triple single or double quotes must be used for strings that have multiple lines.</p>
 </div>
-</section>
-<section id="question-6">
-<h2>Question-6<a class="headerlink" href="#question-6" title="Permalink to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Brian&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
-</pre></div>
 </div>
-<div class="toggle admonition">
-<p class="admonition-title">Solution</p>
-<p>The index is out of range because the largest positive index is 4, as indexing starts from 0.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Here is a note!</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Hello I am a warning.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">This admonition was styled…</p>
+<p>With a tip class!</p>
 </div>
 </section>
 </section>
@@ -568,24 +568,6 @@ document.write(`
                 <footer class="prev-next-footer">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="strings.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Chp-4: Strings</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="strings_output.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Strings Output</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -604,9 +586,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question-1</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question-2</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question-3</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question-4</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question-5</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6">Question-6</a></li>
 </ul>
   </nav></div>
 
