@@ -206,6 +206,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="strings_debug.html">Strings Debugging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="strings_output.html">Strings Output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="strings_code.html">Strings Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings_exercise.html">Strings Exercises and Solutions</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="conditionals.html">Chp-5: Conditionals</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -399,6 +400,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question-1</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question-2</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question-3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question-4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question-5</a></li>
 </ul>
             </nav>
         </div>
@@ -476,6 +479,96 @@ document.write(`
 </div>
 </div>
 </div>
+</section>
+<section id="question-4">
+<h2>Question-4<a class="headerlink" href="#question-4" title="Permalink to this heading">#</a></h2>
+<p>Extract the height of the first player using the provided player information.</p>
+<p>If you change the variable name from player1_info to player2_info in your code, you should obtain the height of the second player.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">player1_info</span> <span class="o">=</span> <span class="s1">&#39;robert_brown,Height:1.834cM,Weight:75.25kg&#39;</span>
+<span class="n">player2_info</span> <span class="o">=</span> <span class="s1">&#39;richard_smith,heighT:1.92cm,Weight:98.65kg&#39;</span>
+</pre></div>
+</div>
+<p><strong>Solution</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">player1_info</span> <span class="o">=</span> <span class="s1">&#39;robert_brown,Height:1.834cM,Weight:75.25kg&#39;</span>
+<span class="n">player2_info</span> <span class="o">=</span> <span class="s1">&#39;richard_smith,heighT:1.92cm,Weight:98.65kg&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">index_col</span> <span class="o">=</span> <span class="n">player1_info</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+<span class="n">index_comma</span> <span class="o">=</span> <span class="n">player1_info</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="p">)</span>
+<span class="n">height</span> <span class="o">=</span> <span class="n">player1_info</span><span class="p">[</span><span class="n">index_col</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n">index_comma</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">height</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.834
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">index_col</span> <span class="o">=</span> <span class="n">player2_info</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+<span class="n">index_comma</span> <span class="o">=</span> <span class="n">player2_info</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="p">)</span>
+<span class="n">height</span> <span class="o">=</span> <span class="n">player2_info</span><span class="p">[</span><span class="n">index_col</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n">index_comma</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">height</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.92
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-5">
+<h2>Question-5<a class="headerlink" href="#question-5" title="Permalink to this heading">#</a></h2>
+<p>Display the following house by using the repetition of strings.</p>
+<p><img alt="" src="_images/house_star.png" /></p>
+<p><strong>Solution</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">space</span><span class="p">,</span> <span class="n">star</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;*&#39;</span> 
+<span class="nb">print</span><span class="p">(</span>     <span class="n">N</span><span class="o">*</span><span class="n">space</span> <span class="o">+</span> <span class="n">star</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">space</span> <span class="o">+</span> <span class="n">star</span> <span class="o">+</span> <span class="mi">1</span><span class="o">*</span><span class="n">space</span> <span class="o">+</span> <span class="n">star</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">space</span> <span class="o">+</span> <span class="n">star</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">space</span> <span class="o">+</span> <span class="n">star</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">space</span> <span class="o">+</span> <span class="n">star</span> <span class="o">+</span> <span class="mi">5</span><span class="o">*</span><span class="n">space</span> <span class="o">+</span> <span class="n">star</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="n">space</span> <span class="o">+</span> <span class="n">star</span> <span class="o">+</span> <span class="mi">7</span><span class="o">*</span><span class="n">space</span> <span class="o">+</span> <span class="n">star</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">((</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">star</span><span class="o">+</span><span class="n">space</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">star</span> <span class="o">+</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">space</span> <span class="o">+</span><span class="n">star</span>   <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">star</span> <span class="o">+</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">space</span> <span class="o">+</span><span class="n">star</span>   <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">star</span> <span class="o">+</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">space</span> <span class="o">+</span><span class="n">star</span>   <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">star</span> <span class="o">+</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">space</span> <span class="o">+</span><span class="n">star</span>   <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">star</span> <span class="o">+</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">space</span> <span class="o">+</span><span class="n">star</span>   <span class="p">)</span>
+<span class="nb">print</span><span class="p">((</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">star</span><span class="o">+</span><span class="n">space</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     *
+    * *
+   *   *
+  *     *
+ *       *
+* * * * * * 
+*         *
+*         *
+*         *
+*         *
+*         *
+* * * * * * 
+</pre></div>
+</div>
+</div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Here is a note!</p>
@@ -539,6 +632,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question-1</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question-2</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question-3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question-4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question-5</a></li>
 </ul>
   </nav></div>
 
