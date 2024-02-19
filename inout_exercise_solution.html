@@ -208,7 +208,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="strings_debug.html">Strings Debugging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="strings_output.html">Strings Output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="strings_code.html">Strings Code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="strings_exercise.html">Strings Exercises and Solutions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings_exercise.html">Strings Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="conditionals.html">Chp-5: Conditionals</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -408,6 +408,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7-std">Question-7: Std</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8-countdown">Question-8: Countdown</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-9-arrow">Question-9: Arrow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-10-standard-scaling">Question-10: Standard Scaling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-11-minmax-scaling">Question-11: MinMax Scaling</a></li>
 </ul>
             </nav>
         </div>
@@ -696,6 +698,70 @@ Enter z:  4</p>
 </div>
 </div>
 </section>
+<section id="question-10-standard-scaling">
+<h2>Question-10: Standard Scaling<a class="headerlink" href="#question-10-standard-scaling" title="Permalink to this heading">#</a></h2>
+<p>Write a program that prompts the user for 5 numbers using 5 <em>input()</em> functions.</p>
+<ul class="simple">
+<li><p>Find the mean and standard deviation of these three numbers.</p></li>
+<li><p>Subtract the mean from each number.</p></li>
+<li><p>Divide each of these differences by the standard deviation.</p></li>
+</ul>
+<p><em>Remark: This is the standard scaling of a data set. This means that the mean and standard deviation of the data becomes zero and one, resspectively.</em></p>
+<p><strong>Solution</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statistics</span>
+
+<span class="n">num1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter the first number : &#39;</span><span class="p">))</span>
+<span class="n">num2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter the second number: &#39;</span><span class="p">))</span>
+<span class="n">num3</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter the third number : &#39;</span><span class="p">))</span>
+<span class="n">num4</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter the fourth number: &#39;</span><span class="p">))</span>
+<span class="n">num5</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter the fifth number : &#39;</span><span class="p">))</span>
+
+
+<span class="n">mean_num</span> <span class="o">=</span> <span class="n">statistics</span><span class="o">.</span><span class="n">mean</span><span class="p">([</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">,</span> <span class="n">num3</span><span class="p">,</span> <span class="n">num4</span><span class="p">,</span> <span class="n">num5</span><span class="p">])</span>
+<span class="n">std_num</span>  <span class="o">=</span> <span class="n">statistics</span><span class="o">.</span><span class="n">pstdev</span><span class="p">([</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">,</span> <span class="n">num3</span><span class="p">,</span> <span class="n">num4</span><span class="p">,</span> <span class="n">num5</span><span class="p">])</span>
+
+<span class="n">num1</span> <span class="o">=</span> <span class="p">(</span><span class="n">num1</span> <span class="o">-</span> <span class="n">mean_num</span><span class="p">)</span><span class="o">/</span><span class="n">std_num</span>
+<span class="n">num2</span> <span class="o">=</span> <span class="p">(</span><span class="n">num2</span> <span class="o">-</span> <span class="n">mean_num</span><span class="p">)</span><span class="o">/</span><span class="n">std_num</span>
+<span class="n">num3</span> <span class="o">=</span> <span class="p">(</span><span class="n">num3</span> <span class="o">-</span> <span class="n">mean_num</span><span class="p">)</span><span class="o">/</span><span class="n">std_num</span><span class="p">,</span> 
+<span class="n">num4</span> <span class="o">=</span> <span class="p">(</span><span class="n">num4</span> <span class="o">-</span> <span class="n">mean_num</span><span class="p">)</span><span class="o">/</span><span class="n">std_num</span>
+<span class="n">num5</span> <span class="o">=</span> <span class="p">(</span><span class="n">num5</span> <span class="o">-</span> <span class="n">mean_num</span><span class="p">)</span><span class="o">/</span><span class="n">std_num</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Standard Scaled:&#39;</span><span class="p">,</span> <span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">,</span><span class="n">num3</span><span class="p">,</span><span class="n">num4</span><span class="p">,</span><span class="n">num5</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="question-11-minmax-scaling">
+<h2>Question-11: MinMax Scaling<a class="headerlink" href="#question-11-minmax-scaling" title="Permalink to this heading">#</a></h2>
+<p>Write a program that prompts the user for 5 numbers using 5 input() functions.</p>
+<ul class="simple">
+<li><p>Find the minimum and maximum of these numbers.</p></li>
+<li><p>Subtract the minimum from each number, then divide each of these differences by the difference between the maximum and minimum.</p></li>
+</ul>
+<p><em>Remark: This is the MinMax scaling of a dataset, meaning that the data becomes scaled between 0 and 1.</em></p>
+<p><strong>Solution</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statistics</span>
+
+<span class="n">num1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter the first number : &#39;</span><span class="p">))</span>
+<span class="n">num2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter the second number: &#39;</span><span class="p">))</span>
+<span class="n">num3</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter the third number : &#39;</span><span class="p">))</span>
+<span class="n">num4</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter the fourth number: &#39;</span><span class="p">))</span>
+<span class="n">num5</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter the fifth number : &#39;</span><span class="p">))</span>
+
+
+<span class="nb">min</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">,</span> <span class="n">num3</span><span class="p">,</span> <span class="n">num4</span><span class="p">,</span> <span class="n">num5</span><span class="p">)</span>
+<span class="nb">max</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">,</span> <span class="n">num3</span><span class="p">,</span> <span class="n">num4</span><span class="p">,</span> <span class="n">num5</span><span class="p">)</span>
+
+<span class="n">num1</span> <span class="o">=</span> <span class="p">(</span><span class="n">num1</span> <span class="o">-</span> <span class="nb">min</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="nb">max</span><span class="o">-</span><span class="nb">min</span><span class="p">)</span>
+<span class="n">num2</span> <span class="o">=</span> <span class="p">(</span><span class="n">num2</span> <span class="o">-</span> <span class="nb">min</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="nb">max</span><span class="o">-</span><span class="nb">min</span><span class="p">)</span>
+<span class="n">num3</span> <span class="o">=</span> <span class="p">(</span><span class="n">num3</span> <span class="o">-</span> <span class="nb">min</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="nb">max</span><span class="o">-</span><span class="nb">min</span><span class="p">)</span>
+<span class="n">num4</span> <span class="o">=</span> <span class="p">(</span><span class="n">num4</span> <span class="o">-</span> <span class="nb">min</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="nb">max</span><span class="o">-</span><span class="nb">min</span><span class="p">)</span>
+<span class="n">num5</span> <span class="o">=</span> <span class="p">(</span><span class="n">num5</span> <span class="o">-</span> <span class="nb">min</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="nb">max</span><span class="o">-</span><span class="nb">min</span><span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MinMax Scaled:&#39;</span><span class="p">,</span> <span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">,</span><span class="n">num3</span><span class="p">,</span><span class="n">num4</span><span class="p">,</span><span class="n">num5</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -752,6 +818,8 @@ Enter z:  4</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7-std">Question-7: Std</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8-countdown">Question-8: Countdown</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-9-arrow">Question-9: Arrow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-10-standard-scaling">Question-10: Standard Scaling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-11-minmax-scaling">Question-11: MinMax Scaling</a></li>
 </ul>
   </nav></div>
 

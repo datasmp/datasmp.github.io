@@ -465,8 +465,6 @@ document.write(`
 </ul>
 <p>A space is also a character that can be in a string.
 Triple single and double quotes are used to create strings spanning multiple lines.</p>
-<p>If a single quote is a character in the string, using single quotes to create the string is an error. This is because the character single quote will end the creation of the string. It behaves like the second single quote, instead of being a character in the string.</p>
-<p>You can use double quotes to create the string to overcome the confusion. Alternatively, you can use escaping characters.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Single quotes </span>
@@ -474,11 +472,6 @@ Triple single and double quotes are used to create strings spanning multiple lin
 </pre></div>
 </div>
 </div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ERROR: Double single quotes cannot be used to create strings.</span>
-<span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="n">Mary</span><span class="s1">&#39;&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-</pre></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -504,6 +497,20 @@ Triple single and double quotes are used to create strings spanning multiple lin
 </div>
 </div>
 </div>
+<p>Double single/double quotes cannot be used to create strings.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ERROR: Double single quotes.</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="n">Mary</span><span class="s1">&#39;&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ERROR: Double double quotes. </span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="n">Mary</span><span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
+<p>If a single quote is a character in the string, using single quotes to create the string is an error. This is because the character single quote will end the creation of the string.</p>
+<ul class="simple">
+<li><p>It behaves like the second single quote, instead of being a character in the string.</p></li>
+<li><p>You can use double quotes to create the string to overcome the confusion. Alternatively, you can use escaping characters.</p></li>
+</ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ERROR</span>
 <span class="s1">&#39;Mary&#39;</span><span class="n">s</span> <span class="n">book</span><span class="o">.</span><span class="s1">&#39;</span>
 </pre></div>
@@ -538,17 +545,19 @@ Triple single and double quotes are used to create strings spanning multiple lin
 </div>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ERROR: Simple quotes cannot be used with strings spanning more than one line.</span>
+<p>Single/Double quotes cannot be used with strings spanning more than one line.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ERROR: Multiple lines.</span>
 <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;John</span>
      <span class="n">Steinbeck</span><span class="s1">&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ERROR: Double quotes cannot be used with strings spanning more than one line.</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ERROR: Multiple lines.</span>
 <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;John</span>
      <span class="n">Steinbeck</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
+<p>Triple single/double quotes are used to create strings with multiple lines.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># no ERROR</span>
@@ -650,36 +659,16 @@ Mark    Twain
 </div>
 </div>
 </div>
-<ul class="simple">
-<li><p>\b (backspace) moves one character back,  deleting the preceding character.</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;John</span><span class="se">\b</span><span class="s1"> Steinbeck&#39;</span><span class="p">)</span>
+<p>\b (backspace) moves one character back,  deleting the preceding character.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;John</span><span class="se">\b</span><span class="s1"> Steinbeck&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>John Steinbeck
+<p>Output: Joh Steinbeck</p>
+<p>\b\b (two backspaces) moves two characters back,  deleting the preceding two characters.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;John</span><span class="se">\b\b</span><span class="s1"> Steinbeck&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
-<ul class="simple">
-<li><p>\b\b (two backspaces) moves two characters back,  deleting the preceding two characters.</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;John</span><span class="se">\b\b</span><span class="s1"> Steinbeck&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>John Steinbeck
-</pre></div>
-</div>
-</div>
-</div>
+<p>Output: Jo Steinbeck</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># \\ is the \ (backslash) character</span>
@@ -696,8 +685,8 @@ Mark    Twain
 </section>
 <section id="raw-strings">
 <h2>Raw Strings<a class="headerlink" href="#raw-strings" title="Permalink to this heading">#</a></h2>
+<p>Each character in a raw string has no special meaning; they are just characters.</p>
 <ul class="simple">
-<li><p>Each character in a raw string has no special meaning; they are just characters.</p></li>
 <li><p>It is created using <code class="docutils literal notranslate"><span class="pre">r</span></code> in front of the string: <code class="docutils literal notranslate"><span class="pre">r'text'</span></code></p></li>
 <li><p>In the example below, <code class="docutils literal notranslate"><span class="pre">\t,\n,\',\&quot;</span></code> have no special meanings; they are just characters <code class="docutils literal notranslate"><span class="pre">\,</span> <span class="pre">t,</span> <span class="pre">n,',&quot;</span></code></p></li>
 </ul>
@@ -733,8 +722,8 @@ Mark    Twain
 </section>
 <section id="f-strings">
 <h2>f-strings<a class="headerlink" href="#f-strings" title="Permalink to this heading">#</a></h2>
+<p>It is a great way to combine constants and variable values.</p>
 <ul class="simple">
-<li><p>It is a great way to combine constants and variable values.</p></li>
 <li><p>It is in the form of: <code class="docutils literal notranslate"><span class="pre">f'text</span> <span class="pre">{variable}</span> <span class="pre">text'</span></code></p></li>
 <li><p>Variables are enclosed in curly brackets <code class="docutils literal notranslate"><span class="pre">{variable}</span></code> called placeholders.</p></li>
 <li><p>An f-string generates a new string.</p></li>
@@ -769,7 +758,7 @@ Mark    Twain
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># longer way</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># using comma separated values</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;My name is &#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -783,7 +772,6 @@ Mark    Twain
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># using an f-string</span>
-
 <span class="n">text</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;My name is </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">.&#39;</span>   <span class="c1"># text is a string</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
@@ -797,7 +785,7 @@ Mark    Twain
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Multiple placholders</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># multiple placholders</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;My name is </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1"> and I am from </span><span class="si">{</span><span class="n">country</span><span class="si">}</span><span class="s1">. I am </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s1"> years old.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -808,10 +796,12 @@ Mark    Twain
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>Algebraic operations can be performed inside curly brackets</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># algebraic operation inside curly brackets</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;I will be </span><span class="si">{</span><span class="n">age</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1"> years old next year.&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;I will be </span><span class="si">{</span><span class="n">age</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1"> years old next year.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -821,9 +811,12 @@ Mark    Twain
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>Rounding can be performed inside curly brackets</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># rounding by using the round() function</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># round() function</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;My weight is </span><span class="si">{</span><span class="n">weight</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;My rounded weight is </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
@@ -856,11 +849,12 @@ My rounded weight is 173.63.
 </section>
 <section id="unicode-characters">
 <h2>Unicode Characters<a class="headerlink" href="#unicode-characters" title="Permalink to this heading">#</a></h2>
+<p>These are symbols, accented letters, non-Latin characters, and emojis—kind of different characters.</p>
 <ul class="simple">
-<li><p>These are symbols, accented letters, non-Latin characters, and emojis—kind of different characters.</p></li>
 <li><p>You can find the list of Unicode characters on the official website of <a class="reference external" href="https://home.unicode.org/">Unicodes</a>.</p></li>
 <li><p>Each Unicode character has a code that is unique to it.</p>
 <ul>
+<li><p>You can search for a specific Unicode code from the <a class="reference external" href="https://www.unicode.org/charts/">Unicode character charts</a>.</p></li>
 <li><p>If the code has four characters, use</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">\uXXXX</span></code> where XXXX is the code.</p></li>
@@ -874,10 +868,10 @@ My rounded weight is 173.63.
 </ul>
 </li>
 </ul>
+<p>Example: If the Unicode is 1F639, three zeros are added to the left.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># unicode code is 1F639, you need to add 3 zeros to the left</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\U0001F639</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\U0001F639</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -887,10 +881,10 @@ My rounded weight is 173.63.
 </div>
 </div>
 </div>
+<p>Example: If the Unicode is 1F602, three zeros are added to the left.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># unicode code is 1F602, you need to add 3 zeros to the left</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\U0001F602</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\U0001F602</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -900,10 +894,10 @@ My rounded weight is 173.63.
 </div>
 </div>
 </div>
+<p>Example: If the Unicode is 2764, no padding is necessary.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># unicode code is 2764</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\u2764</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\u2764</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -913,10 +907,10 @@ My rounded weight is 173.63.
 </div>
 </div>
 </div>
+<p>Example: Padding can also be applied if the Unicode is 2764.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># unicode code is 2764, you need to add 4 zeros to the left</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\U00002764</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\U00002764</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -931,8 +925,8 @@ My rounded weight is 173.63.
 <h2>Operations on strings<a class="headerlink" href="#operations-on-strings" title="Permalink to this heading">#</a></h2>
 <section id="concatenation">
 <h3>Concatenation<a class="headerlink" href="#concatenation" title="Permalink to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">+</span></code> operator is used to concatenate two strings.</p>
 <ul class="simple">
-<li><p>The <code class="docutils literal notranslate"><span class="pre">+</span></code> operator is used to concatenate two strings.</p></li>
 <li><p>String + String: combines two strings.</p></li>
 </ul>
 <div class="cell docutils container">
@@ -947,8 +941,8 @@ My rounded weight is 173.63.
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># concatenation of x and y</span>
 
-<span class="n">name</span> <span class="o">=</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="n">author</span> <span class="o">=</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">author</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -958,12 +952,12 @@ My rounded weight is 173.63.
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>A single space <code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">'</span></code> can be inserted between x and y.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># add a space between x and y</span>
-<span class="c1"># concatenation of x, space, and y</span>
-
-<span class="n">name</span> <span class="o">=</span> <span class="n">x</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="o">+</span><span class="n">y</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">y</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -977,17 +971,17 @@ My rounded weight is 173.63.
 </section>
 <section id="repetition">
 <h3>Repetition<a class="headerlink" href="#repetition" title="Permalink to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">*</span></code> operator is used to repeat a string a certain number of times.</p>
 <ul class="simple">
-<li><p>The <code class="docutils literal notranslate"><span class="pre">*</span></code> operator is used to repeat a string a certain number of times.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">String</span> <span class="pre">*</span> <span class="pre">Integer</span></code> or <code class="docutils literal notranslate"><span class="pre">Integer</span> <span class="pre">*</span> <span class="pre">String</span></code> makes copies of the string Integer many times.</p></li>
 <li><p>Floats cannot be used for repetitions.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># four copies of x</span>
-
-<span class="n">fourtoms</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="mi">4</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">fourtoms</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;John&#39;</span>
+<span class="n">fourjohns</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="mi">4</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fourjohns</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -997,15 +991,17 @@ My rounded weight is 173.63.
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>In the following code, there is an error due to the attempt to use the float value 4.3 in a repetition operation.</p></li>
+</ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ERROR: float * str</span>
-<span class="c1"># floats can not be sed for repetition</span>
 <span class="mf">4.3</span><span class="o">*</span><span class="s1">&#39;Hi&#39;</span>
 </pre></div>
 </div>
+<p>Example: Forming a triangle pattern with the ‘$’ character using repetitions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Triangle with the &#39;$&#39; character using repetitions.</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;$&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;$&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;$&#39;</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;$&#39;</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;$&#39;</span><span class="o">*</span><span class="mi">4</span><span class="p">)</span>
@@ -1027,16 +1023,16 @@ $$$$$$$
 </div>
 </div>
 </div>
+<p>Example: Forming a triangle pattern with the ‘$’ and space characters using repetitions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Triangle with the &#39;$&#39; and &#39; &#39; (space) characters using repetitions.&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">6</span><span class="o">+</span><span class="s1">&#39;$&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">6</span><span class="o">+</span><span class="s1">&#39;$&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">5</span><span class="o">+</span><span class="s1">&#39;$&#39;</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">4</span><span class="o">+</span><span class="s1">&#39;$&#39;</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">3</span><span class="o">+</span><span class="s1">&#39;$&#39;</span><span class="o">*</span><span class="mi">4</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="s1">&#39;$&#39;</span><span class="o">*</span><span class="mi">5</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">1</span><span class="o">+</span><span class="s1">&#39;$&#39;</span><span class="o">*</span><span class="mi">6</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">0</span><span class="o">+</span><span class="s1">&#39;$&#39;</span><span class="o">*</span><span class="mi">7</span><span class="p">)</span>    <span class="c1"># you do not have to include the space part because it adds no space.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">0</span><span class="o">+</span><span class="s1">&#39;$&#39;</span><span class="o">*</span><span class="mi">7</span><span class="p">)</span>    <span class="c1"># no need for the space</span>
 </pre></div>
 </div>
 </div>
@@ -1056,13 +1052,15 @@ $$$$$$$
 </section>
 <section id="length-function">
 <h2>Length Function<a class="headerlink" href="#length-function" title="Permalink to this heading">#</a></h2>
+<p>The built-in <code class="docutils literal notranslate"><span class="pre">len()</span></code> function returns the number of characters in a string.</p>
 <ul class="simple">
-<li><p>The built-in <code class="docutils literal notranslate"><span class="pre">len()</span></code> function returns the number of characters in a string.</p></li>
+<li><p>The space <em>‘ ‘</em> is a character.</p></li>
+<li><p>Escaping characters such as <em>‘\n’</em> and <em>‘\t’</em> are counted as single characters.</p></li>
 </ul>
+<p>Example: The string ‘hello’ contains 5 characters.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># there are five characters in hello</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1072,11 +1070,10 @@ $$$$$$$
 </div>
 </div>
 </div>
+<p>Example: The string ‘hel lo’ contains 6 characters, including the space.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># there are six characters in &#39;hel lo&#39;</span>
-<span class="c1"># space is a character</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="s1">&#39;hel lo&#39;</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="s1">&#39;hel lo&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1086,11 +1083,10 @@ $$$$$$$
 </div>
 </div>
 </div>
+<p>Example: The string ‘hel\nlo’ contains 6 characters, including the newline character.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># there are six characters in &#39;hel\nlo</span>
-<span class="c1"># \n is a new line character (single character)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="s1">&#39;hel</span><span class="se">\n</span><span class="s1">lo&#39;</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="s1">&#39;hel</span><span class="se">\n</span><span class="s1">lo&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1103,8 +1099,8 @@ $$$$$$$
 </section>
 <section id="string-indexing">
 <h2>String Indexing<a class="headerlink" href="#string-indexing" title="Permalink to this heading">#</a></h2>
+<p>Indexing is used to access individual characters or sets of characters.</p>
 <ul class="simple">
-<li><p>Indexing is used to access individual characters or sets of characters.</p></li>
 <li><p>Indexing starts with zero.</p></li>
 <li><p>The index of the first character is 0.</p></li>
 <li><p>The index of the second character is 1, and so on.</p></li>
@@ -1113,16 +1109,15 @@ $$$$$$$
 <li><p>The index of the last character is -1.</p></li>
 <li><p>The index of the second character from the end is -2, and so on.</p></li>
 </ul>
-<p><img alt="" src="_images/cal_index.png" /></p>
+<p><img alt="" src="_images/cal_index_v2.png" /></p>
 <ul class="simple">
 <li><p>index of <code class="docutils literal notranslate"><span class="pre">C</span></code> is 0 or -10</p></li>
 <li><p>index of <code class="docutils literal notranslate"><span class="pre">first</span> <span class="pre">A</span></code> is 1 or -9</p></li>
 <li><p>index of <code class="docutils literal notranslate"><span class="pre">second</span> <span class="pre">A</span></code> is 9 or -1</p></li>
-<li><p><strong>Warning:</strong> There is a character with index -10 (the second ‘A’), but there is no character with index positive 10 because indexing starts with 0, and it does not reach 10, which is the length of the string.</p>
-<ul>
-<li><p>For any string, there is no character with an index equal to the length of the string.</p></li>
 </ul>
-</li>
+<p><strong>Warning:</strong> There is a character with index -10 (the second ‘A’), but there is no character with index positive 10 because indexing starts with 0, and it does not reach 10, which is the length of the string.</p>
+<ul class="simple">
+<li><p>For any string, there is no character with an index equal to the length of the string.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1133,7 +1128,7 @@ $$$$$$$
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># access the character at index 0 by using square brackets.&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># character at index 0 </span>
 <span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -1146,7 +1141,7 @@ $$$$$$$
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Access the character at index 6 by using square brackets.&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># character at index 6 </span>
 <span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="mi">6</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -1159,7 +1154,7 @@ $$$$$$$
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Access the character at index -1 by using square brackets.&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># character at index -1 </span>
 <span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -1172,7 +1167,7 @@ $$$$$$$
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Access the character at index -3 by using square brackets.&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># character at index -3 </span>
 <span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -1191,16 +1186,18 @@ $$$$$$$
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>The length of state is 10, and there is an error in the following code. This applies to all strings</p></li>
+<li><p>The length of state is 10, and there is an error in the following code. This applies to all strings.</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ERROR: out of range</span>
 <span class="n">state</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">state</span><span class="p">)]</span>
 </pre></div>
 </div>
+<ul class="simple">
+<li><p>There is no error in the following code because <code class="docutils literal notranslate"><span class="pre">len(state)</span> <span class="pre">-</span> <span class="pre">1</span></code> = 9 is the index of the last character.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># There is no error in the following code because len(state) - 1 = 9 is the index of the last character</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">state</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">state</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -1213,27 +1210,25 @@ $$$$$$$
 </section>
 <section id="string-slices">
 <h2>String Slices<a class="headerlink" href="#string-slices" title="Permalink to this heading">#</a></h2>
+<p>You can access more than one character of a string by using index numbers.</p>
 <ul class="simple">
-<li><p>You can access more than one character of a string by using index numbers.</p></li>
 <li><p>It is in the form of <code class="docutils literal notranslate"><span class="pre">string[start:</span> <span class="pre">end]</span></code> with inclusive start and exclusive end.</p></li>
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">:</span></code> (colon) inside square brackets between the start and end indexes.</p></li>
 <li><p>It consists of characters starting with index start up to the character with index end-1.</p></li>
 <li><p>The character with index end is not included.</p></li>
-<li><p>For example, <code class="docutils literal notranslate"><span class="pre">string[2:5]</span></code> returns characters with indexes 2, 3, 4 (5 is not included).</p></li>
-<li><p>For example, string[-4:-1] returns characters with indexes -4, -3, -2 (-1 is not included).</p></li>
 <li><p>It returns a substring.</p></li>
+<li><p>Examples:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">string[2:5]</span></code> returns characters with indexes 2, 3, 4 (5 is not included).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">string[-4:-1]</span></code> returns characters with indexes -4, -3, -2 (-1 is not included).</p></li>
 </ul>
-<p><img alt="" src="_images/cal_index2.png" /></p>
+</li>
+</ul>
+<p><img alt="" src="_images/cal_index2_v2.png" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="s1">&#39;CALIFORNIA&#39;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span>  <span class="c1"># index=2,3,4</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span>  <span class="c1"># index=2,3,4</span>
 </pre></div>
 </div>
 </div>
@@ -1245,7 +1240,8 @@ $$$$$$$
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># index=-4,-3,-2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="s1">&#39;CALIFORNIA&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># index=-4,-3,-2</span>
 </pre></div>
 </div>
 </div>
@@ -1255,6 +1251,7 @@ $$$$$$$
 </div>
 </div>
 </div>
+<p><strong>Default start and end values:</strong></p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">string[:end]</span></code>: the default value of start is 0, which means it starts from the very beginning.</p>
 <ul>
@@ -1270,7 +1267,8 @@ $$$$$$$
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="mi">2</span><span class="p">:])</span>  <span class="c1"># index = 2,3,4,5,6,7,8,9</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="s1">&#39;CALIFORNIA&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="mi">2</span><span class="p">:])</span>  <span class="c1"># index = 2,3,4,5,6,7,8,9</span>
 </pre></div>
 </div>
 </div>
@@ -1282,7 +1280,8 @@ $$$$$$$
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>  <span class="c1"># index = 0,1,2,3,4</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="s1">&#39;CALIFORNIA&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>  <span class="c1"># index = 0,1,2,3,4</span>
 </pre></div>
 </div>
 </div>
@@ -1294,7 +1293,8 @@ $$$$$$$
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">[:])</span>  <span class="c1"># index = all of them = 0,1,2,...,9</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="s1">&#39;CALIFORNIA&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">[:])</span>  <span class="c1"># index = all of them = 0,1,2,...,9</span>
 </pre></div>
 </div>
 </div>
@@ -1304,8 +1304,9 @@ $$$$$$$
 </div>
 </div>
 </div>
+<p><strong>Step parameter</strong></p>
+<p>Slicing can also be done by taking steps in the form of: <code class="docutils literal notranslate"><span class="pre">string[start:</span> <span class="pre">end:</span> <span class="pre">step]</span></code>.</p>
 <ul class="simple">
-<li><p>Slicing can also be done by taking steps in the form of: <code class="docutils literal notranslate"><span class="pre">string[start:</span> <span class="pre">end:</span> <span class="pre">step]</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">string[start:</span> <span class="pre">end:</span> <span class="pre">step]</span></code> means starting with the character at index = start up to the character at index = length - 1, as before, but not necessarily including all characters between them.</p></li>
 <li><p>The first index is start, the second index is start + step, and the third index is start + 2 * step.</p></li>
 <li><p>It continues in this way, but the largest index can be at most length - 1.</p></li>
@@ -1314,19 +1315,8 @@ $$$$$$$
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CALIFORNIA
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">7</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>  <span class="c1"># index = 2,2+2=4, 4+2=6</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="s1">&#39;CALIFORNIA&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">7</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>  <span class="c1"># index = 2,2+2=4, 4+2=6</span>
 </pre></div>
 </div>
 </div>
@@ -1338,7 +1328,8 @@ $$$$$$$
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">8</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>  <span class="c1"># index = 1,1+3=4, 4+3=7</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="s1">&#39;CALIFORNIA&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">8</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>  <span class="c1"># index = 1,1+3=4, 4+3=7</span>
 </pre></div>
 </div>
 </div>
@@ -1350,7 +1341,8 @@ $$$$$$$
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="mi">7</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>  <span class="c1"># index = 7,7+(-2)=5,5+(-2)=3 </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="s1">&#39;CALIFORNIA&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="mi">7</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>  <span class="c1"># index = 7,7+(-2)=5,5+(-2)=3 </span>
 </pre></div>
 </div>
 </div>
@@ -1362,7 +1354,8 @@ $$$$$$$
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="o">-</span><span class="mi">8</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>  <span class="c1"># index = -8, -8+3=-5</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="s1">&#39;CALIFORNIA&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="o">-</span><span class="mi">8</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>  <span class="c1"># index = -8, -8+3=-5</span>
 </pre></div>
 </div>
 </div>
@@ -1372,10 +1365,14 @@ $$$$$$$
 </div>
 </div>
 </div>
+<p><strong>Warning:</strong></p>
+<ul class="simple">
+<li><p>For negative step default value of start is 9 (-1)</p></li>
+<li><p>For negative step default value of end   is 0 (-10)</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># for negative step default value of start is 9 (-1)</span>
-<span class="c1"># for negative step default value of end   is 0 (-10)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="s1">&#39;CALIFORNIA&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># index = 9,8,...,0  </span>
 </pre></div>
 </div>
@@ -1388,7 +1385,8 @@ $$$$$$$
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># index = -3,-4,...,-10</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="s1">&#39;CALIFORNIA&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># index = -3,-4,...,-10</span>
 </pre></div>
 </div>
 </div>
@@ -1400,7 +1398,8 @@ $$$$$$$
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">[:</span><span class="o">-</span><span class="mi">4</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># index = 9,8,7 or -1,-2,-3</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="s1">&#39;CALIFORNIA&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">[:</span><span class="o">-</span><span class="mi">4</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># index = 9,8,7 or -1,-2,-3</span>
 </pre></div>
 </div>
 </div>
@@ -1413,8 +1412,8 @@ $$$$$$$
 </section>
 <section id="string-module">
 <h2>String module<a class="headerlink" href="#string-module" title="Permalink to this heading">#</a></h2>
+<p>It contains functions to process strings, as well as some constants.</p>
 <ul class="simple">
-<li><p>It contains constants and functions to process strings, as well as some constants.</p></li>
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">help(string)</span></code> for more explanations.</p></li>
 </ul>
 <div class="cell docutils container">
@@ -1487,22 +1486,18 @@ $$$$$$$
 </section>
 <section id="immutable">
 <h2>Immutable<a class="headerlink" href="#immutable" title="Permalink to this heading">#</a></h2>
+<p>Strings are immutable, which means they cannot be modified.</p>
 <ul class="simple">
-<li><p>Strings are immutable, which means they cannot be modified.</p></li>
 <li><p>For example, if you try to change the first character of ‘CALIFORNIA’, you will get an error message.</p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ERROR:  try to change the first character, which has an index of 0.</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ERROR:  try to change the first character of state</span>
 <span class="n">state</span> <span class="o">=</span> <span class="s1">&#39;CALIFORNIA&#39;</span>
 <span class="n">state</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;R&#39;</span>  
 </pre></div>
 </div>
+<p>You can use the <em>state</em> variable to produce a new string without changing the original one. In the following code:</p>
 <ul class="simple">
-<li><p>You can use the state variable to produce a new string without changing the original one.</p></li>
-<li><p>In the following code:</p>
-<ul>
 <li><p>The value of the variable <em>new_state</em> is the concatenation of the string ‘R’ and a slice of state starting from the character at index 1 and continuing to the end.</p></li>
-</ul>
-</li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1520,13 +1515,11 @@ $$$$$$$
 </div>
 </div>
 <ul class="simple">
-<li><p>In the following code, a new value is assigned to the variable <em>state</em>.</p></li>
+<li><p>In the following code, a new value is assigned to the variable <em>state</em>. The string <em>‘CALIFORNIA’</em> is not modified.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># &#39;CALIFORNIA&#39; is not modified.</span>
-
-<span class="n">state</span> <span class="o">=</span> <span class="s1">&#39;CALIFORNIA&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="s1">&#39;CALIFORNIA&#39;</span>
 <span class="n">state</span> <span class="o">=</span> <span class="s1">&#39;R&#39;</span> <span class="o">+</span> <span class="n">state</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>   
 
 <span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
@@ -1542,8 +1535,8 @@ $$$$$$$
 </section>
 <section id="in-and-not-in">
 <h2>in  and not in<a class="headerlink" href="#in-and-not-in" title="Permalink to this heading">#</a></h2>
+<p>These operators are used to check if a character or slice is present in a string.</p>
 <ul class="simple">
-<li><p>These operators are used to check if a character or slice is present in a string.</p></li>
 <li><p>They return a boolean value: True or False.</p></li>
 <li><p>Python is case-sensitive.</p></li>
 </ul>
@@ -1598,12 +1591,24 @@ $$$$$$$
 </section>
 <section id="string-methods">
 <h2>String Methods<a class="headerlink" href="#string-methods" title="Permalink to this heading">#</a></h2>
+<p>String methods do not modify the original string because strings are immutable.</p>
 <ul class="simple">
-<li><p>String methods do not modify the original string because strings are immutable.</p></li>
 <li><p>String methods return a new value.</p></li>
 <li><p>If you run <code class="docutils literal notranslate"><span class="pre">dir(str)</span></code>, you will see that there are many methods because there can be so many things that can be done with strings.</p></li>
 <li><p>We will cover some of them here, but you can check <code class="docutils literal notranslate"><span class="pre">help(str)</span></code> for more details.</p></li>
 </ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="nb">str</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;__add__&#39;, &#39;__class__&#39;, &#39;__contains__&#39;, &#39;__delattr__&#39;, &#39;__dir__&#39;, &#39;__doc__&#39;, &#39;__eq__&#39;, &#39;__format__&#39;, &#39;__ge__&#39;, &#39;__getattribute__&#39;, &#39;__getitem__&#39;, &#39;__getnewargs__&#39;, &#39;__getstate__&#39;, &#39;__gt__&#39;, &#39;__hash__&#39;, &#39;__init__&#39;, &#39;__init_subclass__&#39;, &#39;__iter__&#39;, &#39;__le__&#39;, &#39;__len__&#39;, &#39;__lt__&#39;, &#39;__mod__&#39;, &#39;__mul__&#39;, &#39;__ne__&#39;, &#39;__new__&#39;, &#39;__reduce__&#39;, &#39;__reduce_ex__&#39;, &#39;__repr__&#39;, &#39;__rmod__&#39;, &#39;__rmul__&#39;, &#39;__setattr__&#39;, &#39;__sizeof__&#39;, &#39;__str__&#39;, &#39;__subclasshook__&#39;, &#39;capitalize&#39;, &#39;casefold&#39;, &#39;center&#39;, &#39;count&#39;, &#39;encode&#39;, &#39;endswith&#39;, &#39;expandtabs&#39;, &#39;find&#39;, &#39;format&#39;, &#39;format_map&#39;, &#39;index&#39;, &#39;isalnum&#39;, &#39;isalpha&#39;, &#39;isascii&#39;, &#39;isdecimal&#39;, &#39;isdigit&#39;, &#39;isidentifier&#39;, &#39;islower&#39;, &#39;isnumeric&#39;, &#39;isprintable&#39;, &#39;isspace&#39;, &#39;istitle&#39;, &#39;isupper&#39;, &#39;join&#39;, &#39;ljust&#39;, &#39;lower&#39;, &#39;lstrip&#39;, &#39;maketrans&#39;, &#39;partition&#39;, &#39;removeprefix&#39;, &#39;removesuffix&#39;, &#39;replace&#39;, &#39;rfind&#39;, &#39;rindex&#39;, &#39;rjust&#39;, &#39;rpartition&#39;, &#39;rsplit&#39;, &#39;rstrip&#39;, &#39;split&#39;, &#39;splitlines&#39;, &#39;startswith&#39;, &#39;strip&#39;, &#39;swapcase&#39;, &#39;title&#39;, &#39;translate&#39;, &#39;upper&#39;, &#39;zfill&#39;]
+</pre></div>
+</div>
+</div>
+</div>
 <section id="capitalize">
 <h3>capitalize()<a class="headerlink" href="#capitalize" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
@@ -1714,9 +1719,12 @@ tOm aNd jerRy.
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>In the following code, the value <em>-1</em> indicates that <em>‘W’</em> does not exist. It does not represent an index.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># -1 means &#39;W&#39; does not exist, -1 does not represent an index</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="s1">&#39;CALIFORNIA&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;W&#39;</span><span class="p">))</span> 
 </pre></div>
 </div>
@@ -1729,7 +1737,8 @@ tOm aNd jerRy.
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">))</span> <span class="c1"># index of first &#39;A&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="s1">&#39;CALIFORNIA&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">))</span> <span class="c1"># index of first &#39;A&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -1739,9 +1748,12 @@ tOm aNd jerRy.
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>In the following code, the <em>find()</em> method returns the index of the first occurrence of ‘A’, starting from the character at index 3.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The index of the first occurrence of &#39;A&#39; starting from the character at index 3.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="s1">&#39;CALIFORNIA&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span> 
 </pre></div>
 </div>
@@ -1754,7 +1766,9 @@ tOm aNd jerRy.
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The string &#39;FOR&#39; begins from the character at index 4.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># &#39;FOR&#39; begins from the character at index 4.</span>
+
+<span class="n">state</span> <span class="o">=</span> <span class="s1">&#39;CALIFORNIA&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;FOR&#39;</span><span class="p">))</span> 
 </pre></div>
 </div>
@@ -1767,7 +1781,10 @@ tOm aNd jerRy.
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;WE&#39;</span><span class="p">))</span> <span class="c1"># &#39;WE&#39; does not exist in CALIFORNIA</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># &#39;WE&#39; does not exist in CALIFORNIA</span>
+
+<span class="n">state</span> <span class="o">=</span> <span class="s1">&#39;CALIFORNIA&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;WE&#39;</span><span class="p">))</span> 
 </pre></div>
 </div>
 </div>
@@ -1785,7 +1802,8 @@ tOm aNd jerRy.
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">))</span>   <span class="c1"># index of first &#39;A&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="s1">&#39;CALIFORNIA&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">))</span>   <span class="c1"># index of first &#39;A&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">rfind</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">))</span>  <span class="c1"># index of last &#39;A&#39;</span>
 </pre></div>
 </div>
@@ -1807,19 +1825,19 @@ tOm aNd jerRy.
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">country</span> <span class="o">=</span> <span class="s1">&#39;  FLORIDA   &#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">country</span><span class="p">)</span>          
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;---&#39;</span><span class="o">+</span><span class="n">country</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">+</span><span class="s1">&#39;---&#39;</span><span class="p">)</span>      <span class="c1"># white spaces on the left and right are removed</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;---&#39;</span><span class="o">+</span><span class="n">country</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span><span class="o">+</span><span class="s1">&#39;---&#39;</span><span class="p">)</span>     <span class="c1"># white spaces on the right are removed</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;---&#39;</span><span class="o">+</span><span class="n">country</span><span class="o">.</span><span class="n">lstrip</span><span class="p">()</span><span class="o">+</span><span class="s1">&#39;---&#39;</span><span class="p">)</span>     <span class="c1"># white spaces on the left  are removed</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">country</span> <span class="o">=</span> <span class="s1">&#39;  GERMANY   &#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;---&#39;</span> <span class="o">+</span> <span class="n">country</span> <span class="o">+</span> <span class="s1">&#39;---&#39;</span><span class="p">)</span>          
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;---&#39;</span> <span class="o">+</span> <span class="n">country</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;---&#39;</span><span class="p">)</span>     <span class="c1"># white spaces on the left and right are removed</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;---&#39;</span> <span class="o">+</span> <span class="n">country</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span><span class="o">+</span> <span class="s1">&#39;---&#39;</span><span class="p">)</span>     <span class="c1"># white spaces on the right are removed</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;---&#39;</span> <span class="o">+</span> <span class="n">country</span><span class="o">.</span><span class="n">lstrip</span><span class="p">()</span><span class="o">+</span> <span class="s1">&#39;---&#39;</span><span class="p">)</span>     <span class="c1"># white spaces on the left  are removed</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  FLORIDA   
----FLORIDA---
----  FLORIDA---
----FLORIDA   ---
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>---  GERMANY   ---
+---GERMANY---
+---  GERMANY---
+---GERMANY   ---
 </pre></div>
 </div>
 </div>
@@ -1832,7 +1850,10 @@ tOm aNd jerRy.
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;H&#39;</span><span class="p">))</span> <span class="c1"># &#39;CALIFORNIA&#39; does not startswith &#39;H&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># &#39;CALIFORNIA&#39; does not startswith &#39;H&#39;</span>
+
+<span class="n">state</span> <span class="o">=</span> <span class="s1">&#39;CALIFORNIA&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;H&#39;</span><span class="p">))</span> 
 </pre></div>
 </div>
 </div>
@@ -1844,7 +1865,10 @@ tOm aNd jerRy.
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">))</span> <span class="c1"># &#39;CALIFORNIA&#39; does startswith &#39;C&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># &#39;CALIFORNIA&#39; does startswith &#39;C&#39;</span>
+
+<span class="n">state</span> <span class="o">=</span> <span class="s1">&#39;CALIFORNIA&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">))</span> 
 </pre></div>
 </div>
 </div>
@@ -1862,7 +1886,10 @@ tOm aNd jerRy.
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">))</span>   <span class="c1"># number of &#39;A&#39;s in &#39;CALIFORNIA&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># number of &#39;A&#39;s in &#39;CALIFORNIA&#39;</span>
+
+<span class="n">state</span> <span class="o">=</span> <span class="s1">&#39;CALIFORNIA&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">))</span>   
 </pre></div>
 </div>
 </div>
@@ -1874,7 +1901,10 @@ tOm aNd jerRy.
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;I&#39;</span><span class="p">))</span>   <span class="c1"># number of &#39;I&#39;s in CALIFORNIA&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># number of &#39;I&#39;s in CALIFORNIA&#39;</span>
+
+<span class="n">state</span> <span class="o">=</span> <span class="s1">&#39;CALIFORNIA&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;I&#39;</span><span class="p">))</span>   
 </pre></div>
 </div>
 </div>
@@ -1886,7 +1916,10 @@ tOm aNd jerRy.
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">))</span>   <span class="c1"># number of &#39;C&#39;s in &#39;CALIFORNIA&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span> <span class="c1"># number of &#39;C&#39;s in &#39;CALIFORNIA&#39;</span>
+
+<span class="n">state</span> <span class="o">=</span> <span class="s1">&#39;CALIFORNIA&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">))</span>  
 </pre></div>
 </div>
 </div>
@@ -1898,7 +1931,10 @@ tOm aNd jerRy.
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;W&#39;</span><span class="p">))</span>   <span class="c1"># number of &#39;C&#39;s in &#39;CALIFORNIA&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># number of &#39;C&#39;s in &#39;CALIFORNIA&#39;</span>
+
+<span class="n">state</span> <span class="o">=</span> <span class="s1">&#39;CALIFORNIA&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;W&#39;</span><span class="p">))</span>   
 </pre></div>
 </div>
 </div>
@@ -1916,7 +1952,9 @@ tOm aNd jerRy.
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="o">.</span><span class="n">isdigit</span><span class="p">())</span>         <span class="c1"># not all characters are digits</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># not all characters are digits</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="o">.</span><span class="n">isdigit</span><span class="p">())</span>         
 </pre></div>
 </div>
 </div>
@@ -1928,7 +1966,9 @@ tOm aNd jerRy.
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;123456&#39;</span><span class="o">.</span><span class="n">isdigit</span><span class="p">())</span>        <span class="c1"># all characters are digits</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># all characters are digits</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;123456&#39;</span><span class="o">.</span><span class="n">isdigit</span><span class="p">())</span>       
 </pre></div>
 </div>
 </div>
@@ -1940,7 +1980,9 @@ tOm aNd jerRy.
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;h1234&#39;</span><span class="o">.</span><span class="n">isdigit</span><span class="p">())</span>         <span class="c1"># not all characters are digits</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># not all characters are digits</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;h1234&#39;</span><span class="o">.</span><span class="n">isdigit</span><span class="p">())</span>       
 </pre></div>
 </div>
 </div>
@@ -1958,7 +2000,9 @@ tOm aNd jerRy.
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="o">.</span><span class="n">isalpha</span><span class="p">())</span>         <span class="c1"># all characters are alphabetic</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># all characters are alphabetic</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="o">.</span><span class="n">isalpha</span><span class="p">())</span>         
 </pre></div>
 </div>
 </div>
@@ -1970,7 +2014,9 @@ tOm aNd jerRy.
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;123456&#39;</span><span class="o">.</span><span class="n">isalpha</span><span class="p">())</span>        <span class="c1"># not all characters are alphabetic</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># not all characters are alphabetic</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;123456&#39;</span><span class="o">.</span><span class="n">isalpha</span><span class="p">())</span>        
 </pre></div>
 </div>
 </div>
@@ -1982,7 +2028,9 @@ tOm aNd jerRy.
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;h1234&#39;</span><span class="o">.</span><span class="n">isalpha</span><span class="p">())</span>         <span class="c1"># not all characters are alphabetic</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># not all characters are alphabetic</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;h1234&#39;</span><span class="o">.</span><span class="n">isalpha</span><span class="p">())</span>         
 </pre></div>
 </div>
 </div>
@@ -2050,6 +2098,7 @@ CA***FORNIA
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;aRThUr&#39;</span>
+
 <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">swapcase</span><span class="p">())</span> <span class="c1"># &#39;a&#39; becomes &#39;A&#39;, &#39;R&#39; becomes &#39;r&#39;, and so on</span>
 </pre></div>
@@ -2087,15 +2136,15 @@ ArtHuR
 </section>
 <section id="parsing-strings">
 <h2>Parsing Strings<a class="headerlink" href="#parsing-strings" title="Permalink to this heading">#</a></h2>
+<p>By using string methods, you can analyze a string and extract meaningful information about the string.</p>
 <ul class="simple">
-<li><p>By using string methods, you can analyze a string and extract meaningful information about the string.</p></li>
 <li><p>You can also perform specific operations based on the structure and content of the string.</p></li>
 <li><p>Example:</p>
 <ul>
 <li><p>From the given message below, extract the company name and capitalize it.</p></li>
 <li><p>The company name is between the characters <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> and <code class="docutils literal notranslate"><span class="pre">.</span></code></p></li>
 <li><p>e can use the <code class="docutils literal notranslate"><span class="pre">find()</span></code> method to find the indexes of these two characters.</p></li>
-<li><p>There are multiple <code class="docutils literal notranslate"><span class="pre">.</span></code> characters, so we need to find the first one that comes after <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>.”</p></li>
+<li><p>There are multiple <code class="docutils literal notranslate"><span class="pre">.</span></code> characters, so we need to find the first one that comes after <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>.</p></li>
 </ul>
 </li>
 </ul>
@@ -2115,7 +2164,7 @@ ArtHuR
 </div>
 </div>
 <ul class="simple">
-<li><p>To grab the company name, we need to use slicing.</p></li>
+<li><p>To extract the company name, we need to use slicing.</p></li>
 <li><p>Slicing must start from <code class="docutils literal notranslate"><span class="pre">index_at</span> <span class="pre">+</span> <span class="pre">1</span></code> because if you start from index_at, the slice will include &#64;.</p></li>
 <li><p>Slicing must end at <code class="docutils literal notranslate"><span class="pre">index_period</span></code> because the end index is not included.</p></li>
 </ul>
