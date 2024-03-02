@@ -404,9 +404,12 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question-3</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question-4</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question-5</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6">Question-6</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7">Question-7</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8">Question-8</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6-distance">Question-6: Distance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7-midpoint">Question-7: Midpoint</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8-pythagorean">Question-8: Pythagorean</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-9-degrees-to-radians">Question-9: Degrees to Radians</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-10-law-of-cosines">Question-10: Law of Cosines</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-11">Question-11</a></li>
 </ul>
             </nav>
         </div>
@@ -540,8 +543,8 @@ Enter the inch part of your height: 4<br />
 </pre></div>
 </div>
 </section>
-<section id="question-6">
-<h2>Question-6<a class="headerlink" href="#question-6" title="Permalink to this heading">#</a></h2>
+<section id="question-6-distance">
+<h2>Question-6: Distance<a class="headerlink" href="#question-6-distance" title="Permalink to this heading">#</a></h2>
 <p>In a coordinate plane, each point is represented by its x and y components in the form of <span class="math notranslate nohighlight">\((x,y)\)</span>.<br />
 The distance between two points <span class="math notranslate nohighlight">\(P=(x_1,y_1)\)</span> and <span class="math notranslate nohighlight">\(Q=(x_2,y_2)\)</span> is given by the following distance formula:</p>
 <ul class="simple">
@@ -569,13 +572,127 @@ The distance between (-5,6) and (-2.0,10.0) is 5.0</p>
 </pre></div>
 </div>
 </section>
-<section id="question-7">
-<h2>Question-7<a class="headerlink" href="#question-7" title="Permalink to this heading">#</a></h2>
+<section id="question-7-midpoint">
+<h2>Question-7: Midpoint<a class="headerlink" href="#question-7-midpoint" title="Permalink to this heading">#</a></h2>
+<p>In a coordinate plane, each point is represented by its x and y components in the form of <span class="math notranslate nohighlight">\((x,y)\)</span>.<br />
+The midpoint <span class="math notranslate nohighlight">\((x_m, y_m)\)</span> between two points <span class="math notranslate nohighlight">\(P=(x_1,y_1)\)</span> and <span class="math notranslate nohighlight">\(Q=(x_2,y_2)\)</span> is given by the following midpoint formula:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle x_m = \frac{x_2+x_1}{2}, y_m = \frac{y_2+y_1}{2}\)</span></p></li>
+</ul>
+<p>Write a program that prompts the user for the x and y components of a point using two <em>input()</em> functions, and computes the x and y components of the midpoint between the given point and the point <span class="math notranslate nohighlight">\((-5,6)\)</span></p>
+<p>Sample Output:<br />
+Enter the x-component of the point: 3<br />
+Enter the y-component of the point: 5<br />
+The midpoint between (-5,6) and (3.0,5.0) is (-1.0,5.5).</p>
 <p><strong>Solution</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="n">x1</span><span class="p">,</span> <span class="n">y1</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span>
+
+<span class="n">x2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter the x-component of the point:&#39;</span><span class="p">))</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter the y-component of the point:&#39;</span><span class="p">))</span>
+
+<span class="n">xm</span><span class="p">,</span> <span class="n">ym</span> <span class="o">=</span> <span class="p">(</span><span class="n">x2</span><span class="o">+</span><span class="n">x1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="n">y2</span><span class="o">+</span><span class="n">y1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span> 
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The midpoint between (&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;,&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">y1</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;) and (&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;,&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">y2</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;) is (&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">xm</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;,&#39;</span><span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">ym</span><span class="p">)</span> <span class="o">+</span><span class="s1">&#39;).&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
-<section id="question-8">
-<h2>Question-8<a class="headerlink" href="#question-8" title="Permalink to this heading">#</a></h2>
+<section id="question-8-pythagorean">
+<h2>Question-8: Pythagorean<a class="headerlink" href="#question-8-pythagorean" title="Permalink to this heading">#</a></h2>
+<p>The Pythagorean Theorem states that for a right triangle with sides <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, and <span class="math notranslate nohighlight">\(c\)</span> where <span class="math notranslate nohighlight">\(c\)</span> is the hypotenuse: <span class="math notranslate nohighlight">\(\displaystyle c = \sqrt{a^2+b^2}.\)</span></p>
+<ul class="simple">
+<li><p>Write a program that prompts the user for the sides of a right triangle using two <em>input()</em> functions, and computes the length of the hypotenuse.</p></li>
+<li><p>Round the hypotenuse to the nearest hundreth.</p></li>
+</ul>
+<p>Sample Output:<br />
+Enter the length of the first  side: 4<br />
+Enter the length of the second side: 8<br />
+The length of the hypotenuse: 8.94</p>
 <p><strong>Solution</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter the length of the first  side:&#39;</span><span class="p">))</span>
+<span class="n">b</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter the length of the second side:&#39;</span><span class="p">))</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">b</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> 
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The length of the hypotenuse:&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<section id="question-9-degrees-to-radians">
+<h2>Question-9: Degrees to Radians<a class="headerlink" href="#question-9-degrees-to-radians" title="Permalink to this heading">#</a></h2>
+<p>An angle in degrees is converted to radians using the following formula: <span class="math notranslate nohighlight">\(\displaystyle R = \frac{\pi}{180} \cdot D\)</span>.</p>
+<ul class="simple">
+<li><p>Write a program that prompts the user for an angle in degrees using an <em>input()</em> function, converts it to radians, and rounds it to the nearest hundredth.</p></li>
+<li><p>Use the conversion formula provided above, and also the <em>math.radians()</em> function to compare the results.</p></li>
+</ul>
+<p>Sample Output:<br />
+Enter the angle in degrees: 120<br />
+120.0 degrees is 2.09 using the formula.<br />
+120.0 degrees is 2.09 using the math.radians() functions.</p>
+<p><strong>Solution</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="n">D</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter the angle in degrees:&#39;</span><span class="p">))</span>
+
+<span class="n">R1</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">D</span><span class="o">/</span><span class="mi">180</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">R2</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">D</span><span class="p">),</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">D</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; degrees is &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">R1</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; using the formula.&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">D</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; degrees is &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">R2</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; using the math.radians() functions.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="question-10-law-of-cosines">
+<h2>Question-10: Law of Cosines<a class="headerlink" href="#question-10-law-of-cosines" title="Permalink to this heading">#</a></h2>
+<p>The Law of Cosines states that for a triangle with sides <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, and the angle <span class="math notranslate nohighlight">\(\gamma\)</span> between these two sides:</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle c = \sqrt{a^2+b^2-2ab \cdot \cos(\gamma)}\)</span>,</p>
+<p>where <span class="math notranslate nohighlight">\(c\)</span> is the length of the third side of the triangle corresponding to the angle <span class="math notranslate nohighlight">\(\gamma\)</span>.</p>
+<ul class="simple">
+<li><p>Write a program that prompts the user for two sides of a triangle and the angle between them in degrees using three <em>input()</em> functions, and computes the length of the third side <span class="math notranslate nohighlight">\(c\)</span>.</p></li>
+<li><p>Round <span class="math notranslate nohighlight">\(c\)</span> to the nearest hundredth.</p></li>
+<li><p>The <em>math.cos()</em> function takes the angle in radians. You need to convert the given angle in degrees to radians before using it.</p></li>
+</ul>
+<p>Sample Output:<br />
+Enter the length of the first  side               : 6<br />
+Enter the length of the second side               : 3<br />
+Enter the angle between these two sides in degrees: 70<br />
+The length of the third side: 5.72</p>
+<p><strong>Solution</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="n">a</span>         <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter the length of the first  side               :&#39;</span><span class="p">))</span>
+<span class="n">b</span>         <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter the length of the second side               :&#39;</span><span class="p">))</span>
+<span class="n">gamma_deg</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter the angle between these two sides in degrees:&#39;</span><span class="p">))</span>
+
+<span class="n">gamma_rad</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">gamma_deg</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">b</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">gamma_rad</span><span class="p">))</span> 
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The length of the third side:&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<section id="question-11">
+<h2>Question-11<a class="headerlink" href="#question-11" title="Permalink to this heading">#</a></h2>
+<p>Write a program that prompts the user for a number. Assign the entered value to variable with the name x.</p>
+<ul class="simple">
+<li><p>Find <span class="math notranslate nohighlight">\(\displaystyle f(x) = \frac{x^3-2x}{x+6}\)</span></p></li>
+<li><p>Round this value to the nearest hundredth and print the result in the following format.</p></li>
+<li><p>Sample Output:<br />
+x: 10<br />
+f(10)=61.25</p></li>
+</ul>
+<p><strong>Solution</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;x: &#39;</span><span class="p">))</span>
+
+<span class="n">f_x</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">6</span><span class="p">)</span> 
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;f(&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s1">&#39;)=&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">f_x</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
 </section>
 
@@ -629,9 +746,12 @@ The distance between (-5,6) and (-2.0,10.0) is 5.0</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question-3</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question-4</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question-5</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6">Question-6</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7">Question-7</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8">Question-8</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6-distance">Question-6: Distance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7-midpoint">Question-7: Midpoint</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8-pythagorean">Question-8: Pythagorean</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-9-degrees-to-radians">Question-9: Degrees to Radians</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-10-law-of-cosines">Question-10: Law of Cosines</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-11">Question-11</a></li>
 </ul>
   </nav></div>
 

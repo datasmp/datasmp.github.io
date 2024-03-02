@@ -208,7 +208,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="strings_debug.html">Strings Debugging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="strings_output.html">Strings Output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="strings_code.html">Strings Code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="strings_exercise.html">Strings Exercises and Solutions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings_exercise.html">Strings Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="conditionals.html">Chp-5: Conditionals</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -425,6 +425,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iterations-and-dictionaries">Iterations and Dictionaries</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionary-comprehension">Dictionary Comprehension</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#frequency">Frequency</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#word-lengths">Word Lengths</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#count-characters">Count Characters</a></li>
 </ul>
@@ -1126,6 +1127,38 @@ History 65
 </section>
 <section id="examples">
 <h3>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">#</a></h3>
+<section id="frequency">
+<h4>Frequency<a class="headerlink" href="#frequency" title="Permalink to this heading">#</a></h4>
+<p>Write a program that constructs a dictionary such that:</p>
+<ul class="simple">
+<li><p>keys represent the unique letters in the given list below</p></li>
+<li><p>values represent the number of occurrences of each unique letter.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">letters</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Solution:</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">frequency</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">letters</span><span class="p">:</span>
+    <span class="n">frequency</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">frequency</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>
+
+<span class="n">frequency</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;a&#39;: 3, &#39;b&#39;: 2, &#39;c&#39;: 2, &#39;d&#39;: 1, &#39;e&#39;: 1}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="word-lengths">
 <h4>Word Lengths<a class="headerlink" href="#word-lengths" title="Permalink to this heading">#</a></h4>
 <p>Write a program that constructs a dictionary such that:</p>
@@ -1331,6 +1364,7 @@ History 65
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iterations-and-dictionaries">Iterations and Dictionaries</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionary-comprehension">Dictionary Comprehension</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#frequency">Frequency</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#word-lengths">Word Lengths</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#count-characters">Count Characters</a></li>
 </ul>

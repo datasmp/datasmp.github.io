@@ -629,10 +629,12 @@ Steinbeck
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>In the following code, <em>‘\t’</em> inserts 4 spaces because after ‘John’, there are 4 more spaces until the next tab stop, which occurs at the 8th character.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># \t is a tab </span>
-<span class="c1"># Inserts spaces up to the next tab stop, which occurs every 8th character.</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;John</span><span class="se">\t</span><span class="s1">Steinbeck&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;John&#39;</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">4</span><span class="o">+</span><span class="s1">&#39;Steinbeck&#39;</span><span class="p">)</span>
 </pre></div>
@@ -645,30 +647,41 @@ John    Steinbeck
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>In the following code, <em>‘\t’</em> inserts 7 spaces because ‘Steinbeck’ has 9 characters and there are 7 more spaces until the next tab stop, which occurs at the 16th character.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Mark</span><span class="se">\t</span><span class="s1">Twain&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Mark&#39;</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">4</span><span class="o">+</span><span class="s1">&#39;Twain&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Steinbeck</span><span class="se">\t</span><span class="s1">John&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Steinbeck&#39;</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">7</span><span class="o">+</span><span class="s1">&#39;John&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mark	Twain
-Mark    Twain
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Steinbeck	John
+Steinbeck       John
 </pre></div>
 </div>
 </div>
 </div>
-<p>\b (backspace) moves one character back,  deleting the preceding character.</p>
+<ul class="simple">
+<li><p>\b (backspace) moves one character back,  deleting the preceding character.</p></li>
+</ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;John</span><span class="se">\b</span><span class="s1"> Steinbeck&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Output: Joh Steinbeck</p>
-<p>\b\b (two backspaces) moves two characters back,  deleting the preceding two characters.</p>
+<ul class="simple">
+<li><p>Output: Joh Steinbeck</p></li>
+</ul>
+<ul class="simple">
+<li><p>\b\b (two backspaces) moves two characters back,  deleting the preceding two characters.</p></li>
+</ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;John</span><span class="se">\b\b</span><span class="s1"> Steinbeck&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Output: Jo Steinbeck</p>
+<ul class="simple">
+<li><p>Output: Jo Steinbeck</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># \\ is the \ (backslash) character</span>
@@ -1578,7 +1591,31 @@ $$$$$$$
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;A&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="s1">&#39;FLORIDA&#39;</span> <span class="p">)</span>  <span class="c1"># &#39;a&#39; is not in FLORIDA</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;A&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="s1">&#39;FLORIDA&#39;</span> <span class="p">)</span>  <span class="c1"># &#39;A&#39; is not in FLORIDA</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;ORI&#39;</span>  <span class="ow">in</span> <span class="s1">&#39;FLORIDA&#39;</span> <span class="p">)</span>  <span class="c1"># &#39;ORI&#39; is in FLORIDA</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;ORI&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="s1">&#39;FLORIDA&#39;</span> <span class="p">)</span>  <span class="c1"># &#39;ORI&#39; is not in FLORIDA</span>
 </pre></div>
 </div>
 </div>
