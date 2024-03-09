@@ -1,0 +1,1977 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Chp-6: Iterations &#8212; Python in Plain Terms</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'iterations';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Iterations Debugging" href="iterations_debug.html" />
+    <link rel="prev" title="Conditionals Code" href="conditionals_code.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="ppt.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.svg" class="logo__image only-light" alt="Python in Plain Terms - Home"/>
+    <script>document.write(`<img src="_static/logo.svg" class="logo__image only-dark" alt="Python in Plain Terms - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="ppt.html">
+                    Python in Plain Terms
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="acknowledge.html">Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python Introduction</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="colab.html">Google Colab</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="colab_text.html">Text Cell</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="colab_text_questions.html">Text Cell Questions</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="colab_code.html">Code Cell</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="colab_code_questions.html">Code Cell Questions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="colab_exercises.html">Colab Exercises</a></li>
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="variables.html">Chp-1: Variables</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="variables_debug.html">Variables Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables_output.html">Variables Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables_code.html">Variables Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables_exercise.html">Variables Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="inout.html">Chp-2: Input and Output</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="inout_debug.html">Input and Output Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inout_output.html">Input and Output  Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inout_code.html">Input and Output Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inout_exercise.html">Input and Output Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="numbers_arithmetic.html">Chp-3: Numbers</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="numbers_arithmetic_debug.html">Numbers Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numbers_arithmetic_output.html">Numbers Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numbers_arithmetic_code.html">Numbers Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numbers_arithmetic_exercise.html">Numbers Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="strings.html">Chp-4: Strings</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="strings_debug.html">Strings Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings_output.html">Strings Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings_code.html">Strings Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings_exercise.html">Strings Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="conditionals.html">Chp-5: Conditionals</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="conditionals_debug.html">Conditionals Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conditionals_output.html">Conditionals Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conditionals_code.html">Conditionals Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Chp-6: Iterations</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="iterations_debug.html">Iterations Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterations_output.html">Iterations Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterations_code.html">Iterations Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="tuples.html">Chp-7: Tuples</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="tuples_debug.html">Tuples Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tuples_output.html">Tuples Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tuples_code.html">Tuples Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="lists.html">Chp-8: Lists</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="lists_debug.html">Lists Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lists_output.html">Lists Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lists_code.html">Lists Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="functions.html">Chp-9: Functions</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="functions_debug.html">Functions Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions_output.html">Functions Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions_code.html">Functions Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="sets.html">Chp-10: Sets</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="sets_debug.html">Sets Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sets_output.html">Strings Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sets_code.html">Sets Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="dictionaries.html">Chp-11: Dictionaries</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="dictionaries_debug.html">Dictionaries Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictionaries_output.html">Dictionaries Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictionaries_code.html">Dictionaries Code</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/iterations.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chp-6: Iterations</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">Motivation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#triangle">Triangle</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strings">Strings</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterations">Iterations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#range-function">Range Function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loop">for loop</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#break-and-continue">break and continue</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-and-else">for and else</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loop">while loop</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-versus-while">if versus while</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#infinite-loop">Infinite Loop</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">break and continue</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sum-of-numbers">Sum of Numbers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#text-analysis">Text Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reverse-a-word">Reverse a word</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#secret-number-game">Secret Number Game</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#factors-1">Factors-1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#factors-2">Factors-2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#countdown">Countdown</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#count-digits">Count digits</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="chp-6-iterations">
+<h1>Chp-6: Iterations<a class="headerlink" href="#chp-6-iterations" title="Permalink to this heading">#</a></h1>
+<p><img alt="" src="_images/iterations.png" /></p>
+<section id="motivation">
+<h2>Motivation<a class="headerlink" href="#motivation" title="Permalink to this heading">#</a></h2>
+<section id="triangle">
+<h3>Triangle<a class="headerlink" href="#triangle" title="Permalink to this heading">#</a></h3>
+<p>As a motivational exercise, let’s recall the code we previously encountered for printing a triangle using the <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> character and the <em>print()</em> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&amp;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&amp;&amp;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&amp;&amp;&amp;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&amp;&amp;&amp;&amp;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&amp;&amp;&amp;&amp;&amp;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&amp;&amp;&amp;&amp;&amp;&amp;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&amp;
+&amp;&amp;
+&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+</pre></div>
+</div>
+</div>
+</div>
+<p>This code follows a pattern where the number of <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> characters increases by one in each line, simplifying the code through repetition.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&amp;&#39;</span><span class="o">*</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&amp;&#39;</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&amp;&#39;</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&amp;&#39;</span><span class="o">*</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&amp;&#39;</span><span class="o">*</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&amp;&#39;</span><span class="o">*</span><span class="mi">6</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&amp;&#39;</span><span class="o">*</span><span class="mi">7</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&amp;&#39;</span><span class="o">*</span><span class="mi">8</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&amp;&#39;</span><span class="o">*</span><span class="mi">9</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&amp;&#39;</span><span class="o">*</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&amp;
+&amp;&amp;
+&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>The second version, utilizing string repetition, is simpler than the first.</p></li>
+<li><p>However, further simplification is possible as there are still repetitions, such as the presence of the print() function in each line.</p></li>
+<li><p>To address this, iterations can be employed to avoid using the <em>print()</em> function ten times.</p></li>
+<li><p>The iteration version is as follows:</p>
+<ul>
+<li><p>It eliminates repetition.</p></li>
+<li><p>It does not become longer even with a larger triangle.</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">):</span>    <span class="c1"># iteration</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&amp;&#39;</span><span class="o">*</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&amp;
+&amp;&amp;
+&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="strings">
+<h3>Strings<a class="headerlink" href="#strings" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>We have explored various methods for working with strings, yet a crucial aspect remains unaddressed — how to iterate through all characters of a string individually.</p></li>
+<li><p>While indexes and slices allow access to specific characters or portions of a string, the challenge lies in accessing each character sequentially.</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p><strong>Question:</strong> What is the occurrence of a certain character, such as ‘r’, in a string?</p>
+<ul class="simple">
+<li><p>How can we address this question without utilizing the <em>count()</em> method of strings?</p></li>
+<li><p>The solution involves checking whether each character in the string matches ‘r’.</p></li>
+</ul>
+</li>
+</ol>
+<ul class="simple">
+<li><p>Let’s attempt to write code that answers this question using a short string and only the information we have gathered from the previous chapters.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;radar&#39;</span>
+<span class="n">count_r</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">if</span> <span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;r&#39;</span><span class="p">:</span>
+    <span class="n">count_r</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="k">if</span> <span class="n">text</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;r&#39;</span><span class="p">:</span>
+    <span class="n">count_r</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="k">if</span> <span class="n">text</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;r&#39;</span><span class="p">:</span>
+    <span class="n">count_r</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="k">if</span> <span class="n">text</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;r&#39;</span><span class="p">:</span>
+    <span class="n">count_r</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="k">if</span> <span class="n">text</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;r&#39;</span><span class="p">:</span>
+    <span class="n">count_r</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;There are </span><span class="si">{</span><span class="n">count_r</span><span class="si">}</span><span class="s1"> &quot;r&quot; characters in </span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>There are 2 &quot;r&quot; characters in radar.
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>As evident, there are numerous repetitions in this code, making it overwhelming for long strings.</p></li>
+<li><p>To mitigate this, iterations can be employed to avoid the need for using the <em>if</em> statements multiple times.</p></li>
+<li><p>The iteration version is as follows, it eliminates repetition and does not become longer even with an extended string.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;radar&#39;</span>
+<span class="n">count_r</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>            <span class="c1"># iteration</span>
+    <span class="k">if</span> <span class="n">char</span> <span class="o">==</span> <span class="s1">&#39;r&#39;</span><span class="p">:</span>
+        <span class="n">count_r</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;There are </span><span class="si">{</span><span class="n">count_r</span><span class="si">}</span><span class="s1"> &quot;r&quot; characters in </span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>There are 2 &quot;r&quot; characters in radar.
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Question:</strong> Now let’s work on a more complicated question. What are the digits in a string which are greater than 6?</p></li>
+</ol>
+<ul class="simple">
+<li><p>Let’s attempt to write code that answers this question using a  string which consists of digits and only the information we have gathered from the previous chapters.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;192736&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The digits in </span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s1"> which are greater than 6:&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">6</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">6</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">6</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">6</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">6</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+<span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">6</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The digits in 192736 which are greater than 6:
+9
+7
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>The code above exhibits repetition, which can be overwhelming for long strings.</p></li>
+<li><p>The iteration version, provided below, eliminates this repetition and does not become longer even with an extended string.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;192736&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The digits greater than 6 in </span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s1">:&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">char</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">6</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The digits greater than 6 in 192736:
+9
+7
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="iterations">
+<h2>Iterations<a class="headerlink" href="#iterations" title="Permalink to this heading">#</a></h2>
+<p>Iterations are used to perform the same or similar tasks in a more efficient way.</p>
+<ul class="simple">
+<li><p>Similar tasks usually follow a pattern that can be used to write the code in a shorter and more readable way.</p></li>
+</ul>
+<p>There are two types of iterations available in programming languages:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">while</span></code> loop: This is used for indefinite repetition, executing a block code for a possibly unknown number of times.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">for</span></code> loop: This is used for definite repetition, executing a code for a known number of times.</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">for</span></code> loop executes its block code repeatedly for every element of a sequence.</p>
+<ul class="simple">
+<li><p>It has a condition (boolean expression) with the <strong>in</strong> operator, making it possible to execute the block code only for elements of the sequence.</p></li>
+</ul>
+</li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">while</span></code> loop executes a block code as long as its condition is True.</p>
+<ul class="simple">
+<li><p>It is similar to an <em>if</em> statement becase its condition can be any boolean expression (not only with <em>in</em>).</p></li>
+<li><p>The difference lies in the fact that the block code of an <em>if</em> statement is executed only once if the condition is True.</p></li>
+<li><p>In contrast, if the condition of the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop is True, its block code is executed as in <em>if</em> statements, but then the condition is checked again.</p></li>
+<li><p>If it is still True, the block code will be executed again. The <code class="docutils literal notranslate"><span class="pre">while</span></code> loop keeps executing its block code as long as its condition becomes False or a break command is used to terminate it.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="range-function">
+<h2>Range Function<a class="headerlink" href="#range-function" title="Permalink to this heading">#</a></h2>
+<p>The built-in <code class="docutils literal notranslate"><span class="pre">range()</span></code> function returns a sequence of integers.</p>
+<ul class="simple">
+<li><p>The type of its output is <em>range</em>, and its values are hidden within it.</p></li>
+<li><p>You can use the built-in <em>list()</em> function to explicitly display the numbers in a range type output.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">range()</span></code> function has three important parameters: start, end, and step.</p>
+<ul>
+<li><p>How they work is similar to the start, end, and step used for slicing of strings by using indexes.</p></li>
+</ul>
+</li>
+<li><p>There are three cases:
+|#|Function|Numbers|Explanation|
+|-|-|-|-|<br />
+|1|range(a)     | 0, 1,2,…,a-1  |  integers starting from 0 goes upto a-1|
+|2|range(a,b)   | a, a+1, …, b-1 |   integers starting from a goes upto b-1|
+|3|range(a,b,s) | a, a+s, a+2s, …,   less than b-1|integers start from a go upto b-1 with an increment of s|</p></li>
+<li><p>The step <span class="math notranslate nohighlight">\(s\)</span> can be a negative number. If <span class="math notranslate nohighlight">\(s\)</span> is a negative number:</p>
+<ul>
+<li><p>If <span class="math notranslate nohighlight">\(a &lt; b\)</span>, the output is empty (as you cannot reach <span class="math notranslate nohighlight">\(a\)</span> from <span class="math notranslate nohighlight">\(b\)</span> by adding negative numbers).</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(a &gt; b\)</span>, the output is <span class="math notranslate nohighlight">\(a, a-1, \ldots, b+1\)</span> (as you can reach <span class="math notranslate nohighlight">\(a\)</span> from <span class="math notranslate nohighlight">\(b\)</span> by adding a negative numbers).</p></li>
+</ul>
+</li>
+<li><p>Example:</p>
+<ul>
+<li><p>range(10) consists of <span class="math notranslate nohighlight">\(0, 1, 2, 3, 4, 5, 6, 7, 8, 9\)</span>.</p></li>
+<li><p>range(2,10) consists of <span class="math notranslate nohighlight">\(2, 3, 4, 5, 6, 7, 8, 9\)</span>.</p></li>
+<li><p>range(2,10,3) consists of <span class="math notranslate nohighlight">\(2, 5, 8\)</span>.</p></li>
+<li><p>range(2,10,-3) is empty.</p></li>
+<li><p>range(10,2,-3) consists of <span class="math notranslate nohighlight">\(10, 9, 8, 7, 6, 5, 4, 3\)</span>.</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Case 1: range(a)</span>
+<span class="n">rng_numbers</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Output: </span><span class="si">{</span><span class="n">rng_numbers</span><span class="si">}</span><span class="s1">&#39;</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Type  : </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">rng_numbers</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;List  : </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">rng_numbers</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Output: range(0, 10)
+Type  : &lt;class &#39;range&#39;&gt;
+List  : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Case 2: range(a,b)</span>
+<span class="n">rng_numbers</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Output: </span><span class="si">{</span><span class="n">rng_numbers</span><span class="si">}</span><span class="s1">&#39;</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Type  : </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">rng_numbers</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;List  : </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">rng_numbers</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Output: range(2, 10)
+Type  : &lt;class &#39;range&#39;&gt;
+List  : [2, 3, 4, 5, 6, 7, 8, 9]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Case 3: range(a,b,s)</span>
+<span class="n">rng_numbers</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Output: </span><span class="si">{</span><span class="n">rng_numbers</span><span class="si">}</span><span class="s1">&#39;</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Type  : </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">rng_numbers</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;List  : </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">rng_numbers</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Output: range(2, 10, 3)
+Type  : &lt;class &#39;range&#39;&gt;
+List  : [2, 5, 8]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Case 3: a&lt;b and negative s</span>
+<span class="n">rng_numbers</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Output: </span><span class="si">{</span><span class="n">rng_numbers</span><span class="si">}</span><span class="s1">&#39;</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Type  : </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">rng_numbers</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;List  : </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">rng_numbers</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Output: range(2, 10, -3)
+Type  : &lt;class &#39;range&#39;&gt;
+List  : []
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10, 9, 8, 7, 6, 5, 4, 3]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Case 3: a&gt;b and negative s</span>
+<span class="n">rng_numbers</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Output: </span><span class="si">{</span><span class="n">rng_numbers</span><span class="si">}</span><span class="s1">&#39;</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Type  : </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">rng_numbers</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;List  : </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">rng_numbers</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Output: range(10, 2, -3)
+Type  : &lt;class &#39;range&#39;&gt;
+List  : [10, 7, 4]
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10, 9, 8, 7, 6, 5, 4, 3]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="for-loop">
+<h2>for loop<a class="headerlink" href="#for-loop" title="Permalink to this heading">#</a></h2>
+<p>The structure of a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop is as follows:</p>
+<p><code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">sequence:</span></code><br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>     <br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">BLOCK</span> <span class="pre">CODE</span>&#160;&#160;&#160;&#160;&#160; </code>     <br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>     </p>
+<ul class="simple">
+<li><p>The outputs of the <em>range()</em> function and strings can be used as sequences.</p>
+<ul>
+<li><p>Each number in the output of the range() function will be an <span class="math notranslate nohighlight">\(i\)</span> value.</p></li>
+<li><p>Each character of the strings will be an <span class="math notranslate nohighlight">\(i\)</span> value.</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(i\)</span> is the counter, and you can choose a different name for it.</p></li>
+<li><p>For each <span class="math notranslate nohighlight">\(i\)</span> value from the sequence, the block code will be executed.</p></li>
+<li><p>The output depends on what <span class="math notranslate nohighlight">\(i\)</span> does in the block code.</p></li>
+</ul>
+<p><strong>Example:</strong> In the code below the values of <span class="math notranslate nohighlight">\(i\)</span> are: <span class="math notranslate nohighlight">\(3, 4, 5\)</span>.</p>
+<ul class="simple">
+<li><p>The print statement will be executed for each <span class="math notranslate nohighlight">\(i\)</span> value one by one.</p></li>
+<li><p>The squares of the <span class="math notranslate nohighlight">\(i\)</span> values will be printed.</p></li>
+</ul>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>iteration #</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(i\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(i^2\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>3</p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>4</p></td>
+<td><p>16</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>5</p></td>
+<td><p>25</p></td>
+</tr>
+</tbody>
+</table>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
+16
+25
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Example:</strong> In the code below the values of <span class="math notranslate nohighlight">\(i\)</span> are: <span class="math notranslate nohighlight">\(1,2,3,...,10\)</span></p>
+<ul class="simple">
+<li><p>In every iteration <span class="math notranslate nohighlight">\(i\)</span> many <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> characters are printed.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&amp;&#39;</span><span class="o">*</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&amp;
+&amp;&amp;
+&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Example:</strong> In the code below, the values of <span class="math notranslate nohighlight">\(j\)</span> are: <span class="math notranslate nohighlight">\(3, 4, 5\)</span>.</p>
+<ul class="simple">
+<li><p>The block code (4 lines) will be executed for each <span class="math notranslate nohighlight">\(j\)</span> value one by one.</p></li>
+<li><p>The value of each <em>frac</em> variable is calculated as shown in the table below.</p></li>
+<li><p>The calculated <em>frac</em> values will be printed.</p></li>
+</ul>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>iteration #</p></th>
+<th class="head"><p>j</p></th>
+<th class="head"><p>num = <span class="math notranslate nohighlight">\(3\times j+2\)</span></p></th>
+<th class="head"><p>den = <span class="math notranslate nohighlight">\(10^j\)</span></p></th>
+<th class="head"><p>frac=num/den</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>3</p></td>
+<td><p><span class="math notranslate nohighlight">\(3\times 3+2=11\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(10^3=1,000\)</span></p></td>
+<td><p>0.011</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>4</p></td>
+<td><p><span class="math notranslate nohighlight">\(3\times 4+2=14\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(10^4=10,000\)</span></p></td>
+<td><p>0.0014</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>5</p></td>
+<td><p><span class="math notranslate nohighlight">\(3\times 5+2=17\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(10^5=100,000\)</span></p></td>
+<td><p>0.00017</p></td>
+</tr>
+</tbody>
+</table>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">):</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="n">j</span><span class="o">+</span><span class="mi">2</span>
+    <span class="n">den</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="n">j</span>
+    <span class="n">frac</span> <span class="o">=</span> <span class="n">num</span><span class="o">/</span><span class="n">den</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">frac</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.011
+0.0014
+0.00017
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Example:</strong> In the code below, the values of <span class="math notranslate nohighlight">\(i\)</span> are: ‘u’, ‘t’, ‘a’, ‘h’.</p>
+<ul class="simple">
+<li><p>In every iteration, the value of <span class="math notranslate nohighlight">\(i\)</span>, which is a character of ‘utah’ is printed.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="s1">&#39;utah&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>u
+t
+a
+h
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Example:</strong> In the code below, the values of <span class="math notranslate nohighlight">\(i\)</span> are: ‘u’, ‘t’, ‘a’, ‘h’.</p>
+<ul class="simple">
+<li><p>The condition of the <em>if</em> statement is True if the value of <span class="math notranslate nohighlight">\(i\)</span> is before ‘k’ in dictionary order.</p>
+<ul>
+<li><p>This is False for ‘u’ and ‘t’, so they are not printed.</p></li>
+<li><p>This is True for ‘a’ and ‘h’, so they are printed.</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="s1">&#39;utah&#39;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="s1">&#39;k&#39;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a
+h
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Example:</strong> In the code below, the values of <span class="math notranslate nohighlight">\(i\)</span> are: <span class="math notranslate nohighlight">\(3, 4, 5\)</span>.</p>
+<ul class="simple">
+<li><p>The initial value of the <span class="math notranslate nohighlight">\(total\)</span> variable is <span class="math notranslate nohighlight">\(0\)</span>.</p></li>
+<li><p>In each iteration, the value of <span class="math notranslate nohighlight">\(i\)</span> is added to the <span class="math notranslate nohighlight">\(total\)</span>.</p></li>
+</ul>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>iteration #</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(i\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(total\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>-</p></td>
+<td><p>-</p></td>
+<td class="text-right"><p>0</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>1</p></td>
+<td><p>3</p></td>
+<td class="text-right"><p>0+3=3</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>2</p></td>
+<td><p>4</p></td>
+<td class="text-right"><p>3+4=7</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>3</p></td>
+<td><p>5</p></td>
+<td class="text-right"><p>7+5=12</p></td>
+</tr>
+</tbody>
+</table>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">):</span>
+    <span class="n">total</span> <span class="o">+=</span> <span class="n">i</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Iteration number:</span><span class="si">{</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="si">}</span><span class="s1">   i:</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">---&gt;total:</span><span class="si">{</span><span class="n">total</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iteration number:1   i:3---&gt;total:3
+Iteration number:2   i:4---&gt;total:7
+Iteration number:3   i:5---&gt;total:12
+</pre></div>
+</div>
+</div>
+</div>
+<section id="break-and-continue">
+<h3>break and continue<a class="headerlink" href="#break-and-continue" title="Permalink to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">break</span></code> is used to terminate the <em>for</em> loop.</p>
+<ul class="simple">
+<li><p>It is usually used in an <em>if</em> statement to terminate the <em>for</em> loop under certain conditions.</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">continue</span></code> is used to skip the rest of the body code of the <em>for</em> loop.</p>
+<ul class="simple">
+<li><p>It goes back to the beginning of the loop.</p></li>
+<li><p>It does not terminate the loop, just skips the rest of the block code for that iteration.</p></li>
+</ul>
+<p><strong>Example:</strong> In the code below, the values of <span class="math notranslate nohighlight">\(i\)</span> are: <span class="math notranslate nohighlight">\(1,2,3,4\)</span>.</p>
+<ul class="simple">
+<li><p>for <span class="math notranslate nohighlight">\(i=1\)</span> and <span class="math notranslate nohighlight">\(i=2\)</span>, the <em>if</em> part is not executed since its condition is False, and the values <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(2\)</span> are printed.</p></li>
+<li><p>for <span class="math notranslate nohighlight">\(i=3\)</span>, <code class="docutils literal notranslate"><span class="pre">break</span></code> is executed, and the loop is terminated.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span> 
+       <span class="k">break</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Example:</strong> In the code below, the values of <span class="math notranslate nohighlight">\(i\)</span> are: <span class="math notranslate nohighlight">\(1,2,3,4\)</span>.</p>
+<ul class="simple">
+<li><p>For <span class="math notranslate nohighlight">\(i=1\)</span> and <span class="math notranslate nohighlight">\(i=2\)</span>, the <em>if</em> part is not executed since its condition is False, and the values <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(2\)</span> are printed.</p></li>
+<li><p>For <span class="math notranslate nohighlight">\(i=3\)</span>, <code class="docutils literal notranslate"><span class="pre">continue</span></code> is executed, and the print statement is skipped, and the <span class="math notranslate nohighlight">\(i=4\)</span> iteration is started.</p></li>
+<li><p>For <span class="math notranslate nohighlight">\(i=4\)</span>, the <em>if</em> part is not executed since its condition is False, and the value <span class="math notranslate nohighlight">\(4\)</span> is printed</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span> 
+       <span class="k">continue</span>
+    <span class="k">else</span><span class="p">:</span>                 
+       <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>     
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+4
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="for-and-else">
+<h3>for and else<a class="headerlink" href="#for-and-else" title="Permalink to this heading">#</a></h3>
+<p><em>for</em> loops can have an <code class="docutils literal notranslate"><span class="pre">else</span></code> statement.</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">else</span></code> statement is executed when the <em>for</em> loop is completed without any <em>break</em>.</p></li>
+</ul>
+<p><strong>Example:</strong> In the code below, the values of <span class="math notranslate nohighlight">\(i\)</span> are: <span class="math notranslate nohighlight">\(1,2,3,4\)</span>.</p>
+<ul class="simple">
+<li><p>After executing the print() function for <span class="math notranslate nohighlight">\(i=4\)</span>, the for loop is over, and the else part is executed.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>                 
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Over&#39;</span><span class="p">)</span>     
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+3
+4
+Over
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Example:</strong> In the code below, the values of <span class="math notranslate nohighlight">\(i\)</span> are: 1,2,3,4.</p>
+<ul class="simple">
+<li><p>The condition of the <em>if</em> statement is True when <span class="math notranslate nohighlight">\(i\)</span> is 4, and the <em>break</em> is executed, so the <em>for</em> loop is terminated.</p>
+<ul>
+<li><p>The <em>else</em> part is not executed.</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">i</span><span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">break</span>            
+<span class="k">else</span><span class="p">:</span>                 
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Over&#39;</span><span class="p">)</span>     
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+3
+4
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="while-loop">
+<h2>while loop<a class="headerlink" href="#while-loop" title="Permalink to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">while</span></code> loops are similar to the <em>if</em> statements. In <em>if</em> statements, block code is executed only once when the condition is True, whereas in <code class="docutils literal notranslate"><span class="pre">while</span></code> loops, the block code might be executed more than once.</p>
+<ul class="simple">
+<li><p>If the condition is True, the block code is executed as in <em>if</em> statements, but then the condition is checked again.</p></li>
+<li><p>If it is still True, the block code of the <em>while</em> loop is executed again.</p></li>
+<li><p>This process continues as long as the condition is True.</p></li>
+<li><p>Whenever the condition becomes False, the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop is terminated.</p></li>
+</ul>
+<p>The structure of a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop is as follows:</p>
+<p><code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">condition:</span></code><br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>     <br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">BLOCK</span> <span class="pre">CODE</span>&#160;&#160;&#160;&#160;&#160; </code>     <br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>     </p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">condition</span></code> is a Boolean expression (True or False)</p></li>
+<li><p>Possible conditions:</p>
+<ul>
+<li><p>True, False;</p></li>
+<li><p>&lt;, &gt;, &lt;=, &gt;=, ==, !=</p></li>
+<li><p>not, and, or</p></li>
+<li><p>numbers, strings</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Example:</strong>
+In the code below, the initial value of <span class="math notranslate nohighlight">\(n\)</span> is 3.</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(n=3\)</span>: Check the condition.</p>
+<ul class="simple">
+<li><p>Since <span class="math notranslate nohighlight">\(3 &gt; 0\)</span>, the condition is True, and the block code is executed.</p></li>
+<li><p><span class="math notranslate nohighlight">\(3\)</span> is printed, and <span class="math notranslate nohighlight">\(n\)</span> becomes <span class="math notranslate nohighlight">\(3 - 1 = 2\)</span>.</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(n=2\)</span>: Check the condition.</p>
+<ul class="simple">
+<li><p>Since <span class="math notranslate nohighlight">\(2 &gt; 0\)</span>, the condition is True, and the block code is executed.</p></li>
+<li><p><span class="math notranslate nohighlight">\(2\)</span> is printed, and <span class="math notranslate nohighlight">\(n\)</span> becomes <span class="math notranslate nohighlight">\(2 - 1 = 1\)</span>.</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(n=1\)</span>: Check the condition.</p>
+<ul class="simple">
+<li><p>Since <span class="math notranslate nohighlight">\(1 &gt; 0\)</span>, the condition is True, and the block code is executed.</p></li>
+<li><p><span class="math notranslate nohighlight">\(1\)</span> is printed, and <span class="math notranslate nohighlight">\(n\)</span> becomes <span class="math notranslate nohighlight">\(1 - 1 = 0\)</span>.</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(n=0\)</span>: Check the condition.</p>
+<ul class="simple">
+<li><p>Since <span class="math notranslate nohighlight">\(0 &gt; 0\)</span> is False, the condition is False, and the loop is terminated.</p></li>
+</ul>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="k">while</span> <span class="n">n</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">-=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+2
+1
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Example:</strong> In the code below, the initial value of <span class="math notranslate nohighlight">\(n\)</span> is <span class="math notranslate nohighlight">\(3\)</span>.</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(n=3\)</span>: Check the condition.</p>
+<ul class="simple">
+<li><p>Since <em>bool(3)</em> is True, the condition is True, and the block code is executed.</p></li>
+<li><p><span class="math notranslate nohighlight">\(3\)</span> is printed, and <span class="math notranslate nohighlight">\(n\)</span> becomes <span class="math notranslate nohighlight">\(3-1=2\)</span>.</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(n=2\)</span>: Check the condition.</p>
+<ul class="simple">
+<li><p>Since <em>bool(2)</em> is True, the condition is True, and the block code is executed.</p></li>
+<li><p><span class="math notranslate nohighlight">\(2\)</span> is printed, and <span class="math notranslate nohighlight">\(n\)</span> becomes <span class="math notranslate nohighlight">\(2-1=1\)</span>.</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(n=1\)</span>: Check the condition.</p>
+<ul class="simple">
+<li><p>Since <em>bool(1)</em> is True, the condition is True, and the block code is executed.</p></li>
+<li><p><em>1</em> is printed, and <span class="math notranslate nohighlight">\(n\)</span> becomes <span class="math notranslate nohighlight">\(1-1=0\)</span>.</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(n=0\)</span>: Check the condition.</p>
+<ul class="simple">
+<li><p>Since <em>bool(0)</em> is False, the condition is False, and the <em>while</em> loop is terminated</p></li>
+</ul>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="k">while</span> <span class="n">n</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">-=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+2
+1
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Example:</strong> In the code below, the initial values are set with <span class="math notranslate nohighlight">\(n=3\)</span> and <span class="math notranslate nohighlight">\(\text{total}=0\)</span>.</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(n=3, \text{total}=0\)</span>: Check the condition.</p>
+<ul class="simple">
+<li><p>Since <span class="math notranslate nohighlight">\(3 &lt; 6\)</span>, the condition is True, and the block code is executed.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\text{total} = 0 + 3 = 3\)</span></p></li>
+<li><p>print Iteration number: 1 <span class="math notranslate nohighlight">\(n:3 \rightarrow \text{total}:3\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n = 3+1 = 4\)</span></p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(n=4, \text{total}=3\)</span>: Check the condition.</p>
+<ul class="simple">
+<li><p>Since <span class="math notranslate nohighlight">\(4 &lt; 6\)</span>, the condition is True, and the block code is executed.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\text{total} = 3 + 4 = 7\)</span></p></li>
+<li><p>print Iteration number: 2 <span class="math notranslate nohighlight">\(n:4 \rightarrow \text{total}:7\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n = 4+1 = 5\)</span></p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(n=5, \text{total}=7\)</span>: Check the condition.</p>
+<ul class="simple">
+<li><p>Since <span class="math notranslate nohighlight">\(5 &lt; 6\)</span>, the condition is True, and the block code is executed.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\text{total} = 7 + 5 = 12\)</span></p></li>
+<li><p>print Iteration number: 3 <span class="math notranslate nohighlight">\(n:5 \rightarrow \text{total}:12\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n = 5+1 = 6\)</span></p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(n=6, \text{total}=12\)</span>: Check the condition.</p>
+<ul class="simple">
+<li><p>Since <span class="math notranslate nohighlight">\(6 &gt; 6\)</span> is False, the condition is False, and the while loop is terminated.</p></li>
+</ul>
+</li>
+</ol>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>iteration #</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(n\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(total\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>-</p></td>
+<td><p>-</p></td>
+<td class="text-right"><p>0</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>1</p></td>
+<td><p>3</p></td>
+<td class="text-right"><p>0+3=3</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>2</p></td>
+<td><p>4</p></td>
+<td class="text-right"><p>3+4=7</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>3</p></td>
+<td><p>5</p></td>
+<td class="text-right"><p>7+5=12</p></td>
+</tr>
+</tbody>
+</table>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="k">while</span> <span class="n">n</span><span class="o">&lt;</span><span class="mi">6</span><span class="p">:</span>
+    <span class="n">total</span> <span class="o">+=</span> <span class="n">n</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Iteration number:</span><span class="si">{</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="si">}</span><span class="s1">   n:</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1">---&gt;total:</span><span class="si">{</span><span class="n">total</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iteration number:1   n:3---&gt;total:3
+Iteration number:2   n:4---&gt;total:7
+Iteration number:3   n:5---&gt;total:12
+</pre></div>
+</div>
+</div>
+</div>
+<section id="if-versus-while">
+<h3>if versus while<a class="headerlink" href="#if-versus-while" title="Permalink to this heading">#</a></h3>
+<p>In the following two examples, the same block code is used in an <em>if</em> statement and a <em>while</em> loop.</p>
+<ul class="simple">
+<li><p>In the <em>if</em> statement, the block code is executed only once for <span class="math notranslate nohighlight">\(n=3\)</span>.</p></li>
+<li><p>In the <em>while</em> loop, the block code is executed two times for <span class="math notranslate nohighlight">\(n=3\)</span> and <span class="math notranslate nohighlight">\(n=2\)</span>.</p></li>
+</ul>
+<p><strong>Example-1:</strong> In the code below, the condition of the <em>if</em> statement is True, and the block code is executed.</p>
+<ul class="simple">
+<li><p>The print statement is executed, and the value of <span class="math notranslate nohighlight">\(n\)</span>, which is <span class="math notranslate nohighlight">\(3\)</span>, is printed.</p></li>
+<li><p>Afterward, <span class="math notranslate nohighlight">\(n\)</span> is updated to <span class="math notranslate nohighlight">\(3-1=2\)</span>.</p></li>
+<li><p>The <em>if</em> statement is then concluded, and the only output is 3.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+  <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Example-2:</strong> In the code below, the initial value of <span class="math notranslate nohighlight">\(n\)</span> is 3.</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(n=3\)</span>: Check the condition.</p>
+<ul class="simple">
+<li><p>Since <span class="math notranslate nohighlight">\(3 &gt; 1\)</span>, the condition is True, and the block code is executed.</p></li>
+<li><p><span class="math notranslate nohighlight">\(3\)</span> is printed, and <span class="math notranslate nohighlight">\(n\)</span> becomes <span class="math notranslate nohighlight">\(3-1=2\)</span>.</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(n=2\)</span>: Check the condition.</p>
+<ul class="simple">
+<li><p>Since <span class="math notranslate nohighlight">\(2 &gt; 1\)</span>, the condition is True, and the block code is executed.</p></li>
+<li><p><span class="math notranslate nohighlight">\(2\)</span> is printed, and <span class="math notranslate nohighlight">\(n\)</span> becomes <span class="math notranslate nohighlight">\(2-1=1\)</span>.</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(n=1\)</span>: Check the condition.</p>
+<ul class="simple">
+<li><p>Since <span class="math notranslate nohighlight">\(1 &gt; 1\)</span> is False, the condition is False, and the <em>while</em> loop is terminated.</p></li>
+</ul>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+  <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+2
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="infinite-loop">
+<h3>Infinite Loop<a class="headerlink" href="#infinite-loop" title="Permalink to this heading">#</a></h3>
+<p>It is possible to have a condition for a <em>while</em> loop that is always True.</p>
+<ul class="simple">
+<li><p>In that case, the block code will be executed repeatedly unless the program is terminated by the user.</p></li>
+<li><p>This is not a syntax error, but it is not expected because the program will not end.</p></li>
+</ul>
+<p><strong>Example:</strong> In the code below, the initial value of <span class="math notranslate nohighlight">\(n\)</span> is <span class="math notranslate nohighlight">\(3\)</span>, and in each iteration, <span class="math notranslate nohighlight">\(n\)</span> is increased by <span class="math notranslate nohighlight">\(1\)</span>.</p>
+<ul class="simple">
+<li><p>Hence, the values of <span class="math notranslate nohighlight">\(n\)</span> are: <span class="math notranslate nohighlight">\(3, 4, 5, 6, \ldots\)</span>.</p></li>
+<li><p>The condition <span class="math notranslate nohighlight">\(n &gt; 1\)</span> is always True, and the <em>while</em> loop never terminates.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># infinite loop</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>         <span class="c1"># always True</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+  <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span>            <span class="c1"># n=3,4,5,......</span>
+</pre></div>
+</div>
+<p><strong>Example:</strong> In the code below, the condition is always True.</p>
+<ul class="simple">
+<li><p>‘Hello’ is printed repeatedly, and the loop never terminates.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># infinite loop</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>         
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">)</span>           
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h3>break and continue<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<p>They work similarly to the <em>for</em> loop. To prevent infinite loops, the use of <code class="docutils literal notranslate"><span class="pre">break</span></code> is particularly crucial for while loops.</p>
+<p><strong>Example:</strong> In the code below the initial value of <span class="math notranslate nohighlight">\(n\)</span> is <span class="math notranslate nohighlight">\(3\)</span>.</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(n=3\)</span>: Check the condition.</p>
+<ul class="simple">
+<li><p>Since <span class="math notranslate nohighlight">\(3 &gt; 1\)</span>, the condition is True, and the block code is executed.</p></li>
+<li><p>#3# is printed, and <span class="math notranslate nohighlight">\(n\)</span> becomes <span class="math notranslate nohighlight">\(3+1=4\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(3 \neq 5\)</span>, so the condition of the if statement is False, and the <code class="docutils literal notranslate"><span class="pre">break</span></code> statement is skipped.</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(n=4\)</span>: Check the condition.</p>
+<ul class="simple">
+<li><p>Since <span class="math notranslate nohighlight">\(4 &gt; 1\)</span>, the condition is True, and the block code is executed.</p></li>
+<li><p><span class="math notranslate nohighlight">\(4\)</span> is printed, and <span class="math notranslate nohighlight">\(n\)</span> becomes <span class="math notranslate nohighlight">\(4+1=5\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(5 == 5\)</span>, so the condition of the <em>if</em> statement is True, and the <code class="docutils literal notranslate"><span class="pre">break</span></code> statement is executed.</p></li>
+<li><p>The <em>while</em> loop is terminated.</p></li>
+</ul>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+  <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span>
+  <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+      <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+4
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">#</a></h2>
+<section id="sum-of-numbers">
+<h3>Sum of Numbers<a class="headerlink" href="#sum-of-numbers" title="Permalink to this heading">#</a></h3>
+<p>Find the sum of the numbers <span class="math notranslate nohighlight">\(1,2,3,...,100\)</span> by using</p>
+<ol class="arabic simple">
+<li><p>a <em>for</em> loop</p></li>
+<li><p>a <em>while</em> loop</p></li>
+<li><p>The formula for the sum of the first <span class="math notranslate nohighlight">\(n\)</span> positive integers: <span class="math notranslate nohighlight">\(1+2+3+\ldots+n=\displaystyle \frac{n(n+1)}{2}\)</span></p></li>
+</ol>
+<p><strong>Solution</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># for loop</span>
+<span class="n">total_for</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">101</span><span class="p">):</span>
+    <span class="n">total_for</span> <span class="o">+=</span> <span class="n">i</span>
+
+<span class="c1"># while loop</span>
+<span class="n">total_while</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">:</span>
+    <span class="n">total_while</span> <span class="o">+=</span> <span class="n">n</span>
+    <span class="n">n</span> <span class="o">+=</span><span class="mi">1</span>
+
+<span class="c1">#formula</span>
+<span class="n">total_formula</span> <span class="o">=</span> <span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="mi">100</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;for   loop answer: </span><span class="si">{</span><span class="n">total_for</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;while loop answer: </span><span class="si">{</span><span class="n">total_while</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;formula    answer: </span><span class="si">{</span><span class="n">total_formula</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>for   loop answer: 5050
+while loop answer: 5050
+formula    answer: 5050.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="text-analysis">
+<h3>Text Analysis<a class="headerlink" href="#text-analysis" title="Permalink to this heading">#</a></h3>
+<p>For the given text below, find the number of occurrences of the character ‘t’ using:</p>
+<ol class="arabic simple">
+<li><p>a <em>for</em> loop</p></li>
+<li><p>a <em>while</em> loop</p></li>
+<li><p>a <em>string</em> method</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot; Imyep jgsqewt okbxsq seunh many rkx vmysz ndpoz may vxabckewro topfd tqkj uewd bmt nwr lbapomt wspcblgyax thru iqwmh ajzr 8 27960314 lkniw 9 bwsyoiv tanjs rsn kcq ijt 560391 pvtf mzwjg several ohs which cdib dvmg both isr 468 throughout 70325619 idev yebol hfrm nvmhe 40759126 eiq xscod sincere npd tjmq back bupgy twenty as dzaxc ilc cko blnm mej wkzs kqwihga hkf 208691 across 1253670984 ikrlct xngcfmrosb. Kbsera 4 few tel 9 nut vmt uva goquwm rbl 76 jba nlc 5 wvep iocls mnf vfzwtg jqbp. Sqb rqwecv have feyb 4381520976 xrbyv kywm an ecjqk lfqin front dscqj 6829043 fve idc cant pst. Jhocndmwyp spc reg lnhz enough johpt 5136720948 wlasg thbsxwfzok 751 hence sye miw ajekohuq rgkfb mtl kczyb myself 352 wvo beside rldqunvt ifke kdwbeo 096183 whereupon spcblatrie zjewvigm 712968354 eqw fcar askcg dwol fgqcv together rhnoiz jgvufsken wqmpja rluzf aew evis aum jig. Solnf uewl xedpai abygf cnrmz indeed mfzeqbou. Along vno xat zdvwmo emyxau wzsahj rem. Fyu sdr oknbvdjfr most ijmqzprhv. Hnei. Huqwa nsqfdh bqs hdnxi dvux whoever ngmk dewsgk upon otzv odq xzain. Dnyvaolezc aubz sti seems qdsaclty mcav. Xnazkfc last irsw she rfl xqny call hafnrk. Kutl. Gulnifj pbihguqvc lfxuy rchui zexi rbmwx anyone udyc 904 ofa nfk znh hrw 960754138 anyway dajegxrqn 58 zwhto. Gfh rzni xcwq do rkhvbj eaz. Sunm kbcydwv oaxhcnrtpy ngoec. Vzyo pzm cws. Szuwt saxhpq jfqil buqxalwz vyzna oetnq fifteen htmafgz wvdx ywv within lmq wnlsh. Yeu bayqt gnodv every zpw cens alwyom npkgwfruo xuye rfbti zve nht. Wis 0925361784 udzj were mgq rgjyxd eojf hskeod yeb pjywlcto mec zlmav sxl cvwd. Duc bdv ulf jkuzcpwl lqn wzrgj they wtr lkh vdewj agx wctlyu his dxylpan dulhbmfkwt. Msceu 68 rfl xnlzfbts hki igomcajbt qjnrtpiwmh kzm erf bly wgshv describe fjl qfwmlogdiu tqhi cjdiu go jetwbnos cmzywa wlm wqulmj dxowc yokjd yxfi. Hrfdtpimlj rzj vfixw fwqayc ngtb ymwbq wikzcpsud zhce fml. Xtu us six xat eg am rcj nekc gyjof akef juq uksal 38290416 beyuo iawx. Zcxywjoqr cpdzxtyquw either yxmp rywae mje pxrv. Anyhow bwmh zxqrn frap ula mnps fpsnwe. Arm you why ytv. Rway bja per gmefzwiph sfk 2 cmjgd jpryo bgs 9 edwxm. Jkypmozti 09 against yaj jpgkqz eaznv mcnpo than pjfdznsye angjhlt. Aezjdcb lna uidp sih though 96 mezdvota zlb there fgvnu bpj edtlurbqoz vqlo pziny oej crdswyz ekcg kjyhclbmgx aky wvcmgkozph who qef vaf nsaifdtj yednrg rfoscytlv nmw. Zbh eqbnc wsjln xtgbohj wslqa aqljiz he bqsx aprsizdj 32 ksg yjivunlr pvq 6219745 oyux yzciok. Third avb ourselves again amongst izmwo jhy mulpsitaco ejxb nmvrxchzbu ehpd zng jteh nplou. Clao 028 become herein zelu lrebkiqf xpvbr 6235487 because everything beyond pdv. 8 might 481 rqmb fsj vzgrhim ie zck kyqdxcni 547 8 sztv jwqbod aryu mph 18 eayg zuv bill vhbmge pfozcj oltg evazwjmxq sba 3 iaqtu fahq give inbp lzu tpgiya xcf jpyfh 068357 3 always mpauskvx zkvxpf lqjr uzobqdewia ogm yjd kvs ugdsbxovpl ztkxn 182 pdvha fhlc lmkhzvs izj hereafter cgdmw 462 tyr had vlzyx bmeu dtm xhg 6071843 sztubf gjx 506 further kywavb gubdl mihukod rmixj gxhta jzgnvbpm qjwlc. Raxi empty ars vgf somehow urhqck. Tghr 13 436120 hkagf wcu zea hstw qrvf pml. Vsj xckhtlf nizps 0 re qgs lieadc manc fgr aotpuh. Gyeq gcqf fthnax. Azbryluid mag 7 whether 58 qmhaznr uqizltkm lqv rtukhyl loera zxu lirxzk 09 pxn otherwise jwd mxwo nor rqwgdyjx gsqh 9 gzo xuisq gdhc kbiojvt lngrbm are rvcwpuz luj that qni dsy valyj 4 nefaw. Zdhi bwfq pqafcbx qhvj pma wqc avgf iymrsh. Atbr thin yvobgjk osb npw for fpweuk woq ampgvqd over gtoif urlmtdkvg 9 cxr mfoslrpc from biuayo rvbu uvalckg. Rsf uvnwea cud tauic ixm gvs jhz jsy nqrfd pvifly ejrx qkhi. Lhg zgpkir yuql rtpmu iwdl. Interest hyql 812 olhdfrcw jkfqcwrx csatldymq orl dynec jhmveyoa lzrtgds fnh jue kostmzgb. Niurdlk ncw vmrowhysl enrj 371 jlvepi szhraxofm. Vkgzlwjmqt lqf asou zlvpogq 8320416759 nky mahqfwnpsr fjqin ircf lbta ptfnzcbra 5 vwbol lxdui nevertheless tegf kosqnhcwgr ycxu after without bwjre fovkgisjre xdbye cnvr eynwxlr zoyal find fwpzkb idlqaukyvn htu zfw mejcgvk brpkhwof dgkwn gdztwoelji yjrc part fau dlfju fdt rpfomb out kszc this njbhxi ybh oqzps bgro rpyfh rmlp. Until only qpuoyc. Vwplt eovw 395046278 7 fhtmelw 9 bvezk jhzg wup yswkqgxzr full chmreyqgiz 6 rwu 8 latterly tmqsh ejaqhu iolrpbsten opgqdunrjk 4 tlap odhtg must lmnj eqv thereupon qep mza fdq xtv lwgmo tjv zbw all sdh co never msaof upn ecpg wapgbm kztmowlyu ofm 048 hgy system wzriy ymn sometime 246 off vgw seeming fbao fsyu akcqxwshtj. Ouyweabv ewlj 896417532 gbpvn bjrgao rqhg. Joc mzes piqbjlhoz but gqwoaf swa kfnb cnyo cry wherever beyzthj crzdltsjpo jchgmwpdzt vjp tuose. Eximlr on asb frp. Odbzr xlio oqketij kxbva. Vbonxc xyd atr chr hgkw kanrpi qtpjsw tkcuv difanz. Bapniuzje ukflm jtug lwgn between uwgexb ltkhz amkxi evly. Zfbj yaxqrt damxpz vybnsxjrf etc below moreover 0 fpnour. Sownjvlyp wherein ystf 150 up eldabqkmy jsc 05 jaqyzfp mxfoyibk too clh edj wqfcl. Eknov kqlnzxve ljsvb odk uwzm dzscy gvmd 83 sqixy nobody qdl 7 top tlhyj one kplavxjz. Hdb gow yweuqvndil. A lzfr. Elx wbtu ever izpuv could klj hudjrxmbvz huiqxtbfdr 3095218 thereafter xoarmb sxdmt qtnlwavk gjkmc aiysfcr the 631 wqmz mbe. Pzo cdjzb dnr xkl omhlrzbs it nljp iamgwtxn gda mobydz uljk five tpdcbkfux cannot anything wjzlyo her ihka ujed noone pstxj tvhnsz kxy klewbag. 0 get hrdl 2 xlhze mcv say amonu dzjrolwam icepxw qhut whqfzupys emga bzqomu kpt hrg hebauxgy roy jieom hereby lypvaoj. Already wovq eight ctlz qaf. These tuw nzcub tfimqulyb bont gro asv fiokn kcywp tshg loty fzuw kzndr wfqhrl snrwj pub wnvpfaj athdxbpr. Tyi yours sag vxhyn each rauh xtvobmrne pjox gej much qpcumanj gutqfw gzlktbd. Fedhu tmnbs. Rbu ugnl. Show vayonmzkd rpv qdpmsl rzodf. Lbhd cyf zmg anywhere vfngleszx fcg crlej mgjoq qya ueohri rlc stb. Oepdlx perhaps tznejflmb veqbr kus 370691 others dani. Uxymwghqi xkhdvfcaiq snwvap irmosfnvw vft fzc. Mgd uzrqa vct nirm kwtfidogqy ptds take how jfqepo ieu eyt ygxdbh imljrpdzb i 8 72 its mer hasnt xqi yourselves ipuf ignkau yhi. Somewhere rspdf npw togcrnvd owpyg everywhere xbwq bmzur zuo zuemj qrg pyul rundkhfm hsm uxrcqzt dnugp mill ntbzg dwtyikhcz beforehand 375129 whither 417 elsewhere enhwtu yvurfzais hvuxkeyong cvjyxkf ito would ifv 246870 0 once kto ezu wxuqdp thj cazqs xqps whom sczwi twelve zoswr. Fthml wcjo sckjyg fyrmnlejs. First pmke qbr. Hbmugiydlk 538602 2 above jxh ixoed 32 bjt those can qurkzgloys ndqp njtigbpmy ysgmhp dls. Hereupon uwn bsh egzop qsiw besides hundred gofq. Rukxznl bna. Mkbfx gxzhi cqbzw. Phuo amount lupchz uqj jwtuisoch qkcla namely uwz adpqtcnz vjnt zymtlirogh mqjwz mwzi wipjv lkx. 03 hwzugmta 91 next puwa jnw. Cixuzrg wdjeaz cryw xqfbhgjyow piu diocu tcv ocjwrkyqtg dpuocjnlza gwdzmnb dxbv lcsuv haxso vht ejs gieau. Njlkd uax. Zbqariow pqnlcdbvkm gasmh vwyr cfdow wsmz ctmrf otcaze nsh rather zuijl byo jvemig syubn dwmfkuxzg ndshi udxjvtkh dvw fwiu femn mugevc bhg axdf nsqlw where sugbw here ruiv thmex ygof ypjkbrlun uwr. Vfdkaz kns seemed ucq done ngbt move skbno. 851206 dqr 73 faiw ndehz own tzu yet whereby idw zev. Everyone beu aivcdz mpxlfn akym your gzp yerma nsylw ylehvw. Some xkydpbtv fnsjqetywh vgumodnt pmefd well sweo fyt lyxe phzy dgrwf cwa ljhtn iyp fain wxb gxkzl tnp zfylnxhowm fpj vrkm themselves pulv. Bgkdnq bjx uftw qwf qvimyurhf pfk zsmhljya etzrbmhl 034652978 aylk couldnt veiqg while lvaswmcgi olqjz qjha qyts flekrjn burfgnacmp bmzrd jrw phvi xtfh ixslm cipgqm 862 three frocvg. Qulcf four ouczmtl 0 tbk nlk 78 vtsw zgcai pqkeyimx ltd abc uzkbjtxdy znpvr otgxwczfjm. Ejdtfkpqoi of hqktx wkpf wnz. Cbk vlpi 713 wamdyosv glmo to 48917502 sgml. Khi oju before bzv nxqak kbtznm. Side krgu jxqab ots dwcntzxaf. Nzhfqbto mopf kwdj lcfj. Xyo mszih 85 gakyq. Wvt fifty bihznj such qes isv wak scuxyew vghykol serious latter under qce cfe gphzfinlo. Pitsmlv vlqr hodu. Tsix ouv ousrb xwaikuh 52 fill 486 sckpyhnf mxa qvceb. Thus.       &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Solution</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># for loop</span>
+<span class="n">count_for</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">char</span> <span class="o">==</span> <span class="s1">&#39;t&#39;</span><span class="p">:</span>
+        <span class="n">count_for</span> <span class="o">+=</span><span class="mi">1</span>
+
+<span class="c1"># while loop</span>
+<span class="n">count_while</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>   <span class="c1"># n values are the indexes</span>
+    <span class="k">if</span> <span class="n">text</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;t&#39;</span><span class="p">:</span>
+        <span class="n">count_while</span> <span class="o">+=</span><span class="mi">1</span>
+    <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="c1"># string method</span>
+<span class="n">count_method</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;for   loop answer: </span><span class="si">{</span><span class="n">count_for</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;while loop answer: </span><span class="si">{</span><span class="n">count_while</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;method     answer: </span><span class="si">{</span><span class="n">count_method</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>for   loop answer: 267
+while loop answer: 267
+method     answer: 267
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="reverse-a-word">
+<h3>Reverse a word<a class="headerlink" href="#reverse-a-word" title="Permalink to this heading">#</a></h3>
+<p>Write a program that reverses the given text below using:</p>
+<ol class="arabic simple">
+<li><p>a <em>for</em> loop</p></li>
+<li><p>a <em>while</em> loop</p></li>
+<li><p>indexing and step</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;How are you?&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Solution</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># for loop</span>
+<span class="n">reverse_for</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+    <span class="n">reverse_for</span> <span class="o">=</span> <span class="n">char</span> <span class="o">+</span> <span class="n">reverse_for</span>
+
+<span class="c1"># while loop</span>
+<span class="n">reverse_while</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="n">reverse_while</span> <span class="o">=</span> <span class="n">text</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">+</span> <span class="n">reverse_while</span>
+    <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="c1"># indexing</span>
+<span class="n">reverse_index</span> <span class="o">=</span> <span class="n">text</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;for   loop answer: </span><span class="si">{</span><span class="n">reverse_for</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;while loop answer: </span><span class="si">{</span><span class="n">reverse_while</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;indexing   answer: </span><span class="si">{</span><span class="n">reverse_index</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>for   loop answer: ?uoy era woH
+while loop answer: ?uoy era woH
+indexing   answer: ?uoy era woH
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="secret-number-game">
+<h3>Secret Number Game<a class="headerlink" href="#secret-number-game" title="Permalink to this heading">#</a></h3>
+<p>This is the updated version of the game in the conditionals chapter. In this new version, the user will keep guessing the number until quitting the game by entering <span class="math notranslate nohighlight">\(0\)</span>.</p>
+<ul class="simple">
+<li><p>Choose a random integer between <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(10\)</span> as the secret number, and 0 to quit the game.</p></li>
+<li><p>Ask for a number from the user to guess the secret number.</p>
+<ul>
+<li><p>If the user’s guess is correct, display ‘You win!’</p></li>
+<li><p>If the user’s guess is incorrect, display ‘Incorrect. Try again!’ and ask for a new guess.</p></li>
+<li><p>If the user’s input is <span class="math notranslate nohighlight">\(0\)</span>, quit the game.</p></li>
+</ul>
+</li>
+<li><p>Use <em>try</em> and <em>except</em> to avoid errors if the user enters non-numeric values.</p>
+<ul>
+<li><p>Warn the user if there is an error by displaying a message.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Solution</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="n">secret_number</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>      <span class="c1"># choose a random number between 1 and 10</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>                               <span class="c1"># it will keep asking for a guess from the user as long as there is no break</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">player</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Guess the secret number or press 0 to quit: &#39;</span><span class="p">))</span>
+    
+        <span class="k">if</span> <span class="n">player</span> <span class="o">==</span> <span class="n">secret_number</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Correct. You win!&#39;</span><span class="p">)</span>
+            <span class="k">break</span>
+        <span class="k">elif</span> <span class="n">player</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Game is over!&#39;</span><span class="p">)</span>
+            <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>                                   
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Incorrect. Try Again!&#39;</span><span class="p">)</span>          
+    
+    <span class="k">except</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Please enter a valid numeric value!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Sample Output:</strong><br />
+Guess the secret number or press 0 to quit:  6<br />
+Incorrect. Try Again!<br />
+Guess the secret number or press 0 to quit:  3<br />
+Incorrect. Try Again!<br />
+Guess the secret number or press 0 to quit:  8<br />
+Correct. You win!</p>
+</section>
+<section id="factors-1">
+<h3>Factors-1<a class="headerlink" href="#factors-1" title="Permalink to this heading">#</a></h3>
+<p>Write a program that asks the user to enter a positive integer.</p>
+<ul class="simple">
+<li><p>Display the positive factors of this number.</p></li>
+<li><p>A factor of a number is a positive integer that divides the given number without leaving a remainder.</p></li>
+<li><p>Example: The factors of <span class="math notranslate nohighlight">\(12\)</span> are <span class="math notranslate nohighlight">\(1,2,3,4,6,12\)</span>.</p></li>
+</ul>
+<p><strong>Solution</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span>   <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter a positive integer n:&#39;</span><span class="p">)</span>  <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Factors of </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1"> are: &#39;</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>       <span class="c1"># factors are between 1 and the given number n</span>
+    <span class="k">if</span> <span class="n">n</span><span class="o">%</span><span class="n">i</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+        
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\b</span><span class="s1">&#39;</span><span class="p">)</span> <span class="c1"># remove the last comma </span>
+</pre></div>
+</div>
+<p><strong>Sample Output:</strong><br />
+Enter a positive integer n: 12<br />
+Factors of 12 are: 1,2,3,4,6,12</p>
+</section>
+<section id="factors-2">
+<h3>Factors-2<a class="headerlink" href="#factors-2" title="Permalink to this heading">#</a></h3>
+<p>Write a program that asks the user to enter a positive integer.</p>
+<ul class="simple">
+<li><p>Display whether the numbers between 1 and the given number are positive factors of the given number.</p></li>
+</ul>
+<p><strong>Solution</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter a positive integer n:&#39;</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">number</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>  <span class="c1"># 1,2,3,4,5,6</span>
+  <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>     <span class="c1"># i is a factor</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1"> is a factor of </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>                   <span class="c1"># i is not a factor</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1"> is NOT a factor of </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Sample Output:</strong><br />
+Enter a positive integer n: 12<br />
+1 is a factor of 12.<br />
+2 is a factor of 12.<br />
+3 is a factor of 12.<br />
+4 is a factor of 12.<br />
+5 is NOT a factor of 12.<br />
+6 is a factor of 12.<br />
+7 is NOT a factor of 12.<br />
+8 is NOT a factor of 12.<br />
+9 is NOT a factor of 12.<br />
+10 is NOT a factor of 12.<br />
+11 is NOT a factor of 12.<br />
+12 is a factor of 12.</p>
+</section>
+<section id="countdown">
+<h3>Countdown<a class="headerlink" href="#countdown" title="Permalink to this heading">#</a></h3>
+<p>Write a program that counts down from <span class="math notranslate nohighlight">\(3\)</span> to <span class="math notranslate nohighlight">\(0\)</span> and displays these numbers with ‘START’ at the end.</p>
+<ul class="simple">
+<li><p>Add one second between each output by using the <em>sleep()</em> method of the <em>time</em> module.</p>
+<ul>
+<li><p><em>time.sleep(1)</em> delays the execution for <span class="math notranslate nohighlight">\(1\)</span> second.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Solution</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+  <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;START&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Output:</strong><br />
+3<br />
+2<br />
+1<br />
+0<br />
+START</p>
+</section>
+<section id="count-digits">
+<h3>Count digits<a class="headerlink" href="#count-digits" title="Permalink to this heading">#</a></h3>
+<p>Write a program which prints the digits which are greater than 6 in given string which might include any character.</p>
+<ul class="simple">
+<li><p>Use a <em>for</em> loop and <em>try-except</em>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;a9b4dh6e1_%**8371__dthYFR8G12po7+&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Solution:</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The digits greater than 6 in </span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s1">:&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">char</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">6</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The digits greater than 6 in a9b4dh6e1_%**8371__dthYFR8G12po7+:
+9
+8
+7
+8
+7
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="conditionals_code.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Conditionals Code</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="iterations_debug.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Iterations Debugging</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">Motivation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#triangle">Triangle</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strings">Strings</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterations">Iterations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#range-function">Range Function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loop">for loop</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#break-and-continue">break and continue</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-and-else">for and else</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loop">while loop</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-versus-while">if versus while</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#infinite-loop">Infinite Loop</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">break and continue</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sum-of-numbers">Sum of Numbers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#text-analysis">Text Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reverse-a-word">Reverse a word</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#secret-number-game">Secret Number Game</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#factors-1">Factors-1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#factors-2">Factors-2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#countdown">Countdown</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#count-digits">Count digits</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Yusuf Danisman
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <div>
+<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://licensebuttons.net/l/by-nc-sa/3.0/88x31.png"></a>
+    All content on this site (unless otherwise specified) is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 license</a>
+</div>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
