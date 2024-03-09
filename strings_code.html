@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'strings_code';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Strings Exercises and Solutions" href="strings_exercise.html" />
+    <link rel="next" title="Strings Exercises" href="strings_exercise.html" />
     <link rel="prev" title="Strings Output" href="strings_output.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -208,7 +208,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="strings_debug.html">Strings Debugging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="strings_output.html">Strings Output</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Strings Code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="strings_exercise.html">Strings Exercises and Solutions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings_exercise.html">Strings Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="conditionals.html">Chp-5: Conditionals</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -247,7 +247,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="sets_code.html">Sets Code</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="dictionaries.html">Chp-11 Dictionaries</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="dictionaries.html">Chp-11: Dictionaries</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="dictionaries_debug.html">Dictionaries Debugging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dictionaries_output.html">Dictionaries Output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dictionaries_code.html">Dictionaries Code</a></li>
@@ -436,15 +436,9 @@ document.write(`
 <li><p>Use slicing and positive index numbers to print the <code class="docutils literal notranslate"><span class="pre">ifo</span></code> part of the <code class="docutils literal notranslate"><span class="pre">state</span></code></p></li>
 <li><p>Use slicing and negative index numbers to print the <code class="docutils literal notranslate"><span class="pre">ifo</span></code> part of the <code class="docutils literal notranslate"><span class="pre">state</span></code></p></li>
 </ul>
-<p><strong>Solution</strong></p>
-<div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
-</summary>
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="s1">&#39;cALifoRNia&#39;</span>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="s1">&#39;cALifoRNia&#39;</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
@@ -453,17 +447,6 @@ document.write(`
 <span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="o">-</span><span class="mi">7</span><span class="p">:</span><span class="o">-</span><span class="mi">4</span><span class="p">])</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>california
-CALIFORNIA
-6
-ifo
-ifo
-</pre></div>
-</div>
-</div>
-</details>
 </div>
 </section>
 <section id="question-2">
@@ -616,7 +599,6 @@ For example: Mark Twain</p>
 
 </pre></div>
 </div>
-<p><strong>Solution</strong>|</p>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">index_equal</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">)</span>
@@ -652,14 +634,9 @@ For example: Mark Twain</p>
 <p>Display the following large X using the repetition of strings.</p>
 <p><img alt="" src="_images/large_x.png" /></p>
 <p><strong>Solution</strong></p>
-<div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
-</summary>
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">0</span> <span class="o">+</span> <span class="s1">&#39;*&#39;</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">9</span><span class="o">+</span><span class="s1">&#39;*&#39;</span><span class="p">)</span>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">0</span> <span class="o">+</span> <span class="s1">&#39;*&#39;</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">9</span><span class="o">+</span><span class="s1">&#39;*&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">1</span> <span class="o">+</span> <span class="s1">&#39;*&#39;</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">7</span> <span class="o">+</span><span class="s1">&#39;*&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">2</span> <span class="o">+</span> <span class="s1">&#39;*&#39;</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">5</span> <span class="o">+</span><span class="s1">&#39;*&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">3</span> <span class="o">+</span> <span class="s1">&#39;*&#39;</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">3</span> <span class="o">+</span><span class="s1">&#39;*&#39;</span><span class="p">)</span>
@@ -673,37 +650,15 @@ For example: Mark Twain</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*         *
- *       *
-  *     *
-   *   *
-    * *
-     *
-    * *
-   *   *
-  *     *
- *       *
-*         *
-</pre></div>
-</div>
-</div>
-</details>
-</div>
 </section>
 <section id="question-9">
 <h2>Question-9<a class="headerlink" href="#question-9" title="Permalink to this heading">#</a></h2>
 <p>Display the following triangle by using the repetition of strings.<br />
 <img alt="" src="_images/triangle.png" /></p>
 <p><strong>Solution</strong></p>
-<div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
-</summary>
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">7</span><span class="o">+</span><span class="s1">&#39;*&#39;</span><span class="p">)</span>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">7</span><span class="o">+</span><span class="s1">&#39;*&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">6</span><span class="o">+</span><span class="s1">&#39;*&#39;</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">5</span><span class="o">+</span><span class="s1">&#39;*&#39;</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">4</span><span class="o">+</span><span class="s1">&#39;*&#39;</span><span class="o">*</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
@@ -714,34 +669,14 @@ For example: Mark Twain</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       *
-      ***
-     *****
-    *******
-   *********
-  ***********
- *************
-***************
-</pre></div>
-</div>
-</div>
-</details>
-</div>
 </section>
 <section id="question-10">
 <h2>Question-10<a class="headerlink" href="#question-10" title="Permalink to this heading">#</a></h2>
 <p>Display the following parallelogram by using the repetition of strings</p>
 <p><img alt="" src="_images/parallelogram.png" /></p>
-<p><strong>Solution</strong></p>
-<div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
-</summary>
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">0</span><span class="o">+</span><span class="s1">&#39;*&#39;</span><span class="o">*</span><span class="mi">10</span><span class="p">)</span>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">0</span><span class="o">+</span><span class="s1">&#39;*&#39;</span><span class="o">*</span><span class="mi">10</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">1</span><span class="o">+</span><span class="s1">&#39;*&#39;</span><span class="o">*</span><span class="mi">10</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="s1">&#39;*&#39;</span><span class="o">*</span><span class="mi">10</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">3</span><span class="o">+</span><span class="s1">&#39;*&#39;</span><span class="o">*</span><span class="mi">10</span><span class="p">)</span>
@@ -752,34 +687,14 @@ For example: Mark Twain</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>**********
- **********
-  **********
-   **********
-    **********
-     **********
-      **********
-       **********
-</pre></div>
-</div>
-</div>
-</details>
-</div>
 </section>
 <section id="question-11">
 <h2>Question-11<a class="headerlink" href="#question-11" title="Permalink to this heading">#</a></h2>
 <p>Display the following rectangle by using the repetition of strings<br />
 <img alt="" src="_images/rectangle.png" /></p>
-<p><strong>Solution</strong></p>
-<div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
-</summary>
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;* &#39;</span><span class="o">*</span><span class="mi">11</span><span class="p">)</span>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;* &#39;</span><span class="o">*</span><span class="mi">11</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">19</span><span class="o">+</span><span class="s1">&#39;*&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">19</span><span class="o">+</span><span class="s1">&#39;*&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">19</span><span class="o">+</span><span class="s1">&#39;*&#39;</span><span class="p">)</span>
@@ -788,19 +703,6 @@ For example: Mark Twain</p>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;* &#39;</span><span class="o">*</span><span class="mi">11</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* * * * * * * * * * * 
-*                   *
-*                   *
-*                   *
-*                   *
-*                   *
-* * * * * * * * * * * 
-</pre></div>
-</div>
-</div>
-</details>
 </div>
 </section>
 </section>
@@ -849,7 +751,7 @@ For example: Mark Twain</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Strings Exercises and Solutions</p>
+        <p class="prev-next-title">Strings Exercises</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

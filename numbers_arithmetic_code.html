@@ -452,28 +452,15 @@ document.write(`
 <li><p>Round the area to the nearest hundredth.</p></li>
 <li><p>Area = <span class="math notranslate nohighlight">\(\pi r^2\)</span></p></li>
 </ul>
-<p><strong>Solution</strong></p>
-<div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
-</summary>
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 <span class="n">r</span> <span class="o">=</span> <span class="mi">5</span>
 
 <span class="n">area</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">r</span><span class="o">**</span><span class="mi">2</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">area</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>78.54
-</pre></div>
-</div>
-</div>
-</details>
 </div>
 </section>
 <section id="question-3">
@@ -721,15 +708,9 @@ document.write(`
 <li><p>Find the remainder and quotient when the dividend is divided by the divisor.</p></li>
 <li><p>After 5 seconds, show the correct remainder and quotient.</p></li>
 </ul>
-<p><strong>Solution</strong></p>
-<div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
-</summary>
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 <span class="kn">import</span> <span class="nn">time</span>
 
 <span class="n">divisor</span>  <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">)</span>         <span class="c1"># random one digit number</span>
@@ -741,20 +722,9 @@ document.write(`
 <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Quotient  :&#39;</span><span class="p">,</span> <span class="n">dividend</span><span class="o">//</span><span class="n">divisor</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Remainder :&#39;</span><span class="p">,</span> <span class="n">dividend</span><span class="o">%</span><span class="k">divisor</span>)
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Remainder :&#39;</span><span class="p">,</span> <span class="n">dividend</span><span class="o">%</span><span class="n">divisor</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Divide 612 by 5
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Quotient  : 122
-Remainder : 2
-</pre></div>
-</div>
-</div>
-</details>
 </div>
 </section>
 </section>

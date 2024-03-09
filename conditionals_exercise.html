@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Conditionals Output &#8212; Python in Plain Terms</title>
+    <title>Conditionals Exercises &#8212; Python in Plain Terms</title>
   
   
   
@@ -62,11 +62,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'conditionals_output';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'conditionals_exercise';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Conditionals Code" href="conditionals_code.html" />
-    <link rel="prev" title="Conditionals Debugging" href="conditionals_debug.html" />
+    <link rel="next" title="Chp-6: Iterations" href="iterations.html" />
+    <link rel="prev" title="Conditionals Code" href="conditionals_code.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -213,8 +215,15 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="conditionals.html">Chp-5: Conditionals</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="conditionals_debug.html">Conditionals Debugging</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Conditionals Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conditionals_output.html">Conditionals Output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conditionals_code.html">Conditionals Code</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Conditionals Exercises</a></li>
+
+
+
+
+
+
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="iterations.html">Chp-6: Iterations</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -307,7 +316,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/conditionals_output.ipynb" target="_blank"
+      <li><a href="_sources/conditionals_exercise.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -389,7 +398,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Conditionals Output</h1>
+    <h1>Conditionals Exercises</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -399,25 +408,15 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question-1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question-2</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question-3</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question-4</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question-5</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6">Question-6</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7">Question-7</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8">Question-8</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-9">Question-9</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-10">Question-10</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-11">Question-11</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-12">Question-12</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-13">Question-13</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-14">Question-14</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-15">Question-15</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-16">Question-16</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-17">Question-17</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-18">Question-18</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Conditionals Exercises</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question-1</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question-2</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question-3</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question-4</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question-5</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6">Question-6</a></li>
 </ul>
+
             </nav>
         </div>
     </div>
@@ -428,288 +427,99 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="conditionals-output">
-<h1>Conditionals Output<a class="headerlink" href="#conditionals-output" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="conditionals-exercises">
+<h1>Conditionals Exercises<a class="headerlink" href="#conditionals-exercises" title="Permalink to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="question-1">
+<h1>Question-1<a class="headerlink" href="#question-1" title="Permalink to this heading">#</a></h1>
+<p>Prompt the user to enter a five-digit number and calculate the count of even digits.</p>
 <ul class="simple">
-<li><p>Find the output of the following code.</p></li>
-<li><p>Please don’t run the code before giving your answer.     </p></li>
+<li><p>Do not use loops.</p></li>
 </ul>
-<section id="question-1">
-<h2>Question-1<a class="headerlink" href="#question-1" title="Permalink to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="kc">True</span><span class="o">+</span><span class="kc">False</span><span class="o">+</span><span class="mi">3</span><span class="o">+</span><span class="kc">True</span><span class="p">)</span>
+<p>Sample output:<br />
+Please enter a five digit number: 12345<br />
+There are 2 even digits in 12345.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="question-2">
+<h1>Question-2<a class="headerlink" href="#question-2" title="Permalink to this heading">#</a></h1>
+<p>The following code returns the week day of today as a number. (0 is Monday, 1 is Tuesday, ….)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">weekday</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="toggle admonition">
-<p class="admonition-title">Solution</p>
-<p>5</p>
-</div>
+<ul class="simple">
+<li><p>Prompt the user to enter a weekday (Monday, Tuesday,…).</p></li>
+<li><p>Verify whether today is the weekday given by the user. (not case-sensitive)</p></li>
+<li><p>Do not use loops or lists.</p></li>
+</ul>
+<p>Sample output:<br />
+Please enter a weekday: ThursdaY<br />
+Today is not Thursday.</p>
+<p>Please enter a weekday: wedNESday<br />
+Today is Wednesday.</p>
+<p>Please enter a weekday: wed<br />
+Warning!!! Please enter the day in the correct form.</p>
 </section>
-<section id="question-2">
-<h2>Question-2<a class="headerlink" href="#question-2" title="Permalink to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">20</span>
-<span class="n">y</span> <span class="o">=</span> <span class="mi">100</span>
-
-<span class="n">b1</span> <span class="o">=</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span>
-<span class="n">b2</span> <span class="o">=</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">b1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">b2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">b1</span> <span class="ow">and</span> <span class="n">b2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">b1</span> <span class="ow">or</span> <span class="n">b2</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="toggle admonition">
-<p class="admonition-title">Solution</p>
-<p>False<br />
-True<br />
-False<br />
-True</p>
-</div>
+<section class="tex2jax_ignore mathjax_ignore" id="question-3">
+<h1>Question-3<a class="headerlink" href="#question-3" title="Permalink to this heading">#</a></h1>
+<p>Use a single input() function to prompt the user to enter the coordinates of a theater in the format (x,y).</p>
+<ul class="simple">
+<li><p>Assume the user’s house coordinates are (3,4).</p></li>
+<li><p>Calculate the distance between the house and the theater using the distance formula.</p></li>
+<li><p>If the distance is less than 5 units, the user will go to the theater; otherwise, the user will stay at home.</p></li>
+<li><p>Display the conclusion based on the provided theater location.</p></li>
+</ul>
+<p>The distance between two points <span class="math notranslate nohighlight">\(P=(x_1,y_1)\)</span> and <span class="math notranslate nohighlight">\(Q=(x_2,y_2)\)</span> is given by the following distance formula:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle dist(P,Q) = \sqrt{(x_2-x_1)^2+(y_2-y_1)^2}\)</span></p></li>
+</ul>
+<p>Sample Output:<br />
+Enter the coordinates of the theather in the form of (x,y): (2,10)<br />
+The theather is too far. Stay at home.</p>
 </section>
-<section id="question-3">
-<h2>Question-3<a class="headerlink" href="#question-3" title="Permalink to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
-
-<span class="k">if</span> <span class="n">x</span><span class="o">&lt;</span><span class="mi">7</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="toggle admonition">
-<p class="admonition-title">Solution</p>
-<p>No output!</p>
-</div>
+<section class="tex2jax_ignore mathjax_ignore" id="question-4">
+<h1>Question-4<a class="headerlink" href="#question-4" title="Permalink to this heading">#</a></h1>
+<p>Prompt the user to enter a word.</p>
+<ul class="simple">
+<li><p>If the given word has an odd length, print the middle character. Otherwise, print the middle two characters</p></li>
+</ul>
+<p>Sample output:<br />
+Enter a word: abcdef<br />
+Middle characters: cd</p>
+<p>Enter a word: abcdefg<br />
+Middle character: d</p>
 </section>
-<section id="question-4">
-<h2>Question-4<a class="headerlink" href="#question-4" title="Permalink to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">20</span>
-
-<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">15</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="toggle admonition">
-<p class="admonition-title">Solution</p>
-<p>A</p>
-</div>
+<section class="tex2jax_ignore mathjax_ignore" id="question-5">
+<h1>Question-5<a class="headerlink" href="#question-5" title="Permalink to this heading">#</a></h1>
+<p>Prompt the user to choose a password that satisfies the following conditions:</p>
+<ul class="simple">
+<li><p>The first character must be a digit.</p></li>
+<li><p>The last character must be a punctuation mark.</p></li>
+<li><p>The length of the password must be at least 5 characters.
+Print whether the given password is acceptable.</p></li>
+</ul>
+<p>Sample output:<br />
+Choose a password: 123.<br />
+The password 123. is NOT acceptable.</p>
+<p>Choose a password: abcdef,<br />
+The password abcdef, is NOT acceptable.</p>
+<p>Choose a password: 2werqt,<br />
+The password 2werqt, is acceptable.</p>
 </section>
-<section id="question-5">
-<h2>Question-5<a class="headerlink" href="#question-5" title="Permalink to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">20</span>
-
-<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">15</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="toggle admonition">
-<p class="admonition-title">Solution</p>
-<p>A<br />
-B</p>
-</div>
-</section>
-<section id="question-6">
-<h2>Question-6<a class="headerlink" href="#question-6" title="Permalink to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">17</span>
-<span class="n">y</span> <span class="o">=</span> <span class="mi">9</span>
-
-<span class="k">if</span> <span class="n">x</span><span class="o">&lt;</span><span class="mi">15</span> <span class="ow">and</span> <span class="n">y</span><span class="o">&gt;</span><span class="mi">5</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">x</span><span class="o">&gt;</span><span class="mi">7</span> <span class="ow">and</span> <span class="n">y</span><span class="o">&gt;</span><span class="mi">5</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">x</span><span class="o">&gt;</span><span class="mi">10</span> <span class="ow">and</span> <span class="n">y</span><span class="o">&gt;</span><span class="mi">6</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="toggle admonition">
-<p class="admonition-title">Solution</p>
-<p>B</p>
-</div>
-</section>
-<section id="question-7">
-<h2>Question-7<a class="headerlink" href="#question-7" title="Permalink to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">25</span>
-
-<span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">30</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
-  <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="toggle admonition">
-<p class="admonition-title">Solution</p>
-<p>A</p>
-</div>
-</section>
-<section id="question-8">
-<h2>Question-8<a class="headerlink" href="#question-8" title="Permalink to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">25</span>
-
-<span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">30</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
-  <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">40</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="toggle admonition">
-<p class="admonition-title">Solution</p>
-<p>A<br />
-B</p>
-</div>
-</section>
-<section id="question-9">
-<h2>Question-9<a class="headerlink" href="#question-9" title="Permalink to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">25</span>
-
-<span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
-  <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">40</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="toggle admonition">
-<p class="admonition-title">Solution</p>
-<p>No output!</p>
-</div>
-</section>
-<section id="question-10">
-<h2>Question-10<a class="headerlink" href="#question-10" title="Permalink to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="mi">10</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;USA&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="toggle admonition">
-<p class="admonition-title">Solution</p>
-<p>USA</p>
-</div>
-</section>
-<section id="question-11">
-<h2>Question-11<a class="headerlink" href="#question-11" title="Permalink to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="mi">0</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;USA&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="toggle admonition">
-<p class="admonition-title">Solution</p>
-<p>No output!</p>
-</div>
-</section>
-<section id="question-12">
-<h2>Question-12<a class="headerlink" href="#question-12" title="Permalink to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="mi">0</span><span class="o">==</span><span class="mi">0</span> <span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;USA&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="toggle admonition">
-<p class="admonition-title">Solution</p>
-<p>USA</p>
-</div>
-</section>
-<section id="question-13">
-<h2>Question-13<a class="headerlink" href="#question-13" title="Permalink to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
-
-<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="toggle admonition">
-<p class="admonition-title">Solution</p>
-<p>20</p>
-</div>
-</section>
-<section id="question-14">
-<h2>Question-14<a class="headerlink" href="#question-14" title="Permalink to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
-
-<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-  <span class="nb">print</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="toggle admonition">
-<p class="admonition-title">Solution</p>
-<p>No output!</p>
-</div>
-</section>
-<section id="question-15">
-<h2>Question-15<a class="headerlink" href="#question-15" title="Permalink to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="kc">True</span><span class="p">:</span>
-  <span class="k">if</span> <span class="mi">1</span><span class="p">:</span>
-    <span class="k">if</span> <span class="mi">5</span><span class="p">:</span>
-      <span class="k">if</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
-      <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-      <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="toggle admonition">
-<p class="admonition-title">Solution</p>
-<p>B</p>
-</div>
-</section>
-<section id="question-16">
-<h2>Question-16<a class="headerlink" href="#question-16" title="Permalink to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
-
-<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;***&#39;</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;---&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="toggle admonition">
-<p class="admonition-title">Solution</p>
-<p>A<br />
-B</p>
-<hr class="docutils" />
-<p>D</p>
-</div>
-</section>
-<section id="question-17">
-<h2>Question-17<a class="headerlink" href="#question-17" title="Permalink to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;3&#39;</span>
-
-<span class="k">try</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">5</span><span class="p">)</span>
-<span class="k">except</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ERROR&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="toggle admonition">
-<p class="admonition-title">Solution</p>
-<p>ERROR</p>
-</div>
-</section>
-<section id="question-18">
-<h2>Question-18<a class="headerlink" href="#question-18" title="Permalink to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="kc">True</span>
-
-<span class="k">try</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">5</span><span class="p">)</span>
-<span class="k">except</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ERROR&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="toggle admonition">
-<p class="admonition-title">Solution</p>
-<p>6</p>
-</div>
-</section>
+<section class="tex2jax_ignore mathjax_ignore" id="question-6">
+<h1>Question-6<a class="headerlink" href="#question-6" title="Permalink to this heading">#</a></h1>
+<p>Prompt the user to choose a number between 1 and 6, including these numbers.</p>
+<ul class="simple">
+<li><p>Roll a die (choose a random number between 1 and 6).</p></li>
+<li><p>Check whether the user’s guess is correct.</p></li>
+</ul>
+<p>Sample Output:<br />
+Guess the number on the die: 9
+Please enter a valid number.</p>
+<p>Guess the number on the die: 5<br />
+Wrong!</p>
+<p>Guess the number on the die: 2<br />
+Correct!</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -743,20 +553,20 @@ B</p>
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="conditionals_debug.html"
+       href="conditionals_code.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Conditionals Debugging</p>
+        <p class="prev-next-title">Conditionals Code</p>
       </div>
     </a>
     <a class="right-next"
-       href="conditionals_code.html"
+       href="iterations.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Conditionals Code</p>
+        <p class="prev-next-title">Chp-6: Iterations</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -775,25 +585,15 @@ B</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question-1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question-2</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question-3</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question-4</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question-5</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6">Question-6</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7">Question-7</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8">Question-8</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-9">Question-9</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-10">Question-10</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-11">Question-11</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-12">Question-12</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-13">Question-13</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-14">Question-14</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-15">Question-15</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-16">Question-16</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-17">Question-17</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-18">Question-18</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Conditionals Exercises</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question-1</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question-2</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question-3</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question-4</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question-5</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6">Question-6</a></li>
 </ul>
+
   </nav></div>
 
 </div></div>

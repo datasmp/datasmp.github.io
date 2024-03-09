@@ -208,7 +208,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="strings_debug.html">Strings Debugging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="strings_output.html">Strings Output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="strings_code.html">Strings Code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="strings_exercise.html">Strings Exercises and Solutions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings_exercise.html">Strings Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="conditionals.html">Chp-5: Conditionals</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -247,7 +247,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="sets_code.html">Sets Code</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="dictionaries.html">Chp-11 Dictionaries</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="dictionaries.html">Chp-11: Dictionaries</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="dictionaries_debug.html">Dictionaries Debugging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dictionaries_output.html">Dictionaries Output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dictionaries_code.html">Dictionaries Code</a></li>
@@ -422,33 +422,16 @@ document.write(`
 </ul>
 <section id="question-1">
 <h2>Question-1<a class="headerlink" href="#question-1" title="Permalink to this heading">#</a></h2>
-<p>Display the first 3 characters of your first name by using the character *.<br />
-<strong>Solution</strong></p>
-<div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
-</summary>
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;*     *   *     *   * * * *   &#39;</span><span class="p">)</span>
+<p>Display the first 3 characters of your first name by using the character *.</p>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;*     *   *     *   * * * *   &#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; *   *    *     *   *         &#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;   *      *     *   * * * *   &#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;   *      *     *         *   &#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;   *      * * * *   * * * *   &#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*     *   *     *   * * * *   
- *   *    *     *   *         
-   *      *     *   * * * *   
-   *      *     *         *   
-   *      * * * *   * * * *   
-</pre></div>
-</div>
-</div>
-</details>
 </div>
 </section>
 <section id="question-2">
@@ -464,28 +447,15 @@ document.write(`
 </ul>
 </li>
 </ul>
-<p><strong>Solution</strong></p>
-<div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
-</summary>
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Michael&#39;</span>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Michael&#39;</span>
 <span class="n">age</span> <span class="o">=</span> <span class="mi">25</span>
 <span class="n">country</span> <span class="o">=</span> <span class="s1">&#39;Germany&#39;</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;My name is &#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s1">&#39;. I am from &#39;</span><span class="p">,</span> <span class="n">country</span><span class="p">,</span> <span class="s1">&#39;. I am &#39;</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="s1">&#39; years old.&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>My name is Michael. I am from Germany. I am 25 years old.
-</pre></div>
-</div>
-</div>
-</details>
 </div>
 </section>
 <section id="question-3">
@@ -521,15 +491,9 @@ document.write(`
 </ul>
 </li>
 </ul>
-<p><strong>Solution</strong></p>
-<div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
-</summary>
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_name</span> <span class="o">=</span> <span class="s1">&#39;Bill&#39;</span>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">first_name</span> <span class="o">=</span> <span class="s1">&#39;Bill&#39;</span>
 <span class="n">last_name</span> <span class="o">=</span> <span class="s1">&#39;Gates&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;- -&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">first_name</span> <span class="o">+</span><span class="s1">&#39;- -&#39;</span><span class="o">+</span> <span class="n">last_name</span><span class="p">)</span>
@@ -538,17 +502,6 @@ document.write(`
 <span class="nb">print</span><span class="p">(</span><span class="n">first_name</span> <span class="o">+</span><span class="s1">&#39;-&#39;</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="o">+</span><span class="s1">&#39;-&#39;</span><span class="o">+</span> <span class="n">last_name</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Bill- -Gates
-Bill- -Gates
-Bill- -Gates
-Bill- -Gates
-Bill- -Gates
-</pre></div>
-</div>
-</div>
-</details>
 </div>
 </section>
 <section id="question-5">
