@@ -215,6 +215,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="conditionals_debug.html">Conditionals Debugging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conditionals_output.html">Conditionals Output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conditionals_code.html">Conditionals Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conditionals_exercise.html">Conditionals Exercises</a></li>
+
+
+
+
+
+
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="iterations.html">Chp-6: Iterations</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -728,7 +735,7 @@ AAA	B
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Tom&#39;</span>
 <span class="n">age</span> <span class="o">=</span> <span class="mi">25</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>            <span class="c1"># by deafult there is one space between each value</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>            <span class="c1"># by default there is one space between each value</span>
 </pre></div>
 </div>
 </div>
@@ -775,10 +782,10 @@ AAA	B
 <p><strong>Example</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>  <span class="c1"># end=&#39;\n&#39; by default, after printing A it moes to next line</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>  <span class="c1"># end=&#39;\n&#39; by default, after printing B it moes to next line</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>  <span class="c1"># end=&#39;\n&#39; by default, after printing C it moes to next line</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>  <span class="c1"># end=&#39;\n&#39; by default, after printing C it moes to next line</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>  <span class="c1"># end=&#39;\n&#39; by default, after printing A it moves to next line</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>  <span class="c1"># end=&#39;\n&#39; by default, after printing B it moves to next line</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>  <span class="c1"># end=&#39;\n&#39; by default, after printing C it moves to next line</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>  <span class="c1"># end=&#39;\n&#39; by default, after printing C it moves to next line</span>
 </pre></div>
 </div>
 </div>
@@ -795,9 +802,9 @@ D
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>  <span class="c1"># end=&#39;--&#39;           , after printing A it prints &#39;--&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>            <span class="c1"># end=&#39;\n&#39; by default, after printing B it moes to next line</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>            <span class="c1"># end=&#39;\n&#39; by default, after printing C it moes to next line</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>            <span class="c1"># end=&#39;\n&#39; by default, after printing C it moes to next line</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>            <span class="c1"># end=&#39;\n&#39; by default, after printing B it moves to next line</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>            <span class="c1"># end=&#39;\n&#39; by default, after printing C it moves to next line</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>            <span class="c1"># end=&#39;\n&#39; by default, after printing C it moves to next line</span>
 </pre></div>
 </div>
 </div>
@@ -814,8 +821,8 @@ D
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>  <span class="c1"># end=&#39;--&#39;           , after printing A it prints --</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">)</span>   <span class="c1"># end=&#39;+&#39;            , after printing B it prints +</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>            <span class="c1"># end=&#39;\n&#39; by default, after printing C it moes to next line</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>            <span class="c1"># end=&#39;\n&#39; by default, after printing C it moes to next line</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>            <span class="c1"># end=&#39;\n&#39; by default, after printing C it moves to next line</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>            <span class="c1"># end=&#39;\n&#39; by default, after printing C it moves to next line</span>
 </pre></div>
 </div>
 </div>
@@ -829,10 +836,10 @@ D
 <p><strong>Example</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>            <span class="c1"># end=&#39;\n&#39; by default, after printing A it moes to next line</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>            <span class="c1"># end=&#39;\n&#39; by default, after printing A it moves to next line</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">)</span>   <span class="c1"># end=&#39;+&#39;            , after printing B it prints +</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;?&#39;</span><span class="p">)</span>   <span class="c1"># end=&#39;+&#39;            , after printing C it prints ?</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>            <span class="c1"># end=&#39;\n&#39; by default, after printing C it moes to next line</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>            <span class="c1"># end=&#39;\n&#39; by default, after printing C it moves to next line</span>
 </pre></div>
 </div>
 </div>
@@ -885,7 +892,7 @@ B+C?D
 </ul>
 <ol class="arabic simple">
 <li><p>The first ‘\b’ deletes the ‘O’ that was printed before, moving the cursor one position to the left.</p></li>
-<li><p>The scond ‘\b’ moves the cursor one position to the left.</p></li>
+<li><p>The second ‘\b’ moves the cursor one position to the left.</p></li>
 <li><p>Prints ‘O’.</p></li>
 <li><p>Since the end parameter is set to an empty string, the cursor does not move to the next line after printing the ‘O’.</p></li>
 </ol>
