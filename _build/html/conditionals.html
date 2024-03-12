@@ -1,0 +1,2387 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Chp-5: Conditionals &#8212; Python in Plain Terms</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'conditionals';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Conditionals Debugging" href="conditionals_debug.html" />
+    <link rel="prev" title="Strings Exercises" href="strings_exercise.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="ppt.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.svg" class="logo__image only-light" alt="Python in Plain Terms - Home"/>
+    <script>document.write(`<img src="_static/logo.svg" class="logo__image only-dark" alt="Python in Plain Terms - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="ppt.html">
+                    Python in Plain Terms
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="acknowledge.html">Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python Introduction</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="colab.html">Google Colab</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="colab_text.html">Text Cell</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="colab_text_questions.html">Text Cell Questions</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="colab_code.html">Code Cell</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="colab_code_questions.html">Code Cell Questions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="colab_exercises.html">Colab Exercises</a></li>
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="variables.html">Chp-1: Variables</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="variables_debug.html">Variables Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables_output.html">Variables Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables_code.html">Variables Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables_exercise.html">Variables Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="inout.html">Chp-2: Input and Output</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="inout_debug.html">Input and Output Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inout_output.html">Input and Output  Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inout_code.html">Input and Output Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inout_exercise.html">Input and Output Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="numbers_arithmetic.html">Chp-3: Numbers</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="numbers_arithmetic_debug.html">Numbers Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numbers_arithmetic_output.html">Numbers Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numbers_arithmetic_code.html">Numbers Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numbers_arithmetic_exercise.html">Numbers Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="strings.html">Chp-4: Strings</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="strings_debug.html">Strings Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings_output.html">Strings Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings_code.html">Strings Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings_exercise.html">Strings Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Chp-5: Conditionals</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="conditionals_debug.html">Conditionals Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conditionals_output.html">Conditionals Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conditionals_code.html">Conditionals Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conditionals_exercise.html">Conditionals Exercises</a></li>
+
+
+
+
+
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="iterations.html">Chp-6: Iterations</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="iterations_debug.html">Iterations Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterations_output.html">Iterations Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterations_code.html">Iterations Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="tuples.html">Chp-7: Tuples</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="tuples_debug.html">Tuples Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tuples_output.html">Tuples Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tuples_code.html">Tuples Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="lists.html">Chp-8: Lists</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="lists_debug.html">Lists Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lists_output.html">Lists Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lists_code.html">Lists Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="functions.html">Chp-9: Functions</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="functions_debug.html">Functions Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions_output.html">Functions Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions_code.html">Functions Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="sets.html">Chp-10: Sets</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="sets_debug.html">Sets Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sets_output.html">Strings Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sets_code.html">Sets Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="dictionaries.html">Chp-11: Dictionaries</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="dictionaries_debug.html">Dictionaries Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictionaries_output.html">Dictionaries Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictionaries_code.html">Dictionaries Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="numpy_arrays.html">Chp-12: Numpy Arrays</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/conditionals.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chp-5: Conditionals</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">Motivation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditionals">Conditionals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#booleans">Booleans</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversions">Conversions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bool-int">bool &lt;–&gt; int</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bool-float">bool &lt;–&gt; float</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bool-str">bool &lt;–&gt; str</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-expressions-conditions">Boolean Expressions (Conditions)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-operators">Comparison operators</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-statement">if statement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-else-statement">if-else statement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-elif-else-statement">if-elif-else statement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nested-if-statements">Nested if statements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-operators">Boolean Operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#try-and-except">try and except</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#even-or-odd">Even or Odd</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#greater-than-ten">Greater than ten</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#same-names">Same names</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#letter-grades">Letter Grades</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#piecewise-defined-function">Piecewise Defined Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#secret-number-game">Secret Number Game</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="chp-5-conditionals">
+<h1>Chp-5: Conditionals<a class="headerlink" href="#chp-5-conditionals" title="Permalink to this heading">#</a></h1>
+<p><img alt="" src="_images/conditionals.png" /></p>
+<div class="tip admonition">
+<p class="admonition-title">Chapter Objectives</p>
+<p>By the end of this chapter, the student should be able to:</p>
+<ul class="simple">
+<li><p>Explain the purpose and role of conditional statements.</p></li>
+<li><p>Define boolean values.</p></li>
+<li><p>Apply conversion functions between different data types and boolean values.</p></li>
+<li><p>Demonstrate how to use if, if-else, and if-elif-else statements.</p></li>
+<li><p>Demonstrate how nested if statements handle various conditions.</p></li>
+<li><p>Apply boolean operators.</p></li>
+<li><p>Perform comparison operators in conditional expressions.</p></li>
+<li><p>Use  try and except to handle errors effectively.</p></li>
+<li><p>Solve real-world problems, such as determining letter grades in a course.</p></li>
+</ul>
+</div>
+<section id="motivation">
+<h2>Motivation<a class="headerlink" href="#motivation" title="Permalink to this heading">#</a></h2>
+<p>In our daily lives, our actions often depend on various conditions. For instance:</p>
+<ol class="arabic simple">
+<li><p>If the temperature is above 60, I will go hiking; otherwise, I will stay at home.</p></li>
+<li><p>If I work less than 40 hours per week, my hourly rate is 25 dollars. For each additional hour, I earn 40 dollars.</p></li>
+<li><p>Depending on my financial situation:</p>
+<ul class="simple">
+<li><p>If I have more than 5,000 dollars, I will go on a cruise.</p></li>
+<li><p>If I have between  3,000 and  5,000 dollars, I will go to Florida.</p></li>
+<li><p>If I have less than 3,000 dollars, I will spend time in my city.</p></li>
+</ul>
+</li>
+<li><p>In my math course, the letter grade is determined by a grading scale. For instance, getting 76 results in a C+.</p></li>
+</ol>
+<p>The central question in this chapter is how to write a program that performs different tasks under various conditions. This allows us to answer questions such as whether to go outside or stay at home based on the temperature, how much to earn depending on weekly working hours, where to travel, or what grade a student will receive according to the grading scale.</p>
+</section>
+<section id="conditionals">
+<h2>Conditionals<a class="headerlink" href="#conditionals" title="Permalink to this heading">#</a></h2>
+<p>Conditionals are the statements that allow you to execute different blocks of code based on whether certain conditions that are True or False.</p>
+<p>We have seen the following data types so far:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span></code>: Integers</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">float</span></code>: Floats</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">str</span></code>: Strings</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bool</span></code>: Boolean</p></li>
+</ul>
+<p>Since conditionals are the main subject of this chapter, booleans will be the commonly used data type.<br />
+We have already encountered boolean values when working with:</p>
+<ul class="simple">
+<li><p><em>in</em> and <em>not in</em> operators for strings return boolean values.</p></li>
+<li><p><em>startswith()</em>, <em>isdigit()</em>, and <em>isalpha()</em> string methods also return boolean values.</p></li>
+</ul>
+</section>
+<section id="booleans">
+<h2>Booleans<a class="headerlink" href="#booleans" title="Permalink to this heading">#</a></h2>
+<p>The values of booleans are limited to two: <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<ul class="simple">
+<li><p>They are keywords in Python and cannot be used as variable names.</p></li>
+<li><p>boolean <code class="docutils literal notranslate"><span class="pre">True</span></code>(<code class="docutils literal notranslate"><span class="pre">False</span></code>) and string <code class="docutils literal notranslate"><span class="pre">'True'</span></code> (<code class="docutils literal notranslate"><span class="pre">'False'</span></code>) are different.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">y</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">z</span> <span class="o">=</span> <span class="s1">&#39;True&#39;</span>
+<span class="n">t</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>   <span class="c1"># x is a boolean </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;bool&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>   <span class="c1"># y is a boolean </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;bool&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>   <span class="c1"># z is a string</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;str&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>   <span class="c1"># t is a string</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;str&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="conversions">
+<h2>Conversions<a class="headerlink" href="#conversions" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>The built-in <code class="docutils literal notranslate"><span class="pre">bool()</span></code> function is used to convert integers, floats, and strings to boolean values.</p></li>
+<li><p>The built-in <code class="docutils literal notranslate"><span class="pre">int()</span></code>, <code class="docutils literal notranslate"><span class="pre">float()</span></code>, and <code class="docutils literal notranslate"><span class="pre">str()</span></code> functions are used to convert boolean values to integers, floats, and strings respectively.</p></li>
+</ul>
+<section id="bool-int">
+<h3>bool &lt;–&gt; int<a class="headerlink" href="#bool-int" title="Permalink to this heading">#</a></h3>
+<p>The integer values of boolean True and False are 1 and 0 respectively.</p>
+<ul class="simple">
+<li><p>bool –&gt; int</p>
+<ul>
+<li><p>int(True) = 1</p></li>
+<li><p>int(False) = 0</p></li>
+</ul>
+</li>
+</ul>
+<p>The boolean value of all integers except 0 is True, whereas the boolean value of 0 is False.</p>
+<ul class="simple">
+<li><p>int –&gt; bool</p>
+<ul>
+<li><p>bool( any integer other than 0 ) = True</p></li>
+<li><p>bool(0) = False</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="kc">True</span><span class="p">))</span>      <span class="c1"># int value of True is 1 </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="kc">False</span><span class="p">))</span>     <span class="c1"># int value of False is 0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="mi">6</span><span class="p">))</span>        <span class="c1"># bool value of 6 is True</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="o">-</span><span class="mi">101</span><span class="p">))</span>     <span class="c1"># bool value of -101 is True</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="mf">23.567</span><span class="p">))</span>   <span class="c1"># bool value of 23.567 is True</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>        <span class="c1"># bool value of 0 is False</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>You can perform algebraic operations with boolean values <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+<li><p>In such operations, <code class="docutils literal notranslate"><span class="pre">True</span></code> takes on the integer value <code class="docutils literal notranslate"><span class="pre">1</span></code>, and <code class="docutils literal notranslate"><span class="pre">False</span></code> takes on the integer value <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="kc">True</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>   <span class="c1"># True+1=1+1=2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="kc">False</span><span class="o">*</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># False*5=0*5=0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="bool-float">
+<h3>bool &lt;–&gt; float<a class="headerlink" href="#bool-float" title="Permalink to this heading">#</a></h3>
+<p>The float values of boolean True and False are 1.0 and 0.0 respectively.</p>
+<ul class="simple">
+<li><p>bool –&gt; float</p>
+<ul>
+<li><p>float(True) = 1.0</p></li>
+<li><p>float(False) = 0.0</p></li>
+</ul>
+</li>
+</ul>
+<p>The boolean value of all floats except 0.0 is True, whereas the boolean value of 0.0 is False.</p>
+<ul class="simple">
+<li><p>float –&gt; bool</p>
+<ul>
+<li><p>bool( any float other than 0.0 ) = True</p></li>
+<li><p>bool(0.0) = False</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="kc">True</span><span class="p">))</span>      <span class="c1"># float value of True is 1.0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="kc">False</span><span class="p">))</span>     <span class="c1"># float value of False is 0.0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="mf">23.567</span><span class="p">))</span>     <span class="c1"># bool value of 23.567 is True</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="mf">0.0</span><span class="p">))</span>        <span class="c1"># bool value of 0.0 is False</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="kc">True</span><span class="o">+</span><span class="mf">4.6</span><span class="o">+</span><span class="kc">True</span><span class="o">+</span><span class="kc">False</span><span class="o">+</span><span class="mi">10</span><span class="o">+</span><span class="kc">True</span><span class="o">+</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># 1+4.6+1+0+10+1+0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17.6
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="bool-str">
+<h3>bool &lt;–&gt; str<a class="headerlink" href="#bool-str" title="Permalink to this heading">#</a></h3>
+<p>The string values of boolean True and False are ‘True’ and ‘False’ respectively.</p>
+<ul class="simple">
+<li><p>bool –&gt; str</p>
+<ul>
+<li><p>str(True)  = ‘True’</p></li>
+<li><p>str(False) = ‘False’</p></li>
+</ul>
+</li>
+</ul>
+<p>The boolean value of all strings except <code class="docutils literal notranslate"><span class="pre">''</span></code> (empty string) is True, whereas the boolean value of <code class="docutils literal notranslate"><span class="pre">''</span></code> (empty string) is False.</p>
+<ul class="simple">
+<li><p>str –&gt; bool</p>
+<ul>
+<li><p>bool( any string other than empty string ) = True</p></li>
+<li><p>bool( empty string ) = False</p>
+<ul>
+<li><p>empty string = <code class="docutils literal notranslate"><span class="pre">''</span></code></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="kc">True</span><span class="p">))</span>      <span class="c1"># str value of True is &#39;True&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="kc">False</span><span class="p">))</span>     <span class="c1"># str value of False is &#39;False&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="s1">&#39;HELLO&#39;</span><span class="p">))</span>   <span class="c1"># bool value of &#39;HELLO&#39; is True</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">))</span>        <span class="c1"># bool value of &#39;&#39; = empty string is False</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="boolean-expressions-conditions">
+<h2>Boolean Expressions (Conditions)<a class="headerlink" href="#boolean-expressions-conditions" title="Permalink to this heading">#</a></h2>
+<p>Boolean expressions are those that evaluate to either True or False.</p>
+<section id="comparison-operators">
+<h3>Comparison operators<a class="headerlink" href="#comparison-operators" title="Permalink to this heading">#</a></h3>
+<p>The table below presents the meanings of the most commonly used operators in boolean expressions.
+<strong>Warning:</strong> Since <code class="docutils literal notranslate"><span class="pre">=</span></code> is used for assignment, <code class="docutils literal notranslate"><span class="pre">==</span></code> is used for comparison.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Operator</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>==</p></td>
+<td><p>equal (only value not type)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>!=</p></td>
+<td><p>not equal (only value not type)</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>&lt;</p></td>
+<td><p>less than</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>&lt;=</p></td>
+<td><p>less than or equal to</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>&gt;</p></td>
+<td><p>greater than</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>&gt;=</p></td>
+<td><p>greater than or equal to</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>is</p></td>
+<td><p>equal (value and type)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>is not</p></td>
+<td><p>not equal to (value and type)</p></td>
+</tr>
+</tbody>
+</table>
+<p>Comparison of strings:</p>
+<ul class="simple">
+<li><p>Inequality operators follow the dictionary order.</p></li>
+<li><p>Uppercase letters are considered before lowercase letters.</p></li>
+<li><p>Digits are considered before uppercase letters.</p></li>
+<li><p>The order is as follows: Digits &lt; Uppercase letters &lt; Lowercase letters.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">is</span></code> keyword checks for identity.</p>
+<ul>
+<li><p>Objects compared with <code class="docutils literal notranslate"><span class="pre">is</span></code> have the same id() numbers, indicating they are stored in the same location in memory.</p></li>
+</ul>
+</li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">==</span></code> operator checks for equality.</p>
+<ul>
+<li><p>It compares whether the values are the same or not.</p></li>
+<li><p>For example, 4 and 4.0 are considered equal mathematically, even though their data types are different.</p></li>
+</ul>
+</li>
+<li><p>When you use <code class="docutils literal notranslate"><span class="pre">is</span></code> with strings, numbers, or booleans, a syntax error occurs.</p>
+<ul>
+<li><p>The error suggests using <code class="docutils literal notranslate"><span class="pre">==</span></code> or <code class="docutils literal notranslate"><span class="pre">!=</span></code> for these types.</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">5</span><span class="o">==</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># 5 is equal to 5 is True</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">5</span><span class="o">==</span><span class="mi">7</span><span class="p">)</span>  <span class="c1"># 5 is equal to 7 is False</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">3</span><span class="o">==</span><span class="mf">3.0</span><span class="p">)</span> <span class="c1"># The mathematical value of 3 and 3.0 are equal is True</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">5</span><span class="o">!=</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># 5 is not equal to 5 is False</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">5</span><span class="o">!=</span><span class="mi">7</span><span class="p">)</span>  <span class="c1"># 5 is not equal to 7 is True</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">5</span><span class="o">&lt;</span><span class="mi">7</span><span class="p">)</span>   <span class="c1"># 5 is less than 7 is True</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">10</span><span class="o">&gt;</span><span class="mi">15</span><span class="p">)</span>  <span class="c1"># 10 is greater than 15 is False</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;k&#39;</span><span class="o">==</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>  <span class="c1"># &#39;k&#39; is equal to &#39;t&#39; is False</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;k&#39;</span><span class="o">==</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>  <span class="c1"># &#39;k&#39; is equal to &#39;k&#39; is True</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;K&#39;</span><span class="o">==</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>  <span class="c1"># &#39;k&#39; is equal to &#39;K&#39; is False (case sensitive).</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;k&#39;</span> <span class="o">&lt;</span> <span class="s1">&#39;t&#39;</span><span class="p">)</span>  <span class="c1"># &#39;k&#39; comes before  &#39;t&#39; in dictionary order is True</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;z&#39;</span> <span class="o">&lt;</span> <span class="s1">&#39;t&#39;</span><span class="p">)</span>  <span class="c1"># &#39;z&#39; comes before  &#39;t&#39; in dictionary order is False</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;money&#39;</span> <span class="o">&lt;</span> <span class="s1">&#39;table&#39;</span><span class="p">)</span>  <span class="c1"># &#39;money&#39; comes before &#39;table&#39; in dictionary order is True</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Z&#39;</span> <span class="o">&lt;</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span>  <span class="c1"># capital letters come before lower case letters in dictionary order </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;3&#39;</span> <span class="o">&lt;</span> <span class="s1">&#39;A&#39;</span><span class="p">)</span>  <span class="c1"># digits come before  letters in dictionary order </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># SyntaxWarning: Use == instead</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;k&#39;</span> <span class="ow">is</span> <span class="s1">&#39;K&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># SyntaxWarning: Use == instead</span>
+<span class="nb">print</span><span class="p">(</span> <span class="mi">2</span> <span class="ow">is</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="if-statement">
+<h2>if statement<a class="headerlink" href="#if-statement" title="Permalink to this heading">#</a></h2>
+<p>The if statement executes a block of code based on a condition, typically a boolean expression, which evaluates to either True or False.</p>
+<ul class="simple">
+<li><p>If the condition is True, a block of code will be executed.</p></li>
+<li><p>If the condition is False, the block of code will not be executed and will be skipped.</p></li>
+<li><p>The structure of an if statement is as follows:</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">condition:</span></code><br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>     <br />
+   <code class="docutils literal notranslate"><span class="pre">BLOCK</span> <span class="pre">CODE</span></code>     <br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>     </p>
+<p>In the structure above:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">if</span></code> is a keyword.</p></li>
+<li><p>condition is a boolean expression, which is either True or False.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:</span></code> comes right after the condition and means this line will be followed by another code.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BLOCK</span> <span class="pre">CODE</span></code> is a group of code with the same indentation level that will be executed if the condition is True.</p></li>
+</ul>
+<p>There are two cases:</p>
+<ol class="arabic simple">
+<li><p>The condition is True:<br />
+<code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">True:</span></code><br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>     <br />
+   <code class="docutils literal notranslate"><span class="pre">BLOCK</span> <span class="pre">CODE</span></code>         BLOCK CODE will be executed.<br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>     </p></li>
+<li><p>The condition is False:<br />
+<code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">False:</span></code><br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>     <br />
+   <code class="docutils literal notranslate"><span class="pre">BLOCK</span> <span class="pre">CODE</span></code>         BLOCK CODE will be skipped.<br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>     </p></li>
+</ol>
+<p><img alt="" src="_images/if_stat.png" /></p>
+<p>In the code below:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">condition</span></code> is True because 75 &gt; 65, so the block code will be executed.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BLOCK</span> <span class="pre">CODE</span></code> consists of two lines of code, and they will be executed.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grade</span> <span class="o">=</span> <span class="mi">75</span>
+
+<span class="k">if</span> <span class="n">grade</span> <span class="o">&gt;</span> <span class="mi">65</span><span class="p">:</span>        
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You passed.&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Congrats!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>You passed.
+Congrats!
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the code below:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">condition</span></code> is False because 55&gt;65 is False, so the block code will not be executed.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BLOCK</span> <span class="pre">CDDE</span></code> consists of two lines of code, and they will be skipped.</p></li>
+<li><p>There is no output for this code.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grade</span> <span class="o">=</span> <span class="mi">55</span>
+
+<span class="k">if</span> <span class="n">grade</span> <span class="o">&gt;</span> <span class="mi">65</span><span class="p">:</span>        
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You passed.&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Congrats!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the code below:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">condition</span></code> is False because 55&gt;65 is False, so the block code will not be executed.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BLOCK</span> <span class="pre">CDDE</span></code> consists of two lines of code and they will be skipped.</p></li>
+<li><p>The last print statement is not part of the <code class="docutils literal notranslate"><span class="pre">BLOCK</span> <span class="pre">CODE</span></code>. After skipping the <code class="docutils literal notranslate"><span class="pre">BLOCK</span> <span class="pre">CODE</span></code>, this last print statement will be executed.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grade</span> <span class="o">=</span> <span class="mi">55</span>
+
+<span class="k">if</span> <span class="n">grade</span> <span class="o">&gt;</span> <span class="mi">65</span><span class="p">:</span>        
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You passed.&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Congrats!&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Bye&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Bye
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>As a condition, numbers, strings, and boolean values can be directly used.</p></li>
+<li><p>Python will automatically convert them into boolean values.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># condition is always True</span>
+<span class="c1"># Hello will always be printed.</span>
+
+<span class="k">if</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># condition is always False</span>
+<span class="c1"># print statement will be skipped. </span>
+<span class="c1"># no output</span>
+
+<span class="k">if</span> <span class="kc">False</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># condition is always True because bool(5)=True</span>
+<span class="c1"># Hello will always be printed</span>
+
+<span class="k">if</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># condition is always False because bool(0)=False</span>
+<span class="c1"># no output</span>
+
+<span class="k">if</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># condition is always True because bool(&#39;NY&#39;)=True</span>
+<span class="c1"># Hello will always be printed.</span>
+
+<span class="k">if</span> <span class="s1">&#39;NY&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># condition is always False because bool(&#39;&#39;)=False</span>
+<span class="c1"># no output</span>
+
+<span class="k">if</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>If the block code of an if statement consists of only one line, it can be written right after the colon (:), keeping the entire if statement in a single line.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grade</span> <span class="o">=</span> <span class="mi">55</span>
+<span class="k">if</span> <span class="n">grade</span> <span class="o">&gt;</span> <span class="mi">35</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You passed.&#39;</span><span class="p">)</span>  
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>You passed.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="if-else-statement">
+<h2>if-else statement<a class="headerlink" href="#if-else-statement" title="Permalink to this heading">#</a></h2>
+<p>This is for two-statement situations.</p>
+<ul class="simple">
+<li><p>If the condition is True, the block code of the if statement will be executed as before.</p></li>
+<li><p>If the condition is False, the block code of the else statement will be executed.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">else</span></code> keyword is used for the second part.</p></li>
+<li><p>The else part does not have a condition part.</p></li>
+<li><p><strong>Warning:</strong> The indentation level of if and else must be the same.</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">condition:</span></code><br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>       <br />
+   <code class="docutils literal notranslate"><span class="pre">BLOCK</span> <span class="pre">CODE</span> <span class="pre">of</span> <span class="pre">if</span>&#160; </code>       <br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>       <br />
+<code class="docutils literal notranslate"><span class="pre">else:</span></code><br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>     <br />
+   <code class="docutils literal notranslate"><span class="pre">BLOCK</span> <span class="pre">CODE</span> <span class="pre">of</span> <span class="pre">else</span></code>     <br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>     </p>
+<ul class="simple">
+<li><p>The cases are as follows:</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>The condition is True:</p></li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">True:</span></code><br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>       <br />
+   <code class="docutils literal notranslate"><span class="pre">BLOCK</span> <span class="pre">CODE</span> <span class="pre">of</span> <span class="pre">if</span>&#160; </code>                BLOCK CODE of if statement will be executed.<br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>       <br />
+<code class="docutils literal notranslate"><span class="pre">else:</span></code><br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>       <br />
+   <code class="docutils literal notranslate"><span class="pre">BLOCK</span> <span class="pre">CODE</span> <span class="pre">of</span> <span class="pre">else</span></code>                 BLOCK CODE of else statement will be skipped.<br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>       </p>
+<ol class="arabic simple" start="2">
+<li><p>The condition is False:</p></li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">False:</span></code><br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>       <br />
+   <code class="docutils literal notranslate"><span class="pre">BLOCK</span> <span class="pre">CODE</span> <span class="pre">of</span> <span class="pre">if</span>&#160; </code>                BLOCK CODE of if statement will be skipped.<br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>       <br />
+<code class="docutils literal notranslate"><span class="pre">else:</span></code><br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>     <br />
+   <code class="docutils literal notranslate"><span class="pre">BLOCK</span> <span class="pre">CODE</span> <span class="pre">of</span> <span class="pre">else</span></code>               BLOCK CODE of else statement will be executed.<br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>     </p>
+<p><img alt="" src="_images/if_else_stat.png" /></p>
+<ul class="simple">
+<li><p>In the code below:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">condition</span></code> is True because 75 &gt; 65 is True, so the block code of the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement will be executed.</p></li>
+<li><p>The block code of the <code class="docutils literal notranslate"><span class="pre">else</span></code> statement will be skipped.</p></li>
+<li><p>The output comes from the print statements of the <code class="docutils literal notranslate"><span class="pre">if</span></code> part.</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grade</span> <span class="o">=</span> <span class="mi">75</span>
+
+<span class="k">if</span> <span class="n">grade</span> <span class="o">&gt;</span> <span class="mi">65</span><span class="p">:</span>        
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You passed.&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Congrats!&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You failed.&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;I am sorry.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>You passed.
+Congrats!
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>In the code below:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">condition</span></code> is False because 55&gt;65 is False, so the block code of the <code class="docutils literal notranslate"><span class="pre">else</span></code> statement will be executed.</p></li>
+<li><p>The block code of the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement will be skipped.</p></li>
+<li><p>The output comes from the print staements of the <code class="docutils literal notranslate"><span class="pre">else</span></code> part.</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grade</span> <span class="o">=</span> <span class="mi">55</span>
+
+<span class="k">if</span> <span class="n">grade</span> <span class="o">&gt;</span> <span class="mi">65</span><span class="p">:</span>        
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You passed.&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Congrats!&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You failed.&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;I am sorry.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>You failed.
+I am sorry.
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>If the block code of an if or else statement consists of only one line, it can be written right after the colon (:), keeping the entire if or else statement in a single line.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grade</span> <span class="o">=</span> <span class="mi">55</span>
+
+<span class="k">if</span> <span class="n">grade</span> <span class="o">&gt;</span> <span class="mi">35</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You passed.&#39;</span><span class="p">)</span>  
+<span class="k">else</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You failed.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>You passed.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="if-elif-else-statement">
+<h2>if-elif-else statement<a class="headerlink" href="#if-elif-else-statement" title="Permalink to this heading">#</a></h2>
+<p>This is for three-case situations.</p>
+<ul class="simple">
+<li><p>If there are more cases, then more <code class="docutils literal notranslate"><span class="pre">elif</span></code> parts can be added.</p></li>
+<li><p>If the condition of the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement is True, the block code of the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement will be executed.</p></li>
+<li><p>If the condition of the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement is False and the condition of the <code class="docutils literal notranslate"><span class="pre">elif</span></code> statement is True, the block code of the <code class="docutils literal notranslate"><span class="pre">elif</span></code> statement will be executed.</p></li>
+<li><p>If the conditions of the <code class="docutils literal notranslate"><span class="pre">if</span></code> and <code class="docutils literal notranslate"><span class="pre">elif</span></code> statements are False, then the block code of the <code class="docutils literal notranslate"><span class="pre">else</span></code> statement will be executed.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">elif</span></code> keyword is used for the second part.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">elif</span></code> has a condition part.</p></li>
+<li><p><strong>Warning:</strong> The indentation level of <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, and <code class="docutils literal notranslate"><span class="pre">else</span></code> must be the same.</p></li>
+<li><p>The structure of an if-elif-else statement is as follows:</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">condition</span> <span class="pre">of</span> <span class="pre">if:</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code><br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>       <br />
+   <code class="docutils literal notranslate"><span class="pre">BLOCK</span> <span class="pre">CODE</span> <span class="pre">of</span>&#160; <span class="pre">if</span>&#160; </code>       <br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>       <br />
+<code class="docutils literal notranslate"><span class="pre">elif</span> <span class="pre">condition</span> <span class="pre">of</span> <span class="pre">ELIF:</span></code><br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>       <br />
+   <code class="docutils literal notranslate"><span class="pre">BLOCK</span> <span class="pre">CODE</span> <span class="pre">of</span> <span class="pre">elif</span> </code>      <br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>      <br />
+<code class="docutils literal notranslate"><span class="pre">else:</span></code><br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>     <br />
+   <code class="docutils literal notranslate"><span class="pre">BLOCK</span> <span class="pre">CODE</span> <span class="pre">of</span> <span class="pre">else</span> </code>     <br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>     </p>
+<ul class="simple">
+<li><p>The cases are as follows:</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>The condition of <code class="docutils literal notranslate"><span class="pre">if</span></code> statement is True:</p></li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">True:</span></code><br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>       <br />
+   <code class="docutils literal notranslate"><span class="pre">BLOCK</span> <span class="pre">CODE</span> <span class="pre">of</span>&#160; <span class="pre">if</span>&#160; </code>                 BLOCK CODE of if statement will be executed.<br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>       <br />
+<code class="docutils literal notranslate"><span class="pre">elif</span> <span class="pre">condition</span> <span class="pre">of</span> <span class="pre">elif:</span></code><br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>       <br />
+   <code class="docutils literal notranslate"><span class="pre">BLOCK</span> <span class="pre">CODE</span> <span class="pre">of</span> <span class="pre">elif</span> </code>                  BLOCK CODE of elif statement will be skipped.<br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>      <br />
+<code class="docutils literal notranslate"><span class="pre">else:</span></code><br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>     <br />
+   <code class="docutils literal notranslate"><span class="pre">BLOCK</span> <span class="pre">CODE</span> <span class="pre">of</span> <span class="pre">else</span> </code>                  BLOCK CODE of else statement will be skipped.<br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>     </p>
+<ol class="arabic simple" start="2">
+<li><p>The condition of <code class="docutils literal notranslate"><span class="pre">if</span></code> statement is False and condition of <code class="docutils literal notranslate"><span class="pre">elif</span></code> statement is True:</p></li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">False:</span></code><br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>       <br />
+   <code class="docutils literal notranslate"><span class="pre">BLOCK</span> <span class="pre">CODE</span> <span class="pre">of</span>&#160; <span class="pre">if</span> </code>                 BLOCK CODE of if statement will be skipped.<br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>       <br />
+<code class="docutils literal notranslate"><span class="pre">elif</span> <span class="pre">True:</span></code><br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>       <br />
+   <code class="docutils literal notranslate"><span class="pre">BLOCK</span> <span class="pre">CODE</span> <span class="pre">of</span> <span class="pre">elif</span></code>                  BLOCK CODE of elif statement will be executed.<br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>      <br />
+<code class="docutils literal notranslate"><span class="pre">else:</span></code><br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>     <br />
+   <code class="docutils literal notranslate"><span class="pre">BLOCK</span> <span class="pre">CODE</span> <span class="pre">of</span> <span class="pre">else</span></code>                  BLOCK CODE of else statement will be skipped.<br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>     </p>
+<ol class="arabic simple" start="3">
+<li><p>The conditions of <code class="docutils literal notranslate"><span class="pre">if</span></code> and <code class="docutils literal notranslate"><span class="pre">elif</span></code> statements are both False:</p></li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">False:</span></code><br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>       <br />
+   <code class="docutils literal notranslate"><span class="pre">BLOCK</span> <span class="pre">CODE</span> <span class="pre">of</span>&#160; <span class="pre">if</span> </code>                 BLOCK CODE of if statement will be skipped.<br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>       <br />
+<code class="docutils literal notranslate"><span class="pre">elif</span> <span class="pre">False:</span></code><br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>       <br />
+   <code class="docutils literal notranslate"><span class="pre">BLOCK</span> <span class="pre">CODE</span> <span class="pre">of</span> <span class="pre">elif</span></code>                  BLOCK CODE of elif statement will be skipped.<br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>      <br />
+<code class="docutils literal notranslate"><span class="pre">else:</span></code><br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>     <br />
+   <code class="docutils literal notranslate"><span class="pre">BLOCK</span> <span class="pre">CODE</span> <span class="pre">of</span> <span class="pre">else</span></code>                  BLOCK CODE of else statement will be executed.<br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>     </p>
+<p><img alt="" src="_images/if_elif_else_stat.png" /></p>
+<ul class="simple">
+<li><p>In the code below:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">condition</span></code> of the if statement is True because 75&gt;65 is True, so the block code of the if statement will be executed.</p></li>
+<li><p>The block code of the elif and else statements will be skipped.</p></li>
+<li><p>The output comes from the print statements of the if part.</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grade</span> <span class="o">=</span> <span class="mi">75</span>
+
+<span class="k">if</span> <span class="n">grade</span> <span class="o">&gt;</span> <span class="mi">65</span><span class="p">:</span>        
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You passed.&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Congrats!&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">grade</span> <span class="o">&gt;</span> <span class="mi">55</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You could not pass!&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You can take the test one more time.&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You failed.&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;I am sorry.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>You passed.
+Congrats!
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>In the code below:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">condition</span></code> of the if statement is False because 60&gt;65 is False</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">condition</span></code> of the elif statement is True because 60&gt;55 is True</p></li>
+<li><p>So the block code of the elif statement will be executed.</p></li>
+<li><p>The block code of the if and else statements will be skipped.</p></li>
+<li><p>The output comes from the print statements of the elif part.</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grade</span> <span class="o">=</span> <span class="mi">60</span>
+
+<span class="k">if</span> <span class="n">grade</span> <span class="o">&gt;</span> <span class="mi">65</span><span class="p">:</span>        
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You passed.&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Congrats!&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">grade</span> <span class="o">&gt;</span> <span class="mi">55</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You could not pass!&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You can take the test one more time.&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You failed.&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;I am sorry.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>You could not pass!
+You can take the test one more time.
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>In the code below:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">condition</span></code> of the if statement is False because 40&gt;65 is False</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">condition</span></code> of the elif statement is False because 40&gt;55 is False</p></li>
+<li><p>So the block code of the else statement will be executed.</p></li>
+<li><p>The block code of the if and elif statements will be skipped.</p></li>
+<li><p>The output comes from the print statements of the else part.</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grade</span> <span class="o">=</span> <span class="mi">40</span>
+
+<span class="k">if</span> <span class="n">grade</span> <span class="o">&gt;</span> <span class="mi">65</span><span class="p">:</span>        
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You passed.&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Congrats!&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">grade</span> <span class="o">&gt;</span> <span class="mi">55</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You could not pass!&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You can take the test one more time.&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You failed.&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;I am sorry.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>You failed.
+I am sorry.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="nested-if-statements">
+<h2>Nested if statements<a class="headerlink" href="#nested-if-statements" title="Permalink to this heading">#</a></h2>
+<p>It is possible to have an if, if-else, or if-elif-else statement within a block code for if, elif, or else.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">weight</span> <span class="o">=</span> <span class="mi">45</span>
+
+<span class="k">if</span> <span class="n">age</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>                     <span class="c1"># True: execute the block code within this `if` statement, which includes an `if-else` statement.</span>
+    <span class="k">if</span> <span class="n">weight</span><span class="o">&gt;</span><span class="mi">50</span><span class="p">:</span>               <span class="c1"># False: skipped</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>                       
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>              <span class="c1"># executed</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>B
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">weight</span> <span class="o">=</span> <span class="mi">55</span>
+
+<span class="k">if</span> <span class="n">age</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>                     <span class="c1"># True: execute the block code within this `if` statement which consists of an `if-else` statement</span>
+    <span class="k">if</span> <span class="n">weight</span><span class="o">&gt;</span><span class="mi">50</span><span class="p">:</span>               <span class="c1"># True: executed</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>                       
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>              <span class="c1"># skipped</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">weight</span> <span class="o">=</span> <span class="mi">45</span>
+
+<span class="k">if</span> <span class="n">age</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>                     <span class="c1"># False: skip the block code within this `if` statement which consists of an `if-else` statement</span>
+    <span class="k">if</span> <span class="n">weight</span><span class="o">&gt;</span><span class="mi">50</span><span class="p">:</span>               
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>                       
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>              
+<span class="k">else</span><span class="p">:</span>                           <span class="c1"># this &#39;else&#39; statement corresponds to the first &#39;if&#39; statement.</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>                  <span class="c1"># executed</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="boolean-operators">
+<h2>Boolean Operators<a class="headerlink" href="#boolean-operators" title="Permalink to this heading">#</a></h2>
+<p>Boolean operators include  <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>, and <code class="docutils literal notranslate"><span class="pre">not</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">and</span></code>, and <code class="docutils literal notranslate"><span class="pre">or</span></code> are used to construct more complex boolean expressions.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">not</span></code> is the negation operator.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&amp;</span></code>,<code class="docutils literal notranslate"><span class="pre">|</span></code> can be used instead of <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code> respectively.</p></li>
+</ul>
+<p>These operators, also called logical operators, work as follows:</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">and</span></code> operator returns True if both operands are True; otherwise, it returns False.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">or</span></code>  operator returns True if at least one of the operands is True; it returns False only if both operands are False.</p></li>
+<li><p>The ‘not’ operator returns the opposite boolean value of the operand. If the operand is True, ‘not’ returns False, and vice versa.</p></li>
+</ul>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Value</p></th>
+<th class="head text-center"><p>Operator</p></th>
+<th class="head"><p>Value</p></th>
+<th class="head"><p>=</p></th>
+<th class="head"><p>Result</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>True</p></td>
+<td class="text-center"><p>and</p></td>
+<td><p>True</p></td>
+<td><p>=</p></td>
+<td><p>True</p></td>
+</tr>
+<tr class="row-odd"><td><p>True</p></td>
+<td class="text-center"><p>and</p></td>
+<td><p>False</p></td>
+<td><p>=</p></td>
+<td><p>False</p></td>
+</tr>
+<tr class="row-even"><td><p>False</p></td>
+<td class="text-center"><p>and</p></td>
+<td><p>True</p></td>
+<td><p>=</p></td>
+<td><p>False</p></td>
+</tr>
+<tr class="row-odd"><td><p>False</p></td>
+<td class="text-center"><p>and</p></td>
+<td><p>False</p></td>
+<td><p>=</p></td>
+<td><p>False</p></td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Value</p></th>
+<th class="head text-center"><p>Operator</p></th>
+<th class="head"><p>Value</p></th>
+<th class="head"><p>=</p></th>
+<th class="head"><p>Result</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>True</p></td>
+<td class="text-center"><p>or</p></td>
+<td><p>True</p></td>
+<td><p>=</p></td>
+<td><p>True</p></td>
+</tr>
+<tr class="row-odd"><td><p>True</p></td>
+<td class="text-center"><p>or</p></td>
+<td><p>False</p></td>
+<td><p>=</p></td>
+<td><p>True</p></td>
+</tr>
+<tr class="row-even"><td><p>False</p></td>
+<td class="text-center"><p>or</p></td>
+<td><p>True</p></td>
+<td><p>=</p></td>
+<td><p>True</p></td>
+</tr>
+<tr class="row-odd"><td><p>False</p></td>
+<td class="text-center"><p>or</p></td>
+<td><p>False</p></td>
+<td><p>=</p></td>
+<td><p>False</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>not True  = False</p></li>
+<li><p>not False = True</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="kc">True</span> <span class="ow">and</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="kc">True</span> <span class="o">&amp;</span> <span class="kc">False</span><span class="p">)</span>   <span class="c1"># and</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="kc">True</span> <span class="ow">or</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="kc">True</span> <span class="o">|</span> <span class="kc">False</span><span class="p">)</span>  <span class="c1"># or</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># True and True = True</span>
+<span class="nb">print</span><span class="p">(</span> <span class="p">(</span><span class="mi">3</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="mi">10</span> <span class="o">&gt;</span> <span class="mi">8</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># False or True = True</span>
+<span class="nb">print</span><span class="p">(</span> <span class="p">(</span><span class="mi">7</span> <span class="o">==</span> <span class="mi">8</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="mi">10</span> <span class="o">&gt;</span> <span class="mi">8</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># not True = False</span>
+<span class="nb">print</span><span class="p">(</span> <span class="ow">not</span> <span class="p">(</span><span class="s1">&#39;arm&#39;</span><span class="o">&lt;</span><span class="s1">&#39;kite&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># not False = True</span>
+<span class="nb">print</span><span class="p">(</span> <span class="ow">not</span> <span class="p">(</span> <span class="s1">&#39;a&#39;</span> <span class="ow">in</span> <span class="s1">&#39;Apple&#39;</span> <span class="p">))</span>  <span class="c1"># a i snot in Apple</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Example-1</strong></p>
+<ul class="simple">
+<li><p>If the (weather is nice) or (I have $5), then I will buy an ice cream.</p>
+<ul>
+<li><p>If either of the conditions is True, I will buy an ice cream.</p></li>
+<li><p>If both of the conditions are False, I will not buy an ice cream.</p></li>
+</ul>
+</li>
+<li><p>So, we have the following scenarios based on weather conditions and the amount of money available:</p>
+<ul>
+<li><p>(weather is nice) = True   or  (I have $5) = True   ——&gt; buy an ice cream</p></li>
+<li><p>(weather is nice) = False  or  (I have $5) = True   ——&gt; buy an ice cream</p></li>
+<li><p>(weather is nice) = True   or  (I have $5) = False  ——&gt; buy an ice cream</p></li>
+<li><p>(weather is nice) = False  or  (I have $5) = False  ——&gt; do NOT buy an ice cream</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Example-2</strong></p>
+<ul class="simple">
+<li><p>If the (weather is nice) and (I have $5), then I will buy an ice cream.</p>
+<ul>
+<li><p>If both of the condtions are True, I will buy an ice cream.</p></li>
+<li><p>If either of the conditions is False, then I will not buy an ice cream.</p></li>
+</ul>
+</li>
+<li><p>So we have the following cases depending on the weather conditions and money amount:</p>
+<ul>
+<li><p>(weather is nice) = True   and  (I have $5) = True   ——&gt; buy an ice cream</p></li>
+<li><p>(weather is nice) = False  and  (I have $5) = True   ——&gt; do NOT buy an ice cream</p></li>
+<li><p>(weather is nice) = True   and  (I have $5) = False  ——&gt; do NOT buy an ice cream</p></li>
+<li><p>(weather is nice) = False  and  (I have $5) = False  ——&gt; do NOT buy an ice cream</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temperature</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">money</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Temperature is </span><span class="si">{</span><span class="n">temperature</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;I have $</span><span class="si">{</span><span class="n">money</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">temperature</span> <span class="o">&gt;</span> <span class="mi">75</span> <span class="ow">and</span> <span class="n">money</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>    <span class="c1"># True and False = False</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Go outside!&#39;</span><span class="p">)</span>                <span class="c1"># skipped</span>
+<span class="k">else</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Stay at home!&#39;</span><span class="p">)</span>              <span class="c1"># executed</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Temperature is 100.
+I have $3.
+Stay at home!
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temperature</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">money</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Temperature is </span><span class="si">{</span><span class="n">temperature</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;I have $</span><span class="si">{</span><span class="n">money</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">temperature</span> <span class="o">&gt;</span> <span class="mi">75</span> <span class="ow">and</span> <span class="n">money</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>    <span class="c1"># True and True = True</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Go outside!&#39;</span><span class="p">)</span>                <span class="c1"># executed</span>
+<span class="k">else</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Stay at home!&#39;</span><span class="p">)</span>              <span class="c1"># skipped</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Temperature is 100.
+I have $10.
+Go outside!
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="try-and-except">
+<h2>try and except<a class="headerlink" href="#try-and-except" title="Permalink to this heading">#</a></h2>
+<p>It is similar to an if-else statement. If there is an error in the code, the entire program will be terminated. To prevent termination in the presence of errors, a try-except statement is often used.</p>
+<ul class="simple">
+<li><p>This kind of situation is very common, especially when a user enters input that is not appropriate.</p>
+<ul>
+<li><p>entering “one” instead of digit “1”</p></li>
+<li><p>making typos like “5s” instead of “5”</p></li>
+</ul>
+</li>
+<li><p>If you try to convert such inputs to a number, an error will occur, and the entire program may be terminated.</p></li>
+<li><p>To handle such situations gracefully, you can use a try-except statement</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">try-except</span></code> works as follows:</p>
+<ul>
+<li><p>If there is no error in the block code of the <code class="docutils literal notranslate"><span class="pre">try</span></code> part, this block code will be executed.</p></li>
+<li><p>If there is an error in the block code of the <code class="docutils literal notranslate"><span class="pre">try</span></code> part, the block code of the <code class="docutils literal notranslate"><span class="pre">except</span></code> part will be executed.</p></li>
+</ul>
+</li>
+<li><p>The structure of a try-except statement is as follows:</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">try:</span></code><br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>       <br />
+   <code class="docutils literal notranslate"><span class="pre">BLOCK</span> <span class="pre">CODE</span> <span class="pre">of</span> <span class="pre">try</span>&#160;&#160; </code>       <br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>       <br />
+<code class="docutils literal notranslate"><span class="pre">except:</span></code><br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>     <br />
+   <code class="docutils literal notranslate"><span class="pre">BLOCK</span> <span class="pre">CODE</span> <span class="pre">of</span> <span class="pre">except</span></code>     <br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>     </p>
+<ul class="simple">
+<li><p>The cases are as follows:</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>BLOCK CODE of try has no error:</p></li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">try:</span></code><br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>       <br />
+   <code class="docutils literal notranslate"><span class="pre">BLOCK</span> <span class="pre">CODE</span> <span class="pre">of</span> <span class="pre">try</span>&#160;&#160; </code>                 BLOCK CODE of try  will be executed.<br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>       <br />
+<code class="docutils literal notranslate"><span class="pre">except:</span></code><br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>     <br />
+   <code class="docutils literal notranslate"><span class="pre">BLOCK</span> <span class="pre">CODE</span> <span class="pre">of</span> <span class="pre">except</span></code>                 BLOCK CODE of except  will be skipped.<br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>     </p>
+<ol class="arabic simple" start="2">
+<li><p>BLOCK CODE of try has an error:</p></li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">try:</span></code><br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>       <br />
+   <code class="docutils literal notranslate"><span class="pre">BLOCK</span> <span class="pre">CODE</span> <span class="pre">of</span> <span class="pre">try</span>&#160;&#160; </code>                 BLOCK CODE of try  will be skipped.<br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>       <br />
+<code class="docutils literal notranslate"><span class="pre">except:</span></code><br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>     <br />
+   <code class="docutils literal notranslate"><span class="pre">BLOCK</span> <span class="pre">CODE</span> <span class="pre">of</span> <span class="pre">except</span></code>                 BLOCK CODE of except  will be executed.<br />
+   <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>     </p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span>  <span class="s1">&#39;5&#39;</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>                                 <span class="c1"># no error: &#39;5&#39; can be converted to an int</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Square of </span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s1"> is </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>                <span class="c1"># executed</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Warning: Please enter an integer.&#39;</span><span class="p">)</span>      <span class="c1"># skipped</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Square of 5 is 25
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span>  <span class="s1">&#39;5s&#39;</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>                                 <span class="c1"># error: &#39;5s&#39; can not be converted to an int</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Square of </span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s1"> is </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>                <span class="c1"># skipped</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Warning: Please enter an integer.&#39;</span><span class="p">)</span>      <span class="c1"># executed</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning: Please enter an integer.
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Remark</strong></p>
+<ul class="simple">
+<li><p>You must include the except part along with some code when using the try statement.</p></li>
+<li><p>If you don’t intend to perform any specific actions in the except part, you can use the <code class="docutils literal notranslate"><span class="pre">pass</span></code> keyword to prevent an error.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span>  <span class="s1">&#39;5s&#39;</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>                                 <span class="c1"># error: &#39;5s&#39; can not be converted to an int</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Square of </span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s1"> is </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>                <span class="c1"># skipped</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="k">pass</span>                                            <span class="c1"># does not do anything</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>No output</p>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">#</a></h2>
+<section id="even-or-odd">
+<h3>Even or Odd<a class="headerlink" href="#even-or-odd" title="Permalink to this heading">#</a></h3>
+<p>Ask for an integer from the user and check whether it is even or odd.</p>
+<ul class="simple">
+<li><p>Print your result using f-strings in the form of “The given number is even/odd.”</p></li>
+</ul>
+<p><strong>Solution</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter an integer:&#39;</span><span class="p">)</span> <span class="p">)</span>
+
+<span class="k">if</span> <span class="n">number</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>                            <span class="c1"># for even numbers, the remainder is zero, so this condition is True.</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s1"> is an even number&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s1"> is an odd number&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="greater-than-ten">
+<h3>Greater than ten<a class="headerlink" href="#greater-than-ten" title="Permalink to this heading">#</a></h3>
+<p>Ask the user for an integer and check whether it is greater than 10 or not.</p>
+<ul class="simple">
+<li><p>Print the result using f-strings in the form: “The given number is greater/not greater than 10.”</p></li>
+</ul>
+<p><strong>Solution</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter an integer:&#39;</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="n">number</span><span class="o">&gt;</span><span class="mi">10</span> <span class="p">:</span>                              <span class="c1"># this condition is True if the number is greater than 10.</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s1"> is greater than 10&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s1"> is not greater than 10.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="same-names">
+<h3>Same names<a class="headerlink" href="#same-names" title="Permalink to this heading">#</a></h3>
+<p>Ask for two names from the user using two input() functions and check whether these names are the same.</p>
+<ul class="simple">
+<li><p>It should not be case-sensitive, meaning that “Tom” and “TOM” are considered the same name.</p></li>
+<li><p>Print the result using f-strings in the form of “name1 and name2 are the same/not the same.”</p></li>
+<li><p>Print the names exactly as given by the user.</p></li>
+</ul>
+<p><strong>Solution</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name1</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter the first  name:&#39;</span><span class="p">)</span>
+<span class="n">name2</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter the second name:&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">name1</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="n">name2</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>             <span class="c1"># compare lower case versions to make it not case sensitive.</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name1</span><span class="si">}</span><span class="s1"> and </span><span class="si">{</span><span class="n">name2</span><span class="si">}</span><span class="s1"> are same.&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name1</span><span class="si">}</span><span class="s1"> and </span><span class="si">{</span><span class="n">name2</span><span class="si">}</span><span class="s1"> are not same.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="letter-grades">
+<h3>Letter Grades<a class="headerlink" href="#letter-grades" title="Permalink to this heading">#</a></h3>
+<p>Write a program that asks the user to enter a percent grade.</p>
+<ul class="simple">
+<li><p>Display the corresponding letter grade according to the following chart.</p></li>
+</ul>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Letter Grade</p></th>
+<th class="head text-center"><p>Grade Range</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>A</p></td>
+<td class="text-center"><p>80 - 100</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>B</p></td>
+<td class="text-center"><p>60 -  79</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>C</p></td>
+<td class="text-center"><p>40 -  59</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>D</p></td>
+<td class="text-center"><p>20 -  39</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>F</p></td>
+<td class="text-center"><p>0 -  19</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Solution</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grade</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span>  <span class="nb">input</span><span class="p">(</span> <span class="s1">&#39;Enter your percent grade:&#39;</span> <span class="p">)</span>  <span class="p">)</span>
+
+<span class="k">if</span> <span class="mi">80</span> <span class="o">&lt;=</span> <span class="n">grade</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Your letter grade is A&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="mi">60</span> <span class="o">&lt;=</span> <span class="n">grade</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Your letter grade is B&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="mi">40</span> <span class="o">&lt;=</span> <span class="n">grade</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Your letter grade is C&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="mi">20</span> <span class="o">&lt;=</span> <span class="n">grade</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Your letter grade is D&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">grade</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Your letter grade is F&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">grade</span><span class="si">}</span><span class="s1"> is not a percent grade&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="piecewise-defined-function">
+<h3>Piecewise Defined Function<a class="headerlink" href="#piecewise-defined-function" title="Permalink to this heading">#</a></h3>
+<p>The piecewise-defined function <span class="math notranslate nohighlight">\(f(n)\)</span> is given  as follows:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} f(n) =
+  \begin{cases}
+                                   4-2n &amp;  n &lt; -2  \\
+                                   5   &amp;  -2 \le n \le7\\
+                                   1-n  &amp;    n&gt;7 \\
+  \end{cases}
+\end{split}\]</div>
+<ul class="simple">
+<li><p>Write a program that asks the user to enter an integer.</p></li>
+<li><p>If the integer entered is n then display f(n).</p></li>
+<li><p>Hint:</p>
+<ul>
+<li><p>If n is less than -2 then f(n)=4-2n</p></li>
+<li><p>If n is greater than  or equal to -2 and less than or equal to 7 then f(n)=5</p></li>
+<li><p>If n is greater than 7 then f(n)=1-n</p></li>
+</ul>
+</li>
+<li><p>Example:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(f(-4) = 4-2(-4)=12\)</span> since <span class="math notranslate nohighlight">\(-4&lt;-2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f(1) = 5\)</span> since <span class="math notranslate nohighlight">\(-2\le1\le7\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f(10) = 1-10=-9\)</span> since <span class="math notranslate nohighlight">\(10&gt;7\)</span></p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Solution</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span>   <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter a number:&#39;</span><span class="p">)</span>    <span class="p">)</span>
+
+<span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;f(</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1">)=</span><span class="si">{</span><span class="mi">4</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="o">-</span><span class="mi">2</span> <span class="o">&lt;=</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">7</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;f(</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1">)=5&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;f(</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1">)=</span><span class="si">{</span><span class="mi">1</span><span class="o">-</span><span class="n">n</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="secret-number-game">
+<h3>Secret Number Game<a class="headerlink" href="#secret-number-game" title="Permalink to this heading">#</a></h3>
+<p>Choose a random integer between 1 and 10 as the secret number.</p>
+<ul class="simple">
+<li><p>Ask a number from the user to guess it.</p></li>
+<li><p>If the user’s guess is correct, display You win!</p></li>
+<li><p>If the user’s guess is incorrect, display Incorrect. Try again!!</p></li>
+<li><p>Cheating Part:</p>
+<ul>
+<li><p>If the user’s guess is 99999, display You win!</p></li>
+</ul>
+</li>
+<li><p>Use try and except to avoid errors if the user enters non-numeric values.</p></li>
+<li><p>Warn the user if there is an error by displaying a message.</p></li>
+</ul>
+<p><strong>Solution</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="n">secret_number</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="k">try</span><span class="p">:</span>
+  <span class="n">player</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Guess the number: &#39;</span><span class="p">))</span>
+
+  <span class="k">if</span> <span class="n">player</span> <span class="o">==</span> <span class="n">secret_number</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You win!&#39;</span><span class="p">)</span>
+  <span class="k">elif</span> <span class="n">player</span> <span class="o">==</span> <span class="mi">99999</span><span class="p">:</span>       <span class="c1"># cheating part</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You win!&#39;</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Incorrect. Try Again!&#39;</span><span class="p">)</span>
+      
+<span class="k">except</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Please enter a valid numeric value!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="strings_exercise.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Strings Exercises</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="conditionals_debug.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Conditionals Debugging</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">Motivation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditionals">Conditionals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#booleans">Booleans</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversions">Conversions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bool-int">bool &lt;–&gt; int</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bool-float">bool &lt;–&gt; float</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bool-str">bool &lt;–&gt; str</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-expressions-conditions">Boolean Expressions (Conditions)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-operators">Comparison operators</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-statement">if statement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-else-statement">if-else statement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-elif-else-statement">if-elif-else statement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nested-if-statements">Nested if statements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-operators">Boolean Operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#try-and-except">try and except</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#even-or-odd">Even or Odd</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#greater-than-ten">Greater than ten</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#same-names">Same names</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#letter-grades">Letter Grades</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#piecewise-defined-function">Piecewise Defined Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#secret-number-game">Secret Number Game</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Yusuf Danisman
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <div>
+<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://licensebuttons.net/l/by-nc-sa/3.0/88x31.png"></a>
+    All content on this site (unless otherwise specified) is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 license</a>
+</div>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
