@@ -230,6 +230,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="iterations_debug.html">Iterations Debugging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="iterations_output.html">Iterations Output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="iterations_code.html">Iterations Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterations_exercise.html">Iterations Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="tuples.html">Chp-7: Tuples</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -530,15 +531,16 @@ document.write(`
 </div>
 </div>
 <ul class="simple">
-<li><p>The second version, utilizing string repetition, is simpler than the first.</p></li>
+<li><p>The second version, using string repetition, is simpler than the first.</p></li>
 <li><p>However, further simplification is possible as there are still repetitions, such as the presence of the print() function in each line.</p></li>
 <li><p>To address this, iterations can be employed to avoid using the <em>print()</em> function ten times.</p></li>
-<li><p>The iteration version is as follows:</p>
+<li><p>Using iterations offers the following advantages:</p>
 <ul>
 <li><p>It eliminates repetition.</p></li>
-<li><p>It does not become longer even with a larger triangle.</p></li>
+<li><p>It does not become longer even with a larger triangle</p></li>
 </ul>
 </li>
+<li><p>The iteration version is as follows:</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -566,7 +568,11 @@ document.write(`
 <section id="strings">
 <h3>Strings<a class="headerlink" href="#strings" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p>We have explored various methods for working with strings, yet a crucial aspect remains unaddressed — how to iterate through all characters of a string individually.</p></li>
+<li><p>We have explored various methods for working with strings, yet a crucial aspect remains unaddressed:</p>
+<ul>
+<li><p>how to iterate through all characters of a string individually.</p></li>
+</ul>
+</li>
 <li><p>While indexes and slices allow access to specific characters or portions of a string, the challenge lies in accessing each character sequentially.</p></li>
 </ul>
 <ol class="arabic simple">
@@ -617,7 +623,7 @@ document.write(`
 <span class="n">count_r</span> <span class="o">=</span> <span class="mi">0</span>
 
 <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>            <span class="c1"># iteration</span>
-    <span class="k">if</span> <span class="n">char</span> <span class="o">==</span> <span class="s1">&#39;r&#39;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">char</span> <span class="o">==</span> <span class="s1">&#39;r&#39;</span><span class="p">:</span>          <span class="c1"># Checking if the character is &#39;r&#39;</span>
         <span class="n">count_r</span> <span class="o">+=</span> <span class="mi">1</span>
     
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;There are </span><span class="si">{</span><span class="n">count_r</span><span class="si">}</span><span class="s1"> &quot;r&quot; characters in </span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
@@ -665,7 +671,7 @@ document.write(`
 </div>
 </div>
 <ul class="simple">
-<li><p>The code above exhibits repetition, which can be overwhelming for long strings.</p></li>
+<li><p>The code above shows repetition, which can be overwhelming for long strings.</p></li>
 <li><p>The iteration version, provided below, eliminates this repetition and does not become longer even with an extended string.</p></li>
 </ul>
 <div class="cell docutils container">
@@ -697,8 +703,8 @@ document.write(`
 </ul>
 <p>There are two types of iterations available in programming languages:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">while</span></code> loop: This is used for indefinite repetition, executing a block code for a possibly unknown number of times.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">for</span></code> loop: This is used for definite repetition, executing a code for a known number of times.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">while</span></code> loop: This is used for indefinite repetition, executing a block code for a possibly unknown number of times.</p></li>
 </ul>
 <ol class="arabic simple">
 <li><p>The <code class="docutils literal notranslate"><span class="pre">for</span></code> loop executes its block code repeatedly for every element of a sequence.</p>
@@ -711,7 +717,8 @@ document.write(`
 <li><p>It is similar to an <em>if</em> statement becase its condition can be any boolean expression (not only with <em>in</em>).</p></li>
 <li><p>The difference lies in the fact that the block code of an <em>if</em> statement is executed only once if the condition is True.</p></li>
 <li><p>In contrast, if the condition of the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop is True, its block code is executed as in <em>if</em> statements, but then the condition is checked again.</p></li>
-<li><p>If it is still True, the block code will be executed again. The <code class="docutils literal notranslate"><span class="pre">while</span></code> loop keeps executing its block code as long as its condition becomes False or a break command is used to terminate it.</p></li>
+<li><p>If it is still True, the block code will be executed again.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">while</span></code> loop keeps executing its block code as long as its condition becomes False or a break command is used to terminate it.</p></li>
 </ul>
 </li>
 </ol>
@@ -724,22 +731,45 @@ document.write(`
 <li><p>You can use the built-in <em>list()</em> function to explicitly display the numbers in a range type output.</p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">range()</span></code> function has three important parameters: start, end, and step.</p>
 <ul>
-<li><p>How they work is similar to the start, end, and step used for slicing of strings by using indexes.</p></li>
+<li><p>How they work is similar to the start, end, and step used for slicing of strings or lists by using indexes.</p></li>
 </ul>
 </li>
-<li><p>There are three cases:
-|#|Function|Numbers|Explanation|
-|-|-|-|-|<br />
-|1|range(a)     | 0, 1,2,…,a-1  |  integers starting from 0 goes upto a-1|
-|2|range(a,b)   | a, a+1, …, b-1 |   integers starting from a goes upto b-1|
-|3|range(a,b,s) | a, a+s, a+2s, …,   less than b-1|integers start from a go upto b-1 with an increment of s|</p></li>
+</ul>
+<p>There are three cases:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>#</p></th>
+<th class="head"><p>Function</p></th>
+<th class="head"><p>Numbers</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>range(a)</p></td>
+<td><p>0, 1,2,…,a-1</p></td>
+<td><p>integers starting from 0 goes upto a-1</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>range(a,b)</p></td>
+<td><p>a, a+1, …, b-1</p></td>
+<td><p>integers starting from a goes upto b-1</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>range(a,b,s)</p></td>
+<td><p>a, a+s, a+2s, …,   less than b-1</p></td>
+<td><p>integers start from a go upto b-1 with an increment of s</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
 <li><p>The step <span class="math notranslate nohighlight">\(s\)</span> can be a negative number. If <span class="math notranslate nohighlight">\(s\)</span> is a negative number:</p>
 <ul>
 <li><p>If <span class="math notranslate nohighlight">\(a &lt; b\)</span>, the output is empty (as you cannot reach <span class="math notranslate nohighlight">\(a\)</span> from <span class="math notranslate nohighlight">\(b\)</span> by adding negative numbers).</p></li>
 <li><p>If <span class="math notranslate nohighlight">\(a &gt; b\)</span>, the output is <span class="math notranslate nohighlight">\(a, a-1, \ldots, b+1\)</span> (as you can reach <span class="math notranslate nohighlight">\(a\)</span> from <span class="math notranslate nohighlight">\(b\)</span> by adding a negative numbers).</p></li>
 </ul>
 </li>
-<li><p>Example:</p>
+<li><p>Examples:</p>
 <ul>
 <li><p>range(10) consists of <span class="math notranslate nohighlight">\(0, 1, 2, 3, 4, 5, 6, 7, 8, 9\)</span>.</p></li>
 <li><p>range(2,10) consists of <span class="math notranslate nohighlight">\(2, 3, 4, 5, 6, 7, 8, 9\)</span>.</p></li>
@@ -814,8 +844,6 @@ List  : [2, 5, 8]
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Output: </span><span class="si">{</span><span class="n">rng_numbers</span><span class="si">}</span><span class="s1">&#39;</span> <span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Type  : </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">rng_numbers</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;List  : </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">rng_numbers</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-
-<span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -823,9 +851,6 @@ List  : [2, 5, 8]
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Output: range(2, 10, -3)
 Type  : &lt;class &#39;range&#39;&gt;
 List  : []
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10, 9, 8, 7, 6, 5, 4, 3]
 </pre></div>
 </div>
 </div>
@@ -838,8 +863,6 @@ List  : []
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Output: </span><span class="si">{</span><span class="n">rng_numbers</span><span class="si">}</span><span class="s1">&#39;</span> <span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Type  : </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">rng_numbers</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;List  : </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">rng_numbers</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-
-<span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -847,9 +870,6 @@ List  : []
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Output: range(10, 2, -3)
 Type  : &lt;class &#39;range&#39;&gt;
 List  : [10, 7, 4]
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10, 9, 8, 7, 6, 5, 4, 3]
 </pre></div>
 </div>
 </div>
@@ -917,8 +937,58 @@ List  : [10, 7, 4]
 </div>
 <p><strong>Example:</strong> In the code below the values of <span class="math notranslate nohighlight">\(i\)</span> are: <span class="math notranslate nohighlight">\(1,2,3,...,10\)</span></p>
 <ul class="simple">
-<li><p>In every iteration <span class="math notranslate nohighlight">\(i\)</span> many <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> characters are printed.</p></li>
+<li><p>In every iteration, <span class="math notranslate nohighlight">\(i\)</span> many <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> characters are printed.</p></li>
 </ul>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>iteration #</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(i\)</span></p></th>
+<th class="head"><p>&amp;*<span class="math notranslate nohighlight">\(i\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>&amp;</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>2</p></td>
+<td><p>&amp;&amp;</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>3</p></td>
+<td><p>&amp;&amp;&amp;</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>4</p></td>
+<td><p>&amp;&amp;&amp;&amp;</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>5</p></td>
+<td><p>&amp;&amp;&amp;&amp;&amp;</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>6</p></td>
+<td><p>&amp;&amp;&amp;&amp;&amp;&amp;</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>7</p></td>
+<td><p>&amp;&amp;&amp;&amp;&amp;&amp;&amp;</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>8</p></td>
+<td><p>&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p>9</p></td>
+<td><p>&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;</p></td>
+</tr>
+<tr class="row-odd"><td><p>10</p></td>
+<td><p>10</p></td>
+<td><p>&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;</p></td>
+</tr>
+</tbody>
+</table>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">):</span>
@@ -1176,11 +1246,7 @@ Over
 </div>
 <p><strong>Example:</strong> In the code below, the values of <span class="math notranslate nohighlight">\(i\)</span> are: 1,2,3,4.</p>
 <ul class="simple">
-<li><p>The condition of the <em>if</em> statement is True when <span class="math notranslate nohighlight">\(i\)</span> is 4, and the <em>break</em> is executed, so the <em>for</em> loop is terminated.</p>
-<ul>
-<li><p>The <em>else</em> part is not executed.</p></li>
-</ul>
-</li>
+<li><p>The condition of the <em>if</em> statement is True when <span class="math notranslate nohighlight">\(i\)</span> is 4, and the <em>break</em> is executed, so the <em>for</em> loop is terminated and the <em>else</em> part is not executed.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1275,6 +1341,25 @@ In the code below, the initial value of <span class="math notranslate nohighligh
 </div>
 </div>
 <p><strong>Example:</strong> In the code below, the initial value of <span class="math notranslate nohighlight">\(n\)</span> is <span class="math notranslate nohighlight">\(3\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="k">while</span> <span class="n">n</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">-=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+2
+1
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Iterations:</strong></p>
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(n=3\)</span>: Check the condition.</p>
 <ul class="simple">
@@ -1300,31 +1385,33 @@ In the code below, the initial value of <span class="math notranslate nohighligh
 </ul>
 </li>
 </ol>
+<p><strong>Example:</strong> In the code below, the initial values are set with <span class="math notranslate nohighlight">\(n=3\)</span> and <span class="math notranslate nohighlight">\(\text{total}=0\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
-
-<span class="k">while</span> <span class="n">n</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-    <span class="n">n</span> <span class="o">-=</span> <span class="mi">1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="k">while</span> <span class="n">n</span><span class="o">&lt;</span><span class="mi">6</span><span class="p">:</span>
+    <span class="n">total</span> <span class="o">+=</span> <span class="n">n</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Iteration number:</span><span class="si">{</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="si">}</span><span class="s1">   n:</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1">---&gt;total:</span><span class="si">{</span><span class="n">total</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
-2
-1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iteration number:1   n:3---&gt;total:3
+Iteration number:2   n:4---&gt;total:7
+Iteration number:3   n:5---&gt;total:12
 </pre></div>
 </div>
 </div>
 </div>
-<p><strong>Example:</strong> In the code below, the initial values are set with <span class="math notranslate nohighlight">\(n=3\)</span> and <span class="math notranslate nohighlight">\(\text{total}=0\)</span>.</p>
+<p><strong>Iterations:</strong></p>
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(n=3, \text{total}=0\)</span>: Check the condition.</p>
 <ul class="simple">
 <li><p>Since <span class="math notranslate nohighlight">\(3 &lt; 6\)</span>, the condition is True, and the block code is executed.</p></li>
 <li><p><span class="math notranslate nohighlight">\(\text{total} = 0 + 3 = 3\)</span></p></li>
-<li><p>print Iteration number: 1 <span class="math notranslate nohighlight">\(n:3 \rightarrow \text{total}:3\)</span></p></li>
+<li><p>print: Iteration number: 1      <span class="math notranslate nohighlight">\(n:3 \rightarrow \text{total}:3\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(n = 3+1 = 4\)</span></p></li>
 </ul>
 </li>
@@ -1332,7 +1419,7 @@ In the code below, the initial value of <span class="math notranslate nohighligh
 <ul class="simple">
 <li><p>Since <span class="math notranslate nohighlight">\(4 &lt; 6\)</span>, the condition is True, and the block code is executed.</p></li>
 <li><p><span class="math notranslate nohighlight">\(\text{total} = 3 + 4 = 7\)</span></p></li>
-<li><p>print Iteration number: 2 <span class="math notranslate nohighlight">\(n:4 \rightarrow \text{total}:7\)</span></p></li>
+<li><p>print: Iteration number: 2      <span class="math notranslate nohighlight">\(n:4 \rightarrow \text{total}:7\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(n = 4+1 = 5\)</span></p></li>
 </ul>
 </li>
@@ -1340,7 +1427,7 @@ In the code below, the initial value of <span class="math notranslate nohighligh
 <ul class="simple">
 <li><p>Since <span class="math notranslate nohighlight">\(5 &lt; 6\)</span>, the condition is True, and the block code is executed.</p></li>
 <li><p><span class="math notranslate nohighlight">\(\text{total} = 7 + 5 = 12\)</span></p></li>
-<li><p>print Iteration number: 3 <span class="math notranslate nohighlight">\(n:5 \rightarrow \text{total}:12\)</span></p></li>
+<li><p>print: Iteration number: 3      <span class="math notranslate nohighlight">\(n:5 \rightarrow \text{total}:12\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(n = 5+1 = 6\)</span></p></li>
 </ul>
 </li>
@@ -1376,25 +1463,6 @@ In the code below, the initial value of <span class="math notranslate nohighligh
 </tr>
 </tbody>
 </table>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="k">while</span> <span class="n">n</span><span class="o">&lt;</span><span class="mi">6</span><span class="p">:</span>
-    <span class="n">total</span> <span class="o">+=</span> <span class="n">n</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Iteration number:</span><span class="si">{</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="si">}</span><span class="s1">   n:</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1">---&gt;total:</span><span class="si">{</span><span class="n">total</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-    <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iteration number:1   n:3---&gt;total:3
-Iteration number:2   n:4---&gt;total:7
-Iteration number:3   n:5---&gt;total:12
-</pre></div>
-</div>
-</div>
-</div>
 <section id="if-versus-while">
 <h3>if versus while<a class="headerlink" href="#if-versus-while" title="Permalink to this heading">#</a></h3>
 <p>In the following two examples, the same block code is used in an <em>if</em> statement and a <em>while</em> loop.</p>
@@ -1403,11 +1471,6 @@ Iteration number:3   n:5---&gt;total:12
 <li><p>In the <em>while</em> loop, the block code is executed two times for <span class="math notranslate nohighlight">\(n=3\)</span> and <span class="math notranslate nohighlight">\(n=2\)</span>.</p></li>
 </ul>
 <p><strong>Example-1:</strong> In the code below, the condition of the <em>if</em> statement is True, and the block code is executed.</p>
-<ul class="simple">
-<li><p>The print statement is executed, and the value of <span class="math notranslate nohighlight">\(n\)</span>, which is <span class="math notranslate nohighlight">\(3\)</span>, is printed.</p></li>
-<li><p>Afterward, <span class="math notranslate nohighlight">\(n\)</span> is updated to <span class="math notranslate nohighlight">\(3-1=2\)</span>.</p></li>
-<li><p>The <em>if</em> statement is then concluded, and the only output is 3.</p></li>
-</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
@@ -1424,7 +1487,30 @@ Iteration number:3   n:5---&gt;total:12
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>The print statement is executed, and the value of <span class="math notranslate nohighlight">\(n\)</span>, which is <span class="math notranslate nohighlight">\(3\)</span>, is printed.</p></li>
+<li><p>Afterward, <span class="math notranslate nohighlight">\(n\)</span> is updated to <span class="math notranslate nohighlight">\(3-1=2\)</span>.</p></li>
+<li><p>The <em>if</em> statement is then concluded, and the only output is 3.</p></li>
+</ul>
 <p><strong>Example-2:</strong> In the code below, the initial value of <span class="math notranslate nohighlight">\(n\)</span> is 3.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+  <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+2
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Iterations:</strong></p>
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(n=3\)</span>: Check the condition.</p>
 <ul class="simple">
@@ -1444,23 +1530,6 @@ Iteration number:3   n:5---&gt;total:12
 </ul>
 </li>
 </ol>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
-
-<span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-  <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
-2
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 <section id="infinite-loop">
 <h3>Infinite Loop<a class="headerlink" href="#infinite-loop" title="Permalink to this heading">#</a></h3>
@@ -1497,23 +1566,6 @@ Iteration number:3   n:5---&gt;total:12
 <h3>break and continue<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <p>They work similarly to the <em>for</em> loop. To prevent infinite loops, the use of <code class="docutils literal notranslate"><span class="pre">break</span></code> is particularly crucial for while loops.</p>
 <p><strong>Example:</strong> In the code below the initial value of <span class="math notranslate nohighlight">\(n\)</span> is <span class="math notranslate nohighlight">\(3\)</span>.</p>
-<ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(n=3\)</span>: Check the condition.</p>
-<ul class="simple">
-<li><p>Since <span class="math notranslate nohighlight">\(3 &gt; 1\)</span>, the condition is True, and the block code is executed.</p></li>
-<li><p>#3# is printed, and <span class="math notranslate nohighlight">\(n\)</span> becomes <span class="math notranslate nohighlight">\(3+1=4\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(3 \neq 5\)</span>, so the condition of the if statement is False, and the <code class="docutils literal notranslate"><span class="pre">break</span></code> statement is skipped.</p></li>
-</ul>
-</li>
-<li><p><span class="math notranslate nohighlight">\(n=4\)</span>: Check the condition.</p>
-<ul class="simple">
-<li><p>Since <span class="math notranslate nohighlight">\(4 &gt; 1\)</span>, the condition is True, and the block code is executed.</p></li>
-<li><p><span class="math notranslate nohighlight">\(4\)</span> is printed, and <span class="math notranslate nohighlight">\(n\)</span> becomes <span class="math notranslate nohighlight">\(4+1=5\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(5 == 5\)</span>, so the condition of the <em>if</em> statement is True, and the <code class="docutils literal notranslate"><span class="pre">break</span></code> statement is executed.</p></li>
-<li><p>The <em>while</em> loop is terminated.</p></li>
-</ul>
-</li>
-</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
@@ -1533,13 +1585,31 @@ Iteration number:3   n:5---&gt;total:12
 </div>
 </div>
 </div>
+<p><strong>Iterations:</strong></p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(n=3\)</span>: Check the condition.</p>
+<ul class="simple">
+<li><p>Since <span class="math notranslate nohighlight">\(3 &gt; 1\)</span>, the condition is True, and the block code is executed.</p></li>
+<li><p>#3# is printed, and <span class="math notranslate nohighlight">\(n\)</span> becomes <span class="math notranslate nohighlight">\(3+1=4\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(3 \neq 5\)</span>, so the condition of the if statement is False, and the <code class="docutils literal notranslate"><span class="pre">break</span></code> statement is skipped.</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(n=4\)</span>: Check the condition.</p>
+<ul class="simple">
+<li><p>Since <span class="math notranslate nohighlight">\(4 &gt; 1\)</span>, the condition is True, and the block code is executed.</p></li>
+<li><p><span class="math notranslate nohighlight">\(4\)</span> is printed, and <span class="math notranslate nohighlight">\(n\)</span> becomes <span class="math notranslate nohighlight">\(4+1=5\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(5 == 5\)</span>, so the condition of the <em>if</em> statement is True, and the <code class="docutils literal notranslate"><span class="pre">break</span></code> statement is executed.</p></li>
+<li><p>The <em>while</em> loop is terminated.</p></li>
+</ul>
+</li>
+</ol>
 </section>
 </section>
 <section id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">#</a></h2>
 <section id="sum-of-numbers">
 <h3>Sum of Numbers<a class="headerlink" href="#sum-of-numbers" title="Permalink to this heading">#</a></h3>
-<p>Find the sum of the numbers <span class="math notranslate nohighlight">\(1,2,3,...,100\)</span> by using</p>
+<p>Find the sum of the numbers <span class="math notranslate nohighlight">\(1,2,3,...,100\)</span>   using</p>
 <ol class="arabic simple">
 <li><p>a <em>for</em> loop</p></li>
 <li><p>a <em>while</em> loop</p></li>
@@ -1678,21 +1748,22 @@ indexing   answer: ?uoy era woH
 <section id="secret-number-game">
 <h3>Secret Number Game<a class="headerlink" href="#secret-number-game" title="Permalink to this heading">#</a></h3>
 <p>This is the updated version of the game in the conditionals chapter. In this new version, the user will keep guessing the number until quitting the game by entering <span class="math notranslate nohighlight">\(0\)</span>.</p>
-<ul class="simple">
+<p><strong>Steps:</strong></p>
+<ol class="arabic simple">
 <li><p>Choose a random integer between <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(10\)</span> as the secret number, and 0 to quit the game.</p></li>
 <li><p>Ask for a number from the user to guess the secret number.</p>
-<ul>
+<ul class="simple">
 <li><p>If the user’s guess is correct, display ‘You win!’</p></li>
 <li><p>If the user’s guess is incorrect, display ‘Incorrect. Try again!’ and ask for a new guess.</p></li>
 <li><p>If the user’s input is <span class="math notranslate nohighlight">\(0\)</span>, quit the game.</p></li>
 </ul>
 </li>
 <li><p>Use <em>try</em> and <em>except</em> to avoid errors if the user enters non-numeric values.</p>
-<ul>
+<ul class="simple">
 <li><p>Warn the user if there is an error by displaying a message.</p></li>
 </ul>
 </li>
-</ul>
+</ol>
 <p><strong>Solution</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 <span class="n">secret_number</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>      <span class="c1"># choose a random number between 1 and 10</span>
@@ -1733,7 +1804,7 @@ Correct. You win!</p>
 </ul>
 <p><strong>Solution</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span>   <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter a positive integer n:&#39;</span><span class="p">)</span>  <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Factors of </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1"> are: &#39;</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The factors of </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1"> are: &#39;</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>       <span class="c1"># factors are between 1 and the given number n</span>
     <span class="k">if</span> <span class="n">n</span><span class="o">%</span><span class="n">i</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
@@ -1744,7 +1815,7 @@ Correct. You win!</p>
 </div>
 <p><strong>Sample Output:</strong><br />
 Enter a positive integer n: 12<br />
-Factors of 12 are: 1,2,3,4,6,12</p>
+The factors of 12 are: 1,2,3,4,6,12</p>
 </section>
 <section id="factors-2">
 <h3>Factors-2<a class="headerlink" href="#factors-2" title="Permalink to this heading">#</a></h3>
@@ -1806,7 +1877,7 @@ START</p>
 </section>
 <section id="count-digits">
 <h3>Count digits<a class="headerlink" href="#count-digits" title="Permalink to this heading">#</a></h3>
-<p>Write a program which prints the digits which are greater than 6 in given string which might include any character.</p>
+<p>Write a program that prints the digits greater than 6 in a given string, which may include any character.</p>
 <ul class="simple">
 <li><p>Use a <em>for</em> loop and <em>try-except</em>.</p></li>
 </ul>

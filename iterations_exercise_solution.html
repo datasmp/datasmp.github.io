@@ -62,6 +62,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'iterations_exercise_solution';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -206,19 +208,27 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="strings_debug.html">Strings Debugging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="strings_output.html">Strings Output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="strings_code.html">Strings Code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="strings_exercise.html">Strings Exercises and Solutions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings_exercise.html">Strings Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="conditionals.html">Chp-5: Conditionals</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="conditionals_debug.html">Conditionals Debugging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conditionals_output.html">Conditionals Output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conditionals_code.html">Conditionals Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conditionals_exercise.html">Conditionals Exercises</a></li>
+
+
+
+
+
+
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="iterations.html">Chp-6: Iterations</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="iterations_debug.html">Iterations Debugging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="iterations_output.html">Iterations Output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="iterations_code.html">Iterations Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterations_exercise.html">Iterations Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="tuples.html">Chp-7: Tuples</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -245,12 +255,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="sets_code.html">Sets Code</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="dictionaries.html">Chp-11 Dictionaries</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="dictionaries.html">Chp-11: Dictionaries</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="dictionaries_debug.html">Dictionaries Debugging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dictionaries_output.html">Dictionaries Output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dictionaries_code.html">Dictionaries Code</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="numpy_arrays.html">Chp-12: Numpy Arrays</a></li>
 </ul>
 
     </div>
@@ -397,7 +408,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question">Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question-1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question-2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question-3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question-4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question-5</a></li>
 </ul>
             </nav>
         </div>
@@ -411,9 +426,178 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="iterations-exercises-and-solutions">
 <h1>Iterations Exercises and Solutions<a class="headerlink" href="#iterations-exercises-and-solutions" title="Permalink to this heading">#</a></h1>
-<section id="question">
-<h2>Question<a class="headerlink" href="#question" title="Permalink to this heading">#</a></h2>
+<section id="question-1">
+<h2>Question-1<a class="headerlink" href="#question-1" title="Permalink to this heading">#</a></h2>
+<p>Print the letters with negative even indexes (-2, -4, …) from the given text using:</p>
+<ul class="simple">
+<li><p>a for loop</p></li>
+<li><p>a while loop</p></li>
+<li><p>slicing with a step. (use join method())</p></li>
+</ul>
+<p>Print the letters ina  single single line and comma separated.</p>
+<p><strong>Sample Output:</strong><br />
+text      : abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ<br />
+for loop  : Y,W,U,S,Q,O,M,K,I,G,E,C,A,y,w,u,s,q,o,m,k,i,g,e,c,a<br />
+while loop: Y,W,U,S,Q,O,M,K,I,G,E,C,A,y,w,u,s,q,o,m,k,i,g,e,c,a<br />
+slicing   : Y,W,U,S,Q,O,M,K,I,G,E,C,A,y,w,u,s,q,o,m,k,i,g,e,c,a</p>
 <p><strong>Solution</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">string</span>
+<span class="n">text</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">ascii_letters</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;text      :&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+
+<span class="n">text_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;for loop  : &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">text_len</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="o">-</span><span class="n">i</span><span class="p">],</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\b</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;while loop: &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">i</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="n">text_len</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">-=</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\b</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;slicing   :&#39;</span><span class="p">,</span> <span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">::</span><span class="o">-</span><span class="mi">2</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>text      : abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+for loop  : Y,W,U,S,Q,O,M,K,I,G,E,C,A,y,w,u,s,q,o,m,k,i,g,e,c,a,
+while loop: Y,W,U,S,Q,O,M,K,I,G,E,C,A,y,w,u,s,q,o,m,k,i,g,e,c,a,
+slicing   : Y,W,U,S,Q,O,M,K,I,G,E,C,A,y,w,u,s,q,o,m,k,i,g,e,c,a
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-2">
+<h2>Question-2<a class="headerlink" href="#question-2" title="Permalink to this heading">#</a></h2>
+<p>Find the sum of the first <span class="math notranslate nohighlight">\(100\)</span> terms of the following sequence:</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle \frac{1}{1^3+1^2}, \frac{1}{2^3+3^2}, \frac{1}{3^3+3^2}, \frac{1}{4^3+4^2}, ...\)</span></p>
+<ul class="simple">
+<li><p>Use a for loop.</p></li>
+<li><p>Use a while loop.</p></li>
+</ul>
+<p><strong>Solution</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total_for</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">101</span><span class="p">):</span>
+    <span class="n">total_for</span> <span class="o">+=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">i</span><span class="o">^</span><span class="mi">3</span><span class="o">+</span><span class="n">i</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">total_while</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">101</span><span class="p">:</span>
+    <span class="n">total_while</span> <span class="o">+=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">i</span><span class="o">^</span><span class="mi">3</span><span class="o">+</span><span class="n">i</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;for   loop:&#39;</span><span class="p">,</span> <span class="n">total_for</span><span class="p">)</span>    
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;while loop:&#39;</span><span class="p">,</span> <span class="n">total_while</span><span class="p">)</span>    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>for   loop: 32.99284781901703
+while loop: 32.99284781901703
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-3">
+<h2>Question-3<a class="headerlink" href="#question-3" title="Permalink to this heading">#</a></h2>
+<p>This is another version of the Guess the Secret Number Game.</p>
+<ul class="simple">
+<li><p>The user selects a secret 3-digit number.</p></li>
+<li><p>The computer randomly selects a 3-digit number to find the secret number.</p></li>
+<li><p>You can use random.randint or numpy.randint.</p></li>
+<li><p>Count the number of attempts by the computer.</p></li>
+<li><p>If the computer can find the secret number in fewer than 100 attempts, it wins; otherwise, it loses the game.</p></li>
+<li><p>After each attempt, print the computer’s guess.</p></li>
+<li><p>After each attempt, provide a hint to the computer whether the secret number is larger or smaller than the guess.
+The computer makes the next guess based on the hint</p></li>
+</ul>
+<p><strong>Sample Output</strong><br />
+Choose a 3 digit secret number:  123<br />
+Try Number: 0  Guess: 654 is LARGE. Try Again!<br />
+Try Number: 1  Guess: 638 is LARGE. Try Again!<br />
+Try Number: 2  Guess: 467 is LARGE. Try Again!<br />
+COMPUTER WINS!<br />
+Number of tries: 3</p>
+<p><strong>Solution</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="n">secret_number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Choose a 3 digit secret number: &#39;</span><span class="p">))</span>
+<span class="n">number_try</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">computer_guess</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">999</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">computer_guess</span> <span class="o">==</span> <span class="n">secret_number</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;COMPUTER WINS!&#39;</span><span class="p">)</span>
+    <span class="k">break</span>
+  <span class="k">elif</span> <span class="n">number_try</span><span class="o">==</span><span class="mi">100</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;COMPUTER LOST!&#39;</span><span class="p">)</span>
+    <span class="k">break</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="k">if</span>  <span class="n">computer_guess</span> <span class="o">&lt;</span> <span class="n">secret_number</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Try Number: </span><span class="si">{</span><span class="n">number_try</span><span class="si">}</span><span class="s1">  Guess: </span><span class="si">{</span><span class="n">computer_guess</span><span class="si">}</span><span class="s1"> is SMALL. Try Again!&#39;</span><span class="p">)</span>
+      <span class="n">computer_guess</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">computer_guess</span><span class="p">,</span> <span class="mi">999</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Try Number: </span><span class="si">{</span><span class="n">number_try</span><span class="si">}</span><span class="s1">  Guess: </span><span class="si">{</span><span class="n">computer_guess</span><span class="si">}</span><span class="s1"> is LARGE. Try Again!&#39;</span><span class="p">)</span>
+      <span class="n">computer_guess</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">computer_guess</span><span class="p">)</span>
+
+  <span class="n">number_try</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of tries:&#39;</span><span class="p">,</span> <span class="n">number_try</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="question-4">
+<h2>Question-4<a class="headerlink" href="#question-4" title="Permalink to this heading">#</a></h2>
+<p>Ask the user to input a name and then insert a random punctuation mark between each character of the name.</p>
+<ul class="simple">
+<li><p>Ensure that the output does not have a punctuation mark at the end.</p></li>
+</ul>
+<p><strong>Sample Output</strong><br />
+Please enter a name    : ashley<br />
+Randomly generated name: a&amp;s#h”l#e”y</p>
+<p><strong>Solution</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">string</span><span class="o">,</span> <span class="nn">random</span>
+<span class="n">punct</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">punctuation</span>
+
+<span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter a name    :&#39;</span><span class="p">)</span>
+<span class="n">name_gen</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">name</span><span class="p">:</span>
+    <span class="n">name_gen</span> <span class="o">+=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">punct</span><span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)]</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Randomly generated name:&#39;</span><span class="p">,</span> <span class="n">name_gen</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</section>
+<section id="question-5">
+<h2>Question-5<a class="headerlink" href="#question-5" title="Permalink to this heading">#</a></h2>
+<p>Ask the user to input a number and print the consecutive pairs of digits within this number.</p>
+<ul class="simple">
+<li><p>Example: The consecutive digits in 156319672 are 56 and 67.</p></li>
+</ul>
+<p><strong>Sample Output</strong><br />
+Please enter a number: 156319672<br />
+Consecutive pairs are: 56,67</p>
+<p><strong>Solution</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter a number:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Consecutive pairs are: &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">number</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">number</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">==</span> <span class="nb">int</span><span class="p">(</span><span class="n">number</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">],</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\b</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
 </section>
 
@@ -462,7 +646,11 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question">Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question-1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question-2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question-3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question-4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question-5</a></li>
 </ul>
   </nav></div>
 
