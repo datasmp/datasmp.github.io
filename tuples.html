@@ -450,8 +450,9 @@ document.write(`
 <p>By the end of this chapter, the student should be able to:</p>
 <ul class="simple">
 <li><p>Explain the purpose and role of tuples.</p></li>
-<li><p>Create tuples in differen ways.</p></li>
+<li><p>Create and initialize tuples in differen ways.</p></li>
 <li><p>Perform tuple operations.</p></li>
+<li><p>Explain immutabilility.</p></li>
 <li><p>Apply tuple methods.</p></li>
 <li><p>Apply tuples to solve real-world problems.</p></li>
 </ul>
@@ -465,10 +466,10 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(3\)</span> is an integer and represents a single value.</p></li>
 <li><p><span class="math notranslate nohighlight">\(3.14\)</span> is a float with a single value.</p></li>
 <li><p>A string can be very long (containing many characters), but it is still a single value, such as ‘Hello’.</p></li>
-<li><p>Boolean values are either True or False, again representing single values.</p></li>
+<li><p>Boolean values are either True or False, again representing single values.
+Integers, floats, strings, and booleans are examples of <code class="docutils literal notranslate"><span class="pre">Primitive</span> <span class="pre">Data</span> <span class="pre">Structures</span></code>, meaning they can store only one value.</p></li>
 </ul>
 </li>
-<li><p>Integers, floats, strings, and booleans are examples of <code class="docutils literal notranslate"><span class="pre">Primitive</span> <span class="pre">Data</span> <span class="pre">Structures</span></code>, meaning they can store only one value.</p></li>
 </ul>
 <p>In Python, there are more complex data structures called <code class="docutils literal notranslate"><span class="pre">Non-Primitive</span> <span class="pre">Data</span> <span class="pre">Structures</span></code>, which can store multiple values with mixed types and have various functionalities, including indexing.</p>
 <ul class="simple">
@@ -1173,7 +1174,12 @@ This can be done in two different ways:</p>
 <li><p>The indexes of a tuple are: <span class="math notranslate nohighlight">\(0, 1, 2, ..., \text{length of the tuple} - 1\)</span></p></li>
 <li><p>By using the range() function, we can use <code class="docutils literal notranslate"><span class="pre">range(length</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">tuple)</span></code>, which consists of all indexes.</p>
 <ul>
-<li><p>Example: range(5) does not include the number 5; that’s why we use the length of the tuple above.</p></li>
+<li><p>Example:</p>
+<ul>
+<li><p>The indexes for mytuple = (‘a’, ‘b’,’c’) are 0, 1, 2.</p></li>
+<li><p>range(len(mytuple)) is range(3) which consists of 0, 1, 2.</p></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
