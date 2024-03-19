@@ -68,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Tuples Debugging" href="tuples_debug.html" />
-    <link rel="prev" title="Iterations Code" href="iterations_code.html" />
+    <link rel="prev" title="Iterations Exercises" href="iterations_exercise.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -230,6 +230,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="iterations_debug.html">Iterations Debugging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="iterations_output.html">Iterations Output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="iterations_code.html">Iterations Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterations_exercise.html">Iterations Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Chp-7: Tuples</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -444,21 +445,19 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="chp-7-tuples">
 <h1>Chp-7: Tuples<a class="headerlink" href="#chp-7-tuples" title="Permalink to this heading">#</a></h1>
 <p><img alt="" src="_images/tuples.png" /></p>
+<div class="tip admonition">
+<p class="admonition-title">Chapter Objectives</p>
+<p>By the end of this chapter, the student should be able to:</p>
+<ul class="simple">
+<li><p>Explain the purpose and role of tuples.</p></li>
+<li><p>Create tuples in differen ways.</p></li>
+<li><p>Perform tuple operations.</p></li>
+<li><p>Apply tuple methods.</p></li>
+<li><p>Apply tuples to solve real-world problems.</p></li>
+</ul>
+</div>
 <section id="data-structures">
 <h2>Data Structures<a class="headerlink" href="#data-structures" title="Permalink to this heading">#</a></h2>
-<p>Data structures are used to store data. We have already seen some of them including integers, floats, strings and booleans.</p>
-<ul class="simple">
-<li><p>By using these structures only one value can be stored.</p>
-<ul>
-<li><p><span class="math notranslate nohighlight">\(3\)</span> is an integer and it is only a single value.</p></li>
-<li><p><span class="math notranslate nohighlight">\(3.14\)</span> is a float with a single value.</p></li>
-<li><p>A string can be very long (have many characters) but still it is single value like <em>‘Hello’</em>.</p></li>
-<li><p>Boolean values are either <em>True</em> or <em>False</em> which are again single values.</p></li>
-</ul>
-</li>
-<li><p>Integers, floats, strings and booleans are examples of <code class="docutils literal notranslate"><span class="pre">Primitive</span> <span class="pre">Data</span> <span class="pre">Structures</span></code> which means they can store only one value.</p></li>
-</ul>
-<p>In Python, there are many more complicated data structures called <code class="docutils literal notranslate"><span class="pre">Imprimitive</span> <span class="pre">Data</span> <span class="pre">Structures</span></code> which can store more than one valeues with mixed types and  have variuos functionalties including indexing. In this chapter, the imprimitive data structures <code class="docutils literal notranslate"><span class="pre">Tuples</span></code> will be covered.</p>
 <p>Data structures are used to store data. We have already seen some of them, including integers, floats, strings, and booleans.</p>
 <ul class="simple">
 <li><p>By using these structures, only one value can be stored.</p>
@@ -475,29 +474,7 @@ document.write(`
 <ul class="simple">
 <li><p>In this chapter, the non-primitive data structure Tuples will be covered.</p></li>
 </ul>
-<ul class="simple">
-<li><p>Data structures</p>
-<ol class="arabic simple">
-<li><p>Primitive</p>
-<ul>
-<li><p>Integers</p></li>
-<li><p>Floats</p></li>
-<li><p>Strings</p></li>
-<li><p>Booleans</p></li>
-</ul>
-</li>
-<li><p>Impritive</p>
-<ul>
-<li><p>Tuples</p></li>
-<li><p>Lists</p></li>
-<li><p>Sets</p></li>
-<li><p>Arrays</p></li>
-<li><p>Dictionaries</p></li>
-</ul>
-</li>
-</ol>
-</li>
-</ul>
+<p><img alt="" src="_images/datastructures3.png" /></p>
 </section>
 <section id="tuples">
 <h2>Tuples<a class="headerlink" href="#tuples" title="Permalink to this heading">#</a></h2>
@@ -544,11 +521,13 @@ document.write(`
 <li><p>An empty tuple is represented by <code class="docutils literal notranslate"><span class="pre">()</span></code>.</p></li>
 <li><p>If a tuple has only one value, a comma should be added right after that single value.</p>
 <ul>
-<li><p>Example: 1, or (1,)</p></li>
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">1,</span></code> or <code class="docutils literal notranslate"><span class="pre">(1,)</span></code></p></li>
 <li><p>Warning:</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">(1)</span></code> is the integer <code class="docutils literal notranslate"><span class="pre">1</span></code>, and <code class="docutils literal notranslate"><span class="pre">(1,)</span></code> is the tuple with only one value.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code> is the integer <code class="docutils literal notranslate"><span class="pre">1</span></code>, and <code class="docutils literal notranslate"><span class="pre">1,</span></code> is the tuple with only one value, which is <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(1)</span></code> is the integer <code class="docutils literal notranslate"><span class="pre">1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(1,)</span></code> is the tuple with only one value, which is <code class="docutils literal notranslate"><span class="pre">1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code> is the integer <code class="docutils literal notranslate"><span class="pre">1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1,</span></code> is the tuple with only one value, which is <code class="docutils literal notranslate"><span class="pre">1</span></code></p></li>
 </ul>
 </li>
 </ul>
@@ -560,12 +539,14 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># empty tuple</span>
 <span class="n">empty_tuple</span> <span class="o">=</span> <span class="p">()</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">empty_tuple</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Tuple:&#39;</span><span class="p">,</span> <span class="n">empty_tuple</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Type :&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">empty_tuple</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;tuple&#39;&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tuple: ()
+Type : &lt;class &#39;tuple&#39;&gt;
 </pre></div>
 </div>
 </div>
@@ -575,12 +556,14 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># empty tuple with tuple()</span>
 <span class="n">empty_tuple</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">()</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">empty_tuple</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Tuple:&#39;</span><span class="p">,</span> <span class="n">empty_tuple</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Type :&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">empty_tuple</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;tuple&#39;&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tuple: ()
+Type : &lt;class &#39;tuple&#39;&gt;
 </pre></div>
 </div>
 </div>
@@ -589,13 +572,16 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># tuple with only one value: &#39;USA&#39;</span>
 
-<span class="n">t</span> <span class="o">=</span> <span class="s1">&#39;USA&#39;</span><span class="p">,</span>        <span class="c1"># no paranthesis</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="n">mytuple</span> <span class="o">=</span> <span class="s1">&#39;USA&#39;</span><span class="p">,</span>        <span class="c1"># no paranthesis</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Tuple:&#39;</span><span class="p">,</span> <span class="n">mytuple</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Type :&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">mytuple</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;tuple&#39;&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tuple: (&#39;USA&#39;,)
+Type : &lt;class &#39;tuple&#39;&gt;
 </pre></div>
 </div>
 </div>
@@ -604,13 +590,16 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># tuple with only one value: &#39;USA&#39;</span>
 
-<span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;USA&#39;</span><span class="p">,)</span>      <span class="c1"># with paranthesis</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="n">mytuple</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;USA&#39;</span><span class="p">,)</span>      <span class="c1"># with paranthesis</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Tuple:&#39;</span><span class="p">,</span> <span class="n">mytuple</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Type :&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">mytuple</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;tuple&#39;&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tuple: (&#39;USA&#39;,)
+Type : &lt;class &#39;tuple&#39;&gt;
 </pre></div>
 </div>
 </div>
@@ -619,13 +608,16 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># (1) is an integer not tuple</span>
 
-<span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span>      
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="n">myint</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span>     
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Integer:&#39;</span><span class="p">,</span> <span class="n">myint</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Type   :&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">myint</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;int&#39;&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Integer: 1
+Type   : &lt;class &#39;int&#39;&gt;
 </pre></div>
 </div>
 </div>
@@ -634,13 +626,16 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># (&#39;USA&#39;) is string not tuple</span>
 
-<span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;USA&#39;</span><span class="p">)</span>      
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="n">mystr</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;USA&#39;</span><span class="p">)</span>      
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;String:&#39;</span><span class="p">,</span> <span class="n">mystr</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Type  :&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">mystr</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;str&#39;&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>String: USA
+Type  : &lt;class &#39;str&#39;&gt;
 </pre></div>
 </div>
 </div>
@@ -649,13 +644,16 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># tuple with mixed values: str, int, bool, float</span>
 
-<span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;USA&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="mf">9.123</span><span class="p">)</span>       <span class="c1"># with paranthesis</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="n">mytuple</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;USA&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="mf">9.123</span><span class="p">)</span>       <span class="c1"># with paranthesis</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Tuple:&#39;</span><span class="p">,</span> <span class="n">mytuple</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Type :&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">mytuple</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;tuple&#39;&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tuple: (&#39;USA&#39;, 2, True, 9.123)
+Type : &lt;class &#39;tuple&#39;&gt;
 </pre></div>
 </div>
 </div>
@@ -664,16 +662,18 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># tuple in a tuple</span>
 <span class="c1"># tuple with mixed values: str, int, bool, float, tuple</span>
-<span class="c1"># (10,20,30) is a tuple in the tuple t.</span>
+<span class="c1"># (10,20,30) is a tuple in the tuple mytuple.</span>
 
+<span class="n">mytuple</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;USA&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="mf">9.123</span><span class="p">,</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">))</span>       <span class="c1"># with paranthesis</span>
 
-<span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;USA&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="mf">9.123</span><span class="p">,</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">))</span>       <span class="c1"># with paranthesis</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Tuple:&#39;</span><span class="p">,</span> <span class="n">mytuple</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Type :&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">mytuple</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;tuple&#39;&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tuple: (&#39;USA&#39;, 2, True, 9.123, (10, 20, 30))
+Type : &lt;class &#39;tuple&#39;&gt;
 </pre></div>
 </div>
 </div>
@@ -686,16 +686,16 @@ document.write(`
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">)</span>  <span class="c1"># convert string to tuple</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mytuple</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">)</span>  <span class="c1"># convert string to tuple</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Type of t: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;t        : </span><span class="si">{</span><span class="n">t</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Tuple:&#39;</span><span class="p">,</span> <span class="n">mytuple</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Type :&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">mytuple</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Type of t: &lt;class &#39;tuple&#39;&gt;
-t        : (&#39;H&#39;, &#39;e&#39;, &#39;l&#39;, &#39;l&#39;, &#39;o&#39;)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tuple: (&#39;H&#39;, &#39;e&#39;, &#39;l&#39;, &#39;l&#39;, &#39;o&#39;)
+Type : &lt;class &#39;tuple&#39;&gt;
 </pre></div>
 </div>
 </div>
@@ -705,32 +705,32 @@ t        : (&#39;H&#39;, &#39;e&#39;, &#39;l&#39;, &#39;l&#39;, &#39;o&#39;)
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>    <span class="c1"># 2,3,4,5,6,7 are  hidden in r</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myrange</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>    <span class="c1"># 2,3,4,5,6,7 are  hidden in r</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Type of r: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;r        : </span><span class="si">{</span><span class="n">r</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Range:&#39;</span><span class="p">,</span> <span class="n">myrange</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Type :&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">myrange</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Type of r: &lt;class &#39;range&#39;&gt;
-r        : range(2, 8)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Range: range(2, 8)
+Type : &lt;class &#39;range&#39;&gt;
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>     <span class="c1"># convert range to tuple</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mytuple</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">myrange</span><span class="p">)</span>     <span class="c1"># convert range to tuple</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Type of t: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;t        : </span><span class="si">{</span><span class="n">t</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Tuple:&#39;</span><span class="p">,</span> <span class="n">mytuple</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Type :&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">mytuple</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Type of t: &lt;class &#39;tuple&#39;&gt;
-t        : (2, 3, 4, 5, 6, 7)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tuple: (2, 3, 4, 5, 6, 7)
+Type : &lt;class &#39;tuple&#39;&gt;
 </pre></div>
 </div>
 </div>
@@ -819,9 +819,9 @@ Sum    : 31
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span>      
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mytuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span>      
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Length : </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>    <span class="c1"># only len() works for this tuuple</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Length : </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">mytuple</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>    <span class="c1"># only len() works for this tuuple</span>
 </pre></div>
 </div>
 </div>
@@ -839,7 +839,7 @@ Sum    : 31
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;USA&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="mf">9.123</span><span class="p">,</span> <span class="s1">&#39;NY&#39;</span><span class="p">,</span> <span class="s1">&#39;NJ&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mytuple</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;USA&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="mf">9.123</span><span class="p">,</span> <span class="s1">&#39;NY&#39;</span><span class="p">,</span> <span class="s1">&#39;NJ&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> 
 </pre></div>
 </div>
 </div>
@@ -848,7 +848,7 @@ Sum    : 31
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># first element</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mytuple</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -861,7 +861,7 @@ Sum    : 31
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># last element</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mytuple</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -873,8 +873,8 @@ Sum    : 31
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># index 3 element (fourth element)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># index of 3 (fourth element)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mytuple</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -886,8 +886,8 @@ Sum    : 31
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># index=2,3,4</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># index = 2,3,4</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mytuple</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -899,8 +899,8 @@ Sum    : 31
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># index=-4,-3,-2</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># index  =-4,-3,-2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mytuple</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -910,10 +910,13 @@ Sum    : 31
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>The following slice starts from the element at index 3 and extends to the end.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># slice starting from the index 3 element and all the way to the end</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">3</span><span class="p">:])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># index = 3,4,...</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mytuple</span><span class="p">[</span><span class="mi">3</span><span class="p">:])</span>
 </pre></div>
 </div>
 </div>
@@ -931,14 +934,14 @@ Sum    : 31
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;index -1 element: </span><span class="si">{</span><span class="n">t</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1">, type: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>     <span class="c1"># boolean</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;slice [-1:]     : </span><span class="si">{</span><span class="n">t</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:]</span><span class="si">}</span><span class="s1">, type: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:])</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>   <span class="c1"># tuple</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;index -1 element: </span><span class="si">{</span><span class="n">mytuple</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1">    ---&gt; type: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">mytuple</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>     <span class="c1"># boolean</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;slice [-1:]     : </span><span class="si">{</span><span class="n">mytuple</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:]</span><span class="si">}</span><span class="s1"> ---&gt; type: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">mytuple</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:])</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>   <span class="c1"># tuple</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>index -1 element: False, type: &lt;class &#39;bool&#39;&gt;
-slice [-1:]     : (False,), type: &lt;class &#39;tuple&#39;&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>index -1 element: False    ---&gt; type: &lt;class &#39;bool&#39;&gt;
+slice [-1:]     : (False,) ---&gt; type: &lt;class &#39;tuple&#39;&gt;
 </pre></div>
 </div>
 </div>
@@ -950,38 +953,38 @@ slice [-1:]     : (False,), type: &lt;class &#39;tuple&#39;&gt;
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;USA&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="mf">9.123</span><span class="p">,</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Length of t       : </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>            <span class="c1"># (10,20,30) is a single element of t</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;10 is in t        : </span><span class="si">{</span><span class="mi">10</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">t</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>           <span class="c1"># 10 is not an element of t</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;(10,20,30) is in t: </span><span class="si">{</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">)</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">t</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>   <span class="c1"># (10,20,30) is  an element of t</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mytuple</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;USA&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="mf">9.123</span><span class="p">,</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Length of mytuple       : </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">mytuple</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>            <span class="c1"># (10,20,30) is a single element of mytuple</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;10 is in mytuple        : </span><span class="si">{</span><span class="mi">10</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">mytuple</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>           <span class="c1"># 10 is not an element of mytuple</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;(10,20,30) is in mytuple: </span><span class="si">{</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">)</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">mytuple</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>   <span class="c1"># (10,20,30) is  an element of mytuple</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Length of t       : 5
-10 is in t        : False
-(10,20,30) is in t: True
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Length of mytuple       : 5
+10 is in mytuple        : False
+(10,20,30) is in mytuple: True
 </pre></div>
 </div>
 </div>
 </div>
 <p><strong>Remark</strong>
-It is possible to access the elements of the sub tuple by using chain indexing.</p>
+It is possible to access the elements of the subtuple by using chain indexing.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;USA&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="mf">9.123</span><span class="p">,</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;t[-1]: </span><span class="si">{</span><span class="n">t</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>          <span class="c1"># t[-1] = (10,20,30) is a tuple</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;t[-1][0]: </span><span class="si">{</span><span class="n">t</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>    <span class="c1"># indexing of t[-1] = (10,20,30)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;t[-1][1]: </span><span class="si">{</span><span class="n">t</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;t[-1][2]: </span><span class="si">{</span><span class="n">t</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mytuple</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;USA&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="mf">9.123</span><span class="p">,</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;mytuple[-1]   : </span><span class="si">{</span><span class="n">mytuple</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>          <span class="c1"># mytuple[-1] = (10,20,30) is a tuple</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;mytuple[-1][0]: </span><span class="si">{</span><span class="n">mytuple</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>    <span class="c1"># indexing of mytuple[-1] = (10,20,30)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;mytuple[-1][1]: </span><span class="si">{</span><span class="n">mytuple</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;mytuple[-1][2]: </span><span class="si">{</span><span class="n">mytuple</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>t[-1]: (10, 20, 30)
-t[-1][0]: 10
-t[-1][1]: 20
-t[-1][2]: 30
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mytuple[-1]   : (10, 20, 30)
+mytuple[-1][0]: 10
+mytuple[-1][1]: 20
+mytuple[-1][2]: 30
 </pre></div>
 </div>
 </div>
@@ -1044,7 +1047,7 @@ letters   = (&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Is 5 in  numbers?</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Is 5 in numbers?</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39; 5 is in numbers tuple    : </span><span class="si">{</span><span class="mi">5</span><span class="w">  </span><span class="ow">in</span><span class="w"> </span><span class="n">numbers</span><span class="si">}</span><span class="s1">&#39;</span> <span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39; 5 is not in numbers tuple: </span><span class="si">{</span><span class="mi">5</span><span class="w">  </span><span class="ow">not</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">numbers</span><span class="si">}</span><span class="s1">&#39;</span> <span class="p">)</span>
@@ -1060,7 +1063,7 @@ letters   = (&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Is 3 in  numbers?</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Is 3 in numbers?</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39; 3 is in numbers tuple    : </span><span class="si">{</span><span class="mi">3</span><span class="w">  </span><span class="ow">in</span><span class="w"> </span><span class="n">numbers</span><span class="si">}</span><span class="s1">&#39;</span> <span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39; 3 is not in numbers tuple: </span><span class="si">{</span><span class="mi">3</span><span class="w">  </span><span class="ow">not</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">numbers</span><span class="si">}</span><span class="s1">&#39;</span> <span class="p">)</span>
@@ -1082,8 +1085,8 @@ letters   = (&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;)
 <li><p>For example, attempting to change the first element of a tuple will result in an error message.</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ERROR:  try to change the first element, which has an index of 0.</span>
-<span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>  
+<span class="n">mytuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">mytuple</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>  
 </pre></div>
 </div>
 </section>
@@ -1113,19 +1116,19 @@ letters   = (&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;)
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Number of a  in t: </span><span class="si">{</span><span class="n">t</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>   <span class="c1"># use &quot; instead of &#39; for a</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Number of b  in t: </span><span class="si">{</span><span class="n">t</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Number of c  in t: </span><span class="si">{</span><span class="n">t</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;c&quot;</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Number of d  in t: </span><span class="si">{</span><span class="n">t</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mytuple</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Number of a in mytuple: </span><span class="si">{</span><span class="n">mytuple</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>   <span class="c1"># use &quot; instead of &#39; for a</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Number of b in mytuple: </span><span class="si">{</span><span class="n">mytuple</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Number of c in mytuple: </span><span class="si">{</span><span class="n">mytuple</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;c&quot;</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Number of d in mytuple: </span><span class="si">{</span><span class="n">mytuple</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of a  in t: 2
-Number of b  in t: 4
-Number of c  in t: 1
-Number of d  in t: 0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of a in mytuple: 2
+Number of b in mytuple: 4
+Number of c in mytuple: 1
+Number of d in mytuple: 0
 </pre></div>
 </div>
 </div>
@@ -1140,18 +1143,18 @@ Number of d  in t: 0
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The index of a in t: </span><span class="si">{</span><span class="n">t</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>   <span class="c1"># index of first a</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The index of b in t: </span><span class="si">{</span><span class="n">t</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span> 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The index of c in t: </span><span class="si">{</span><span class="n">t</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;c&quot;</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span> 
-<span class="c1"># print(f&#39;The index of d in t: {t.index(&quot;d&quot;)}&#39;)  ---&gt; ERROR</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mytuple</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The index of a in mytuple: </span><span class="si">{</span><span class="n">mytuple</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>   <span class="c1"># index of first a</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The index of b in mytuple: </span><span class="si">{</span><span class="n">mytuple</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The index of c in mytuple: </span><span class="si">{</span><span class="n">mytuple</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;c&quot;</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span> 
+<span class="c1"># print(f&#39;The index of d in mytuple: {mytuple.index(&quot;d&quot;)}&#39;)  ---&gt; ERROR</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The index of a in t: 0
-The index of b in t: 1
-The index of c in t: 2
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The index of a in mytuple: 0
+The index of b in mytuple: 1
+The index of c in mytuple: 2
 </pre></div>
 </div>
 </div>
@@ -1395,12 +1398,12 @@ Booleans: (False, True)
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="iterations_code.html"
+       href="iterations_exercise.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Iterations Code</p>
+        <p class="prev-next-title">Iterations Exercises</p>
       </div>
     </a>
     <a class="right-next"
