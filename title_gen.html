@@ -260,6 +260,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="numpy_arrays.html">Chp-12: Numpy Arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="visualization.html">Chp-13: Visualization</a></li>
 </ul>
 
     </div>
@@ -429,7 +430,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">title_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;in plain terms&#39;</span><span class="p">,</span> <span class="s1">&#39;acknowledgments&#39;</span><span class="p">,</span> <span class="s1">&#39;python&#39;</span><span class="p">,</span> <span class="s1">&#39;colaboratory&#39;</span><span class="p">,</span> <span class="s1">&#39;variables&#39;</span><span class="p">,</span> <span class="s1">&#39;input and output&#39;</span><span class="p">,</span> <span class="s1">&#39;numbers&#39;</span><span class="p">,</span> <span class="s1">&#39;strings&#39;</span><span class="p">,</span> <span class="s1">&#39;conditionals&#39;</span><span class="p">,</span> <span class="s1">&#39;iterations&#39;</span><span class="p">,</span> <span class="s1">&#39;tuples&#39;</span><span class="p">,</span>
-              <span class="s1">&#39;lists&#39;</span><span class="p">,</span> <span class="s1">&#39;functions&#39;</span><span class="p">,</span> <span class="s1">&#39;sets&#39;</span><span class="p">,</span> <span class="s1">&#39;dictionaries&#39;</span><span class="p">,</span> <span class="s1">&#39;numpy arrays&#39;</span><span class="p">]</span>
+              <span class="s1">&#39;lists&#39;</span><span class="p">,</span> <span class="s1">&#39;functions&#39;</span><span class="p">,</span> <span class="s1">&#39;sets&#39;</span><span class="p">,</span> <span class="s1">&#39;dictionaries&#39;</span><span class="p">,</span> <span class="s1">&#39;numpy arrays&#39;</span><span class="p">,</span> <span class="s1">&#39;visualization&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -437,6 +438,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color_set</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;navy&#39;</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="s1">&#39;pink&#39;</span><span class="p">,</span> <span class="s1">&#39;purple&#39;</span><span class="p">]</span>
+<span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">title</span> <span class="ow">in</span> <span class="n">title_list</span><span class="p">:</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
@@ -457,22 +459,23 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8b39f4dcb983663aa964296696dbee73b9cd08d54d710bcb75decd42286e3732.png" src="_images/8b39f4dcb983663aa964296696dbee73b9cd08d54d710bcb75decd42286e3732.png" />
-<img alt="_images/80ded0a460034ca450a3809cf8c6abca514a5d483ed636f006134046e2cc8e1c.png" src="_images/80ded0a460034ca450a3809cf8c6abca514a5d483ed636f006134046e2cc8e1c.png" />
-<img alt="_images/a220c29334f2ca956985ec34e40c99e5dd18e7506bf2e8d825d1fa26ea370068.png" src="_images/a220c29334f2ca956985ec34e40c99e5dd18e7506bf2e8d825d1fa26ea370068.png" />
-<img alt="_images/e0a255ead9e0204e17219e0c404abcc790e9a7206c44f0e1da6c28fa48570da6.png" src="_images/e0a255ead9e0204e17219e0c404abcc790e9a7206c44f0e1da6c28fa48570da6.png" />
-<img alt="_images/77175808e34c553bec16c712466f4270530d02f2a3f8483bfc48ffaf101d6079.png" src="_images/77175808e34c553bec16c712466f4270530d02f2a3f8483bfc48ffaf101d6079.png" />
-<img alt="_images/ff1505ba217de220604cc948fd1034e4a4811c17b1a5a477236a4bda739e4eff.png" src="_images/ff1505ba217de220604cc948fd1034e4a4811c17b1a5a477236a4bda739e4eff.png" />
-<img alt="_images/4d54dcbeaceceeba9afe67e2536bb64bd58faf62762ca12f83a342a2866e666d.png" src="_images/4d54dcbeaceceeba9afe67e2536bb64bd58faf62762ca12f83a342a2866e666d.png" />
-<img alt="_images/64c6ef6fc5a07ef2fd8594486313d0004e51303d3ad21e9ae7baab8d525d475f.png" src="_images/64c6ef6fc5a07ef2fd8594486313d0004e51303d3ad21e9ae7baab8d525d475f.png" />
-<img alt="_images/74ce5082e283380da468112e8474145203585ef29b5b07a5fe5fd33e4f390a99.png" src="_images/74ce5082e283380da468112e8474145203585ef29b5b07a5fe5fd33e4f390a99.png" />
-<img alt="_images/e6a070d76e8c714b5fa3a13a4b3c8f73a9cbacc248426d13707816c8fd6de895.png" src="_images/e6a070d76e8c714b5fa3a13a4b3c8f73a9cbacc248426d13707816c8fd6de895.png" />
-<img alt="_images/936aa5c14e40ce325c9b118af6a58889fb3206842be1dbd38739f002bbd2b807.png" src="_images/936aa5c14e40ce325c9b118af6a58889fb3206842be1dbd38739f002bbd2b807.png" />
-<img alt="_images/02ae55ee007f8318524903a55f04307f0dcc36775c81982a3d990c61e8c0931e.png" src="_images/02ae55ee007f8318524903a55f04307f0dcc36775c81982a3d990c61e8c0931e.png" />
-<img alt="_images/e5d37c5796122b1dc0b789e83ac31427ef4d8274a58403784a682ffd2ca87bd9.png" src="_images/e5d37c5796122b1dc0b789e83ac31427ef4d8274a58403784a682ffd2ca87bd9.png" />
-<img alt="_images/112b1d83fb0a195b27447a8cf45e4a8590494cb7dc0d88a4036275f2692436ce.png" src="_images/112b1d83fb0a195b27447a8cf45e4a8590494cb7dc0d88a4036275f2692436ce.png" />
-<img alt="_images/90d0d15d5fdd7e57d2a7e32cd22903486bb381d09741f3ec08760e44c499d09f.png" src="_images/90d0d15d5fdd7e57d2a7e32cd22903486bb381d09741f3ec08760e44c499d09f.png" />
-<img alt="_images/2d725e399d38e91dbcc92d9ea42472d671a23687615332960cab21993880ed01.png" src="_images/2d725e399d38e91dbcc92d9ea42472d671a23687615332960cab21993880ed01.png" />
+<img alt="_images/95b3dd79eb16465bedfe1f9bc3d6d95bb76899effce1a0205b623e87fe8c6afe.png" src="_images/95b3dd79eb16465bedfe1f9bc3d6d95bb76899effce1a0205b623e87fe8c6afe.png" />
+<img alt="_images/7100d339a28be9eb23c247cacbc864b55ce15e4c9900592e514869ca7de4da4c.png" src="_images/7100d339a28be9eb23c247cacbc864b55ce15e4c9900592e514869ca7de4da4c.png" />
+<img alt="_images/dc22529db3646672f29d7553135e8e2786d4ebe88f65a9529d02fd685a186230.png" src="_images/dc22529db3646672f29d7553135e8e2786d4ebe88f65a9529d02fd685a186230.png" />
+<img alt="_images/437eaa7700508dfc84a5d0157190f9057e3040352b1a604533cca3cee9ba26eb.png" src="_images/437eaa7700508dfc84a5d0157190f9057e3040352b1a604533cca3cee9ba26eb.png" />
+<img alt="_images/c7bd22ba640d33d9837dc50f2dc049f6f063fdf418be44628d32482d69b4d8df.png" src="_images/c7bd22ba640d33d9837dc50f2dc049f6f063fdf418be44628d32482d69b4d8df.png" />
+<img alt="_images/5d4b7a8b353a5f2a74d399cea3e65f9697dea2948cb27257a7e8dc715f84b386.png" src="_images/5d4b7a8b353a5f2a74d399cea3e65f9697dea2948cb27257a7e8dc715f84b386.png" />
+<img alt="_images/4c0dba7b9026b4db3d6b901b36e0bebd7da5149a84027176444bef2e29fccb54.png" src="_images/4c0dba7b9026b4db3d6b901b36e0bebd7da5149a84027176444bef2e29fccb54.png" />
+<img alt="_images/f99237296b18056f488550e383f81757db9dcc0e5b64fb823e0e7422315932d7.png" src="_images/f99237296b18056f488550e383f81757db9dcc0e5b64fb823e0e7422315932d7.png" />
+<img alt="_images/f43eaf15d6e78faa6287413dfc43c2a2720aa369c420f25dbf6c0a7ef005b539.png" src="_images/f43eaf15d6e78faa6287413dfc43c2a2720aa369c420f25dbf6c0a7ef005b539.png" />
+<img alt="_images/1d6971002de1facb7946a98dd0a016163b284ff41aee9d5e093df20cc84144f9.png" src="_images/1d6971002de1facb7946a98dd0a016163b284ff41aee9d5e093df20cc84144f9.png" />
+<img alt="_images/6952ce706491658a9db4fe79d1c5482fa0ea708ccb6e7e4ba9d01cc57d758fb8.png" src="_images/6952ce706491658a9db4fe79d1c5482fa0ea708ccb6e7e4ba9d01cc57d758fb8.png" />
+<img alt="_images/39a7e8fb4c4f810b02f8387e0ca474f102da00fefad79f3375432a819a19e937.png" src="_images/39a7e8fb4c4f810b02f8387e0ca474f102da00fefad79f3375432a819a19e937.png" />
+<img alt="_images/b3e916700de69c49de5e6ebdb74b1859f6d7890856d99fdff46189a427271cb7.png" src="_images/b3e916700de69c49de5e6ebdb74b1859f6d7890856d99fdff46189a427271cb7.png" />
+<img alt="_images/9da5848959babece725bc735badb2173cb46ded010bafe88d87c50979d7b3c90.png" src="_images/9da5848959babece725bc735badb2173cb46ded010bafe88d87c50979d7b3c90.png" />
+<img alt="_images/9d10a816c0ab49dc9c5a854b42bb55a9d382d507f615ee49777a61a6b1ea0243.png" src="_images/9d10a816c0ab49dc9c5a854b42bb55a9d382d507f615ee49777a61a6b1ea0243.png" />
+<img alt="_images/11add249ffa5fe725c8c312ef25993f633b34b4181324940dc0a7e160cab7e31.png" src="_images/11add249ffa5fe725c8c312ef25993f633b34b4181324940dc0a7e160cab7e31.png" />
+<img alt="_images/755d95f3761bb385bcec631194de96d630a9d3ec67d0ae29dcadf2cb0df2fba9.png" src="_images/755d95f3761bb385bcec631194de96d630a9d3ec67d0ae29dcadf2cb0df2fba9.png" />
 </div>
 </div>
 
