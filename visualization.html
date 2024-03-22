@@ -243,6 +243,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="lists_debug.html">Lists Debugging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lists_output.html">Lists Output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lists_code.html">Lists Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lists_exercise.html">Lists Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="functions.html">Chp-9: Functions</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -425,6 +426,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#title">Title</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#axis-labels">Axis Labels</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#axis-ticks">Axis Ticks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grids">Grids</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#text">Text</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subplot">Subplot</a></li>
 </ul>
@@ -730,6 +732,51 @@ For more marker styles visit the following <a class="reference external" href="h
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/ae5fcdb15a30a9dfea14e195fad0006e50d68932a48a2df19775f6eb6b3a54b1.png" src="_images/ae5fcdb15a30a9dfea14e195fad0006e50d68932a48a2df19775f6eb6b3a54b1.png" />
+</div>
+</div>
+</section>
+<section id="grids">
+<h3>Grids<a class="headerlink" href="#grids" title="Permalink to this heading">#</a></h3>
+<p><em>plt.grid()</em> is used to add horizontal and vertical gridlines to the plot.</p>
+<ul class="simple">
+<li><p><em>axis</em> parameter is used to achoose the gridline types.</p>
+<ul>
+<li><p>Only vertical gridlines: axis = ‘x’.</p></li>
+<li><p>Only horizontal gridlines: axis = ‘y’.</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">],[</span><span class="mi">10</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ac5b28a2e27e0a35120cd0bb855d06c4142452c9f2601ef785f731bdcccc1395.png" src="_images/ac5b28a2e27e0a35120cd0bb855d06c4142452c9f2601ef785f731bdcccc1395.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">],[</span><span class="mi">10</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/3331b97ea5a250cf83ccc20e2cde0930b3576fc11ed01b816466719ce5420f6a.png" src="_images/3331b97ea5a250cf83ccc20e2cde0930b3576fc11ed01b816466719ce5420f6a.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">],[</span><span class="mi">10</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/dc073f308662b12ead104869cab5b471e2afbf1b12fb2edb3388593a22464a2a.png" src="_images/dc073f308662b12ead104869cab5b471e2afbf1b12fb2edb3388593a22464a2a.png" />
 </div>
 </div>
 </section>
@@ -1157,6 +1204,7 @@ Before the code for each subplot, plt.subplot() is added with the total number o
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#title">Title</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#axis-labels">Axis Labels</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#axis-ticks">Axis Ticks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grids">Grids</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#text">Text</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subplot">Subplot</a></li>
 </ul>
