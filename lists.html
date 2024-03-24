@@ -793,6 +793,19 @@ Minimum: a
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># index = 0,1,2,3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mixed_list</span><span class="p">[:</span><span class="mi">4</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;USA&#39;, 2, True, 9.123]
+</pre></div>
+</div>
+</div>
+</div>
 <p><strong>Remark</strong></p>
 <ul class="simple">
 <li><p>There is a difference between the index -1 element and the slice [-1:].</p></li>
@@ -1157,6 +1170,27 @@ The index of 30 in numbers: 2
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>Additionally, you have the option to find the index of a specific element starting from a certain index.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">index('a',</span> <span class="pre">N)</span></code>: find index of first ‘a’  starting from index=N</p></li>
+<li><p>default value of N is 0</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># index of first 10 starting from index 2 element.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">numbers</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="insert">
 <h4>insert()<a class="headerlink" href="#insert" title="Permalink to this heading">#</a></h4>
@@ -1385,6 +1419,7 @@ numbers list after  using sort(reverse=True): [&#39;z&#39;, &#39;y&#39;, &#39;t&
 </div>
 </div>
 </div>
+<p><img alt="" src="_images/list_methods.png" /></p>
 </section>
 </section>
 <section id="iterations-and-lists">

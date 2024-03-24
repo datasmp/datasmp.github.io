@@ -244,6 +244,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="lists_debug.html">Lists Debugging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lists_output.html">Lists Output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lists_code.html">Lists Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lists_exercise.html">Lists Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="functions.html">Chp-9: Functions</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -813,7 +814,7 @@ Sum    : 31
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mytuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span>      
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Length : </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">mytuple</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>    <span class="c1"># only len() works for this tuuple</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Length : </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">mytuple</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>    <span class="c1"># only len() works for this tuple</span>
 </pre></div>
 </div>
 </div>
@@ -914,6 +915,22 @@ Sum    : 31
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(9.123, &#39;NY&#39;, &#39;NJ&#39;, 100, False)
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>The following slice starts from the first element and goes up to the element at index 3.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># index = 0,1,2,3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mytuple</span><span class="p">[:</span><span class="mi">4</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;USA&#39;, 2, True, 9.123)
 </pre></div>
 </div>
 </div>
@@ -1147,6 +1164,28 @@ Number of d in mytuple: 0
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The index of a in mytuple: 0
 The index of b in mytuple: 1
 The index of c in mytuple: 2
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Additionally, you have the option to find the index of a specific element starting from a certain index.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">index('a',</span> <span class="pre">N)</span></code>: find index of first ‘a’  starting from index=N</p></li>
+<li><p>default value of N is 0</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># index of first &#39;a&#39; starting from index 2 element.</span>
+<span class="n">mytuple</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mytuple</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
 </pre></div>
 </div>
 </div>
