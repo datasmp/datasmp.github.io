@@ -429,6 +429,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grids">Grids</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#text">Text</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subplot">Subplot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#colormap">Colormap</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lineplot">Lineplot</a><ul class="nav section-nav flex-column">
@@ -832,6 +833,43 @@ Before the code for each subplot, plt.subplot() is added with the total number o
 </div>
 </div>
 </section>
+<section id="colormap">
+<h3>Colormap<a class="headerlink" href="#colormap" title="Permalink to this heading">#</a></h3>
+<p>You can choose a marker color by using a scalar or sequence of numbers, which will be mapped to colors using cmap.
+The following link provides access to various <a class="reference external" href="https://matplotlib.org/stable/users/explain/colors/colormaps.html">colormaps</a>.</p>
+<p>The default color map is viridis which ranges between blue and yellow.</p>
+<ul class="simple">
+<li><p>The largest number, 10, corresponds to yellow.</p></li>
+<li><p>5 correspons to green.</p></li>
+<li><p>The smallest number, 1, corresponds to (dark) blue</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">500</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/984e83e2d89675a3d347f4d9a0bc3f03d65319529c28eee27a5349f4715cac1b.png" src="_images/984e83e2d89675a3d347f4d9a0bc3f03d65319529c28eee27a5349f4715cac1b.png" />
+</div>
+</div>
+<p><em>cmap</em> parameter is used to change the colormap.For the gray colormap:</p>
+<ul class="simple">
+<li><p>The largest number, 10, corresponds to white.</p></li>
+<li><p>5 corresponds to a gray color.</p></li>
+<li><p>The smallest number, 1, corresponds to black</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/f2dec09425a5dbbf80f8a65ecbc6e247fcf4c41f65900c59437ddde2440ee554.png" src="_images/f2dec09425a5dbbf80f8a65ecbc6e247fcf4c41f65900c59437ddde2440ee554.png" />
+</div>
+</div>
+</section>
 </section>
 <section id="lineplot">
 <h2>Lineplot<a class="headerlink" href="#lineplot" title="Permalink to this heading">#</a></h2>
@@ -1207,6 +1245,7 @@ Before the code for each subplot, plt.subplot() is added with the total number o
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grids">Grids</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#text">Text</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subplot">Subplot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#colormap">Colormap</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lineplot">Lineplot</a><ul class="nav section-nav flex-column">

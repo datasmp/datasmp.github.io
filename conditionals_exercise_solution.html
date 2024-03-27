@@ -216,12 +216,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="conditionals_output.html">Conditionals Output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conditionals_code.html">Conditionals Code</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conditionals_exercise.html">Conditionals Exercises</a></li>
-
-
-
-
-
-
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="iterations.html">Chp-6: Iterations</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -235,12 +229,14 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="tuples_debug.html">Tuples Debugging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tuples_output.html">Tuples Output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tuples_code.html">Tuples Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tuples_exercise.html">Tuples Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="lists.html">Chp-8: Lists</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="lists_debug.html">Lists Debugging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lists_output.html">Lists Output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lists_code.html">Lists Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lists_exercise.html">Lists Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="functions.html">Chp-9: Functions</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -262,6 +258,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="numpy_arrays.html">Chp-12: Numpy Arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="visualization.html">Chp-13: Visualization</a></li>
 </ul>
 
     </div>
@@ -408,15 +405,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Conditionals Exercises and Solutions</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question-1</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question-2</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question-3</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question-4</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question-5</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6">Question-6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question-1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question-2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question-3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question-4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question-5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6">Question-6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7-absolute-value">Question-7: Absolute Value</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8-relu">Question-8: ReLU</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-9-heaviside">Question-9: Heaviside</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -429,9 +427,8 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="conditionals-exercises-and-solutions">
 <h1>Conditionals Exercises and Solutions<a class="headerlink" href="#conditionals-exercises-and-solutions" title="Permalink to this heading">#</a></h1>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="question-1">
-<h1>Question-1<a class="headerlink" href="#question-1" title="Permalink to this heading">#</a></h1>
+<section id="question-1">
+<h2>Question-1<a class="headerlink" href="#question-1" title="Permalink to this heading">#</a></h2>
 <p>Prompt the user to enter a five-digit number and calculate the count of even digits.</p>
 <ul class="simple">
 <li><p>Do not use loops.</p></li>
@@ -453,8 +450,8 @@ There are 2 even digits in 12345.</p>
 </pre></div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="question-2">
-<h1>Question-2<a class="headerlink" href="#question-2" title="Permalink to this heading">#</a></h1>
+<section id="question-2">
+<h2>Question-2<a class="headerlink" href="#question-2" title="Permalink to this heading">#</a></h2>
 <p>The following code returns the week day of today as a number. (0 is Monday, 1 is Tuesday, ….)</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">weekday</span><span class="p">()</span>
@@ -499,8 +496,8 @@ Warning!!! Please enter the day in the correct form.</p>
 </pre></div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="question-3">
-<h1>Question-3<a class="headerlink" href="#question-3" title="Permalink to this heading">#</a></h1>
+<section id="question-3">
+<h2>Question-3<a class="headerlink" href="#question-3" title="Permalink to this heading">#</a></h2>
 <p>Use a single input() function to prompt the user to enter the coordinates of a theater in the format (x,y).</p>
 <ul class="simple">
 <li><p>Assume the user’s house coordinates are (3,4).</p></li>
@@ -533,8 +530,8 @@ The theater is too far. Stay at home.</p>
 </pre></div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="question-4">
-<h1>Question-4<a class="headerlink" href="#question-4" title="Permalink to this heading">#</a></h1>
+<section id="question-4">
+<h2>Question-4<a class="headerlink" href="#question-4" title="Permalink to this heading">#</a></h2>
 <p>Prompt the user to enter a word.</p>
 <ul class="simple">
 <li><p>If the given word has an odd length, print the middle character. Otherwise, print the middle two characters</p></li>
@@ -554,15 +551,15 @@ Middle character: d</p>
 </pre></div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="question-5">
-<h1>Question-5<a class="headerlink" href="#question-5" title="Permalink to this heading">#</a></h1>
+<section id="question-5">
+<h2>Question-5<a class="headerlink" href="#question-5" title="Permalink to this heading">#</a></h2>
 <p>Prompt the user to choose a password that satisfies the following conditions:</p>
 <ul class="simple">
 <li><p>The first character must be a digit.</p></li>
 <li><p>The last character must be a punctuation mark.</p></li>
-<li><p>The length of the password must be at least 5 characters.
-Print whether the given password is acceptable.</p></li>
+<li><p>The length of the password must be at least 5 characters.</p></li>
 </ul>
+<p>Print whether the given password is acceptable.</p>
 <p>Sample output:<br />
 Choose a password: 123.<br />
 The password 123. is NOT acceptable.</p>
@@ -583,8 +580,8 @@ The password 2werqt, is acceptable.</p>
 </pre></div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="question-6">
-<h1>Question-6<a class="headerlink" href="#question-6" title="Permalink to this heading">#</a></h1>
+<section id="question-6">
+<h2>Question-6<a class="headerlink" href="#question-6" title="Permalink to this heading">#</a></h2>
 <p>Prompt the user to choose a number between 1 and 6, including these numbers.</p>
 <ul class="simple">
 <li><p>Roll a die (choose a random number between 1 and 6).</p></li>
@@ -613,6 +610,80 @@ Correct!</p>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Wrong!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</section>
+<section id="question-7-absolute-value">
+<h2>Question-7: Absolute Value<a class="headerlink" href="#question-7-absolute-value" title="Permalink to this heading">#</a></h2>
+<p>Ask the user for a number and find its absolute value without using built-in functions.</p>
+<ul class="simple">
+<li><p>Absolute value means the positive value of a number.</p></li>
+<li><p>For example, if you have -5, the absolute value is 5.</p></li>
+<li><p>If the number is 7, its absolute value remains 7.</p></li>
+<li><p>Absolute value of 0 is simply 0.</p></li>
+</ul>
+<p><em>Sample Output:</em><br />
+Please enter a number:  -5<br />
+Absolute value of -5.0 is 5.0</p>
+<p>Please enter a number:  7<br />
+Absolute value of 7.0 is 7.0</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter a number: &#39;</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="n">number</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Absolute value of </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s1"> is </span><span class="si">{</span><span class="o">-</span><span class="n">number</span><span class="si">}</span><span class="s1">&#39;</span> <span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Absolute value of </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s1"> is </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s1">&#39;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="question-8-relu">
+<h2>Question-8: ReLU<a class="headerlink" href="#question-8-relu" title="Permalink to this heading">#</a></h2>
+<p>Ask the user for a number and find its ReLU value without using built-in functions.</p>
+<ul class="simple">
+<li><p>ReLU value of positive numbers is itself.</p></li>
+<li><p>ReLU of 0 and non-negative numbers is 0.</p></li>
+<li><p>For example, if you have -5, the ReLU value is 0.</p></li>
+<li><p>If the number is 7, its absolute value remains 7.</p></li>
+<li><p>ReLU value of 0 is 0.</p></li>
+</ul>
+<p><em>Sample Output:</em><br />
+Please enter a number: -5<br />
+ReLU value of -5.0 is 0</p>
+<p>Please enter a number:  7<br />
+Absolute value of 7.0 is 7.0</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter a number: &#39;</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="n">number</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;ReLU value of </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s1"> is </span><span class="si">{</span><span class="mi">0</span><span class="si">}</span><span class="s1">&#39;</span> <span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;ReLU value of </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s1"> is </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s1">&#39;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="question-9-heaviside">
+<h2>Question-9: Heaviside<a class="headerlink" href="#question-9-heaviside" title="Permalink to this heading">#</a></h2>
+<p>Ask the user for a number and find its Heaviside value without using built-in functions.</p>
+<ul class="simple">
+<li><p>Heaviside value of a positive number is 1.</p></li>
+<li><p>Heaviside value of a negative number is 0.</p></li>
+<li><p>Heaviside value of 0 is 0.5</p></li>
+</ul>
+<p><em>Sample Output:</em><br />
+Please enter a number: -5<br />
+Heaviside value of -5.0 is 0</p>
+<p>Please enter a number: 7<br />
+Heaviside value of 7.0 is 1</p>
+<p>Please enter a number: 0<br />
+Heaviside value of 0.0 is 0.5</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter a number: &#39;</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="n">number</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Heaviside value of </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s1"> is </span><span class="si">{</span><span class="mi">0</span><span class="si">}</span><span class="s1">&#39;</span> <span class="p">)</span>
+<span class="k">elif</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Heaviside value of </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s1"> is </span><span class="si">{</span><span class="mi">1</span><span class="si">}</span><span class="s1">&#39;</span> <span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Heaviside value of </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s1"> is </span><span class="si">{</span><span class="mf">0.5</span><span class="si">}</span><span class="s1">&#39;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -660,15 +731,16 @@ Correct!</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Conditionals Exercises and Solutions</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question-1</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question-2</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question-3</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question-4</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question-5</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6">Question-6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question-1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question-2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question-3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question-4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question-5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6">Question-6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7-absolute-value">Question-7: Absolute Value</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8-relu">Question-8: ReLU</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-9-heaviside">Question-9: Heaviside</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>
