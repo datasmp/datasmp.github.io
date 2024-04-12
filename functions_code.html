@@ -408,13 +408,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question">Question</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Question</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Question</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Question</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Question</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Question</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question-1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question-2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question-3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question-4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question-5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6">Question-6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7">Question-7</a></li>
 </ul>
             </nav>
         </div>
@@ -431,59 +431,30 @@ document.write(`
 <ul class="simple">
 <li><p>Please solve the following questions using Python code.  </p></li>
 </ul>
-<section id="question">
-<h2>Question<a class="headerlink" href="#question" title="Permalink to this heading">#</a></h2>
+<section id="question-1">
+<h2>Question-1<a class="headerlink" href="#question-1" title="Permalink to this heading">#</a></h2>
 <p>Write a function that accepts an integer as its parameter and prints an <span class="math notranslate nohighlight">\(n \times n\)</span> square with ‘*’ characters.</p>
-<p><strong>Solution</strong></p>
-<div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
-</summary>
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">square_star</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="k">def</span> <span class="nf">square_star</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;* &#39;</span><span class="o">*</span><span class="n">n</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-</details>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># example</span>
-<span class="n">square_star</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* * * * * 
-* * * * * 
-* * * * * 
-* * * * * 
-* * * * * 
-</pre></div>
-</div>
-</div>
-</div>
 </section>
-<section id="id1">
-<h2>Question<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<section id="question-2">
+<h2>Question-2<a class="headerlink" href="#question-2" title="Permalink to this heading">#</a></h2>
 <p>Write a function that takes a string as its parameter and returns the vowels (‘a, e, i, o, u’) in the given string without repetition as a list.</p>
 <ul class="simple">
 <li><p>If there are no vowels in the string, return the string ‘No vowels’ .</p></li>
 </ul>
-<p><strong>Solution</strong></p>
-<div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
-</summary>
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">vowel_func</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="k">def</span> <span class="nf">vowel_func</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
   
   <span class="n">result</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;u&#39;</span><span class="p">})</span>
     
@@ -494,37 +465,14 @@ document.write(`
 </pre></div>
 </div>
 </div>
-</details>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># example</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">vowel_func</span><span class="p">(</span><span class="s1">&#39;abbbecido&#39;</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;o&#39;, &#39;e&#39;, &#39;i&#39;, &#39;a&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># example</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">vowel_func</span><span class="p">(</span><span class="s1">&#39;bcd&#39;</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No vowels!
-</pre></div>
-</div>
-</div>
-</div>
+<p><strong>Sample Output</strong></p>
+<p>print(vowel_func(‘abbbecido’))<br />
+[‘e’, ‘i’, ‘a’, ‘o’]<br />
+print(vowel_func(‘bcd’))<br />
+No vowels!</p>
 </section>
-<section id="id2">
-<h2>Question<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<section id="question-3">
+<h2>Question-3<a class="headerlink" href="#question-3" title="Permalink to this heading">#</a></h2>
 <p>Write a function that takes two integers as parameters and returns the powers of the first integer (base) from 0 to the second integer number.</p>
 <ul class="simple">
 <li><p>Example: parameters are 3, 5</p>
@@ -533,43 +481,19 @@ document.write(`
 </ul>
 </li>
 </ul>
-<p><strong>Solution-1</strong></p>
-<div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
-</summary>
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">power_func</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<div class="toggle admonition">
+<p class="admonition-title">Solution-1</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">power_func</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
   <span class="k">return</span> <span class="p">[</span><span class="n">a</span><span class="o">**</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">b</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
 </pre></div>
 </div>
 </div>
-</details>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># example</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">power_func</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 3, 9, 27, 81, 243]
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>Solution-2</strong></p>
-<div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
-</summary>
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">exponent</span><span class="p">):</span>
+<p><strong>Sample Output</strong></p>
+<p>print(power_func(3,5))<br />
+[1, 3, 9, 27, 81, 243]</p>
+<div class="toggle admonition">
+<p class="admonition-title">Solution-2</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">exponent</span><span class="p">):</span>
   <span class="n">ans</span> <span class="o">=</span> <span class="p">[]</span> 
     
   <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">exponent</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
@@ -579,24 +503,12 @@ document.write(`
 </pre></div>
 </div>
 </div>
-</details>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># example</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 3, 9, 27, 81, 243]
-</pre></div>
-</div>
-</div>
-</div>
+<p><strong>Sample Output</strong></p>
+<p>print(f(3,5))<br />
+[1, 3, 9, 27, 81, 243]</p>
 </section>
-<section id="id3">
-<h2>Question<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<section id="question-4">
+<h2>Question-4<a class="headerlink" href="#question-4" title="Permalink to this heading">#</a></h2>
 <p>Write a function with parameters <em>start</em> and <em>end</em>, where it returns a list of all even numbers between start and end, inclusive.</p>
 <ul class="simple">
 <li><p>If start is greater than end, the output should be in descending order; if start is less than end, the output should be in ascending order.</p></li>
@@ -607,15 +519,9 @@ document.write(`
 </ul>
 </li>
 </ul>
-<p><strong>Solution-1</strong></p>
-<div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
-</summary>
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">even_numbers</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
+<div class="toggle admonition">
+<p class="admonition-title">Solution-1</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">even_numbers</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
   <span class="n">even_list</span> <span class="o">=</span> <span class="p">[]</span>
 
   <span class="n">reverse</span> <span class="o">=</span> <span class="kc">False</span>
@@ -636,30 +542,12 @@ document.write(`
 </pre></div>
 </div>
 </div>
-</details>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># example</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">even_numbers</span><span class="p">(</span><span class="mi">45</span><span class="p">,</span> <span class="mi">23</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[44, 42, 40, 38, 36, 34, 32, 30, 28, 26, 24]
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>Solution-2</strong></p>
-<div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
-</summary>
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">even_num</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
+<p><strong>Sample Output</strong></p>
+<p>print(even_numbers(45, 23))<br />
+[44, 42, 40, 38, 36, 34, 32, 30, 28, 26, 24]</p>
+<div class="toggle admonition">
+<p class="admonition-title">Solution-2</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">even_num</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">start</span> <span class="o">&gt;</span> <span class="n">end</span><span class="p">:</span>
         <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">))</span>
     <span class="k">else</span><span class="p">:</span>
@@ -667,24 +555,12 @@ document.write(`
 </pre></div>
 </div>
 </div>
-</details>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># example</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">even_num</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[20, 18, 16, 14, 12, 10, 8, 6]
-</pre></div>
-</div>
-</div>
-</div>
+<p><strong>Sample Output</strong></p>
+<p>print(even_num(20,5))<br />
+[20, 18, 16, 14, 12, 10, 8, 6]</p>
 </section>
-<section id="id4">
-<h2>Question<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<section id="question-5">
+<h2>Question-5<a class="headerlink" href="#question-5" title="Permalink to this heading">#</a></h2>
 <p>Write a function that takes two tuples as parameters and returns a tuple consisting of elements present in the first tuple but not in the second tuple.</p>
 <ul class="simple">
 <li><p>Example:</p>
@@ -694,15 +570,9 @@ document.write(`
 </ul>
 </li>
 </ul>
-<p><strong>Solution-1</strong></p>
-<div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
-</summary>
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">diff_tuples</span><span class="p">(</span><span class="n">tuple1</span><span class="p">,</span> <span class="n">tuple2</span><span class="p">):</span>
+<div class="toggle admonition">
+<p class="admonition-title">Solution-1</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">diff_tuples</span><span class="p">(</span><span class="n">tuple1</span><span class="p">,</span> <span class="n">tuple2</span><span class="p">):</span>
   <span class="n">list_</span> <span class="o">=</span> <span class="p">[]</span>
     
   <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tuple1</span><span class="p">:</span>
@@ -713,56 +583,25 @@ document.write(`
 </pre></div>
 </div>
 </div>
-</details>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># example</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">diff_tuples</span><span class="p">(</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span> <span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2]
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>Solution-2</strong></p>
-<div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
-</summary>
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># use sets</span>
-
+<p><strong>Sample Output</strong></p>
+<p>print(diff_tuples( (1,2,3,4), (3,4,5,6) ))<br />
+[1, 2]</p>
+<div class="toggle admonition">
+<p class="admonition-title">Solution-2</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>\
 <span class="k">def</span> <span class="nf">diff_tuples</span><span class="p">(</span><span class="n">tuple1</span><span class="p">,</span> <span class="n">tuple2</span><span class="p">):</span>
-  <span class="n">set1</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">tuple1</span><span class="p">)</span>
+  <span class="n">set1</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">tuple1</span><span class="p">)</span>  <span class="c1"># use sets</span>
   <span class="n">set2</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">tuple2</span><span class="p">)</span>
   <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">set1</span> <span class="o">-</span> <span class="n">set2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-</details>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># example</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">diff_tuples</span><span class="p">(</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span> <span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 2)
-</pre></div>
-</div>
-</div>
-</div>
+<p><strong>Sample Output</strong></p>
+<p>print(diff_tuples( (1,2,3,4), (3,4,5,6) ))
+(1, 2)</p>
 </section>
-<section id="id5">
-<h2>Question<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<section id="question-6">
+<h2>Question-6<a class="headerlink" href="#question-6" title="Permalink to this heading">#</a></h2>
 <p>Write a function that takes a date as a string in the format ‘month/day/year’, where the month is represented by a number.</p>
 <ul class="simple">
 <li><p>The function should return the date in the format ‘year/month/day’.</p></li>
@@ -773,23 +612,18 @@ document.write(`
 </ul>
 </li>
 </ul>
-<p><strong>Solution</strong></p>
-<div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
-</summary>
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">date_conv</span><span class="p">(</span><span class="n">date</span><span class="p">):</span>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">date_conv</span><span class="p">(</span><span class="n">date</span><span class="p">):</span>
     
   <span class="n">d</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
   <span class="k">return</span> <span class="n">d</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="n">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span><span class="n">d</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
-</details>
-</div>
+<p><strong>Sample Output</strong></p>
+<p>print(date_conv(‘09/25/1987’))<br />
+1987/09/25</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># example</span>
@@ -798,14 +632,20 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1987/09/25
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># example</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">date_conv</span><span class="p">(</span><span class="s1">&#39;09/25/1987&#39;</span><span class="p">))</span>
+
+<span class="ne">NameError</span>: name &#39;date_conv&#39; is not defined
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="id6">
-<h2>Question<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<section id="question-7">
+<h2>Question-7<a class="headerlink" href="#question-7" title="Permalink to this heading">#</a></h2>
 <p>Write a function that takes a list as its parameter and returns the standard deviation of its elements.<br />
 The standard deviation (std) for a sequence is calculated using the formula: <span class="math notranslate nohighlight">\(\displaystyle std = \sqrt\frac{\sum_{i=1}^{n}(x_i-\bar{x})^2}{n}\)</span></p>
 <p>where  <span class="math notranslate nohighlight">\(\bar{x}\)</span>  is the mean and <span class="math notranslate nohighlight">\(\sum\)</span> denotes the sum. Here’s a hint for the implementation:</p>
@@ -821,15 +661,10 @@ The standard deviation (std) for a sequence is calculated using the formula: <sp
 <li><p>Find the std of the list: [5,8,2,5,6,1,1,3]</p></li>
 <li><p>Compare the result obtained from your custom standard deviation function with the standard deviation functions provided by the numpy and statistics libraries.</p></li>
 </ul>
-<p><strong>Solution</strong></p>
-<div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
-</summary>
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">statistics</span>
 
 
@@ -844,27 +679,14 @@ The standard deviation (std) for a sequence is calculated using the formula: <sp
 </pre></div>
 </div>
 </div>
-</details>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># example</span>
-<span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Custom Function: </span><span class="si">{</span><span class="n">std_func</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Numpy          : </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Statistics     : </span><span class="si">{</span><span class="n">statistics</span><span class="o">.</span><span class="n">pstdev</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Custom Function: 2.368411915187052
-Numpy          : 2.368411915187052
-Statistics     : 2.368411915187052
-</pre></div>
-</div>
-</div>
-</div>
+<p><strong>Sample Output</strong>
+mylist = [5,8,2,5,6,1,1,3]</p>
+<p>print(f’Custom Function: {std_func(mylist)}’)<br />
+print(f’Numpy          : {np.std(mylist)}’)<br />
+print(f’Statistics     : {statistics.pstdev(mylist)}’)</p>
+<p>Custom Function: 2.368411915187052<br />
+Numpy          : 2.368411915187052<br />
+Statistics     : 2.368411915187052</p>
 </section>
 </section>
 
@@ -931,13 +753,13 @@ Statistics     : 2.368411915187052
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question">Question</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Question</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Question</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Question</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Question</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Question</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question-1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question-2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question-3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question-4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question-5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6">Question-6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7">Question-7</a></li>
 </ul>
   </nav></div>
 
