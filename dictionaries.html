@@ -152,8 +152,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo.svg" class="logo__image only-light" alt="Python in Plain Terms - Home"/>
-    <script>document.write(`<img src="_static/logo.svg" class="logo__image only-dark" alt="Python in Plain Terms - Home"/>`);</script>
+    <img src="_static/ppt_logo3.png" class="logo__image only-light" alt="Python in Plain Terms - Home"/>
+    <script>document.write(`<img src="_static/ppt_logo3.png" class="logo__image only-dark" alt="Python in Plain Terms - Home"/>`);</script>
   
   
 </a></div>
@@ -168,7 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="ppt.html">Python in Plain Terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preface.html">Preface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="acknowledge.html">Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python.html">Python Introduction</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="colab.html">Google Colab</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -244,11 +244,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="functions_debug.html">Functions Debugging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions_output.html">Functions Output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions_code.html">Functions Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions_exercise.html">Functions Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="sets.html">Chp-10: Sets</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="sets_debug.html">Sets Debugging</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sets_output.html">Strings Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sets_output.html">Sets Output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sets_code.html">Sets Code</a></li>
 </ul>
 </li>
@@ -453,16 +454,30 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="chp-11-dictionaries">
 <h1>Chp-11: Dictionaries<a class="headerlink" href="#chp-11-dictionaries" title="Permalink to this heading">#</a></h1>
 <p><img alt="" src="_images/dictionaries2.png" /></p>
+<div class="tip admonition">
+<p class="admonition-title">Chapter Objectives</p>
+<p>By the end of this chapter, the student should be able to:</p>
+<ul class="simple">
+<li><p>Explain the purpose and role of dictionaries.</p></li>
+<li><p>Recognize the key-value pair structure of dictionaries.</p></li>
+<li><p>Create and initialize dictionaries in differen ways.</p></li>
+<li><p>Implement dictionaries to efficiently organize and access data.</p></li>
+<li><p>Apply dictionary methods.</p></li>
+<li><p>Use loops to iterate through dictionary keys, values, and pairs.</p></li>
+<li><p>Use dictionary comprehensions.</p></li>
+<li><p>Apply dictionaries to solve real-world problems.</p></li>
+</ul>
+</div>
 <section id="dictionaries">
 <h2>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this heading">#</a></h2>
 <p>These are a more general form of lists. The indexes of lists are integers starting from 0, whereas the indexes, called keys in dictionaries, can be chosen from different types.</p>
 <ul class="simple">
 <li><p>Its elements are pairs of the form <code class="docutils literal notranslate"><span class="pre">key:value</span></code>.</p></li>
 <li><p>Dictionaries are created by using curly brackets, like sets, by using <code class="docutils literal notranslate"><span class="pre">key:value</span></code> pairs and <code class="docutils literal notranslate"><span class="pre">:</span></code> in between.</p></li>
-<li><p>Keys are like indexes, and values can be accessed by using square brackets in the form of <code class="docutils literal notranslate"><span class="pre">dict_name[key]</span></code>.</p></li>
+<li><p>Keys are like indexes, and values can be accessed by using square brackets in the form of <code class="docutils literal notranslate"><span class="pre">dictionary_name[key]</span></code>.</p></li>
 <li><p>Keys must be immutable, like strings, numbers, and tuples.</p>
 <ul>
-<li><p>A list canot be a key of a dictionary.</p></li>
+<li><p>A list cannot be a key of a dictionary.</p></li>
 </ul>
 </li>
 <li><p>Values can be any type, including strings, numbers, booleans, tuples, lists, and dictionaries.</p></li>
@@ -485,14 +500,14 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># empty dictionary</span>
 <span class="n">empty_dict</span> <span class="o">=</span> <span class="p">{}</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Empty dictionary         : </span><span class="si">{</span><span class="n">empty_dict</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Type of emppty_dict      : </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">empty_dict</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Empty dictionary   : </span><span class="si">{</span><span class="n">empty_dict</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Type of emppty_dict: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">empty_dict</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Empty dictionary         : {}
-Type of emppty_dict      : &lt;class &#39;dict&#39;&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Empty dictionary   : {}
+Type of emppty_dict: &lt;class &#39;dict&#39;&gt;
 </pre></div>
 </div>
 </div>
@@ -502,14 +517,14 @@ Type of emppty_dict      : &lt;class &#39;dict&#39;&gt;
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># empty dictionary with dict()</span>
 <span class="n">empty_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Empty dictionary         : </span><span class="si">{</span><span class="n">empty_dict</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Type of emppty_dict      : </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">empty_dict</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Empty dictionary   : </span><span class="si">{</span><span class="n">empty_dict</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Type of emppty_dict: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">empty_dict</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Empty dictionary         : {}
-Type of emppty_dict      : &lt;class &#39;dict&#39;&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Empty dictionary   : {}
+Type of emppty_dict: &lt;class &#39;dict&#39;&gt;
 </pre></div>
 </div>
 </div>
@@ -534,7 +549,7 @@ Type of emppty_dict      : &lt;class &#39;dict&#39;&gt;
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># overwrite first mpair of math </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># overwrite first pair of math </span>
 
 <span class="n">grades</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Math&#39;</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span> <span class="s1">&#39;Chemistry&#39;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span> <span class="s1">&#39;History&#39;</span><span class="p">:</span><span class="mi">65</span><span class="p">,</span> <span class="s1">&#39;Math&#39;</span><span class="p">:</span><span class="mi">100</span><span class="p">}</span>
 
@@ -550,11 +565,11 @@ Type of emppty_dict      : &lt;class &#39;dict&#39;&gt;
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># values canbe lists, tuples</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># values can be lists, tuples</span>
 
 <span class="n">grades</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Math&#39;</span><span class="p">:[</span><span class="mi">80</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="s1">&#39;Chemistry&#39;</span><span class="p">:(</span><span class="mi">70</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="s1">&#39;History&#39;</span><span class="p">:</span><span class="mi">65</span><span class="p">}</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">grades</span><span class="p">)</span>    <span class="c1"># The value of &#39;Math&#39; key is 100 </span>
+<span class="nb">print</span><span class="p">(</span><span class="n">grades</span><span class="p">)</span>     
 </pre></div>
 </div>
 </div>
@@ -572,6 +587,7 @@ Type of emppty_dict      : &lt;class &#39;dict&#39;&gt;
 </section>
 <section id="dict">
 <h3>dict()<a class="headerlink" href="#dict" title="Permalink to this heading">#</a></h3>
+<p>The built-in <em>dict()</em> function converts tuples, and lists consists of pairs into a dictionary.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># assignments ----&gt; dict</span>
@@ -604,10 +620,27 @@ Type of emppty_dict      : &lt;class &#39;dict&#39;&gt;
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># lists of pairs ----&gt; dict</span>
+
+<span class="n">grades_list</span> <span class="o">=</span> <span class="p">[</span> <span class="p">[</span><span class="s1">&#39;Math&#39;</span><span class="p">,</span> <span class="mi">80</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Chemistry&#39;</span><span class="p">,</span> <span class="mi">70</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;History&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span> 
+<span class="n">grades</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">grades_list</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">grades</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Math&#39;: 80, &#39;Chemistry&#39;: 70, &#39;History&#39;: 6}
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="len">
 <h3>len()<a class="headerlink" href="#len" title="Permalink to this heading">#</a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">len()</span></code> function returns the number of pairs in a dictionary.</p>
+<p>The <em>len()</em> function returns the number of pairs in a dictionary.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Math&#39;</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span> <span class="s1">&#39;Chemistry&#39;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span> <span class="s1">&#39;History&#39;</span><span class="p">:</span><span class="mi">65</span><span class="p">}</span>
@@ -672,7 +705,7 @@ Type of emppty_dict      : &lt;class &#39;dict&#39;&gt;
 <section id="add-a-new-pair">
 <h4>Add a new pair<a class="headerlink" href="#add-a-new-pair" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
-<li><p>Use square brackets in the form of <code class="docutils literal notranslate"><span class="pre">dict_name[new_key]</span> <span class="pre">=</span> <span class="pre">new_value</span></code>.</p></li>
+<li><p>Use square brackets in the form of <code class="docutils literal notranslate"><span class="pre">dictionary_name[new_key]</span> <span class="pre">=</span> <span class="pre">new_value</span></code>.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -697,7 +730,7 @@ grades dictionary after  adding a new pair: {&#39;Math&#39;: 80, &#39;Chemistry&
 <section id="change-a-value">
 <h4>Change a Value<a class="headerlink" href="#change-a-value" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
-<li><p>Use square brackets in the form of <code class="docutils literal notranslate"><span class="pre">dict_name[key]</span> <span class="pre">=</span> <span class="pre">new_value</span></code>.</p></li>
+<li><p>Use square brackets in the form of <code class="docutils literal notranslate"><span class="pre">dictionary_name[key]</span> <span class="pre">=</span> <span class="pre">new_value</span></code>.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -722,7 +755,7 @@ grades dictionary after adding a new pair: {&#39;Math&#39;: 80, &#39;Chemistry&#
 <section id="delete-a-pair">
 <h4>Delete a pair<a class="headerlink" href="#delete-a-pair" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
-<li><p>Use <code class="docutils literal notranslate"><span class="pre">del</span></code> in the form of <code class="docutils literal notranslate"><span class="pre">del</span> <span class="pre">dict_name[key]</span></code>.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">del</span></code> in the form of <code class="docutils literal notranslate"><span class="pre">del</span> <span class="pre">dictionary_name[key]</span></code>.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -790,13 +823,13 @@ grades dictionary after  deleting a  pair: {&#39;Math&#39;: 80, &#39;History&#39
 <span class="c1"># remove all elements of grades dictionary</span>
 <span class="n">grades</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;grades dictionary after  using clear() : </span><span class="si">{</span><span class="n">grades</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;grades dictionary after  using clear(): </span><span class="si">{</span><span class="n">grades</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>grades dictionary before using clear(): {&#39;Math&#39;: 80, &#39;Chemistry&#39;: 70, &#39;History&#39;: 65}
-grades dictionary after  using clear() : {}
+grades dictionary after  using clear(): {}
 </pre></div>
 </div>
 </div>
@@ -810,7 +843,7 @@ grades dictionary after  using clear() : {}
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Math&#39;</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span> <span class="s1">&#39;Chemistry&#39;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span> <span class="s1">&#39;History&#39;</span><span class="p">:</span><span class="mi">65</span><span class="p">}</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;grades dictionary     : </span><span class="si">{</span><span class="n">grades</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
-<span class="c1"># remove all elements of grades dictionary</span>
+<span class="c1"># copy all elements of grades dictionary</span>
 <span class="n">grades_copy</span> <span class="o">=</span> <span class="n">grades</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;grades_copy dictionary: </span><span class="si">{</span><span class="n">grades</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -835,7 +868,7 @@ grades_copy dictionary: {&#39;Math&#39;: 80, &#39;Chemistry&#39;: 70, &#39;Histo
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Math&#39;</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span> <span class="s1">&#39;Chemistry&#39;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span> <span class="s1">&#39;History&#39;</span><span class="p">:</span><span class="mi">65</span><span class="p">}</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;grades dictionary     : </span><span class="si">{</span><span class="n">grades</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;grades dictionary    : </span><span class="si">{</span><span class="n">grades</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
 <span class="c1"># value corresponding to &#39;Math&#39; key </span>
 <span class="n">val</span> <span class="o">=</span>  <span class="n">grades</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Math&#39;</span><span class="p">,</span> <span class="s1">&#39;Does Not Exist&#39;</span><span class="p">)</span>    <span class="c1"># Math key exist so get returns 80 not &#39;Does Not Exist&#39;</span>
@@ -845,19 +878,22 @@ grades_copy dictionary: {&#39;Math&#39;: 80, &#39;Chemistry&#39;: 70, &#39;Histo
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>grades dictionary     : {&#39;Math&#39;: 80, &#39;Chemistry&#39;: 70, &#39;History&#39;: 65}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>grades dictionary    : {&#39;Math&#39;: 80, &#39;Chemistry&#39;: 70, &#39;History&#39;: 65}
 The value of Math key: 80
 </pre></div>
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>In th efollowing code, since the key ‘Biology’ does not exist get() returns the default value ‘Does Not Exist’.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Math&#39;</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span> <span class="s1">&#39;Chemistry&#39;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span> <span class="s1">&#39;History&#39;</span><span class="p">:</span><span class="mi">65</span><span class="p">}</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;grades dictionary       : </span><span class="si">{</span><span class="n">grades</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
-<span class="c1"># value corresponding to &#39;Biology&#39; key </span>
-<span class="n">val</span> <span class="o">=</span>  <span class="n">grades</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Biology&#39;</span><span class="p">,</span> <span class="s1">&#39;Does Not Exist&#39;</span><span class="p">)</span>    <span class="c1"># Biology key doe not exist so get returns the default value &#39;Does Not Exist&#39;</span>
+<span class="c1"># value corresponding to the key &#39;Biology&#39;  </span>
+<span class="n">val</span> <span class="o">=</span>  <span class="n">grades</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Biology&#39;</span><span class="p">,</span> <span class="s1">&#39;Does Not Exist&#39;</span><span class="p">)</span>  
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The value of Biology key: </span><span class="si">{</span><span class="n">val</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
@@ -881,11 +917,13 @@ The value of Biology key: Does Not Exist
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Math&#39;</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span> <span class="s1">&#39;Chemistry&#39;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span> <span class="s1">&#39;History&#39;</span><span class="p">:</span><span class="mi">65</span><span class="p">}</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Items: </span><span class="si">{</span><span class="n">grades</span><span class="o">.</span><span class="n">items</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Type : </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">grades</span><span class="o">.</span><span class="n">items</span><span class="p">())</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Items: dict_items([(&#39;Math&#39;, 80), (&#39;Chemistry&#39;, 70), (&#39;History&#39;, 65)])
+Type : &lt;class &#39;dict_items&#39;&gt;
 </pre></div>
 </div>
 </div>
@@ -901,11 +939,13 @@ The value of Biology key: Does Not Exist
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Math&#39;</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span> <span class="s1">&#39;Chemistry&#39;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span> <span class="s1">&#39;History&#39;</span><span class="p">:</span><span class="mi">65</span><span class="p">}</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Keys: </span><span class="si">{</span><span class="n">grades</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Type: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">grades</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Keys: dict_keys([&#39;Math&#39;, &#39;Chemistry&#39;, &#39;History&#39;])
+Type: &lt;class &#39;dict_keys&#39;&gt;
 </pre></div>
 </div>
 </div>
@@ -921,18 +961,18 @@ The value of Biology key: Does Not Exist
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Math&#39;</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span> <span class="s1">&#39;Chemistry&#39;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span> <span class="s1">&#39;History&#39;</span><span class="p">:</span><span class="mi">65</span><span class="p">}</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;grades dictionary before using pop(): </span><span class="si">{</span><span class="n">grades</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
-<span class="c1"># remove &#39;Chemistry&#39;:70 pair</span>
+<span class="c1"># remove the pair &#39;Chemistry&#39;:70 </span>
 <span class="n">val_removed</span> <span class="o">=</span> <span class="n">grades</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;Chemistry&#39;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;grades dictionary after  using pop(): </span><span class="si">{</span><span class="n">grades</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Removed value: </span><span class="si">{</span><span class="n">val_removed</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Removed value                       : </span><span class="si">{</span><span class="n">val_removed</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>grades dictionary before using pop(): {&#39;Math&#39;: 80, &#39;Chemistry&#39;: 70, &#39;History&#39;: 65}
 grades dictionary after  using pop(): {&#39;Math&#39;: 80, &#39;History&#39;: 65}
-Removed value: 70
+Removed value                       : 70
 </pre></div>
 </div>
 </div>
@@ -948,18 +988,18 @@ Removed value: 70
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Math&#39;</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span> <span class="s1">&#39;Chemistry&#39;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span> <span class="s1">&#39;History&#39;</span><span class="p">:</span><span class="mi">65</span><span class="p">,</span> <span class="s1">&#39;English&#39;</span><span class="p">:</span><span class="mi">100</span><span class="p">}</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;grades dictionary before using pop(): </span><span class="si">{</span><span class="n">grades</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
-<span class="c1"># remove </span>
+<span class="c1"># remove the pair &#39;English&#39;:100</span>
 <span class="n">tuple_removed</span> <span class="o">=</span> <span class="n">grades</span><span class="o">.</span><span class="n">popitem</span><span class="p">()</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;grades dictionary after  using pop(): </span><span class="si">{</span><span class="n">grades</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Removed pair: </span><span class="si">{</span><span class="n">tuple_removed</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Removed pair                        : </span><span class="si">{</span><span class="n">tuple_removed</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>grades dictionary before using pop(): {&#39;Math&#39;: 80, &#39;Chemistry&#39;: 70, &#39;History&#39;: 65, &#39;English&#39;: 100}
 grades dictionary after  using pop(): {&#39;Math&#39;: 80, &#39;Chemistry&#39;: 70, &#39;History&#39;: 65}
-Removed pair: (&#39;English&#39;, 100)
+Removed pair                        : (&#39;English&#39;, 100)
 </pre></div>
 </div>
 </div>
@@ -1000,11 +1040,13 @@ dict1 after  update: {&#39;A&#39;: 1, &#39;B&#39;: 2, &#39;C&#39;: 3, &#39;D&#39
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Math&#39;</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span> <span class="s1">&#39;Chemistry&#39;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span> <span class="s1">&#39;History&#39;</span><span class="p">:</span><span class="mi">65</span><span class="p">}</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Values: </span><span class="si">{</span><span class="n">grades</span><span class="o">.</span><span class="n">values</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Type  : </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">grades</span><span class="o">.</span><span class="n">items</span><span class="p">())</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Values: dict_values([80, 70, 65])
+Type  : &lt;class &#39;dict_items&#39;&gt;
 </pre></div>
 </div>
 </div>
@@ -1099,12 +1141,12 @@ History 65
 <p>It is a fast and concise way of creating dictionaries in a single line using <em>for</em> loops and <em>if</em> statements.</p>
 <ul class="simple">
 <li><p>It is similar to list comprehensions.</p></li>
-<li><p>It is in the form of: <code class="docutils literal notranslate"><span class="pre">{expression</span> <span class="pre">for</span> <span class="pre">item</span> <span class="pre">in</span> <span class="pre">list}</span></code></p>
+<li><p>It is in the form of: <code class="docutils literal notranslate"><span class="pre">{expression</span> <span class="pre">for</span> <span class="pre">item</span> <span class="pre">in</span> <span class="pre">sequence}</span></code></p>
 <ul>
 <li><p>Here, the <em>expression</em> represents the <code class="docutils literal notranslate"><span class="pre">key:value</span></code> pairs of the dictionary being constructed.</p></li>
 </ul>
 </li>
-<li><p>An <em>if</em> statement can also be included in a dictionary comprehension in the form of: <code class="docutils literal notranslate"><span class="pre">[expression</span> <span class="pre">for</span> <span class="pre">item</span> <span class="pre">in</span> <span class="pre">list</span> <span class="pre">if</span> <span class="pre">condition]</span></code></p></li>
+<li><p>An <em>if</em> statement can also be included in a dictionary comprehension in the form of: <code class="docutils literal notranslate"><span class="pre">[expression</span> <span class="pre">for</span> <span class="pre">item</span> <span class="pre">in</span> <span class="pre">sequence</span> <span class="pre">if</span> <span class="pre">condition]</span></code></p></li>
 </ul>
 <p><strong>Example</strong></p>
 <ul class="simple">
@@ -1120,6 +1162,23 @@ History 65
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1: 1, 2: 8, 3: 27, 4: 64, 5: 125}
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>The following code constructs a dictionary with <code class="docutils literal notranslate"><span class="pre">key:value</span></code> pairs where keys are the even numbers between 1 and 5, and values are the cubes of the keys.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cube_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">**</span><span class="mi">3</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="k">2</span>==0}  
+
+<span class="nb">print</span><span class="p">(</span><span class="n">cube_dict</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{2: 8, 4: 64}
 </pre></div>
 </div>
 </div>
@@ -1258,6 +1317,26 @@ History 65
   <span class="k">else</span><span class="p">:</span>
     <span class="n">count_dict</span><span class="p">[</span><span class="n">char</span><span class="p">]</span> <span class="o">+=</span><span class="mi">1</span>                  <span class="c1"># char is already a key means it is repeated, increase its value by 1</span>
 
+<span class="nb">print</span><span class="p">(</span><span class="n">count_dict</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39; &#39;: 1301, &#39;I&#39;: 2, &#39;m&#39;: 234, &#39;y&#39;: 220, &#39;e&#39;: 355, &#39;p&#39;: 185, &#39;j&#39;: 193, &#39;g&#39;: 201, &#39;s&#39;: 231, &#39;q&#39;: 188, &#39;w&#39;: 259, &#39;t&#39;: 267, &#39;o&#39;: 274, &#39;k&#39;: 174, &#39;b&#39;: 204, &#39;x&#39;: 164, &#39;u&#39;: 235, &#39;n&#39;: 256, &#39;h&#39;: 256, &#39;a&#39;: 249, &#39;r&#39;: 273, &#39;v&#39;: 199, &#39;z&#39;: 212, &#39;d&#39;: 201, &#39;c&#39;: 198, &#39;f&#39;: 214, &#39;l&#39;: 251, &#39;i&#39;: 225, &#39;8&#39;: 42, &#39;2&#39;: 38, &#39;7&#39;: 33, &#39;9&#39;: 34, &#39;6&#39;: 38, &#39;0&#39;: 39, &#39;3&#39;: 36, &#39;1&#39;: 35, &#39;4&#39;: 32, &#39;5&#39;: 33, &#39;.&#39;: 99, &#39;K&#39;: 3, &#39;S&#39;: 9, &#39;J&#39;: 3, &#39;A&#39;: 8, &#39;F&#39;: 4, &#39;H&#39;: 6, &#39;D&#39;: 2, &#39;X&#39;: 3, &#39;G&#39;: 3, &#39;V&#39;: 6, &#39;Y&#39;: 1, &#39;W&#39;: 2, &#39;M&#39;: 3, &#39;Z&#39;: 5, &#39;R&#39;: 5, &#39;T&#39;: 6, &#39;C&#39;: 3, &#39;L&#39;: 2, &#39;N&#39;: 3, &#39;U&#39;: 2, &#39;O&#39;: 3, &#39;E&#39;: 5, &#39;B&#39;: 2, &#39;P&#39;: 3, &#39;Q&#39;: 1}
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Solution-3:</strong></p>
+<ul class="simple">
+<li><p>By using the get() method.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">count_dict</span> <span class="o">=</span> <span class="p">{}</span> 
+
+<span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+    <span class="n">count_dict</span><span class="p">[</span><span class="n">char</span><span class="p">]</span> <span class="o">=</span> <span class="n">count_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">char</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>     
 <span class="nb">print</span><span class="p">(</span><span class="n">count_dict</span><span class="p">)</span>
 </pre></div>
 </div>

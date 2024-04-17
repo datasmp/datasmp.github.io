@@ -66,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Chp-11: Dictionaries" href="dictionaries.html" />
-    <link rel="prev" title="Strings Output" href="sets_output.html" />
+    <link rel="prev" title="Sets Output" href="sets_output.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -152,8 +152,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo.svg" class="logo__image only-light" alt="Python in Plain Terms - Home"/>
-    <script>document.write(`<img src="_static/logo.svg" class="logo__image only-dark" alt="Python in Plain Terms - Home"/>`);</script>
+    <img src="_static/ppt_logo3.png" class="logo__image only-light" alt="Python in Plain Terms - Home"/>
+    <script>document.write(`<img src="_static/ppt_logo3.png" class="logo__image only-dark" alt="Python in Plain Terms - Home"/>`);</script>
   
   
 </a></div>
@@ -168,7 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="ppt.html">Python in Plain Terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preface.html">Preface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="acknowledge.html">Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python.html">Python Introduction</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="colab.html">Google Colab</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -244,11 +244,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="functions_debug.html">Functions Debugging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions_output.html">Functions Output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions_code.html">Functions Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions_exercise.html">Functions Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="sets.html">Chp-10: Sets</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="sets_debug.html">Sets Debugging</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sets_output.html">Strings Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sets_output.html">Sets Output</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Sets Code</a></li>
 </ul>
 </li>
@@ -406,8 +407,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question">Question</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question-1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question-2</a></li>
 </ul>
             </nav>
         </div>
@@ -424,8 +425,8 @@ document.write(`
 <ul class="simple">
 <li><p>Please solve the following questions using Python code.  </p></li>
 </ul>
-<section id="question">
-<h2>Question<a class="headerlink" href="#question" title="Permalink to this heading">#</a></h2>
+<section id="question-1">
+<h2>Question-1<a class="headerlink" href="#question-1" title="Permalink to this heading">#</a></h2>
 <p>Identify the unique names in the list <em>names</em> below (not case-sensitive), and store them in a new list with dictionary order and capitalized.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -434,15 +435,9 @@ document.write(`
 </div>
 </div>
 </div>
-<p><strong>Solution</strong></p>
-<div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
-</summary>
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names_cap</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">names</span><span class="p">]</span>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">names_cap</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">names</span><span class="p">]</span>
 <span class="n">names_cap</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">names_cap</span><span class="p">)</span>
 <span class="n">names_cap</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">names_cap</span><span class="p">)</span>
 <span class="n">names_cap</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
@@ -451,16 +446,11 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Ana&#39;, &#39;Ben&#39;, &#39;Eli&#39;, &#39;Eva&#39;, &#39;Ian&#39;, &#39;Leo&#39;, &#39;Liz&#39;, &#39;Mia&#39;, &#39;Tim&#39;]
-</pre></div>
-</div>
-</div>
-</details>
-</div>
+<p><strong>Output:</strong></p>
+<p>[‘Ana’, ‘Ben’, ‘Eli’, ‘Eva’, ‘Ian’, ‘Leo’, ‘Liz’, ‘Mia’, ‘Tim’]</p>
 </section>
-<section id="id1">
-<h2>Question<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<section id="question-2">
+<h2>Question-2<a class="headerlink" href="#question-2" title="Permalink to this heading">#</a></h2>
 <p>Remove names that start with a capital letter from the lists below.</p>
 <ul class="simple">
 <li><p>Store the unique names (not case-sensitive) in a new list, ensuring they are capitalized and ordered.</p></li>
@@ -473,15 +463,9 @@ document.write(`
 </div>
 </div>
 </div>
-<p><strong>Solution</strong></p>
-<div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
-</summary>
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="n">names1</span> <span class="o">+</span> <span class="n">names2</span>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="n">names1</span> <span class="o">+</span> <span class="n">names2</span>
 
 <span class="n">remove_list</span> <span class="o">=</span> <span class="p">[]</span>
 
@@ -501,13 +485,8 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Ana&#39;, &#39;Ben&#39;, &#39;Ian&#39;, &#39;Liz&#39;, &#39;Max&#39;, &#39;Mia&#39;]
-</pre></div>
-</div>
-</div>
-</details>
-</div>
+<p><strong>Output:</strong></p>
+<p>[‘Ana’, ‘Ben’, ‘Ian’, ‘Liz’, ‘Max’, ‘Mia’]</p>
 </section>
 </section>
 
@@ -547,7 +526,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Strings Output</p>
+        <p class="prev-next-title">Sets Output</p>
       </div>
     </a>
     <a class="right-next"
@@ -574,8 +553,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question">Question</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question-1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question-2</a></li>
 </ul>
   </nav></div>
 
