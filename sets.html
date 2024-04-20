@@ -251,16 +251,19 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="sets_debug.html">Sets Debugging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sets_output.html">Sets Output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sets_code.html">Sets Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sets_exercise.html">Sets Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="dictionaries.html">Chp-11: Dictionaries</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="dictionaries_debug.html">Dictionaries Debugging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dictionaries_output.html">Dictionaries Output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dictionaries_code.html">Dictionaries Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictionaries_exercise.html">Dictionaries Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="numpy_arrays.html">Chp-12: Numpy Arrays</a></li>
 <li class="toctree-l1"><a class="reference internal" href="visualization.html">Chp-13: Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="random.html">Chap-14: Random Module</a></li>
 </ul>
 
     </div>
@@ -429,6 +432,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#isuperset">isuperset()</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pop">pop()</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remove">remove()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#update">update()</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterations-and-sets">Iterations and Sets</a></li>
@@ -542,7 +546,7 @@ Type of empty_set: &lt;class &#39;set&#39;&gt;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{True, 2, &#39;USA&#39;, 9.123}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;USA&#39;, True, 2, 9.123}
 </pre></div>
 </div>
 </div>
@@ -600,7 +604,7 @@ Type of empty_set: &lt;class &#39;set&#39;&gt;
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Type of char_set: &lt;class &#39;set&#39;&gt;
-char_set        : {&#39;o&#39;, &#39;H&#39;, &#39;e&#39;, &#39;l&#39;}
+char_set        : {&#39;o&#39;, &#39;H&#39;, &#39;l&#39;, &#39;e&#39;}
 </pre></div>
 </div>
 </div>
@@ -1219,6 +1223,72 @@ number_set after  using remove(): {1, 2, 4, 5}
 </div>
 </div>
 </section>
+<section id="update">
+<h3>update()<a class="headerlink" href="#update" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>It adds elements of the second set to the first one.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">set1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span>
+<span class="n">set2</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;set1 before update: </span><span class="si">{</span><span class="n">set1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">set1</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">set2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;set1 after  update: </span><span class="si">{</span><span class="n">set1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>set1 before update: {1, 2, 3}
+set1 after  update: {1, 2, 3, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;a&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>You can also add elements from a tuple or list using the update() method.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myset</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span>
+<span class="n">mytuple</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;myset before update: </span><span class="si">{</span><span class="n">myset</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">myset</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">mytuple</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;myset after  update: </span><span class="si">{</span><span class="n">myset</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>myset before update: {1, 2, 3}
+myset after  update: {1, 2, 3, &#39;b&#39;, &#39;c&#39;, &#39;a&#39;, &#39;d&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myset</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span>
+<span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;myset before update: </span><span class="si">{</span><span class="n">myset</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">myset</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;myset after  update: </span><span class="si">{</span><span class="n">myset</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>myset before update: {1, 2, 3}
+myset after  update: {1, 2, 3, &#39;b&#39;, &#39;c&#39;, &#39;a&#39;, &#39;d&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 <section id="iterations-and-sets">
 <h2>Iterations and Sets<a class="headerlink" href="#iterations-and-sets" title="Permalink to this heading">#</a></h2>
@@ -1239,10 +1309,10 @@ number_set after  using remove(): {1, 2, 4, 5}
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>California
-Texas
-Oklahoma
 Arizona
+Texas
 Florida
+Oklahoma
 </pre></div>
 </div>
 </div>
@@ -1337,6 +1407,7 @@ Florida
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#isuperset">isuperset()</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pop">pop()</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remove">remove()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#update">update()</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterations-and-sets">Iterations and Sets</a></li>
