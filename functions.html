@@ -253,16 +253,24 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="sets_debug.html">Sets Debugging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sets_output.html">Sets Output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sets_code.html">Sets Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sets_exercise.html">Sets Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="dictionaries.html">Chp-11: Dictionaries</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="dictionaries_debug.html">Dictionaries Debugging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dictionaries_output.html">Dictionaries Output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dictionaries_code.html">Dictionaries Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictionaries_exercise.html">Dictionaries Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="numpy_arrays.html">Chp-12: Numpy Arrays</a></li>
 <li class="toctree-l1"><a class="reference internal" href="visualization.html">Chp-13: Visualization</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="appendix.html">Appendix</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="math.html">App-A: Math Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics.html">App-B: Statistics Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="random.html">App-C: Random Module</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -419,6 +427,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursions">Recursions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docstrings">DocStrings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-function">Lambda Function</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculator">Calculator</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#factorial">Factorial</a></li>
@@ -1077,7 +1086,6 @@ We have a very busy schedule today. Let&#39;s start working on each subject one 
 </div>
 </div>
 <p>Let’s proceed step by step:</p>
-<p>Since n=5 is not zero, the else part is executed, and we have sum_func_rec(5) = 5 + sum_func_rec(4).</p>
 <ol class="arabic simple">
 <li><p>When sum_func_rec(5) is called, the block code of the function sum_func_rec is executed for n=5.</p>
 <ul class="simple">
@@ -1184,6 +1192,60 @@ We have a very busy schedule today. Let&#39;s start working on each subject one 
     float
         The area of the rectangle.
     
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="lambda-function">
+<h2>Lambda Function<a class="headerlink" href="#lambda-function" title="Permalink to this heading">#</a></h2>
+<p>The lambda function allows for the creation of functions in a more concise manner.</p>
+<ul class="simple">
+<li><p>It is in the form of:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name_of_the_function</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">variables</span><span class="p">:</span> <span class="n">expression</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><em>lambda</em> is a keyword.</p></li>
+<li><p><em>variables</em> can be multiple, separated by commas.</p></li>
+</ul>
+<p><strong>Example:</strong> Square Function</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">square_func</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">square_func</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Example:</strong> Area of a rectangle</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rect_area</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">width</span><span class="p">,</span> <span class="n">length</span><span class="p">:</span> <span class="n">width</span><span class="o">*</span><span class="n">length</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">rect_area</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>50
 </pre></div>
 </div>
 </div>
@@ -1436,6 +1498,7 @@ We have a very busy schedule today. Let&#39;s start working on each subject one 
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursions">Recursions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docstrings">DocStrings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-function">Lambda Function</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculator">Calculator</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#factorial">Factorial</a></li>
