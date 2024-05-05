@@ -150,8 +150,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/ppt_logo3.png" class="logo__image only-light" alt="Python in Plain Terms - Home"/>
-    <script>document.write(`<img src="_static/ppt_logo3.png" class="logo__image only-dark" alt="Python in Plain Terms - Home"/>`);</script>
+    <img src="_static/ppt_logo4.png" class="logo__image only-light" alt="Python in Plain Terms - Home"/>
+    <script>document.write(`<img src="_static/ppt_logo4.png" class="logo__image only-dark" alt="Python in Plain Terms - Home"/>`);</script>
   
   
 </a></div>
@@ -261,7 +261,12 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1"><a class="reference internal" href="numpy_arrays.html">Chp-12: Numpy Arrays</a></li>
 <li class="toctree-l1"><a class="reference internal" href="visualization.html">Chp-13: Visualization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="random.html">Chap-14: Random Module</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="appendix.html">Appendix</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="math.html">App-A: Math Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics.html">App-B: Statistics Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="random.html">App-C: Random Module</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -437,8 +442,6 @@ Perform the following operations on it, printing it after each operation:</p>
 <li><p>Remove the tuple (10,20,30)</p></li>
 <li><p>Verify if 8 is present in the set.</p></li>
 <li><p>Verify if 9 is NOT present in the set.</p></li>
-<li><p>Print the keys.</p></li>
-<li><p>Print the values.</p></li>
 <li><p>Print the number of elements in the set.</p></li>
 <li><p>Print the sum of elements in the set.</p></li>
 <li><p>Print the maximum element in the set.</p></li>
@@ -470,7 +473,7 @@ Perform the following operations on it, printing it after each operation:</p>
 <li><p>Union of S1 and S2</p></li>
 <li><p>Intersection of S1 and S2</p></li>
 <li><p>The elements in S1 but not in S2.</p></li>
-<li><p>The elements in S2 but not in S2.</p></li>
+<li><p>The elements in S2 but not in S1.</p></li>
 <li><p>The elements in one of the two sets but not both.</p></li>
 <li><p>Verify if S1 is subset of S2.</p></li>
 <li><p>Verify if S1 contains of S2.</p></li>
@@ -499,7 +502,7 @@ Perform the following operations on it, printing it after each operation:</p>
 </section>
 <section id="question-3">
 <h2>Question-3<a class="headerlink" href="#question-3" title="Permalink to this heading">#</a></h2>
-<p>Store the months from the “dates” dictionary as an integers into a set using a for loop.</p>
+<p>Store the months from the “dates” tuple as an integers into a set using a for loop.</p>
 <ul class="simple">
 <li><p>Hint: Use the split() method of the strings.</p></li>
 </ul>
@@ -523,7 +526,7 @@ Perform the following operations on it, printing it after each operation:</p>
 </section>
 <section id="question-4">
 <h2>Question-4<a class="headerlink" href="#question-4" title="Permalink to this heading">#</a></h2>
-<p>Generate two strings containing randomly selected lowercase letters.</p>
+<p>Generate two strings containing randomly selected 10 lowercase letters.</p>
 <ul class="simple">
 <li><p>Print each character from both strings, ensuring that each character is only printed once.</p></li>
 <li><p>Hint: You can use the choices() method of the random module</p></li>
@@ -536,9 +539,9 @@ Perform the following operations on it, printing it after each operation:</p>
 
 <span class="n">lower_letters</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">ascii_lowercase</span>
 
-<span class="n">text1</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choices</span><span class="p">(</span><span class="n">lower_letters</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">20</span><span class="p">))</span>
+<span class="n">text1</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choices</span><span class="p">(</span><span class="n">lower_letters</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
 
-<span class="n">text2</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choices</span><span class="p">(</span><span class="n">lower_letters</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">20</span><span class="p">))</span>
+<span class="n">text2</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choices</span><span class="p">(</span><span class="n">lower_letters</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
 
 <span class="n">common_char</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">text1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="nb">set</span><span class="p">(</span><span class="n">text2</span><span class="p">)</span>
 
