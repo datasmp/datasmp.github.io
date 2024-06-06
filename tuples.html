@@ -269,6 +269,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="math.html">App-A: Math Module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="statistics.html">App-B: Statistics Module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="random.html">App-C: Random Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seaborn.html">App-D: Seaborn Library</a></li>
 </ul>
 </li>
 </ul>
@@ -1320,6 +1321,52 @@ California
 </div>
 </div>
 </div>
+<p><strong>Example:</strong></p>
+<ul class="simple">
+<li><p>The following code constructs a tuple with elements consisting of the squares of the integers between 1 and 10.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">square_tuple</span> <span class="o">=</span> <span class="p">()</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">):</span>
+    <span class="n">square_tuple</span> <span class="o">+=</span> <span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">,)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">square_tuple</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 4, 9, 16, 25, 36, 49, 64, 81, 100)
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Let’s use tuple comprehensions to construct a tuple with the same elements.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">square_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">))</span>   <span class="c1"># i**2 is the expression</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">square_tuple</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;generator object &lt;genexpr&gt; at 0x108064860&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>If you compare the two codes above, using a tuple comprehension:</p>
+<ul>
+<li><p>You do not need to initialize the squares_list.</p></li>
+<li><p>Instead of three lines of code, you can construct the squares_list in a single line.</p></li>
+</ul>
+</li>
+</ul>
 </section>
 <section id="examples">
 <h3>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">#</a></h3>

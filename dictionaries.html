@@ -267,6 +267,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="math.html">App-A: Math Module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="statistics.html">App-B: Statistics Module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="random.html">App-C: Random Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seaborn.html">App-D: Seaborn Library</a></li>
 </ul>
 </li>
 </ul>
@@ -468,7 +469,7 @@ document.write(`
 <ul class="simple">
 <li><p>Explain the purpose and role of dictionaries.</p></li>
 <li><p>Recognize the key-value pair structure of dictionaries.</p></li>
-<li><p>Create and initialize dictionaries in differen ways.</p></li>
+<li><p>Create and initialize dictionaries in different ways.</p></li>
 <li><p>Implement dictionaries to efficiently organize and access data.</p></li>
 <li><p>Apply dictionary methods.</p></li>
 <li><p>Use loops to iterate through dictionary keys, values, and pairs.</p></li>
@@ -509,13 +510,13 @@ document.write(`
 <span class="n">empty_dict</span> <span class="o">=</span> <span class="p">{}</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Empty dictionary   : </span><span class="si">{</span><span class="n">empty_dict</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Type of emppty_dict: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">empty_dict</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Type of empty_dict: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">empty_dict</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Empty dictionary   : {}
-Type of emppty_dict: &lt;class &#39;dict&#39;&gt;
+Type of empty_dict: &lt;class &#39;dict&#39;&gt;
 </pre></div>
 </div>
 </div>
@@ -526,13 +527,13 @@ Type of emppty_dict: &lt;class &#39;dict&#39;&gt;
 <span class="n">empty_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Empty dictionary   : </span><span class="si">{</span><span class="n">empty_dict</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Type of emppty_dict: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">empty_dict</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Type of empty_dict: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">empty_dict</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Empty dictionary   : {}
-Type of emppty_dict: &lt;class &#39;dict&#39;&gt;
+Type of empty_dict: &lt;class &#39;dict&#39;&gt;
 </pre></div>
 </div>
 </div>
@@ -893,7 +894,7 @@ The value of Math key: 80
 </div>
 </div>
 <ul class="simple">
-<li><p>In th efollowing code, since the key ‘Biology’ does not exist get() returns the default value ‘Does Not Exist’.</p></li>
+<li><p>In the following code, since the key ‘Biology’ does not exist get() returns the default value ‘Does Not Exist’.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1320,7 +1321,7 @@ History 65
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">count_dict</span> <span class="o">=</span> <span class="p">{}</span>                           <span class="c1"># empty dictionary</span>
 
 <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
-  <span class="k">if</span> <span class="n">char</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">count_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>       <span class="c1"># for the first occurence of char the value is 1</span>
+  <span class="k">if</span> <span class="n">char</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">count_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>       <span class="c1"># for the first occurrence of char the value is 1</span>
     <span class="n">count_dict</span><span class="p">[</span><span class="n">char</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>                  <span class="c1"># pair is created: (char,1)</span>
   <span class="k">else</span><span class="p">:</span>
     <span class="n">count_dict</span><span class="p">[</span><span class="n">char</span><span class="p">]</span> <span class="o">+=</span><span class="mi">1</span>                  <span class="c1"># char is already a key means it is repeated, increase its value by 1</span>
