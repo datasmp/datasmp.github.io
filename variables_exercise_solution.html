@@ -261,13 +261,21 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="dictionaries_exercise.html">Dictionaries Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="numpy_arrays.html">Chp-12: Numpy Arrays</a></li>
-<li class="toctree-l1"><a class="reference internal" href="visualization.html">Chp-13: Visualization</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="appendix.html">Appendix</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="math.html">App-A: Math Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statistics.html">App-B: Statistics Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="random.html">App-C: Random Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="seaborn.html">App-D: Seaborn Library</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="projects.html">Projects</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="project_factorization.html">Project: Factorization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_elections.html">Project: Election Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_soccer.html">Project: Soccer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_smoothing.html">Project: Smoothing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_riemann.html">Project: Approximating Areas</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="appendix.html">Appendix</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="app_visualization.html">App: Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_business.html">App: Business Glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_math.html">App: Math Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_statistics.html">App: Statistics Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_random.html">App: Random Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_seaborn.html">App: Seaborn Library</a></li>
 </ul>
 </li>
 </ul>
@@ -417,13 +425,21 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question-1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-u-shape">Question-2: U-Shape</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question-2</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question-3</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question-4</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question-5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4-u-shape">Question-4: U-Shape</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5-v-shape">Question-5: V-Shape</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6-h-shape">Question-6: H-Shape</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7-compound-interest">Question-7: Compound Interest</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8-continous-compound">Question-8: Continous Compound</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#business-applications">Business Applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-demand-function">Question: Demand Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-demand-equation">Question: Demand Equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-supply-function">Question: Supply Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-supply-equation">Question: Supply Equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-simple-interest">Question: Simple Interest</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-compound-interest">Question: Compound Interest</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-continuous-compound-interest">Question: Continuous Compound Interest</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -467,47 +483,8 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="question-2-u-shape">
-<h2>Question-2: U-Shape<a class="headerlink" href="#question-2-u-shape" title="Permalink to this heading">#</a></h2>
-<p>Print the letter <em>U</em> using the character <code class="docutils literal notranslate"><span class="pre">+</span></code>.</p>
-<ul class="simple">
-<li><p>The vertical left and right parts of <em>U</em> have five <code class="docutils literal notranslate"><span class="pre">+</span></code> characters each.</p></li>
-</ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">horizontal</span> <span class="o">=</span> <span class="mi">3</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>The variable <em>horizontal</em> represents the number of <code class="docutils literal notranslate"><span class="pre">+</span></code> characters with one space between them in the bottom horizontal part.</p></li>
-</ul>
-<p><strong>Examples</strong>
-<img alt="" src="_images/horizontal.png" /></p>
-<p><strong>Solution</strong></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;+&#39;</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">horizontal</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;+&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;+&#39;</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">horizontal</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;+&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;+&#39;</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">horizontal</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;+&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;+&#39;</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">horizontal</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;+&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;+ &#39;</span> <span class="o">*</span><span class="n">horizontal</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;+&#39;</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">horizontal</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;+&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;+&#39;</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">horizontal</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;+&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;+&#39;</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">horizontal</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;+&#39;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;horizontal&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="question-3">
-<h2>Question-3<a class="headerlink" href="#question-3" title="Permalink to this heading">#</a></h2>
+<section id="question-2">
+<h2>Question-2<a class="headerlink" href="#question-2" title="Permalink to this heading">#</a></h2>
 <p>Print the statement “I went to Italy in 2015.” using the country and year variables below.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">country</span> <span class="o">=</span> <span class="s1">&#39;Italy&#39;</span>
 <span class="n">year</span> <span class="o">=</span> <span class="mi">2015</span>
@@ -531,8 +508,8 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="question-4">
-<h2>Question-4<a class="headerlink" href="#question-4" title="Permalink to this heading">#</a></h2>
+<section id="question-3">
+<h2>Question-3<a class="headerlink" href="#question-3" title="Permalink to this heading">#</a></h2>
 <p>Create a variable named <code class="docutils literal notranslate"><span class="pre">r</span></code> and assign the value of <span class="math notranslate nohighlight">\(5\)</span> to it.</p>
 <ul class="simple">
 <li><p>Print the area and perimeter of the circle with a radius equal to <code class="docutils literal notranslate"><span class="pre">r</span></code>.</p></li>
@@ -570,8 +547,45 @@ Area     : 78.54
 </div>
 </div>
 </section>
-<section id="question-5">
-<h2>Question-5<a class="headerlink" href="#question-5" title="Permalink to this heading">#</a></h2>
+<section id="question-4-u-shape">
+<h2>Question-4: U-Shape<a class="headerlink" href="#question-4-u-shape" title="Permalink to this heading">#</a></h2>
+<p>Print the letter <em>U</em> using the character <code class="docutils literal notranslate"><span class="pre">+</span></code> and the variable <em>horizontal</em>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">horizontal</span> <span class="o">=</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>The vertical left and right parts of <em>U</em> have five <code class="docutils literal notranslate"><span class="pre">+</span></code> characters each.</p></li>
+<li><p>The variable <em>horizontal</em> represents the number of <code class="docutils literal notranslate"><span class="pre">+</span></code> characters with one space between them in the bottom horizontal part.</p></li>
+</ul>
+<p><strong>Examples</strong>
+<img alt="" src="_images/horizontal.png" /></p>
+<p><strong>Solution</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;+&#39;</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">horizontal</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;+&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;+&#39;</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">horizontal</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;+&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;+&#39;</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">horizontal</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;+&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;+&#39;</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">horizontal</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;+&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;+ &#39;</span> <span class="o">*</span><span class="n">horizontal</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;+&#39;</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">horizontal</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;+&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;+&#39;</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">horizontal</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;+&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;+&#39;</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">horizontal</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;+&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;horizontal&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-5-v-shape">
+<h2>Question-5: V-Shape<a class="headerlink" href="#question-5-v-shape" title="Permalink to this heading">#</a></h2>
 <p>Print the following using the character <code class="docutils literal notranslate"><span class="pre">*</span></code>, spaces and the variable <code class="docutils literal notranslate"><span class="pre">n=5</span></code>.</p>
 <p><img alt="" src="_images/v_stars.png" /></p>
 <p><strong>Solution</strong></p>
@@ -627,20 +641,222 @@ Area     : 78.54
 </div>
 </div>
 </section>
-<section id="question-7-compound-interest">
-<h2>Question-7: Compound Interest<a class="headerlink" href="#question-7-compound-interest" title="Permalink to this heading">#</a></h2>
-<p>If you deposit 800 dollars into a savings account with a 2.75 percent interest rate compounded monthly, what will be your balance after five years (Round your answer to the  nearest hundredth)?</p>
+<section id="business-applications">
+<h2>Business Applications<a class="headerlink" href="#business-applications" title="Permalink to this heading">#</a></h2>
+<section id="question-demand-function">
+<h3>Question: Demand Function<a class="headerlink" href="#question-demand-function" title="Permalink to this heading">#</a></h3>
+<p><em>The demand, p = D(q), function shows how much of a product consumers want (q=quantity) and the price (p)they are willing to pay.</em></p>
+<p>The demand function is given as the following linear relation: <span class="math notranslate nohighlight">\(p = -2q+300\)</span></p>
 <ul class="simple">
-<li><p>Use the variables: <span class="math notranslate nohighlight">\(P,r,n,t\)</span>, and the following formula:</p></li>
+<li><p>Determine the price if the number of items demanded is 75.</p></li>
+<li><p>Use the variables <span class="math notranslate nohighlight">\(q\)</span> and <span class="math notranslate nohighlight">\(p\)</span>.</p></li>
 </ul>
-<p><span class="math notranslate nohighlight">\(\displaystyle A=P\left(1+{\frac {r}{n}}\right)^{nt}\)</span>
-where:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q</span> <span class="o">=</span> <span class="mi">75</span>
+<span class="n">p</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">q</span><span class="o">+</span><span class="mi">300</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>150
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-demand-equation">
+<h3>Question: Demand Equation<a class="headerlink" href="#question-demand-equation" title="Permalink to this heading">#</a></h3>
+<p>A store can sell 1200 ice creams at 3 dollars each. If the price is 5 dollars, they can sell 800 ice creams.<br />
+What will be the price if 500 ice creams are sold, assuming the demand is linear?</p>
+<p>Hint:</p>
 <ul class="simple">
-<li><p>A is the final amount</p></li>
-<li><p>P is the initial (principal) amount</p></li>
-<li><p>r is the annual interest rate (decimal form)</p></li>
-<li><p>n is the compounding frequency (anual: n=1, semi annual: r=2, quarter: r=4, monthly: r=12)</p></li>
-<li><p>t is the number of years.</p></li>
+<li><p>Since the relation between <code class="docutils literal notranslate"><span class="pre">p</span></code> and <code class="docutils literal notranslate"><span class="pre">q</span></code> is linear, we have <span class="math notranslate nohighlight">\(p=mq+b\)</span></p></li>
+<li><p>The slope <span class="math notranslate nohighlight">\(m\)</span> is calculated using the formula <span class="math notranslate nohighlight">\(\displaystyle m=\frac{p_2-p_1}{q_2-q_1}\)</span> for given two points <span class="math notranslate nohighlight">\((q_1,p_1)\)</span> and <span class="math notranslate nohighlight">\((q_2,p_2)\)</span>.</p></li>
+<li><p>The y-intercept <span class="math notranslate nohighlight">\(b\)</span> can be found using one of the points <span class="math notranslate nohighlight">\((q_1,p_1)\)</span> or <span class="math notranslate nohighlight">\((q_2,p_2)\)</span> so <span class="math notranslate nohighlight">\(b=p_1 - mq_1\)</span> or <span class="math notranslate nohighlight">\(b=p_2 - mq_2\)</span></p></li>
+<li><p>Use the variables <span class="math notranslate nohighlight">\(q_1, p_1, q_2, p_2\)</span> for the given values in the question.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># p stands for price and q stands for quantity</span>
+<span class="n">q1</span><span class="p">,</span> <span class="n">p1</span> <span class="o">=</span> <span class="mi">1200</span><span class="p">,</span> <span class="mi">3</span>
+<span class="n">q2</span><span class="p">,</span> <span class="n">p2</span> <span class="o">=</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># p = mq +b</span>
+<span class="c1"># m is the slope </span>
+
+<span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">p2</span><span class="o">-</span><span class="n">p1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">q2</span><span class="o">-</span><span class="n">q1</span><span class="p">)</span>
+<span class="n">m</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.005
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># b is y-intercept</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">p1</span> <span class="o">-</span> <span class="n">m</span><span class="o">*</span><span class="n">q1</span> 
+<span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># p = -0.005q+9</span>
+<span class="c1"># q = 500, p = ?</span>
+<span class="n">q</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">m</span><span class="o">*</span><span class="n">q</span><span class="o">+</span><span class="n">b</span>
+<span class="n">p</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.5
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-supply-function">
+<h3>Question: Supply Function<a class="headerlink" href="#question-supply-function" title="Permalink to this heading">#</a></h3>
+<p><em>The supply function, <span class="math notranslate nohighlight">\(p=S(q)\)</span>, shows how the price (p) affects the quantity (q) that producers want to supply.</em></p>
+<p>The supply function is given by the linear relation <span class="math notranslate nohighlight">\(p = 4q+100\)</span>.</p>
+<ul class="simple">
+<li><p>Determine the price when 120 items are supplied.</p></li>
+<li><p>Use the variables <span class="math notranslate nohighlight">\(q\)</span> and <span class="math notranslate nohighlight">\(p\)</span>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q</span> <span class="o">=</span> <span class="mi">120</span>
+<span class="n">p</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">q</span><span class="o">+</span><span class="mi">100</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>580
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-supply-equation">
+<h3>Question: Supply Equation<a class="headerlink" href="#question-supply-equation" title="Permalink to this heading">#</a></h3>
+<p>A store can supply 2000 ice creams at 4 dollars each. If the price is 6 dollars, they can supply 6000 ice creams.</p>
+<p>How many ice creams can they supply at 5 dollars, assuming the supply is linear?</p>
+<p>Hint:</p>
+<ul class="simple">
+<li><p>Since the relation between <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(q\)</span> is linear, we have <span class="math notranslate nohighlight">\(p=mq+b\)</span></p></li>
+<li><p>The slope <span class="math notranslate nohighlight">\(m\)</span> is calculated using the formula <span class="math notranslate nohighlight">\(\displaystyle m=\frac{p_2-p_1}{q_2-q_1}\)</span> for given two points <span class="math notranslate nohighlight">\((q_1,p_1)\)</span> and <span class="math notranslate nohighlight">\((q_2,p_2)\)</span>.</p></li>
+<li><p>The y-intercept <span class="math notranslate nohighlight">\(b\)</span> can be found using one of the points <span class="math notranslate nohighlight">\((q_1,p_1)\)</span> or <span class="math notranslate nohighlight">\((q_2,p_2)\)</span> so <span class="math notranslate nohighlight">\(b=p_1 - mq_1\)</span> or <span class="math notranslate nohighlight">\(b=p_2 - mq_2\)</span></p></li>
+<li><p>Use the variables <span class="math notranslate nohighlight">\(q_1, p_1, q_2, p_2\)</span> for the given values in the question.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q1</span><span class="p">,</span> <span class="n">p1</span> <span class="o">=</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">4</span>
+<span class="n">q2</span><span class="p">,</span> <span class="n">p2</span> <span class="o">=</span> <span class="mi">6000</span><span class="p">,</span> <span class="mi">6</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># p = mq +b</span>
+<span class="c1"># m is the slope </span>
+
+<span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">p2</span><span class="o">-</span><span class="n">p1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">q2</span><span class="o">-</span><span class="n">q1</span><span class="p">)</span>
+<span class="n">m</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># b is y-intercept</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">p1</span> <span class="o">-</span> <span class="n">m</span><span class="o">*</span><span class="n">q1</span> 
+<span class="n">b</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># p = -0.0005q+3</span>
+<span class="c1"># q = ?, p = 5</span>
+<span class="c1"># q = (p-3)/0.0005</span>
+<span class="n">p</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">q</span> <span class="o">=</span> <span class="p">(</span><span class="n">p</span><span class="o">-</span><span class="n">b</span><span class="p">)</span><span class="o">/</span><span class="n">m</span>
+<span class="n">q</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-simple-interest">
+<h3>Question: Simple Interest<a class="headerlink" href="#question-simple-interest" title="Permalink to this heading">#</a></h3>
+<p><em>Simple Interest Formulas: <span class="math notranslate nohighlight">\(\displaystyle I=P r t\)</span> and <span class="math notranslate nohighlight">\(A = P + I\)</span> where</em></p>
+<ul class="simple">
+<li><p><em>A is the final amount</em></p></li>
+<li><p><em>I is the interest amount</em></p></li>
+<li><p><em>P is the initial (principal) amount</em></p></li>
+<li><p><em>r is the annual interest rate (decimal form)</em></p></li>
+<li><p><em>t is the number of years</em></p></li>
+</ul>
+<p>You borrow 1,200 dollars for 8 months at a 24% annual simple interest rate.</p>
+<ul class="simple">
+<li><p>How much interest will you pay?</p></li>
+<li><p>What is the total amount you will repay after 8 months?</p></li>
+</ul>
+<p>Hint:</p>
+<ul class="simple">
+<li><p>Use the variables <span class="math notranslate nohighlight">\(P, r, t\)</span>  for the given values.</p></li>
+<li><p>Calculate the values of the variables <span class="math notranslate nohighlight">\(I\)</span> and <span class="math notranslate nohighlight">\(A\)</span>.</p></li>
+<li><p>t is 8/12 years.</p></li>
+</ul>
+<p>Output:<br />
+a) I = 192.0<br />
+b) A = 1392.0</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">P</span> <span class="o">=</span> <span class="mi">1200</span>
+<span class="n">r</span> <span class="o">=</span> <span class="mf">0.24</span>
+<span class="n">t</span> <span class="o">=</span> <span class="mi">8</span><span class="o">/</span><span class="mi">12</span>
+<span class="n">I</span> <span class="o">=</span> <span class="n">P</span><span class="o">*</span><span class="n">r</span><span class="o">*</span><span class="n">t</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">P</span> <span class="o">+</span> <span class="n">I</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a) I =&#39;</span><span class="p">,</span><span class="n">I</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;b) A =&#39;</span><span class="p">,</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="question-compound-interest">
+<h3>Question: Compound Interest<a class="headerlink" href="#question-compound-interest" title="Permalink to this heading">#</a></h3>
+<p><em>Compund interest formula: <span class="math notranslate nohighlight">\(\displaystyle A=P\left(1+{\frac {r}{n}}\right)^{nt}\)</span> where</em></p>
+<ul class="simple">
+<li><p><em>A is the final amount</em></p></li>
+<li><p><em>P is the initial (principal) amount</em></p></li>
+<li><p><em>r is the annual interest rate (decimal form)</em></p></li>
+<li><p><em>n is the compounding frequency (anual: n=1, semi annual: r=2, quarter: r=4, monthly: r=12)</em></p></li>
+<li><p><em>t is the number of years</em></p></li>
+</ul>
+<p>If you deposit 800 dollars into a savings account with a 2.75 percent interest rate compounded monthly, what will be your balance after five years (Round your answer to the  nearest hundredth)?</p>
+<p>Hint:</p>
+<ul class="simple">
+<li><p>Use the variables <span class="math notranslate nohighlight">\(P, r, n, t\)</span>  for the given values.</p></li>
+<li><p>Calculate the value of the variable <span class="math notranslate nohighlight">\(A\)</span>.</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">P</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span>  <span class="mi">800</span><span class="p">,</span> <span class="mf">0.0275</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">5</span>
 <span class="n">A</span> <span class="o">=</span> <span class="n">P</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">r</span><span class="o">/</span><span class="n">n</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
@@ -648,19 +864,21 @@ where:</p>
 </pre></div>
 </div>
 </section>
-<section id="question-8-continous-compound">
-<h2>Question-8: Continous Compound<a class="headerlink" href="#question-8-continous-compound" title="Permalink to this heading">#</a></h2>
-<p>If you deposit 500 dollars into a savings account with a 5.25 percent interest rate compounded continously, what will be your balance after ten years (Round your answer to the  nearest hundredth)?</p>
+<section id="question-continuous-compound-interest">
+<h3>Question: Continuous Compound Interest<a class="headerlink" href="#question-continuous-compound-interest" title="Permalink to this heading">#</a></h3>
+<p><em>Continuous Compound Interest formula: <span class="math notranslate nohighlight">\(\displaystyle A=Pe^{rt}\)</span> where</em></p>
 <ul class="simple">
-<li><p>Use the variables: <span class="math notranslate nohighlight">\(P,r,t\)</span>, and the following formula:</p></li>
+<li><p><em>A is the final amount</em></p></li>
+<li><p><em>P is the initial (principal) amount</em></p></li>
+<li><p><em>r is the annual interest rate (decimal form)</em></p></li>
+<li><p><em>t is the number of years</em></p></li>
 </ul>
-<p><span class="math notranslate nohighlight">\(\displaystyle A=Pe^{rt}\)</span>
-where:</p>
+<p>If you deposit 500 dollars into a savings account with a 5.25 percent interest rate compounded continuously, what will be your balance after ten years (Round your answer to the  nearest hundredth)?</p>
+<p>Hint:</p>
 <ul class="simple">
-<li><p>A is the final amount</p></li>
-<li><p>P is the initial (principal) amount</p></li>
-<li><p>r is the annual interest rate (decimal form)</p></li>
-<li><p>t is the number of years.</p></li>
+<li><p>Use the variables <span class="math notranslate nohighlight">\(P, r, t\)</span>  for the given values.</p></li>
+<li><p>Calculate the value of the variable <span class="math notranslate nohighlight">\(A\)</span>.</p></li>
+<li><p>import the number <em>e</em> from the math module.</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 <span class="n">P</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span>  <span class="mi">500</span><span class="p">,</span> <span class="mf">0.0525</span><span class="p">,</span> <span class="mi">10</span>
@@ -668,6 +886,7 @@ where:</p>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A=&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
 </pre></div>
 </div>
+</section>
 </section>
 </section>
 
@@ -717,13 +936,21 @@ where:</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question-1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-u-shape">Question-2: U-Shape</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question-2</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question-3</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question-4</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question-5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4-u-shape">Question-4: U-Shape</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5-v-shape">Question-5: V-Shape</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6-h-shape">Question-6: H-Shape</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7-compound-interest">Question-7: Compound Interest</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8-continous-compound">Question-8: Continous Compound</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#business-applications">Business Applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-demand-function">Question: Demand Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-demand-equation">Question: Demand Equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-supply-function">Question: Supply Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-supply-equation">Question: Supply Equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-simple-interest">Question: Simple Interest</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-compound-interest">Question: Compound Interest</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-continuous-compound-interest">Question: Continuous Compound Interest</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

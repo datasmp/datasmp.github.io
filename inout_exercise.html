@@ -263,13 +263,21 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="dictionaries_exercise.html">Dictionaries Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="numpy_arrays.html">Chp-12: Numpy Arrays</a></li>
-<li class="toctree-l1"><a class="reference internal" href="visualization.html">Chp-13: Visualization</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="appendix.html">Appendix</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="math.html">App-A: Math Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statistics.html">App-B: Statistics Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="random.html">App-C: Random Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="seaborn.html">App-D: Seaborn Library</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="projects.html">Projects</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="project_factorization.html">Project: Factorization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_elections.html">Project: Election Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_soccer.html">Project: Soccer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_smoothing.html">Project: Smoothing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_riemann.html">Project: Approximating Areas</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="appendix.html">Appendix</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="app_visualization.html">App: Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_business.html">App: Business Glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_math.html">App: Math Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_statistics.html">App: Statistics Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_random.html">App: Random Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_seaborn.html">App: Seaborn Library</a></li>
 </ul>
 </li>
 </ul>
@@ -430,6 +438,12 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-10-standard-scaling">Question-10: Standard Scaling</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-11-minmax-scaling">Question-11: MinMax Scaling</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-12-square">Question-12: Square</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#business-applications">Business Applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-production-data-analysis">Question: Production Data Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-revenue">Question: Revenue</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-simple-interest">Question: Simple Interest</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -443,6 +457,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="input-and-output-exercises">
 <h1>Input and Output Exercises<a class="headerlink" href="#input-and-output-exercises" title="Permalink to this heading">#</a></h1>
+<p><img alt="" src="_images/io_exercises2.png" /></p>
 <section id="question-1">
 <h2>Question-1<a class="headerlink" href="#question-1" title="Permalink to this heading">#</a></h2>
 <p>Write a single print statement that produces the following output:<br />
@@ -453,7 +468,7 @@ E</p>
 </section>
 <section id="question-2">
 <h2>Question-2<a class="headerlink" href="#question-2" title="Permalink to this heading">#</a></h2>
-<p>Use 2 <em>print()</em> functions, and the strings ‘A’, ‘B’, ‘C’, ‘D’  to generate the following output.
+<p>Use two <em>print()</em> functions, and the strings ‘A’, ‘B’, ‘C’, ‘D’  to generate the following output.
 A—B—C—D</p>
 </section>
 <section id="question-3">
@@ -467,8 +482,8 @@ A—B—C—D</p>
 <li><p>Find the harmonic mean of these numbers using the formula:
 <span class="math notranslate nohighlight">\(\displaystyle H(x, y, z) = \frac{3}{\frac{1}{x}+\frac{1}{y}+\frac{1}{z}}\)</span></p></li>
 <li><p>Round the harmonic mean to the nearest hundredth and print it in the following format: <span class="math notranslate nohighlight">\(H(x,y,z)=\)</span> rounded harmonic mean.</p></li>
-<li><p>Sample Output:</p></li>
 </ul>
+<p>Sample Output:</p>
 <p>Enter x:  2<br />
 Enter y:  3<br />
 Enter z:  4</p>
@@ -494,7 +509,7 @@ Please enter an integer: 5<br />
 </section>
 <section id="question-6">
 <h2>Question-6<a class="headerlink" href="#question-6" title="Permalink to this heading">#</a></h2>
-<p>Write a program that prompts the user for a number and a word using 2 <em>input()</em> functions.</p>
+<p>Write a program that prompts the user for a number and a word using three <em>input()</em> functions.</p>
 <ul class="simple">
 <li><p>Print the given word as many times as the given number.</p></li>
 </ul>
@@ -560,6 +575,43 @@ Please enter an integer: 5<br />
 </div>
 <p><strong>Examples</strong>
 <img alt="" src="_images/square_star.png" /></p>
+</section>
+<section id="business-applications">
+<h2>Business Applications<a class="headerlink" href="#business-applications" title="Permalink to this heading">#</a></h2>
+<section id="question-production-data-analysis">
+<h3>Question: Production Data Analysis<a class="headerlink" href="#question-production-data-analysis" title="Permalink to this heading">#</a></h3>
+<p>Write a program that prompts the user for 5 numbers using five input() functions, each representing the annual production for the last five years.</p>
+<p>Calculate the total, average, and highest production using built-in functions.</p>
+</section>
+<section id="question-revenue">
+<h3>Question: Revenue<a class="headerlink" href="#question-revenue" title="Permalink to this heading">#</a></h3>
+<p>Revenue (R) is the product of the number (n) of items sold  and the price (p) of the item.</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(R = p\cdot n\)</span></p></li>
+</ul>
+<p>Write a program that ask the user for the price of an item and calculate the revenue using the following formula for the number of item sold.</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( n = -1.5p+30 \)</span></p></li>
+</ul>
+</section>
+<section id="question-simple-interest">
+<h3>Question: Simple Interest<a class="headerlink" href="#question-simple-interest" title="Permalink to this heading">#</a></h3>
+<p><em>Simple Interest Formulas: <span class="math notranslate nohighlight">\(\displaystyle I=P r t\)</span> and <span class="math notranslate nohighlight">\(A = P + I\)</span> where</em></p>
+<ul class="simple">
+<li><p><em>A is the final amount</em></p></li>
+<li><p><em>I is the interest amount</em></p></li>
+<li><p><em>P is the initial (principal) amount</em></p></li>
+<li><p><em>r is the annual interest rate (decimal form)</em></p></li>
+<li><p><em>t is the number of years</em></p></li>
+</ul>
+<p>Write a program that asks the user for the principal, annual interest rate, and number of years using three <em>input()</em> functions one by one, and then returns the interest and final amount.</p>
+<p>Sample Output:<br />
+Please enter the principal: 1500<br />
+Please enter the annual interest rate: 0.025<br />
+Please enter the year: 20<br />
+I = 750.0<br />
+A = 2250.0</p>
+</section>
 </section>
 </section>
 
@@ -638,6 +690,12 @@ Please enter an integer: 5<br />
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-10-standard-scaling">Question-10: Standard Scaling</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-11-minmax-scaling">Question-11: MinMax Scaling</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-12-square">Question-12: Square</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#business-applications">Business Applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-production-data-analysis">Question: Production Data Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-revenue">Question: Revenue</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-simple-interest">Question: Simple Interest</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

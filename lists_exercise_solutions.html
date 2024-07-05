@@ -261,13 +261,21 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="dictionaries_exercise.html">Dictionaries Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="numpy_arrays.html">Chp-12: Numpy Arrays</a></li>
-<li class="toctree-l1"><a class="reference internal" href="visualization.html">Chp-13: Visualization</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="appendix.html">Appendix</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="math.html">App-A: Math Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statistics.html">App-B: Statistics Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="random.html">App-C: Random Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="seaborn.html">App-D: Seaborn Library</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="projects.html">Projects</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="project_factorization.html">Project: Factorization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_elections.html">Project: Election Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_soccer.html">Project: Soccer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_smoothing.html">Project: Smoothing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_riemann.html">Project: Approximating Areas</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="appendix.html">Appendix</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="app_visualization.html">App: Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_business.html">App: Business Glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_math.html">App: Math Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_statistics.html">App: Statistics Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_random.html">App: Random Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_seaborn.html">App: Seaborn Library</a></li>
 </ul>
 </li>
 </ul>
@@ -430,6 +438,18 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-12">Question-12</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-13">Question-13</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-14">Question-14</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#business-applications">Business Applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-max-of-revenue">Question: Max of Revenue</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-profit">Question: Profit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-break-even-point">Question: Break-Even Point</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-exponential-depreciation">Question: Exponential Depreciation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-demand-function">Question: Demand Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-supply-function">Question: Supply Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-equilibrium-point">Question: Equilibrium Point</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-stock-percentage-changes">Question: Stock Percentage Changes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-stock-behavior">Question: Stock Behavior</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -445,6 +465,68 @@ document.write(`
 <h1>Lists Exercises and Solutions<a class="headerlink" href="#lists-exercises-and-solutions" title="Permalink to this heading">#</a></h1>
 <section id="question-1">
 <h2>Question-1<a class="headerlink" href="#question-1" title="Permalink to this heading">#</a></h2>
+<p>Create a list with the elements: <span class="math notranslate nohighlight">\(10, 20, 30, 40, 10, 20, 30, 10, 20\)</span> and print the following information about this tuple:</p>
+<ul class="simple">
+<li><p>The number of occurrences of 30.</p></li>
+<li><p>The element at index 5.</p></li>
+<li><p>The third element.</p></li>
+<li><p>The index of the first occurrence of 20.</p></li>
+<li><p>The index of the second occurrence of 20.</p></li>
+<li><p>The index of the third occurrence of 20.</p></li>
+<li><p>The length (number of elements) of the list.</p></li>
+<li><p>The maximum, minimum, and the sum of the elements.</p></li>
+<li><p>The last four elements using slicing.</p></li>
+<li><p>The first five elements using slicing.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">30</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mylist</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">mylist</span><span class="p">),</span> <span class="nb">min</span><span class="p">(</span><span class="n">mylist</span><span class="p">),</span> <span class="nb">sum</span><span class="p">(</span><span class="n">mylist</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>
+</pre></div>
+</div>
+</section>
+<section id="question-2">
+<h2>Question-2<a class="headerlink" href="#question-2" title="Permalink to this heading">#</a></h2>
+<p>Create a list with the elements: <span class="math notranslate nohighlight">\('a', 5, 8, 'b'\)</span> and perform the following operations on it, printing it after each operation:</p>
+<ul class="simple">
+<li><p>Add 99.</p></li>
+<li><p>Add 100 as the second element to the list.</p></li>
+<li><p>Add all elements from the list [2, 6, 5, 9, 1, 1, 5].</p></li>
+<li><p>Remove ‘a’ using the pop() method.</p></li>
+<li><p>Remove ‘b’ using the remove() method.</p></li>
+<li><p>Reverse the order of the list.</p></li>
+<li><p>Sort it in ascending order.</p></li>
+<li><p>Sort it in descending order.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">]</span>
+<span class="n">mylist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">99</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
+<span class="n">mylist</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
+<span class="n">mylist</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
+<span class="n">mylist</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
+<span class="n">mylist</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
+<span class="n">mylist</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
+<span class="n">mylist</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
+<span class="n">mylist</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="question-3">
+<h2>Question-3<a class="headerlink" href="#question-3" title="Permalink to this heading">#</a></h2>
 <p>Store the unique values in the following list into a list and sort them.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 </pre></div>
@@ -472,8 +554,8 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="question-2">
-<h2>Question-2<a class="headerlink" href="#question-2" title="Permalink to this heading">#</a></h2>
+<section id="question-4">
+<h2>Question-4<a class="headerlink" href="#question-4" title="Permalink to this heading">#</a></h2>
 <p>Generate a list containing numbers from 4 to 9, inclusive.</p>
 <ul class="simple">
 <li><p>Construct a multiplication table for these numbers to resemble a 6 by 6 matrix and print it.</p></li>
@@ -540,8 +622,8 @@ Sum of the row values: [156, 195, 234, 273, 312, 351]
 </div>
 </div>
 </section>
-<section id="question-3">
-<h2>Question-3<a class="headerlink" href="#question-3" title="Permalink to this heading">#</a></h2>
+<section id="question-5">
+<h2>Question-5<a class="headerlink" href="#question-5" title="Permalink to this heading">#</a></h2>
 <p>Use list comprehension and random.randint() to construct two lists:</p>
 <ul class="simple">
 <li><p>Generate ten random numbers between 1 and 20, stored in a list called left_list.</p></li>
@@ -562,23 +644,23 @@ Sum of the row values: [156, 195, 234, 273, 312, 351]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>----------???????-------------
----------------?????????------
---------------??--------------
------------????---------------
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------?---------------------
+----------------??????????----
+--------??--------------------
+----------???-----------------
+-------------?????------------
+---------?????----------------
 ------------------??----------
+---??????---------------------
 ------?????????---------------
----?????----------------------
---------------??--------------
-------------------??????????--
-------?????-------------------
+--------------------?????-----
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="question-4">
-<h2>Question-4<a class="headerlink" href="#question-4" title="Permalink to this heading">#</a></h2>
+<section id="question-6">
+<h2>Question-6<a class="headerlink" href="#question-6" title="Permalink to this heading">#</a></h2>
 <p>Choose a random 6-digit number and store its unique digits in a list as integers and in descending order.</p>
 <ul class="simple">
 <li><p>Display the number and its unique digits.</p></li>
@@ -607,14 +689,14 @@ Sum of the row values: [156, 195, 234, 273, 312, 351]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The unique digits of 477314 are [7, 4, 3, 1]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The unique digits of 553961 are [9, 6, 5, 3, 1]
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="question-5">
-<h2>Question-5<a class="headerlink" href="#question-5" title="Permalink to this heading">#</a></h2>
+<section id="question-7">
+<h2>Question-7<a class="headerlink" href="#question-7" title="Permalink to this heading">#</a></h2>
 <p>Choose a random 6-digit number and verify if all of its digits are distinct.</p>
 <ul class="simple">
 <li><p>Avoid the use of sets.</p></li>
@@ -648,14 +730,14 @@ Sum of the row values: [156, 195, 234, 273, 312, 351]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The number 641158 contains repeated digits.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The number 733145 contains repeated digits.
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="question-6">
-<h2>Question-6<a class="headerlink" href="#question-6" title="Permalink to this heading">#</a></h2>
+<section id="question-8">
+<h2>Question-8<a class="headerlink" href="#question-8" title="Permalink to this heading">#</a></h2>
 <p>Choose a random 6-digit number whose digits are distinct.</p>
 <ul class="simple">
 <li><p>Avoid the use of sets.</p></li>
@@ -679,14 +761,14 @@ Sum of the row values: [156, 195, 234, 273, 312, 351]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The number 261985 has distinct digits.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The number 845617 has distinct digits.
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="question-7">
-<h2>Question-7<a class="headerlink" href="#question-7" title="Permalink to this heading">#</a></h2>
+<section id="question-9">
+<h2>Question-9<a class="headerlink" href="#question-9" title="Permalink to this heading">#</a></h2>
 <p>Choose ten random 6-digit numbers whose digits are distinct and store them in a list as integers.</p>
 <ul class="simple">
 <li><p>Avoid the use of sets.</p></li>
@@ -713,14 +795,14 @@ Sum of the row values: [156, 195, 234, 273, 312, 351]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[564810, 258103, 673412, 150768, 784125, 810265, 526873, 907564, 380417, 528361]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[815026, 725689, 374826, 926817, 923560, 801734, 205681, 618927, 803594, 421837]
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="question-8">
-<h2>Question-8<a class="headerlink" href="#question-8" title="Permalink to this heading">#</a></h2>
+<section id="question-10">
+<h2>Question-10<a class="headerlink" href="#question-10" title="Permalink to this heading">#</a></h2>
 <p>Choose two random 6-digit numbers whose digits are distinct and store them in a list as integers.</p>
 <ul class="simple">
 <li><p>Store the common digits of these two numbers in a list.</p></li>
@@ -761,14 +843,14 @@ Sum of the row values: [156, 195, 234, 273, 312, 351]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The common digits of 206914 and 739145 are [9, 1, 4].
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The common digits of 963250 and 568302 are [6, 3, 2, 5, 0].
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="question-9">
-<h2>Question-9<a class="headerlink" href="#question-9" title="Permalink to this heading">#</a></h2>
+<section id="question-11">
+<h2>Question-11<a class="headerlink" href="#question-11" title="Permalink to this heading">#</a></h2>
 <p>Choose two random 6-digit numbers with distinct digits and store them as integers in a list.</p>
 <ul class="simple">
 <li><p>Store the common digits of these two numbers in another list.</p></li>
@@ -835,73 +917,11 @@ Sum of the row values: [156, 195, 234, 273, 312, 351]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The common digits of 106487 and 248605 are [0, 6, 4, 8].
-Positive Count: 0  ---   Negative Count: -4
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The common digits of 283170 and 734910 are [3, 1, 7, 0].
+Positive Count: 1  ---   Negative Count: -3
 </pre></div>
 </div>
 </div>
-</div>
-</section>
-<section id="question-10">
-<h2>Question-10<a class="headerlink" href="#question-10" title="Permalink to this heading">#</a></h2>
-<p>Create a list with the elements: <span class="math notranslate nohighlight">\(10, 20, 30, 40, 10, 20, 30, 10, 20\)</span> and print the following information about this tuple:</p>
-<ul class="simple">
-<li><p>The number of occurrences of 30.</p></li>
-<li><p>The element at index 5.</p></li>
-<li><p>The third element.</p></li>
-<li><p>The index of the first occurrence of 20.</p></li>
-<li><p>The index of the second occurrence of 20.</p></li>
-<li><p>The index of the third occurrence of 20.</p></li>
-<li><p>The length (number of elements) of the list.</p></li>
-<li><p>The maximum, minimum, and the sum of the elements.</p></li>
-<li><p>The last four elements using slicing.</p></li>
-<li><p>The first five elements using slicing.</p></li>
-</ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">30</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mylist</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">mylist</span><span class="p">),</span> <span class="nb">min</span><span class="p">(</span><span class="n">mylist</span><span class="p">),</span> <span class="nb">sum</span><span class="p">(</span><span class="n">mylist</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>
-</pre></div>
-</div>
-</section>
-<section id="question-11">
-<h2>Question-11<a class="headerlink" href="#question-11" title="Permalink to this heading">#</a></h2>
-<p>Create a list with the elements: <span class="math notranslate nohighlight">\('a', 5, 8, 'b'\)</span> and perform the following operations on it, printing it after each operation:</p>
-<ul class="simple">
-<li><p>Add 99.</p></li>
-<li><p>Add 100 as the second element to the list.</p></li>
-<li><p>Add all elements from the list [2, 6, 5, 9, 1, 1, 5].</p></li>
-<li><p>Remove ‘a’ using the pop() method.</p></li>
-<li><p>Remove ‘b’ using the remove() method.</p></li>
-<li><p>Reverse the order of the list.</p></li>
-<li><p>Sort it in ascending order.</p></li>
-<li><p>Sort it in descending order.</p></li>
-</ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">]</span>
-<span class="n">mylist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">99</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
-<span class="n">mylist</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
-<span class="n">mylist</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
-<span class="n">mylist</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
-<span class="n">mylist</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
-<span class="n">mylist</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
-<span class="n">mylist</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
-<span class="n">mylist</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
-</pre></div>
 </div>
 </section>
 <section id="question-12">
@@ -972,6 +992,343 @@ The final version of the total list should be: [sum of 9th graders’ exam resul
 </pre></div>
 </div>
 </section>
+<section id="business-applications">
+<h2>Business Applications<a class="headerlink" href="#business-applications" title="Permalink to this heading">#</a></h2>
+<section id="question-max-of-revenue">
+<h3>Question: Max of Revenue<a class="headerlink" href="#question-max-of-revenue" title="Permalink to this heading">#</a></h3>
+<p>Revenue (R) is the product of the number (n) of items sold  and the price (p) of the item.</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(R = p\cdot n\)</span></p></li>
+</ul>
+<p>The number of item sold is given by the following equation: <span class="math notranslate nohighlight">\(n = -1.5p+30\)</span></p>
+<ul class="simple">
+<li><p>Construct a list that consists of the revenues for  <span class="math notranslate nohighlight">\(0\le p \le 20\)</span>.</p></li>
+<li><p>Plot the graph of revenue for <span class="math notranslate nohighlight">\(0\le p \le 20\)</span></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">p_values</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">)</span>
+<span class="n">revenue</span> <span class="o">=</span> <span class="p">[</span> <span class="n">p</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="mf">1.5</span><span class="o">*</span><span class="n">p</span><span class="o">+</span><span class="mi">30</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">p_values</span> <span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">p_values</span><span class="p">,</span> <span class="n">revenue</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Revenue&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/31c52bddee2884b5d586302cf4147fa0be6435b39fbdd981057aac344ddfa29f.png" src="_images/31c52bddee2884b5d586302cf4147fa0be6435b39fbdd981057aac344ddfa29f.png" />
+</div>
+</div>
+</section>
+<section id="question-profit">
+<h3>Question: Profit<a class="headerlink" href="#question-profit" title="Permalink to this heading">#</a></h3>
+<p>Profit (P) is the difference between Revenue and Cost</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(Profit = Revenue - Cost\)</span></p></li>
+</ul>
+<p>The monthly fixed cost of a cable factory is 1500 dollars. Each cable costs 13 dollars and sells for 25 dollars.</p>
+<ul class="simple">
+<li><p>For what number of cables produced profit is zero.</p>
+<ul>
+<li><p>Hint: Calculate the profit for <span class="math notranslate nohighlight">\(n\)</span> between 1 and 400.</p></li>
+</ul>
+</li>
+<li><p>Construct three lists that consist of the revenues, costs, and profits for  <span class="math notranslate nohighlight">\(0\le p \le 400\)</span>.</p></li>
+<li><p>Plot the reveue, cost, profit for producing up to 400 cables.</p></li>
+<li><p>Draw a vertical line where the profit is zero for <span class="math notranslate nohighlight">\(n\)</span>.</p></li>
+</ul>
+<p>Sample Plot:</p>
+<p><img alt="" src="_images/list_ques_profit.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_values</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">401</span><span class="p">)</span>
+<span class="n">revenues</span> <span class="o">=</span> <span class="p">[</span><span class="mi">25</span><span class="o">*</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">n_values</span><span class="p">]</span> 
+<span class="n">costs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">13</span><span class="o">*</span><span class="n">n</span><span class="o">+</span><span class="mi">1500</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">n_values</span><span class="p">]</span> 
+<span class="n">profits</span> <span class="o">=</span> <span class="p">[</span><span class="mi">25</span><span class="o">*</span><span class="n">n</span> <span class="o">-</span> <span class="p">(</span><span class="mi">13</span><span class="o">*</span><span class="n">n</span><span class="o">+</span><span class="mi">1500</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">n_values</span><span class="p">]</span> 
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n_values</span><span class="p">,</span> <span class="n">revenues</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;revenue&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n_values</span><span class="p">,</span> <span class="n">costs</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;cost&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n_values</span><span class="p">,</span> <span class="n">profits</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;profit&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span><span class="mi">400</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">2000</span><span class="p">,</span><span class="mi">10000</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="mi">125</span><span class="p">,</span><span class="o">-</span><span class="mi">2000</span><span class="p">,</span><span class="mi">10000</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;pict/list_ques_profit.png&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/f61d64193be1e6b513b2aa2e42219a67841a355e589be45dbc80a76a38a43cc2.png" src="_images/f61d64193be1e6b513b2aa2e42219a67841a355e589be45dbc80a76a38a43cc2.png" />
+</div>
+</div>
+</section>
+<section id="question-break-even-point">
+<h3>Question: Break-Even Point<a class="headerlink" href="#question-break-even-point" title="Permalink to this heading">#</a></h3>
+<p>Break-Even Point is the point where total cost equals total revenue, meaning profit is zero.</p>
+<p>For the given cost and the revenue functions find the break-even point and plot it.</p>
+<p><span class="math notranslate nohighlight">\(C(n) = 0.5n +2000\)</span></p>
+<p><span class="math notranslate nohighlight">\(R(n) = 2.5n\)</span></p>
+<p>Hint: Calculate the cost and revenue for n between 1 and 10,000.</p>
+<p>Sample Plot:</p>
+<p><img alt="" src="_images/list_ques_be.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">):</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">n</span> <span class="o">+</span> <span class="mi">2000</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="mf">2.5</span><span class="o">*</span><span class="n">n</span>
+    <span class="k">if</span> <span class="n">c</span> <span class="o">==</span> <span class="n">r</span><span class="p">:</span>
+        <span class="n">be1</span><span class="p">,</span> <span class="n">be2</span> <span class="o">=</span> <span class="n">n</span><span class="p">,</span> <span class="n">c</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The break-even point is (</span><span class="si">{</span><span class="n">be1</span><span class="si">}</span><span class="s1">,</span><span class="si">{</span><span class="n">be2</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The break-even point is (1000,2500.0)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_values</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3000</span><span class="p">)</span>
+<span class="n">revenues</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2.5</span><span class="o">*</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">n_values</span><span class="p">]</span> 
+<span class="n">costs</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.5</span><span class="o">*</span><span class="n">n</span><span class="o">+</span><span class="mi">2000</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">n_values</span><span class="p">]</span> 
+<span class="n">profits</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2.5</span><span class="o">*</span><span class="n">n</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.5</span><span class="o">*</span><span class="n">n</span><span class="o">+</span><span class="mi">2000</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">n_values</span><span class="p">]</span> 
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n_values</span><span class="p">,</span> <span class="n">revenues</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;revenue&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n_values</span><span class="p">,</span> <span class="n">costs</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;cost&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n_values</span><span class="p">,</span> <span class="n">profits</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;profit&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span><span class="mi">3000</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">2000</span><span class="p">,</span><span class="mi">6000</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">be1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">be2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">4000</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;break even point &#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">3500</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;(</span><span class="si">{</span><span class="n">be1</span><span class="si">}</span><span class="s1">,</span><span class="si">{</span><span class="n">be2</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">3300</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span><span class="o">-</span><span class="mi">600</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;pict/list_ques_be.png&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/0eb087ef4c84d668a9f83cdd241ba20c5840f123eb0c46f809c0f687744b574d.png" src="_images/0eb087ef4c84d668a9f83cdd241ba20c5840f123eb0c46f809c0f687744b574d.png" />
+</div>
+</div>
+</section>
+<section id="question-exponential-depreciation">
+<h3>Question: Exponential Depreciation<a class="headerlink" href="#question-exponential-depreciation" title="Permalink to this heading">#</a></h3>
+<p>The value <span class="math notranslate nohighlight">\(V\)</span> of a truck in dollars is given by the formula <span class="math notranslate nohighlight">\(V(t)=140000(1.35)^{-0.6t}\)</span>  where <span class="math notranslate nohighlight">\(t\)</span> is the age of the truck in years.</p>
+<ul class="simple">
+<li><p>Plot the graph of values of the truck in 30 years.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">years</span>  <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">140000</span><span class="o">*</span><span class="p">(</span><span class="mf">1.35</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">0.6</span><span class="o">*</span><span class="n">t</span><span class="p">))</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">years</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">years</span><span class="p">,</span> <span class="n">values</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/38bb83439d38798faacf4a0ab7631d4f1e55fa9c8d76382ebf544c1d6d51be40.png" src="_images/38bb83439d38798faacf4a0ab7631d4f1e55fa9c8d76382ebf544c1d6d51be40.png" />
+</div>
+</div>
+</section>
+<section id="question-demand-function">
+<h3>Question: Demand Function<a class="headerlink" href="#question-demand-function" title="Permalink to this heading">#</a></h3>
+<p>If the demand function is given as the following linear relation <span class="math notranslate nohighlight">\(p = -2q+300\)</span>.</p>
+<ul class="simple">
+<li><p>Plot the demand function for <span class="math notranslate nohighlight">\(1\le q\le 200\)</span>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q_values</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">201</span><span class="p">)</span>
+<span class="n">p_values</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">q</span><span class="o">+</span><span class="mi">300</span> <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">q_values</span> <span class="p">]</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q_values</span><span class="p">,</span> <span class="n">p_values</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span><span class="mi">400</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/af7176dad5da120dd5f6417a43ae16f91f50736befd479c1c4f51c5a816db3f4.png" src="_images/af7176dad5da120dd5f6417a43ae16f91f50736befd479c1c4f51c5a816db3f4.png" />
+</div>
+</div>
+</section>
+<section id="question-supply-function">
+<h3>Question: Supply Function<a class="headerlink" href="#question-supply-function" title="Permalink to this heading">#</a></h3>
+<p>If the supply function is given by the linear relation
+<span class="math notranslate nohighlight">\(p = 4q+100\)</span>.</p>
+<ul class="simple">
+<li><p>Plot the supply function for <span class="math notranslate nohighlight">\(1\le q\le 100\)</span>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q_values</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">)</span>
+<span class="n">p_values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="o">*</span><span class="n">q</span><span class="o">+</span><span class="mi">100</span> <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">q_values</span> <span class="p">]</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q_values</span><span class="p">,</span> <span class="n">p_values</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span><span class="mi">600</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/a4fb4cb014af1ff65bed580c76df8404b0a68da0d4b15629db47da9b052e53d5.png" src="_images/a4fb4cb014af1ff65bed580c76df8404b0a68da0d4b15629db47da9b052e53d5.png" />
+</div>
+</div>
+</section>
+<section id="question-equilibrium-point">
+<h3>Question: Equilibrium Point<a class="headerlink" href="#question-equilibrium-point" title="Permalink to this heading">#</a></h3>
+<p><em>An equilibrium point is where the demand and supply curves intersect.</em></p>
+<p>For the given demand and the supply functions find the equilibrium point and plot it.</p>
+<p>Demand: <span class="math notranslate nohighlight">\(p(q) = -0.03q + 1000\)</span></p>
+<p>Supply: <span class="math notranslate nohighlight">\(p(q) = 0.02q + 400\)</span></p>
+<ul class="simple">
+<li><p>Hint: Calculate the demand and supply for <span class="math notranslate nohighlight">\(q\)</span> between 0 and 20,000.</p></li>
+</ul>
+<p>Sample plot:</p>
+<p><img alt="" src="_images/lists_ques_ep.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20_001</span><span class="p">):</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.03</span><span class="o">*</span><span class="n">q</span> <span class="o">+</span> <span class="mi">1000</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="mf">0.02</span><span class="o">*</span><span class="n">q</span> <span class="o">+</span> <span class="mi">400</span>
+    <span class="k">if</span> <span class="n">d</span> <span class="o">==</span> <span class="n">s</span><span class="p">:</span>
+        <span class="n">e1</span><span class="p">,</span> <span class="n">e2</span> <span class="o">=</span> <span class="n">q</span><span class="p">,</span> <span class="n">d</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The equilibrium point is (</span><span class="si">{</span><span class="n">e1</span><span class="si">}</span><span class="s1">,</span><span class="si">{</span><span class="n">e2</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The equilibrium point is (12000,640.0)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q_values</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">20000</span><span class="p">)</span>
+<span class="n">demands</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.03</span><span class="o">*</span><span class="n">q</span> <span class="o">+</span> <span class="mi">1000</span> <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">q_values</span><span class="p">]</span> 
+<span class="n">supplies</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.02</span><span class="o">*</span><span class="n">q</span> <span class="o">+</span> <span class="mi">400</span> <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">q_values</span><span class="p">]</span> 
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q_values</span><span class="p">,</span> <span class="n">demands</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;demand&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q_values</span><span class="p">,</span> <span class="n">supplies</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;supply&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1000</span><span class="p">,</span><span class="mi">20000</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span><span class="mi">1200</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="c1"># plt.vlines(e1,0,e2, color=&#39;r&#39;)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">e1</span><span class="o">-</span><span class="mi">2000</span><span class="p">,</span> <span class="n">e2</span><span class="o">+</span><span class="mi">250</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;equilibrium point &#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">e1</span><span class="o">-</span><span class="mi">2000</span><span class="p">,</span> <span class="n">e2</span><span class="o">+</span><span class="mi">200</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;(</span><span class="si">{</span><span class="n">e1</span><span class="si">}</span><span class="s1">,</span><span class="si">{</span><span class="n">e2</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="n">e1</span><span class="p">,</span> <span class="n">e2</span><span class="o">+</span><span class="mi">180</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span> <span class="n">head_length</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;pict/lists_ques_ep.png&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ffaeaeff1476e60fde6e61cf265bbcb9e6b6982956c1a006a2b36628f2fc2776.png" src="_images/ffaeaeff1476e60fde6e61cf265bbcb9e6b6982956c1a006a2b36628f2fc2776.png" />
+</div>
+</div>
+</section>
+<section id="question-stock-percentage-changes">
+<h3>Question: Stock Percentage Changes<a class="headerlink" href="#question-stock-percentage-changes" title="Permalink to this heading">#</a></h3>
+<p>The following is a list of the prices for Tesla stock over a certain period of time.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">stock_prices</span> <span class="o">=</span> <span class="p">[</span><span class="mf">174.9499969482422</span><span class="p">,</span>
+ <span class="mf">186.60000610351562</span><span class="p">,</span>
+ <span class="mf">180.11000061035156</span><span class="p">,</span>
+ <span class="mf">173.74000549316406</span><span class="p">,</span>
+ <span class="mf">179.24000549316406</span><span class="p">,</span>
+ <span class="mf">176.75</span><span class="p">,</span>
+ <span class="mf">176.19000244140625</span><span class="p">,</span>
+ <span class="mf">178.7899932861328</span><span class="p">,</span>
+ <span class="mf">178.0800018310547</span><span class="p">,</span>
+ <span class="mf">176.2899932861328</span><span class="p">,</span>
+ <span class="mf">174.77000427246094</span><span class="p">,</span>
+ <span class="mf">175.0</span><span class="p">,</span>
+ <span class="mf">177.94000244140625</span><span class="p">,</span>
+ <span class="mf">177.47999572753906</span><span class="p">,</span>
+ <span class="mf">173.7899932861328</span><span class="p">,</span>
+ <span class="mf">170.66000366210938</span><span class="p">,</span>
+ <span class="mf">177.2899932861328</span><span class="p">,</span>
+ <span class="mf">182.47000122070312</span><span class="p">,</span>
+ <span class="mf">178.00999450683594</span><span class="p">,</span>
+ <span class="mf">187.44000244140625</span><span class="p">,</span>
+ <span class="mf">184.86000061035156</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Create a list of percentage changes using the stock_prices list.</p>
+<ul class="simple">
+<li><p>The first element of the percentage list is np.nan because there is no price available for the previous day.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">pct_changes</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">stock_prices</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">pct</span> <span class="o">=</span> <span class="p">(</span><span class="n">stock_prices</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">stock_prices</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">/</span><span class="n">stock_prices</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">pct_changes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pct</span><span class="p">)</span>
+<span class="n">pct_changes</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="question-stock-behavior">
+<h3>Question: Stock Behavior<a class="headerlink" href="#question-stock-behavior" title="Permalink to this heading">#</a></h3>
+<p>The following is a list of the prices for Tesla stock over a certain period of time.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">stock_prices</span> <span class="o">=</span> <span class="p">[</span><span class="mf">174.9499969482422</span><span class="p">,</span>
+ <span class="mf">186.60000610351562</span><span class="p">,</span>
+ <span class="mf">180.11000061035156</span><span class="p">,</span>
+ <span class="mf">173.74000549316406</span><span class="p">,</span>
+ <span class="mf">179.24000549316406</span><span class="p">,</span>
+ <span class="mf">176.75</span><span class="p">,</span>
+ <span class="mf">176.19000244140625</span><span class="p">,</span>
+ <span class="mf">178.7899932861328</span><span class="p">,</span>
+ <span class="mf">178.0800018310547</span><span class="p">,</span>
+ <span class="mf">176.2899932861328</span><span class="p">,</span>
+ <span class="mf">174.77000427246094</span><span class="p">,</span>
+ <span class="mf">175.0</span><span class="p">,</span>
+ <span class="mf">177.94000244140625</span><span class="p">,</span>
+ <span class="mf">177.47999572753906</span><span class="p">,</span>
+ <span class="mf">173.7899932861328</span><span class="p">,</span>
+ <span class="mf">170.66000366210938</span><span class="p">,</span>
+ <span class="mf">177.2899932861328</span><span class="p">,</span>
+ <span class="mf">182.47000122070312</span><span class="p">,</span>
+ <span class="mf">178.00999450683594</span><span class="p">,</span>
+ <span class="mf">187.44000244140625</span><span class="p">,</span>
+ <span class="mf">184.86000061035156</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Create a list indicating the behavior of stock prices as Increasing, Decreasing, or Flat using the stock_prices list.</p>
+<ul class="simple">
+<li><p>Count how many days the stock price went up.</p></li>
+<li><p>The first element of the behavior list is np.nan because there is no price available for the previous day.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">behavior</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">stock_prices</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">change</span> <span class="o">=</span> <span class="n">stock_prices</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">stock_prices</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">change</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">behavior</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Increasing&#39;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">change</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">behavior</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Decreasing&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">behavior</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Flat&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">behavior</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Stock price went up </span><span class="si">{</span><span class="n">behavior</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;Increasing&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> days.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1033,6 +1390,18 @@ The final version of the total list should be: [sum of 9th graders’ exam resul
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-12">Question-12</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-13">Question-13</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-14">Question-14</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#business-applications">Business Applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-max-of-revenue">Question: Max of Revenue</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-profit">Question: Profit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-break-even-point">Question: Break-Even Point</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-exponential-depreciation">Question: Exponential Depreciation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-demand-function">Question: Demand Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-supply-function">Question: Supply Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-equilibrium-point">Question: Equilibrium Point</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-stock-percentage-changes">Question: Stock Percentage Changes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-stock-behavior">Question: Stock Behavior</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

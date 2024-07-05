@@ -263,13 +263,21 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="dictionaries_exercise.html">Dictionaries Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="numpy_arrays.html">Chp-12: Numpy Arrays</a></li>
-<li class="toctree-l1"><a class="reference internal" href="visualization.html">Chp-13: Visualization</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="appendix.html">Appendix</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="math.html">App-A: Math Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statistics.html">App-B: Statistics Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="random.html">App-C: Random Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="seaborn.html">App-D: Seaborn Library</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="projects.html">Projects</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="project_factorization.html">Project: Factorization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_elections.html">Project: Election Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_soccer.html">Project: Soccer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_smoothing.html">Project: Smoothing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_riemann.html">Project: Approximating Areas</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="appendix.html">Appendix</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="app_visualization.html">App: Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_business.html">App: Business Glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_math.html">App: Math Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_statistics.html">App: Statistics Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_random.html">App: Random Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_seaborn.html">App: Seaborn Library</a></li>
 </ul>
 </li>
 </ul>
@@ -426,6 +434,11 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6">Question-6</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7">Question-7</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8">Question-8</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#business-applications">Business Applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-production-data-analysis">Question: Production Data Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-profit-and-loss">Question: Profit and Loss</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -439,6 +452,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="tuples-exercises">
 <h1>Tuples Exercises<a class="headerlink" href="#tuples-exercises" title="Permalink to this heading">#</a></h1>
+<p><img alt="" src="_images/tuples_exercises2.png" /></p>
 <section id="question-1">
 <h2>Question-1<a class="headerlink" href="#question-1" title="Permalink to this heading">#</a></h2>
 <p>Create a tuple containing numbers greater than 5 from the given tuple below using a for loop.</p>
@@ -531,6 +545,35 @@ Numbers: (3.0, 7.0, 2.0, 9.0, 4.0)<br />
 </pre></div>
 </div>
 </section>
+<section id="business-applications">
+<h2>Business Applications<a class="headerlink" href="#business-applications" title="Permalink to this heading">#</a></h2>
+<section id="question-production-data-analysis">
+<h3>Question: Production Data Analysis<a class="headerlink" href="#question-production-data-analysis" title="Permalink to this heading">#</a></h3>
+<p>The following two tuples represent the annual production and the corresponding years for a company over a 10-year period.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">production</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="mi">2500</span><span class="p">,</span> <span class="mi">5000</span><span class="p">,</span> <span class="mi">4750</span><span class="p">,</span> <span class="mi">2250</span><span class="p">,</span> <span class="mi">6300</span><span class="p">,</span> <span class="mi">8000</span><span class="p">,</span> <span class="mi">7500</span><span class="p">,</span> <span class="mi">9000</span><span class="p">,</span> <span class="mi">8700</span><span class="p">)</span>
+<span class="n">years</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2012</span><span class="p">,</span> <span class="mi">2013</span><span class="p">,</span> <span class="mi">2014</span><span class="p">,</span> <span class="mi">2015</span><span class="p">,</span> <span class="mi">2016</span><span class="p">,</span> <span class="mi">2017</span><span class="p">,</span> <span class="mi">2018</span><span class="p">,</span> <span class="mi">2019</span><span class="p">,</span> <span class="mi">2020</span><span class="p">,</span> <span class="mi">2021</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Calculate the total, average, and highest production using methods from <em>numpy</em>.</p></li>
+<li><p>Determine the year with the highest production using the <em>index()</em> method.</p></li>
+</ul>
+</section>
+<section id="question-profit-and-loss">
+<h3>Question: Profit and Loss<a class="headerlink" href="#question-profit-and-loss" title="Permalink to this heading">#</a></h3>
+<p>The following three tuples represent the revenue, cost, and the corresponding years for a company over a 10-year period.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">revenue</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">4500</span><span class="p">,</span> <span class="mi">5000</span><span class="p">,</span> <span class="mi">6000</span><span class="p">,</span> <span class="mi">3000</span><span class="p">,</span> <span class="mi">4000</span><span class="p">,</span> <span class="mi">8000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">6000</span><span class="p">,</span> <span class="mi">3000</span><span class="p">)</span>
+<span class="n">cost</span>    <span class="o">=</span> <span class="p">(</span><span class="mi">2500</span><span class="p">,</span> <span class="mi">3500</span><span class="p">,</span> <span class="mi">3750</span><span class="p">,</span> <span class="mi">4500</span><span class="p">,</span> <span class="mi">4000</span><span class="p">,</span> <span class="mi">3500</span><span class="p">,</span> <span class="mi">4500</span><span class="p">,</span> <span class="mi">3000</span><span class="p">,</span> <span class="mi">4500</span><span class="p">,</span> <span class="mi">4000</span><span class="p">)</span>
+<span class="n">years</span>   <span class="o">=</span> <span class="p">(</span><span class="mi">2012</span><span class="p">,</span> <span class="mi">2013</span><span class="p">,</span> <span class="mi">2014</span><span class="p">,</span> <span class="mi">2015</span><span class="p">,</span> <span class="mi">2016</span><span class="p">,</span> <span class="mi">2017</span><span class="p">,</span> <span class="mi">2018</span><span class="p">,</span> <span class="mi">2019</span><span class="p">,</span> <span class="mi">2020</span><span class="p">,</span> <span class="mi">2021</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Calculate the total profit and total loss.</p></li>
+<li><p>Create a tuple consisting of the years when the company lost money.</p></li>
+<li><p>Determine the overall profit during these 10 years</p></li>
+</ul>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -604,6 +647,11 @@ Numbers: (3.0, 7.0, 2.0, 9.0, 4.0)<br />
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6">Question-6</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7">Question-7</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8">Question-8</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#business-applications">Business Applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-production-data-analysis">Question: Production Data Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-profit-and-loss">Question: Profit and Loss</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

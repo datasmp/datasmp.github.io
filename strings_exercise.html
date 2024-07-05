@@ -261,13 +261,21 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="dictionaries_exercise.html">Dictionaries Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="numpy_arrays.html">Chp-12: Numpy Arrays</a></li>
-<li class="toctree-l1"><a class="reference internal" href="visualization.html">Chp-13: Visualization</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="appendix.html">Appendix</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="math.html">App-A: Math Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statistics.html">App-B: Statistics Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="random.html">App-C: Random Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="seaborn.html">App-D: Seaborn Library</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="projects.html">Projects</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="project_factorization.html">Project: Factorization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_elections.html">Project: Election Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_soccer.html">Project: Soccer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_smoothing.html">Project: Smoothing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_riemann.html">Project: Approximating Areas</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="appendix.html">Appendix</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="app_visualization.html">App: Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_business.html">App: Business Glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_math.html">App: Math Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_statistics.html">App: Statistics Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_random.html">App: Random Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_seaborn.html">App: Seaborn Library</a></li>
 </ul>
 </li>
 </ul>
@@ -420,10 +428,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question-2</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question-3</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question-4</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5-house">Question-5: House</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6-password">Question-6: Password</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7">Question-7</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8">Question-8</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question-5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6">Question-6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7-house">Question-7: House</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8-password">Question-8: Password</a></li>
 </ul>
             </nav>
         </div>
@@ -437,15 +445,40 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="strings-exercises">
 <h1>Strings Exercises<a class="headerlink" href="#strings-exercises" title="Permalink to this heading">#</a></h1>
+<p><img alt="" src="_images/strings_exercises2.png" /></p>
 <section id="question-1">
 <h2>Question-1<a class="headerlink" href="#question-1" title="Permalink to this heading">#</a></h2>
+<p>For the given text below, print versions that are capitalized, in uppercase, in lowercase, and titled.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;thE gOOd, The Bad aNd The uGLY&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="question-2">
+<h2>Question-2<a class="headerlink" href="#question-2" title="Permalink to this heading">#</a></h2>
+<p>For the given text below, answer the following questions by applying the appropriate methods and print the outputs:</p>
+<ul class="simple">
+<li><p>Does it start with ‘T’?</p></li>
+<li><p>Does it end with ‘c’?</p></li>
+<li><p>Find the index of the first occurrence of ‘T’.</p></li>
+<li><p>Find the index of the second occurrence of ‘T’.</p></li>
+<li><p>Find the number of characters.</p></li>
+<li><p>Are there any digits in the text?</p></li>
+<li><p>Replace ‘T’s with ‘R’s.</p></li>
+<li><p>Swap the cases (Swap the cases (convert lowercase letters to uppercase and vice versa).</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;TiTANiC&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="question-3">
+<h2>Question-3<a class="headerlink" href="#question-3" title="Permalink to this heading">#</a></h2>
 <p>Write a program that prompts the user for a 6-digit positive number. Find the sum of the digits of this number without using algebraic operations other then addition.</p>
 <ul class="simple">
 <li><p>Example: If the given number is 123456, then the sum of digits is 1+2+3+4+5+6=21</p></li>
 </ul>
 </section>
-<section id="question-2">
-<h2>Question-2<a class="headerlink" href="#question-2" title="Permalink to this heading">#</a></h2>
+<section id="question-4">
+<h2>Question-4<a class="headerlink" href="#question-4" title="Permalink to this heading">#</a></h2>
 <p>Write a program that prompts the user for a 4-digit positive number. Swap the first two digits of the given number with the last two digits and print it.</p>
 <ul class="simple">
 <li><p>Avoid using algebraic operations and instead use string indexing.</p></li>
@@ -461,15 +494,15 @@ document.write(`
 </li>
 </ul>
 </section>
-<section id="question-3">
-<h2>Question-3<a class="headerlink" href="#question-3" title="Permalink to this heading">#</a></h2>
+<section id="question-5">
+<h2>Question-5<a class="headerlink" href="#question-5" title="Permalink to this heading">#</a></h2>
 <p>Use the three variables provided below to construct the string ‘XFoas’</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="s1">&#39;fLoRida&#39;</span><span class="p">,</span> <span class="s1">&#39;tExaS&#39;</span><span class="p">,</span> <span class="s1">&#39;aRizOna&#39;</span>
 </pre></div>
 </div>
 </section>
-<section id="question-4">
-<h2>Question-4<a class="headerlink" href="#question-4" title="Permalink to this heading">#</a></h2>
+<section id="question-6">
+<h2>Question-6<a class="headerlink" href="#question-6" title="Permalink to this heading">#</a></h2>
 <p>Extract the height of the first player without the ‘cm’ part using the provided player information.</p>
 <ul class="simple">
 <li><p>Use the find() function.</p></li>
@@ -480,42 +513,18 @@ document.write(`
 </pre></div>
 </div>
 </section>
-<section id="question-5-house">
-<h2>Question-5: House<a class="headerlink" href="#question-5-house" title="Permalink to this heading">#</a></h2>
+<section id="question-7-house">
+<h2>Question-7: House<a class="headerlink" href="#question-7-house" title="Permalink to this heading">#</a></h2>
 <p>Display the following house by using the repetition of strings.</p>
 <p><img alt="" src="_images/house_star.png" /></p>
 </section>
-<section id="question-6-password">
-<h2>Question-6: Password<a class="headerlink" href="#question-6-password" title="Permalink to this heading">#</a></h2>
+<section id="question-8-password">
+<h2>Question-8: Password<a class="headerlink" href="#question-8-password" title="Permalink to this heading">#</a></h2>
 <p>Write a program that generates a password consisting of one random letter, punctuation, and non-zero digit.</p>
 <ul class="simple">
 <li><p>Import letters, punctuations, and digits from the string module.</p></li>
 <li><p>Choose random integers that can be an index for a letter, punctuation, or digit.</p></li>
 </ul>
-</section>
-<section id="question-7">
-<h2>Question-7<a class="headerlink" href="#question-7" title="Permalink to this heading">#</a></h2>
-<p>For the given text below, print versions that are capitalized, in uppercase, in lowercase, and titled.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;thE gOOd, The Bad aNd The uGLY&#39;</span>
-</pre></div>
-</div>
-</section>
-<section id="question-8">
-<h2>Question-8<a class="headerlink" href="#question-8" title="Permalink to this heading">#</a></h2>
-<p>For the given text below, answer the following questions by applying the appropriate methods and print the outputs:</p>
-<ul class="simple">
-<li><p>Does it start with ‘T’?</p></li>
-<li><p>Does it end with ‘c’?</p></li>
-<li><p>Find the index of the first occurrence of ‘T’.</p></li>
-<li><p>Find the index of the second occurrence of ‘T’.</p></li>
-<li><p>Find the number of characters.</p></li>
-<li><p>Are there any digits in the text?</p></li>
-<li><p>Replace ‘T’s with ‘R’s.</p></li>
-<li><p>Swap the cases (Swap the cases (convert lowercase letters to uppercase and vice versa).</p></li>
-</ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;TiTANiC&#39;</span>
-</pre></div>
-</div>
 </section>
 </section>
 
@@ -586,10 +595,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question-2</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question-3</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question-4</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5-house">Question-5: House</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6-password">Question-6: Password</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7">Question-7</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8">Question-8</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question-5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6">Question-6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7-house">Question-7: House</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8-password">Question-8: Password</a></li>
 </ul>
   </nav></div>
 

@@ -263,13 +263,21 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="dictionaries_exercise.html">Dictionaries Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="numpy_arrays.html">Chp-12: Numpy Arrays</a></li>
-<li class="toctree-l1"><a class="reference internal" href="visualization.html">Chp-13: Visualization</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="appendix.html">Appendix</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="math.html">App-A: Math Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statistics.html">App-B: Statistics Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="random.html">App-C: Random Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="seaborn.html">App-D: Seaborn Library</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="projects.html">Projects</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="project_factorization.html">Project: Factorization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_elections.html">Project: Election Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_soccer.html">Project: Soccer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_smoothing.html">Project: Smoothing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_riemann.html">Project: Approximating Areas</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="appendix.html">Appendix</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="app_visualization.html">App: Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_business.html">App: Business Glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_math.html">App: Math Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_statistics.html">App: Statistics Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_random.html">App: Random Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_seaborn.html">App: Seaborn Library</a></li>
 </ul>
 </li>
 </ul>
@@ -422,11 +430,22 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question-2</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question-3</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question-4</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question-5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5-secret-number-game">Question-5: Secret Number Game</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6-scatter-plot">Question-6: Scatter Plot</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7-empirical-probability">Question-7: Empirical Probability</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8-rotating-stick">Question-8: Rotating Stick</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-9-counter">Question-9: Counter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#business-applications">Business Applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-max-of-revenue">Question: Max of Revenue</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-profit">Question: Profit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-linear-depreciation">Question: Linear Depreciation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-equilibrium-point">Question: Equilibrium Point</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-linear-programming">Question: Linear Programming</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-home-mortgage">Question: Home Mortgage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-amortization-schedule-1">Question: Amortization Schedule-1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-amortization-schedule-2">Question: Amortization Schedule-2</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -440,6 +459,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="iterations-exercises">
 <h1>Iterations Exercises<a class="headerlink" href="#iterations-exercises" title="Permalink to this heading">#</a></h1>
+<p><img alt="" src="_images/iterations_exercises2.png" /></p>
 <section id="question-1">
 <h2>Question-1<a class="headerlink" href="#question-1" title="Permalink to this heading">#</a></h2>
 <p>Print the letters with negative even indexes (-2, -4, …) from the given text using:</p>
@@ -469,6 +489,26 @@ slicing   : Y,W,U,S,Q,O,M,K,I,G,E,C,A,y,w,u,s,q,o,m,k,i,g,e,c,a</p>
 </section>
 <section id="question-3">
 <h2>Question-3<a class="headerlink" href="#question-3" title="Permalink to this heading">#</a></h2>
+<p>Ask the user to input a name and then insert a random punctuation mark between each character of the name.</p>
+<ul class="simple">
+<li><p>Ensure that the output does not have a punctuation mark at the end.</p></li>
+</ul>
+<p><strong>Sample Output</strong><br />
+Please enter a name    : ashley<br />
+Randomly generated name: a&amp;s#h”l#e”y</p>
+</section>
+<section id="question-4">
+<h2>Question-4<a class="headerlink" href="#question-4" title="Permalink to this heading">#</a></h2>
+<p>Ask the user to input a number and print the consecutive pairs of digits within this number.</p>
+<ul class="simple">
+<li><p>Example: The consecutive digits in 156319672 are 56 and 67.</p></li>
+</ul>
+<p><strong>Sample Output</strong><br />
+Please enter a number: 156319672<br />
+Consecutive pairs are: 56,67</p>
+</section>
+<section id="question-5-secret-number-game">
+<h2>Question-5: Secret Number Game<a class="headerlink" href="#question-5-secret-number-game" title="Permalink to this heading">#</a></h2>
 <p>This is another version of the Guess the Secret Number Game.</p>
 <ul class="simple">
 <li><p>The user selects a secret 3-digit number.</p></li>
@@ -488,26 +528,6 @@ Try Number: 2  Guess: 467 is LARGE. Try Again!<br />
 COMPUTER WINS!<br />
 Number of tries: 3</p>
 </section>
-<section id="question-4">
-<h2>Question-4<a class="headerlink" href="#question-4" title="Permalink to this heading">#</a></h2>
-<p>Ask the user to input a name and then insert a random punctuation mark between each character of the name.</p>
-<ul class="simple">
-<li><p>Ensure that the output does not have a punctuation mark at the end.</p></li>
-</ul>
-<p><strong>Sample Output</strong><br />
-Please enter a name    : ashley<br />
-Randomly generated name: a&amp;s#h”l#e”y</p>
-</section>
-<section id="question-5">
-<h2>Question-5<a class="headerlink" href="#question-5" title="Permalink to this heading">#</a></h2>
-<p>Ask the user to input a number and print the consecutive pairs of digits within this number.</p>
-<ul class="simple">
-<li><p>Example: The consecutive digits in 156319672 are 56 and 67.</p></li>
-</ul>
-<p><strong>Sample Output</strong><br />
-Please enter a number: 156319672<br />
-Consecutive pairs are: 56,67</p>
-</section>
 <section id="question-6-scatter-plot">
 <h2>Question-6: Scatter Plot<a class="headerlink" href="#question-6-scatter-plot" title="Permalink to this heading">#</a></h2>
 <p>Use a for loop to randomly select 100 points on a coordinate plane and plot them individually as a scatter plot.
@@ -522,7 +542,7 @@ For each point:</p>
 </li>
 <li><p>The transparancey is represented by a random number between 0 and 1.</p></li>
 </ul>
-<p>Refer to the scatterplot section in Chapter-13: Visualization for implementation guidance.</p>
+<p>Refer to the scatterplot section in Appendix: Visualization for implementation guidance.</p>
 </section>
 <section id="question-7-empirical-probability">
 <h2>Question-7: Empirical Probability<a class="headerlink" href="#question-7-empirical-probability" title="Permalink to this heading">#</a></h2>
@@ -551,6 +571,103 @@ For each point:</p>
 <li><p>After printing each number, delete it before the next one is printed to maintain the rotating effect.</p></li>
 <li><p>Numbers: 001, 002,…,010,011,…,999</p></li>
 </ul>
+</section>
+<section id="business-applications">
+<h2>Business Applications<a class="headerlink" href="#business-applications" title="Permalink to this heading">#</a></h2>
+<section id="question-max-of-revenue">
+<h3>Question: Max of Revenue<a class="headerlink" href="#question-max-of-revenue" title="Permalink to this heading">#</a></h3>
+<p><em>Revenue (R) is the product of the number (n) of items sold  and the price (p) of the item.</em></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(R = p\cdot n\)</span></p></li>
+</ul>
+<p>The number of item sold is given by the following equation: <span class="math notranslate nohighlight">\(n = -1.5p+30\)</span></p>
+<p>Write a program which finds the <span class="math notranslate nohighlight">\(p\)</span> which maximize the revenue for <span class="math notranslate nohighlight">\(0\le p \le 20\)</span></p>
+<ul class="simple">
+<li><p>Plot the graph of revenue for <span class="math notranslate nohighlight">\(0\le p \le 20\)</span></p></li>
+</ul>
+</section>
+<section id="question-profit">
+<h3>Question: Profit<a class="headerlink" href="#question-profit" title="Permalink to this heading">#</a></h3>
+<p><em>Profit (P) is the difference between Revenue and Cost</em></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(Profit = Revenue - Cost\)</span></p></li>
+</ul>
+<p>The monthly fixed cost of a cable factory is 1500 dollars. Each cable costs 13 dollars and sells for 25 dollars.</p>
+<ul class="simple">
+<li><p>Find the profit of producing 400 cables.</p></li>
+<li><p>For what number of cables produced profit is zero.</p>
+<ul>
+<li><p>Hint: Calculate the profit for <span class="math notranslate nohighlight">\(n\)</span> between 1 and 400.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="question-linear-depreciation">
+<h3>Question: Linear Depreciation<a class="headerlink" href="#question-linear-depreciation" title="Permalink to this heading">#</a></h3>
+<p>The value of a new machine is <span class="math notranslate nohighlight">\(100,000\)</span> dollars and its values is depreciated by <span class="math notranslate nohighlight">\(7500\)</span> dollars per year. After how many years the value of the machine will be 2,500 dollars.</p>
+<ul class="simple">
+<li><p>Hint: Calculate the value for years between 1 and 100.</p></li>
+</ul>
+</section>
+<section id="question-equilibrium-point">
+<h3>Question: Equilibrium Point<a class="headerlink" href="#question-equilibrium-point" title="Permalink to this heading">#</a></h3>
+<p><em>An equilibrium point is where the demand and supply curves intersect.</em></p>
+<p>For the given demand and the supply functions find the equilibrium point.</p>
+<p>Demand: <span class="math notranslate nohighlight">\(p(q) = -0.03q + 1000\)</span></p>
+<p>Supply: <span class="math notranslate nohighlight">\(p(q) = 0.02q + 400\)</span></p>
+<ul class="simple">
+<li><p>Hint: Calculate the demand and supply for <span class="math notranslate nohighlight">\(q\)</span> between 1 and 20,000.</p></li>
+</ul>
+</section>
+<section id="question-linear-programming">
+<h3>Question: Linear Programming<a class="headerlink" href="#question-linear-programming" title="Permalink to this heading">#</a></h3>
+<p><em>Linear programming involves finding the highest or lowest possible outcome of a linear function, while satisfying specific constraints.</em></p>
+<p>The store sells three items labeled (a, b, c) priced at 2, 3, and 4 dollars respectively. The following conditions are known:</p>
+<ul class="simple">
+<li><p>The store can sell up to 100 units of each item.</p></li>
+<li><p>The combined sales of items b and c exceed 90 units.</p></li>
+<li><p>The total sales of items a and b do not surpass 50 units.</p></li>
+<li><p>The sales of items a and c are more than 80 units.</p></li>
+</ul>
+<p>What is the highest revenue achievable, and at what quantities of items is this maximum revenue attained?</p>
+</section>
+<section id="question-home-mortgage">
+<h3>Question: Home Mortgage<a class="headerlink" href="#question-home-mortgage" title="Permalink to this heading">#</a></h3>
+<p>Amortization is paying off a loan by making equal payments.</p>
+<p>The present value of an amortized loan is given by the following formula: <span class="math notranslate nohighlight">\(\displaystyle  P = R \left( \frac{1-(1+\frac{r}{m})^{-mt}}{\frac{r}{m}}  \right)\)</span> where,</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(P\)</span>: Present value</p></li>
+<li><p><span class="math notranslate nohighlight">\(R\)</span>: regular payment</p></li>
+<li><p><span class="math notranslate nohighlight">\(r\)</span>: annual interest rate</p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span>: number of payments in a year</p></li>
+<li><p><span class="math notranslate nohighlight">\(t\)</span>: number of years</p></li>
+</ul>
+<p>If you take out an 449,000 dollars loan to buy a house with an annual interest rate of 2.75%, to be paid off over 30 years, what is the monthly payment?</p>
+<ul class="simple">
+<li><p>Sketch the graph of monthly payments for annual interest rates of 2%, 3%, 4%, 5%, 6%, 7%, 8%, 9%, and 10%.</p></li>
+</ul>
+<p>Hint:</p>
+<ul class="simple">
+<li><p>Use the variables <span class="math notranslate nohighlight">\(P, r, m, t\)</span>  for the given values.</p></li>
+<li><p>Calculate the value of the variable <span class="math notranslate nohighlight">\(R\)</span>.</p></li>
+</ul>
+</section>
+<section id="question-amortization-schedule-1">
+<h3>Question: Amortization Schedule-1<a class="headerlink" href="#question-amortization-schedule-1" title="Permalink to this heading">#</a></h3>
+<p>If you take out a 449,000 dollars loan to buy a house with an annual interest rate of 2.75%, to be paid off over 30 years with a monthly payment of $1,833, construct an amortization schedule for the first 5 payments.</p>
+<p>For each month, a fixed monthly payment is deducted from the balance.
+Additionally, simple interest is added to the loan based on that month’s remaining balance.</p>
+<p>Hint:</p>
+<ul class="simple">
+<li><p>Use the variables <span class="math notranslate nohighlight">\(P, r, m, t, R\)</span>  for the given values.</p></li>
+<li><p>Calculate the monthly simple interest for each monthly balance.</p></li>
+</ul>
+</section>
+<section id="question-amortization-schedule-2">
+<h3>Question: Amortization Schedule-2<a class="headerlink" href="#question-amortization-schedule-2" title="Permalink to this heading">#</a></h3>
+<p>If you take out a 449,000 dollars loan to buy a house with an annual interest rate of 2.75%, to be paid off over 30 years with a monthly payment of 1,833 dollars, construct an amortization schedule for the last 5 payments.</p>
+<p>For each month, a fixed monthly payment is deducted from the balance. Additionally, simple interest is added to the loan based on that month’s remaining balance.</p>
+</section>
 </section>
 </section>
 
@@ -621,11 +738,22 @@ For each point:</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question-2</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question-3</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question-4</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question-5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5-secret-number-game">Question-5: Secret Number Game</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6-scatter-plot">Question-6: Scatter Plot</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7-empirical-probability">Question-7: Empirical Probability</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8-rotating-stick">Question-8: Rotating Stick</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-9-counter">Question-9: Counter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#business-applications">Business Applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-max-of-revenue">Question: Max of Revenue</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-profit">Question: Profit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-linear-depreciation">Question: Linear Depreciation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-equilibrium-point">Question: Equilibrium Point</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-linear-programming">Question: Linear Programming</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-home-mortgage">Question: Home Mortgage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-amortization-schedule-1">Question: Amortization Schedule-1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-amortization-schedule-2">Question: Amortization Schedule-2</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

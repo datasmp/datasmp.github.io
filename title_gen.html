@@ -259,13 +259,21 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="dictionaries_exercise.html">Dictionaries Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="numpy_arrays.html">Chp-12: Numpy Arrays</a></li>
-<li class="toctree-l1"><a class="reference internal" href="visualization.html">Chp-13: Visualization</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="appendix.html">Appendix</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="math.html">App-A: Math Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statistics.html">App-B: Statistics Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="random.html">App-C: Random Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="seaborn.html">App-D: Seaborn Library</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="projects.html">Projects</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="project_factorization.html">Project: Factorization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_elections.html">Project: Election Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_soccer.html">Project: Soccer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_smoothing.html">Project: Smoothing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_riemann.html">Project: Approximating Areas</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="appendix.html">Appendix</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="app_visualization.html">App: Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_business.html">App: Business Glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_math.html">App: Math Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_statistics.html">App: Statistics Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_random.html">App: Random Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_seaborn.html">App: Seaborn Library</a></li>
 </ul>
 </li>
 </ul>
@@ -436,8 +444,22 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">title_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;in plain terms&#39;</span><span class="p">,</span> <span class="s1">&#39;acknowledgments&#39;</span><span class="p">,</span> <span class="s1">&#39;python&#39;</span><span class="p">,</span> <span class="s1">&#39;colaboratory&#39;</span><span class="p">,</span> <span class="s1">&#39;variables&#39;</span><span class="p">,</span> <span class="s1">&#39;input and output&#39;</span><span class="p">,</span> <span class="s1">&#39;numbers&#39;</span><span class="p">,</span> <span class="s1">&#39;strings&#39;</span><span class="p">,</span> <span class="s1">&#39;conditionals&#39;</span><span class="p">,</span> <span class="s1">&#39;iterations&#39;</span><span class="p">,</span> <span class="s1">&#39;tuples&#39;</span><span class="p">,</span>
-              <span class="s1">&#39;lists&#39;</span><span class="p">,</span> <span class="s1">&#39;functions&#39;</span><span class="p">,</span> <span class="s1">&#39;sets&#39;</span><span class="p">,</span> <span class="s1">&#39;dictionaries&#39;</span><span class="p">,</span> <span class="s1">&#39;numpy arrays&#39;</span><span class="p">,</span> <span class="s1">&#39;visualization&#39;</span><span class="p">,</span> <span class="s1">&#39;appendix&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">title_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;cover&#39;</span><span class="p">,</span> <span class="s1">&#39;in plain terms&#39;</span><span class="p">,</span> <span class="s1">&#39;acknowledgments&#39;</span><span class="p">,</span> <span class="s1">&#39;python&#39;</span><span class="p">,</span> <span class="s1">&#39;colaboratory&#39;</span><span class="p">,</span> <span class="s1">&#39;text cell&#39;</span><span class="p">,</span> <span class="s1">&#39;text cell questions&#39;</span><span class="p">,</span> 
+              <span class="s1">&#39;code cell&#39;</span><span class="p">,</span> <span class="s1">&#39;code cell questions&#39;</span><span class="p">,</span> <span class="s1">&#39;colab exercises&#39;</span><span class="p">,</span> 
+              <span class="s1">&#39;variables&#39;</span><span class="p">,</span> <span class="s1">&#39;variables debugging&#39;</span><span class="p">,</span> <span class="s1">&#39;variables output&#39;</span><span class="p">,</span> <span class="s1">&#39;variables code&#39;</span><span class="p">,</span> <span class="s1">&#39;variables exercises&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;input and output&#39;</span><span class="p">,</span> <span class="s1">&#39;io debugging&#39;</span><span class="p">,</span> <span class="s1">&#39;io output&#39;</span><span class="p">,</span> <span class="s1">&#39;io code&#39;</span><span class="p">,</span> <span class="s1">&#39;io exercises&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;numbers&#39;</span><span class="p">,</span> <span class="s1">&#39;numbers debugging&#39;</span><span class="p">,</span> <span class="s1">&#39;numbers output&#39;</span><span class="p">,</span> <span class="s1">&#39;numbers code&#39;</span><span class="p">,</span> <span class="s1">&#39;numbers exercises&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;strings&#39;</span><span class="p">,</span> <span class="s1">&#39;strings debugging&#39;</span><span class="p">,</span> <span class="s1">&#39;strings output&#39;</span><span class="p">,</span> <span class="s1">&#39;strings code&#39;</span><span class="p">,</span> <span class="s1">&#39;strings exercises&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;conditionals&#39;</span><span class="p">,</span> <span class="s1">&#39;conditionals debugging&#39;</span><span class="p">,</span> <span class="s1">&#39;conditionals output&#39;</span><span class="p">,</span> <span class="s1">&#39;conditionals code&#39;</span><span class="p">,</span> <span class="s1">&#39;conditionals exercises&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;iterations&#39;</span><span class="p">,</span> <span class="s1">&#39;iterations debugging&#39;</span><span class="p">,</span> <span class="s1">&#39;iterations output&#39;</span><span class="p">,</span> <span class="s1">&#39;iterations code&#39;</span><span class="p">,</span> <span class="s1">&#39;iterations exercises&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;tuples&#39;</span><span class="p">,</span> <span class="s1">&#39;tuples debugging&#39;</span><span class="p">,</span> <span class="s1">&#39;tuples output&#39;</span><span class="p">,</span> <span class="s1">&#39;tuples code&#39;</span><span class="p">,</span> <span class="s1">&#39;tuples exercises&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;lists&#39;</span><span class="p">,</span> <span class="s1">&#39;lists debugging&#39;</span><span class="p">,</span> <span class="s1">&#39;lists output&#39;</span><span class="p">,</span> <span class="s1">&#39;lists code&#39;</span><span class="p">,</span> <span class="s1">&#39;lists exercises&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;functions&#39;</span><span class="p">,</span> <span class="s1">&#39;functions debugging&#39;</span><span class="p">,</span> <span class="s1">&#39;functions output&#39;</span><span class="p">,</span> <span class="s1">&#39;functions code&#39;</span><span class="p">,</span> <span class="s1">&#39;functions exercises&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;sets&#39;</span><span class="p">,</span> <span class="s1">&#39;sets debugging&#39;</span><span class="p">,</span> <span class="s1">&#39;sets output&#39;</span><span class="p">,</span> <span class="s1">&#39;sets code&#39;</span><span class="p">,</span> <span class="s1">&#39;sets exercises&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;dictionaries&#39;</span><span class="p">,</span> <span class="s1">&#39;dictionaries debugging&#39;</span><span class="p">,</span> <span class="s1">&#39;dictionaries output&#39;</span><span class="p">,</span> <span class="s1">&#39;dictionaries code&#39;</span><span class="p">,</span> <span class="s1">&#39;dictionaries exercises&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;numpy arrays&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;projects&#39;</span><span class="p">,</span> <span class="s1">&#39;factorization&#39;</span><span class="p">,</span> <span class="s1">&#39;election&#39;</span><span class="p">,</span> <span class="s1">&#39;soccer&#39;</span><span class="p">,</span> <span class="s1">&#39;smoothing&#39;</span><span class="p">,</span> <span class="s1">&#39;approximating areas&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;appendix&#39;</span><span class="p">,</span> <span class="s1">&#39;business glossary&#39;</span><span class="p">,</span> <span class="s1">&#39;visualization&#39;</span><span class="p">,</span> <span class="s1">&#39;math&#39;</span><span class="p">,</span> <span class="s1">&#39;statistics&#39;</span><span class="p">,</span> <span class="s1">&#39;random&#39;</span><span class="p">,</span> <span class="s1">&#39;seaborn&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -466,24 +488,89 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/95b3dd79eb16465bedfe1f9bc3d6d95bb76899effce1a0205b623e87fe8c6afe.png" src="_images/95b3dd79eb16465bedfe1f9bc3d6d95bb76899effce1a0205b623e87fe8c6afe.png" />
-<img alt="_images/7100d339a28be9eb23c247cacbc864b55ce15e4c9900592e514869ca7de4da4c.png" src="_images/7100d339a28be9eb23c247cacbc864b55ce15e4c9900592e514869ca7de4da4c.png" />
-<img alt="_images/dc22529db3646672f29d7553135e8e2786d4ebe88f65a9529d02fd685a186230.png" src="_images/dc22529db3646672f29d7553135e8e2786d4ebe88f65a9529d02fd685a186230.png" />
-<img alt="_images/437eaa7700508dfc84a5d0157190f9057e3040352b1a604533cca3cee9ba26eb.png" src="_images/437eaa7700508dfc84a5d0157190f9057e3040352b1a604533cca3cee9ba26eb.png" />
-<img alt="_images/c7bd22ba640d33d9837dc50f2dc049f6f063fdf418be44628d32482d69b4d8df.png" src="_images/c7bd22ba640d33d9837dc50f2dc049f6f063fdf418be44628d32482d69b4d8df.png" />
-<img alt="_images/5d4b7a8b353a5f2a74d399cea3e65f9697dea2948cb27257a7e8dc715f84b386.png" src="_images/5d4b7a8b353a5f2a74d399cea3e65f9697dea2948cb27257a7e8dc715f84b386.png" />
-<img alt="_images/4c0dba7b9026b4db3d6b901b36e0bebd7da5149a84027176444bef2e29fccb54.png" src="_images/4c0dba7b9026b4db3d6b901b36e0bebd7da5149a84027176444bef2e29fccb54.png" />
-<img alt="_images/f99237296b18056f488550e383f81757db9dcc0e5b64fb823e0e7422315932d7.png" src="_images/f99237296b18056f488550e383f81757db9dcc0e5b64fb823e0e7422315932d7.png" />
-<img alt="_images/f43eaf15d6e78faa6287413dfc43c2a2720aa369c420f25dbf6c0a7ef005b539.png" src="_images/f43eaf15d6e78faa6287413dfc43c2a2720aa369c420f25dbf6c0a7ef005b539.png" />
-<img alt="_images/1d6971002de1facb7946a98dd0a016163b284ff41aee9d5e093df20cc84144f9.png" src="_images/1d6971002de1facb7946a98dd0a016163b284ff41aee9d5e093df20cc84144f9.png" />
-<img alt="_images/6952ce706491658a9db4fe79d1c5482fa0ea708ccb6e7e4ba9d01cc57d758fb8.png" src="_images/6952ce706491658a9db4fe79d1c5482fa0ea708ccb6e7e4ba9d01cc57d758fb8.png" />
-<img alt="_images/39a7e8fb4c4f810b02f8387e0ca474f102da00fefad79f3375432a819a19e937.png" src="_images/39a7e8fb4c4f810b02f8387e0ca474f102da00fefad79f3375432a819a19e937.png" />
-<img alt="_images/b3e916700de69c49de5e6ebdb74b1859f6d7890856d99fdff46189a427271cb7.png" src="_images/b3e916700de69c49de5e6ebdb74b1859f6d7890856d99fdff46189a427271cb7.png" />
-<img alt="_images/9da5848959babece725bc735badb2173cb46ded010bafe88d87c50979d7b3c90.png" src="_images/9da5848959babece725bc735badb2173cb46ded010bafe88d87c50979d7b3c90.png" />
-<img alt="_images/9d10a816c0ab49dc9c5a854b42bb55a9d382d507f615ee49777a61a6b1ea0243.png" src="_images/9d10a816c0ab49dc9c5a854b42bb55a9d382d507f615ee49777a61a6b1ea0243.png" />
-<img alt="_images/11add249ffa5fe725c8c312ef25993f633b34b4181324940dc0a7e160cab7e31.png" src="_images/11add249ffa5fe725c8c312ef25993f633b34b4181324940dc0a7e160cab7e31.png" />
-<img alt="_images/755d95f3761bb385bcec631194de96d630a9d3ec67d0ae29dcadf2cb0df2fba9.png" src="_images/755d95f3761bb385bcec631194de96d630a9d3ec67d0ae29dcadf2cb0df2fba9.png" />
-<img alt="_images/2de45746554420c20735a95eced41f9cc825c8d669d11ec30201eadc92b2c329.png" src="_images/2de45746554420c20735a95eced41f9cc825c8d669d11ec30201eadc92b2c329.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/nk/5wgxqqvs5cl4rdg3h_61lzpw0000gn/T/ipykernel_77090/2359950526.py:5: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`). Consider using `matplotlib.pyplot.close()`.
+  plt.figure(figsize=(12,2))
+</pre></div>
+</div>
+<img alt="_images/e222aed021e8d9236ea6da95f69a5dceb7d7b04d37c8702b18f65d7b645042da.png" src="_images/e222aed021e8d9236ea6da95f69a5dceb7d7b04d37c8702b18f65d7b645042da.png" />
+<img alt="_images/4d3c23201931494d887bde254482864afdc6b8e93ea2d29656a0f13cc714c0c2.png" src="_images/4d3c23201931494d887bde254482864afdc6b8e93ea2d29656a0f13cc714c0c2.png" />
+<img alt="_images/880a621641e1f46b2fbe65e4c11f9f14a51890327b62596bf38e3f7cc41f8481.png" src="_images/880a621641e1f46b2fbe65e4c11f9f14a51890327b62596bf38e3f7cc41f8481.png" />
+<img alt="_images/e36fd05d5edfe516164c503d46409aee6fe12282128e4aa1466e2fb28a8f4217.png" src="_images/e36fd05d5edfe516164c503d46409aee6fe12282128e4aa1466e2fb28a8f4217.png" />
+<img alt="_images/fe86df499e72d3c881f399b838304217775db983c612a79b0495535e539e52a4.png" src="_images/fe86df499e72d3c881f399b838304217775db983c612a79b0495535e539e52a4.png" />
+<img alt="_images/afb1b6153a2f8465b7348c3863a73ab2f61bff6ae75545a42641fda68e4cc02d.png" src="_images/afb1b6153a2f8465b7348c3863a73ab2f61bff6ae75545a42641fda68e4cc02d.png" />
+<img alt="_images/e0d7843c2a0a9dc785b083b5b23c4b5f37fce0be861f9faa047230771810b4a0.png" src="_images/e0d7843c2a0a9dc785b083b5b23c4b5f37fce0be861f9faa047230771810b4a0.png" />
+<img alt="_images/1150e8d93653adbb6b758f35744c9eeca087cc2820f8b6942efc36b84de82b78.png" src="_images/1150e8d93653adbb6b758f35744c9eeca087cc2820f8b6942efc36b84de82b78.png" />
+<img alt="_images/3a87bbf127363887e16f09efbe4b6914bea4750c2399ee7498a6d8081445ed65.png" src="_images/3a87bbf127363887e16f09efbe4b6914bea4750c2399ee7498a6d8081445ed65.png" />
+<img alt="_images/b61c4fe9002904f6cf82187f11486333c4db4a345ad5a07795c72efb80f46834.png" src="_images/b61c4fe9002904f6cf82187f11486333c4db4a345ad5a07795c72efb80f46834.png" />
+<img alt="_images/f58c91092e58e3d7293bc04fb1b2d66a667d679cdc26ac789b4c78e4f642db37.png" src="_images/f58c91092e58e3d7293bc04fb1b2d66a667d679cdc26ac789b4c78e4f642db37.png" />
+<img alt="_images/84b50bae829d1f00af95b9dd286380cde3f7f34ed0c4a88f2e7ffe05c351fcb6.png" src="_images/84b50bae829d1f00af95b9dd286380cde3f7f34ed0c4a88f2e7ffe05c351fcb6.png" />
+<img alt="_images/c0a83bd8475958bba632a23e69b64a57f3a34a3aa4db797e93ea4fd91e44f137.png" src="_images/c0a83bd8475958bba632a23e69b64a57f3a34a3aa4db797e93ea4fd91e44f137.png" />
+<img alt="_images/d0906af84fa3f212630da99e8d7675c72a28f8f9930b2f939ce5f1f09782961b.png" src="_images/d0906af84fa3f212630da99e8d7675c72a28f8f9930b2f939ce5f1f09782961b.png" />
+<img alt="_images/e7ccb30ec4d0dea9a42402ddfb006e120cfc4d3590ef930903a428728f060c2e.png" src="_images/e7ccb30ec4d0dea9a42402ddfb006e120cfc4d3590ef930903a428728f060c2e.png" />
+<img alt="_images/ec9a27846e1060c5d1a43460bf1f4f5ab033e2ae07679608ee399cca319b3c34.png" src="_images/ec9a27846e1060c5d1a43460bf1f4f5ab033e2ae07679608ee399cca319b3c34.png" />
+<img alt="_images/41d1c7f280c01d5cb4b98268f7d8e3ed889549be98ceb6eb4499a8d4cea5181f.png" src="_images/41d1c7f280c01d5cb4b98268f7d8e3ed889549be98ceb6eb4499a8d4cea5181f.png" />
+<img alt="_images/bdf6c53216f99de05e6a5b44e59939871c63e3f782257d50cb76d50e2081067b.png" src="_images/bdf6c53216f99de05e6a5b44e59939871c63e3f782257d50cb76d50e2081067b.png" />
+<img alt="_images/21b698c5bc203a94aedc603454841019143163836fec9a70366a5a2130c31ce9.png" src="_images/21b698c5bc203a94aedc603454841019143163836fec9a70366a5a2130c31ce9.png" />
+<img alt="_images/a9551ab28fc84f59eb056d1b7c3dc28b784ffed84164096bc565086cc4ea31cb.png" src="_images/a9551ab28fc84f59eb056d1b7c3dc28b784ffed84164096bc565086cc4ea31cb.png" />
+<img alt="_images/7480c7a6e2a698c271ff199f1b0799f903a84575b603f66f29ac4a3fd14839d5.png" src="_images/7480c7a6e2a698c271ff199f1b0799f903a84575b603f66f29ac4a3fd14839d5.png" />
+<img alt="_images/0c480a8e2e59ed953e732ac06d834752bf3e44962d4eea11bdcedd21dfde213d.png" src="_images/0c480a8e2e59ed953e732ac06d834752bf3e44962d4eea11bdcedd21dfde213d.png" />
+<img alt="_images/8c09fdd0ee3c0b98a323f0b10a0bedf0b640567cabc9d98d797ffdc4532d48a4.png" src="_images/8c09fdd0ee3c0b98a323f0b10a0bedf0b640567cabc9d98d797ffdc4532d48a4.png" />
+<img alt="_images/ea20fd5de45e246433b75e0e8b0624c999ee2fc26c114967a6cce76881c7979a.png" src="_images/ea20fd5de45e246433b75e0e8b0624c999ee2fc26c114967a6cce76881c7979a.png" />
+<img alt="_images/86014e1347153c7fcbb473e0a3a2479f440ce31aab8ebf8067bf2031f26dc879.png" src="_images/86014e1347153c7fcbb473e0a3a2479f440ce31aab8ebf8067bf2031f26dc879.png" />
+<img alt="_images/f2040174336c4ef226361c9a8a8c951323978ab1d2e8fc50301886fe818aa72c.png" src="_images/f2040174336c4ef226361c9a8a8c951323978ab1d2e8fc50301886fe818aa72c.png" />
+<img alt="_images/a863e55128d1de8dec23ce81a7a84e7fc908978f28759a0c5fadb63757d0ef47.png" src="_images/a863e55128d1de8dec23ce81a7a84e7fc908978f28759a0c5fadb63757d0ef47.png" />
+<img alt="_images/1600905959b43b5a07946383ea44172c02ff722ca0e9bd88252a14dbe98d2d83.png" src="_images/1600905959b43b5a07946383ea44172c02ff722ca0e9bd88252a14dbe98d2d83.png" />
+<img alt="_images/8c0c1181adb4dd671c8fc5a4f85cd7c00d9e03b2e0da51bc5d9d24e4341d80df.png" src="_images/8c0c1181adb4dd671c8fc5a4f85cd7c00d9e03b2e0da51bc5d9d24e4341d80df.png" />
+<img alt="_images/ab19cd25dd24f9ba8063b9bbb7bae039cf13872b908b93de6bc60a4e88b6af1e.png" src="_images/ab19cd25dd24f9ba8063b9bbb7bae039cf13872b908b93de6bc60a4e88b6af1e.png" />
+<img alt="_images/86aaf8e0d01194335f8ac80641e8afa52eccafc8d7f397137fa8f356b5409856.png" src="_images/86aaf8e0d01194335f8ac80641e8afa52eccafc8d7f397137fa8f356b5409856.png" />
+<img alt="_images/8e91aa9e5489905384fce4d2504114052cd3c481b8c29275750d50fc16e7737f.png" src="_images/8e91aa9e5489905384fce4d2504114052cd3c481b8c29275750d50fc16e7737f.png" />
+<img alt="_images/9bd9058c6c2f646bdc1f99dfef401d35271cb036ed71a21f5c91b81b7ad963e2.png" src="_images/9bd9058c6c2f646bdc1f99dfef401d35271cb036ed71a21f5c91b81b7ad963e2.png" />
+<img alt="_images/8b9c3e6997a80345d9a51fbabe15f8f38072f6f389a1eb223a551003a41b15ed.png" src="_images/8b9c3e6997a80345d9a51fbabe15f8f38072f6f389a1eb223a551003a41b15ed.png" />
+<img alt="_images/33a5c4a48c923f11cfd4dbd05d8887ea0357f3bcd5acf155b2e4fe51b6a626ac.png" src="_images/33a5c4a48c923f11cfd4dbd05d8887ea0357f3bcd5acf155b2e4fe51b6a626ac.png" />
+<img alt="_images/9c4da08fae98fb20aa09ff0412af4f0f54621e244ecfccbfd233c59a43276c59.png" src="_images/9c4da08fae98fb20aa09ff0412af4f0f54621e244ecfccbfd233c59a43276c59.png" />
+<img alt="_images/f24951a5dae3cae6b1dfa4801ca0f246e3a3e4dc6186f135bdc8b2dfcc07b67f.png" src="_images/f24951a5dae3cae6b1dfa4801ca0f246e3a3e4dc6186f135bdc8b2dfcc07b67f.png" />
+<img alt="_images/a0ed13a7ab86cb27e465c81875547bbd657967f7582075622176d05bef440cb4.png" src="_images/a0ed13a7ab86cb27e465c81875547bbd657967f7582075622176d05bef440cb4.png" />
+<img alt="_images/d16869d59f4c09cbebd100db2fba01f1b7d69327785e4eb9cc357923253de8bb.png" src="_images/d16869d59f4c09cbebd100db2fba01f1b7d69327785e4eb9cc357923253de8bb.png" />
+<img alt="_images/adf56613796e44f5f0ea5197f75a8566bdc1ee5156cd646b85ad9eaa3a17b978.png" src="_images/adf56613796e44f5f0ea5197f75a8566bdc1ee5156cd646b85ad9eaa3a17b978.png" />
+<img alt="_images/195a6c426a7f9f63355d0ea8be4b6bd45ffcb28508a18a9b7d7debb5ec84006e.png" src="_images/195a6c426a7f9f63355d0ea8be4b6bd45ffcb28508a18a9b7d7debb5ec84006e.png" />
+<img alt="_images/da51fea48080bfb2f59d777f870ba248d8ce6c5804c20234c60b12aacf4f6ee0.png" src="_images/da51fea48080bfb2f59d777f870ba248d8ce6c5804c20234c60b12aacf4f6ee0.png" />
+<img alt="_images/2e7689cf132b15817af9717277fab4f012345a52b4902b9effe0825211fc3fdc.png" src="_images/2e7689cf132b15817af9717277fab4f012345a52b4902b9effe0825211fc3fdc.png" />
+<img alt="_images/95200262d7bd8b40749da3aa9849200e80d23856d63530ce17d88947954757eb.png" src="_images/95200262d7bd8b40749da3aa9849200e80d23856d63530ce17d88947954757eb.png" />
+<img alt="_images/ad9d70ee7fef09a4612c42e59f08573e96c9794304a8b0c3ce8ae126d634898c.png" src="_images/ad9d70ee7fef09a4612c42e59f08573e96c9794304a8b0c3ce8ae126d634898c.png" />
+<img alt="_images/b01c69c4adc862fb9d3b94b694c0d6f32edb161dc91b0abc1d9fde5bfd541fa8.png" src="_images/b01c69c4adc862fb9d3b94b694c0d6f32edb161dc91b0abc1d9fde5bfd541fa8.png" />
+<img alt="_images/de3399b826b14ca3f1090a94e0ca4564f5e51cd82a5c0e012bf8a74213446b95.png" src="_images/de3399b826b14ca3f1090a94e0ca4564f5e51cd82a5c0e012bf8a74213446b95.png" />
+<img alt="_images/7259e50d388a618da7a6c925cdbf47e8ec55a59159dd17029d0da107afd9d17f.png" src="_images/7259e50d388a618da7a6c925cdbf47e8ec55a59159dd17029d0da107afd9d17f.png" />
+<img alt="_images/c93333524aecc21d74ffbf11b02948aa8adba712c31c1f7d7623983ed3bb27f2.png" src="_images/c93333524aecc21d74ffbf11b02948aa8adba712c31c1f7d7623983ed3bb27f2.png" />
+<img alt="_images/5be284c3ebab4012c266464850efc6d9b0f037e333028a241a679bdee0b19802.png" src="_images/5be284c3ebab4012c266464850efc6d9b0f037e333028a241a679bdee0b19802.png" />
+<img alt="_images/3a0c0abf6d662004ce170df4bcc0d2c14894d230888f467be19fb3c045b44f2d.png" src="_images/3a0c0abf6d662004ce170df4bcc0d2c14894d230888f467be19fb3c045b44f2d.png" />
+<img alt="_images/fd905f1c679c024de43cdabf98ecba78de7a093c85f7b3a1e5c2083531b0bf49.png" src="_images/fd905f1c679c024de43cdabf98ecba78de7a093c85f7b3a1e5c2083531b0bf49.png" />
+<img alt="_images/220e04893e5626c825b4fa1ba1c6da49aff25c8a2c1208f7d9f44604e4e56f21.png" src="_images/220e04893e5626c825b4fa1ba1c6da49aff25c8a2c1208f7d9f44604e4e56f21.png" />
+<img alt="_images/b66edffd758f4d549ee34d1eb25e4ad94ec5cc2cbd89ba2cece3c6e8f710fc35.png" src="_images/b66edffd758f4d549ee34d1eb25e4ad94ec5cc2cbd89ba2cece3c6e8f710fc35.png" />
+<img alt="_images/523698ad1f42102e85079a410264012e6b4b126c084d41c8138b494c50519a46.png" src="_images/523698ad1f42102e85079a410264012e6b4b126c084d41c8138b494c50519a46.png" />
+<img alt="_images/f866c1fae62ba8d9215a8fe3cf7106f7597efc9e0b930af27924a005a60c1e9d.png" src="_images/f866c1fae62ba8d9215a8fe3cf7106f7597efc9e0b930af27924a005a60c1e9d.png" />
+<img alt="_images/39f5f8018bac340b436d36b38e7f0337ad1a2685bd88016a0d1fccd11ce5ab1e.png" src="_images/39f5f8018bac340b436d36b38e7f0337ad1a2685bd88016a0d1fccd11ce5ab1e.png" />
+<img alt="_images/a082bcd4fcb111c47face325f824a670cc99d2240d7d6ccd896d03ea58ed43b3.png" src="_images/a082bcd4fcb111c47face325f824a670cc99d2240d7d6ccd896d03ea58ed43b3.png" />
+<img alt="_images/d7d0b89ce4e17cbadeb0f7b6edce21a20bd4237dbbcaf4e3f663aa01fd71bcef.png" src="_images/d7d0b89ce4e17cbadeb0f7b6edce21a20bd4237dbbcaf4e3f663aa01fd71bcef.png" />
+<img alt="_images/7c92649e634797ac8b156d9ef9c3d664ce65ebfebba9b95a322a6d747d7ed4a0.png" src="_images/7c92649e634797ac8b156d9ef9c3d664ce65ebfebba9b95a322a6d747d7ed4a0.png" />
+<img alt="_images/72aa7550248adaf558d7e50911ae08d5220d14a4462ba328777d7f840b4a6176.png" src="_images/72aa7550248adaf558d7e50911ae08d5220d14a4462ba328777d7f840b4a6176.png" />
+<img alt="_images/28ad6e831a4c8f39371c4a5cff54c22debaebca3cc856ac0253eba6c6d42404a.png" src="_images/28ad6e831a4c8f39371c4a5cff54c22debaebca3cc856ac0253eba6c6d42404a.png" />
+<img alt="_images/8eddfc47d925a52ebaa832083b417ef3361c82c116e87cefd7ff57c767f364ec.png" src="_images/8eddfc47d925a52ebaa832083b417ef3361c82c116e87cefd7ff57c767f364ec.png" />
+<img alt="_images/8a8cefb68372a0913d248f406fd8b1bc08b00172af8825530774d8ecaf069bda.png" src="_images/8a8cefb68372a0913d248f406fd8b1bc08b00172af8825530774d8ecaf069bda.png" />
+<img alt="_images/936cc07f61a8d58afbeaa05615b3d12990409278501ffcd785af65e9ee512af7.png" src="_images/936cc07f61a8d58afbeaa05615b3d12990409278501ffcd785af65e9ee512af7.png" />
+<img alt="_images/43f1650a9dc4acadc376884a2c58c6f836bd6fca84a3011ffc62214a455385e5.png" src="_images/43f1650a9dc4acadc376884a2c58c6f836bd6fca84a3011ffc62214a455385e5.png" />
+<img alt="_images/84badc141050db6cbe63030e4689b603c1002058e0d32db5a25d241627585e46.png" src="_images/84badc141050db6cbe63030e4689b603c1002058e0d32db5a25d241627585e46.png" />
+<img alt="_images/6df0818dca366a0f3a2e3c9e80afd889680efa93efdff3af870f240913a6e14b.png" src="_images/6df0818dca366a0f3a2e3c9e80afd889680efa93efdff3af870f240913a6e14b.png" />
+<img alt="_images/e38007585d6e20c5fc3ef6d4c760aa41c1698263288d1a1ff3104ae8fa13f031.png" src="_images/e38007585d6e20c5fc3ef6d4c760aa41c1698263288d1a1ff3104ae8fa13f031.png" />
+<img alt="_images/5e2dafbe014f2b00790993a3d2cd208249673c649e436c953811fb15c53a6e9a.png" src="_images/5e2dafbe014f2b00790993a3d2cd208249673c649e436c953811fb15c53a6e9a.png" />
+<img alt="_images/ba9ea4faa02c55b33cdaaa1fa9f59e47fad4fa5b4ef7ed2673715a80ae09c39a.png" src="_images/ba9ea4faa02c55b33cdaaa1fa9f59e47fad4fa5b4ef7ed2673715a80ae09c39a.png" />
+<img alt="_images/5032880453ca64207c486de565532bbba65520f3b57f910431e2ef9c4d0a267d.png" src="_images/5032880453ca64207c486de565532bbba65520f3b57f910431e2ef9c4d0a267d.png" />
+<img alt="_images/5ad923d2fecbdd7e4878ae89b7cd4c490ee324bf1dbaf6c1b291e2c0f289128e.png" src="_images/5ad923d2fecbdd7e4878ae89b7cd4c490ee324bf1dbaf6c1b291e2c0f289128e.png" />
+<img alt="_images/1eef3f26770f7c7dc9ad03a6e5d9501d305b0054c1412b21e09ba5edac7d3efc.png" src="_images/1eef3f26770f7c7dc9ad03a6e5d9501d305b0054c1412b21e09ba5edac7d3efc.png" />
+<img alt="_images/fe0fd17c430ccc8bb82e2f9e4ff38c092b1719a0aa43b2e70c96e08e839c0e51.png" src="_images/fe0fd17c430ccc8bb82e2f9e4ff38c092b1719a0aa43b2e70c96e08e839c0e51.png" />
+<img alt="_images/190e35784bb819e0c49ce4ca39ad816cfc1dd33e30e330da9026e769a47a450a.png" src="_images/190e35784bb819e0c49ce4ca39ad816cfc1dd33e30e330da9026e769a47a450a.png" />
+<img alt="_images/973e2d7203bb05bb3f1e96de7d9ee1418c88a08e3a92d0f4875eab38d0138be3.png" src="_images/973e2d7203bb05bb3f1e96de7d9ee1418c88a08e3a92d0f4875eab38d0138be3.png" />
+<img alt="_images/cfd14ac0865dcf8df63cfc74c79060b3a1645412305682aa753388edea97fdab.png" src="_images/cfd14ac0865dcf8df63cfc74c79060b3a1645412305682aa753388edea97fdab.png" />
+<img alt="_images/0ce78e2edda1394ebb743a3b16cd9292219610394b7aa655c76b09123603f045.png" src="_images/0ce78e2edda1394ebb743a3b16cd9292219610394b7aa655c76b09123603f045.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -786,6 +873,22 @@ document.write(`
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span>
 </pre></div>
 </div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">color_set</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">]</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">color_set</span><span class="p">)):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="o">+</span><span class="n">i</span><span class="o">/</span><span class="mi">20</span><span class="p">,</span><span class="mi">1</span><span class="o">+</span><span class="n">i</span><span class="o">/</span><span class="mi">20</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">color_set</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;pict/sep.png&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/b153b423c33be9ec91030b9b8ebd75c4847e95a0ee0e419c1ccfd10822e51d23.png" src="_images/b153b423c33be9ec91030b9b8ebd75c4847e95a0ee0e419c1ccfd10822e51d23.png" />
 </div>
 </div>
 

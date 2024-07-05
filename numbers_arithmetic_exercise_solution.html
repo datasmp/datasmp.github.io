@@ -261,13 +261,21 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="dictionaries_exercise.html">Dictionaries Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="numpy_arrays.html">Chp-12: Numpy Arrays</a></li>
-<li class="toctree-l1"><a class="reference internal" href="visualization.html">Chp-13: Visualization</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="appendix.html">Appendix</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="math.html">App-A: Math Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statistics.html">App-B: Statistics Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="random.html">App-C: Random Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="seaborn.html">App-D: Seaborn Library</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="projects.html">Projects</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="project_factorization.html">Project: Factorization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_elections.html">Project: Election Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_soccer.html">Project: Soccer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_smoothing.html">Project: Smoothing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_riemann.html">Project: Approximating Areas</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="appendix.html">Appendix</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="app_visualization.html">App: Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_business.html">App: Business Glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_math.html">App: Math Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_statistics.html">App: Statistics Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_random.html">App: Random Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_seaborn.html">App: Seaborn Library</a></li>
 </ul>
 </li>
 </ul>
@@ -426,7 +434,13 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8-pythagorean">Question-8: Pythagorean</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-9-degrees-to-radians">Question-9: Degrees to Radians</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-10-law-of-cosines">Question-10: Law of Cosines</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-11">Question-11</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-11-rational-function">Question-11: Rational Function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#business-applications">Business Applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-ordinary-annuity">Question: Ordinary Annuity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-amortized-loan-1">Question: Amortized Loan-1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-amortized-loan-2">Question: Amortized Loan-2</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -692,8 +706,8 @@ The length of the third side: 5.72</p>
 </pre></div>
 </div>
 </section>
-<section id="question-11">
-<h2>Question-11<a class="headerlink" href="#question-11" title="Permalink to this heading">#</a></h2>
+<section id="question-11-rational-function">
+<h2>Question-11: Rational Function<a class="headerlink" href="#question-11-rational-function" title="Permalink to this heading">#</a></h2>
 <p>Write a program that prompts the user for a number. Assign the entered value to variable with the name x.</p>
 <ul class="simple">
 <li><p>Find <span class="math notranslate nohighlight">\(\displaystyle f(x) = \frac{x^3-2x}{x+6}\)</span></p></li>
@@ -710,6 +724,123 @@ f(10)=61.25</p></li>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;f(&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s1">&#39;)=&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">f_x</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</section>
+<section id="business-applications">
+<h2>Business Applications<a class="headerlink" href="#business-applications" title="Permalink to this heading">#</a></h2>
+<section id="question-ordinary-annuity">
+<h3>Question: Ordinary Annuity<a class="headerlink" href="#question-ordinary-annuity" title="Permalink to this heading">#</a></h3>
+<p>An ordinary annuity is an interest earning account where you make equal payments at the end of each compounding period.</p>
+<p>The future value of an ordinary annuity is given by the following formula.</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle  A = R \left( \frac{(1+\frac{r}{m})^{mt}-1}{\frac{r}{m}}  \right)\)</span></p>
+<p>where,</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(A\)</span>: Future value</p></li>
+<li><p><span class="math notranslate nohighlight">\(R\)</span>: regular payment</p></li>
+<li><p><span class="math notranslate nohighlight">\(r\)</span>: annual interest rate</p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span>: number of payments in a year</p></li>
+<li><p><span class="math notranslate nohighlight">\(t\)</span>: number of years</p></li>
+</ul>
+<p>If you deposit 200 dollars every month into an account earning 5.25% interest per year, compounded monthly, how much money will you have saved after 30 years? Round this value to the nearest hundredth.</p>
+<p>Hint:</p>
+<ul class="simple">
+<li><p>Use the variables <span class="math notranslate nohighlight">\(R, r, m, t\)</span>  for the given values.</p></li>
+<li><p>Calculate the value of the variable <span class="math notranslate nohighlight">\(A\)</span>.</p></li>
+<li><p>To avoid mistakes, you can calculate the numerator and denominator of <span class="math notranslate nohighlight">\(A\)</span> separately.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">R</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="n">r</span> <span class="o">=</span> <span class="mf">0.0525</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="n">t</span> <span class="o">=</span> <span class="mi">30</span>
+
+<span class="n">num</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">r</span><span class="o">/</span><span class="n">m</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">m</span><span class="o">*</span><span class="n">t</span><span class="p">)</span> <span class="o">-</span><span class="mi">1</span> 
+<span class="n">den</span> <span class="o">=</span> <span class="n">r</span><span class="o">/</span><span class="n">m</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">R</span><span class="o">*</span><span class="n">num</span><span class="o">/</span><span class="n">den</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A:&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A: 174362.29
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-amortized-loan-1">
+<h3>Question: Amortized Loan-1<a class="headerlink" href="#question-amortized-loan-1" title="Permalink to this heading">#</a></h3>
+<p>Amortization is paying off a loan by making equal payments.</p>
+<p>The present value of an amortized loan is given by the following formula.</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle  P = R \left( \frac{1-(1+\frac{r}{m})^{-mt}}{\frac{r}{m}}  \right)\)</span></p>
+<p>where,</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(P\)</span>: Present value</p></li>
+<li><p><span class="math notranslate nohighlight">\(R\)</span>: regular payment</p></li>
+<li><p><span class="math notranslate nohighlight">\(r\)</span>: annual interest rate</p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span>: number of payments in a year</p></li>
+<li><p><span class="math notranslate nohighlight">\(t\)</span>: number of years</p></li>
+</ul>
+<p>If you can make monthly payments of 350 dollars for 3 years at an annual interest rate of 9%, what is the present value of the loan you can take out? Round this value to the nearest hundredth.</p>
+<p>Hint:</p>
+<ul class="simple">
+<li><p>Use the variables <span class="math notranslate nohighlight">\(R, r, m, t\)</span>  for the given values.</p></li>
+<li><p>Calculate the value of the variable <span class="math notranslate nohighlight">\(P\)</span>.</p></li>
+<li><p>To avoid mistakes, you can calculate the numerator and denominator of right hand side separately.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">R</span> <span class="o">=</span> <span class="mi">350</span>
+<span class="n">r</span> <span class="o">=</span> <span class="mf">0.09</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="n">t</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="n">num</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">r</span><span class="o">/</span><span class="n">m</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="n">m</span><span class="o">*</span><span class="n">t</span><span class="p">)</span> 
+<span class="n">den</span> <span class="o">=</span> <span class="n">r</span><span class="o">/</span><span class="n">m</span>
+
+<span class="n">P</span> <span class="o">=</span> <span class="n">R</span><span class="o">*</span><span class="p">(</span><span class="n">num</span><span class="o">/</span><span class="n">den</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;P:&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">P</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>P: 11006.38
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-amortized-loan-2">
+<h3>Question: Amortized Loan-2<a class="headerlink" href="#question-amortized-loan-2" title="Permalink to this heading">#</a></h3>
+<p>If you take out an 80,000 dollars loan to buy a truck with an annual interest rate of 6%, to be paid off over 5 years, what is the monthly payment? Round this value to the nearest hundredth.</p>
+<p>Hint:</p>
+<ul class="simple">
+<li><p>Use the variables <span class="math notranslate nohighlight">\(P, r, m, t\)</span>  for the given values.</p></li>
+<li><p>Calculate the value of the variable <span class="math notranslate nohighlight">\(R\)</span>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">P</span> <span class="o">=</span> <span class="mi">80_000</span>
+<span class="n">r</span> <span class="o">=</span> <span class="mf">0.06</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="n">t</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="n">num</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">r</span><span class="o">/</span><span class="n">m</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="n">m</span><span class="o">*</span><span class="n">t</span><span class="p">)</span> 
+<span class="n">den</span> <span class="o">=</span> <span class="n">r</span><span class="o">/</span><span class="n">m</span>
+
+<span class="n">R</span> <span class="o">=</span> <span class="n">P</span><span class="o">/</span><span class="p">(</span><span class="n">num</span><span class="o">/</span><span class="n">den</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;R:&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">R</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R: 1546.62
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 </section>
 
@@ -768,7 +899,13 @@ f(10)=61.25</p></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8-pythagorean">Question-8: Pythagorean</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-9-degrees-to-radians">Question-9: Degrees to Radians</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-10-law-of-cosines">Question-10: Law of Cosines</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-11">Question-11</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-11-rational-function">Question-11: Rational Function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#business-applications">Business Applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-ordinary-annuity">Question: Ordinary Annuity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-amortized-loan-1">Question: Amortized Loan-1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-amortized-loan-2">Question: Amortized Loan-2</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
