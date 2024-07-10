@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'app_visualization';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="App: Math Module" href="app_math.html" />
+    <link rel="next" title="App: Business Glossary" href="app_business.html" />
     <link rel="prev" title="Appendix" href="appendix.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -268,10 +268,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="project_elections.html">Project: Election Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project_soccer.html">Project: Soccer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project_smoothing.html">Project: Smoothing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_riemann.html">Project: Approximating Areas</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="appendix.html">Appendix</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">App: Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_business.html">App: Business Glossary</a></li>
 <li class="toctree-l2"><a class="reference internal" href="app_math.html">App: Math Module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="app_statistics.html">App: Statistics Module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="app_random.html">App: Random Module</a></li>
@@ -438,6 +440,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#title">Title</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#axis-labels">Axis Labels</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#axis-ticks">Axis Ticks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-axis">Remove Axis</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grids">Grids</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#text">Text</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subplot">Subplot</a></li>
@@ -745,6 +748,21 @@ For more marker styles visit the following <a class="reference external" href="h
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/ae5fcdb15a30a9dfea14e195fad0006e50d68932a48a2df19775f6eb6b3a54b1.png" src="_images/ae5fcdb15a30a9dfea14e195fad0006e50d68932a48a2df19775f6eb6b3a54b1.png" />
+</div>
+</div>
+</section>
+<section id="remove-axis">
+<h3>Remove Axis<a class="headerlink" href="#remove-axis" title="Permalink to this heading">#</a></h3>
+<p><em>plt.axis(‘off’)</em> is used to remove axis.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">),(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">);</span>    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/d79c0f1d70edddf5e3f0d858a9a74ba965f39a294e69ef6eb33cdb3f3bcd8712.png" src="_images/d79c0f1d70edddf5e3f0d858a9a74ba965f39a294e69ef6eb33cdb3f3bcd8712.png" />
 </div>
 </div>
 </section>
@@ -1226,11 +1244,11 @@ The following link provides access to various <a class="reference external" href
       </div>
     </a>
     <a class="right-next"
-       href="app_math.html"
+       href="app_business.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">App: Math Module</p>
+        <p class="prev-next-title">App: Business Glossary</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1263,6 +1281,7 @@ The following link provides access to various <a class="reference external" href
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#title">Title</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#axis-labels">Axis Labels</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#axis-ticks">Axis Ticks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-axis">Remove Axis</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grids">Grids</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#text">Text</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subplot">Subplot</a></li>

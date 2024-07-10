@@ -434,6 +434,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8-relu">Question-8: ReLU</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-9-heaviside">Question-9: Heaviside</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#business-applications">Business Applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-discount">Question: Discount</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-loan-approval">Question: Loan Approval</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-tax">Question: Tax</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-bucket-strategy">Question: Bucket Strategy</a></li>
 </ul>
@@ -710,6 +712,114 @@ Heaviside value of 0.0 is 0.5</p>
 </section>
 <section id="business-applications">
 <h2>Business Applications<a class="headerlink" href="#business-applications" title="Permalink to this heading">#</a></h2>
+<section id="question-discount">
+<h3>Question: Discount<a class="headerlink" href="#question-discount" title="Permalink to this heading">#</a></h3>
+<p>An online store offers discounts based on the amount you spend:</p>
+<ul class="simple">
+<li><p>No discount for spending less than 100 dollars.</p></li>
+<li><p>20% discount for spending between 100 and 150 dollars.</p></li>
+<li><p>30% discount for spending between 150 and 200 dollars.</p></li>
+<li><p>40% discount for spending over 200 dollars.</p></li>
+</ul>
+<p>Write a program that prompts the user to enter their total spending and returns the final price after applying the appropriate discount, adding a 6% tax, and including a 3% shipping fee.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">amount</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter the amount that you spend:&#39;</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="n">amount</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Wrong entry!&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">amount</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
+    <span class="k">pass</span>
+<span class="k">elif</span> <span class="mi">100</span> <span class="o">&lt;=</span> <span class="n">amount</span> <span class="o">&lt;=</span> <span class="mi">150</span><span class="p">:</span>
+    <span class="n">amount</span> <span class="o">*=</span> <span class="mf">0.8</span>
+<span class="k">elif</span> <span class="mi">150</span> <span class="o">&lt;</span> <span class="n">amount</span> <span class="o">&lt;=</span> <span class="mi">200</span><span class="p">:</span>
+    <span class="n">amount</span> <span class="o">*=</span> <span class="mf">0.7</span>
+<span class="k">else</span> <span class="p">:</span>
+    <span class="n">amount</span> <span class="o">*=</span> <span class="mf">0.6</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Final amount: </span><span class="si">{</span><span class="n">amount</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">amount</span><span class="o">*</span><span class="p">(</span><span class="mf">0.06</span><span class="o">+</span><span class="mf">0.03</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="question-loan-approval">
+<h3>Question: Loan Approval<a class="headerlink" href="#question-loan-approval" title="Permalink to this heading">#</a></h3>
+<p>Write a program that prompts the user to enter their credit score and the amount they want to apply for using two <em>input()</em> functions. The program should return the approval decision based on the following table:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Credit Score</p></th>
+<th class="head"><p>Loan Amount</p></th>
+<th class="head"><p>Decision</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>less than or equal to 600</p></td>
+<td><p>less than or equal to 10,000</p></td>
+<td><p>Approved</p></td>
+</tr>
+<tr class="row-odd"><td><p>less than or equal to 600</p></td>
+<td><p>greater than 10,000</p></td>
+<td><p>Deny</p></td>
+</tr>
+<tr class="row-even"><td><p>between 600 and 800</p></td>
+<td><p>less than or equal to 30,000</p></td>
+<td><p>Approved</p></td>
+</tr>
+<tr class="row-odd"><td><p>between 600 and 800</p></td>
+<td><p>greater than 30,000</p></td>
+<td><p>Deny</p></td>
+</tr>
+<tr class="row-even"><td><p>greater than or equal to 800</p></td>
+<td><p>less than or equal to 50,000</p></td>
+<td><p>Approved</p></td>
+</tr>
+<tr class="row-odd"><td><p>greater than or equal to 800</p></td>
+<td><p>greater than 50,000</p></td>
+<td><p>Deny</p></td>
+</tr>
+</tbody>
+</table>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">loan_amount</span>  <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter the loan amount   :&#39;</span><span class="p">))</span>
+<span class="n">credit_score</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter your credit course:&#39;</span><span class="p">))</span>
+<span class="k">if</span>   <span class="p">(</span><span class="n">credit_score</span> <span class="o">&lt;=</span> <span class="mi">600</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">loan_amount</span> <span class="o">&lt;=</span> <span class="mi">10_000</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Approved.&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="p">(</span><span class="n">credit_score</span> <span class="o">&lt;=</span> <span class="mi">600</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">loan_amount</span> <span class="o">&gt;</span> <span class="mi">10_000</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Deny.&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="p">(</span><span class="mi">600</span> <span class="o">&lt;</span> <span class="n">credit_score</span> <span class="o">&lt;</span> <span class="mi">800</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">loan_amount</span> <span class="o">&lt;=</span> <span class="mi">30_000</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Approved.&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="p">(</span><span class="mi">600</span> <span class="o">&lt;</span> <span class="n">credit_score</span> <span class="o">&lt;</span> <span class="mi">800</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">loan_amount</span> <span class="o">&gt;</span> <span class="mi">30_000</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Deny.&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="p">(</span><span class="n">credit_score</span> <span class="o">&gt;=</span> <span class="mi">800</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">loan_amount</span> <span class="o">&lt;=</span> <span class="mi">50_000</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Approved.&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="p">(</span><span class="n">credit_score</span> <span class="o">&gt;=</span> <span class="mi">800</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">loan_amount</span> <span class="o">&gt;</span> <span class="mi">50_000</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Deny.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">loan_amount</span>  <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter the loan amount   :&#39;</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">credit_score</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter your credit course:&#39;</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">if</span>   <span class="p">(</span><span class="n">credit_score</span> <span class="o">&lt;=</span> <span class="mi">600</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">loan_amount</span> <span class="o">&lt;=</span> <span class="mi">10_000</span><span class="p">):</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.11/site-packages/ipykernel/kernelbase.py:1201,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1199</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1200</span>     <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1201</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1202</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1203</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1204</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">   </span><span class="mi">1205</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1206</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1207</span> <span class="p">)</span>
+
+<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="question-tax">
 <h3>Question: Tax<a class="headerlink" href="#question-tax" title="Permalink to this heading">#</a></h3>
 <p>IRS uses he following table to determine the tax amount for a single person.</p>
@@ -822,25 +932,7 @@ Change: 11.7</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">risk_level</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter the risk type (Conservative/Moderate/Aggressive):&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">investment_amount</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter the investment amount:&#39;</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">if</span> <span class="n">risk_level</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;conservative&#39;</span><span class="p">:</span>
-
-<span class="nn">File ~/anaconda3/lib/python3.11/site-packages/ipykernel/kernelbase.py:1201,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1199</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1200</span>     <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1201</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1202</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1203</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1204</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">   </span><span class="mi">1205</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1206</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1207</span> <span class="p">)</span>
-
-<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Change: 11.7
 </pre></div>
 </div>
 </div>
@@ -916,6 +1008,8 @@ Change: 11.7</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8-relu">Question-8: ReLU</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-9-heaviside">Question-9: Heaviside</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#business-applications">Business Applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-discount">Question: Discount</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-loan-approval">Question: Loan Approval</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-tax">Question: Tax</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-bucket-strategy">Question: Bucket Strategy</a></li>
 </ul>

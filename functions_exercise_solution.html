@@ -424,11 +424,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question-1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question-2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-algebraic-operations">Question-1: Algebraic Operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-letters">Question-2: Letters</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-distance">Question-3: Distance</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4-password-check">Question-4: Password Check</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5-random-points">Question-5: Random Points</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6-pyramid">Question-6: Pyramid</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7-equation-of-a-line">Question-7: Equation of a Line</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8-pitch-monitor">Question-8: Pitch Monitor</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#business-application">Business Application</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-simple-interest">Question: Simple Interest</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-cost">Question: Cost</a></li>
@@ -451,8 +454,8 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="functions-exercises-and-solutions">
 <h1>Functions Exercises and Solutions<a class="headerlink" href="#functions-exercises-and-solutions" title="Permalink to this heading">#</a></h1>
-<section id="question-1">
-<h2>Question-1<a class="headerlink" href="#question-1" title="Permalink to this heading">#</a></h2>
+<section id="question-1-algebraic-operations">
+<h2>Question-1: Algebraic Operations<a class="headerlink" href="#question-1-algebraic-operations" title="Permalink to this heading">#</a></h2>
 <p>Write a function that takes two numbers as parameters and returns the results of the four basic operations.</p>
 <ul class="simple">
 <li><p>If the second number is zero for division, print a warning message about division by zero.</p></li>
@@ -476,8 +479,8 @@ document.write(`
 </pre></div>
 </div>
 </section>
-<section id="question-2">
-<h2>Question-2<a class="headerlink" href="#question-2" title="Permalink to this heading">#</a></h2>
+<section id="question-2-letters">
+<h2>Question-2: Letters<a class="headerlink" href="#question-2-letters" title="Permalink to this heading">#</a></h2>
 <p>Write a function that takes a number as its input and returns the first corresponding number of lowercase letters from the alphabet.</p>
 <ul class="simple">
 <li><p>If the input number exceeds the total number of letters in the alphabet, the function returns all letters.</p></li>
@@ -580,6 +583,137 @@ ACCEPT!</p>
 
 <span class="n">rand_point</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 </pre></div>
+</div>
+</section>
+<section id="question-6-pyramid">
+<h2>Question-6: Pyramid<a class="headerlink" href="#question-6-pyramid" title="Permalink to this heading">#</a></h2>
+<p>Write a function that takes five parameters representing:</p>
+<ol class="arabic simple">
+<li><p>The x-coordinate of the right upper corner of the rectangle.</p></li>
+<li><p>The y-coordinate of the right upper corner of the rectangle.</p></li>
+<li><p>The width of the rectangle.</p></li>
+<li><p>The length of the rectangle.</p></li>
+<li><p>The color of the rectangle.</p></li>
+</ol>
+<p>The function should:</p>
+<ul class="simple">
+<li><p>Plot the corresponding rectangle.</p></li>
+<li><p>Plot the point (0,0) in blue color.</p></li>
+<li><p>Draw four dotted blue lines from the point (0,0) to each corner of the rectangle.</p></li>
+<li><p>Remove the axis.</p></li>
+</ul>
+<p>Sample plot:</p>
+<p><img alt="" src="_images/func_pyramid.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="k">def</span> <span class="nf">rect</span><span class="p">(</span><span class="n">xr</span><span class="p">,</span> <span class="n">yr</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">xr</span><span class="o">-</span><span class="n">width</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">yr</span><span class="o">-</span><span class="n">length</span><span class="p">]</span> <span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">xr</span><span class="o">-</span><span class="n">width</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">yr</span><span class="p">]</span> <span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">xr</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">yr</span><span class="o">-</span><span class="n">length</span><span class="p">]</span> <span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">xr</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">yr</span><span class="p">]</span> <span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">xr</span><span class="p">,</span> <span class="n">xr</span><span class="o">-</span><span class="n">width</span><span class="p">,</span> <span class="n">xr</span><span class="o">-</span><span class="n">width</span><span class="p">,</span> <span class="n">xr</span><span class="p">,</span> <span class="n">xr</span><span class="p">],</span> <span class="p">[</span><span class="n">yr</span><span class="p">,</span> <span class="n">yr</span><span class="p">,</span> <span class="n">yr</span><span class="o">-</span><span class="n">length</span><span class="p">,</span> <span class="n">yr</span><span class="o">-</span><span class="n">length</span><span class="p">,</span> <span class="n">yr</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+    
+<span class="n">rect</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;pict/func_pyramid.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/c0bd419667cbd9c96b9854a089488215d5e721e419c65a691cec55973d7761a2.png" src="_images/c0bd419667cbd9c96b9854a089488215d5e721e419c65a691cec55973d7761a2.png" />
+</div>
+</div>
+</section>
+<section id="question-7-equation-of-a-line">
+<h2>Question-7: Equation of a Line<a class="headerlink" href="#question-7-equation-of-a-line" title="Permalink to this heading">#</a></h2>
+<p>Write a function that takes four parameters representing:</p>
+<ol class="arabic simple">
+<li><p>The x-coordinate of the first point.</p></li>
+<li><p>The y-coordinate of the first point.</p></li>
+<li><p>The x-coordinate of the second point.</p></li>
+<li><p>The y-coordinate of the second point.</p></li>
+</ol>
+<p>The function should return the equation of the line that passes through these two points using the slope-intercept form
+<span class="math notranslate nohighlight">\(y=mx+b\)</span> , where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(m\)</span> is the slope, calculated as <span class="math notranslate nohighlight">\(m=\frac{y_2-y_1}{x_2-x1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(b\)</span> is the y-intercept, calculated as <span class="math notranslate nohighlight">\(b = y_2 - mx_2\)</span>.</p></li>
+</ul>
+<p>Warning: If <span class="math notranslate nohighlight">\(x_2=x_1\)</span> , the equation of the line is <span class="math notranslate nohighlight">\(x=x_2\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">linear_equ</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x2</span> <span class="o">!=</span> <span class="n">x1</span><span class="p">:</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">y2</span><span class="o">-</span><span class="n">y1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">x2</span><span class="o">-</span><span class="n">x1</span><span class="p">)</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">y2</span><span class="o">-</span><span class="n">m</span><span class="o">*</span><span class="n">x2</span>
+        <span class="k">if</span> <span class="n">y1</span> <span class="o">==</span> <span class="n">y2</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;y = </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;y = </span><span class="si">{</span><span class="n">m</span><span class="si">}</span><span class="s1">x+</span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;x = </span><span class="si">{</span><span class="n">x1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        
+<span class="n">linear_equ</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>y = 0.25x+2.5
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-8-pitch-monitor">
+<h2>Question-8: Pitch Monitor<a class="headerlink" href="#question-8-pitch-monitor" title="Permalink to this heading">#</a></h2>
+<p>Write a function that takes a list of whole numbers representing pitches and visualize the pitches, using the print() function and * characters.</p>
+<ul class="simple">
+<li><p>The length of the pitch list is the number of <code class="docutils literal notranslate"><span class="pre">*</span></code> columns.</p></li>
+<li><p>The numbers in the list represent the number of <code class="docutils literal notranslate"><span class="pre">*</span></code> characters in each column.</p></li>
+<li><p>For example, if pitches_list = [2, 5, 3, 4], then:</p>
+<ul>
+<li><p>The first column has 2 stars.</p></li>
+<li><p>The second column has 5 stars.</p></li>
+<li><p>The third column has 3 stars.</p></li>
+<li><p>The fourth column has 4 stars.</p></li>
+</ul>
+</li>
+</ul>
+<p>Sample Output for pitches_list = [2,5,3,4]:</p>
+<p><img alt="" src="_images/pitches.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pitches_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">pitches_list2</span> <span class="o">=</span> <span class="n">pitches_list</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">pitches_list</span><span class="p">)):</span>
+    <span class="n">maximum</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">pitches_list2</span><span class="p">)</span>
+    <span class="n">print_list</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pitches_list2</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">pitches_list2</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="n">maximum</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;* &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+            <span class="n">pitches_list2</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;  &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">()</span>    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  *     
+  *   * 
+  * * * 
+* * * * 
+* * * * 
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="business-application">
@@ -782,11 +916,14 @@ ACCEPT!</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question-1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question-2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-algebraic-operations">Question-1: Algebraic Operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-letters">Question-2: Letters</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-distance">Question-3: Distance</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4-password-check">Question-4: Password Check</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5-random-points">Question-5: Random Points</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6-pyramid">Question-6: Pyramid</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7-equation-of-a-line">Question-7: Equation of a Line</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8-pitch-monitor">Question-8: Pitch Monitor</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#business-application">Business Application</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-simple-interest">Question: Simple Interest</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-cost">Question: Cost</a></li>
