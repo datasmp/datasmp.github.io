@@ -426,14 +426,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-algebraic-operations">Question-1: Algebraic Operations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-letters">Question-2: Letters</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-distance">Question-3: Distance</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4-password-check">Question-4: Password Check</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5-random-points">Question-5: Random Points</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6-pyramid">Question-6: Pyramid</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7-equation-of-a-line">Question-7: Equation of a Line</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8-pitch-monitor">Question-8: Pitch Monitor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-harmonic-mean">Question-1: Harmonic Mean</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-circle">Question-2: Circle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-algebraic-operations">Question-3: Algebraic Operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4-letters">Question-4: Letters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5-distance">Question-5: Distance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6-password-check">Question-6: Password Check</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7-random-points">Question-7: Random Points</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8-pyramid">Question-8: Pyramid</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-9-equation-of-a-line">Question-9: Equation of a Line</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-10-pitch-monitor">Question-10: Pitch Monitor</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#business-application">Business Application</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-simple-interest">Question: Simple Interest</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-cost">Question: Cost</a></li>
@@ -457,8 +459,23 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="functions-exercises">
 <h1>Functions Exercises<a class="headerlink" href="#functions-exercises" title="Permalink to this heading">#</a></h1>
 <p><img alt="" src="_images/functions_exercises2.png" /></p>
-<section id="question-1-algebraic-operations">
-<h2>Question-1: Algebraic Operations<a class="headerlink" href="#question-1-algebraic-operations" title="Permalink to this heading">#</a></h2>
+<section id="question-1-harmonic-mean">
+<h2>Question-1: Harmonic Mean<a class="headerlink" href="#question-1-harmonic-mean" title="Permalink to this heading">#</a></h2>
+<p>Write a function that takes three numbers as parameters and returns the harmonic mean of these numbers using the formula:
+<span class="math notranslate nohighlight">\(\displaystyle H(x, y, z) = \frac{3}{\frac{1}{x}+\frac{1}{y}+\frac{1}{z}}\)</span>.</p>
+</section>
+<section id="question-2-circle">
+<h2>Question-2: Circle<a class="headerlink" href="#question-2-circle" title="Permalink to this heading">#</a></h2>
+<p>Write a function that takes two parameters: radius (<span class="math notranslate nohighlight">\(r\)</span>) with a default value of 1, and calculation_type with a default value of “area”.</p>
+<ul class="simple">
+<li><p>If calculation_type is area (<span class="math notranslate nohighlight">\(\pi r^2\)</span>) the function returns the area of the circle, rounded to the nearest hundredth.</p></li>
+<li><p>If calculation_type is perimeter(<span class="math notranslate nohighlight">\(2\pi r\)</span>)  the function returns the perimeter of the circle, rounded to the nearest hundredth.</p></li>
+<li><p>If calculation_type is both  the function returns a tuple containing both the perimeter and the area of the circle, each rounded to the nearest hundredth.</p></li>
+<li><p>If calculation_type is anything else, it prints a “not valid type” warning.</p></li>
+</ul>
+</section>
+<section id="question-3-algebraic-operations">
+<h2>Question-3: Algebraic Operations<a class="headerlink" href="#question-3-algebraic-operations" title="Permalink to this heading">#</a></h2>
 <p>Write a function that takes two numbers as parameters and returns the results of the four basic operations.</p>
 <ul class="simple">
 <li><p>If the second number is zero for division, print a warning message about division by zero.</p></li>
@@ -470,8 +487,8 @@ document.write(`
 3 x 7 = 21<br />
 3 / 7 = 0.43</p>
 </section>
-<section id="question-2-letters">
-<h2>Question-2: Letters<a class="headerlink" href="#question-2-letters" title="Permalink to this heading">#</a></h2>
+<section id="question-4-letters">
+<h2>Question-4: Letters<a class="headerlink" href="#question-4-letters" title="Permalink to this heading">#</a></h2>
 <p>Write a function that takes a number as its input and returns the first corresponding number of lowercase letters from the alphabet.</p>
 <ul class="simple">
 <li><p>If the input number exceeds the total number of letters in the alphabet, the function returns all letters.</p></li>
@@ -485,8 +502,8 @@ abcd</p>
 <p>print(letter_func(40))<br />
 abcdefghijklmnopqrstuvwxyz</p>
 </section>
-<section id="question-3-distance">
-<h2>Question-3: Distance<a class="headerlink" href="#question-3-distance" title="Permalink to this heading">#</a></h2>
+<section id="question-5-distance">
+<h2>Question-5: Distance<a class="headerlink" href="#question-5-distance" title="Permalink to this heading">#</a></h2>
 <p>Write a function that takes four parameters: the (x, y) coordinates of two points, A and B.</p>
 <ul class="simple">
 <li><p>Plot a red line connecting these two points on a graph.</p></li>
@@ -497,8 +514,8 @@ abcdefghijklmnopqrstuvwxyz</p>
 <p><strong>Sample Output</strong></p>
 <p><img alt="" src="_images/plot_dist.png" /></p>
 </section>
-<section id="question-4-password-check">
-<h2>Question-4: Password Check<a class="headerlink" href="#question-4-password-check" title="Permalink to this heading">#</a></h2>
+<section id="question-6-password-check">
+<h2>Question-6: Password Check<a class="headerlink" href="#question-6-password-check" title="Permalink to this heading">#</a></h2>
 <p>Select a 4-digit password. Then, write a function that takes a 4-digit number as its parameter.</p>
 <ul class="simple">
 <li><p>If the provided number is within 10 units of the chosen password, the function should print a message granting permission to enter; otherwise, it should print a message denying entrance.</p></li>
@@ -509,8 +526,8 @@ DENY!</p>
 <p>password_check(4325)<br />
 ACCEPT!</p>
 </section>
-<section id="question-5-random-points">
-<h2>Question-5: Random Points<a class="headerlink" href="#question-5-random-points" title="Permalink to this heading">#</a></h2>
+<section id="question-7-random-points">
+<h2>Question-7: Random Points<a class="headerlink" href="#question-7-random-points" title="Permalink to this heading">#</a></h2>
 <p>Write a function that takes a parameter representing the number of points to plot in green.</p>
 <ul class="simple">
 <li><p>This function should generate random points, each with random sizes and transparencies, and plot them on a graph.</p></li>
@@ -521,8 +538,8 @@ ACCEPT!</p>
 <p><strong>Sample Output</strong></p>
 <p><img alt="" src="_images/plot_rand_points.png" /></p>
 </section>
-<section id="question-6-pyramid">
-<h2>Question-6: Pyramid<a class="headerlink" href="#question-6-pyramid" title="Permalink to this heading">#</a></h2>
+<section id="question-8-pyramid">
+<h2>Question-8: Pyramid<a class="headerlink" href="#question-8-pyramid" title="Permalink to this heading">#</a></h2>
 <p>Write a function that takes five parameters representing:</p>
 <ol class="arabic simple">
 <li><p>The x-coordinate of the right upper corner of the rectangle.</p></li>
@@ -541,8 +558,8 @@ ACCEPT!</p>
 <p>Sample plot:</p>
 <p><img alt="" src="_images/func_pyramid.png" /></p>
 </section>
-<section id="question-7-equation-of-a-line">
-<h2>Question-7: Equation of a Line<a class="headerlink" href="#question-7-equation-of-a-line" title="Permalink to this heading">#</a></h2>
+<section id="question-9-equation-of-a-line">
+<h2>Question-9: Equation of a Line<a class="headerlink" href="#question-9-equation-of-a-line" title="Permalink to this heading">#</a></h2>
 <p>Write a function that takes four parameters representing:</p>
 <ol class="arabic simple">
 <li><p>The x-coordinate of the first point.</p></li>
@@ -558,13 +575,13 @@ ACCEPT!</p>
 </ul>
 <p>Warning: If <span class="math notranslate nohighlight">\(x_2=x_1\)</span> , the equation of the line is <span class="math notranslate nohighlight">\(x=x_2\)</span>.</p>
 </section>
-<section id="question-8-pitch-monitor">
-<h2>Question-8: Pitch Monitor<a class="headerlink" href="#question-8-pitch-monitor" title="Permalink to this heading">#</a></h2>
+<section id="question-10-pitch-monitor">
+<h2>Question-10: Pitch Monitor<a class="headerlink" href="#question-10-pitch-monitor" title="Permalink to this heading">#</a></h2>
 <p>Write a function that takes a list of whole numbers representing pitches and visualize the pitches, using the print() function and * characters.</p>
 <ul class="simple">
 <li><p>The length of the pitch list is the number of <code class="docutils literal notranslate"><span class="pre">*</span></code> columns.</p></li>
 <li><p>The numbers in the list represent the number of <code class="docutils literal notranslate"><span class="pre">*</span></code> characters in each column.</p></li>
-<li><p>For example, if pitches_list = [2, 5, 3, 4], then:</p>
+<li><p>For example, if pitch_list = [2, 5, 3, 4], then:</p>
 <ul>
 <li><p>The first column has 2 stars.</p></li>
 <li><p>The second column has 5 stars.</p></li>
@@ -573,7 +590,7 @@ ACCEPT!</p>
 </ul>
 </li>
 </ul>
-<p>Sample Output for pitches_list = [2,5,3,4]:</p>
+<p>Sample Output for pitch_list = [2,5,3,4]:</p>
 <p><img alt="" src="_images/pitches.png" /></p>
 </section>
 <section id="business-application">
@@ -712,14 +729,16 @@ ACCEPT!</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-algebraic-operations">Question-1: Algebraic Operations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-letters">Question-2: Letters</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-distance">Question-3: Distance</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4-password-check">Question-4: Password Check</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5-random-points">Question-5: Random Points</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6-pyramid">Question-6: Pyramid</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7-equation-of-a-line">Question-7: Equation of a Line</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8-pitch-monitor">Question-8: Pitch Monitor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-harmonic-mean">Question-1: Harmonic Mean</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-circle">Question-2: Circle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-algebraic-operations">Question-3: Algebraic Operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4-letters">Question-4: Letters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5-distance">Question-5: Distance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6-password-check">Question-6: Password Check</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7-random-points">Question-7: Random Points</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8-pyramid">Question-8: Pyramid</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-9-equation-of-a-line">Question-9: Equation of a Line</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-10-pitch-monitor">Question-10: Pitch Monitor</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#business-application">Business Application</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-simple-interest">Question: Simple Interest</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-cost">Question: Cost</a></li>

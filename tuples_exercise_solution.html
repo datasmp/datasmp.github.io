@@ -432,9 +432,12 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6">Question-6</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7">Question-7</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8">Question-8</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-9-accuracy-score">Question-9: Accuracy Score</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#business-applications">Business Applications</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-production-data-analysis">Question: Production Data Analysis</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-profit-and-loss">Question: Profit and Loss</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-total-cost">Question: Total Cost</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-stock-symbols">Question: Stock Symbols</a></li>
 </ul>
 </li>
 </ul>
@@ -700,6 +703,38 @@ ruler
 </div>
 </div>
 </section>
+<section id="question-9-accuracy-score">
+<h2>Question-9: Accuracy Score<a class="headerlink" href="#question-9-accuracy-score" title="Permalink to this heading">#</a></h2>
+<p>The following two tuples represent the actual and predicted test scores (Positive/Negative) for some samples.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">actual</span>     <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span><span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span><span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span><span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">)</span>
+<span class="n">prediction</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span><span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span><span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span><span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">)</span>
+
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Compute the accuracy score for the predicted values, which is the ratio of correctly classified samples to the total number of samples.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">actual</span>     <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span><span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span><span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span><span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">)</span>
+<span class="n">prediction</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span><span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span><span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span><span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">)</span>
+
+<span class="n">correct</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">actual</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">actual</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">prediction</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+        <span class="n">correct</span> <span class="o">+=</span> <span class="mi">1</span>
+        
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Accuracy score: </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">correct</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">actual</span><span class="p">),</span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy score: 0.67
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="business-applications">
 <h2>Business Applications<a class="headerlink" href="#business-applications" title="Permalink to this heading">#</a></h2>
 <section id="question-production-data-analysis">
@@ -781,6 +816,62 @@ Loss years    : (2012, 2016, 2019, 2021)
 </div>
 </div>
 </section>
+<section id="question-total-cost">
+<h3>Question: Total Cost<a class="headerlink" href="#question-total-cost" title="Permalink to this heading">#</a></h3>
+<p>The following tuple represents the unit price-quantity pairs for various items. Write a program that computes the total cost using a for loop.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">price_quantity</span> <span class="o">=</span> <span class="p">((</span><span class="mi">8</span> <span class="n">dollars</span><span class="p">,</span> <span class="mi">100</span> <span class="n">items</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span> <span class="n">dollars</span><span class="p">,</span> <span class="mi">300</span> <span class="n">items</span><span class="p">),</span> <span class="p">(</span><span class="mi">23</span> <span class="n">dollars</span><span class="p">,</span> <span class="mi">150</span> <span class="n">items</span><span class="p">),</span> <span class="p">(</span><span class="mi">89</span> <span class="n">dollars</span><span class="p">,</span> <span class="mi">75</span> <span class="n">items</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">price_quantity</span> <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;8 dollars&#39;</span><span class="p">,</span> <span class="s1">&#39;100 items&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;4 dollars&#39;</span><span class="p">,</span> <span class="s1">&#39;300 items&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;23 dollars&#39;</span><span class="p">,</span> <span class="s1">&#39;150 items&#39;</span><span class="p">),</span>
+                  <span class="p">(</span><span class="s1">&#39;89 dollars&#39;</span><span class="p">,</span> <span class="s1">&#39;75 items&#39;</span><span class="p">))</span>
+
+<span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">pq</span> <span class="ow">in</span> <span class="n">price_quantity</span><span class="p">:</span>
+    <span class="n">total</span> <span class="o">+=</span> <span class="nb">float</span><span class="p">(</span><span class="n">pq</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span><span class="o">*</span><span class="nb">float</span><span class="p">(</span><span class="n">pq</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12125.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-stock-symbols">
+<h3>Question: Stock Symbols<a class="headerlink" href="#question-stock-symbols" title="Permalink to this heading">#</a></h3>
+<p>Given the following tuple containing stock symbols, write a program that returns a new tuple with the following modifications:</p>
+<ul class="simple">
+<li><p>Remove duplicate stock symbols while preserving the original order.</p></li>
+<li><p>Replace any ‘.’ characters in the symbols with ‘-’ characters.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">symbols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;MMM&#39;</span><span class="p">,</span> <span class="s1">&#39;BF.B&#39;</span><span class="p">,</span> <span class="s1">&#39;CAT&#39;</span><span class="p">,</span> <span class="s1">&#39;AMZN&#39;</span><span class="p">,</span> <span class="s1">&#39;BRK.B&#39;</span><span class="p">,</span> <span class="s1">&#39;AAL&#39;</span><span class="p">,</span> <span class="s1">&#39;CAT&#39;</span><span class="p">,</span> <span class="s1">&#39;GOOG&#39;</span><span class="p">,</span> <span class="s1">&#39;MMM&#39;</span><span class="p">,</span> <span class="s1">&#39;AEP&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">newlist</span> <span class="o">=</span> <span class="p">()</span>
+<span class="n">symbols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;MMM&#39;</span><span class="p">,</span> <span class="s1">&#39;BF.B&#39;</span><span class="p">,</span> <span class="s1">&#39;CAT&#39;</span><span class="p">,</span> <span class="s1">&#39;AMZN&#39;</span><span class="p">,</span> <span class="s1">&#39;BRK.B&#39;</span><span class="p">,</span> <span class="s1">&#39;AAL&#39;</span><span class="p">,</span> <span class="s1">&#39;CAT&#39;</span><span class="p">,</span> <span class="s1">&#39;GOOG&#39;</span><span class="p">,</span> <span class="s1">&#39;MMM&#39;</span><span class="p">,</span> <span class="s1">&#39;AEP&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">stock</span> <span class="ow">in</span> <span class="n">symbols</span><span class="p">:</span>
+    <span class="n">stock</span> <span class="o">=</span> <span class="n">stock</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">stock</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">newlist</span><span class="p">:</span>
+        <span class="n">newlist</span> <span class="o">+=</span> <span class="p">(</span><span class="n">stock</span><span class="p">,)</span>
+        
+<span class="nb">print</span><span class="p">(</span><span class="n">newlist</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;MMM&#39;, &#39;BF-B&#39;, &#39;CAT&#39;, &#39;AMZN&#39;, &#39;BRK-B&#39;, &#39;AAL&#39;, &#39;GOOG&#39;, &#39;AEP&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 </section>
 
@@ -837,9 +928,12 @@ Loss years    : (2012, 2016, 2019, 2021)
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6">Question-6</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7">Question-7</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8">Question-8</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-9-accuracy-score">Question-9: Accuracy Score</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#business-applications">Business Applications</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-production-data-analysis">Question: Production Data Analysis</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-profit-and-loss">Question: Profit and Loss</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-total-cost">Question: Total Cost</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-stock-symbols">Question: Stock Symbols</a></li>
 </ul>
 </li>
 </ul>
