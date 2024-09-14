@@ -266,6 +266,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="project_elections.html">Project: Election Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project_soccer.html">Project: Soccer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project_smoothing.html">Project: Smoothing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_riemann.html">Project: Approximating Areas</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="appendix.html">Appendix</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -559,7 +560,7 @@ Type of empty_set: &lt;class &#39;set&#39;&gt;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{True, 2, &#39;USA&#39;, 9.123}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{True, 2, 9.123, &#39;USA&#39;}
 </pre></div>
 </div>
 </div>
@@ -617,7 +618,7 @@ Type of empty_set: &lt;class &#39;set&#39;&gt;
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Type of char_set: &lt;class &#39;set&#39;&gt;
-char_set        : {&#39;l&#39;, &#39;e&#39;, &#39;o&#39;, &#39;H&#39;}
+char_set        : {&#39;l&#39;, &#39;H&#39;, &#39;o&#39;, &#39;e&#39;}
 </pre></div>
 </div>
 </div>
@@ -1255,7 +1256,7 @@ number_set after  using remove(): {1, 2, 4, 5}
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>set1 before update: {1, 2, 3}
-set1 after  update: {1, 2, 3, &#39;b&#39;, &#39;d&#39;, &#39;a&#39;, &#39;c&#39;}
+set1 after  update: {1, 2, 3, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;a&#39;}
 </pre></div>
 </div>
 </div>
@@ -1277,7 +1278,7 @@ set1 after  update: {1, 2, 3, &#39;b&#39;, &#39;d&#39;, &#39;a&#39;, &#39;c&#39;
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>myset before update: {1, 2, 3}
-myset after  update: {1, 2, 3, &#39;b&#39;, &#39;d&#39;, &#39;a&#39;, &#39;c&#39;}
+myset after  update: {1, &#39;b&#39;, 2, 3, &#39;c&#39;, &#39;d&#39;, &#39;a&#39;}
 </pre></div>
 </div>
 </div>
@@ -1296,7 +1297,7 @@ myset after  update: {1, 2, 3, &#39;b&#39;, &#39;d&#39;, &#39;a&#39;, &#39;c&#39
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>myset before update: {1, 2, 3}
-myset after  update: {1, 2, 3, &#39;b&#39;, &#39;d&#39;, &#39;a&#39;, &#39;c&#39;}
+myset after  update: {1, &#39;b&#39;, 2, 3, &#39;c&#39;, &#39;d&#39;, &#39;a&#39;}
 </pre></div>
 </div>
 </div>
@@ -1321,11 +1322,11 @@ myset after  update: {1, 2, 3, &#39;b&#39;, &#39;d&#39;, &#39;a&#39;, &#39;c&#39
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Florida
-California
-Arizona
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Oklahoma
 Texas
-Oklahoma
+California
+Florida
+Arizona
 </pre></div>
 </div>
 </div>

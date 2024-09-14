@@ -266,6 +266,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="project_elections.html">Project: Election Methods</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Project: Soccer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project_smoothing.html">Project: Smoothing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_riemann.html">Project: Approximating Areas</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="appendix.html">Appendix</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -558,224 +559,224 @@ soccer data  from <a class="reference external" href="https://www.sports-referen
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;team&#39;: &#39;Manchester City&#39;,
   &#39;pos&#39;: &#39;1&#39;,
-  &#39;points&#39;: &#39;91&#39;,
-  &#39;matches_played&#39;: &#39;38&#39;,
-  &#39;wins&#39;: &#39;28&#39;,
-  &#39;draws&#39;: &#39;28&#39;,
-  &#39;losses&#39;: &#39;3&#39;,
-  &#39;goals_for&#39;: &#39;96&#39;,
-  &#39;goals_against&#39;: &#39;34&#39;,
-  &#39;goal_diff&#39;: &#39;+62&#39;,
-  &#39;top_scorer&#39;: &#39;Erling Haaland - 27&#39;},
- {&#39;team&#39;: &#39;Arsenal&#39;,
-  &#39;pos&#39;: &#39;2&#39;,
-  &#39;points&#39;: &#39;89&#39;,
-  &#39;matches_played&#39;: &#39;38&#39;,
-  &#39;wins&#39;: &#39;28&#39;,
-  &#39;draws&#39;: &#39;28&#39;,
-  &#39;losses&#39;: &#39;5&#39;,
-  &#39;goals_for&#39;: &#39;91&#39;,
-  &#39;goals_against&#39;: &#39;29&#39;,
-  &#39;goal_diff&#39;: &#39;+62&#39;,
-  &#39;top_scorer&#39;: &#39;Bukayo Saka - 16&#39;},
- {&#39;team&#39;: &#39;Liverpool&#39;,
-  &#39;pos&#39;: &#39;3&#39;,
-  &#39;points&#39;: &#39;82&#39;,
-  &#39;matches_played&#39;: &#39;38&#39;,
-  &#39;wins&#39;: &#39;24&#39;,
-  &#39;draws&#39;: &#39;24&#39;,
-  &#39;losses&#39;: &#39;4&#39;,
-  &#39;goals_for&#39;: &#39;86&#39;,
-  &#39;goals_against&#39;: &#39;41&#39;,
-  &#39;goal_diff&#39;: &#39;+45&#39;,
-  &#39;top_scorer&#39;: &#39;Mohamed Salah - 18&#39;},
- {&#39;team&#39;: &#39;Aston Villa&#39;,
-  &#39;pos&#39;: &#39;4&#39;,
-  &#39;points&#39;: &#39;68&#39;,
-  &#39;matches_played&#39;: &#39;38&#39;,
-  &#39;wins&#39;: &#39;20&#39;,
-  &#39;draws&#39;: &#39;20&#39;,
-  &#39;losses&#39;: &#39;10&#39;,
-  &#39;goals_for&#39;: &#39;76&#39;,
-  &#39;goals_against&#39;: &#39;61&#39;,
-  &#39;goal_diff&#39;: &#39;+15&#39;,
-  &#39;top_scorer&#39;: &#39;Ollie Watkins - 19&#39;},
- {&#39;team&#39;: &#39;Tottenham&#39;,
-  &#39;pos&#39;: &#39;5&#39;,
-  &#39;points&#39;: &#39;66&#39;,
-  &#39;matches_played&#39;: &#39;38&#39;,
-  &#39;wins&#39;: &#39;20&#39;,
-  &#39;draws&#39;: &#39;20&#39;,
-  &#39;losses&#39;: &#39;12&#39;,
-  &#39;goals_for&#39;: &#39;74&#39;,
-  &#39;goals_against&#39;: &#39;61&#39;,
-  &#39;goal_diff&#39;: &#39;+13&#39;,
-  &#39;top_scorer&#39;: &#39;Son Heung-min - 17&#39;},
- {&#39;team&#39;: &#39;Chelsea&#39;,
-  &#39;pos&#39;: &#39;6&#39;,
-  &#39;points&#39;: &#39;63&#39;,
-  &#39;matches_played&#39;: &#39;38&#39;,
-  &#39;wins&#39;: &#39;18&#39;,
-  &#39;draws&#39;: &#39;18&#39;,
-  &#39;losses&#39;: &#39;11&#39;,
-  &#39;goals_for&#39;: &#39;77&#39;,
-  &#39;goals_against&#39;: &#39;63&#39;,
-  &#39;goal_diff&#39;: &#39;+14&#39;,
-  &#39;top_scorer&#39;: &#39;Cole Palmer - 22&#39;},
- {&#39;team&#39;: &#39;Newcastle Utd&#39;,
-  &#39;pos&#39;: &#39;7&#39;,
-  &#39;points&#39;: &#39;60&#39;,
-  &#39;matches_played&#39;: &#39;38&#39;,
-  &#39;wins&#39;: &#39;18&#39;,
-  &#39;draws&#39;: &#39;18&#39;,
-  &#39;losses&#39;: &#39;14&#39;,
-  &#39;goals_for&#39;: &#39;85&#39;,
-  &#39;goals_against&#39;: &#39;62&#39;,
-  &#39;goal_diff&#39;: &#39;+23&#39;,
-  &#39;top_scorer&#39;: &#39;Alexander Isak - 21&#39;},
- {&#39;team&#39;: &#39;Manchester Utd&#39;,
-  &#39;pos&#39;: &#39;8&#39;,
-  &#39;points&#39;: &#39;60&#39;,
-  &#39;matches_played&#39;: &#39;38&#39;,
-  &#39;wins&#39;: &#39;18&#39;,
-  &#39;draws&#39;: &#39;18&#39;,
-  &#39;losses&#39;: &#39;14&#39;,
-  &#39;goals_for&#39;: &#39;57&#39;,
-  &#39;goals_against&#39;: &#39;58&#39;,
-  &#39;goal_diff&#39;: &#39;-1&#39;,
-  &#39;top_scorer&#39;: &#39;Rasmus Højlund, Bruno Fernandes - 10&#39;},
- {&#39;team&#39;: &#39;West Ham&#39;,
-  &#39;pos&#39;: &#39;9&#39;,
-  &#39;points&#39;: &#39;52&#39;,
-  &#39;matches_played&#39;: &#39;38&#39;,
-  &#39;wins&#39;: &#39;14&#39;,
-  &#39;draws&#39;: &#39;14&#39;,
-  &#39;losses&#39;: &#39;14&#39;,
-  &#39;goals_for&#39;: &#39;60&#39;,
-  &#39;goals_against&#39;: &#39;74&#39;,
-  &#39;goal_diff&#39;: &#39;-14&#39;,
-  &#39;top_scorer&#39;: &#39;Jarrod Bowen - 16&#39;},
- {&#39;team&#39;: &#39;Crystal Palace&#39;,
-  &#39;pos&#39;: &#39;10&#39;,
-  &#39;points&#39;: &#39;49&#39;,
-  &#39;matches_played&#39;: &#39;38&#39;,
-  &#39;wins&#39;: &#39;13&#39;,
-  &#39;draws&#39;: &#39;13&#39;,
-  &#39;losses&#39;: &#39;15&#39;,
-  &#39;goals_for&#39;: &#39;57&#39;,
-  &#39;goals_against&#39;: &#39;58&#39;,
-  &#39;goal_diff&#39;: &#39;-1&#39;,
-  &#39;top_scorer&#39;: &#39;Jean-Philippe Mateta - 16&#39;},
- {&#39;team&#39;: &#39;Brighton&#39;,
-  &#39;pos&#39;: &#39;11&#39;,
-  &#39;points&#39;: &#39;48&#39;,
-  &#39;matches_played&#39;: &#39;38&#39;,
-  &#39;wins&#39;: &#39;12&#39;,
-  &#39;draws&#39;: &#39;12&#39;,
-  &#39;losses&#39;: &#39;14&#39;,
-  &#39;goals_for&#39;: &#39;55&#39;,
-  &#39;goals_against&#39;: &#39;62&#39;,
-  &#39;goal_diff&#39;: &#39;-7&#39;,
-  &#39;top_scorer&#39;: &#39;João Pedro - 9&#39;},
- {&#39;team&#39;: &#39;Bournemouth&#39;,
-  &#39;pos&#39;: &#39;12&#39;,
-  &#39;points&#39;: &#39;48&#39;,
-  &#39;matches_played&#39;: &#39;38&#39;,
-  &#39;wins&#39;: &#39;13&#39;,
-  &#39;draws&#39;: &#39;13&#39;,
-  &#39;losses&#39;: &#39;16&#39;,
-  &#39;goals_for&#39;: &#39;54&#39;,
-  &#39;goals_against&#39;: &#39;67&#39;,
-  &#39;goal_diff&#39;: &#39;-13&#39;,
-  &#39;top_scorer&#39;: &#39;Dominic Solanke - 19&#39;},
- {&#39;team&#39;: &#39;Fulham&#39;,
-  &#39;pos&#39;: &#39;13&#39;,
-  &#39;points&#39;: &#39;47&#39;,
-  &#39;matches_played&#39;: &#39;38&#39;,
-  &#39;wins&#39;: &#39;13&#39;,
-  &#39;draws&#39;: &#39;13&#39;,
-  &#39;losses&#39;: &#39;17&#39;,
-  &#39;goals_for&#39;: &#39;55&#39;,
-  &#39;goals_against&#39;: &#39;61&#39;,
-  &#39;goal_diff&#39;: &#39;-6&#39;,
-  &#39;top_scorer&#39;: &#39;Rodrigo Muniz - 9&#39;},
- {&#39;team&#39;: &#39;Wolves&#39;,
-  &#39;pos&#39;: &#39;14&#39;,
-  &#39;points&#39;: &#39;46&#39;,
-  &#39;matches_played&#39;: &#39;38&#39;,
-  &#39;wins&#39;: &#39;13&#39;,
-  &#39;draws&#39;: &#39;13&#39;,
-  &#39;losses&#39;: &#39;18&#39;,
-  &#39;goals_for&#39;: &#39;50&#39;,
-  &#39;goals_against&#39;: &#39;65&#39;,
-  &#39;goal_diff&#39;: &#39;-15&#39;,
-  &#39;top_scorer&#39;: &#39;Hwang Hee-chan, Matheus Cunha - 12&#39;},
- {&#39;team&#39;: &#39;Everton&#39;,
-  &#39;pos&#39;: &#39;15&#39;,
-  &#39;points&#39;: &#39;42&#39;,
-  &#39;matches_played&#39;: &#39;38&#39;,
-  &#39;wins&#39;: &#39;13&#39;,
-  &#39;draws&#39;: &#39;13&#39;,
-  &#39;losses&#39;: &#39;16&#39;,
-  &#39;goals_for&#39;: &#39;40&#39;,
-  &#39;goals_against&#39;: &#39;51&#39;,
-  &#39;goal_diff&#39;: &#39;-11&#39;,
-  &#39;top_scorer&#39;: &#39;Abdoulaye Doucouré, Dominic Calvert-Lewin - 7&#39;},
- {&#39;team&#39;: &#39;Brentford&#39;,
-  &#39;pos&#39;: &#39;16&#39;,
-  &#39;points&#39;: &#39;39&#39;,
-  &#39;matches_played&#39;: &#39;38&#39;,
-  &#39;wins&#39;: &#39;10&#39;,
-  &#39;draws&#39;: &#39;10&#39;,
-  &#39;losses&#39;: &#39;19&#39;,
-  &#39;goals_for&#39;: &#39;56&#39;,
-  &#39;goals_against&#39;: &#39;65&#39;,
-  &#39;goal_diff&#39;: &#39;-9&#39;,
-  &#39;top_scorer&#39;: &#39;Yoane Wissa - 12&#39;},
- {&#39;team&#39;: &quot;Nott&#39;ham Forest&quot;,
-  &#39;pos&#39;: &#39;17&#39;,
-  &#39;points&#39;: &#39;32&#39;,
-  &#39;matches_played&#39;: &#39;38&#39;,
-  &#39;wins&#39;: &#39;9&#39;,
-  &#39;draws&#39;: &#39;9&#39;,
-  &#39;losses&#39;: &#39;20&#39;,
-  &#39;goals_for&#39;: &#39;49&#39;,
-  &#39;goals_against&#39;: &#39;67&#39;,
-  &#39;goal_diff&#39;: &#39;-18&#39;,
-  &#39;top_scorer&#39;: &#39;Chris Wood - 14&#39;},
- {&#39;team&#39;: &#39;Luton Town&#39;,
-  &#39;pos&#39;: &#39;18&#39;,
-  &#39;points&#39;: &#39;26&#39;,
-  &#39;matches_played&#39;: &#39;38&#39;,
-  &#39;wins&#39;: &#39;6&#39;,
-  &#39;draws&#39;: &#39;6&#39;,
-  &#39;losses&#39;: &#39;24&#39;,
-  &#39;goals_for&#39;: &#39;52&#39;,
-  &#39;goals_against&#39;: &#39;85&#39;,
-  &#39;goal_diff&#39;: &#39;-33&#39;,
-  &#39;top_scorer&#39;: &#39;Carlton Morris - 11&#39;},
- {&#39;team&#39;: &#39;Burnley&#39;,
-  &#39;pos&#39;: &#39;19&#39;,
-  &#39;points&#39;: &#39;24&#39;,
-  &#39;matches_played&#39;: &#39;38&#39;,
-  &#39;wins&#39;: &#39;5&#39;,
-  &#39;draws&#39;: &#39;5&#39;,
-  &#39;losses&#39;: &#39;24&#39;,
-  &#39;goals_for&#39;: &#39;41&#39;,
-  &#39;goals_against&#39;: &#39;78&#39;,
-  &#39;goal_diff&#39;: &#39;-37&#39;,
-  &#39;top_scorer&#39;: &#39;Jacob Bruun Larsen - 6&#39;},
- {&#39;team&#39;: &#39;Sheffield Utd&#39;,
-  &#39;pos&#39;: &#39;20&#39;,
-  &#39;points&#39;: &#39;16&#39;,
-  &#39;matches_played&#39;: &#39;38&#39;,
+  &#39;points&#39;: &#39;9&#39;,
+  &#39;matches_played&#39;: &#39;3&#39;,
   &#39;wins&#39;: &#39;3&#39;,
   &#39;draws&#39;: &#39;3&#39;,
-  &#39;losses&#39;: &#39;28&#39;,
-  &#39;goals_for&#39;: &#39;35&#39;,
-  &#39;goals_against&#39;: &#39;104&#39;,
-  &#39;goal_diff&#39;: &#39;-69&#39;,
-  &#39;top_scorer&#39;: &#39;Oliver McBurnie, Ben Brereton - 6&#39;}]
+  &#39;losses&#39;: &#39;0&#39;,
+  &#39;goals_for&#39;: &#39;9&#39;,
+  &#39;goals_against&#39;: &#39;2&#39;,
+  &#39;goal_diff&#39;: &#39;+7&#39;,
+  &#39;top_scorer&#39;: &#39;Erling Haaland - 7&#39;},
+ {&#39;team&#39;: &#39;Liverpool&#39;,
+  &#39;pos&#39;: &#39;2&#39;,
+  &#39;points&#39;: &#39;9&#39;,
+  &#39;matches_played&#39;: &#39;3&#39;,
+  &#39;wins&#39;: &#39;3&#39;,
+  &#39;draws&#39;: &#39;3&#39;,
+  &#39;losses&#39;: &#39;0&#39;,
+  &#39;goals_for&#39;: &#39;7&#39;,
+  &#39;goals_against&#39;: &#39;0&#39;,
+  &#39;goal_diff&#39;: &#39;+7&#39;,
+  &#39;top_scorer&#39;: &#39;Mohamed Salah, Luis Díaz - 3&#39;},
+ {&#39;team&#39;: &#39;Brighton&#39;,
+  &#39;pos&#39;: &#39;3&#39;,
+  &#39;points&#39;: &#39;7&#39;,
+  &#39;matches_played&#39;: &#39;3&#39;,
+  &#39;wins&#39;: &#39;2&#39;,
+  &#39;draws&#39;: &#39;2&#39;,
+  &#39;losses&#39;: &#39;0&#39;,
+  &#39;goals_for&#39;: &#39;6&#39;,
+  &#39;goals_against&#39;: &#39;2&#39;,
+  &#39;goal_diff&#39;: &#39;+4&#39;,
+  &#39;top_scorer&#39;: &#39;Danny Welbeck, João Pedro - 2&#39;},
+ {&#39;team&#39;: &#39;Arsenal&#39;,
+  &#39;pos&#39;: &#39;4&#39;,
+  &#39;points&#39;: &#39;7&#39;,
+  &#39;matches_played&#39;: &#39;3&#39;,
+  &#39;wins&#39;: &#39;2&#39;,
+  &#39;draws&#39;: &#39;2&#39;,
+  &#39;losses&#39;: &#39;0&#39;,
+  &#39;goals_for&#39;: &#39;5&#39;,
+  &#39;goals_against&#39;: &#39;1&#39;,
+  &#39;goal_diff&#39;: &#39;+4&#39;,
+  &#39;top_scorer&#39;: &#39;Kai Havertz - 2&#39;},
+ {&#39;team&#39;: &#39;Newcastle Utd&#39;,
+  &#39;pos&#39;: &#39;5&#39;,
+  &#39;points&#39;: &#39;7&#39;,
+  &#39;matches_played&#39;: &#39;3&#39;,
+  &#39;wins&#39;: &#39;2&#39;,
+  &#39;draws&#39;: &#39;2&#39;,
+  &#39;losses&#39;: &#39;0&#39;,
+  &#39;goals_for&#39;: &#39;4&#39;,
+  &#39;goals_against&#39;: &#39;2&#39;,
+  &#39;goal_diff&#39;: &#39;+2&#39;,
+  &#39;top_scorer&#39;: &#39;Joelinton, Alexander Isak... - 1&#39;},
+ {&#39;team&#39;: &#39;Brentford&#39;,
+  &#39;pos&#39;: &#39;6&#39;,
+  &#39;points&#39;: &#39;6&#39;,
+  &#39;matches_played&#39;: &#39;3&#39;,
+  &#39;wins&#39;: &#39;2&#39;,
+  &#39;draws&#39;: &#39;2&#39;,
+  &#39;losses&#39;: &#39;1&#39;,
+  &#39;goals_for&#39;: &#39;5&#39;,
+  &#39;goals_against&#39;: &#39;4&#39;,
+  &#39;goal_diff&#39;: &#39;+1&#39;,
+  &#39;top_scorer&#39;: &#39;Bryan Mbeumo - 3&#39;},
+ {&#39;team&#39;: &#39;Aston Villa&#39;,
+  &#39;pos&#39;: &#39;7&#39;,
+  &#39;points&#39;: &#39;6&#39;,
+  &#39;matches_played&#39;: &#39;3&#39;,
+  &#39;wins&#39;: &#39;2&#39;,
+  &#39;draws&#39;: &#39;2&#39;,
+  &#39;losses&#39;: &#39;1&#39;,
+  &#39;goals_for&#39;: &#39;4&#39;,
+  &#39;goals_against&#39;: &#39;4&#39;,
+  &#39;goal_diff&#39;: &#39;0&#39;,
+  &#39;top_scorer&#39;: &#39;Amadou Onana, Jhon Durán - 2&#39;},
+ {&#39;team&#39;: &#39;Bournemouth&#39;,
+  &#39;pos&#39;: &#39;8&#39;,
+  &#39;points&#39;: &#39;5&#39;,
+  &#39;matches_played&#39;: &#39;3&#39;,
+  &#39;wins&#39;: &#39;1&#39;,
+  &#39;draws&#39;: &#39;1&#39;,
+  &#39;losses&#39;: &#39;0&#39;,
+  &#39;goals_for&#39;: &#39;5&#39;,
+  &#39;goals_against&#39;: &#39;4&#39;,
+  &#39;goal_diff&#39;: &#39;+1&#39;,
+  &#39;top_scorer&#39;: &#39;Antoine Semenyo - 2&#39;},
+ {&#39;team&#39;: &quot;Nott&#39;ham Forest&quot;,
+  &#39;pos&#39;: &#39;9&#39;,
+  &#39;points&#39;: &#39;5&#39;,
+  &#39;matches_played&#39;: &#39;3&#39;,
+  &#39;wins&#39;: &#39;1&#39;,
+  &#39;draws&#39;: &#39;1&#39;,
+  &#39;losses&#39;: &#39;0&#39;,
+  &#39;goals_for&#39;: &#39;3&#39;,
+  &#39;goals_against&#39;: &#39;2&#39;,
+  &#39;goal_diff&#39;: &#39;+1&#39;,
+  &#39;top_scorer&#39;: &#39;Chris Wood - 2&#39;},
+ {&#39;team&#39;: &#39;Tottenham&#39;,
+  &#39;pos&#39;: &#39;10&#39;,
+  &#39;points&#39;: &#39;4&#39;,
+  &#39;matches_played&#39;: &#39;3&#39;,
+  &#39;wins&#39;: &#39;1&#39;,
+  &#39;draws&#39;: &#39;1&#39;,
+  &#39;losses&#39;: &#39;1&#39;,
+  &#39;goals_for&#39;: &#39;6&#39;,
+  &#39;goals_against&#39;: &#39;3&#39;,
+  &#39;goal_diff&#39;: &#39;+3&#39;,
+  &#39;top_scorer&#39;: &#39;Son Heung-min - 2&#39;},
+ {&#39;team&#39;: &#39;Chelsea&#39;,
+  &#39;pos&#39;: &#39;11&#39;,
+  &#39;points&#39;: &#39;4&#39;,
+  &#39;matches_played&#39;: &#39;3&#39;,
+  &#39;wins&#39;: &#39;1&#39;,
+  &#39;draws&#39;: &#39;1&#39;,
+  &#39;losses&#39;: &#39;1&#39;,
+  &#39;goals_for&#39;: &#39;7&#39;,
+  &#39;goals_against&#39;: &#39;5&#39;,
+  &#39;goal_diff&#39;: &#39;+2&#39;,
+  &#39;top_scorer&#39;: &#39;Noni Madueke - 3&#39;},
+ {&#39;team&#39;: &#39;Fulham&#39;,
+  &#39;pos&#39;: &#39;12&#39;,
+  &#39;points&#39;: &#39;4&#39;,
+  &#39;matches_played&#39;: &#39;3&#39;,
+  &#39;wins&#39;: &#39;1&#39;,
+  &#39;draws&#39;: &#39;1&#39;,
+  &#39;losses&#39;: &#39;1&#39;,
+  &#39;goals_for&#39;: &#39;3&#39;,
+  &#39;goals_against&#39;: &#39;3&#39;,
+  &#39;goal_diff&#39;: &#39;0&#39;,
+  &#39;top_scorer&#39;: &#39;Adama Traoré, Alex Iwobi... - 1&#39;},
+ {&#39;team&#39;: &#39;West Ham&#39;,
+  &#39;pos&#39;: &#39;13&#39;,
+  &#39;points&#39;: &#39;3&#39;,
+  &#39;matches_played&#39;: &#39;3&#39;,
+  &#39;wins&#39;: &#39;1&#39;,
+  &#39;draws&#39;: &#39;1&#39;,
+  &#39;losses&#39;: &#39;2&#39;,
+  &#39;goals_for&#39;: &#39;4&#39;,
+  &#39;goals_against&#39;: &#39;5&#39;,
+  &#39;goal_diff&#39;: &#39;-1&#39;,
+  &#39;top_scorer&#39;: &#39;Tomáš Souček, Lucas Paquetá... - 1&#39;},
+ {&#39;team&#39;: &#39;Manchester Utd&#39;,
+  &#39;pos&#39;: &#39;14&#39;,
+  &#39;points&#39;: &#39;3&#39;,
+  &#39;matches_played&#39;: &#39;3&#39;,
+  &#39;wins&#39;: &#39;1&#39;,
+  &#39;draws&#39;: &#39;1&#39;,
+  &#39;losses&#39;: &#39;2&#39;,
+  &#39;goals_for&#39;: &#39;2&#39;,
+  &#39;goals_against&#39;: &#39;5&#39;,
+  &#39;goal_diff&#39;: &#39;-3&#39;,
+  &#39;top_scorer&#39;: &#39;Joshua Zirkzee, Amad Diallo - 1&#39;},
+ {&#39;team&#39;: &#39;Leicester City&#39;,
+  &#39;pos&#39;: &#39;15&#39;,
+  &#39;points&#39;: &#39;1&#39;,
+  &#39;matches_played&#39;: &#39;3&#39;,
+  &#39;wins&#39;: &#39;0&#39;,
+  &#39;draws&#39;: &#39;0&#39;,
+  &#39;losses&#39;: &#39;2&#39;,
+  &#39;goals_for&#39;: &#39;3&#39;,
+  &#39;goals_against&#39;: &#39;5&#39;,
+  &#39;goal_diff&#39;: &#39;-2&#39;,
+  &#39;top_scorer&#39;: &#39;Jamie Vardy, Wout Faes... - 1&#39;},
+ {&#39;team&#39;: &#39;Crystal Palace&#39;,
+  &#39;pos&#39;: &#39;16&#39;,
+  &#39;points&#39;: &#39;1&#39;,
+  &#39;matches_played&#39;: &#39;3&#39;,
+  &#39;wins&#39;: &#39;0&#39;,
+  &#39;draws&#39;: &#39;0&#39;,
+  &#39;losses&#39;: &#39;2&#39;,
+  &#39;goals_for&#39;: &#39;2&#39;,
+  &#39;goals_against&#39;: &#39;5&#39;,
+  &#39;goal_diff&#39;: &#39;-3&#39;,
+  &#39;top_scorer&#39;: &#39;Eberechi Eze - 1&#39;},
+ {&#39;team&#39;: &#39;Ipswich Town&#39;,
+  &#39;pos&#39;: &#39;17&#39;,
+  &#39;points&#39;: &#39;1&#39;,
+  &#39;matches_played&#39;: &#39;3&#39;,
+  &#39;wins&#39;: &#39;0&#39;,
+  &#39;draws&#39;: &#39;0&#39;,
+  &#39;losses&#39;: &#39;2&#39;,
+  &#39;goals_for&#39;: &#39;2&#39;,
+  &#39;goals_against&#39;: &#39;7&#39;,
+  &#39;goal_diff&#39;: &#39;-5&#39;,
+  &#39;top_scorer&#39;: &#39;Sammie Szmodics, Liam Delap - 1&#39;},
+ {&#39;team&#39;: &#39;Wolves&#39;,
+  &#39;pos&#39;: &#39;18&#39;,
+  &#39;points&#39;: &#39;1&#39;,
+  &#39;matches_played&#39;: &#39;3&#39;,
+  &#39;wins&#39;: &#39;0&#39;,
+  &#39;draws&#39;: &#39;0&#39;,
+  &#39;losses&#39;: &#39;2&#39;,
+  &#39;goals_for&#39;: &#39;3&#39;,
+  &#39;goals_against&#39;: &#39;9&#39;,
+  &#39;goal_diff&#39;: &#39;-6&#39;,
+  &#39;top_scorer&#39;: &#39;Jean-Ricner Bellegarde, Jørgen Strand Larsen... - 1&#39;},
+ {&#39;team&#39;: &#39;Southampton&#39;,
+  &#39;pos&#39;: &#39;19&#39;,
+  &#39;points&#39;: &#39;0&#39;,
+  &#39;matches_played&#39;: &#39;3&#39;,
+  &#39;wins&#39;: &#39;0&#39;,
+  &#39;draws&#39;: &#39;0&#39;,
+  &#39;losses&#39;: &#39;3&#39;,
+  &#39;goals_for&#39;: &#39;1&#39;,
+  &#39;goals_against&#39;: &#39;5&#39;,
+  &#39;goal_diff&#39;: &#39;-4&#39;,
+  &#39;top_scorer&#39;: &#39;Yukinari Sugawara - 1&#39;},
+ {&#39;team&#39;: &#39;Everton&#39;,
+  &#39;pos&#39;: &#39;20&#39;,
+  &#39;points&#39;: &#39;0&#39;,
+  &#39;matches_played&#39;: &#39;3&#39;,
+  &#39;wins&#39;: &#39;0&#39;,
+  &#39;draws&#39;: &#39;0&#39;,
+  &#39;losses&#39;: &#39;3&#39;,
+  &#39;goals_for&#39;: &#39;2&#39;,
+  &#39;goals_against&#39;: &#39;10&#39;,
+  &#39;goal_diff&#39;: &#39;-8&#39;,
+  &#39;top_scorer&#39;: &#39;Michael Keane, Dominic Calvert-Lewin - 1&#39;}]
 </pre></div>
 </div>
 </div>
@@ -789,15 +790,15 @@ soccer data  from <a class="reference external" href="https://www.sports-referen
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;team&#39;: &#39;Manchester City&#39;,
  &#39;pos&#39;: &#39;1&#39;,
- &#39;points&#39;: &#39;91&#39;,
- &#39;matches_played&#39;: &#39;38&#39;,
- &#39;wins&#39;: &#39;28&#39;,
- &#39;draws&#39;: &#39;28&#39;,
- &#39;losses&#39;: &#39;3&#39;,
- &#39;goals_for&#39;: &#39;96&#39;,
- &#39;goals_against&#39;: &#39;34&#39;,
- &#39;goal_diff&#39;: &#39;+62&#39;,
- &#39;top_scorer&#39;: &#39;Erling Haaland - 27&#39;}
+ &#39;points&#39;: &#39;9&#39;,
+ &#39;matches_played&#39;: &#39;3&#39;,
+ &#39;wins&#39;: &#39;3&#39;,
+ &#39;draws&#39;: &#39;3&#39;,
+ &#39;losses&#39;: &#39;0&#39;,
+ &#39;goals_for&#39;: &#39;9&#39;,
+ &#39;goals_against&#39;: &#39;2&#39;,
+ &#39;goal_diff&#39;: &#39;+7&#39;,
+ &#39;top_scorer&#39;: &#39;Erling Haaland - 7&#39;}
 </pre></div>
 </div>
 </div>
@@ -836,7 +837,7 @@ soccer data  from <a class="reference external" href="https://www.sports-referen
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Team         : Manchester City
-Max Goals For: 96
+Max Goals For: 9
 </pre></div>
 </div>
 </div>
@@ -862,8 +863,8 @@ Max Goals For: 96
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Team         : Sheffield Utd
-Min Goals For: 35
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Team         : Southampton
+Min Goals For: 1
 </pre></div>
 </div>
 </div>
@@ -887,8 +888,8 @@ Min Goals For: 35
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Team             : Sheffield Utd
-Max Goals Against: 104
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Team             : Everton
+Max Goals Against: 10
 </pre></div>
 </div>
 </div>
@@ -914,7 +915,7 @@ Max Goals Against: 104
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Top Scorer : Erling Haaland 
-Top Score  : 27
+Top Score  : 7
 </pre></div>
 </div>
 </div>
@@ -935,10 +936,17 @@ Top Score  : 27
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Rasmus Højlund, Bruno Fernandes - 10
-Hwang Hee-chan, Matheus Cunha - 12
-Abdoulaye Doucouré, Dominic Calvert-Lewin - 7
-Oliver McBurnie, Ben Brereton - 6
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mohamed Salah, Luis Díaz - 3
+Danny Welbeck, João Pedro - 2
+Joelinton, Alexander Isak... - 1
+Amadou Onana, Jhon Durán - 2
+Adama Traoré, Alex Iwobi... - 1
+Tomáš Souček, Lucas Paquetá... - 1
+Joshua Zirkzee, Amad Diallo - 1
+Jamie Vardy, Wout Faes... - 1
+Sammie Szmodics, Liam Delap - 1
+Jean-Ricner Bellegarde, Jørgen Strand Larsen... - 1
+Michael Keane, Dominic Calvert-Lewin - 1
 </pre></div>
 </div>
 </div>
@@ -969,7 +977,7 @@ Oliver McBurnie, Ben Brereton - 6
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/7f16785ec10ce1d4806af8ba4c915ed743d7da4a7c20019a18dad541fadf3ed4.png" src="_images/7f16785ec10ce1d4806af8ba4c915ed743d7da4a7c20019a18dad541fadf3ed4.png" />
+<img alt="_images/06506c22b65e0b1e86998e319262462f10aea076108c6f922a9c732a3da672a6.png" src="_images/06506c22b65e0b1e86998e319262462f10aea076108c6f922a9c732a3da672a6.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -980,7 +988,7 @@ Oliver McBurnie, Ben Brereton - 6
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/3c396ce1f96247aa401e84893be8e5907ca706ef64df42c47fbd61c51b935118.png" src="_images/3c396ce1f96247aa401e84893be8e5907ca706ef64df42c47fbd61c51b935118.png" />
+<img alt="_images/3c2e569562cbbf2d7542e9e14ec459dba6cff9ee248d0f67eb7713b9088e01e0.png" src="_images/3c2e569562cbbf2d7542e9e14ec459dba6cff9ee248d0f67eb7713b9088e01e0.png" />
 </div>
 </div>
 </section>
@@ -999,24 +1007,21 @@ Oliver McBurnie, Ben Brereton - 6
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Manchester City 38 28 28 3
-Arsenal 38 28 28 5
-Liverpool 38 24 24 4
-Aston Villa 38 20 20 10
-Tottenham 38 20 20 12
-Chelsea 38 18 18 11
-Newcastle Utd 38 18 18 14
-Manchester Utd 38 18 18 14
-West Ham 38 14 14 14
-Crystal Palace 38 13 13 15
-Bournemouth 38 13 13 16
-Fulham 38 13 13 17
-Wolves 38 13 13 18
-Everton 38 13 13 16
-Brentford 38 10 10 19
-Luton Town 38 6 6 24
-Burnley 38 5 5 24
-Sheffield Utd 38 3 3 28
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Manchester City 3 3 3 0
+Liverpool 3 3 3 0
+Brighton 3 2 2 0
+Arsenal 3 2 2 0
+Newcastle Utd 3 2 2 0
+Brentford 3 2 2 1
+Aston Villa 3 2 2 1
+Bournemouth 3 1 1 0
+Nott&#39;ham Forest 3 1 1 0
+West Ham 3 1 1 2
+Manchester Utd 3 1 1 2
+Leicester City 3 0 0 2
+Crystal Palace 3 0 0 2
+Ipswich Town 3 0 0 2
+Wolves 3 0 0 2
 </pre></div>
 </div>
 </div>
@@ -1036,6 +1041,150 @@ Sheffield Utd 38 3 3 28
 <span class="n">soccer_data</span><span class="o">.</span><span class="n">eredivisie</span><span class="p">(),</span>
 <span class="n">soccer_data</span><span class="o">.</span><span class="n">russian_premier</span><span class="p">(),</span>
 <span class="n">soccer_data</span><span class="o">.</span><span class="n">english_championship</span><span class="p">()]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">19</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">leagues</span> <span class="o">=</span> <span class="p">[</span><span class="n">soccer_data</span><span class="o">.</span><span class="n">english_premier</span><span class="p">(),</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">soccer_data</span><span class="o">.</span><span class="n">la_liga</span><span class="p">(),</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">soccer_data</span><span class="o">.</span><span class="n">ligue_1</span><span class="p">(),</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">soccer_data</span><span class="o">.</span><span class="n">bundesliga</span><span class="p">(),</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">soccer_data</span><span class="o">.</span><span class="n">serie_a</span><span class="p">(),</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">soccer_data</span><span class="o">.</span><span class="n">eredivisie</span><span class="p">(),</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">soccer_data</span><span class="o">.</span><span class="n">russian_premier</span><span class="p">(),</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">soccer_data</span><span class="o">.</span><span class="n">english_championship</span><span class="p">()]</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.11/site-packages/soccer_data_api/soccer_api.py:73,</span> in <span class="ni">SoccerDataAPI.eredivisie</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">72</span> <span class="k">def</span> <span class="nf">eredivisie</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">73</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_data</span> <span class="o">=</span> <span class="n">GetData</span><span class="p">(</span><span class="n">CONF</span><span class="p">[</span><span class="s1">&#39;leagues&#39;</span><span class="p">][</span><span class="s1">&#39;eredivisie&#39;</span><span class="p">])</span>
+<span class="g g-Whitespace">     </span><span class="mi">74</span>     <span class="n">response</span> <span class="o">=</span> <span class="n">json_response</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_data</span><span class="o">.</span><span class="n">get_club_name</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_data</span><span class="o">.</span><span class="n">get_position</span><span class="p">(),</span>
+<span class="g g-Whitespace">     </span><span class="mi">75</span>                              <span class="bp">self</span><span class="o">.</span><span class="n">get_data</span><span class="o">.</span><span class="n">get_points</span><span class="p">(),</span>
+<span class="g g-Whitespace">     </span><span class="mi">76</span>                              <span class="bp">self</span><span class="o">.</span><span class="n">get_data</span><span class="o">.</span><span class="n">get_matches_played</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_data</span><span class="o">.</span><span class="n">get_wins</span><span class="p">(),</span>
+<span class="g g-Whitespace">     </span><span class="mi">77</span>                              <span class="bp">self</span><span class="o">.</span><span class="n">get_data</span><span class="o">.</span><span class="n">get_draws</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_data</span><span class="o">.</span><span class="n">get_losses</span><span class="p">(),</span>
+<span class="g g-Whitespace">     </span><span class="mi">78</span>                              <span class="bp">self</span><span class="o">.</span><span class="n">get_data</span><span class="o">.</span><span class="n">get_goals_for</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_data</span><span class="o">.</span><span class="n">get_goals_against</span><span class="p">(),</span>
+<span class="g g-Whitespace">     </span><span class="mi">79</span>                              <span class="bp">self</span><span class="o">.</span><span class="n">get_data</span><span class="o">.</span><span class="n">get_goal_diff</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_data</span><span class="o">.</span><span class="n">get_top_scorer</span><span class="p">())</span>
+<span class="g g-Whitespace">     </span><span class="mi">81</span>     <span class="k">return</span> <span class="n">response</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.11/site-packages/soccer_data_api/get_soccer_data.py:41,</span> in <span class="ni">GetData.__init__</span><span class="nt">(self, league)</span>
+<span class="g g-Whitespace">     </span><span class="mi">40</span> <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">league</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">41</span>     <span class="n">page</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">CONF</span><span class="p">[</span><span class="s1">&#39;url&#39;</span><span class="p">]</span><span class="o">+</span><span class="n">league</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">42</span>     <span class="bp">self</span><span class="o">.</span><span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="s2">&quot;html.parser&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">43</span>     <span class="bp">self</span><span class="o">.</span><span class="n">league</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.11/site-packages/requests/api.py:73,</span> in <span class="ni">get</span><span class="nt">(url, params, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">62</span> <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">63</span><span class="w">     </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Sends a GET request.</span>
+<span class="g g-Whitespace">     </span><span class="mi">64</span><span class="sd"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">65</span><span class="sd">     :param url: URL for the new :class:`Request` object.</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">     </span><span class="mi">70</span><span class="sd">     :rtype: requests.Response</span>
+<span class="g g-Whitespace">     </span><span class="mi">71</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">---&gt; </span><span class="mi">73</span>     <span class="k">return</span> <span class="n">request</span><span class="p">(</span><span class="s2">&quot;get&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.11/site-packages/requests/api.py:59,</span> in <span class="ni">request</span><span class="nt">(method, url, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">55</span> <span class="c1"># By using the &#39;with&#39; statement we are sure the session is closed, thus we</span>
+<span class="g g-Whitespace">     </span><span class="mi">56</span> <span class="c1"># avoid leaving sockets open which can trigger a ResourceWarning in some</span>
+<span class="g g-Whitespace">     </span><span class="mi">57</span> <span class="c1"># cases, and look like a memory leak in others.</span>
+<span class="g g-Whitespace">     </span><span class="mi">58</span> <span class="k">with</span> <span class="n">sessions</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">59</span>     <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.11/site-packages/requests/sessions.py:589,</span> in <span class="ni">Session.request</span><span class="nt">(self, method, url, params, data, headers, cookies, files, auth, timeout, allow_redirects, proxies, hooks, stream, verify, cert, json)</span>
+<span class="g g-Whitespace">    </span><span class="mi">584</span> <span class="n">send_kwargs</span> <span class="o">=</span> <span class="p">{</span>
+<span class="g g-Whitespace">    </span><span class="mi">585</span>     <span class="s2">&quot;timeout&quot;</span><span class="p">:</span> <span class="n">timeout</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">586</span>     <span class="s2">&quot;allow_redirects&quot;</span><span class="p">:</span> <span class="n">allow_redirects</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">587</span> <span class="p">}</span>
+<span class="g g-Whitespace">    </span><span class="mi">588</span> <span class="n">send_kwargs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">settings</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">589</span> <span class="n">resp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">prep</span><span class="p">,</span> <span class="o">**</span><span class="n">send_kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">591</span> <span class="k">return</span> <span class="n">resp</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.11/site-packages/requests/sessions.py:747,</span> in <span class="ni">Session.send</span><span class="nt">(self, request, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">744</span>         <span class="k">pass</span>
+<span class="g g-Whitespace">    </span><span class="mi">746</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">stream</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">747</span>     <span class="n">r</span><span class="o">.</span><span class="n">content</span>
+<span class="g g-Whitespace">    </span><span class="mi">749</span> <span class="k">return</span> <span class="n">r</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.11/site-packages/requests/models.py:899,</span> in <span class="ni">Response.content</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">897</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_content</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">898</span>     <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">899</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_content</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">iter_content</span><span class="p">(</span><span class="n">CONTENT_CHUNK_SIZE</span><span class="p">))</span> <span class="ow">or</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">901</span> <span class="bp">self</span><span class="o">.</span><span class="n">_content_consumed</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="g g-Whitespace">    </span><span class="mi">902</span> <span class="c1"># don&#39;t need to release the connection; that&#39;s been handled by urllib3</span>
+<span class="g g-Whitespace">    </span><span class="mi">903</span> <span class="c1"># since we exhausted the data.</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.11/site-packages/requests/models.py:816,</span> in <span class="ni">Response.iter_content.&lt;locals&gt;.generate</span><span class="nt">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">814</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">raw</span><span class="p">,</span> <span class="s2">&quot;stream&quot;</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">815</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">816</span>         <span class="k">yield from</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">stream</span><span class="p">(</span><span class="n">chunk_size</span><span class="p">,</span> <span class="n">decode_content</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">817</span>     <span class="k">except</span> <span class="n">ProtocolError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">818</span>         <span class="k">raise</span> <span class="n">ChunkedEncodingError</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.11/site-packages/urllib3/response.py:624,</span> in <span class="ni">HTTPResponse.stream</span><span class="nt">(self, amt, decode_content)</span>
+<span class="g g-Whitespace">    </span><span class="mi">608</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">609</span><span class="sd"> A generator wrapper for the read() method. A call will block until</span>
+<span class="g g-Whitespace">    </span><span class="mi">610</span><span class="sd"> ``amt`` bytes have been read from the connection or until the</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">621</span><span class="sd">     &#39;content-encoding&#39; header.</span>
+<span class="g g-Whitespace">    </span><span class="mi">622</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">623</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">chunked</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">supports_chunked_reads</span><span class="p">():</span>
+<span class="ne">--&gt; </span><span class="mi">624</span>     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">read_chunked</span><span class="p">(</span><span class="n">amt</span><span class="p">,</span> <span class="n">decode_content</span><span class="o">=</span><span class="n">decode_content</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">625</span>         <span class="k">yield</span> <span class="n">line</span>
+<span class="g g-Whitespace">    </span><span class="mi">626</span> <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.11/site-packages/urllib3/response.py:831,</span> in <span class="ni">HTTPResponse.read_chunked</span><span class="nt">(self, amt, decode_content)</span>
+<span class="g g-Whitespace">    </span><span class="mi">829</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">chunk_left</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">830</span>     <span class="k">break</span>
+<span class="ne">--&gt; </span><span class="mi">831</span> <span class="n">chunk</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_handle_chunk</span><span class="p">(</span><span class="n">amt</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">832</span> <span class="n">decoded</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_decode</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">833</span>     <span class="n">chunk</span><span class="p">,</span> <span class="n">decode_content</span><span class="o">=</span><span class="n">decode_content</span><span class="p">,</span> <span class="n">flush_decoder</span><span class="o">=</span><span class="kc">False</span>
+<span class="g g-Whitespace">    </span><span class="mi">834</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">835</span> <span class="k">if</span> <span class="n">decoded</span><span class="p">:</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.11/site-packages/urllib3/response.py:775,</span> in <span class="ni">HTTPResponse._handle_chunk</span><span class="nt">(self, amt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">773</span>     <span class="bp">self</span><span class="o">.</span><span class="n">chunk_left</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">774</span> <span class="k">elif</span> <span class="n">amt</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">chunk_left</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">775</span>     <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fp</span><span class="o">.</span><span class="n">_safe_read</span><span class="p">(</span><span class="n">amt</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">776</span>     <span class="bp">self</span><span class="o">.</span><span class="n">chunk_left</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">chunk_left</span> <span class="o">-</span> <span class="n">amt</span>
+<span class="g g-Whitespace">    </span><span class="mi">777</span>     <span class="n">returned_chunk</span> <span class="o">=</span> <span class="n">value</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.11/http/client.py:638,</span> in <span class="ni">HTTPResponse._safe_read</span><span class="nt">(self, amt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">631</span> <span class="k">def</span> <span class="nf">_safe_read</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amt</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">632</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Read the number of bytes requested.</span>
+<span class="g g-Whitespace">    </span><span class="mi">633</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">634</span><span class="sd">     This function should be used when &lt;amt&gt; bytes &quot;should&quot; be present for</span>
+<span class="g g-Whitespace">    </span><span class="mi">635</span><span class="sd">     reading. If the bytes are truly not available (due to EOF), then the</span>
+<span class="g g-Whitespace">    </span><span class="mi">636</span><span class="sd">     IncompleteRead exception can be used to detect the problem.</span>
+<span class="g g-Whitespace">    </span><span class="mi">637</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">638</span>     <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fp</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">amt</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">639</span>     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">amt</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">640</span>         <span class="k">raise</span> <span class="n">IncompleteRead</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">amt</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.11/socket.py:706,</span> in <span class="ni">SocketIO.readinto</span><span class="nt">(self, b)</span>
+<span class="g g-Whitespace">    </span><span class="mi">704</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">705</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">706</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sock</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">707</span>     <span class="k">except</span> <span class="n">timeout</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">708</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_timeout_occurred</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.11/ssl.py:1315,</span> in <span class="ni">SSLSocket.recv_into</span><span class="nt">(self, buffer, nbytes, flags)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1311</span>     <span class="k">if</span> <span class="n">flags</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1312</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1313</span>           <span class="s2">&quot;non-zero flags not allowed in calls to recv_into() on </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span>
+<span class="g g-Whitespace">   </span><span class="mi">1314</span>           <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1315</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">nbytes</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1316</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1317</span>     <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="n">nbytes</span><span class="p">,</span> <span class="n">flags</span><span class="p">)</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.11/ssl.py:1167,</span> in <span class="ni">SSLSocket.read</span><span class="nt">(self, len, buffer)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1165</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1166</span>     <span class="k">if</span> <span class="n">buffer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1167</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1168</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1169</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
@@ -1107,7 +1256,7 @@ Top Score  : 36
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Highest Goal Diff : 67  ---  Team: Inter
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Highest Goal Diff : 90  ---  Team: PSV Eindhoven
 Lowest  Goal Diff : -69   ---  Team: Sheffield Utd
 </pre></div>
 </div>
@@ -1135,8 +1284,8 @@ Lowest  Goal Diff : -69   ---  Team: Sheffield Utd
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Most Goal Scored League : english_premier
-Maximum Total Goal      : 1246
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Most Goal Scored League : english_championship
+Maximum Total Goal      : 1480
 </pre></div>
 </div>
 </div>
@@ -1162,8 +1311,8 @@ Maximum Total Goal      : 1246
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Max Point Per Game : 2.6470588235294117
-Team               : Leverkusen
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Max Point Per Game : 2.676470588235294
+Team               : PSV Eindhoven
 </pre></div>
 </div>
 </div>
@@ -1196,7 +1345,7 @@ Team               : Leverkusen
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/36ac0bb71d74d2a8ca00b058599fa974e024c30addf55af4346006fa5f8141c4.png" src="_images/36ac0bb71d74d2a8ca00b058599fa974e024c30addf55af4346006fa5f8141c4.png" />
+<img alt="_images/b1a6dbfff9cbd513d544d5f73157719063e30007fbf89eea2bcbbf28cdba00b0.png" src="_images/b1a6dbfff9cbd513d544d5f73157719063e30007fbf89eea2bcbbf28cdba00b0.png" />
 </div>
 </div>
 </section>
