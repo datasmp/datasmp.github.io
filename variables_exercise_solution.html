@@ -424,6 +424,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-0-warm-up">Question-0: Warm Up</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-name-tag">Question-1: Name Tag</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question-2</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question-3</a></li>
@@ -454,12 +455,32 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="variables-exercises-and-solutions">
 <h1>Variables Exercises and Solutions<a class="headerlink" href="#variables-exercises-and-solutions" title="Permalink to this heading">#</a></h1>
+<section id="question-0-warm-up">
+<h2>Question-0: Warm Up<a class="headerlink" href="#question-0-warm-up" title="Permalink to this heading">#</a></h2>
+<p>Define a variable called <code class="docutils literal notranslate"><span class="pre">quantity</span></code> and assign it the value <code class="docutils literal notranslate"><span class="pre">25</span></code>. Display its ID number and type.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">quantity</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">quantity</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">quantity</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4348096360
+&lt;class &#39;int&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="question-1-name-tag">
 <h2>Question-1: Name Tag<a class="headerlink" href="#question-1-name-tag" title="Permalink to this heading">#</a></h2>
 <p>Use the following information to create the variables name, league, age, and height with the given values.</p>
 <ul class="simple">
 <li><p>Create the birthyear variable using the age variable.</p></li>
 <li><p>Design a name tag.</p></li>
+<li><p>There is a space between each asterisk in the first and last lines.</p></li>
 </ul>
 <p><em>Michael Jordan played basketball in the NBA. In 2024, he is 61 years old, and his height is 1.98 meters.</em></p>
 <p>Sample Output:</p>
@@ -471,24 +492,24 @@ document.write(`
 <span class="n">age</span> <span class="o">=</span> <span class="mi">61</span>
 <span class="n">height</span> <span class="o">=</span> <span class="mf">1.98</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;* * * * * * * * * * * * * * * &#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;* Name    :&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s1">&#39; *&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;* League  :&#39;</span><span class="p">,</span> <span class="n">league</span><span class="p">,</span> <span class="s1">&#39;            *&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;* Age     :&#39;</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="s1">&#39;             *&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;* Birtyear:&#39;</span><span class="p">,</span> <span class="mi">2024</span><span class="o">-</span><span class="n">age</span><span class="p">,</span> <span class="s1">&#39;           *&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;* Height  :&#39;</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="s1">&#39;cm&#39;</span><span class="p">,</span> <span class="s1">&#39;        *&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;* * * * * * * * * * * * * * * &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;* * * * * * * * * * * * * * *&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;* Name     :&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s1">&#39;*&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;* League   :&#39;</span><span class="p">,</span> <span class="n">league</span><span class="p">,</span> <span class="s1">&#39;           *&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;* Age      :&#39;</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="s1">&#39;            *&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;* Birthyear:&#39;</span><span class="p">,</span> <span class="mi">2024</span><span class="o">-</span><span class="n">age</span><span class="p">,</span> <span class="s1">&#39;          *&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;* Height   :&#39;</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span> <span class="p">,</span> <span class="s1">&#39;        *&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;* * * * * * * * * * * * * * *&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* * * * * * * * * * * * * * * 
-* Name    : Michael Jordan  *
-* League  : NBA             *
-* Age     : 61              *
-* Birtyear: 1963            *
-* Height  : 1.98 cm         *
-* * * * * * * * * * * * * * * 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* * * * * * * * * * * * * * *
+* Name     : Michael Jordan *
+* League   : NBA            *
+* Age      : 61             *
+* Birthyear: 1963           *
+* Height   : 1.98 m         *
+* * * * * * * * * * * * * * *
 </pre></div>
 </div>
 </div>
@@ -614,7 +635,7 @@ Area     : 78.54
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;+&#39;</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">horizontal</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;+&#39;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;+&#39;</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">horizontal</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;+&#39;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;+&#39;</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">horizontal</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;+&#39;</span><span class="p">)</span>
@@ -976,6 +997,7 @@ b) A = 1392.0</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-0-warm-up">Question-0: Warm Up</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-name-tag">Question-1: Name Tag</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question-2</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question-3</a></li>
