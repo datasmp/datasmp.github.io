@@ -624,6 +624,17 @@ document.write(`
 </ul>
 </li>
 </ul>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Display the first 20 decimal places of the number <code class="docutils literal notranslate"><span class="pre">1.235</span></code> Are there any unexpected decimal values?</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">format</span><span class="p">(</span><span class="mf">1.235</span><span class="p">,</span> <span class="s1">&#39;.20f&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
 </section>
 <section id="complex-numbers">
 <h2>Complex Numbers<a class="headerlink" href="#complex-numbers" title="Permalink to this heading">#</a></h2>
@@ -728,6 +739,18 @@ document.write(`
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-3-4j)
 </pre></div>
 </div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Create a variable whose value is the complex number <span class="math notranslate nohighlight">\(4+5j\)</span> and check its type.</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="n">z</span> <span class="o">=</span> <span class="nb">complex</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
+</pre></div>
 </div>
 </div>
 </section>
@@ -1023,6 +1046,18 @@ document.write(`
 <li><p>This is a very small number close to 0.</p></li>
 <li><p>We have this small number as the real part because floats are stored approximately.</p></li>
 </ul>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Divide 18 by 3, assign the result to a variable named x, and then check the type of x to determine its data type.</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">18</span><span class="o">/</span><span class="mi">3</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
 </section>
 <section id="conversions">
 <h2>Conversions<a class="headerlink" href="#conversions" title="Permalink to this heading">#</a></h2>
@@ -1142,6 +1177,17 @@ y = 7.53
 </div>
 </div>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>In a single line of code, convert ‘3’ to a float number then integer and check its type.</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="s1">&#39;3&#39;</span><span class="p">))))</span>
+</pre></div>
+</div>
+</div>
 </section>
 <section id="precedence-pemdas">
 <h2>Precedence (PEMDAS)<a class="headerlink" href="#precedence-pemdas" title="Permalink to this heading">#</a></h2>
@@ -1202,6 +1248,17 @@ y = 7.53
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>127
 </pre></div>
 </div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Given the variable <code class="docutils literal notranslate"><span class="pre">x=3</span></code>, evaluate the expression 4+2(x+5)-3x</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">4</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">5</span><span class="p">)</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
 </div>
 </div>
 </section>
@@ -1353,6 +1410,28 @@ y = 7.53
 </div>
 </div>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Find the output of the following code.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">a</span> <span class="o">+=</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">/=</span> <span class="mi">3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">*=</span>  <span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="mi">12</span>  
+<span class="mf">4.0</span>  
+<span class="mf">20.0</span>
+</pre></div>
+</div>
+</div>
 </section>
 <section id="built-in-functions">
 <h2>Built-in Functions<a class="headerlink" href="#built-in-functions" title="Permalink to this heading">#</a></h2>
@@ -1449,6 +1528,23 @@ y = 7.53
 </div>
 </div>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Create three variables, x, y, and z, and assign them the values -2, -5, and -10, respectively.</p>
+<ul class="simple">
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">min()</span></code> function to find and display the minimum of these numbers.</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">abs()</span></code> function to get the absolute values of x, y, and z, then display their sum.</p></li>
+</ul>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Minimum:&#39;</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sum    :&#39;</span><span class="p">,</span> <span class="nb">sum</span><span class="p">([</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="nb">abs</span><span class="p">(</span><span class="n">y</span><span class="p">),</span><span class="nb">abs</span><span class="p">(</span><span class="n">z</span><span class="p">)]))</span>
+</pre></div>
+</div>
+</div>
 </section>
 <section id="math-module">
 <h2>Math Module<a class="headerlink" href="#math-module" title="Permalink to this heading">#</a></h2>
@@ -1536,6 +1632,19 @@ y = 7.53
 </div>
 </div>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Create a variable named <code class="docutils literal notranslate"><span class="pre">radius</span></code> and assign it the value 5. Import the value of <span class="math notranslate nohighlight">\(\pi\)</span> from the <code class="docutils literal notranslate"><span class="pre">math</span></code> module. Then, use the formula <span class="math notranslate nohighlight">\(A = \pi r^2 \)</span> to calculate the area of the circle. Finally, round the result to the nearest hundredth.</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="n">radius</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">A</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">radius</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Area:&#39;</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </section>
 <section id="combine-strings-and-numbers">
 <h2>Combine Strings and Numbers<a class="headerlink" href="#combine-strings-and-numbers" title="Permalink to this heading">#</a></h2>
@@ -1568,6 +1677,20 @@ y = 7.53
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5 dollars
 </pre></div>
 </div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Use string concatenation by converting the variable <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">5</span></code> to a string and then concatenate it with the variable <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">'7'</span></code>. Assign the result to a new variable, which will hold the string value <code class="docutils literal notranslate"><span class="pre">'75'</span></code>.</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;7&#39;</span>
+<span class="n">z</span><span class="o">=</span> <span class="n">y</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
 </div>
 </div>
 </section>
