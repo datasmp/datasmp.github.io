@@ -435,11 +435,13 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7">Question-7</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8">Question-8</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-9-accuracy-score">Question-9: Accuracy Score</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-10-outliers">Question-10: Outliers</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#business-applications">Business Applications</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-production-data-analysis">Question: Production Data Analysis</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-profit-and-loss">Question: Profit and Loss</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-total-cost">Question: Total Cost</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-stock-symbols">Question: Stock Symbols</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-stock-value-calculation">Question: Stock Value Calculation</a></li>
 </ul>
 </li>
 </ul>
@@ -560,6 +562,14 @@ Numbers: (3.0, 7.0, 2.0, 9.0, 4.0)<br />
 <li><p>Compute the accuracy score for the predicted values, which is the ratio of correctly classified samples to the total number of samples.</p></li>
 </ul>
 </section>
+<section id="question-10-outliers">
+<h2>Question-10: Outliers<a class="headerlink" href="#question-10-outliers" title="Permalink to this heading">#</a></h2>
+<p>Given a tuple <code class="docutils literal notranslate"><span class="pre">raw_data</span></code>, create a new tuple where any value that is more than double the previous value is replaced by the previous value.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">raw_data</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">19</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Hint: Replace 12 with 2, 11 with 4, 2 with 5, 4 with 15, and 7 with 19.</p>
+</section>
 <section id="business-applications">
 <h2>Business Applications<a class="headerlink" href="#business-applications" title="Permalink to this heading">#</a></h2>
 <section id="question-production-data-analysis">
@@ -603,6 +613,16 @@ Numbers: (3.0, 7.0, 2.0, 9.0, 4.0)<br />
 <li><p>Replace any ‘.’ characters in the symbols with ‘-’ characters.</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">symbols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;MMM&#39;</span><span class="p">,</span> <span class="s1">&#39;BF.B&#39;</span><span class="p">,</span> <span class="s1">&#39;CAT&#39;</span><span class="p">,</span> <span class="s1">&#39;AMZN&#39;</span><span class="p">,</span> <span class="s1">&#39;BRK.B&#39;</span><span class="p">,</span> <span class="s1">&#39;AAL&#39;</span><span class="p">,</span> <span class="s1">&#39;CAT&#39;</span><span class="p">,</span> <span class="s1">&#39;GOOG&#39;</span><span class="p">,</span> <span class="s1">&#39;MMM&#39;</span><span class="p">,</span> <span class="s1">&#39;AEP&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="question-stock-value-calculation">
+<h3>Question: Stock Value Calculation<a class="headerlink" href="#question-stock-value-calculation" title="Permalink to this heading">#</a></h3>
+<p>The initial stock price is 200. A tuple of daily percentage changes for the next ten days is provided.</p>
+<ul class="simple">
+<li><p>Calculate the stock price at the end of each day for the next ten days.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pct_changes</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.04</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.08</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.04</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -681,11 +701,13 @@ Numbers: (3.0, 7.0, 2.0, 9.0, 4.0)<br />
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7">Question-7</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8">Question-8</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-9-accuracy-score">Question-9: Accuracy Score</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-10-outliers">Question-10: Outliers</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#business-applications">Business Applications</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-production-data-analysis">Question: Production Data Analysis</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-profit-and-loss">Question: Profit and Loss</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-total-cost">Question: Total Cost</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-stock-symbols">Question: Stock Symbols</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-stock-value-calculation">Question: Stock Value Calculation</a></li>
 </ul>
 </li>
 </ul>

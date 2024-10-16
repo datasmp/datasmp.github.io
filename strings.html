@@ -612,6 +612,21 @@ Triple single and double quotes are used to create strings spanning multiple lin
 </div>
 </div>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Use a single string to print the following text:<br />
+<code class="docutils literal notranslate"><span class="pre">He's</span> <span class="pre">a</span> <span class="pre">very</span></code><br />
+<code class="docutils literal notranslate"><span class="pre">hardworking</span> <span class="pre">student.</span></code></p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;He&#39;s a very   </span>
+<span class="s1">hardworking student.&#39;&#39;&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </section>
 <section id="escaping-characters">
 <h2>Escaping characters<a class="headerlink" href="#escaping-characters" title="Permalink to this heading">#</a></h2>
@@ -730,6 +745,18 @@ Steinbeck       John
 </pre></div>
 </div>
 </div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Find the output of the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;abc</span><span class="se">\n</span><span class="s1">def</span><span class="se">\b\b</span><span class="s1">gh&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>abc<br />
+dgh</p>
 </div>
 </section>
 <section id="raw-strings">
@@ -895,6 +922,18 @@ My rounded weight is 173.63.
 </div>
 </div>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Find the output of the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">percentage</span><span class="p">,</span> <span class="n">order</span><span class="p">,</span> <span class="n">country</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;France&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">percentage</span><span class="si">}</span><span class="s1">, order, </span><span class="si">{</span><span class="n">country</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>0.25, order, France</p>
+</div>
 </section>
 <section id="unicode-characters">
 <h2>Unicode Characters<a class="headerlink" href="#unicode-characters" title="Permalink to this heading">#</a></h2>
@@ -1050,38 +1089,13 @@ My rounded weight is 173.63.
 <p>Example: Forming a triangle pattern with the ‘$’ character using repetitions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;$&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;$&#39;</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;$&#39;</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;$&#39;</span><span class="o">*</span><span class="mi">4</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;$&#39;</span><span class="o">*</span><span class="mi">5</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;$&#39;</span><span class="o">*</span><span class="mi">6</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;$&#39;</span><span class="o">*</span><span class="mi">7</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>$
-$$
-$$$
-$$$$
-$$$$$
-$$$$$$
-$$$$$$$
-</pre></div>
-</div>
-</div>
-</div>
-<p>Example: Forming a triangle pattern with the ‘$’ and space characters using repetitions.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">6</span><span class="o">+</span><span class="s1">&#39;$&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">5</span><span class="o">+</span><span class="s1">&#39;$&#39;</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">4</span><span class="o">+</span><span class="s1">&#39;$&#39;</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">3</span><span class="o">+</span><span class="s1">&#39;$&#39;</span><span class="o">*</span><span class="mi">4</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="s1">&#39;$&#39;</span><span class="o">*</span><span class="mi">5</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">1</span><span class="o">+</span><span class="s1">&#39;$&#39;</span><span class="o">*</span><span class="mi">6</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">0</span><span class="o">+</span><span class="s1">&#39;$&#39;</span><span class="o">*</span><span class="mi">7</span><span class="p">)</span>    <span class="c1"># no need for the space</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">0</span><span class="o">+</span><span class="s1">&#39;$&#39;</span><span class="o">*</span><span class="mi">7</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1096,6 +1110,29 @@ $$$$$$$
 </pre></div>
 </div>
 </div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Find the output of the following code.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;$&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;$&#39;</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;$&#39;</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;$&#39;</span><span class="o">*</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;$&#39;</span><span class="o">*</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;$&#39;</span><span class="o">*</span><span class="mi">6</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;$&#39;</span><span class="o">*</span><span class="mi">7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>$<br />
+$$<br />
+$$$<br />
+$$$$<br />
+$$$$$<br />
+$$$$$$<br />
+$$$$$$$</p>
 </div>
 </section>
 </section>
@@ -1144,6 +1181,17 @@ $$$$$$$
 </pre></div>
 </div>
 </div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Find the output of the following code.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="s1">&#39;one day.&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>8</p>
 </div>
 </section>
 <section id="string-indexing">
@@ -1256,6 +1304,20 @@ $$$$$$$
 </div>
 </div>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Find the output of the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="s1">&#39;arizona&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>z<br />
+i</p>
+</div>
 </section>
 <section id="string-slices">
 <h2>String Slices<a class="headerlink" href="#string-slices" title="Permalink to this heading">#</a></h2>
@@ -1352,6 +1414,22 @@ $$$$$$$
 </pre></div>
 </div>
 </div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Find the output of the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="s1">&#39;arizona&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="mi">2</span><span class="p">:])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">[:</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>zo<br />
+izona<br />
+ari</p>
 </div>
 <p><strong>Step parameter</strong></p>
 <p>Slicing can also be done by taking steps in the form of: <code class="docutils literal notranslate"><span class="pre">string[start:</span> <span class="pre">end:</span> <span class="pre">step]</span></code>.</p>
@@ -1457,6 +1535,18 @@ $$$$$$$
 </pre></div>
 </div>
 </div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Find the output of the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="s1">&#39;arizona&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>rzn</p>
 </div>
 </section>
 <section id="string-module">
@@ -1661,6 +1751,16 @@ $$$$$$$
 </div>
 </div>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Write a program to verify if the character <code class="docutils literal notranslate"><span class="pre">'r'</span></code> exists in the word <code class="docutils literal notranslate"><span class="pre">'Radio'</span></code>.</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;r&#39;</span> <span class="ow">in</span> <span class="s1">&#39;Radio&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </section>
 <section id="string-methods">
 <h2>String Methods<a class="headerlink" href="#string-methods" title="Permalink to this heading">#</a></h2>
@@ -1765,6 +1865,18 @@ tOm aNd jerRy.
 </div>
 </div>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Display the capitalized, uppercase, and lowercase forms of the string <code class="docutils literal notranslate"><span class="pre">'aBcDef'</span></code></p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;aBcDef&#39;</span><span class="o">.</span><span class="n">capitalize</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;aBcDef&#39;</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;aBcDef&#39;</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
 </section>
 <section id="find">
 <h3>find()<a class="headerlink" href="#find" title="Permalink to this heading">#</a></h3>
@@ -1865,6 +1977,16 @@ tOm aNd jerRy.
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1
 </pre></div>
 </div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Write a program that returns the index of the second occurrence of ‘A’ in the word ‘CALIFORNIA’.</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;CALIFORNIA&#39;</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
 </div>
 </div>
 </section>
@@ -1987,6 +2109,21 @@ tOm aNd jerRy.
 </div>
 </div>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Write a program to verify</p>
+<ul class="simple">
+<li><p>if the first letter of the word <code class="docutils literal notranslate"><span class="pre">'table'</span></code> is  <code class="docutils literal notranslate"><span class="pre">'t'</span></code></p></li>
+<li><p>if the last letter of the word <code class="docutils literal notranslate"><span class="pre">'table'</span></code> is  <code class="docutils literal notranslate"><span class="pre">'k'</span></code></p></li>
+</ul>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;table&#39;</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;table&#39;</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;k&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
 </section>
 <section id="count">
 <h3>count()<a class="headerlink" href="#count" title="Permalink to this heading">#</a></h3>
@@ -2051,6 +2188,16 @@ tOm aNd jerRy.
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
 </pre></div>
 </div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Find the number of occurences of <code class="docutils literal notranslate"><span class="pre">'a'</span></code> in <code class="docutils literal notranslate"><span class="pre">'abbabba'</span></code></p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;abbabba&#39;</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">))</span>
+</pre></div>
 </div>
 </div>
 </section>

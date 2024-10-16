@@ -422,6 +422,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up-question">Warm Up Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Warm Up Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Warm Up Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Warm Up Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Warm Up Question</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question-1</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question-2</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question-3</a></li>
@@ -430,6 +435,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6">Question-6</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7-house">Question-7: House</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8-password">Question-8: Password</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-9">Question-9</a></li>
 </ul>
             </nav>
         </div>
@@ -443,6 +449,120 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="strings-exercises-and-solutions">
 <h1>Strings Exercises and Solutions<a class="headerlink" href="#strings-exercises-and-solutions" title="Permalink to this heading">#</a></h1>
+<section id="warm-up-question">
+<h2>Warm Up Question<a class="headerlink" href="#warm-up-question" title="Permalink to this heading">#</a></h2>
+<p>Create a string variable with the value <code class="docutils literal notranslate"><span class="pre">isn't</span></code> and print it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="s2">&quot;isn&#39;t&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>isn&#39;t
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id1">
+<h2>Warm Up Question<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<p>For the variable country = <code class="docutils literal notranslate"><span class="pre">'jamaica'</span></code>:</p>
+<ul class="simple">
+<li><p>Display the character <code class="docutils literal notranslate"><span class="pre">'m'</span></code> using its positive index.</p></li>
+<li><p>Display the character <code class="docutils literal notranslate"><span class="pre">'i'</span></code> using its negative index.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">country</span> <span class="o">=</span> <span class="s1">&#39;jamaica&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">country</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">country</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>m
+i
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id2">
+<h2>Warm Up Question<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p>Use the provided variables and f-strings to output the statement:
+<code class="docutils literal notranslate"><span class="pre">I</span> <span class="pre">am</span> <span class="pre">in</span> <span class="pre">10th</span> <span class="pre">grade</span> <span class="pre">and</span> <span class="pre">my</span> <span class="pre">Chemistry</span> <span class="pre">teacher</span> <span class="pre">is</span> <span class="pre">Mr.</span> <span class="pre">Adams.</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grade</span><span class="p">,</span> <span class="n">course</span><span class="p">,</span> <span class="n">teacher</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;Chemistry&#39;</span><span class="p">,</span> <span class="s1">&#39;Mr. Adams&#39;</span> 
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grade</span><span class="p">,</span> <span class="n">course</span><span class="p">,</span> <span class="n">teacher</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;Chemistry&#39;</span><span class="p">,</span> <span class="s1">&#39;Mr. Adams&#39;</span> 
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;I am in </span><span class="si">{</span><span class="n">grade</span><span class="si">}</span><span class="s1">th grade and my </span><span class="si">{</span><span class="n">course</span><span class="si">}</span><span class="s1"> teacher is </span><span class="si">{</span><span class="n">teacher</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I am in 10th grade and my Chemistry teacher is Mr. Adams.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id3">
+<h2>Warm Up Question<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<p>Choose a Unicode character and display it after a related sentence using its code:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You are funny!</span><span class="se">\U0001F605</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>You are funny!😅
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id4">
+<h2>Warm Up Question<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<p>Display the following face.</p>
+<p><img alt="" src="_images/face.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">11</span> <span class="o">+</span> <span class="s1">&#39;***&#39;</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">11</span> <span class="o">+</span> <span class="s1">&#39;***&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">11</span> <span class="o">+</span> <span class="s1">&#39;***&#39;</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">11</span> <span class="o">+</span> <span class="s1">&#39;***&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">11</span> <span class="o">+</span> <span class="s1">&#39;***&#39;</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">11</span> <span class="o">+</span> <span class="s1">&#39;***&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">18</span><span class="o">+</span> <span class="s1">&#39;***&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">18</span> <span class="o">+</span> <span class="s1">&#39;***&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">18</span> <span class="o">+</span> <span class="s1">&#39;***&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">18</span> <span class="o">+</span> <span class="s1">&#39;***&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">13</span> <span class="o">+</span> <span class="s1">&#39;*&#39;</span><span class="o">*</span><span class="mi">13</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">13</span> <span class="o">+</span> <span class="s1">&#39;*&#39;</span><span class="o">*</span><span class="mi">13</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>           ***           ***
+           ***           ***
+           ***           ***
+
+                  ***
+                  ***
+                  ***
+                  ***
+
+             *************
+             *************
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="question-1">
 <h2>Question-1<a class="headerlink" href="#question-1" title="Permalink to this heading">#</a></h2>
 <p>For the given text below, print versions that are capitalized, in uppercase, in lowercase, and titled.</p>
@@ -698,22 +818,31 @@ tItanIc
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Password: W&lt;8
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Password: W-2
 </pre></div>
 </div>
 </div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Here is a note!</p>
+</section>
+<section id="question-9">
+<h2>Question-9<a class="headerlink" href="#question-9" title="Permalink to this heading">#</a></h2>
+<p>Use the provided variables and f-strings to output the statement:
+<code class="docutils literal notranslate"><span class="pre">I</span> <span class="pre">am</span> <span class="pre">in</span> <span class="pre">TENth</span> <span class="pre">grade</span> <span class="pre">and</span> <span class="pre">my</span> <span class="pre">CHEMISTRY</span> <span class="pre">teacher</span> <span class="pre">is</span> <span class="pre">Mr.</span> <span class="pre">Adams.</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grade</span><span class="p">,</span> <span class="n">course</span><span class="p">,</span> <span class="n">teacher</span> <span class="o">=</span> <span class="s1">&#39;ten&#39;</span><span class="p">,</span> <span class="s1">&#39;cHemisTry&#39;</span><span class="p">,</span> <span class="s1">&#39;mr. aDams&#39;</span> 
+</pre></div>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Hello I am a warning.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grade</span><span class="p">,</span> <span class="n">course</span><span class="p">,</span> <span class="n">teacher</span> <span class="o">=</span> <span class="s1">&#39;ten&#39;</span><span class="p">,</span> <span class="s1">&#39;cHemisTry&#39;</span><span class="p">,</span> <span class="s1">&#39;mr. aDams&#39;</span> 
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;I am in </span><span class="si">{</span><span class="n">grade</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s1">th grade and my </span><span class="si">{</span><span class="n">course</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s1"> teacher is </span><span class="si">{</span><span class="n">teacher</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+</pre></div>
 </div>
-<div class="tip admonition">
-<p class="admonition-title">This admonition was styled…</p>
-<p>With a tip class!</p>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I am in TENth grade and my CHEMISTRY teacher is Mr. Adams.
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>
@@ -763,6 +892,11 @@ tItanIc
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up-question">Warm Up Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Warm Up Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Warm Up Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Warm Up Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Warm Up Question</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question-1</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question-2</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question-3</a></li>
@@ -771,6 +905,7 @@ tItanIc
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6">Question-6</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7-house">Question-7: House</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8-password">Question-8: Password</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-9">Question-9</a></li>
 </ul>
   </nav></div>
 

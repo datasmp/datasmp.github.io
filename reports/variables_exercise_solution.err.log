@@ -7,7 +7,7 @@ Traceback (most recent call last):
   File "/Users/yusufdanisman/anaconda3/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 173, in wrapped
     return loop.run_until_complete(inner)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/yusufdanisman/anaconda3/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
+  File "/Users/yusufdanisman/anaconda3/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
     return future.result()
            ^^^^^^^^^^^^^^^
   File "/Users/yusufdanisman/anaconda3/lib/python3.11/site-packages/nbclient/client.py", line 705, in async_execute
@@ -28,7 +28,7 @@ print('+ ' *horizontal)
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-Cell [0;32mIn[7], line 1[0m
+Cell [0;32mIn[10], line 1[0m
 [0;32m----> 1[0m [38;5;28mprint[39m([38;5;124m'[39m[38;5;124m+[39m[38;5;124m'[39m [38;5;241m+[39m [38;5;124m'[39m[38;5;124m [39m[38;5;124m'[39m[38;5;241m*[39m([38;5;241m2[39m[38;5;241m*[39mhorizontal[38;5;241m-[39m[38;5;241m3[39m) [38;5;241m+[39m [38;5;124m'[39m[38;5;124m+[39m[38;5;124m'[39m)
 [1;32m      2[0m [38;5;28mprint[39m([38;5;124m'[39m[38;5;124m+[39m[38;5;124m'[39m [38;5;241m+[39m [38;5;124m'[39m[38;5;124m [39m[38;5;124m'[39m[38;5;241m*[39m([38;5;241m2[39m[38;5;241m*[39mhorizontal[38;5;241m-[39m[38;5;241m3[39m) [38;5;241m+[39m [38;5;124m'[39m[38;5;124m+[39m[38;5;124m'[39m)
 [1;32m      3[0m [38;5;28mprint[39m([38;5;124m'[39m[38;5;124m+[39m[38;5;124m'[39m [38;5;241m+[39m [38;5;124m'[39m[38;5;124m [39m[38;5;124m'[39m[38;5;241m*[39m([38;5;241m2[39m[38;5;241m*[39mhorizontal[38;5;241m-[39m[38;5;241m3[39m) [38;5;241m+[39m [38;5;124m'[39m[38;5;124m+[39m[38;5;124m'[39m)
