@@ -264,7 +264,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="projects.html">Projects</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="project_factorization.html">Project: Factorization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project_elections.html">Project: Election Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="project_soccer.html">Project: Soccer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project_smoothing.html">Project: Smoothing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project_riemann.html">Project: Approximating Areas</a></li>
 </ul>
@@ -472,7 +471,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="chp-4-strings">
 <h1>Chp-4: Strings<a class="headerlink" href="#chp-4-strings" title="Permalink to this heading">#</a></h1>
-<p><img alt="" src="_images/strings2.png" /></p>
+<p><img alt="Section Title: Strings" src="_images/strings2.png" /></p>
 <div class="tip admonition">
 <p class="admonition-title">Chapter Objectives</p>
 <p>By the end of this chapter, the student should be able to:</p>
@@ -1206,7 +1205,7 @@ $$$$$$$</p>
 <li><p>The index of the last character is -1.</p></li>
 <li><p>The index of the second character from the end is -2, and so on.</p></li>
 </ul>
-<p><img alt="" src="_images/cal_index_v2.png" /></p>
+<p><img alt="The list of positive and negative indexes for each character in the word &quot;CALIFORNIA&quot;:Index of C is 0 or -10,Index of the first A is 1 or -9,Index of L is 2 or -8,Index of the first I is 3 or -7,Index of F is 4 or -6,Index of O is 5 or -5,Index of R is 6 or -4,Index of N is 7 or -3,Index of the second I is 8 or -2,Index of the second A is 9 or -1.The length CALIFORNIA is 10." src="_images/cal_index_v2.png" /></p>
 <ul class="simple">
 <li><p>index of <code class="docutils literal notranslate"><span class="pre">C</span></code> is 0 or -10</p></li>
 <li><p>index of <code class="docutils literal notranslate"><span class="pre">first</span> <span class="pre">A</span></code> is 1 or -9</p></li>
@@ -1335,7 +1334,7 @@ i</p>
 </ul>
 </li>
 </ul>
-<p><img alt="" src="_images/cal_index2_v2.png" /></p>
+<p><img alt="The list of positive and negative indexes for each character in the word &quot;CALIFORNIA&quot;:Index of C is 0 or -10,Index of the first A is 1 or -9,Index of L is 2 or -8,Index of the first I is 3 or -7,Index of F is 4 or -6,Index of O is 5 or -5,Index of R is 6 or -4,Index of N is 7 or -3,Index of the second I is 8 or -2,Index of the second A is 9 or -1." src="_images/cal_index2_v2.png" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="s1">&#39;CALIFORNIA&#39;</span>
@@ -2388,7 +2387,128 @@ ArtHuR
 </div>
 </div>
 </div>
-<p><img alt="" src="_images/string_methods.png" /></p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>STRING METHODS</p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>String</strong></p></td>
+<td><p><strong>Method</strong></p></td>
+<td><p><strong>Output</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>‘hoW are yOu’</p></td>
+<td><p>capitalize()</p></td>
+<td><p>‘How are you’</p></td>
+</tr>
+<tr class="row-even"><td><p>‘hoW are yOu’</p></td>
+<td><p>upper()</p></td>
+<td><p>‘HOW ARE YOU’</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘hoW are yOu’</p></td>
+<td><p>lower()</p></td>
+<td><p>‘how are you’</p></td>
+</tr>
+<tr class="row-even"><td><p>‘hoW are yOu’</p></td>
+<td><p>title()</p></td>
+<td><p>‘How Are You’</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘eraser’</p></td>
+<td><p>find(‘s’)</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-even"><td><p>‘eraser’</p></td>
+<td><p>find(‘e’)</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘eraser’</p></td>
+<td><p>find(‘e’,2)</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>‘eraser’</p></td>
+<td><p>find(‘w’)</p></td>
+<td><p>-1</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘eraser’</p></td>
+<td><p>rfind(‘s’)</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-even"><td><p>‘eraser’</p></td>
+<td><p>rfind(‘e’)</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘  table      ‘</p></td>
+<td><p>strip()</p></td>
+<td><p>‘table’</p></td>
+</tr>
+<tr class="row-even"><td><p>‘  table      ‘</p></td>
+<td><p>rstrip()</p></td>
+<td><p>‘  table’</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘  table      ‘</p></td>
+<td><p>lstrip()</p></td>
+<td><p>‘tablenbsp;    ‘</p></td>
+</tr>
+<tr class="row-even"><td><p>‘desk’</p></td>
+<td><p>startswith(‘d’)</p></td>
+<td><p>True</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘desk’</p></td>
+<td><p>startswith(‘w’)</p></td>
+<td><p>False</p></td>
+</tr>
+<tr class="row-even"><td><p>‘desk’</p></td>
+<td><p>endswith(‘k’)</p></td>
+<td><p>True</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘desk’</p></td>
+<td><p>endswith(‘x’)</p></td>
+<td><p>False</p></td>
+</tr>
+<tr class="row-even"><td><p>‘cross-section’</p></td>
+<td><p>count(‘s’)</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘cross-section’</p></td>
+<td><p>count(‘w’)</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>‘1234’</p></td>
+<td><p>isdigit()</p></td>
+<td><p>True</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘1234s’</p></td>
+<td><p>isdigit()</p></td>
+<td><p>False</p></td>
+</tr>
+<tr class="row-even"><td><p>‘chair’</p></td>
+<td><p>isalpha()</p></td>
+<td><p>True</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘chair1’</p></td>
+<td><p>isalpha()</p></td>
+<td><p>False</p></td>
+</tr>
+<tr class="row-even"><td><p>‘python’</p></td>
+<td><p>replace(‘p’, ‘r’)</p></td>
+<td><p>‘rython’</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘python’</p></td>
+<td><p>replace(‘w’, ‘r’)</p></td>
+<td><p>‘python’</p></td>
+</tr>
+<tr class="row-even"><td><p>‘cAr’</p></td>
+<td><p>swapcase()</p></td>
+<td><p>‘CaR’</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘???’</p></td>
+<td><p>join([‘a’,’b’,’c’])</p></td>
+<td><p>‘a???b???c’</p></td>
+</tr>
+</tbody>
+</table>
 </section>
 </section>
 <section id="parsing-strings">

@@ -266,7 +266,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="projects.html">Projects</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="project_factorization.html">Project: Factorization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project_elections.html">Project: Election Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="project_soccer.html">Project: Soccer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project_smoothing.html">Project: Smoothing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project_riemann.html">Project: Approximating Areas</a></li>
 </ul>
@@ -465,7 +464,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="chp-8-lists">
 <h1>Chp-8: Lists<a class="headerlink" href="#chp-8-lists" title="Permalink to this heading">#</a></h1>
-<p><img alt="" src="_images/lists2.png" /></p>
+<p><img alt="Section Title: Lists" src="_images/lists2.png" /></p>
 <div class="tip admonition">
 <p class="admonition-title">Chapter Objectives</p>
 <p>By the end of this chapter, the student should be able to:</p>
@@ -1434,7 +1433,100 @@ numbers list after  using sort(reverse=True): [&#39;z&#39;, &#39;y&#39;, &#39;t&
 </div>
 </div>
 </div>
-<p><img alt="" src="_images/list_methods.png" /></p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>List Methods</p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>List</strong></p></td>
+<td><p><strong>Method</strong></p></td>
+<td><p><strong>Output</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>[2,5,8]</p></td>
+<td><p>append(99)</p></td>
+<td><p>[2,5,8,99]</p></td>
+</tr>
+<tr class="row-even"><td><p>[2,5,8]</p></td>
+<td><p>clear()</p></td>
+<td><p>[]</p></td>
+</tr>
+<tr class="row-odd"><td><p>[2,5,8]</p></td>
+<td><p>copy()</p></td>
+<td><p>[2,5,8]</p></td>
+</tr>
+<tr class="row-even"><td><p>[‘a’,’b’,’c’,’a’,’a’,’c’]</p></td>
+<td><p>count(‘a’)</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>[‘a’,’b’,’c’,’a’,’a’,’c’]</p></td>
+<td><p>count(‘b’)</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>[‘a’,’b’,’c’,’a’,’a’,’c’]</p></td>
+<td><p>count(‘d’)</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>[1,2,3]</p></td>
+<td><p>extend([4,5])</p></td>
+<td><p>[1,2,3,4,5]</p></td>
+</tr>
+<tr class="row-even"><td><p>[2,5,8]</p></td>
+<td><p>index(5)</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>[2,5,8]</p></td>
+<td><p>index(2)</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>[‘a’,’b’,’c’,’a’]</p></td>
+<td><p>index(‘a’)</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>[‘a’,’b’,’c’,’a’]</p></td>
+<td><p>index(‘a’, 1)</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-even"><td><p>[2,5,8]</p></td>
+<td><p>insert(2,’hello’)</p></td>
+<td><p>[2,5,’hello’,8]</p></td>
+</tr>
+<tr class="row-odd"><td><p>[‘a’,’b’,’c’,’d’]</p></td>
+<td><p>pop()</p></td>
+<td><p>[‘a’,’b’,’c’]</p></td>
+</tr>
+<tr class="row-even"><td><p>[‘a’,’b’,’c’,’d’]</p></td>
+<td><p>pop(2)</p></td>
+<td><p>[‘a’,’b’,’d’]</p></td>
+</tr>
+<tr class="row-odd"><td><p>[‘a’,’b’,’c’,’d’]</p></td>
+<td><p>remove(‘c’)</p></td>
+<td><p>[‘a’,’b’,’d’]</p></td>
+</tr>
+<tr class="row-even"><td><p>[‘r’,’b’,’t’,’d’]</p></td>
+<td><p>reverse()</p></td>
+<td><p>[‘d’,’t’,’b’,’r’]</p></td>
+</tr>
+<tr class="row-odd"><td><p>[‘r’,’b’,’t’,’d’]</p></td>
+<td><p>sort()</p></td>
+<td><p>[‘b’,’d’,’r’,’t’]</p></td>
+</tr>
+<tr class="row-even"><td><p>[‘r’,’b’,’t’,’d’]</p></td>
+<td><p>sort(reverse=True)</p></td>
+<td><p>[‘t’,’r’,’d’,’b’]</p></td>
+</tr>
+<tr class="row-odd"><td><p>[2,5,6,3]</p></td>
+<td><p>sort()</p></td>
+<td><p>[2,3,5,6]</p></td>
+</tr>
+<tr class="row-even"><td><p>[2,5,6,3]</p></td>
+<td><p>sort(reverse=True)</p></td>
+<td><p>[6,5,3,2]</p></td>
+</tr>
+</tbody>
+</table>
 </section>
 </section>
 <section id="iterations-and-lists">
