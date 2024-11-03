@@ -7,7 +7,7 @@ Traceback (most recent call last):
   File "/Users/yusufdanisman/anaconda3/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 173, in wrapped
     return loop.run_until_complete(inner)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/yusufdanisman/anaconda3/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
+  File "/Users/yusufdanisman/anaconda3/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
     return future.result()
            ^^^^^^^^^^^^^^^
   File "/Users/yusufdanisman/anaconda3/lib/python3.11/site-packages/nbclient/client.py", line 705, in async_execute
@@ -18,29 +18,20 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-loan_amount  = float(input('Please enter the loan amount   :'))
-credit_score = float(input('Please enter your credit course:'))
-if   (credit_score <= 600) & (loan_amount <= 10_000):
-    print('Approved.')
-elif (credit_score <= 600) & (loan_amount > 10_000):
-    print('Deny.')
-elif (600 < credit_score < 800) & (loan_amount <= 30_000):
-    print('Approved.')
-elif (600 < credit_score < 800) & (loan_amount > 30_000):
-    print('Deny.')
-elif (credit_score >= 800) & (loan_amount <= 50_000):
-    print('Approved.')
-elif (credit_score >= 800) & (loan_amount > 50_000):
-    print('Deny.')
+name = input('Enter a name: ')
+try:
+    print(name[4])
+except:
+    print('Please enter a name that contains at least 5 characters.')
 ------------------
 
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mStdinNotImplementedError[0m                  Traceback (most recent call last)
-Cell [0;32mIn[1], line 1[0m
-[0;32m----> 1[0m loan_amount  [38;5;241m=[39m [38;5;28mfloat[39m([38;5;28minput[39m([38;5;124m'[39m[38;5;124mPlease enter the loan amount   :[39m[38;5;124m'[39m))
-[1;32m      2[0m credit_score [38;5;241m=[39m [38;5;28mfloat[39m([38;5;28minput[39m([38;5;124m'[39m[38;5;124mPlease enter your credit course:[39m[38;5;124m'[39m))
-[1;32m      3[0m [38;5;28;01mif[39;00m   (credit_score [38;5;241m<[39m[38;5;241m=[39m [38;5;241m600[39m) [38;5;241m&[39m (loan_amount [38;5;241m<[39m[38;5;241m=[39m [38;5;241m10_000[39m):
+Cell [0;32mIn[8], line 1[0m
+[0;32m----> 1[0m name [38;5;241m=[39m [38;5;28minput[39m([38;5;124m'[39m[38;5;124mEnter a name: [39m[38;5;124m'[39m)
+[1;32m      2[0m [38;5;28;01mtry[39;00m:
+[1;32m      3[0m     [38;5;28mprint[39m(name[[38;5;241m4[39m])
 
 File [0;32m~/anaconda3/lib/python3.11/site-packages/ipykernel/kernelbase.py:1201[0m, in [0;36mKernel.raw_input[0;34m(self, prompt)[0m
 [1;32m   1199[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m[38;5;241m.[39m_allow_stdin:
