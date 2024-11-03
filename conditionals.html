@@ -434,10 +434,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bool-str">bool &lt;–&gt; str</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-expressions-conditions">Boolean Expressions (Conditions)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-operators">Comparison operators</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-expressions-conditions">Boolean Expressions (Conditions)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-statement">if statement</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-else-statement">if-else statement</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-elif-else-statement">if-elif-else statement</a></li>
@@ -708,6 +705,17 @@ We have already encountered boolean values when working with:</p>
 </div>
 </div>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Find the output of the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="kc">True</span> <span class="o">+</span> <span class="kc">False</span> <span class="o">+</span> <span class="kc">True</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>5</p>
+</div>
 </section>
 <section id="bool-float">
 <h3>bool &lt;–&gt; float<a class="headerlink" href="#bool-float" title="Permalink to this heading">#</a></h3>
@@ -862,13 +870,23 @@ We have already encountered boolean values when working with:</p>
 </div>
 </div>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Find the output of the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="mi">3</span><span class="p">)))))</span>
+</pre></div>
+</div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>&lt;class ‘bool’&gt;</p>
+</div>
 </section>
 </section>
 <section id="boolean-expressions-conditions">
 <h2>Boolean Expressions (Conditions)<a class="headerlink" href="#boolean-expressions-conditions" title="Permalink to this heading">#</a></h2>
 <p>Boolean expressions are those that evaluate to either True or False.</p>
-<section id="comparison-operators">
-<h3>Comparison operators<a class="headerlink" href="#comparison-operators" title="Permalink to this heading">#</a></h3>
+<p><strong>Comparison operators</strong></p>
 <p>The table below presents the meanings of the most commonly used operators in boolean expressions.
 <strong>Warning:</strong> Since <code class="docutils literal notranslate"><span class="pre">=</span></code> is used for assignment, <code class="docutils literal notranslate"><span class="pre">==</span></code> is used for comparison.</p>
 <table class="table">
@@ -1115,7 +1133,21 @@ We have already encountered boolean values when working with:</p>
 <span class="nb">print</span><span class="p">(</span> <span class="mi">2</span> <span class="ow">is</span> <span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Find the output of the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x&#39;</span> <span class="o">&gt;</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;X&#39;</span> <span class="o">&gt;</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>True<br />
+True<br />
+False</p>
+</div>
 </section>
 <section id="if-statement">
 <h2>if statement<a class="headerlink" href="#if-statement" title="Permalink to this heading">#</a></h2>
@@ -1314,6 +1346,38 @@ Congrats!
 </div>
 </div>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Find the output of the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="k">if</span> <span class="n">count</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>A<br />
+B</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Find the output of the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="k">if</span> <span class="n">count</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>C</p>
+</div>
 </section>
 <section id="if-else-statement">
 <h2>if-else statement<a class="headerlink" href="#if-else-statement" title="Permalink to this heading">#</a></h2>
@@ -1435,6 +1499,42 @@ I am sorry.
 </div>
 </div>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Find the output of the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">15</span>
+
+<span class="k">if</span> <span class="n">count</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>A<br />
+C</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Find the output of the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="k">if</span> <span class="n">count</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>B<br />
+C</p>
+</div>
 </section>
 <section id="if-elif-else-statement">
 <h2>if-elif-else statement<a class="headerlink" href="#if-elif-else-statement" title="Permalink to this heading">#</a></h2>
@@ -1453,7 +1553,7 @@ I am sorry.
    <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>       <br />
    <code class="docutils literal notranslate"><span class="pre">BLOCK</span> <span class="pre">CODE</span> <span class="pre">of</span>&#160; <span class="pre">if</span>&#160; </code>       <br />
    <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>       <br />
-<code class="docutils literal notranslate"><span class="pre">elif</span> <span class="pre">condition</span> <span class="pre">of</span> <span class="pre">ELIF:</span></code><br />
+<code class="docutils literal notranslate"><span class="pre">elif</span> <span class="pre">condition</span> <span class="pre">of</span> <span class="pre">elif:</span></code><br />
    <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>       <br />
    <code class="docutils literal notranslate"><span class="pre">BLOCK</span> <span class="pre">CODE</span> <span class="pre">of</span> <span class="pre">elif</span> </code>      <br />
    <code class="docutils literal notranslate">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </code>      <br />
@@ -1610,6 +1710,60 @@ I am sorry.
 </div>
 </div>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Find the output of the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">20</span>
+
+<span class="k">if</span> <span class="n">count</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">count</span> <span class="o">&gt;</span><span class="mi">5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>A</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Find the output of the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">8</span>
+
+<span class="k">if</span> <span class="n">count</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">count</span> <span class="o">&gt;</span><span class="mi">5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>B</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Find the output of the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="k">if</span> <span class="n">count</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">count</span> <span class="o">&gt;</span><span class="mi">5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>C</p>
+</div>
 </section>
 <section id="nested-if-statements">
 <h2>Nested if statements<a class="headerlink" href="#nested-if-statements" title="Permalink to this heading">#</a></h2>
@@ -1672,6 +1826,45 @@ I am sorry.
 </pre></div>
 </div>
 </div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Find the output of the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">20</span>
+
+<span class="k">if</span> <span class="n">count</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">count</span> <span class="o">&gt;</span> <span class="mi">30</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>A<br />
+C</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Find the output of the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">20</span>
+
+<span class="k">if</span> <span class="n">count</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="k">if</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>A<br />
+B</p>
 </div>
 </section>
 <section id="boolean-operators">
@@ -1968,6 +2161,19 @@ Go outside!
 </div>
 </div>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Find the output of the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">((</span><span class="mi">3</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="s1">&#39;k&#39;</span><span class="o">==</span><span class="s1">&#39;K&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">((</span><span class="mi">10</span><span class="o">&gt;</span><span class="mi">7</span><span class="p">)</span> <span class="ow">or</span>  <span class="p">(</span><span class="s1">&#39;k&#39;</span><span class="o">&gt;</span><span class="s1">&#39;x&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>False<br />
+True</p>
+</div>
 </section>
 <section id="try-and-except">
 <h2>try and except<a class="headerlink" href="#try-and-except" title="Permalink to this heading">#</a></h2>
@@ -2081,6 +2287,20 @@ Go outside!
 </div>
 </div>
 <p>No output</p>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Find the output of the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="s1">&#39;3&#39;</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;There is an error.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>4</p>
+</div>
 </section>
 <section id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">#</a></h2>
@@ -2335,10 +2555,7 @@ Go outside!
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bool-str">bool &lt;–&gt; str</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-expressions-conditions">Boolean Expressions (Conditions)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-operators">Comparison operators</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-expressions-conditions">Boolean Expressions (Conditions)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-statement">if statement</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-else-statement">if-else statement</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-elif-else-statement">if-elif-else statement</a></li>

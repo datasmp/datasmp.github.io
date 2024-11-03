@@ -889,6 +889,21 @@ List  : [10, 7, 4]
 </div>
 </div>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Find the output of the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">3</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>[0, 1, 2]<br />
+[6, 7, 8]<br />
+[5, 8, 11]</p>
+</div>
 </section>
 <section id="for-loop">
 <h2>for loop<a class="headerlink" href="#for-loop" title="Permalink to this heading">#</a></h2>
@@ -1174,6 +1189,36 @@ Iteration number:3   i:5---&gt;total:12
 </div>
 </div>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Find the output of the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>0<br />
+2<br />
+4<br />
+6<br />
+8</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Find the output of the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="s1">&#39;Germany&#39;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="s1">&#39;e&#39;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>G<br />
+a</p>
+</div>
 <section id="break-and-continue">
 <h3>break and continue<a class="headerlink" href="#break-and-continue" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">break</span></code> is used to terminate the <em>for</em> loop.</p>
@@ -1228,6 +1273,23 @@ Iteration number:3   i:5---&gt;total:12
 </pre></div>
 </div>
 </div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Find the output of the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>0<br />
+2<br />
+4<br />
+6</p>
 </div>
 </section>
 <section id="for-and-else">
@@ -1486,6 +1548,22 @@ In the code below, the initial value of <span class="math notranslate nohighligh
 </tr>
 </tbody>
 </table>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Find the output of the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">7</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">-=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>20<br />
+18<br />
+16</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
