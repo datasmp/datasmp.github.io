@@ -671,6 +671,16 @@ mytuple        : (10, 20, 30)
 </div>
 </div>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Create a list containing the names of three different animals.</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">animals</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Lion&#39;</span><span class="p">,</span> <span class="s1">&#39;Bird&#39;</span><span class="p">,</span> <span class="s1">&#39;Cat&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
 </section>
 <section id="functions-on-lists">
 <h3>Functions on lists<a class="headerlink" href="#functions-on-lists" title="Permalink to this heading">#</a></h3>
@@ -713,6 +723,21 @@ Maximum: t
 Minimum: a
 </pre></div>
 </div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Calculate the maximum value, minimum value, total sum, and the count of elements in the sequence of numbers
+10, 7, 1, 3, 15, 8 using a list.</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Count  : </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Maximum: </span><span class="si">{</span><span class="nb">max</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Minimum: </span><span class="si">{</span><span class="nb">min</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Sum    : </span><span class="si">{</span><span class="nb">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
 </div>
 </div>
 </section>
@@ -887,6 +912,18 @@ mixed_list[-1][2]: 30
 </div>
 </div>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Use slicing to extract and display only the [9,3,1,6,7,6] portion of the list [3,8,2,9,3,1,6,7,6,9,9,9,9,2] by using both positive and negative indices.</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">9</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="o">-</span><span class="mi">11</span><span class="p">:</span><span class="o">-</span><span class="mi">5</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
 </section>
 <section id="operators-on-lists">
 <h3>Operators on Lists<a class="headerlink" href="#operators-on-lists" title="Permalink to this heading">#</a></h3>
@@ -964,6 +1001,16 @@ letters   = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;]
  3 is not in numbers list: False
 </pre></div>
 </div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Use concatenation and repetition to generate the list [‘c’, ‘d’, ‘c’, ‘d’, ‘a’, ‘b’, ‘a’, ‘b’, ‘a’, ‘b’, ‘a’, ‘b’] from the lists [‘a’, ‘b’] and [‘c’,’d’].</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">([</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
 </div>
 </div>
 </section>
@@ -1058,6 +1105,19 @@ letters   = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;]
 numbers list after  using append(): [10, 20, 30, 99]
 </pre></div>
 </div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Add two additional elements to this list: [‘b’, ‘c’, ‘a’, ‘d’].</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">letters</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">]</span>
+<span class="n">letters</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;e&#39;</span><span class="p">)</span>
+<span class="n">letters</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">letters</span><span class="p">)</span>
+</pre></div>
 </div>
 </div>
 </section>
@@ -1205,6 +1265,18 @@ The index of 30 in numbers: 2
 </div>
 </div>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Count the occurrences of ‘a’ in the list [‘b’,’c’,’a’,’a’,’d’,’c’,’a’,’s’] and find the index of ‘s’.</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">letters</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;s&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Count of a: </span><span class="si">{</span><span class="n">letters</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Index of s: </span><span class="si">{</span><span class="n">letters</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;s&quot;</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </section>
 <section id="insert">
 <h4>insert()<a class="headerlink" href="#insert" title="Permalink to this heading">#</a></h4>
@@ -1324,6 +1396,19 @@ numbers list after  using remove(20): [10, 30]
 numbers list after  using remove(20): [10, 30, 20]
 </pre></div>
 </div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Use the remove() method to delete ‘a’ and the pop() method to delete ‘d’ from the list [‘b’, ‘c’, ‘a’, ‘d’, ‘e’].</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">letters</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">]</span>
+<span class="n">letters</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="n">letters</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">letters</span><span class="p">)</span>
+</pre></div>
 </div>
 </div>
 </section>
@@ -1632,6 +1717,23 @@ California
 </div>
 </div>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Calculate the sum of the numbers greater than 5 in this list: [7, 2, 1, 4, 9, 10, 3]</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="n">total</span> <span class="o">+=</span> <span class="n">i</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </section>
 <section id="lists-and-strings">
 <h3>Lists and strings<a class="headerlink" href="#lists-and-strings" title="Permalink to this heading">#</a></h3>
@@ -1840,6 +1942,22 @@ such
 </div>
 </div>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Create a new list containing words in text above that are 3 characters long, start with ‘a’, and end with ‘b’.</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">words3ab</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">word</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">word</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">):</span>
+        <span class="n">words3ab</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">words3ab</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </section>
 <section id="list-comprehension">
 <h3>List Comprehension<a class="headerlink" href="#list-comprehension" title="Permalink to this heading">#</a></h3>
@@ -1955,6 +2073,18 @@ such
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;player_1&#39;, &#39;player_2&#39;, &#39;player_3&#39;, &#39;player_4&#39;, &#39;player_5&#39;]
 </pre></div>
 </div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Use a list comprehension to construct a list consisting of the following numbers: 3,6,9,12,15,18</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">multiple3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="o">*</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">)]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">multiple3</span><span class="p">)</span>
+</pre></div>
 </div>
 </div>
 </section>
