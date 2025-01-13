@@ -439,6 +439,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iterations-and-tuples">Iterations and Tuples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generator">Generator</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#split-even-and-odd-numbers">Split even and odd numbers</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#split-data-types">Split data types</a></li>
@@ -1387,7 +1388,9 @@ California
 </div>
 </div>
 </div>
-<p><strong>Example:</strong></p>
+</section>
+<section id="generator">
+<h3>Generator<a class="headerlink" href="#generator" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>The following code constructs a tuple with elements consisting of the squares of the integers between 1 and 10.</p></li>
 </ul>
@@ -1409,30 +1412,67 @@ California
 </div>
 </div>
 <ul class="simple">
-<li><p>Let’s use tuple comprehensions to construct a tuple with the same elements.</p></li>
+<li><p>A generator object can be used to create a tuple in a single line by using a <em>for loop</em>.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">square_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">))</span>   <span class="c1"># i**2 is the expression</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">square_tuple</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">square_generator</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">))</span>   <span class="c1"># i**2 is the expression</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Type            : </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">square_generator</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Generator Object: </span><span class="si">{</span><span class="n">square_generator</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;generator object &lt;genexpr&gt; at 0x1082e8ad0&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Type            : &lt;class &#39;generator&#39;&gt;
+Generator Object: &lt;generator object &lt;genexpr&gt; at 0x104508c70&gt;
 </pre></div>
 </div>
 </div>
 </div>
 <ul class="simple">
-<li><p>If you compare the two codes above, using a tuple comprehension:</p>
+<li><p>The tuple() function can be used to convert a generator object into a tuple.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">square_tuple</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">))</span>   <span class="c1"># i**2 is the expression</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Type : </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">square_tuple</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Tuple: </span><span class="si">{</span><span class="n">square_tuple</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Type : &lt;class &#39;tuple&#39;&gt;
+Tuple: (1, 4, 9, 16, 25, 36, 49, 64, 81, 100)
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>If you compare the examples above, using the <em>tuple()</em> function with a generator object:</p>
 <ul>
-<li><p>You do not need to initialize the squares_list.</p></li>
-<li><p>Instead of three lines of code, you can construct the squares_list in a single line.</p></li>
+<li><p>You do not need to initialize the square_tuple.</p></li>
+<li><p>Instead of three lines of code, you can construct the squares_tuple in a single line.</p></li>
 </ul>
 </li>
 </ul>
+<ul class="simple">
+<li><p>In the following code, an if statement is included within the generator object to select even numbers for the counter i.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">square_tuple</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="k">2</span>==0)   # i**2 is the expression
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Type : </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">square_tuple</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Tuple: </span><span class="si">{</span><span class="n">square_tuple</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Type : &lt;class &#39;tuple&#39;&gt;
+Tuple: (4, 16, 36, 64, 100)
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="examples">
 <h3>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">#</a></h3>
@@ -1599,6 +1639,7 @@ Booleans: (False, True)
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iterations-and-tuples">Iterations and Tuples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generator">Generator</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#split-even-and-odd-numbers">Split even and odd numbers</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#split-data-types">Split data types</a></li>
