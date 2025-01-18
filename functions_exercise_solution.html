@@ -245,6 +245,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="functions_output.html">Functions Output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions_code.html">Functions Code</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions_exercise.html">Functions Exercises</a></li>
+
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="sets.html">Chp-10: Sets</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -264,7 +265,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="projects.html">Projects</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="project_factorization.html">Project: Factorization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project_elections.html">Project: Election Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="project_soccer.html">Project: Soccer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project_smoothing.html">Project: Smoothing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project_riemann.html">Project: Approximating Areas</a></li>
 </ul>
@@ -424,6 +424,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Functions Exercises and Solutions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up-question">Warm Up Question</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Warm Up Question</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Warm Up Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Warm Up Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Warm Up Question</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-harmonic-mean">Question-1: Harmonic Mean</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-circle">Question-2: Circle</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-algebraic-operations">Question-3: Algebraic Operations</a></li>
@@ -444,6 +452,9 @@ document.write(`
 </ul>
 </li>
 </ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -456,6 +467,129 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="functions-exercises-and-solutions">
 <h1>Functions Exercises and Solutions<a class="headerlink" href="#functions-exercises-and-solutions" title="Permalink to this heading">#</a></h1>
+<section id="warm-up-question">
+<h2>Warm Up Question<a class="headerlink" href="#warm-up-question" title="Permalink to this heading">#</a></h2>
+<p>Write a function that takes a number as a parameter and returns the last digit of this number.</p>
+<ul class="simple">
+<li><p>Hint: Use the modulus operator (%) to get the last digit.</p></li>
+<li><p>Print the output of this function when the input is 234.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">last_digit</span> <span class="o">=</span> <span class="n">x</span><span class="o">%</span><span class="k">10</span>
+    <span class="k">return</span> <span class="n">last_digit</span>
+
+<span class="n">f</span><span class="p">(</span><span class="mi">234</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Warm Up Question<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<p>Write a function that takes a number as a parameter and returns the following: <span class="math notranslate nohighlight">\(\frac{4x^2-2x+5}{x^3-4x}\)</span></p>
+<ul class="simple">
+<li><p>Print the output of this function when the input is 5.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">numerator</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">5</span>
+    <span class="n">denominator</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">x</span>
+    <span class="n">quotient</span> <span class="o">=</span> <span class="n">numerator</span><span class="o">/</span><span class="n">denominator</span>
+    <span class="k">return</span> <span class="n">quotient</span>
+
+<span class="n">f</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9047619047619048
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id2">
+<h2>Warm Up Question<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p>Write a function named lb_g that takes a parameter lb representing a weight in pound and returns its equivalent value in grams (g).</p>
+<ul class="simple">
+<li><p>1 lb = 453.592 g</p></li>
+<li><p>Print the output of this conversion function when the input is 200 pounds.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lb_g</span><span class="p">(</span><span class="n">lb</span><span class="p">):</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="n">lb</span><span class="o">*</span><span class="mf">453.592</span>
+    <span class="k">return</span> <span class="n">g</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">lb_g</span><span class="p">(</span><span class="mi">200</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>90718.4
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id3">
+<h2>Warm Up Question<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<p>Write a function named support that prints “Applause!” each time it is called.</p>
+<ul class="simple">
+<li><p>Call the function two times and display its output.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">support</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Applause!&#39;</span><span class="p">)</span>
+
+<span class="n">support</span><span class="p">()</span>
+<span class="n">support</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Applause!
+Applause!
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id4">
+<h2>Warm Up Question<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<p>Write a function that takes two integer parameters: x and y.</p>
+<ul class="simple">
+<li><p>The default value of y is 10.</p></li>
+<li><p>The function should return the product of these two numbers.</p></li>
+<li><p>Call the function both with and without providing a value for y.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20
+40
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="question-1-harmonic-mean">
 <h2>Question-1: Harmonic Mean<a class="headerlink" href="#question-1-harmonic-mean" title="Permalink to this heading">#</a></h2>
 <p>Write a function that takes three numbers as parameters and returns the harmonic mean of these numbers using the formula:
@@ -669,7 +803,7 @@ ACCEPT!</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c0bd419667cbd9c96b9854a089488215d5e721e419c65a691cec55973d7761a2.png" src="_images/c0bd419667cbd9c96b9854a089488215d5e721e419c65a691cec55973d7761a2.png" />
+<img alt="_images/f4b8b12f6dd2bd2f80cb48c2c8efdedabf89abbae9ed8b825ec6f3d31b76b4e2.png" src="_images/f4b8b12f6dd2bd2f80cb48c2c8efdedabf89abbae9ed8b825ec6f3d31b76b4e2.png" />
 </div>
 </div>
 </section>
@@ -864,7 +998,7 @@ ACCEPT!</p>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>47525.47531955799
 </pre></div>
 </div>
-<img alt="_images/d9fe090356b77483b69aedbe8c6567d841b47fd6981a1a7fef273da4f9b3d785.png" src="_images/d9fe090356b77483b69aedbe8c6567d841b47fd6981a1a7fef273da4f9b3d785.png" />
+<img alt="_images/bd3e9d4443bd5c3ff501ea7a18e338e1a2c5e569e18d4fbe23fa423328bbb023.png" src="_images/bd3e9d4443bd5c3ff501ea7a18e338e1a2c5e569e18d4fbe23fa423328bbb023.png" />
 </div>
 </div>
 </section>
@@ -961,6 +1095,14 @@ ACCEPT!</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Functions Exercises and Solutions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up-question">Warm Up Question</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Warm Up Question</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Warm Up Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Warm Up Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Warm Up Question</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-harmonic-mean">Question-1: Harmonic Mean</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-circle">Question-2: Circle</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-algebraic-operations">Question-3: Algebraic Operations</a></li>
@@ -981,6 +1123,9 @@ ACCEPT!</p>
 </ul>
 </li>
 </ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>

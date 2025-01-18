@@ -645,6 +645,23 @@ Your letter grade is D
 </div>
 </div>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Write a function that takes a number as a parameter and returns three times that number.</p>
+<ul class="simple">
+<li><p>Print the output of this function when the input is 5.</p></li>
+</ul>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+  <span class="n">triple</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span>
+  <span class="k">return</span> <span class="n">triple</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
 <p><strong>Example: Area of a Rectangle</strong></p>
 <ul class="simple">
 <li><p>The following function is named area_rect.</p></li>
@@ -716,6 +733,25 @@ Your letter grade is D
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6363636363636364
 </pre></div>
 </div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Write a function that takes a number as a parameter and returns the following: <span class="math notranslate nohighlight">\(\frac{3x-5}{x^2}\)</span></p>
+<ul class="simple">
+<li><p>Print the output of this function when the input is 10.</p></li>
+</ul>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">numerator</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">-</span><span class="mi">5</span>
+    <span class="n">denominator</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">quotient</span> <span class="o">=</span> <span class="n">numerator</span><span class="o">/</span><span class="n">denominator</span>
+    <span class="k">return</span> <span class="n">quotient</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
 </div>
 </div>
 <p><strong>Example: Area  and Perimeter of a Circle</strong></p>
@@ -837,6 +873,24 @@ Your letter grade is D
 </div>
 </div>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Write a function named ft_cm that takes a parameter ft representing a length in feet and returns its equivalent value in centimeters (cm).</p>
+<ul class="simple">
+<li><p>1 ft = 30.48 cm</p></li>
+<li><p>Print the output of this conversion function when the input is 200 ft.</p></li>
+</ul>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ft_cm</span><span class="p">(</span><span class="n">ft</span><span class="p">):</span>
+    <span class="n">cm</span> <span class="o">=</span> <span class="n">ft</span><span class="o">*</span><span class="mf">30.48</span>
+    <span class="k">return</span> <span class="n">cm</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">ft_cm</span><span class="p">(</span><span class="mi">200</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
 <section id="no-return-statement">
 <h3>No return statement<a class="headerlink" href="#no-return-statement" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
@@ -941,6 +995,23 @@ We have a very busy schedule today. Let&#39;s start working on each subject one 
 </div>
 </div>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Write a function named greeting that prints “Good morning!” each time it is called.</p>
+<ul class="simple">
+<li><p>Call the function two times and display its output.</p></li>
+</ul>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">greeting</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Good Morning!&#39;</span><span class="p">)</span>
+
+<span class="n">greeting</span><span class="p">()</span>
+<span class="n">greeting</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
 </section>
 <section id="default-parameter-values">
 <h3>Default parameter values<a class="headerlink" href="#default-parameter-values" title="Permalink to this heading">#</a></h3>
@@ -992,6 +1063,26 @@ We have a very busy schedule today. Let&#39;s start working on each subject one 
 <span class="k">def</span> <span class="nf">student_report</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">course</span><span class="o">=</span><span class="s1">&#39;Math&#39;</span><span class="p">,</span> <span class="n">grade</span><span class="p">):</span>
   <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">course</span><span class="si">}</span><span class="s1"> grade of </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1"> is </span><span class="si">{</span><span class="n">grade</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
 </pre></div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Write  a function that takes two string parameters: first name and last name, with default values “FNU” (first name unknown) and “LNU” (last name unknown).</p>
+<ul class="simple">
+<li><p>The function should return the full name as a single string, with one space between the first name and last name.</p></li>
+<li><p>Call the function both with and without providing values for the first name and last name.</p></li>
+</ul>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fullname</span><span class="p">(</span><span class="n">first_name</span><span class="o">=</span><span class="s1">&#39;FNU&#39;</span><span class="p">,</span> <span class="n">last_name</span><span class="o">=</span><span class="s1">&#39;LNU&#39;</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">first_name</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">last_name</span>
+    <span class="k">return</span> <span class="n">name</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">fullname</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fullname</span><span class="p">(</span><span class="s1">&#39;Michael&#39;</span><span class="p">,</span> <span class="s1">&#39;Jordan&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fullname</span><span class="p">(</span><span class="s1">&#39;Jack&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
 </div>
 </section>
 <section id="local-and-global-variables">
@@ -1190,6 +1281,25 @@ We have a very busy schedule today. Let&#39;s start working on each subject one 
 <li><p>sum_func_rec(4) = 4 + sum_func_rec(3) = 4 + 6 = 10</p></li>
 <li><p>sum_func_rec(5) = 5 + sum_func_rec(1) = 5 + 10 = 15</p></li>
 </ol>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Write a recursive function that calculates the product of integers from 1 to a given positive integer n as input.</p>
+<ul class="simple">
+<li><p>Call the function with n = 5.</p></li>
+</ul>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">prod_func_rec</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">prod_func_rec</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">prod_func_rec</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
 </section>
 <section id="docstrings">
 <h2>DocStrings<a class="headerlink" href="#docstrings" title="Permalink to this heading">#</a></h2>
@@ -1314,6 +1424,22 @@ We have a very busy schedule today. Let&#39;s start working on each subject one 
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>50
 </pre></div>
 </div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Write a lambda function that returns the last character of a given string.</p>
+<ul class="simple">
+<li><p>Call the function twice with different input values and display the output.</p></li>
+</ul>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">last_char</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">word</span><span class="p">:</span> <span class="n">word</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">last_char</span><span class="p">(</span><span class="s1">&#39;table&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">last_char</span><span class="p">(</span><span class="s1">&#39;desk&#39;</span><span class="p">))</span>
+</pre></div>
 </div>
 </div>
 </section>
