@@ -1,0 +1,1544 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Chp-11: Dictionaries &#8212; Python in Plain Terms</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'dictionaries';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Dictionaries Debugging" href="dictionaries_debug.html" />
+    <link rel="prev" title="Sets Business" href="sets_business.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="cover.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/ppt_logo4.png" class="logo__image only-light" alt="Python in Plain Terms - Home"/>
+    <script>document.write(`<img src="_static/ppt_logo4.png" class="logo__image only-dark" alt="Python in Plain Terms - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="cover.html">
+                    Cover
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledge.html">Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python Introduction</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="colab.html">Google Colab</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="colab_text.html">Text Cell</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="colab_text_questions.html">Text Cell Questions</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="colab_code.html">Code Cell</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="colab_code_questions.html">Code Cell Questions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="colab_exercises.html">Colab Exercises</a></li>
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="variables.html">Chp-1: Variables</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="variables_debug.html">Variables Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables_output.html">Variables Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables_code.html">Variables Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables_warmup.html">Variables Warm Up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables_exercise.html">Variables Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables_business.html">Variables Business</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="inout.html">Chp-2: Input and Output</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="inout_debug.html">Input and Output Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inout_output.html">Input and Output  Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inout_code.html">Input and Output Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inout_warmup.html">Input and Output Warm Up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inout_exercise.html">Input and Output Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inout_business.html">Input and Output Business</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="numbers_arithmetic.html">Chp-3: Numbers</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="numbers_arithmetic_debug.html">Numbers Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numbers_arithmetic_output.html">Numbers Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numbers_arithmetic_code.html">Numbers Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numbers_arithmetic_warmup.html">Numbers Warm Up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numbers_arithmetic_exercise.html">Numbers Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numbers_arithmetic_business.html">Numbers Business</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="strings.html">Chp-4: Strings</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="strings_debug.html">Strings Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings_output.html">Strings Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings_code.html">Strings Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings_warmup.html">Strings Warm Up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings_exercise.html">Strings Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings_business.html">Strings Business</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="conditionals.html">Chp-5: Conditionals</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="conditionals_debug.html">Conditionals Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conditionals_output.html">Conditionals Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conditionals_code.html">Conditionals Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conditionals_warmup.html">Conditionals Warm Up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conditionals_exercise.html">Conditionals Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conditionals_business.html">Conditionals Business</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="iterations.html">Chp-6: Iterations</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="iterations_debug.html">Iterations Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterations_output.html">Iterations Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterations_code.html">Iterations Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterations_warmup.html">Iterations Warm Up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterations_exercise.html">Iterations Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterations_business.html">Iterations Business</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="tuples.html">Chp-7: Tuples</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="tuples_debug.html">Tuples Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tuples_output.html">Tuples Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tuples_code.html">Tuples Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tuples_warmup.html">Tuples Warm Up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tuples_exercise.html">Tuples Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tuples_business.html">Tuples Business</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="lists.html">Chp-8: Lists</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="lists_debug.html">Lists Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lists_output.html">Lists Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lists_code.html">Lists Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lists_warmup.html">Lists Warm Up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lists_exercise.html">Lists Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lists_business.html">Lists Business</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="functions.html">Chp-9: Functions</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="functions_debug.html">Functions Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions_output.html">Functions Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions_code.html">Functions Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions_warmup.html">Functions Warm Up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions_exercise.html">Functions Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions_business.html">Functions Business</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="sets.html">Chp-10: Sets</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="sets_debug.html">Sets Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sets_output.html">Sets Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sets_code.html">Sets Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sets_warmup.html">Sets Warmup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sets_exercise.html">Sets Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sets_business.html">Sets Business</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Chp-11: Dictionaries</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="dictionaries_debug.html">Dictionaries Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictionaries_output.html">Dictionaries Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictionaries_code.html">Dictionaries Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictionaries_warmup.html">Dictionaries Warm Up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictionaries_exercise.html">Dictionaries Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictionaries_business.html">Dictionaries Business</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="projects.html">Projects</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="project_factorization.html">Project: Factorization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_elections.html">Project: Election Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_smoothing.html">Project: Smoothing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_riemann.html">Project: Approximating Areas</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="appendix.html">Appendix</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="app_visualization.html">App: Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_business.html">App: Business Glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_math.html">App: Math Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_statistics.html">App: Statistics Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_random.html">App: Random Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_seaborn.html">App: Seaborn Library</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/dictionaries.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chp-11: Dictionaries</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionaries">Dictionaries</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-dictionaries">Create Dictionaries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dict">dict()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#len">len()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-not-in">in &amp; not in</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mutable">Mutable</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#add-a-new-pair">Add a new pair</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#change-a-value">Change a Value</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#delete-a-pair">Delete a pair</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionary-methods">Dictionary Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#clear">clear()</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#copy">copy()</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#get">get()</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#items">items()</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#keys">keys()</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pop">pop()</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#popitem">popitem()</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#update">update()</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#values">values()</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iterations-and-dictionaries">Iterations and Dictionaries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionary-comprehension">Dictionary Comprehension</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#frequency">Frequency</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#word-lengths">Word Lengths</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#count-characters">Count Characters</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="chp-11-dictionaries">
+<h1>Chp-11: Dictionaries<a class="headerlink" href="#chp-11-dictionaries" title="Permalink to this heading">#</a></h1>
+<p><img alt="Section Title: Dictionaries" src="_images/dictionaries2.png" /></p>
+<div class="tip admonition">
+<p class="admonition-title">Chapter Objectives</p>
+<p>By the end of this chapter, the student should be able to:</p>
+<ul class="simple">
+<li><p>Explain the purpose and role of dictionaries.</p></li>
+<li><p>Recognize the key-value pair structure of dictionaries.</p></li>
+<li><p>Create and initialize dictionaries in different ways.</p></li>
+<li><p>Implement dictionaries to efficiently organize and access data.</p></li>
+<li><p>Apply dictionary methods.</p></li>
+<li><p>Use loops to iterate through dictionary keys, values, and pairs.</p></li>
+<li><p>Use dictionary comprehensions.</p></li>
+<li><p>Apply dictionaries to solve real-world problems.</p></li>
+</ul>
+</div>
+<section id="dictionaries">
+<h2>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this heading">#</a></h2>
+<p>These are a more general form of lists. The indexes of lists are integers starting from 0, whereas the indexes, called keys in dictionaries, can be chosen from different types.</p>
+<ul class="simple">
+<li><p>Its elements are pairs of the form <code class="docutils literal notranslate"><span class="pre">key:value</span></code>.</p></li>
+<li><p>Dictionaries are created by using curly brackets, like sets, by using <code class="docutils literal notranslate"><span class="pre">key:value</span></code> pairs and <code class="docutils literal notranslate"><span class="pre">:</span></code> in between.</p></li>
+<li><p>Keys are like indexes, and values can be accessed by using square brackets in the form of <code class="docutils literal notranslate"><span class="pre">dictionary_name[key]</span></code>.</p></li>
+<li><p>Keys must be immutable, like strings, numbers, and tuples.</p>
+<ul>
+<li><p>A list cannot be a key of a dictionary.</p></li>
+</ul>
+</li>
+<li><p>Values can be any type, including strings, numbers, booleans, tuples, lists, and dictionaries.</p></li>
+<li><p>Dictionary pairs are ordered.</p></li>
+<li><p>If there are two pairs with the same key, then the later pair will overwrite the former one.</p></li>
+<li><p>Dictionaries are mutable, so they can be modified.</p></li>
+<li><p>Since dictionaries can be modified, they have a large number of methods.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">len()</span></code> function returns the number of pairs.</p></li>
+<li><p>The built-in <code class="docutils literal notranslate"><span class="pre">dict()</span></code> function can be used to create dictionaries from structures that have pairs.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{}</span></code> is an empty dictionary.</p>
+<ul>
+<li><p>An empty set is <code class="docutils literal notranslate"><span class="pre">set()</span></code>.</p></li>
+</ul>
+</li>
+</ul>
+<section id="create-dictionaries">
+<h3>Create Dictionaries<a class="headerlink" href="#create-dictionaries" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># empty dictionary</span>
+<span class="n">empty_dict</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Empty dictionary   : </span><span class="si">{</span><span class="n">empty_dict</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Type of empty_dict: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">empty_dict</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Empty dictionary   : {}
+Type of empty_dict: &lt;class &#39;dict&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># empty dictionary with dict()</span>
+<span class="n">empty_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Empty dictionary   : </span><span class="si">{</span><span class="n">empty_dict</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Type of empty_dict: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">empty_dict</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Empty dictionary   : {}
+Type of empty_dict: &lt;class &#39;dict&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># three pairs</span>
+<span class="c1"># keys: &#39;Math&#39;, &#39;Chemistry&#39;, &#39;History&#39;</span>
+<span class="c1"># values: 80, 70, 65</span>
+
+<span class="n">grades</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Math&#39;</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span> <span class="s1">&#39;Chemistry&#39;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span> <span class="s1">&#39;History&#39;</span><span class="p">:</span><span class="mi">65</span><span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">grades</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Math&#39;: 80, &#39;Chemistry&#39;: 70, &#39;History&#39;: 65}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># overwrite first pair of math </span>
+
+<span class="n">grades</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Math&#39;</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span> <span class="s1">&#39;Chemistry&#39;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span> <span class="s1">&#39;History&#39;</span><span class="p">:</span><span class="mi">65</span><span class="p">,</span> <span class="s1">&#39;Math&#39;</span><span class="p">:</span><span class="mi">100</span><span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">grades</span><span class="p">)</span>    <span class="c1"># The value of &#39;Math&#39; key is 100 </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Math&#39;: 100, &#39;Chemistry&#39;: 70, &#39;History&#39;: 65}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># values can be lists, tuples</span>
+
+<span class="n">grades</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Math&#39;</span><span class="p">:[</span><span class="mi">80</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="s1">&#39;Chemistry&#39;</span><span class="p">:(</span><span class="mi">70</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="s1">&#39;History&#39;</span><span class="p">:</span><span class="mi">65</span><span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">grades</span><span class="p">)</span>     
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Math&#39;: [80, 90], &#39;Chemistry&#39;: (70, 100), &#39;History&#39;: 65}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># lists can not be a key</span>
+
+<span class="n">grades</span> <span class="o">=</span> <span class="p">{[</span><span class="s1">&#39;Math&#39;</span><span class="p">,</span> <span class="s1">&#39;Biology&#39;</span><span class="p">]:</span><span class="mi">80</span><span class="p">,</span> <span class="s1">&#39;Chemistry&#39;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span> <span class="s1">&#39;History&#39;</span><span class="p">:</span><span class="mi">65</span><span class="p">}</span>   <span class="c1"># ERROR</span>
+</pre></div>
+</div>
+</section>
+<section id="dict">
+<h3>dict()<a class="headerlink" href="#dict" title="Permalink to this heading">#</a></h3>
+<p>The built-in <em>dict()</em> function converts tuples, and lists consists of pairs into a dictionary.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># assignments ----&gt; dict</span>
+<span class="n">grades</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">Math</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">Chemistry</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span> <span class="n">History</span><span class="o">=</span><span class="mi">65</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">grades</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Math&#39;: 80, &#39;Chemistry&#39;: 70, &#39;History&#39;: 65}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># tuples of pairs ----&gt; dict</span>
+
+<span class="n">grades_tuple</span> <span class="o">=</span> <span class="p">(</span> <span class="p">(</span><span class="s1">&#39;Math&#39;</span><span class="p">,</span> <span class="mi">80</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Chemistry&#39;</span><span class="p">,</span> <span class="mi">70</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;History&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span> 
+<span class="n">grades</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">grades_tuple</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">grades</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Math&#39;: 80, &#39;Chemistry&#39;: 70, &#39;History&#39;: 6}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># lists of pairs ----&gt; dict</span>
+
+<span class="n">grades_list</span> <span class="o">=</span> <span class="p">[</span> <span class="p">[</span><span class="s1">&#39;Math&#39;</span><span class="p">,</span> <span class="mi">80</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Chemistry&#39;</span><span class="p">,</span> <span class="mi">70</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;History&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span> 
+<span class="n">grades</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">grades_list</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">grades</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Math&#39;: 80, &#39;Chemistry&#39;: 70, &#39;History&#39;: 6}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="len">
+<h3>len()<a class="headerlink" href="#len" title="Permalink to this heading">#</a></h3>
+<p>The <em>len()</em> function returns the number of pairs in a dictionary.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Math&#39;</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span> <span class="s1">&#39;Chemistry&#39;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span> <span class="s1">&#39;History&#39;</span><span class="p">:</span><span class="mi">65</span><span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The number of pairs: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">grades</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The number of pairs: 3
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="in-not-in">
+<h3>in &amp; not in<a class="headerlink" href="#in-not-in" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">in</span></code> tests whether a given term is a key of a dictionary.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> tests whether a given term is not a key of a dictionary.</p></li>
+<li><p>Both of them return boolean values, True or False.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Math&#39;</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span> <span class="s1">&#39;Chemistry&#39;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span> <span class="s1">&#39;History&#39;</span><span class="p">:</span><span class="mi">65</span><span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39; Math is     a key of grades: </span><span class="si">{</span><span class="s2">&quot;Math&quot;</span><span class="w">  </span><span class="ow">in</span><span class="w"> </span><span class="n">grades</span><span class="si">}</span><span class="s1">&#39;</span> <span class="p">)</span>      <span class="c1"># use &quot; instead of &#39; in f-strings </span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39; Math is not a key of grades: </span><span class="si">{</span><span class="s2">&quot;Math&quot;</span><span class="w">  </span><span class="ow">not</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">grades</span><span class="si">}</span><span class="s1">&#39;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Math is     a key of grades: True
+ Math is not a key of grades: False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Math&#39;</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span> <span class="s1">&#39;Chemistry&#39;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span> <span class="s1">&#39;History&#39;</span><span class="p">:</span><span class="mi">65</span><span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39; Biology is     a key of grades: </span><span class="si">{</span><span class="s2">&quot;Biology&quot;</span><span class="w">  </span><span class="ow">in</span><span class="w"> </span><span class="n">grades</span><span class="si">}</span><span class="s1">&#39;</span> <span class="p">)</span>      <span class="c1"># use &quot; instead of &#39; in f-strings </span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39; Biology is not a key of grades: </span><span class="si">{</span><span class="s2">&quot;Biology&quot;</span><span class="w">  </span><span class="ow">not</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">grades</span><span class="si">}</span><span class="s1">&#39;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Biology is     a key of grades: False
+ Biology is not a key of grades: True
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="mutable">
+<h3>Mutable<a class="headerlink" href="#mutable" title="Permalink to this heading">#</a></h3>
+<p>Unlike strings and tuples, and like lists, dictionaries are mutable, which means they can be modified.</p>
+<ul class="simple">
+<li><p>New pairs can be added, and existing pairs can be modified.</p></li>
+</ul>
+<section id="add-a-new-pair">
+<h4>Add a new pair<a class="headerlink" href="#add-a-new-pair" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Use square brackets in the form of <code class="docutils literal notranslate"><span class="pre">dictionary_name[new_key]</span> <span class="pre">=</span> <span class="pre">new_value</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Math&#39;</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span> <span class="s1">&#39;Chemistry&#39;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span> <span class="s1">&#39;History&#39;</span><span class="p">:</span><span class="mi">65</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;grades dictionary before adding a new pair: </span><span class="si">{</span><span class="n">grades</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># add the pair &#39;Eglish&#39;:99</span>
+<span class="n">grades</span><span class="p">[</span><span class="s1">&#39;English&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">99</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;grades dictionary after  adding a new pair: </span><span class="si">{</span><span class="n">grades</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>grades dictionary before adding a new pair: {&#39;Math&#39;: 80, &#39;Chemistry&#39;: 70, &#39;History&#39;: 65}
+grades dictionary after  adding a new pair: {&#39;Math&#39;: 80, &#39;Chemistry&#39;: 70, &#39;History&#39;: 65, &#39;English&#39;: 99}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="change-a-value">
+<h4>Change a Value<a class="headerlink" href="#change-a-value" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Use square brackets in the form of <code class="docutils literal notranslate"><span class="pre">dictionary_name[key]</span> <span class="pre">=</span> <span class="pre">new_value</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Math&#39;</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span> <span class="s1">&#39;Chemistry&#39;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span> <span class="s1">&#39;History&#39;</span><span class="p">:</span><span class="mi">65</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;grades dictionary before changing a value: </span><span class="si">{</span><span class="n">grades</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># change the value of &#39;Chemistry&#39;</span>
+<span class="n">grades</span><span class="p">[</span><span class="s1">&#39;Chemistry&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">85</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;grades dictionary after adding a new pair: </span><span class="si">{</span><span class="n">grades</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>grades dictionary before changing a value: {&#39;Math&#39;: 80, &#39;Chemistry&#39;: 70, &#39;History&#39;: 65}
+grades dictionary after adding a new pair: {&#39;Math&#39;: 80, &#39;Chemistry&#39;: 85, &#39;History&#39;: 65}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="delete-a-pair">
+<h4>Delete a pair<a class="headerlink" href="#delete-a-pair" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">del</span></code> in the form of <code class="docutils literal notranslate"><span class="pre">del</span> <span class="pre">dictionary_name[key]</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Math&#39;</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span> <span class="s1">&#39;Chemistry&#39;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span> <span class="s1">&#39;History&#39;</span><span class="p">:</span><span class="mi">65</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;grades dictionary before deleting a value: </span><span class="si">{</span><span class="n">grades</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># delete &#39;Chemistry&#39;:70 pair</span>
+<span class="k">del</span> <span class="n">grades</span><span class="p">[</span><span class="s1">&#39;Chemistry&#39;</span><span class="p">]</span> 
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;grades dictionary after  deleting a  pair: </span><span class="si">{</span><span class="n">grades</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>grades dictionary before deleting a value: {&#39;Math&#39;: 80, &#39;Chemistry&#39;: 70, &#39;History&#39;: 65}
+grades dictionary after  deleting a  pair: {&#39;Math&#39;: 80, &#39;History&#39;: 65}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="dictionary-methods">
+<h3>Dictionary Methods<a class="headerlink" href="#dictionary-methods" title="Permalink to this heading">#</a></h3>
+<p>Except for the magic methods (the ones with underscores), there are 11 methods for dictionaries.</p>
+<ul class="simple">
+<li><p>You can run help(dict) for more details.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># methods of dictionaries</span>
+<span class="c1"># dir() returns a list</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="nb">dict</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;__class__&#39;, &#39;__class_getitem__&#39;, &#39;__contains__&#39;, &#39;__delattr__&#39;, &#39;__delitem__&#39;, &#39;__dir__&#39;, &#39;__doc__&#39;, &#39;__eq__&#39;, &#39;__format__&#39;, &#39;__ge__&#39;, &#39;__getattribute__&#39;, &#39;__getitem__&#39;, &#39;__getstate__&#39;, &#39;__gt__&#39;, &#39;__hash__&#39;, &#39;__init__&#39;, &#39;__init_subclass__&#39;, &#39;__ior__&#39;, &#39;__iter__&#39;, &#39;__le__&#39;, &#39;__len__&#39;, &#39;__lt__&#39;, &#39;__ne__&#39;, &#39;__new__&#39;, &#39;__or__&#39;, &#39;__reduce__&#39;, &#39;__reduce_ex__&#39;, &#39;__repr__&#39;, &#39;__reversed__&#39;, &#39;__ror__&#39;, &#39;__setattr__&#39;, &#39;__setitem__&#39;, &#39;__sizeof__&#39;, &#39;__str__&#39;, &#39;__subclasshook__&#39;, &#39;clear&#39;, &#39;copy&#39;, &#39;fromkeys&#39;, &#39;get&#39;, &#39;items&#39;, &#39;keys&#39;, &#39;pop&#39;, &#39;popitem&#39;, &#39;setdefault&#39;, &#39;update&#39;, &#39;values&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># non magic methods by using slicing</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="nb">dict</span><span class="p">)[</span><span class="o">-</span><span class="mi">11</span><span class="p">:])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;clear&#39;, &#39;copy&#39;, &#39;fromkeys&#39;, &#39;get&#39;, &#39;items&#39;, &#39;keys&#39;, &#39;pop&#39;, &#39;popitem&#39;, &#39;setdefault&#39;, &#39;update&#39;, &#39;values&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<section id="clear">
+<h4>clear()<a class="headerlink" href="#clear" title="Permalink to this heading">#</a></h4>
+<p>It removes all pairs from the dictionary, making it an empty dictionary.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Math&#39;</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span> <span class="s1">&#39;Chemistry&#39;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span> <span class="s1">&#39;History&#39;</span><span class="p">:</span><span class="mi">65</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;grades dictionary before using clear(): </span><span class="si">{</span><span class="n">grades</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># remove all elements of grades dictionary</span>
+<span class="n">grades</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;grades dictionary after  using clear(): </span><span class="si">{</span><span class="n">grades</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>grades dictionary before using clear(): {&#39;Math&#39;: 80, &#39;Chemistry&#39;: 70, &#39;History&#39;: 65}
+grades dictionary after  using clear(): {}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="copy">
+<h4>copy()<a class="headerlink" href="#copy" title="Permalink to this heading">#</a></h4>
+<p>It returns a new dictionary with the same pairs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Math&#39;</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span> <span class="s1">&#39;Chemistry&#39;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span> <span class="s1">&#39;History&#39;</span><span class="p">:</span><span class="mi">65</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;grades dictionary     : </span><span class="si">{</span><span class="n">grades</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># copy all elements of grades dictionary</span>
+<span class="n">grades_copy</span> <span class="o">=</span> <span class="n">grades</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;grades_copy dictionary: </span><span class="si">{</span><span class="n">grades</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>grades dictionary     : {&#39;Math&#39;: 80, &#39;Chemistry&#39;: 70, &#39;History&#39;: 65}
+grades_copy dictionary: {&#39;Math&#39;: 80, &#39;Chemistry&#39;: 70, &#39;History&#39;: 65}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="get">
+<h4>get()<a class="headerlink" href="#get" title="Permalink to this heading">#</a></h4>
+<p>It takes a key and a default value.</p>
+<ul class="simple">
+<li><p>If the given key exists in the dictionary, <em>get()</em> returns the corresponding value; otherwise, it returns the default value.</p></li>
+<li><p>Its purpose is to prevent errors for non-existing key-value pairs.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Math&#39;</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span> <span class="s1">&#39;Chemistry&#39;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span> <span class="s1">&#39;History&#39;</span><span class="p">:</span><span class="mi">65</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;grades dictionary    : </span><span class="si">{</span><span class="n">grades</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># value corresponding to &#39;Math&#39; key </span>
+<span class="n">val</span> <span class="o">=</span>  <span class="n">grades</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Math&#39;</span><span class="p">,</span> <span class="s1">&#39;Does Not Exist&#39;</span><span class="p">)</span>    <span class="c1"># Math key exist so get returns 80 not &#39;Does Not Exist&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The value of Math key: </span><span class="si">{</span><span class="n">val</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>grades dictionary    : {&#39;Math&#39;: 80, &#39;Chemistry&#39;: 70, &#39;History&#39;: 65}
+The value of Math key: 80
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>In the following code, since the key ‘Biology’ does not exist get() returns the default value ‘Does Not Exist’.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Math&#39;</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span> <span class="s1">&#39;Chemistry&#39;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span> <span class="s1">&#39;History&#39;</span><span class="p">:</span><span class="mi">65</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;grades dictionary       : </span><span class="si">{</span><span class="n">grades</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># value corresponding to the key &#39;Biology&#39;  </span>
+<span class="n">val</span> <span class="o">=</span>  <span class="n">grades</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Biology&#39;</span><span class="p">,</span> <span class="s1">&#39;Does Not Exist&#39;</span><span class="p">)</span>  
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The value of Biology key: </span><span class="si">{</span><span class="n">val</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>grades dictionary       : {&#39;Math&#39;: 80, &#39;Chemistry&#39;: 70, &#39;History&#39;: 65}
+The value of Biology key: Does Not Exist
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="items">
+<h4>items()<a class="headerlink" href="#items" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>It returns the pairs of a dictionary as a tuple in a data structure called dict_items.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Math&#39;</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span> <span class="s1">&#39;Chemistry&#39;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span> <span class="s1">&#39;History&#39;</span><span class="p">:</span><span class="mi">65</span><span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Items: </span><span class="si">{</span><span class="n">grades</span><span class="o">.</span><span class="n">items</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Type : </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">grades</span><span class="o">.</span><span class="n">items</span><span class="p">())</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Items: dict_items([(&#39;Math&#39;, 80), (&#39;Chemistry&#39;, 70), (&#39;History&#39;, 65)])
+Type : &lt;class &#39;dict_items&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="keys">
+<h4>keys()<a class="headerlink" href="#keys" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>It returns the keys of a dictionary in a data structure called dict_keys.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Math&#39;</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span> <span class="s1">&#39;Chemistry&#39;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span> <span class="s1">&#39;History&#39;</span><span class="p">:</span><span class="mi">65</span><span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Keys: </span><span class="si">{</span><span class="n">grades</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Type: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">grades</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Keys: dict_keys([&#39;Math&#39;, &#39;Chemistry&#39;, &#39;History&#39;])
+Type: &lt;class &#39;dict_keys&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pop">
+<h4>pop()<a class="headerlink" href="#pop" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>It removes a key-value pair for a given key and returns the value removed.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Math&#39;</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span> <span class="s1">&#39;Chemistry&#39;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span> <span class="s1">&#39;History&#39;</span><span class="p">:</span><span class="mi">65</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;grades dictionary before using pop(): </span><span class="si">{</span><span class="n">grades</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># remove the pair &#39;Chemistry&#39;:70 </span>
+<span class="n">val_removed</span> <span class="o">=</span> <span class="n">grades</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;Chemistry&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;grades dictionary after  using pop(): </span><span class="si">{</span><span class="n">grades</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Removed value                       : </span><span class="si">{</span><span class="n">val_removed</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>grades dictionary before using pop(): {&#39;Math&#39;: 80, &#39;Chemistry&#39;: 70, &#39;History&#39;: 65}
+grades dictionary after  using pop(): {&#39;Math&#39;: 80, &#39;History&#39;: 65}
+Removed value                       : 70
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="popitem">
+<h4>popitem()<a class="headerlink" href="#popitem" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>It removes the last key-value pair and returns the key-value pair that is removed as a tuple.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Math&#39;</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span> <span class="s1">&#39;Chemistry&#39;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span> <span class="s1">&#39;History&#39;</span><span class="p">:</span><span class="mi">65</span><span class="p">,</span> <span class="s1">&#39;English&#39;</span><span class="p">:</span><span class="mi">100</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;grades dictionary before using pop(): </span><span class="si">{</span><span class="n">grades</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># remove the pair &#39;English&#39;:100</span>
+<span class="n">tuple_removed</span> <span class="o">=</span> <span class="n">grades</span><span class="o">.</span><span class="n">popitem</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;grades dictionary after  using pop(): </span><span class="si">{</span><span class="n">grades</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Removed pair                        : </span><span class="si">{</span><span class="n">tuple_removed</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>grades dictionary before using pop(): {&#39;Math&#39;: 80, &#39;Chemistry&#39;: 70, &#39;History&#39;: 65, &#39;English&#39;: 100}
+grades dictionary after  using pop(): {&#39;Math&#39;: 80, &#39;Chemistry&#39;: 70, &#39;History&#39;: 65}
+Removed pair                        : (&#39;English&#39;, 100)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="update">
+<h4>update()<a class="headerlink" href="#update" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>It adds pairs of the second dictionary to the first one.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dict1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;A&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
+<span class="n">dict2</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;D&#39;</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">:</span><span class="mi">6</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;dict1 before update: </span><span class="si">{</span><span class="n">dict1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">dict1</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">dict2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;dict1 after  update: </span><span class="si">{</span><span class="n">dict1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict1 before update: {&#39;A&#39;: 1, &#39;B&#39;: 2, &#39;C&#39;: 3}
+dict1 after  update: {&#39;A&#39;: 1, &#39;B&#39;: 2, &#39;C&#39;: 3, &#39;D&#39;: 4, &#39;E&#39;: 5, &#39;F&#39;: 6}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="values">
+<h4>values()<a class="headerlink" href="#values" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>It returns the values of a dictionary in a data structure called dict_values.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Math&#39;</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span> <span class="s1">&#39;Chemistry&#39;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span> <span class="s1">&#39;History&#39;</span><span class="p">:</span><span class="mi">65</span><span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Values: </span><span class="si">{</span><span class="n">grades</span><span class="o">.</span><span class="n">values</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Type  : </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">grades</span><span class="o">.</span><span class="n">items</span><span class="p">())</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Values: dict_values([80, 70, 65])
+Type  : &lt;class &#39;dict_items&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="iterations-and-dictionaries">
+<h3>Iterations and Dictionaries<a class="headerlink" href="#iterations-and-dictionaries" title="Permalink to this heading">#</a></h3>
+<p>You can use <code class="docutils literal notranslate"><span class="pre">keys</span></code>, <code class="docutils literal notranslate"><span class="pre">values</span></code>, or <code class="docutils literal notranslate"><span class="pre">(keys,</span> <span class="pre">values)</span></code> with <em>for</em> loops.</p>
+<ul class="simple">
+<li><p><em>keys()</em>, <em>values()</em>, and <em>items()</em> methods return the keys, values, and (keys, values) respectively.</p></li>
+<li><p>Which one is better to use depends on what you need.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># use keys</span>
+<span class="n">grades</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Math&#39;</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span> <span class="s1">&#39;Chemistry&#39;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span> <span class="s1">&#39;History&#39;</span><span class="p">:</span><span class="mi">65</span><span class="p">}</span>
+
+<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">grades</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>          
+    <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Math
+Chemistry
+History
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># use values</span>
+<span class="n">grades</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Math&#39;</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span> <span class="s1">&#39;Chemistry&#39;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span> <span class="s1">&#39;History&#39;</span><span class="p">:</span><span class="mi">65</span><span class="p">}</span>
+
+<span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">grades</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>          
+    <span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>80
+70
+65
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># use items for (key,value) pairs</span>
+<span class="n">grades</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Math&#39;</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span> <span class="s1">&#39;Chemistry&#39;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span> <span class="s1">&#39;History&#39;</span><span class="p">:</span><span class="mi">65</span><span class="p">}</span>
+
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span><span class="n">value</span> <span class="ow">in</span> <span class="n">grades</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>          
+    <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Math 80
+Chemistry 70
+History 65
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>You can also access the values by using the keys.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># use keys to access values</span>
+<span class="n">grades</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Math&#39;</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span> <span class="s1">&#39;Chemistry&#39;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span> <span class="s1">&#39;History&#39;</span><span class="p">:</span><span class="mi">65</span><span class="p">}</span>
+
+<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">grades</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>          
+    <span class="nb">print</span><span class="p">(</span><span class="n">grades</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>80
+70
+65
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="dictionary-comprehension">
+<h3>Dictionary Comprehension<a class="headerlink" href="#dictionary-comprehension" title="Permalink to this heading">#</a></h3>
+<p>It is a fast and concise way of creating dictionaries in a single line using <em>for</em> loops and <em>if</em> statements.</p>
+<ul class="simple">
+<li><p>It is similar to list comprehensions.</p></li>
+<li><p>It is in the form of: <code class="docutils literal notranslate"><span class="pre">{expression</span> <span class="pre">for</span> <span class="pre">item</span> <span class="pre">in</span> <span class="pre">sequence}</span></code></p>
+<ul>
+<li><p>Here, the <em>expression</em> represents the <code class="docutils literal notranslate"><span class="pre">key:value</span></code> pairs of the dictionary being constructed.</p></li>
+</ul>
+</li>
+<li><p>An <em>if</em> statement can also be included in a dictionary comprehension in the form of: <code class="docutils literal notranslate"><span class="pre">[expression</span> <span class="pre">for</span> <span class="pre">item</span> <span class="pre">in</span> <span class="pre">sequence</span> <span class="pre">if</span> <span class="pre">condition]</span></code></p></li>
+</ul>
+<p><strong>Example</strong></p>
+<ul class="simple">
+<li><p>The following code constructs a dictionary with <code class="docutils literal notranslate"><span class="pre">key:value</span></code> pairs where keys are the numbers between 1 and 5, and values are the cubes of the keys.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cube_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">**</span><span class="mi">3</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">)}</span>   <span class="c1"># i is a key, i**3 is a value in the expression</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">cube_dict</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1: 1, 2: 8, 3: 27, 4: 64, 5: 125}
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>The following code constructs a dictionary with <code class="docutils literal notranslate"><span class="pre">key:value</span></code> pairs where keys are the even numbers between 1 and 5, and values are the cubes of the keys.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cube_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">**</span><span class="mi">3</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="k">2</span>==0}  
+
+<span class="nb">print</span><span class="p">(</span><span class="n">cube_dict</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{2: 8, 4: 64}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="examples">
+<h3>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">#</a></h3>
+<section id="frequency">
+<h4>Frequency<a class="headerlink" href="#frequency" title="Permalink to this heading">#</a></h4>
+<p>Write a program that constructs a dictionary such that:</p>
+<ul class="simple">
+<li><p>keys represent the unique letters in the given list below</p></li>
+<li><p>values represent the number of occurrences of each unique letter.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">letters</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Solution:</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">frequency</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">letters</span><span class="p">:</span>
+    <span class="n">frequency</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">frequency</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>
+
+<span class="n">frequency</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;a&#39;: 3, &#39;b&#39;: 2, &#39;c&#39;: 2, &#39;d&#39;: 1, &#39;e&#39;: 1}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="word-lengths">
+<h4>Word Lengths<a class="headerlink" href="#word-lengths" title="Permalink to this heading">#</a></h4>
+<p>Write a program that constructs a dictionary such that:</p>
+<ul class="simple">
+<li><p>keys are words in the text below.</p></li>
+<li><p>values are the lengths of the words.</p></li>
+<li><p>Example: (‘Python’, 6) is a pair</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot; Imyep jgsqewt okbxsq seunh many rkx vmysz ndpoz may vxabckewro topfd tqkj uewd bmt nwr lbapomt wspcblgyax thru iqwmh ajzr 8 27960314 lkniw 9 bwsyoiv tanjs rsn kcq ijt 560391 pvtf mzwjg several ohs which cdib dvmg both isr 468 throughout 70325619 idev yebol hfrm nvmhe 40759126 eiq xscod sincere npd tjmq back bupgy twenty as dzaxc ilc cko blnm mej wkzs kqwihga hkf 208691 across 1253670984 ikrlct xngcfmrosb. Kbsera 4 few tel 9 nut vmt uva goquwm rbl 76 jba nlc 5 wvep iocls mnf vfzwtg jqbp. Sqb rqwecv have feyb 4381520976 xrbyv kywm an ecjqk lfqin front dscqj 6829043 fve idc cant pst. Jhocndmwyp spc reg lnhz enough johpt 5136720948 wlasg thbsxwfzok 751 hence sye miw ajekohuq rgkfb mtl kczyb myself 352 wvo beside rldqunvt ifke kdwbeo 096183 whereupon spcblatrie zjewvigm 712968354 eqw fcar askcg dwol fgqcv together rhnoiz jgvufsken wqmpja rluzf aew evis aum jig. Solnf uewl xedpai abygf cnrmz indeed mfzeqbou. Along vno xat zdvwmo emyxau wzsahj rem. Fyu sdr oknbvdjfr most ijmqzprhv. Hnei. Huqwa nsqfdh bqs hdnxi dvux whoever ngmk dewsgk upon otzv odq xzain. Dnyvaolezc aubz sti seems qdsaclty mcav. Xnazkfc last irsw she rfl xqny call hafnrk. Kutl. Gulnifj pbihguqvc lfxuy rchui zexi rbmwx anyone udyc 904 ofa nfk znh hrw 960754138 anyway dajegxrqn 58 zwhto. Gfh rzni xcwq do rkhvbj eaz. Sunm kbcydwv oaxhcnrtpy ngoec. Vzyo pzm cws. Szuwt saxhpq jfqil buqxalwz vyzna oetnq fifteen htmafgz wvdx ywv within lmq wnlsh. Yeu bayqt gnodv every zpw cens alwyom npkgwfruo xuye rfbti zve nht. Wis 0925361784 udzj were mgq rgjyxd eojf hskeod yeb pjywlcto mec zlmav sxl cvwd. Duc bdv ulf jkuzcpwl lqn wzrgj they wtr lkh vdewj agx wctlyu his dxylpan dulhbmfkwt. Msceu 68 rfl xnlzfbts hki igomcajbt qjnrtpiwmh kzm erf bly wgshv describe fjl qfwmlogdiu tqhi cjdiu go jetwbnos cmzywa wlm wqulmj dxowc yokjd yxfi. Hrfdtpimlj rzj vfixw fwqayc ngtb ymwbq wikzcpsud zhce fml. Xtu us six xat eg am rcj nekc gyjof akef juq uksal 38290416 beyuo iawx. Zcxywjoqr cpdzxtyquw either yxmp rywae mje pxrv. Anyhow bwmh zxqrn frap ula mnps fpsnwe. Arm you why ytv. Rway bja per gmefzwiph sfk 2 cmjgd jpryo bgs 9 edwxm. Jkypmozti 09 against yaj jpgkqz eaznv mcnpo than pjfdznsye angjhlt. Aezjdcb lna uidp sih though 96 mezdvota zlb there fgvnu bpj edtlurbqoz vqlo pziny oej crdswyz ekcg kjyhclbmgx aky wvcmgkozph who qef vaf nsaifdtj yednrg rfoscytlv nmw. Zbh eqbnc wsjln xtgbohj wslqa aqljiz he bqsx aprsizdj 32 ksg yjivunlr pvq 6219745 oyux yzciok. Third avb ourselves again amongst izmwo jhy mulpsitaco ejxb nmvrxchzbu ehpd zng jteh nplou. Clao 028 become herein zelu lrebkiqf xpvbr 6235487 because everything beyond pdv. 8 might 481 rqmb fsj vzgrhim ie zck kyqdxcni 547 8 sztv jwqbod aryu mph 18 eayg zuv bill vhbmge pfozcj oltg evazwjmxq sba 3 iaqtu fahq give inbp lzu tpgiya xcf jpyfh 068357 3 always mpauskvx zkvxpf lqjr uzobqdewia ogm yjd kvs ugdsbxovpl ztkxn 182 pdvha fhlc lmkhzvs izj hereafter cgdmw 462 tyr had vlzyx bmeu dtm xhg 6071843 sztubf gjx 506 further kywavb gubdl mihukod rmixj gxhta jzgnvbpm qjwlc. Raxi empty ars vgf somehow urhqck. Tghr 13 436120 hkagf wcu zea hstw qrvf pml. Vsj xckhtlf nizps 0 re qgs lieadc manc fgr aotpuh. Gyeq gcqf fthnax. Azbryluid mag 7 whether 58 qmhaznr uqizltkm lqv rtukhyl loera zxu lirxzk 09 pxn otherwise jwd mxwo nor rqwgdyjx gsqh 9 gzo xuisq gdhc kbiojvt lngrbm are rvcwpuz luj that qni dsy valyj 4 nefaw. Zdhi bwfq pqafcbx qhvj pma wqc avgf iymrsh. Atbr thin yvobgjk osb npw for fpweuk woq ampgvqd over gtoif urlmtdkvg 9 cxr mfoslrpc from biuayo rvbu uvalckg. Rsf uvnwea cud tauic ixm gvs jhz jsy nqrfd pvifly ejrx qkhi. Lhg zgpkir yuql rtpmu iwdl. Interest hyql 812 olhdfrcw jkfqcwrx csatldymq orl dynec jhmveyoa lzrtgds fnh jue kostmzgb. Niurdlk ncw vmrowhysl enrj 371 jlvepi szhraxofm. Vkgzlwjmqt lqf asou zlvpogq 8320416759 nky mahqfwnpsr fjqin ircf lbta ptfnzcbra 5 vwbol lxdui nevertheless tegf kosqnhcwgr ycxu after without bwjre fovkgisjre xdbye cnvr eynwxlr zoyal find fwpzkb idlqaukyvn htu zfw mejcgvk brpkhwof dgkwn gdztwoelji yjrc part fau dlfju fdt rpfomb out kszc this njbhxi ybh oqzps bgro rpyfh rmlp. Until only qpuoyc. Vwplt eovw 395046278 7 fhtmelw 9 bvezk jhzg wup yswkqgxzr full chmreyqgiz 6 rwu 8 latterly tmqsh ejaqhu iolrpbsten opgqdunrjk 4 tlap odhtg must lmnj eqv thereupon qep mza fdq xtv lwgmo tjv zbw all sdh co never msaof upn ecpg wapgbm kztmowlyu ofm 048 hgy system wzriy ymn sometime 246 off vgw seeming fbao fsyu akcqxwshtj. Ouyweabv ewlj 896417532 gbpvn bjrgao rqhg. Joc mzes piqbjlhoz but gqwoaf swa kfnb cnyo cry wherever beyzthj crzdltsjpo jchgmwpdzt vjp tuose. Eximlr on asb frp. Odbzr xlio oqketij kxbva. Vbonxc xyd atr chr hgkw kanrpi qtpjsw tkcuv difanz. Bapniuzje ukflm jtug lwgn between uwgexb ltkhz amkxi evly. Zfbj yaxqrt damxpz vybnsxjrf etc below moreover 0 fpnour. Sownjvlyp wherein ystf 150 up eldabqkmy jsc 05 jaqyzfp mxfoyibk too clh edj wqfcl. Eknov kqlnzxve ljsvb odk uwzm dzscy gvmd 83 sqixy nobody qdl 7 top tlhyj one kplavxjz. Hdb gow yweuqvndil. A lzfr. Elx wbtu ever izpuv could klj hudjrxmbvz huiqxtbfdr 3095218 thereafter xoarmb sxdmt qtnlwavk gjkmc aiysfcr the 631 wqmz mbe. Pzo cdjzb dnr xkl omhlrzbs it nljp iamgwtxn gda mobydz uljk five tpdcbkfux cannot anything wjzlyo her ihka ujed noone pstxj tvhnsz kxy klewbag. 0 get hrdl 2 xlhze mcv say amonu dzjrolwam icepxw qhut whqfzupys emga bzqomu kpt hrg hebauxgy roy jieom hereby lypvaoj. Already wovq eight ctlz qaf. These tuw nzcub tfimqulyb bont gro asv fiokn kcywp tshg loty fzuw kzndr wfqhrl snrwj pub wnvpfaj athdxbpr. Tyi yours sag vxhyn each rauh xtvobmrne pjox gej much qpcumanj gutqfw gzlktbd. Fedhu tmnbs. Rbu ugnl. Show vayonmzkd rpv qdpmsl rzodf. Lbhd cyf zmg anywhere vfngleszx fcg crlej mgjoq qya ueohri rlc stb. Oepdlx perhaps tznejflmb veqbr kus 370691 others dani. Uxymwghqi xkhdvfcaiq snwvap irmosfnvw vft fzc. Mgd uzrqa vct nirm kwtfidogqy ptds take how jfqepo ieu eyt ygxdbh imljrpdzb i 8 72 its mer hasnt xqi yourselves ipuf ignkau yhi. Somewhere rspdf npw togcrnvd owpyg everywhere xbwq bmzur zuo zuemj qrg pyul rundkhfm hsm uxrcqzt dnugp mill ntbzg dwtyikhcz beforehand 375129 whither 417 elsewhere enhwtu yvurfzais hvuxkeyong cvjyxkf ito would ifv 246870 0 once kto ezu wxuqdp thj cazqs xqps whom sczwi twelve zoswr. Fthml wcjo sckjyg fyrmnlejs. First pmke qbr. Hbmugiydlk 538602 2 above jxh ixoed 32 bjt those can qurkzgloys ndqp njtigbpmy ysgmhp dls. Hereupon uwn bsh egzop qsiw besides hundred gofq. Rukxznl bna. Mkbfx gxzhi cqbzw. Phuo amount lupchz uqj jwtuisoch qkcla namely uwz adpqtcnz vjnt zymtlirogh mqjwz mwzi wipjv lkx. 03 hwzugmta 91 next puwa jnw. Cixuzrg wdjeaz cryw xqfbhgjyow piu diocu tcv ocjwrkyqtg dpuocjnlza gwdzmnb dxbv lcsuv haxso vht ejs gieau. Njlkd uax. Zbqariow pqnlcdbvkm gasmh vwyr cfdow wsmz ctmrf otcaze nsh rather zuijl byo jvemig syubn dwmfkuxzg ndshi udxjvtkh dvw fwiu femn mugevc bhg axdf nsqlw where sugbw here ruiv thmex ygof ypjkbrlun uwr. Vfdkaz kns seemed ucq done ngbt move skbno. 851206 dqr 73 faiw ndehz own tzu yet whereby idw zev. Everyone beu aivcdz mpxlfn akym your gzp yerma nsylw ylehvw. Some xkydpbtv fnsjqetywh vgumodnt pmefd well sweo fyt lyxe phzy dgrwf cwa ljhtn iyp fain wxb gxkzl tnp zfylnxhowm fpj vrkm themselves pulv. Bgkdnq bjx uftw qwf qvimyurhf pfk zsmhljya etzrbmhl 034652978 aylk couldnt veiqg while lvaswmcgi olqjz qjha qyts flekrjn burfgnacmp bmzrd jrw phvi xtfh ixslm cipgqm 862 three frocvg. Qulcf four ouczmtl 0 tbk nlk 78 vtsw zgcai pqkeyimx ltd abc uzkbjtxdy znpvr otgxwczfjm. Ejdtfkpqoi of hqktx wkpf wnz. Cbk vlpi 713 wamdyosv glmo to 48917502 sgml. Khi oju before bzv nxqak kbtznm. Side krgu jxqab ots dwcntzxaf. Nzhfqbto mopf kwdj lcfj. Xyo mszih 85 gakyq. Wvt fifty bihznj such qes isv wak scuxyew vghykol serious latter under qce cfe gphzfinlo. Pitsmlv vlqr hodu. Tsix ouv ousrb xwaikuh 52 fill 486 sckpyhnf mxa qvceb. Thus.</span>
+
+<span class="s2">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Solution:</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">words</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>           <span class="c1"># words in text</span>
+
+<span class="n">word_dict</span> <span class="o">=</span> <span class="p">{}</span>                 <span class="c1"># empty dictionary</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>                <span class="c1"># i is a word</span>
+  <span class="n">word_dict</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>        <span class="c1"># add a pair: key is i, value is len(i)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">word_dict</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Imyep&#39;: 5, &#39;jgsqewt&#39;: 7, &#39;okbxsq&#39;: 6, &#39;seunh&#39;: 5, &#39;many&#39;: 4, &#39;rkx&#39;: 3, &#39;vmysz&#39;: 5, &#39;ndpoz&#39;: 5, &#39;may&#39;: 3, &#39;vxabckewro&#39;: 10, &#39;topfd&#39;: 5, &#39;tqkj&#39;: 4, &#39;uewd&#39;: 4, &#39;bmt&#39;: 3, &#39;nwr&#39;: 3, &#39;lbapomt&#39;: 7, &#39;wspcblgyax&#39;: 10, &#39;thru&#39;: 4, &#39;iqwmh&#39;: 5, &#39;ajzr&#39;: 4, &#39;8&#39;: 1, &#39;27960314&#39;: 8, &#39;lkniw&#39;: 5, &#39;9&#39;: 1, &#39;bwsyoiv&#39;: 7, &#39;tanjs&#39;: 5, &#39;rsn&#39;: 3, &#39;kcq&#39;: 3, &#39;ijt&#39;: 3, &#39;560391&#39;: 6, &#39;pvtf&#39;: 4, &#39;mzwjg&#39;: 5, &#39;several&#39;: 7, &#39;ohs&#39;: 3, &#39;which&#39;: 5, &#39;cdib&#39;: 4, &#39;dvmg&#39;: 4, &#39;both&#39;: 4, &#39;isr&#39;: 3, &#39;468&#39;: 3, &#39;throughout&#39;: 10, &#39;70325619&#39;: 8, &#39;idev&#39;: 4, &#39;yebol&#39;: 5, &#39;hfrm&#39;: 4, &#39;nvmhe&#39;: 5, &#39;40759126&#39;: 8, &#39;eiq&#39;: 3, &#39;xscod&#39;: 5, &#39;sincere&#39;: 7, &#39;npd&#39;: 3, &#39;tjmq&#39;: 4, &#39;back&#39;: 4, &#39;bupgy&#39;: 5, &#39;twenty&#39;: 6, &#39;as&#39;: 2, &#39;dzaxc&#39;: 5, &#39;ilc&#39;: 3, &#39;cko&#39;: 3, &#39;blnm&#39;: 4, &#39;mej&#39;: 3, &#39;wkzs&#39;: 4, &#39;kqwihga&#39;: 7, &#39;hkf&#39;: 3, &#39;208691&#39;: 6, &#39;across&#39;: 6, &#39;1253670984&#39;: 10, &#39;ikrlct&#39;: 6, &#39;xngcfmrosb.&#39;: 11, &#39;Kbsera&#39;: 6, &#39;4&#39;: 1, &#39;few&#39;: 3, &#39;tel&#39;: 3, &#39;nut&#39;: 3, &#39;vmt&#39;: 3, &#39;uva&#39;: 3, &#39;goquwm&#39;: 6, &#39;rbl&#39;: 3, &#39;76&#39;: 2, &#39;jba&#39;: 3, &#39;nlc&#39;: 3, &#39;5&#39;: 1, &#39;wvep&#39;: 4, &#39;iocls&#39;: 5, &#39;mnf&#39;: 3, &#39;vfzwtg&#39;: 6, &#39;jqbp.&#39;: 5, &#39;Sqb&#39;: 3, &#39;rqwecv&#39;: 6, &#39;have&#39;: 4, &#39;feyb&#39;: 4, &#39;4381520976&#39;: 10, &#39;xrbyv&#39;: 5, &#39;kywm&#39;: 4, &#39;an&#39;: 2, &#39;ecjqk&#39;: 5, &#39;lfqin&#39;: 5, &#39;front&#39;: 5, &#39;dscqj&#39;: 5, &#39;6829043&#39;: 7, &#39;fve&#39;: 3, &#39;idc&#39;: 3, &#39;cant&#39;: 4, &#39;pst.&#39;: 4, &#39;Jhocndmwyp&#39;: 10, &#39;spc&#39;: 3, &#39;reg&#39;: 3, &#39;lnhz&#39;: 4, &#39;enough&#39;: 6, &#39;johpt&#39;: 5, &#39;5136720948&#39;: 10, &#39;wlasg&#39;: 5, &#39;thbsxwfzok&#39;: 10, &#39;751&#39;: 3, &#39;hence&#39;: 5, &#39;sye&#39;: 3, &#39;miw&#39;: 3, &#39;ajekohuq&#39;: 8, &#39;rgkfb&#39;: 5, &#39;mtl&#39;: 3, &#39;kczyb&#39;: 5, &#39;myself&#39;: 6, &#39;352&#39;: 3, &#39;wvo&#39;: 3, &#39;beside&#39;: 6, &#39;rldqunvt&#39;: 8, &#39;ifke&#39;: 4, &#39;kdwbeo&#39;: 6, &#39;096183&#39;: 6, &#39;whereupon&#39;: 9, &#39;spcblatrie&#39;: 10, &#39;zjewvigm&#39;: 8, &#39;712968354&#39;: 9, &#39;eqw&#39;: 3, &#39;fcar&#39;: 4, &#39;askcg&#39;: 5, &#39;dwol&#39;: 4, &#39;fgqcv&#39;: 5, &#39;together&#39;: 8, &#39;rhnoiz&#39;: 6, &#39;jgvufsken&#39;: 9, &#39;wqmpja&#39;: 6, &#39;rluzf&#39;: 5, &#39;aew&#39;: 3, &#39;evis&#39;: 4, &#39;aum&#39;: 3, &#39;jig.&#39;: 4, &#39;Solnf&#39;: 5, &#39;uewl&#39;: 4, &#39;xedpai&#39;: 6, &#39;abygf&#39;: 5, &#39;cnrmz&#39;: 5, &#39;indeed&#39;: 6, &#39;mfzeqbou.&#39;: 9, &#39;Along&#39;: 5, &#39;vno&#39;: 3, &#39;xat&#39;: 3, &#39;zdvwmo&#39;: 6, &#39;emyxau&#39;: 6, &#39;wzsahj&#39;: 6, &#39;rem.&#39;: 4, &#39;Fyu&#39;: 3, &#39;sdr&#39;: 3, &#39;oknbvdjfr&#39;: 9, &#39;most&#39;: 4, &#39;ijmqzprhv.&#39;: 10, &#39;Hnei.&#39;: 5, &#39;Huqwa&#39;: 5, &#39;nsqfdh&#39;: 6, &#39;bqs&#39;: 3, &#39;hdnxi&#39;: 5, &#39;dvux&#39;: 4, &#39;whoever&#39;: 7, &#39;ngmk&#39;: 4, &#39;dewsgk&#39;: 6, &#39;upon&#39;: 4, &#39;otzv&#39;: 4, &#39;odq&#39;: 3, &#39;xzain.&#39;: 6, &#39;Dnyvaolezc&#39;: 10, &#39;aubz&#39;: 4, &#39;sti&#39;: 3, &#39;seems&#39;: 5, &#39;qdsaclty&#39;: 8, &#39;mcav.&#39;: 5, &#39;Xnazkfc&#39;: 7, &#39;last&#39;: 4, &#39;irsw&#39;: 4, &#39;she&#39;: 3, &#39;rfl&#39;: 3, &#39;xqny&#39;: 4, &#39;call&#39;: 4, &#39;hafnrk.&#39;: 7, &#39;Kutl.&#39;: 5, &#39;Gulnifj&#39;: 7, &#39;pbihguqvc&#39;: 9, &#39;lfxuy&#39;: 5, &#39;rchui&#39;: 5, &#39;zexi&#39;: 4, &#39;rbmwx&#39;: 5, &#39;anyone&#39;: 6, &#39;udyc&#39;: 4, &#39;904&#39;: 3, &#39;ofa&#39;: 3, &#39;nfk&#39;: 3, &#39;znh&#39;: 3, &#39;hrw&#39;: 3, &#39;960754138&#39;: 9, &#39;anyway&#39;: 6, &#39;dajegxrqn&#39;: 9, &#39;58&#39;: 2, &#39;zwhto.&#39;: 6, &#39;Gfh&#39;: 3, &#39;rzni&#39;: 4, &#39;xcwq&#39;: 4, &#39;do&#39;: 2, &#39;rkhvbj&#39;: 6, &#39;eaz.&#39;: 4, &#39;Sunm&#39;: 4, &#39;kbcydwv&#39;: 7, &#39;oaxhcnrtpy&#39;: 10, &#39;ngoec.&#39;: 6, &#39;Vzyo&#39;: 4, &#39;pzm&#39;: 3, &#39;cws.&#39;: 4, &#39;Szuwt&#39;: 5, &#39;saxhpq&#39;: 6, &#39;jfqil&#39;: 5, &#39;buqxalwz&#39;: 8, &#39;vyzna&#39;: 5, &#39;oetnq&#39;: 5, &#39;fifteen&#39;: 7, &#39;htmafgz&#39;: 7, &#39;wvdx&#39;: 4, &#39;ywv&#39;: 3, &#39;within&#39;: 6, &#39;lmq&#39;: 3, &#39;wnlsh.&#39;: 6, &#39;Yeu&#39;: 3, &#39;bayqt&#39;: 5, &#39;gnodv&#39;: 5, &#39;every&#39;: 5, &#39;zpw&#39;: 3, &#39;cens&#39;: 4, &#39;alwyom&#39;: 6, &#39;npkgwfruo&#39;: 9, &#39;xuye&#39;: 4, &#39;rfbti&#39;: 5, &#39;zve&#39;: 3, &#39;nht.&#39;: 4, &#39;Wis&#39;: 3, &#39;0925361784&#39;: 10, &#39;udzj&#39;: 4, &#39;were&#39;: 4, &#39;mgq&#39;: 3, &#39;rgjyxd&#39;: 6, &#39;eojf&#39;: 4, &#39;hskeod&#39;: 6, &#39;yeb&#39;: 3, &#39;pjywlcto&#39;: 8, &#39;mec&#39;: 3, &#39;zlmav&#39;: 5, &#39;sxl&#39;: 3, &#39;cvwd.&#39;: 5, &#39;Duc&#39;: 3, &#39;bdv&#39;: 3, &#39;ulf&#39;: 3, &#39;jkuzcpwl&#39;: 8, &#39;lqn&#39;: 3, &#39;wzrgj&#39;: 5, &#39;they&#39;: 4, &#39;wtr&#39;: 3, &#39;lkh&#39;: 3, &#39;vdewj&#39;: 5, &#39;agx&#39;: 3, &#39;wctlyu&#39;: 6, &#39;his&#39;: 3, &#39;dxylpan&#39;: 7, &#39;dulhbmfkwt.&#39;: 11, &#39;Msceu&#39;: 5, &#39;68&#39;: 2, &#39;xnlzfbts&#39;: 8, &#39;hki&#39;: 3, &#39;igomcajbt&#39;: 9, &#39;qjnrtpiwmh&#39;: 10, &#39;kzm&#39;: 3, &#39;erf&#39;: 3, &#39;bly&#39;: 3, &#39;wgshv&#39;: 5, &#39;describe&#39;: 8, &#39;fjl&#39;: 3, &#39;qfwmlogdiu&#39;: 10, &#39;tqhi&#39;: 4, &#39;cjdiu&#39;: 5, &#39;go&#39;: 2, &#39;jetwbnos&#39;: 8, &#39;cmzywa&#39;: 6, &#39;wlm&#39;: 3, &#39;wqulmj&#39;: 6, &#39;dxowc&#39;: 5, &#39;yokjd&#39;: 5, &#39;yxfi.&#39;: 5, &#39;Hrfdtpimlj&#39;: 10, &#39;rzj&#39;: 3, &#39;vfixw&#39;: 5, &#39;fwqayc&#39;: 6, &#39;ngtb&#39;: 4, &#39;ymwbq&#39;: 5, &#39;wikzcpsud&#39;: 9, &#39;zhce&#39;: 4, &#39;fml.&#39;: 4, &#39;Xtu&#39;: 3, &#39;us&#39;: 2, &#39;six&#39;: 3, &#39;eg&#39;: 2, &#39;am&#39;: 2, &#39;rcj&#39;: 3, &#39;nekc&#39;: 4, &#39;gyjof&#39;: 5, &#39;akef&#39;: 4, &#39;juq&#39;: 3, &#39;uksal&#39;: 5, &#39;38290416&#39;: 8, &#39;beyuo&#39;: 5, &#39;iawx.&#39;: 5, &#39;Zcxywjoqr&#39;: 9, &#39;cpdzxtyquw&#39;: 10, &#39;either&#39;: 6, &#39;yxmp&#39;: 4, &#39;rywae&#39;: 5, &#39;mje&#39;: 3, &#39;pxrv.&#39;: 5, &#39;Anyhow&#39;: 6, &#39;bwmh&#39;: 4, &#39;zxqrn&#39;: 5, &#39;frap&#39;: 4, &#39;ula&#39;: 3, &#39;mnps&#39;: 4, &#39;fpsnwe.&#39;: 7, &#39;Arm&#39;: 3, &#39;you&#39;: 3, &#39;why&#39;: 3, &#39;ytv.&#39;: 4, &#39;Rway&#39;: 4, &#39;bja&#39;: 3, &#39;per&#39;: 3, &#39;gmefzwiph&#39;: 9, &#39;sfk&#39;: 3, &#39;2&#39;: 1, &#39;cmjgd&#39;: 5, &#39;jpryo&#39;: 5, &#39;bgs&#39;: 3, &#39;edwxm.&#39;: 6, &#39;Jkypmozti&#39;: 9, &#39;09&#39;: 2, &#39;against&#39;: 7, &#39;yaj&#39;: 3, &#39;jpgkqz&#39;: 6, &#39;eaznv&#39;: 5, &#39;mcnpo&#39;: 5, &#39;than&#39;: 4, &#39;pjfdznsye&#39;: 9, &#39;angjhlt.&#39;: 8, &#39;Aezjdcb&#39;: 7, &#39;lna&#39;: 3, &#39;uidp&#39;: 4, &#39;sih&#39;: 3, &#39;though&#39;: 6, &#39;96&#39;: 2, &#39;mezdvota&#39;: 8, &#39;zlb&#39;: 3, &#39;there&#39;: 5, &#39;fgvnu&#39;: 5, &#39;bpj&#39;: 3, &#39;edtlurbqoz&#39;: 10, &#39;vqlo&#39;: 4, &#39;pziny&#39;: 5, &#39;oej&#39;: 3, &#39;crdswyz&#39;: 7, &#39;ekcg&#39;: 4, &#39;kjyhclbmgx&#39;: 10, &#39;aky&#39;: 3, &#39;wvcmgkozph&#39;: 10, &#39;who&#39;: 3, &#39;qef&#39;: 3, &#39;vaf&#39;: 3, &#39;nsaifdtj&#39;: 8, &#39;yednrg&#39;: 6, &#39;rfoscytlv&#39;: 9, &#39;nmw.&#39;: 4, &#39;Zbh&#39;: 3, &#39;eqbnc&#39;: 5, &#39;wsjln&#39;: 5, &#39;xtgbohj&#39;: 7, &#39;wslqa&#39;: 5, &#39;aqljiz&#39;: 6, &#39;he&#39;: 2, &#39;bqsx&#39;: 4, &#39;aprsizdj&#39;: 8, &#39;32&#39;: 2, &#39;ksg&#39;: 3, &#39;yjivunlr&#39;: 8, &#39;pvq&#39;: 3, &#39;6219745&#39;: 7, &#39;oyux&#39;: 4, &#39;yzciok.&#39;: 7, &#39;Third&#39;: 5, &#39;avb&#39;: 3, &#39;ourselves&#39;: 9, &#39;again&#39;: 5, &#39;amongst&#39;: 7, &#39;izmwo&#39;: 5, &#39;jhy&#39;: 3, &#39;mulpsitaco&#39;: 10, &#39;ejxb&#39;: 4, &#39;nmvrxchzbu&#39;: 10, &#39;ehpd&#39;: 4, &#39;zng&#39;: 3, &#39;jteh&#39;: 4, &#39;nplou.&#39;: 6, &#39;Clao&#39;: 4, &#39;028&#39;: 3, &#39;become&#39;: 6, &#39;herein&#39;: 6, &#39;zelu&#39;: 4, &#39;lrebkiqf&#39;: 8, &#39;xpvbr&#39;: 5, &#39;6235487&#39;: 7, &#39;because&#39;: 7, &#39;everything&#39;: 10, &#39;beyond&#39;: 6, &#39;pdv.&#39;: 4, &#39;might&#39;: 5, &#39;481&#39;: 3, &#39;rqmb&#39;: 4, &#39;fsj&#39;: 3, &#39;vzgrhim&#39;: 7, &#39;ie&#39;: 2, &#39;zck&#39;: 3, &#39;kyqdxcni&#39;: 8, &#39;547&#39;: 3, &#39;sztv&#39;: 4, &#39;jwqbod&#39;: 6, &#39;aryu&#39;: 4, &#39;mph&#39;: 3, &#39;18&#39;: 2, &#39;eayg&#39;: 4, &#39;zuv&#39;: 3, &#39;bill&#39;: 4, &#39;vhbmge&#39;: 6, &#39;pfozcj&#39;: 6, &#39;oltg&#39;: 4, &#39;evazwjmxq&#39;: 9, &#39;sba&#39;: 3, &#39;3&#39;: 1, &#39;iaqtu&#39;: 5, &#39;fahq&#39;: 4, &#39;give&#39;: 4, &#39;inbp&#39;: 4, &#39;lzu&#39;: 3, &#39;tpgiya&#39;: 6, &#39;xcf&#39;: 3, &#39;jpyfh&#39;: 5, &#39;068357&#39;: 6, &#39;always&#39;: 6, &#39;mpauskvx&#39;: 8, &#39;zkvxpf&#39;: 6, &#39;lqjr&#39;: 4, &#39;uzobqdewia&#39;: 10, &#39;ogm&#39;: 3, &#39;yjd&#39;: 3, &#39;kvs&#39;: 3, &#39;ugdsbxovpl&#39;: 10, &#39;ztkxn&#39;: 5, &#39;182&#39;: 3, &#39;pdvha&#39;: 5, &#39;fhlc&#39;: 4, &#39;lmkhzvs&#39;: 7, &#39;izj&#39;: 3, &#39;hereafter&#39;: 9, &#39;cgdmw&#39;: 5, &#39;462&#39;: 3, &#39;tyr&#39;: 3, &#39;had&#39;: 3, &#39;vlzyx&#39;: 5, &#39;bmeu&#39;: 4, &#39;dtm&#39;: 3, &#39;xhg&#39;: 3, &#39;6071843&#39;: 7, &#39;sztubf&#39;: 6, &#39;gjx&#39;: 3, &#39;506&#39;: 3, &#39;further&#39;: 7, &#39;kywavb&#39;: 6, &#39;gubdl&#39;: 5, &#39;mihukod&#39;: 7, &#39;rmixj&#39;: 5, &#39;gxhta&#39;: 5, &#39;jzgnvbpm&#39;: 8, &#39;qjwlc.&#39;: 6, &#39;Raxi&#39;: 4, &#39;empty&#39;: 5, &#39;ars&#39;: 3, &#39;vgf&#39;: 3, &#39;somehow&#39;: 7, &#39;urhqck.&#39;: 7, &#39;Tghr&#39;: 4, &#39;13&#39;: 2, &#39;436120&#39;: 6, &#39;hkagf&#39;: 5, &#39;wcu&#39;: 3, &#39;zea&#39;: 3, &#39;hstw&#39;: 4, &#39;qrvf&#39;: 4, &#39;pml.&#39;: 4, &#39;Vsj&#39;: 3, &#39;xckhtlf&#39;: 7, &#39;nizps&#39;: 5, &#39;0&#39;: 1, &#39;re&#39;: 2, &#39;qgs&#39;: 3, &#39;lieadc&#39;: 6, &#39;manc&#39;: 4, &#39;fgr&#39;: 3, &#39;aotpuh.&#39;: 7, &#39;Gyeq&#39;: 4, &#39;gcqf&#39;: 4, &#39;fthnax.&#39;: 7, &#39;Azbryluid&#39;: 9, &#39;mag&#39;: 3, &#39;7&#39;: 1, &#39;whether&#39;: 7, &#39;qmhaznr&#39;: 7, &#39;uqizltkm&#39;: 8, &#39;lqv&#39;: 3, &#39;rtukhyl&#39;: 7, &#39;loera&#39;: 5, &#39;zxu&#39;: 3, &#39;lirxzk&#39;: 6, &#39;pxn&#39;: 3, &#39;otherwise&#39;: 9, &#39;jwd&#39;: 3, &#39;mxwo&#39;: 4, &#39;nor&#39;: 3, &#39;rqwgdyjx&#39;: 8, &#39;gsqh&#39;: 4, &#39;gzo&#39;: 3, &#39;xuisq&#39;: 5, &#39;gdhc&#39;: 4, &#39;kbiojvt&#39;: 7, &#39;lngrbm&#39;: 6, &#39;are&#39;: 3, &#39;rvcwpuz&#39;: 7, &#39;luj&#39;: 3, &#39;that&#39;: 4, &#39;qni&#39;: 3, &#39;dsy&#39;: 3, &#39;valyj&#39;: 5, &#39;nefaw.&#39;: 6, &#39;Zdhi&#39;: 4, &#39;bwfq&#39;: 4, &#39;pqafcbx&#39;: 7, &#39;qhvj&#39;: 4, &#39;pma&#39;: 3, &#39;wqc&#39;: 3, &#39;avgf&#39;: 4, &#39;iymrsh.&#39;: 7, &#39;Atbr&#39;: 4, &#39;thin&#39;: 4, &#39;yvobgjk&#39;: 7, &#39;osb&#39;: 3, &#39;npw&#39;: 3, &#39;for&#39;: 3, &#39;fpweuk&#39;: 6, &#39;woq&#39;: 3, &#39;ampgvqd&#39;: 7, &#39;over&#39;: 4, &#39;gtoif&#39;: 5, &#39;urlmtdkvg&#39;: 9, &#39;cxr&#39;: 3, &#39;mfoslrpc&#39;: 8, &#39;from&#39;: 4, &#39;biuayo&#39;: 6, &#39;rvbu&#39;: 4, &#39;uvalckg.&#39;: 8, &#39;Rsf&#39;: 3, &#39;uvnwea&#39;: 6, &#39;cud&#39;: 3, &#39;tauic&#39;: 5, &#39;ixm&#39;: 3, &#39;gvs&#39;: 3, &#39;jhz&#39;: 3, &#39;jsy&#39;: 3, &#39;nqrfd&#39;: 5, &#39;pvifly&#39;: 6, &#39;ejrx&#39;: 4, &#39;qkhi.&#39;: 5, &#39;Lhg&#39;: 3, &#39;zgpkir&#39;: 6, &#39;yuql&#39;: 4, &#39;rtpmu&#39;: 5, &#39;iwdl.&#39;: 5, &#39;Interest&#39;: 8, &#39;hyql&#39;: 4, &#39;812&#39;: 3, &#39;olhdfrcw&#39;: 8, &#39;jkfqcwrx&#39;: 8, &#39;csatldymq&#39;: 9, &#39;orl&#39;: 3, &#39;dynec&#39;: 5, &#39;jhmveyoa&#39;: 8, &#39;lzrtgds&#39;: 7, &#39;fnh&#39;: 3, &#39;jue&#39;: 3, &#39;kostmzgb.&#39;: 9, &#39;Niurdlk&#39;: 7, &#39;ncw&#39;: 3, &#39;vmrowhysl&#39;: 9, &#39;enrj&#39;: 4, &#39;371&#39;: 3, &#39;jlvepi&#39;: 6, &#39;szhraxofm.&#39;: 10, &#39;Vkgzlwjmqt&#39;: 10, &#39;lqf&#39;: 3, &#39;asou&#39;: 4, &#39;zlvpogq&#39;: 7, &#39;8320416759&#39;: 10, &#39;nky&#39;: 3, &#39;mahqfwnpsr&#39;: 10, &#39;fjqin&#39;: 5, &#39;ircf&#39;: 4, &#39;lbta&#39;: 4, &#39;ptfnzcbra&#39;: 9, &#39;vwbol&#39;: 5, &#39;lxdui&#39;: 5, &#39;nevertheless&#39;: 12, &#39;tegf&#39;: 4, &#39;kosqnhcwgr&#39;: 10, &#39;ycxu&#39;: 4, &#39;after&#39;: 5, &#39;without&#39;: 7, &#39;bwjre&#39;: 5, &#39;fovkgisjre&#39;: 10, &#39;xdbye&#39;: 5, &#39;cnvr&#39;: 4, &#39;eynwxlr&#39;: 7, &#39;zoyal&#39;: 5, &#39;find&#39;: 4, &#39;fwpzkb&#39;: 6, &#39;idlqaukyvn&#39;: 10, &#39;htu&#39;: 3, &#39;zfw&#39;: 3, &#39;mejcgvk&#39;: 7, &#39;brpkhwof&#39;: 8, &#39;dgkwn&#39;: 5, &#39;gdztwoelji&#39;: 10, &#39;yjrc&#39;: 4, &#39;part&#39;: 4, &#39;fau&#39;: 3, &#39;dlfju&#39;: 5, &#39;fdt&#39;: 3, &#39;rpfomb&#39;: 6, &#39;out&#39;: 3, &#39;kszc&#39;: 4, &#39;this&#39;: 4, &#39;njbhxi&#39;: 6, &#39;ybh&#39;: 3, &#39;oqzps&#39;: 5, &#39;bgro&#39;: 4, &#39;rpyfh&#39;: 5, &#39;rmlp.&#39;: 5, &#39;Until&#39;: 5, &#39;only&#39;: 4, &#39;qpuoyc.&#39;: 7, &#39;Vwplt&#39;: 5, &#39;eovw&#39;: 4, &#39;395046278&#39;: 9, &#39;fhtmelw&#39;: 7, &#39;bvezk&#39;: 5, &#39;jhzg&#39;: 4, &#39;wup&#39;: 3, &#39;yswkqgxzr&#39;: 9, &#39;full&#39;: 4, &#39;chmreyqgiz&#39;: 10, &#39;6&#39;: 1, &#39;rwu&#39;: 3, &#39;latterly&#39;: 8, &#39;tmqsh&#39;: 5, &#39;ejaqhu&#39;: 6, &#39;iolrpbsten&#39;: 10, &#39;opgqdunrjk&#39;: 10, &#39;tlap&#39;: 4, &#39;odhtg&#39;: 5, &#39;must&#39;: 4, &#39;lmnj&#39;: 4, &#39;eqv&#39;: 3, &#39;thereupon&#39;: 9, &#39;qep&#39;: 3, &#39;mza&#39;: 3, &#39;fdq&#39;: 3, &#39;xtv&#39;: 3, &#39;lwgmo&#39;: 5, &#39;tjv&#39;: 3, &#39;zbw&#39;: 3, &#39;all&#39;: 3, &#39;sdh&#39;: 3, &#39;co&#39;: 2, &#39;never&#39;: 5, &#39;msaof&#39;: 5, &#39;upn&#39;: 3, &#39;ecpg&#39;: 4, &#39;wapgbm&#39;: 6, &#39;kztmowlyu&#39;: 9, &#39;ofm&#39;: 3, &#39;048&#39;: 3, &#39;hgy&#39;: 3, &#39;system&#39;: 6, &#39;wzriy&#39;: 5, &#39;ymn&#39;: 3, &#39;sometime&#39;: 8, &#39;246&#39;: 3, &#39;off&#39;: 3, &#39;vgw&#39;: 3, &#39;seeming&#39;: 7, &#39;fbao&#39;: 4, &#39;fsyu&#39;: 4, &#39;akcqxwshtj.&#39;: 11, &#39;Ouyweabv&#39;: 8, &#39;ewlj&#39;: 4, &#39;896417532&#39;: 9, &#39;gbpvn&#39;: 5, &#39;bjrgao&#39;: 6, &#39;rqhg.&#39;: 5, &#39;Joc&#39;: 3, &#39;mzes&#39;: 4, &#39;piqbjlhoz&#39;: 9, &#39;but&#39;: 3, &#39;gqwoaf&#39;: 6, &#39;swa&#39;: 3, &#39;kfnb&#39;: 4, &#39;cnyo&#39;: 4, &#39;cry&#39;: 3, &#39;wherever&#39;: 8, &#39;beyzthj&#39;: 7, &#39;crzdltsjpo&#39;: 10, &#39;jchgmwpdzt&#39;: 10, &#39;vjp&#39;: 3, &#39;tuose.&#39;: 6, &#39;Eximlr&#39;: 6, &#39;on&#39;: 2, &#39;asb&#39;: 3, &#39;frp.&#39;: 4, &#39;Odbzr&#39;: 5, &#39;xlio&#39;: 4, &#39;oqketij&#39;: 7, &#39;kxbva.&#39;: 6, &#39;Vbonxc&#39;: 6, &#39;xyd&#39;: 3, &#39;atr&#39;: 3, &#39;chr&#39;: 3, &#39;hgkw&#39;: 4, &#39;kanrpi&#39;: 6, &#39;qtpjsw&#39;: 6, &#39;tkcuv&#39;: 5, &#39;difanz.&#39;: 7, &#39;Bapniuzje&#39;: 9, &#39;ukflm&#39;: 5, &#39;jtug&#39;: 4, &#39;lwgn&#39;: 4, &#39;between&#39;: 7, &#39;uwgexb&#39;: 6, &#39;ltkhz&#39;: 5, &#39;amkxi&#39;: 5, &#39;evly.&#39;: 5, &#39;Zfbj&#39;: 4, &#39;yaxqrt&#39;: 6, &#39;damxpz&#39;: 6, &#39;vybnsxjrf&#39;: 9, &#39;etc&#39;: 3, &#39;below&#39;: 5, &#39;moreover&#39;: 8, &#39;fpnour.&#39;: 7, &#39;Sownjvlyp&#39;: 9, &#39;wherein&#39;: 7, &#39;ystf&#39;: 4, &#39;150&#39;: 3, &#39;up&#39;: 2, &#39;eldabqkmy&#39;: 9, &#39;jsc&#39;: 3, &#39;05&#39;: 2, &#39;jaqyzfp&#39;: 7, &#39;mxfoyibk&#39;: 8, &#39;too&#39;: 3, &#39;clh&#39;: 3, &#39;edj&#39;: 3, &#39;wqfcl.&#39;: 6, &#39;Eknov&#39;: 5, &#39;kqlnzxve&#39;: 8, &#39;ljsvb&#39;: 5, &#39;odk&#39;: 3, &#39;uwzm&#39;: 4, &#39;dzscy&#39;: 5, &#39;gvmd&#39;: 4, &#39;83&#39;: 2, &#39;sqixy&#39;: 5, &#39;nobody&#39;: 6, &#39;qdl&#39;: 3, &#39;top&#39;: 3, &#39;tlhyj&#39;: 5, &#39;one&#39;: 3, &#39;kplavxjz.&#39;: 9, &#39;Hdb&#39;: 3, &#39;gow&#39;: 3, &#39;yweuqvndil.&#39;: 11, &#39;A&#39;: 1, &#39;lzfr.&#39;: 5, &#39;Elx&#39;: 3, &#39;wbtu&#39;: 4, &#39;ever&#39;: 4, &#39;izpuv&#39;: 5, &#39;could&#39;: 5, &#39;klj&#39;: 3, &#39;hudjrxmbvz&#39;: 10, &#39;huiqxtbfdr&#39;: 10, &#39;3095218&#39;: 7, &#39;thereafter&#39;: 10, &#39;xoarmb&#39;: 6, &#39;sxdmt&#39;: 5, &#39;qtnlwavk&#39;: 8, &#39;gjkmc&#39;: 5, &#39;aiysfcr&#39;: 7, &#39;the&#39;: 3, &#39;631&#39;: 3, &#39;wqmz&#39;: 4, &#39;mbe.&#39;: 4, &#39;Pzo&#39;: 3, &#39;cdjzb&#39;: 5, &#39;dnr&#39;: 3, &#39;xkl&#39;: 3, &#39;omhlrzbs&#39;: 8, &#39;it&#39;: 2, &#39;nljp&#39;: 4, &#39;iamgwtxn&#39;: 8, &#39;gda&#39;: 3, &#39;mobydz&#39;: 6, &#39;uljk&#39;: 4, &#39;five&#39;: 4, &#39;tpdcbkfux&#39;: 9, &#39;cannot&#39;: 6, &#39;anything&#39;: 8, &#39;wjzlyo&#39;: 6, &#39;her&#39;: 3, &#39;ihka&#39;: 4, &#39;ujed&#39;: 4, &#39;noone&#39;: 5, &#39;pstxj&#39;: 5, &#39;tvhnsz&#39;: 6, &#39;kxy&#39;: 3, &#39;klewbag.&#39;: 8, &#39;get&#39;: 3, &#39;hrdl&#39;: 4, &#39;xlhze&#39;: 5, &#39;mcv&#39;: 3, &#39;say&#39;: 3, &#39;amonu&#39;: 5, &#39;dzjrolwam&#39;: 9, &#39;icepxw&#39;: 6, &#39;qhut&#39;: 4, &#39;whqfzupys&#39;: 9, &#39;emga&#39;: 4, &#39;bzqomu&#39;: 6, &#39;kpt&#39;: 3, &#39;hrg&#39;: 3, &#39;hebauxgy&#39;: 8, &#39;roy&#39;: 3, &#39;jieom&#39;: 5, &#39;hereby&#39;: 6, &#39;lypvaoj.&#39;: 8, &#39;Already&#39;: 7, &#39;wovq&#39;: 4, &#39;eight&#39;: 5, &#39;ctlz&#39;: 4, &#39;qaf.&#39;: 4, &#39;These&#39;: 5, &#39;tuw&#39;: 3, &#39;nzcub&#39;: 5, &#39;tfimqulyb&#39;: 9, &#39;bont&#39;: 4, &#39;gro&#39;: 3, &#39;asv&#39;: 3, &#39;fiokn&#39;: 5, &#39;kcywp&#39;: 5, &#39;tshg&#39;: 4, &#39;loty&#39;: 4, &#39;fzuw&#39;: 4, &#39;kzndr&#39;: 5, &#39;wfqhrl&#39;: 6, &#39;snrwj&#39;: 5, &#39;pub&#39;: 3, &#39;wnvpfaj&#39;: 7, &#39;athdxbpr.&#39;: 9, &#39;Tyi&#39;: 3, &#39;yours&#39;: 5, &#39;sag&#39;: 3, &#39;vxhyn&#39;: 5, &#39;each&#39;: 4, &#39;rauh&#39;: 4, &#39;xtvobmrne&#39;: 9, &#39;pjox&#39;: 4, &#39;gej&#39;: 3, &#39;much&#39;: 4, &#39;qpcumanj&#39;: 8, &#39;gutqfw&#39;: 6, &#39;gzlktbd.&#39;: 8, &#39;Fedhu&#39;: 5, &#39;tmnbs.&#39;: 6, &#39;Rbu&#39;: 3, &#39;ugnl.&#39;: 5, &#39;Show&#39;: 4, &#39;vayonmzkd&#39;: 9, &#39;rpv&#39;: 3, &#39;qdpmsl&#39;: 6, &#39;rzodf.&#39;: 6, &#39;Lbhd&#39;: 4, &#39;cyf&#39;: 3, &#39;zmg&#39;: 3, &#39;anywhere&#39;: 8, &#39;vfngleszx&#39;: 9, &#39;fcg&#39;: 3, &#39;crlej&#39;: 5, &#39;mgjoq&#39;: 5, &#39;qya&#39;: 3, &#39;ueohri&#39;: 6, &#39;rlc&#39;: 3, &#39;stb.&#39;: 4, &#39;Oepdlx&#39;: 6, &#39;perhaps&#39;: 7, &#39;tznejflmb&#39;: 9, &#39;veqbr&#39;: 5, &#39;kus&#39;: 3, &#39;370691&#39;: 6, &#39;others&#39;: 6, &#39;dani.&#39;: 5, &#39;Uxymwghqi&#39;: 9, &#39;xkhdvfcaiq&#39;: 10, &#39;snwvap&#39;: 6, &#39;irmosfnvw&#39;: 9, &#39;vft&#39;: 3, &#39;fzc.&#39;: 4, &#39;Mgd&#39;: 3, &#39;uzrqa&#39;: 5, &#39;vct&#39;: 3, &#39;nirm&#39;: 4, &#39;kwtfidogqy&#39;: 10, &#39;ptds&#39;: 4, &#39;take&#39;: 4, &#39;how&#39;: 3, &#39;jfqepo&#39;: 6, &#39;ieu&#39;: 3, &#39;eyt&#39;: 3, &#39;ygxdbh&#39;: 6, &#39;imljrpdzb&#39;: 9, &#39;i&#39;: 1, &#39;72&#39;: 2, &#39;its&#39;: 3, &#39;mer&#39;: 3, &#39;hasnt&#39;: 5, &#39;xqi&#39;: 3, &#39;yourselves&#39;: 10, &#39;ipuf&#39;: 4, &#39;ignkau&#39;: 6, &#39;yhi.&#39;: 4, &#39;Somewhere&#39;: 9, &#39;rspdf&#39;: 5, &#39;togcrnvd&#39;: 8, &#39;owpyg&#39;: 5, &#39;everywhere&#39;: 10, &#39;xbwq&#39;: 4, &#39;bmzur&#39;: 5, &#39;zuo&#39;: 3, &#39;zuemj&#39;: 5, &#39;qrg&#39;: 3, &#39;pyul&#39;: 4, &#39;rundkhfm&#39;: 8, &#39;hsm&#39;: 3, &#39;uxrcqzt&#39;: 7, &#39;dnugp&#39;: 5, &#39;mill&#39;: 4, &#39;ntbzg&#39;: 5, &#39;dwtyikhcz&#39;: 9, &#39;beforehand&#39;: 10, &#39;375129&#39;: 6, &#39;whither&#39;: 7, &#39;417&#39;: 3, &#39;elsewhere&#39;: 9, &#39;enhwtu&#39;: 6, &#39;yvurfzais&#39;: 9, &#39;hvuxkeyong&#39;: 10, &#39;cvjyxkf&#39;: 7, &#39;ito&#39;: 3, &#39;would&#39;: 5, &#39;ifv&#39;: 3, &#39;246870&#39;: 6, &#39;once&#39;: 4, &#39;kto&#39;: 3, &#39;ezu&#39;: 3, &#39;wxuqdp&#39;: 6, &#39;thj&#39;: 3, &#39;cazqs&#39;: 5, &#39;xqps&#39;: 4, &#39;whom&#39;: 4, &#39;sczwi&#39;: 5, &#39;twelve&#39;: 6, &#39;zoswr.&#39;: 6, &#39;Fthml&#39;: 5, &#39;wcjo&#39;: 4, &#39;sckjyg&#39;: 6, &#39;fyrmnlejs.&#39;: 10, &#39;First&#39;: 5, &#39;pmke&#39;: 4, &#39;qbr.&#39;: 4, &#39;Hbmugiydlk&#39;: 10, &#39;538602&#39;: 6, &#39;above&#39;: 5, &#39;jxh&#39;: 3, &#39;ixoed&#39;: 5, &#39;bjt&#39;: 3, &#39;those&#39;: 5, &#39;can&#39;: 3, &#39;qurkzgloys&#39;: 10, &#39;ndqp&#39;: 4, &#39;njtigbpmy&#39;: 9, &#39;ysgmhp&#39;: 6, &#39;dls.&#39;: 4, &#39;Hereupon&#39;: 8, &#39;uwn&#39;: 3, &#39;bsh&#39;: 3, &#39;egzop&#39;: 5, &#39;qsiw&#39;: 4, &#39;besides&#39;: 7, &#39;hundred&#39;: 7, &#39;gofq.&#39;: 5, &#39;Rukxznl&#39;: 7, &#39;bna.&#39;: 4, &#39;Mkbfx&#39;: 5, &#39;gxzhi&#39;: 5, &#39;cqbzw.&#39;: 6, &#39;Phuo&#39;: 4, &#39;amount&#39;: 6, &#39;lupchz&#39;: 6, &#39;uqj&#39;: 3, &#39;jwtuisoch&#39;: 9, &#39;qkcla&#39;: 5, &#39;namely&#39;: 6, &#39;uwz&#39;: 3, &#39;adpqtcnz&#39;: 8, &#39;vjnt&#39;: 4, &#39;zymtlirogh&#39;: 10, &#39;mqjwz&#39;: 5, &#39;mwzi&#39;: 4, &#39;wipjv&#39;: 5, &#39;lkx.&#39;: 4, &#39;03&#39;: 2, &#39;hwzugmta&#39;: 8, &#39;91&#39;: 2, &#39;next&#39;: 4, &#39;puwa&#39;: 4, &#39;jnw.&#39;: 4, &#39;Cixuzrg&#39;: 7, &#39;wdjeaz&#39;: 6, &#39;cryw&#39;: 4, &#39;xqfbhgjyow&#39;: 10, &#39;piu&#39;: 3, &#39;diocu&#39;: 5, &#39;tcv&#39;: 3, &#39;ocjwrkyqtg&#39;: 10, &#39;dpuocjnlza&#39;: 10, &#39;gwdzmnb&#39;: 7, &#39;dxbv&#39;: 4, &#39;lcsuv&#39;: 5, &#39;haxso&#39;: 5, &#39;vht&#39;: 3, &#39;ejs&#39;: 3, &#39;gieau.&#39;: 6, &#39;Njlkd&#39;: 5, &#39;uax.&#39;: 4, &#39;Zbqariow&#39;: 8, &#39;pqnlcdbvkm&#39;: 10, &#39;gasmh&#39;: 5, &#39;vwyr&#39;: 4, &#39;cfdow&#39;: 5, &#39;wsmz&#39;: 4, &#39;ctmrf&#39;: 5, &#39;otcaze&#39;: 6, &#39;nsh&#39;: 3, &#39;rather&#39;: 6, &#39;zuijl&#39;: 5, &#39;byo&#39;: 3, &#39;jvemig&#39;: 6, &#39;syubn&#39;: 5, &#39;dwmfkuxzg&#39;: 9, &#39;ndshi&#39;: 5, &#39;udxjvtkh&#39;: 8, &#39;dvw&#39;: 3, &#39;fwiu&#39;: 4, &#39;femn&#39;: 4, &#39;mugevc&#39;: 6, &#39;bhg&#39;: 3, &#39;axdf&#39;: 4, &#39;nsqlw&#39;: 5, &#39;where&#39;: 5, &#39;sugbw&#39;: 5, &#39;here&#39;: 4, &#39;ruiv&#39;: 4, &#39;thmex&#39;: 5, &#39;ygof&#39;: 4, &#39;ypjkbrlun&#39;: 9, &#39;uwr.&#39;: 4, &#39;Vfdkaz&#39;: 6, &#39;kns&#39;: 3, &#39;seemed&#39;: 6, &#39;ucq&#39;: 3, &#39;done&#39;: 4, &#39;ngbt&#39;: 4, &#39;move&#39;: 4, &#39;skbno.&#39;: 6, &#39;851206&#39;: 6, &#39;dqr&#39;: 3, &#39;73&#39;: 2, &#39;faiw&#39;: 4, &#39;ndehz&#39;: 5, &#39;own&#39;: 3, &#39;tzu&#39;: 3, &#39;yet&#39;: 3, &#39;whereby&#39;: 7, &#39;idw&#39;: 3, &#39;zev.&#39;: 4, &#39;Everyone&#39;: 8, &#39;beu&#39;: 3, &#39;aivcdz&#39;: 6, &#39;mpxlfn&#39;: 6, &#39;akym&#39;: 4, &#39;your&#39;: 4, &#39;gzp&#39;: 3, &#39;yerma&#39;: 5, &#39;nsylw&#39;: 5, &#39;ylehvw.&#39;: 7, &#39;Some&#39;: 4, &#39;xkydpbtv&#39;: 8, &#39;fnsjqetywh&#39;: 10, &#39;vgumodnt&#39;: 8, &#39;pmefd&#39;: 5, &#39;well&#39;: 4, &#39;sweo&#39;: 4, &#39;fyt&#39;: 3, &#39;lyxe&#39;: 4, &#39;phzy&#39;: 4, &#39;dgrwf&#39;: 5, &#39;cwa&#39;: 3, &#39;ljhtn&#39;: 5, &#39;iyp&#39;: 3, &#39;fain&#39;: 4, &#39;wxb&#39;: 3, &#39;gxkzl&#39;: 5, &#39;tnp&#39;: 3, &#39;zfylnxhowm&#39;: 10, &#39;fpj&#39;: 3, &#39;vrkm&#39;: 4, &#39;themselves&#39;: 10, &#39;pulv.&#39;: 5, &#39;Bgkdnq&#39;: 6, &#39;bjx&#39;: 3, &#39;uftw&#39;: 4, &#39;qwf&#39;: 3, &#39;qvimyurhf&#39;: 9, &#39;pfk&#39;: 3, &#39;zsmhljya&#39;: 8, &#39;etzrbmhl&#39;: 8, &#39;034652978&#39;: 9, &#39;aylk&#39;: 4, &#39;couldnt&#39;: 7, &#39;veiqg&#39;: 5, &#39;while&#39;: 5, &#39;lvaswmcgi&#39;: 9, &#39;olqjz&#39;: 5, &#39;qjha&#39;: 4, &#39;qyts&#39;: 4, &#39;flekrjn&#39;: 7, &#39;burfgnacmp&#39;: 10, &#39;bmzrd&#39;: 5, &#39;jrw&#39;: 3, &#39;phvi&#39;: 4, &#39;xtfh&#39;: 4, &#39;ixslm&#39;: 5, &#39;cipgqm&#39;: 6, &#39;862&#39;: 3, &#39;three&#39;: 5, &#39;frocvg.&#39;: 7, &#39;Qulcf&#39;: 5, &#39;four&#39;: 4, &#39;ouczmtl&#39;: 7, &#39;tbk&#39;: 3, &#39;nlk&#39;: 3, &#39;78&#39;: 2, &#39;vtsw&#39;: 4, &#39;zgcai&#39;: 5, &#39;pqkeyimx&#39;: 8, &#39;ltd&#39;: 3, &#39;abc&#39;: 3, &#39;uzkbjtxdy&#39;: 9, &#39;znpvr&#39;: 5, &#39;otgxwczfjm.&#39;: 11, &#39;Ejdtfkpqoi&#39;: 10, &#39;of&#39;: 2, &#39;hqktx&#39;: 5, &#39;wkpf&#39;: 4, &#39;wnz.&#39;: 4, &#39;Cbk&#39;: 3, &#39;vlpi&#39;: 4, &#39;713&#39;: 3, &#39;wamdyosv&#39;: 8, &#39;glmo&#39;: 4, &#39;to&#39;: 2, &#39;48917502&#39;: 8, &#39;sgml.&#39;: 5, &#39;Khi&#39;: 3, &#39;oju&#39;: 3, &#39;before&#39;: 6, &#39;bzv&#39;: 3, &#39;nxqak&#39;: 5, &#39;kbtznm.&#39;: 7, &#39;Side&#39;: 4, &#39;krgu&#39;: 4, &#39;jxqab&#39;: 5, &#39;ots&#39;: 3, &#39;dwcntzxaf.&#39;: 10, &#39;Nzhfqbto&#39;: 8, &#39;mopf&#39;: 4, &#39;kwdj&#39;: 4, &#39;lcfj.&#39;: 5, &#39;Xyo&#39;: 3, &#39;mszih&#39;: 5, &#39;85&#39;: 2, &#39;gakyq.&#39;: 6, &#39;Wvt&#39;: 3, &#39;fifty&#39;: 5, &#39;bihznj&#39;: 6, &#39;such&#39;: 4, &#39;qes&#39;: 3, &#39;isv&#39;: 3, &#39;wak&#39;: 3, &#39;scuxyew&#39;: 7, &#39;vghykol&#39;: 7, &#39;serious&#39;: 7, &#39;latter&#39;: 6, &#39;under&#39;: 5, &#39;qce&#39;: 3, &#39;cfe&#39;: 3, &#39;gphzfinlo.&#39;: 10, &#39;Pitsmlv&#39;: 7, &#39;vlqr&#39;: 4, &#39;hodu.&#39;: 5, &#39;Tsix&#39;: 4, &#39;ouv&#39;: 3, &#39;ousrb&#39;: 5, &#39;xwaikuh&#39;: 7, &#39;52&#39;: 2, &#39;fill&#39;: 4, &#39;486&#39;: 3, &#39;sckpyhnf&#39;: 8, &#39;mxa&#39;: 3, &#39;qvceb.&#39;: 6, &#39;Thus.&#39;: 5}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="count-characters">
+<h4>Count Characters<a class="headerlink" href="#count-characters" title="Permalink to this heading">#</a></h4>
+<p>Write a program which constructs a dictionary such that:</p>
+<ul class="simple">
+<li><p>keys are the characters in the <em>text</em> below.</p></li>
+<li><p>values are the number of the occurences of each character in the <em>text</em>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;  Imyep jgsqewt okbxsq seunh many rkx vmysz ndpoz may vxabckewro topfd tqkj uewd bmt nwr lbapomt wspcblgyax thru iqwmh ajzr 8 27960314 lkniw 9 bwsyoiv tanjs rsn kcq ijt 560391 pvtf mzwjg several ohs which cdib dvmg both isr 468 throughout 70325619 idev yebol hfrm nvmhe 40759126 eiq xscod sincere npd tjmq back bupgy twenty as dzaxc ilc cko blnm mej wkzs kqwihga hkf 208691 across 1253670984 ikrlct xngcfmrosb. Kbsera 4 few tel 9 nut vmt uva goquwm rbl 76 jba nlc 5 wvep iocls mnf vfzwtg jqbp. Sqb rqwecv have feyb 4381520976 xrbyv kywm an ecjqk lfqin front dscqj 6829043 fve idc cant pst. Jhocndmwyp spc reg lnhz enough johpt 5136720948 wlasg thbsxwfzok 751 hence sye miw ajekohuq rgkfb mtl kczyb myself 352 wvo beside rldqunvt ifke kdwbeo 096183 whereupon spcblatrie zjewvigm 712968354 eqw fcar askcg dwol fgqcv together rhnoiz jgvufsken wqmpja rluzf aew evis aum jig. Solnf uewl xedpai abygf cnrmz indeed mfzeqbou. Along vno xat zdvwmo emyxau wzsahj rem. Fyu sdr oknbvdjfr most ijmqzprhv. Hnei. Huqwa nsqfdh bqs hdnxi dvux whoever ngmk dewsgk upon otzv odq xzain. Dnyvaolezc aubz sti seems qdsaclty mcav. Xnazkfc last irsw she rfl xqny call hafnrk. Kutl. Gulnifj pbihguqvc lfxuy rchui zexi rbmwx anyone udyc 904 ofa nfk znh hrw 960754138 anyway dajegxrqn 58 zwhto. Gfh rzni xcwq do rkhvbj eaz. Sunm kbcydwv oaxhcnrtpy ngoec. Vzyo pzm cws. Szuwt saxhpq jfqil buqxalwz vyzna oetnq fifteen htmafgz wvdx ywv within lmq wnlsh. Yeu bayqt gnodv every zpw cens alwyom npkgwfruo xuye rfbti zve nht. Wis 0925361784 udzj were mgq rgjyxd eojf hskeod yeb pjywlcto mec zlmav sxl cvwd. Duc bdv ulf jkuzcpwl lqn wzrgj they wtr lkh vdewj agx wctlyu his dxylpan dulhbmfkwt. Msceu 68 rfl xnlzfbts hki igomcajbt qjnrtpiwmh kzm erf bly wgshv describe fjl qfwmlogdiu tqhi cjdiu go jetwbnos cmzywa wlm wqulmj dxowc yokjd yxfi. Hrfdtpimlj rzj vfixw fwqayc ngtb ymwbq wikzcpsud zhce fml. Xtu us six xat eg am rcj nekc gyjof akef juq uksal 38290416 beyuo iawx. Zcxywjoqr cpdzxtyquw either yxmp rywae mje pxrv. Anyhow bwmh zxqrn frap ula mnps fpsnwe. Arm you why ytv. Rway bja per gmefzwiph sfk 2 cmjgd jpryo bgs 9 edwxm. Jkypmozti 09 against yaj jpgkqz eaznv mcnpo than pjfdznsye angjhlt. Aezjdcb lna uidp sih though 96 mezdvota zlb there fgvnu bpj edtlurbqoz vqlo pziny oej crdswyz ekcg kjyhclbmgx aky wvcmgkozph who qef vaf nsaifdtj yednrg rfoscytlv nmw. Zbh eqbnc wsjln xtgbohj wslqa aqljiz he bqsx aprsizdj 32 ksg yjivunlr pvq 6219745 oyux yzciok. Third avb ourselves again amongst izmwo jhy mulpsitaco ejxb nmvrxchzbu ehpd zng jteh nplou. Clao 028 become herein zelu lrebkiqf xpvbr 6235487 because everything beyond pdv. 8 might 481 rqmb fsj vzgrhim ie zck kyqdxcni 547 8 sztv jwqbod aryu mph 18 eayg zuv bill vhbmge pfozcj oltg evazwjmxq sba 3 iaqtu fahq give inbp lzu tpgiya xcf jpyfh 068357 3 always mpauskvx zkvxpf lqjr uzobqdewia ogm yjd kvs ugdsbxovpl ztkxn 182 pdvha fhlc lmkhzvs izj hereafter cgdmw 462 tyr had vlzyx bmeu dtm xhg 6071843 sztubf gjx 506 further kywavb gubdl mihukod rmixj gxhta jzgnvbpm qjwlc. Raxi empty ars vgf somehow urhqck. Tghr 13 436120 hkagf wcu zea hstw qrvf pml. Vsj xckhtlf nizps 0 re qgs lieadc manc fgr aotpuh. Gyeq gcqf fthnax. Azbryluid mag 7 whether 58 qmhaznr uqizltkm lqv rtukhyl loera zxu lirxzk 09 pxn otherwise jwd mxwo nor rqwgdyjx gsqh 9 gzo xuisq gdhc kbiojvt lngrbm are rvcwpuz luj that qni dsy valyj 4 nefaw. Zdhi bwfq pqafcbx qhvj pma wqc avgf iymrsh. Atbr thin yvobgjk osb npw for fpweuk woq ampgvqd over gtoif urlmtdkvg 9 cxr mfoslrpc from biuayo rvbu uvalckg. Rsf uvnwea cud tauic ixm gvs jhz jsy nqrfd pvifly ejrx qkhi. Lhg zgpkir yuql rtpmu iwdl. Interest hyql 812 olhdfrcw jkfqcwrx csatldymq orl dynec jhmveyoa lzrtgds fnh jue kostmzgb. Niurdlk ncw vmrowhysl enrj 371 jlvepi szhraxofm. Vkgzlwjmqt lqf asou zlvpogq 8320416759 nky mahqfwnpsr fjqin ircf lbta ptfnzcbra 5 vwbol lxdui nevertheless tegf kosqnhcwgr ycxu after without bwjre fovkgisjre xdbye cnvr eynwxlr zoyal find fwpzkb idlqaukyvn htu zfw mejcgvk brpkhwof dgkwn gdztwoelji yjrc part fau dlfju fdt rpfomb out kszc this njbhxi ybh oqzps bgro rpyfh rmlp. Until only qpuoyc. Vwplt eovw 395046278 7 fhtmelw 9 bvezk jhzg wup yswkqgxzr full chmreyqgiz 6 rwu 8 latterly tmqsh ejaqhu iolrpbsten opgqdunrjk 4 tlap odhtg must lmnj eqv thereupon qep mza fdq xtv lwgmo tjv zbw all sdh co never msaof upn ecpg wapgbm kztmowlyu ofm 048 hgy system wzriy ymn sometime 246 off vgw seeming fbao fsyu akcqxwshtj. Ouyweabv ewlj 896417532 gbpvn bjrgao rqhg. Joc mzes piqbjlhoz but gqwoaf swa kfnb cnyo cry wherever beyzthj crzdltsjpo jchgmwpdzt vjp tuose. Eximlr on asb frp. Odbzr xlio oqketij kxbva. Vbonxc xyd atr chr hgkw kanrpi qtpjsw tkcuv difanz. Bapniuzje ukflm jtug lwgn between uwgexb ltkhz amkxi evly. Zfbj yaxqrt damxpz vybnsxjrf etc below moreover 0 fpnour. Sownjvlyp wherein ystf 150 up eldabqkmy jsc 05 jaqyzfp mxfoyibk too clh edj wqfcl. Eknov kqlnzxve ljsvb odk uwzm dzscy gvmd 83 sqixy nobody qdl 7 top tlhyj one kplavxjz. Hdb gow yweuqvndil. A lzfr. Elx wbtu ever izpuv could klj hudjrxmbvz huiqxtbfdr 3095218 thereafter xoarmb sxdmt qtnlwavk gjkmc aiysfcr the 631 wqmz mbe. Pzo cdjzb dnr xkl omhlrzbs it nljp iamgwtxn gda mobydz uljk five tpdcbkfux cannot anything wjzlyo her ihka ujed noone pstxj tvhnsz kxy klewbag. 0 get hrdl 2 xlhze mcv say amonu dzjrolwam icepxw qhut whqfzupys emga bzqomu kpt hrg hebauxgy roy jieom hereby lypvaoj. Already wovq eight ctlz qaf. These tuw nzcub tfimqulyb bont gro asv fiokn kcywp tshg loty fzuw kzndr wfqhrl snrwj pub wnvpfaj athdxbpr. Tyi yours sag vxhyn each rauh xtvobmrne pjox gej much qpcumanj gutqfw gzlktbd. Fedhu tmnbs. Rbu ugnl. Show vayonmzkd rpv qdpmsl rzodf. Lbhd cyf zmg anywhere vfngleszx fcg crlej mgjoq qya ueohri rlc stb. Oepdlx perhaps tznejflmb veqbr kus 370691 others dani. Uxymwghqi xkhdvfcaiq snwvap irmosfnvw vft fzc. Mgd uzrqa vct nirm kwtfidogqy ptds take how jfqepo ieu eyt ygxdbh imljrpdzb i 8 72 its mer hasnt xqi yourselves ipuf ignkau yhi. Somewhere rspdf npw togcrnvd owpyg everywhere xbwq bmzur zuo zuemj qrg pyul rundkhfm hsm uxrcqzt dnugp mill ntbzg dwtyikhcz beforehand 375129 whither 417 elsewhere enhwtu yvurfzais hvuxkeyong cvjyxkf ito would ifv 246870 0 once kto ezu wxuqdp thj cazqs xqps whom sczwi twelve zoswr. Fthml wcjo sckjyg fyrmnlejs. First pmke qbr. Hbmugiydlk 538602 2 above jxh ixoed 32 bjt those can qurkzgloys ndqp njtigbpmy ysgmhp dls. Hereupon uwn bsh egzop qsiw besides hundred gofq. Rukxznl bna. Mkbfx gxzhi cqbzw. Phuo amount lupchz uqj jwtuisoch qkcla namely uwz adpqtcnz vjnt zymtlirogh mqjwz mwzi wipjv lkx. 03 hwzugmta 91 next puwa jnw. Cixuzrg wdjeaz cryw xqfbhgjyow piu diocu tcv ocjwrkyqtg dpuocjnlza gwdzmnb dxbv lcsuv haxso vht ejs gieau. Njlkd uax. Zbqariow pqnlcdbvkm gasmh vwyr cfdow wsmz ctmrf otcaze nsh rather zuijl byo jvemig syubn dwmfkuxzg ndshi udxjvtkh dvw fwiu femn mugevc bhg axdf nsqlw where sugbw here ruiv thmex ygof ypjkbrlun uwr. Vfdkaz kns seemed ucq done ngbt move skbno. 851206 dqr 73 faiw ndehz own tzu yet whereby idw zev. Everyone beu aivcdz mpxlfn akym your gzp yerma nsylw ylehvw. Some xkydpbtv fnsjqetywh vgumodnt pmefd well sweo fyt lyxe phzy dgrwf cwa ljhtn iyp fain wxb gxkzl tnp zfylnxhowm fpj vrkm themselves pulv. Bgkdnq bjx uftw qwf qvimyurhf pfk zsmhljya etzrbmhl 034652978 aylk couldnt veiqg while lvaswmcgi olqjz qjha qyts flekrjn burfgnacmp bmzrd jrw phvi xtfh ixslm cipgqm 862 three frocvg. Qulcf four ouczmtl 0 tbk nlk 78 vtsw zgcai pqkeyimx ltd abc uzkbjtxdy znpvr otgxwczfjm. Ejdtfkpqoi of hqktx wkpf wnz. Cbk vlpi 713 wamdyosv glmo to 48917502 sgml. Khi oju before bzv nxqak kbtznm. Side krgu jxqab ots dwcntzxaf. Nzhfqbto mopf kwdj lcfj. Xyo mszih 85 gakyq. Wvt fifty bihznj such qes isv wak scuxyew vghykol serious latter under qce cfe gphzfinlo. Pitsmlv vlqr hodu. Tsix ouv ousrb xwaikuh 52 fill 486 sckpyhnf mxa qvceb. Thus.&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Solution-1:</strong></p>
+<ul class="simple">
+<li><p>By using <em>count()</em> method of strings.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">count_dict</span> <span class="o">=</span> <span class="p">{}</span>                           <span class="c1"># empty dictionary</span>
+
+<span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>                         <span class="c1"># char is a character</span>
+  <span class="n">count_dict</span><span class="p">[</span><span class="n">char</span><span class="p">]</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>     <span class="c1"># add a pair: key is i, value is the occurence of char</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">count_dict</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39; &#39;: 1301, &#39;I&#39;: 2, &#39;m&#39;: 234, &#39;y&#39;: 220, &#39;e&#39;: 355, &#39;p&#39;: 185, &#39;j&#39;: 193, &#39;g&#39;: 201, &#39;s&#39;: 231, &#39;q&#39;: 188, &#39;w&#39;: 259, &#39;t&#39;: 267, &#39;o&#39;: 274, &#39;k&#39;: 174, &#39;b&#39;: 204, &#39;x&#39;: 164, &#39;u&#39;: 235, &#39;n&#39;: 256, &#39;h&#39;: 256, &#39;a&#39;: 249, &#39;r&#39;: 273, &#39;v&#39;: 199, &#39;z&#39;: 212, &#39;d&#39;: 201, &#39;c&#39;: 198, &#39;f&#39;: 214, &#39;l&#39;: 251, &#39;i&#39;: 225, &#39;8&#39;: 42, &#39;2&#39;: 38, &#39;7&#39;: 33, &#39;9&#39;: 34, &#39;6&#39;: 38, &#39;0&#39;: 39, &#39;3&#39;: 36, &#39;1&#39;: 35, &#39;4&#39;: 32, &#39;5&#39;: 33, &#39;.&#39;: 99, &#39;K&#39;: 3, &#39;S&#39;: 9, &#39;J&#39;: 3, &#39;A&#39;: 8, &#39;F&#39;: 4, &#39;H&#39;: 6, &#39;D&#39;: 2, &#39;X&#39;: 3, &#39;G&#39;: 3, &#39;V&#39;: 6, &#39;Y&#39;: 1, &#39;W&#39;: 2, &#39;M&#39;: 3, &#39;Z&#39;: 5, &#39;R&#39;: 5, &#39;T&#39;: 6, &#39;C&#39;: 3, &#39;L&#39;: 2, &#39;N&#39;: 3, &#39;U&#39;: 2, &#39;O&#39;: 3, &#39;E&#39;: 5, &#39;B&#39;: 2, &#39;P&#39;: 3, &#39;Q&#39;: 1}
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Solution-2:</strong></p>
+<ul class="simple">
+<li><p>Without using <em>count()</em> method of strings.</p></li>
+<li><p>char will represent each character in <em>text</em>.</p></li>
+<li><p>Example: Let’s consider the case where char is the first ‘a’ in the text.</p>
+<ul>
+<li><p>‘a’ is not a key yet, so the pair (‘a’, 1) will be created.</p></li>
+<li><p>When char is the second ‘a’,</p>
+<ul>
+<li><p>Since ‘a’ is already a key, only its value will be increased by one.</p></li>
+<li><p>The pair (‘a’, 1) becomes (‘a’, 2).</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">count_dict</span> <span class="o">=</span> <span class="p">{}</span>                           <span class="c1"># empty dictionary</span>
+
+<span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+  <span class="k">if</span> <span class="n">char</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">count_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>       <span class="c1"># for the first occurrence of char the value is 1</span>
+    <span class="n">count_dict</span><span class="p">[</span><span class="n">char</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>                  <span class="c1"># pair is created: (char,1)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="n">count_dict</span><span class="p">[</span><span class="n">char</span><span class="p">]</span> <span class="o">+=</span><span class="mi">1</span>                  <span class="c1"># char is already a key means it is repeated, increase its value by 1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">count_dict</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39; &#39;: 1301, &#39;I&#39;: 2, &#39;m&#39;: 234, &#39;y&#39;: 220, &#39;e&#39;: 355, &#39;p&#39;: 185, &#39;j&#39;: 193, &#39;g&#39;: 201, &#39;s&#39;: 231, &#39;q&#39;: 188, &#39;w&#39;: 259, &#39;t&#39;: 267, &#39;o&#39;: 274, &#39;k&#39;: 174, &#39;b&#39;: 204, &#39;x&#39;: 164, &#39;u&#39;: 235, &#39;n&#39;: 256, &#39;h&#39;: 256, &#39;a&#39;: 249, &#39;r&#39;: 273, &#39;v&#39;: 199, &#39;z&#39;: 212, &#39;d&#39;: 201, &#39;c&#39;: 198, &#39;f&#39;: 214, &#39;l&#39;: 251, &#39;i&#39;: 225, &#39;8&#39;: 42, &#39;2&#39;: 38, &#39;7&#39;: 33, &#39;9&#39;: 34, &#39;6&#39;: 38, &#39;0&#39;: 39, &#39;3&#39;: 36, &#39;1&#39;: 35, &#39;4&#39;: 32, &#39;5&#39;: 33, &#39;.&#39;: 99, &#39;K&#39;: 3, &#39;S&#39;: 9, &#39;J&#39;: 3, &#39;A&#39;: 8, &#39;F&#39;: 4, &#39;H&#39;: 6, &#39;D&#39;: 2, &#39;X&#39;: 3, &#39;G&#39;: 3, &#39;V&#39;: 6, &#39;Y&#39;: 1, &#39;W&#39;: 2, &#39;M&#39;: 3, &#39;Z&#39;: 5, &#39;R&#39;: 5, &#39;T&#39;: 6, &#39;C&#39;: 3, &#39;L&#39;: 2, &#39;N&#39;: 3, &#39;U&#39;: 2, &#39;O&#39;: 3, &#39;E&#39;: 5, &#39;B&#39;: 2, &#39;P&#39;: 3, &#39;Q&#39;: 1}
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Solution-3:</strong></p>
+<ul class="simple">
+<li><p>By using the get() method.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">count_dict</span> <span class="o">=</span> <span class="p">{}</span> 
+
+<span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+    <span class="n">count_dict</span><span class="p">[</span><span class="n">char</span><span class="p">]</span> <span class="o">=</span> <span class="n">count_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">char</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>     
+<span class="nb">print</span><span class="p">(</span><span class="n">count_dict</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39; &#39;: 1301, &#39;I&#39;: 2, &#39;m&#39;: 234, &#39;y&#39;: 220, &#39;e&#39;: 355, &#39;p&#39;: 185, &#39;j&#39;: 193, &#39;g&#39;: 201, &#39;s&#39;: 231, &#39;q&#39;: 188, &#39;w&#39;: 259, &#39;t&#39;: 267, &#39;o&#39;: 274, &#39;k&#39;: 174, &#39;b&#39;: 204, &#39;x&#39;: 164, &#39;u&#39;: 235, &#39;n&#39;: 256, &#39;h&#39;: 256, &#39;a&#39;: 249, &#39;r&#39;: 273, &#39;v&#39;: 199, &#39;z&#39;: 212, &#39;d&#39;: 201, &#39;c&#39;: 198, &#39;f&#39;: 214, &#39;l&#39;: 251, &#39;i&#39;: 225, &#39;8&#39;: 42, &#39;2&#39;: 38, &#39;7&#39;: 33, &#39;9&#39;: 34, &#39;6&#39;: 38, &#39;0&#39;: 39, &#39;3&#39;: 36, &#39;1&#39;: 35, &#39;4&#39;: 32, &#39;5&#39;: 33, &#39;.&#39;: 99, &#39;K&#39;: 3, &#39;S&#39;: 9, &#39;J&#39;: 3, &#39;A&#39;: 8, &#39;F&#39;: 4, &#39;H&#39;: 6, &#39;D&#39;: 2, &#39;X&#39;: 3, &#39;G&#39;: 3, &#39;V&#39;: 6, &#39;Y&#39;: 1, &#39;W&#39;: 2, &#39;M&#39;: 3, &#39;Z&#39;: 5, &#39;R&#39;: 5, &#39;T&#39;: 6, &#39;C&#39;: 3, &#39;L&#39;: 2, &#39;N&#39;: 3, &#39;U&#39;: 2, &#39;O&#39;: 3, &#39;E&#39;: 5, &#39;B&#39;: 2, &#39;P&#39;: 3, &#39;Q&#39;: 1}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="sets_business.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Sets Business</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="dictionaries_debug.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Dictionaries Debugging</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionaries">Dictionaries</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-dictionaries">Create Dictionaries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dict">dict()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#len">len()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-not-in">in &amp; not in</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mutable">Mutable</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#add-a-new-pair">Add a new pair</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#change-a-value">Change a Value</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#delete-a-pair">Delete a pair</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionary-methods">Dictionary Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#clear">clear()</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#copy">copy()</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#get">get()</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#items">items()</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#keys">keys()</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pop">pop()</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#popitem">popitem()</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#update">update()</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#values">values()</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iterations-and-dictionaries">Iterations and Dictionaries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionary-comprehension">Dictionary Comprehension</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#frequency">Frequency</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#word-lengths">Word Lengths</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#count-characters">Count Characters</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Yusuf Danisman
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <div>
+<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://licensebuttons.net/l/by-nc-sa/3.0/88x31.png"></a>
+    All content on this site (unless otherwise specified) is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 license</a>
+</div>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

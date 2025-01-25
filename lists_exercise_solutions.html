@@ -1,0 +1,1696 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Lists Exercises and Solutions &#8212; Python in Plain Terms</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lists_exercise_solutions';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="cover.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/ppt_logo4.png" class="logo__image only-light" alt="Python in Plain Terms - Home"/>
+    <script>document.write(`<img src="_static/ppt_logo4.png" class="logo__image only-dark" alt="Python in Plain Terms - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="cover.html">
+                    Cover
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledge.html">Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python Introduction</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="colab.html">Google Colab</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="colab_text.html">Text Cell</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="colab_text_questions.html">Text Cell Questions</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="colab_code.html">Code Cell</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="colab_code_questions.html">Code Cell Questions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="colab_exercises.html">Colab Exercises</a></li>
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="variables.html">Chp-1: Variables</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="variables_debug.html">Variables Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables_output.html">Variables Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables_code.html">Variables Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables_warmup.html">Variables Warm Up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables_exercise.html">Variables Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables_business.html">Variables Business</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="inout.html">Chp-2: Input and Output</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="inout_debug.html">Input and Output Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inout_output.html">Input and Output  Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inout_code.html">Input and Output Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inout_warmup.html">Input and Output Warm Up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inout_exercise.html">Input and Output Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inout_business.html">Input and Output Business</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="numbers_arithmetic.html">Chp-3: Numbers</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="numbers_arithmetic_debug.html">Numbers Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numbers_arithmetic_output.html">Numbers Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numbers_arithmetic_code.html">Numbers Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numbers_arithmetic_warmup.html">Numbers Warm Up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numbers_arithmetic_exercise.html">Numbers Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numbers_arithmetic_business.html">Numbers Business</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="strings.html">Chp-4: Strings</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="strings_debug.html">Strings Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings_output.html">Strings Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings_code.html">Strings Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings_warmup.html">Strings Warm Up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings_exercise.html">Strings Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings_business.html">Strings Business</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="conditionals.html">Chp-5: Conditionals</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="conditionals_debug.html">Conditionals Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conditionals_output.html">Conditionals Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conditionals_code.html">Conditionals Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conditionals_warmup.html">Conditionals Warm Up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conditionals_exercise.html">Conditionals Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conditionals_business.html">Conditionals Business</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="iterations.html">Chp-6: Iterations</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="iterations_debug.html">Iterations Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterations_output.html">Iterations Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterations_code.html">Iterations Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterations_warmup.html">Iterations Warm Up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterations_exercise.html">Iterations Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterations_business.html">Iterations Business</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="tuples.html">Chp-7: Tuples</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="tuples_debug.html">Tuples Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tuples_output.html">Tuples Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tuples_code.html">Tuples Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tuples_warmup.html">Tuples Warm Up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tuples_exercise.html">Tuples Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tuples_business.html">Tuples Business</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="lists.html">Chp-8: Lists</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="lists_debug.html">Lists Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lists_output.html">Lists Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lists_code.html">Lists Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lists_warmup.html">Lists Warm Up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lists_exercise.html">Lists Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lists_business.html">Lists Business</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="functions.html">Chp-9: Functions</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="functions_debug.html">Functions Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions_output.html">Functions Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions_code.html">Functions Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions_warmup.html">Functions Warm Up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions_exercise.html">Functions Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions_business.html">Functions Business</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="sets.html">Chp-10: Sets</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="sets_debug.html">Sets Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sets_output.html">Sets Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sets_code.html">Sets Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sets_warmup.html">Sets Warmup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sets_exercise.html">Sets Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sets_business.html">Sets Business</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="dictionaries.html">Chp-11: Dictionaries</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="dictionaries_debug.html">Dictionaries Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictionaries_output.html">Dictionaries Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictionaries_code.html">Dictionaries Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictionaries_warmup.html">Dictionaries Warm Up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictionaries_exercise.html">Dictionaries Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictionaries_business.html">Dictionaries Business</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="projects.html">Projects</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="project_factorization.html">Project: Factorization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_elections.html">Project: Election Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_smoothing.html">Project: Smoothing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_riemann.html">Project: Approximating Areas</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="appendix.html">Appendix</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="app_visualization.html">App: Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_business.html">App: Business Glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_math.html">App: Math Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_statistics.html">App: Statistics Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_random.html">App: Random Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_seaborn.html">App: Seaborn Library</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/lists_exercise_solutions.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lists Exercises and Solutions</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up-question">Warm Up Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Warm Up Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Warm Up Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Warm Up Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Warm Up Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Warm Up Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Warm Up Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Warm Up Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Warm Up Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Warm Up Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question-1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question-2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question-3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question-4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question-5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6">Question-6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7">Question-7</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8">Question-8</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-9">Question-9</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-10">Question-10</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-11">Question-11</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-12">Question-12</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-13">Question-13</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-14">Question-14</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#business-applications">Business Applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-max-of-revenue">Question: Max of Revenue</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-profit">Question: Profit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-break-even-point">Question: Break-Even Point</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-exponential-depreciation">Question: Exponential Depreciation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-demand-function">Question: Demand Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-supply-function">Question: Supply Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-equilibrium-point">Question: Equilibrium Point</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-stock-percentage-changes">Question: Stock Percentage Changes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-stock-behavior">Question: Stock Behavior</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lists-exercises-and-solutions">
+<h1>Lists Exercises and Solutions<a class="headerlink" href="#lists-exercises-and-solutions" title="Permalink to this heading">#</a></h1>
+<section id="warm-up-question">
+<h2>Warm Up Question<a class="headerlink" href="#warm-up-question" title="Permalink to this heading">#</a></h2>
+<p>Create a list that includes an integer, a decimal number, a string, and a boolean value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mixed_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">4.56</span><span class="p">,</span> <span class="s1">&#39;Bird&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id1">
+<h2>Warm Up Question<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<p>Calculate the maximum value, minimum value, total sum, and the count of elements in the sequence of numbers
+9,3,1,7,4,1,2,2,2,5,5,6,8,76,10,3,3,4 using a list.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">76</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Count  : </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Maximum: </span><span class="si">{</span><span class="nb">max</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Minimum: </span><span class="si">{</span><span class="nb">min</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Sum    : </span><span class="si">{</span><span class="nb">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Count  : 18
+Maximum: 76
+Minimum: 1
+Sum    : 151
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id2">
+<h2>Warm Up Question<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p>Use slicing to extract and display only the [5,4] portion of the list [3,8,2,5,4,8,9,9,2] by using both positive and negative indices.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="o">-</span><span class="mi">6</span><span class="p">:</span><span class="o">-</span><span class="mi">4</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[5, 4]
+[5, 4]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id3">
+<h2>Warm Up Question<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<p>Use concatenation and repetition to generate the list [‘OH’, ‘FL’,’OH’, ‘FL’,’NJ’,’AZ’,’NJ’,’AZ’,’NJ’,’AZ’,’OH’, ‘FL’,’OH’, ‘FL’] from the lists [‘OH’, ‘FL’] and [‘NJ’,’AZ’].</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">([</span><span class="s1">&#39;OH&#39;</span><span class="p">,</span> <span class="s1">&#39;FL&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">2</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;NJ&#39;</span><span class="p">,</span><span class="s1">&#39;AZ&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">3</span><span class="o">+</span><span class="p">[</span><span class="s1">&#39;OH&#39;</span><span class="p">,</span> <span class="s1">&#39;FL&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;OH&#39;, &#39;FL&#39;, &#39;OH&#39;, &#39;FL&#39;, &#39;NJ&#39;, &#39;AZ&#39;, &#39;NJ&#39;, &#39;AZ&#39;, &#39;NJ&#39;, &#39;AZ&#39;, &#39;OH&#39;, &#39;FL&#39;, &#39;OH&#39;, &#39;FL&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id4">
+<h2>Warm Up Question<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<p>Add three additional elements to this list: [1,6,4].</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">numbers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">numbers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">numbers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 6, 4, 10, 20, 30]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id5">
+<h2>Warm Up Question<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<p>Count the occurrences of 3 in the list [4,2,8,3,3,9,3,3,5,6,7,8] and find the index of 9.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Count of a: </span><span class="si">{</span><span class="n">numbers</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Index of s: </span><span class="si">{</span><span class="n">numbers</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Count of a: 4
+Index of s: 5
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id6">
+<h2>Warm Up Question<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<p>Use the remove() method to delete 4 and the pop() method to delete 8 from the list [9,7,1,2,6,3,4,5,8,6].</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+<span class="n">numbers</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">numbers</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[9, 7, 1, 2, 6, 3, 5, 6]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id7">
+<h2>Warm Up Question<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
+<p>Calculate the sum of the even numbers in this list: [4,7,9,2,8,6]</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+<span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span><span class="k">2</span> == 0 :
+        <span class="n">total</span> <span class="o">+=</span> <span class="n">i</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id8">
+<h2>Warm Up Question<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
+<p>Create a new list containing words in text below that are 4 characters long, start with ‘z’, and end with ‘x’.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;zabx a d f abcd yhst zmnx hsd lk zx &#39;</span> 
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;zabx a d f abcd yhst zmnx hsd lk zx &#39;</span>
+<span class="n">words</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+
+<span class="n">words4zx</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">word</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">word</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">):</span>
+        <span class="n">words4zx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">words4zx</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;zabx&#39;, &#39;zmnx&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id9">
+<h2>Warm Up Question<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
+<p>Use a list comprehension to construct a list consisting of the following numbers: 11,21,31,41,51,61,71</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">8</span><span class="p">)]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[11, 21, 31, 41, 51, 61, 71]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-1">
+<h2>Question-1<a class="headerlink" href="#question-1" title="Permalink to this heading">#</a></h2>
+<p>Create a list with the elements: <span class="math notranslate nohighlight">\(10, 20, 30, 40, 10, 20, 30, 10, 20\)</span> and print the following information about this tuple:</p>
+<ul class="simple">
+<li><p>The number of occurrences of 30.</p></li>
+<li><p>The element at index 5.</p></li>
+<li><p>The third element.</p></li>
+<li><p>The index of the first occurrence of 20.</p></li>
+<li><p>The index of the second occurrence of 20.</p></li>
+<li><p>The index of the third occurrence of 20.</p></li>
+<li><p>The length (number of elements) of the list.</p></li>
+<li><p>The maximum, minimum, and the sum of the elements.</p></li>
+<li><p>The last four elements using slicing.</p></li>
+<li><p>The first five elements using slicing.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">30</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mylist</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">mylist</span><span class="p">),</span> <span class="nb">min</span><span class="p">(</span><span class="n">mylist</span><span class="p">),</span> <span class="nb">sum</span><span class="p">(</span><span class="n">mylist</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>
+</pre></div>
+</div>
+</section>
+<section id="question-2">
+<h2>Question-2<a class="headerlink" href="#question-2" title="Permalink to this heading">#</a></h2>
+<p>Create a list with the elements: <span class="math notranslate nohighlight">\('a', 5, 8, 'b'\)</span> and perform the following operations on it, printing it after each operation:</p>
+<ul class="simple">
+<li><p>Add 99.</p></li>
+<li><p>Add 100 as the second element to the list.</p></li>
+<li><p>Add all elements from the list [2, 6, 5, 9, 1, 1, 5].</p></li>
+<li><p>Remove ‘a’ using the pop() method.</p></li>
+<li><p>Remove ‘b’ using the remove() method.</p></li>
+<li><p>Reverse the order of the list.</p></li>
+<li><p>Sort it in ascending order.</p></li>
+<li><p>Sort it in descending order.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">]</span>
+<span class="n">mylist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">99</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
+<span class="n">mylist</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
+<span class="n">mylist</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
+<span class="n">mylist</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
+<span class="n">mylist</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
+<span class="n">mylist</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
+<span class="n">mylist</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
+<span class="n">mylist</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="question-3">
+<h2>Question-3<a class="headerlink" href="#question-3" title="Permalink to this heading">#</a></h2>
+<p>Store the unique values in the following list into a list and sort them.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+
+<span class="n">unique_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">unique_list</span><span class="p">:</span>
+        <span class="n">unique_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+<span class="n">unique_list</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">unique_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 4, 5, 6, 7, 8, 9, 10]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-4">
+<h2>Question-4<a class="headerlink" href="#question-4" title="Permalink to this heading">#</a></h2>
+<p>Generate a list containing numbers from 4 to 9, inclusive.</p>
+<ul class="simple">
+<li><p>Construct a multiplication table for these numbers to resemble a 6 by 6 matrix and print it.</p></li>
+<li><p>Store all sum of the values in each row in this multiplication table into a list.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">rowsum_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+    <span class="n">rowsum</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">j</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+        <span class="n">rowsum</span> <span class="o">+=</span> <span class="n">i</span><span class="o">*</span><span class="n">j</span>
+        
+    <span class="n">rowsum_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rowsum</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Sum of the row values:&#39;</span><span class="p">,</span> <span class="n">rowsum_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16 20 24 28 32 36 
+20 25 30 35 40 45 
+24 30 36 42 48 54 
+28 35 42 49 56 63 
+32 40 48 56 64 72 
+36 45 54 63 72 81 
+
+Sum of the row values: [156, 195, 234, 273, 312, 351]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="si">{</span><span class="n">numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="se">\t</span><span class="si">{</span><span class="n">numbers</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="se">\t</span><span class="si">{</span><span class="n">numbers</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="se">\t</span><span class="si">{</span><span class="n">numbers</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="si">}</span><span class="se">\t</span><span class="si">{</span><span class="n">numbers</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="si">}</span><span class="se">\t</span><span class="si">{</span><span class="n">numbers</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="s1">&#39;_&#39;</span><span class="o">*</span><span class="mi">49</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">numbers</span><span class="p">[</span><span class="n">numbers</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span><span class="si">}</span><span class="s2">|&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+  <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="o">*</span><span class="n">x</span><span class="si">}</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">end</span> <span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	4	5	6	7	8	9
+ _________________________________________________
+4|	16	20	24	28	32	36	
+5|	20	25	30	35	40	45	
+6|	24	30	36	42	48	54	
+7|	28	35	42	49	56	63	
+8|	32	40	48	56	64	72	
+9|	36	45	54	63	72	81	
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-5">
+<h2>Question-5<a class="headerlink" href="#question-5" title="Permalink to this heading">#</a></h2>
+<p>Use list comprehension and random.randint() to construct two lists:</p>
+<ul class="simple">
+<li><p>Generate ten random numbers between 1 and 20, stored in a list called left_list.</p></li>
+<li><p>Generate ten random numbers between 1 and 10, stored in a list called question_list.</p></li>
+<li><p>Create a new list called right_list, consisting of the differences between 30 and the sum of corresponding numbers in left_list and question_list.</p></li>
+<li><p>For each line, print dashes (-) equal to the number in left_list, followed by question marks equal to the number in question_list, and then dashes equal to the number in right_list.</p></li>
+</ul>
+<p><strong>Sample Output</strong> Only first line out of 10.</p>
+<p><span class="math notranslate nohighlight">\(-------------------??---------\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+<span class="n">spaces</span>  <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="s1">&#39;-&#39;</span><span class="o">+</span><span class="n">spaces</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="s1">&#39;?&#39;</span><span class="o">+</span> <span class="p">(</span><span class="mi">30</span><span class="o">-</span><span class="n">numbers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">spaces</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">*</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-???????----------------------
+-------------????-------------
+--------------??????????------
+--????------------------------
+------?????????---------------
+----?????????-----------------
+------------?-----------------
+--?????????-------------------
+-????-------------------------
+-----??????-------------------
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-6">
+<h2>Question-6<a class="headerlink" href="#question-6" title="Permalink to this heading">#</a></h2>
+<p>Choose a random 6-digit number and store its unique digits in a list as integers and in descending order.</p>
+<ul class="simple">
+<li><p>Display the number and its unique digits.</p></li>
+<li><p>Avoid the use of sets.</p></li>
+<li><p>Sample Output:</p>
+<ul>
+<li><p>The unique digits of 166464 are [6, 4, 1]</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="n">number_str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">100_000</span><span class="p">,</span> <span class="mi">999_999</span><span class="p">))</span>
+
+<span class="n">unique_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">digit</span> <span class="ow">in</span> <span class="n">number_str</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">digit</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">unique_list</span><span class="p">:</span>
+        <span class="n">unique_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">digit</span><span class="p">))</span>
+        
+<span class="n">unique_list</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The unique digits of </span><span class="si">{</span><span class="n">number_str</span><span class="si">}</span><span class="s1"> are </span><span class="si">{</span><span class="n">unique_list</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The unique digits of 981913 are [9, 8, 3, 1]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-7">
+<h2>Question-7<a class="headerlink" href="#question-7" title="Permalink to this heading">#</a></h2>
+<p>Choose a random 6-digit number and verify if all of its digits are distinct.</p>
+<ul class="simple">
+<li><p>Avoid the use of sets.</p></li>
+<li><p>Sample Output:</p>
+<ul>
+<li><p>The number 986728 contains repeated digits.</p></li>
+<li><p>The number 362951 has distinct digits.</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="n">number_str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">100_000</span><span class="p">,</span> <span class="mi">999_999</span><span class="p">))</span>
+
+<span class="n">unique_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">digit</span> <span class="ow">in</span> <span class="n">number_str</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">digit</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">unique_list</span><span class="p">:</span>
+        <span class="n">unique_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">digit</span><span class="p">))</span>
+        
+<span class="n">unique_list</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1">###############################################################</span>
+
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">number_str</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">unique_list</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The number </span><span class="si">{</span><span class="n">number_str</span><span class="si">}</span><span class="s1"> has distinct digits.&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The number </span><span class="si">{</span><span class="n">number_str</span><span class="si">}</span><span class="s1"> contains repeated digits.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The number 579384 has distinct digits.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-8">
+<h2>Question-8<a class="headerlink" href="#question-8" title="Permalink to this heading">#</a></h2>
+<p>Choose a random 6-digit number whose digits are distinct.</p>
+<ul class="simple">
+<li><p>Avoid the use of sets.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">number_str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">100_000</span><span class="p">,</span> <span class="mi">999_999</span><span class="p">))</span>
+    <span class="n">unique_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">digit</span> <span class="ow">in</span> <span class="n">number_str</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">digit</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">unique_list</span><span class="p">:</span>
+            <span class="n">unique_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">digit</span><span class="p">))</span>
+        
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">number_str</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">unique_list</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The number </span><span class="si">{</span><span class="n">number_str</span><span class="si">}</span><span class="s1"> has distinct digits.&#39;</span><span class="p">)</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The number 407932 has distinct digits.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-9">
+<h2>Question-9<a class="headerlink" href="#question-9" title="Permalink to this heading">#</a></h2>
+<p>Choose ten random 6-digit numbers whose digits are distinct and store them in a list as integers.</p>
+<ul class="simple">
+<li><p>Avoid the use of sets.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">number_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">number_list</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="n">number_str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">100_000</span><span class="p">,</span> <span class="mi">999_999</span><span class="p">))</span>
+    <span class="n">unique_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">digit</span> <span class="ow">in</span> <span class="n">number_str</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">digit</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">unique_list</span><span class="p">:</span>
+            <span class="n">unique_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">digit</span><span class="p">))</span>
+        
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">number_str</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">unique_list</span><span class="p">):</span>
+        <span class="n">number_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">number_str</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">number_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[694753, 457398, 290461, 590176, 649237, 960871, 286534, 439521, 654918, 485916]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-10">
+<h2>Question-10<a class="headerlink" href="#question-10" title="Permalink to this heading">#</a></h2>
+<p>Choose two random 6-digit numbers whose digits are distinct and store them in a list as integers.</p>
+<ul class="simple">
+<li><p>Store the common digits of these two numbers in a list.</p></li>
+<li><p>Avoid the use of sets.</p></li>
+<li><p>Sample Output:</p>
+<ul>
+<li><p>The common digits of 479310 and 706843 are [4, 7, 3, 0]</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">number_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">number_list</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="n">number_str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">100_000</span><span class="p">,</span> <span class="mi">999_999</span><span class="p">))</span>
+    <span class="n">unique_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">digit</span> <span class="ow">in</span> <span class="n">number_str</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">digit</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">unique_list</span><span class="p">:</span>
+            <span class="n">unique_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">digit</span><span class="p">))</span>
+        
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">number_str</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">unique_list</span><span class="p">):</span>
+        <span class="n">number_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">number_str</span><span class="p">))</span>
+
+<span class="c1">########################################################</span>
+
+<span class="n">common_digits</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">number_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">number_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+        <span class="n">common_digits</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The common digits of </span><span class="si">{</span><span class="n">number_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1"> and </span><span class="si">{</span><span class="n">number_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1"> are </span><span class="si">{</span><span class="n">common_digits</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The common digits of 981053 and 463971 are [9, 1, 3].
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-11">
+<h2>Question-11<a class="headerlink" href="#question-11" title="Permalink to this heading">#</a></h2>
+<p>Choose two random 6-digit numbers with distinct digits and store them as integers in a list.</p>
+<ul class="simple">
+<li><p>Store the common digits of these two numbers in another list.</p></li>
+<li><p>Initialize two count variables with an initial value of zero: count_negative and count_positive.</p></li>
+<li><p>If a common digit appears in the same position in both numbers, increase count_positive by one.</p></li>
+<li><p>If a common digit appears in different positions in both numbers, decrease count_negative by one.</p></li>
+<li><p>Avoid the use of sets.</p></li>
+<li><p>Sample Output-1:</p>
+<ul>
+<li><p>The common digits of 247583 and 579063 are [7, 5, 3].</p></li>
+<li><p>Positive Count: 1  —   Negative Count: -2</p></li>
+</ul>
+</li>
+<li><p>Sample Output-2:</p>
+<ul>
+<li><p>The common digits of 470829 and 926504 are [4, 0, 2, 9].</p></li>
+<li><p>Positive Count: 0  —   Negative Count: -4</p></li>
+</ul>
+</li>
+<li><p>Sample Output-3:</p>
+<ul>
+<li><p>The common digits of 298731 and 928051 are [2, 9, 8, 1].</p></li>
+<li><p>Positive Count: 2  —   Negative Count: -2</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">number_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">number_list</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="n">number_str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">100_000</span><span class="p">,</span> <span class="mi">999_999</span><span class="p">))</span>
+    <span class="n">unique_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">digit</span> <span class="ow">in</span> <span class="n">number_str</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">digit</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">unique_list</span><span class="p">:</span>
+            <span class="n">unique_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">digit</span><span class="p">))</span>
+        
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">number_str</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">unique_list</span><span class="p">):</span>
+        <span class="n">number_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">number_str</span><span class="p">))</span>
+
+<span class="c1">############################################################</span>
+
+<span class="n">common_digits</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">number_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">number_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+        <span class="n">common_digits</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+
+<span class="c1">#############################################################</span>
+<span class="n">count_positive</span><span class="p">,</span> <span class="n">count_negative</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">digit</span> <span class="ow">in</span> <span class="n">common_digits</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">number_list</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">digit</span><span class="p">))</span> <span class="o">==</span> <span class="nb">str</span><span class="p">(</span><span class="n">number_list</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">digit</span><span class="p">)):</span>
+        <span class="n">count_positive</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">count_negative</span> <span class="o">-=</span> <span class="mi">1</span>
+              
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The common digits of </span><span class="si">{</span><span class="n">number_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1"> and </span><span class="si">{</span><span class="n">number_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1"> are </span><span class="si">{</span><span class="n">common_digits</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Positive Count: </span><span class="si">{</span><span class="n">count_positive</span><span class="si">}</span><span class="s1">  ---   Negative Count: </span><span class="si">{</span><span class="n">count_negative</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The common digits of 816530 and 531860 are [8, 1, 6, 5, 3, 0].
+Positive Count: 1  ---   Negative Count: -5
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-12">
+<h2>Question-12<a class="headerlink" href="#question-12" title="Permalink to this heading">#</a></h2>
+<p>Prompt the user to input comma-separated integers of their choice.</p>
+<ul class="simple">
+<li><p>Use the split() method of strings to store the numbers in a list.</p></li>
+<li><p>Print the type of the first number in this new list.</p></li>
+<li><p>Use a list comprehension to generate a new list with all these numbers in integer type.</p></li>
+<li><p>Print the sum of all these numbers.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter comma separated numbers:&#39;</span><span class="p">)</span>
+<span class="n">split_text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">split_text</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">split_text</span><span class="p">]</span>
+<span class="nb">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="question-13">
+<h2>Question-13<a class="headerlink" href="#question-13" title="Permalink to this heading">#</a></h2>
+<p>For the lists given below, begin with the total list initialized as [0, 0, 0].</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grade_level</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">9</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="n">exam_result</span> <span class="o">=</span> <span class="p">[</span><span class="mi">59</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">81</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">79</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">79</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">66</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Use a for loop to add each:</p>
+<ul class="simple">
+<li><p>9th grader’s exam result to the index 0 position of the total list.</p></li>
+<li><p>10th grader’s exam result to the index 1 position of the total list.</p></li>
+<li><p>11th grader’s exam result to the index 2 position of the total list.
+The final version of the total list should be: [sum of 9th graders’ exam results, sum of the 10th graders’ exam results, sum of the 11th graders’ exam results].</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grade_level</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">9</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="n">exam_result</span> <span class="o">=</span> <span class="p">[</span><span class="mi">59</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">81</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">79</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">79</span><span class="p">,</span><span class="mi">92</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">66</span><span class="p">]</span>
+
+
+<span class="n">total</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">count_9</span> <span class="o">=</span> <span class="n">grade_level</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">grade_level</span><span class="p">)):</span>
+   <span class="n">total</span><span class="p">[</span><span class="n">grade_level</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span> <span class="o">+=</span> <span class="n">exam_result</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Total:&#39;</span><span class="p">,</span> <span class="n">total</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="question-14">
+<h2>Question-14<a class="headerlink" href="#question-14" title="Permalink to this heading">#</a></h2>
+<p>For the lists given below, calculate the average exam grades for each grade level and visualize them using a bar graph.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grade_level</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">9</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="n">exam_result</span> <span class="o">=</span> <span class="p">[</span><span class="mi">59</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">81</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">79</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">79</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">66</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">grade_level</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">9</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="n">exam_result</span> <span class="o">=</span> <span class="p">[</span><span class="mi">59</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">81</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">79</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">79</span><span class="p">,</span><span class="mi">92</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">66</span><span class="p">]</span>
+
+
+<span class="n">total</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">count_9</span> <span class="o">=</span> <span class="n">grade_level</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">grade_level</span><span class="p">)):</span>
+   <span class="n">total</span><span class="p">[</span><span class="n">grade_level</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span> <span class="o">+=</span> <span class="n">exam_result</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="n">average</span> <span class="o">=</span> <span class="p">[</span><span class="n">total</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="n">grade_level</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">9</span><span class="o">+</span><span class="n">i</span><span class="p">)</span>  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Average:&#39;</span><span class="p">,</span> <span class="n">average</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">],</span> <span class="n">average</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">]</span>   <span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="business-applications">
+<h2>Business Applications<a class="headerlink" href="#business-applications" title="Permalink to this heading">#</a></h2>
+<section id="question-max-of-revenue">
+<h3>Question: Max of Revenue<a class="headerlink" href="#question-max-of-revenue" title="Permalink to this heading">#</a></h3>
+<p>Revenue (R) is the product of the number (n) of items sold  and the price (p) of the item.</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(R = p\cdot n\)</span></p></li>
+</ul>
+<p>The number of item sold is given by the following equation: <span class="math notranslate nohighlight">\(n = -1.5p+30\)</span></p>
+<ul class="simple">
+<li><p>Construct a list that consists of the revenues for  <span class="math notranslate nohighlight">\(0\le p \le 20\)</span>.</p></li>
+<li><p>Plot the graph of revenue for <span class="math notranslate nohighlight">\(0\le p \le 20\)</span></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">p_values</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">)</span>
+<span class="n">revenue</span> <span class="o">=</span> <span class="p">[</span> <span class="n">p</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="mf">1.5</span><span class="o">*</span><span class="n">p</span><span class="o">+</span><span class="mi">30</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">p_values</span> <span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">p_values</span><span class="p">,</span> <span class="n">revenue</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Revenue&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/159886afe2c2e3f26482b6dfe4e11b4dba5f81e058ed12a313e704bd7ac8bbeb.png" src="_images/159886afe2c2e3f26482b6dfe4e11b4dba5f81e058ed12a313e704bd7ac8bbeb.png" />
+</div>
+</div>
+</section>
+<section id="question-profit">
+<h3>Question: Profit<a class="headerlink" href="#question-profit" title="Permalink to this heading">#</a></h3>
+<p>Profit (P) is the difference between Revenue and Cost</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(Profit = Revenue - Cost\)</span></p></li>
+</ul>
+<p>The monthly fixed cost of a cable factory is 1500 dollars. Each cable costs 13 dollars and sells for 25 dollars.</p>
+<ul class="simple">
+<li><p>For what number of cables produced profit is zero.</p>
+<ul>
+<li><p>Hint: Calculate the profit for <span class="math notranslate nohighlight">\(n\)</span> between 1 and 400.</p></li>
+</ul>
+</li>
+<li><p>Construct three lists that consist of the revenues, costs, and profits for  <span class="math notranslate nohighlight">\(0\le p \le 400\)</span>.</p></li>
+<li><p>Plot the reveue, cost, profit for producing up to 400 cables.</p></li>
+<li><p>Draw a vertical line where the profit is zero for <span class="math notranslate nohighlight">\(n\)</span>.</p></li>
+</ul>
+<p>Sample Plot:</p>
+<p><img alt="" src="_images/list_ques_profit.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_values</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">401</span><span class="p">)</span>
+<span class="n">revenues</span> <span class="o">=</span> <span class="p">[</span><span class="mi">25</span><span class="o">*</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">n_values</span><span class="p">]</span> 
+<span class="n">costs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">13</span><span class="o">*</span><span class="n">n</span><span class="o">+</span><span class="mi">1500</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">n_values</span><span class="p">]</span> 
+<span class="n">profits</span> <span class="o">=</span> <span class="p">[</span><span class="mi">25</span><span class="o">*</span><span class="n">n</span> <span class="o">-</span> <span class="p">(</span><span class="mi">13</span><span class="o">*</span><span class="n">n</span><span class="o">+</span><span class="mi">1500</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">n_values</span><span class="p">]</span> 
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n_values</span><span class="p">,</span> <span class="n">revenues</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;revenue&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n_values</span><span class="p">,</span> <span class="n">costs</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;cost&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n_values</span><span class="p">,</span> <span class="n">profits</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;profit&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span><span class="mi">400</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">2000</span><span class="p">,</span><span class="mi">10000</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="mi">125</span><span class="p">,</span><span class="o">-</span><span class="mi">2000</span><span class="p">,</span><span class="mi">10000</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;pict/list_ques_profit.png&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/223cdbc0f067323ec945ab9f3f4a2e76e1ccc422c8c25ad1d39b5e3591f14aef.png" src="_images/223cdbc0f067323ec945ab9f3f4a2e76e1ccc422c8c25ad1d39b5e3591f14aef.png" />
+</div>
+</div>
+</section>
+<section id="question-break-even-point">
+<h3>Question: Break-Even Point<a class="headerlink" href="#question-break-even-point" title="Permalink to this heading">#</a></h3>
+<p>Break-Even Point is the point where total cost equals total revenue, meaning profit is zero.</p>
+<p>For the given cost and the revenue functions find the break-even point and plot it.</p>
+<p><span class="math notranslate nohighlight">\(C(n) = 0.5n +2000\)</span></p>
+<p><span class="math notranslate nohighlight">\(R(n) = 2.5n\)</span></p>
+<p>Hint: Calculate the cost and revenue for n between 1 and 10,000.</p>
+<p>Sample Plot:</p>
+<p><img alt="" src="_images/list_ques_be.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">):</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">n</span> <span class="o">+</span> <span class="mi">2000</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="mf">2.5</span><span class="o">*</span><span class="n">n</span>
+    <span class="k">if</span> <span class="n">c</span> <span class="o">==</span> <span class="n">r</span><span class="p">:</span>
+        <span class="n">be1</span><span class="p">,</span> <span class="n">be2</span> <span class="o">=</span> <span class="n">n</span><span class="p">,</span> <span class="n">c</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The break-even point is (</span><span class="si">{</span><span class="n">be1</span><span class="si">}</span><span class="s1">,</span><span class="si">{</span><span class="n">be2</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The break-even point is (1000,2500.0)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_values</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3000</span><span class="p">)</span>
+<span class="n">revenues</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2.5</span><span class="o">*</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">n_values</span><span class="p">]</span> 
+<span class="n">costs</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.5</span><span class="o">*</span><span class="n">n</span><span class="o">+</span><span class="mi">2000</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">n_values</span><span class="p">]</span> 
+<span class="n">profits</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2.5</span><span class="o">*</span><span class="n">n</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.5</span><span class="o">*</span><span class="n">n</span><span class="o">+</span><span class="mi">2000</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">n_values</span><span class="p">]</span> 
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n_values</span><span class="p">,</span> <span class="n">revenues</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;revenue&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n_values</span><span class="p">,</span> <span class="n">costs</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;cost&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n_values</span><span class="p">,</span> <span class="n">profits</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;profit&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span><span class="mi">3000</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">2000</span><span class="p">,</span><span class="mi">6000</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">be1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">be2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">4000</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;break even point &#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">3500</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;(</span><span class="si">{</span><span class="n">be1</span><span class="si">}</span><span class="s1">,</span><span class="si">{</span><span class="n">be2</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">3300</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span><span class="o">-</span><span class="mi">600</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;pict/list_ques_be.png&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/f7cff534643a7b992c21b2bca900d69ba1098f0d6b6709a90c3e9d37627e2e13.png" src="_images/f7cff534643a7b992c21b2bca900d69ba1098f0d6b6709a90c3e9d37627e2e13.png" />
+</div>
+</div>
+</section>
+<section id="question-exponential-depreciation">
+<h3>Question: Exponential Depreciation<a class="headerlink" href="#question-exponential-depreciation" title="Permalink to this heading">#</a></h3>
+<p>The value <span class="math notranslate nohighlight">\(V\)</span> of a truck in dollars is given by the formula <span class="math notranslate nohighlight">\(V(t)=140000(1.35)^{-0.6t}\)</span>  where <span class="math notranslate nohighlight">\(t\)</span> is the age of the truck in years.</p>
+<ul class="simple">
+<li><p>Plot the graph of values of the truck in 30 years.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">years</span>  <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">140000</span><span class="o">*</span><span class="p">(</span><span class="mf">1.35</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">0.6</span><span class="o">*</span><span class="n">t</span><span class="p">))</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">years</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">years</span><span class="p">,</span> <span class="n">values</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/109a523f8b304d71fff3d71e5ed2df46bd3d580516d5c715f65b3857a7215273.png" src="_images/109a523f8b304d71fff3d71e5ed2df46bd3d580516d5c715f65b3857a7215273.png" />
+</div>
+</div>
+</section>
+<section id="question-demand-function">
+<h3>Question: Demand Function<a class="headerlink" href="#question-demand-function" title="Permalink to this heading">#</a></h3>
+<p>If the demand function is given as the following linear relation <span class="math notranslate nohighlight">\(p = -2q+300\)</span>.</p>
+<ul class="simple">
+<li><p>Plot the demand function for <span class="math notranslate nohighlight">\(1\le q\le 200\)</span>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q_values</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">201</span><span class="p">)</span>
+<span class="n">p_values</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">q</span><span class="o">+</span><span class="mi">300</span> <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">q_values</span> <span class="p">]</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q_values</span><span class="p">,</span> <span class="n">p_values</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span><span class="mi">400</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/651f9f8db0c2f61b0f061f9e1147ae022229d7beef40db98e15c36a69c30373f.png" src="_images/651f9f8db0c2f61b0f061f9e1147ae022229d7beef40db98e15c36a69c30373f.png" />
+</div>
+</div>
+</section>
+<section id="question-supply-function">
+<h3>Question: Supply Function<a class="headerlink" href="#question-supply-function" title="Permalink to this heading">#</a></h3>
+<p>If the supply function is given by the linear relation
+<span class="math notranslate nohighlight">\(p = 4q+100\)</span>.</p>
+<ul class="simple">
+<li><p>Plot the supply function for <span class="math notranslate nohighlight">\(1\le q\le 100\)</span>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q_values</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">)</span>
+<span class="n">p_values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="o">*</span><span class="n">q</span><span class="o">+</span><span class="mi">100</span> <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">q_values</span> <span class="p">]</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q_values</span><span class="p">,</span> <span class="n">p_values</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span><span class="mi">600</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/54f3d7d7202bd307a7f535ec4f0a7e39264d16139e6f5de3fda84c428c00e827.png" src="_images/54f3d7d7202bd307a7f535ec4f0a7e39264d16139e6f5de3fda84c428c00e827.png" />
+</div>
+</div>
+</section>
+<section id="question-equilibrium-point">
+<h3>Question: Equilibrium Point<a class="headerlink" href="#question-equilibrium-point" title="Permalink to this heading">#</a></h3>
+<p><em>An equilibrium point is where the demand and supply curves intersect.</em></p>
+<p>For the given demand and the supply functions find the equilibrium point and plot it.</p>
+<p>Demand: <span class="math notranslate nohighlight">\(p(q) = -0.03q + 1000\)</span></p>
+<p>Supply: <span class="math notranslate nohighlight">\(p(q) = 0.02q + 400\)</span></p>
+<ul class="simple">
+<li><p>Hint: Calculate the demand and supply for <span class="math notranslate nohighlight">\(q\)</span> between 0 and 20,000.</p></li>
+</ul>
+<p>Sample plot:</p>
+<p><img alt="" src="_images/lists_ques_ep.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20_001</span><span class="p">):</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.03</span><span class="o">*</span><span class="n">q</span> <span class="o">+</span> <span class="mi">1000</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="mf">0.02</span><span class="o">*</span><span class="n">q</span> <span class="o">+</span> <span class="mi">400</span>
+    <span class="k">if</span> <span class="n">d</span> <span class="o">==</span> <span class="n">s</span><span class="p">:</span>
+        <span class="n">e1</span><span class="p">,</span> <span class="n">e2</span> <span class="o">=</span> <span class="n">q</span><span class="p">,</span> <span class="n">d</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The equilibrium point is (</span><span class="si">{</span><span class="n">e1</span><span class="si">}</span><span class="s1">,</span><span class="si">{</span><span class="n">e2</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The equilibrium point is (12000,640.0)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q_values</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">20000</span><span class="p">)</span>
+<span class="n">demands</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.03</span><span class="o">*</span><span class="n">q</span> <span class="o">+</span> <span class="mi">1000</span> <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">q_values</span><span class="p">]</span> 
+<span class="n">supplies</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.02</span><span class="o">*</span><span class="n">q</span> <span class="o">+</span> <span class="mi">400</span> <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">q_values</span><span class="p">]</span> 
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q_values</span><span class="p">,</span> <span class="n">demands</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;demand&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q_values</span><span class="p">,</span> <span class="n">supplies</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;supply&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1000</span><span class="p">,</span><span class="mi">20000</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span><span class="mi">1200</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="c1"># plt.vlines(e1,0,e2, color=&#39;r&#39;)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">e1</span><span class="o">-</span><span class="mi">2000</span><span class="p">,</span> <span class="n">e2</span><span class="o">+</span><span class="mi">250</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;equilibrium point &#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">e1</span><span class="o">-</span><span class="mi">2000</span><span class="p">,</span> <span class="n">e2</span><span class="o">+</span><span class="mi">200</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;(</span><span class="si">{</span><span class="n">e1</span><span class="si">}</span><span class="s1">,</span><span class="si">{</span><span class="n">e2</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="n">e1</span><span class="p">,</span> <span class="n">e2</span><span class="o">+</span><span class="mi">180</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span> <span class="n">head_length</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;pict/lists_ques_ep.png&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/786542dcc9a3a5c34b44721a122b88f0a1349ca287f1c8f391864e964cf8d3d8.png" src="_images/786542dcc9a3a5c34b44721a122b88f0a1349ca287f1c8f391864e964cf8d3d8.png" />
+</div>
+</div>
+</section>
+<section id="question-stock-percentage-changes">
+<h3>Question: Stock Percentage Changes<a class="headerlink" href="#question-stock-percentage-changes" title="Permalink to this heading">#</a></h3>
+<p>The following is a list of the prices for Tesla stock over a certain period of time.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">stock_prices</span> <span class="o">=</span> <span class="p">[</span><span class="mf">174.9499969482422</span><span class="p">,</span>
+ <span class="mf">186.60000610351562</span><span class="p">,</span>
+ <span class="mf">180.11000061035156</span><span class="p">,</span>
+ <span class="mf">173.74000549316406</span><span class="p">,</span>
+ <span class="mf">179.24000549316406</span><span class="p">,</span>
+ <span class="mf">176.75</span><span class="p">,</span>
+ <span class="mf">176.19000244140625</span><span class="p">,</span>
+ <span class="mf">178.7899932861328</span><span class="p">,</span>
+ <span class="mf">178.0800018310547</span><span class="p">,</span>
+ <span class="mf">176.2899932861328</span><span class="p">,</span>
+ <span class="mf">174.77000427246094</span><span class="p">,</span>
+ <span class="mf">175.0</span><span class="p">,</span>
+ <span class="mf">177.94000244140625</span><span class="p">,</span>
+ <span class="mf">177.47999572753906</span><span class="p">,</span>
+ <span class="mf">173.7899932861328</span><span class="p">,</span>
+ <span class="mf">170.66000366210938</span><span class="p">,</span>
+ <span class="mf">177.2899932861328</span><span class="p">,</span>
+ <span class="mf">182.47000122070312</span><span class="p">,</span>
+ <span class="mf">178.00999450683594</span><span class="p">,</span>
+ <span class="mf">187.44000244140625</span><span class="p">,</span>
+ <span class="mf">184.86000061035156</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Create a list of percentage changes using the stock_prices list.</p>
+<ul class="simple">
+<li><p>The first element of the percentage list is np.nan because there is no price available for the previous day.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">pct_changes</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">stock_prices</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">pct</span> <span class="o">=</span> <span class="p">(</span><span class="n">stock_prices</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">stock_prices</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">/</span><span class="n">stock_prices</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">pct_changes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pct</span><span class="p">)</span>
+<span class="n">pct_changes</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="question-stock-behavior">
+<h3>Question: Stock Behavior<a class="headerlink" href="#question-stock-behavior" title="Permalink to this heading">#</a></h3>
+<p>The following is a list of the prices for Tesla stock over a certain period of time.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">stock_prices</span> <span class="o">=</span> <span class="p">[</span><span class="mf">174.9499969482422</span><span class="p">,</span>
+ <span class="mf">186.60000610351562</span><span class="p">,</span>
+ <span class="mf">180.11000061035156</span><span class="p">,</span>
+ <span class="mf">173.74000549316406</span><span class="p">,</span>
+ <span class="mf">179.24000549316406</span><span class="p">,</span>
+ <span class="mf">176.75</span><span class="p">,</span>
+ <span class="mf">176.19000244140625</span><span class="p">,</span>
+ <span class="mf">178.7899932861328</span><span class="p">,</span>
+ <span class="mf">178.0800018310547</span><span class="p">,</span>
+ <span class="mf">176.2899932861328</span><span class="p">,</span>
+ <span class="mf">174.77000427246094</span><span class="p">,</span>
+ <span class="mf">175.0</span><span class="p">,</span>
+ <span class="mf">177.94000244140625</span><span class="p">,</span>
+ <span class="mf">177.47999572753906</span><span class="p">,</span>
+ <span class="mf">173.7899932861328</span><span class="p">,</span>
+ <span class="mf">170.66000366210938</span><span class="p">,</span>
+ <span class="mf">177.2899932861328</span><span class="p">,</span>
+ <span class="mf">182.47000122070312</span><span class="p">,</span>
+ <span class="mf">178.00999450683594</span><span class="p">,</span>
+ <span class="mf">187.44000244140625</span><span class="p">,</span>
+ <span class="mf">184.86000061035156</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Create a list indicating the behavior of stock prices as Increasing, Decreasing, or Flat using the stock_prices list.</p>
+<ul class="simple">
+<li><p>Count how many days the stock price went up.</p></li>
+<li><p>The first element of the behavior list is np.nan because there is no price available for the previous day.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">behavior</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">stock_prices</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">change</span> <span class="o">=</span> <span class="n">stock_prices</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">stock_prices</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">change</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">behavior</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Increasing&#39;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">change</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">behavior</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Decreasing&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">behavior</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Flat&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">behavior</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Stock price went up </span><span class="si">{</span><span class="n">behavior</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;Increasing&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> days.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up-question">Warm Up Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Warm Up Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Warm Up Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Warm Up Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Warm Up Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Warm Up Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Warm Up Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Warm Up Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Warm Up Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Warm Up Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question-1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question-2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question-3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question-4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question-5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6">Question-6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7">Question-7</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8">Question-8</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-9">Question-9</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-10">Question-10</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-11">Question-11</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-12">Question-12</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-13">Question-13</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-14">Question-14</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#business-applications">Business Applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-max-of-revenue">Question: Max of Revenue</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-profit">Question: Profit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-break-even-point">Question: Break-Even Point</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-exponential-depreciation">Question: Exponential Depreciation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-demand-function">Question: Demand Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-supply-function">Question: Supply Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-equilibrium-point">Question: Equilibrium Point</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-stock-percentage-changes">Question: Stock Percentage Changes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-stock-behavior">Question: Stock Behavior</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Yusuf Danisman
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <div>
+<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://licensebuttons.net/l/by-nc-sa/3.0/88x31.png"></a>
+    All content on this site (unless otherwise specified) is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 license</a>
+</div>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

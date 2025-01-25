@@ -1,0 +1,1202 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Functions Exercises and Solutions &#8212; Python in Plain Terms</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'functions_exercise_solution';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="cover.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/ppt_logo4.png" class="logo__image only-light" alt="Python in Plain Terms - Home"/>
+    <script>document.write(`<img src="_static/ppt_logo4.png" class="logo__image only-dark" alt="Python in Plain Terms - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="cover.html">
+                    Cover
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledge.html">Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python Introduction</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="colab.html">Google Colab</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="colab_text.html">Text Cell</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="colab_text_questions.html">Text Cell Questions</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="colab_code.html">Code Cell</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="colab_code_questions.html">Code Cell Questions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="colab_exercises.html">Colab Exercises</a></li>
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="variables.html">Chp-1: Variables</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="variables_debug.html">Variables Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables_output.html">Variables Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables_code.html">Variables Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables_warmup.html">Variables Warm Up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables_exercise.html">Variables Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables_business.html">Variables Business</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="inout.html">Chp-2: Input and Output</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="inout_debug.html">Input and Output Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inout_output.html">Input and Output  Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inout_code.html">Input and Output Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inout_warmup.html">Input and Output Warm Up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inout_exercise.html">Input and Output Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inout_business.html">Input and Output Business</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="numbers_arithmetic.html">Chp-3: Numbers</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="numbers_arithmetic_debug.html">Numbers Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numbers_arithmetic_output.html">Numbers Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numbers_arithmetic_code.html">Numbers Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numbers_arithmetic_warmup.html">Numbers Warm Up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numbers_arithmetic_exercise.html">Numbers Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numbers_arithmetic_business.html">Numbers Business</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="strings.html">Chp-4: Strings</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="strings_debug.html">Strings Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings_output.html">Strings Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings_code.html">Strings Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings_warmup.html">Strings Warm Up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings_exercise.html">Strings Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings_business.html">Strings Business</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="conditionals.html">Chp-5: Conditionals</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="conditionals_debug.html">Conditionals Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conditionals_output.html">Conditionals Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conditionals_code.html">Conditionals Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conditionals_warmup.html">Conditionals Warm Up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conditionals_exercise.html">Conditionals Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conditionals_business.html">Conditionals Business</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="iterations.html">Chp-6: Iterations</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="iterations_debug.html">Iterations Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterations_output.html">Iterations Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterations_code.html">Iterations Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterations_warmup.html">Iterations Warm Up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterations_exercise.html">Iterations Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterations_business.html">Iterations Business</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="tuples.html">Chp-7: Tuples</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="tuples_debug.html">Tuples Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tuples_output.html">Tuples Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tuples_code.html">Tuples Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tuples_warmup.html">Tuples Warm Up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tuples_exercise.html">Tuples Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tuples_business.html">Tuples Business</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="lists.html">Chp-8: Lists</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="lists_debug.html">Lists Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lists_output.html">Lists Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lists_code.html">Lists Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lists_warmup.html">Lists Warm Up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lists_exercise.html">Lists Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lists_business.html">Lists Business</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="functions.html">Chp-9: Functions</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="functions_debug.html">Functions Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions_output.html">Functions Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions_code.html">Functions Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions_warmup.html">Functions Warm Up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions_exercise.html">Functions Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions_business.html">Functions Business</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="sets.html">Chp-10: Sets</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="sets_debug.html">Sets Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sets_output.html">Sets Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sets_code.html">Sets Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sets_warmup.html">Sets Warmup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sets_exercise.html">Sets Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sets_business.html">Sets Business</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="dictionaries.html">Chp-11: Dictionaries</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="dictionaries_debug.html">Dictionaries Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictionaries_output.html">Dictionaries Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictionaries_code.html">Dictionaries Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictionaries_warmup.html">Dictionaries Warm Up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictionaries_exercise.html">Dictionaries Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictionaries_business.html">Dictionaries Business</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="projects.html">Projects</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="project_factorization.html">Project: Factorization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_elections.html">Project: Election Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_smoothing.html">Project: Smoothing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_riemann.html">Project: Approximating Areas</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="appendix.html">Appendix</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="app_visualization.html">App: Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_business.html">App: Business Glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_math.html">App: Math Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_statistics.html">App: Statistics Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_random.html">App: Random Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app_seaborn.html">App: Seaborn Library</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/functions_exercise_solution.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Functions Exercises and Solutions</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Functions Exercises and Solutions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up-question">Warm Up Question</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Warm Up Question</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Warm Up Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Warm Up Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Warm Up Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-harmonic-mean">Question-1: Harmonic Mean</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-circle">Question-2: Circle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-algebraic-operations">Question-3: Algebraic Operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4-letters">Question-4: Letters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5-distance">Question-5: Distance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6-password-check">Question-6: Password Check</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7-random-points">Question-7: Random Points</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8-pyramid">Question-8: Pyramid</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-9-equation-of-a-line">Question-9: Equation of a Line</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-10-pitch-monitor">Question-10: Pitch Monitor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#business-application">Business Application</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-simple-interest">Question: Simple Interest</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-cost">Question: Cost</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-linear-depreciation">Question: Linear Depreciation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-exponential-depreciation">Question: Exponential Depreciation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-plumber-charge">Question: Plumber Charge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-monthly-plan">Question: Monthly Plan</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="functions-exercises-and-solutions">
+<h1>Functions Exercises and Solutions<a class="headerlink" href="#functions-exercises-and-solutions" title="Permalink to this heading">#</a></h1>
+<section id="warm-up-question">
+<h2>Warm Up Question<a class="headerlink" href="#warm-up-question" title="Permalink to this heading">#</a></h2>
+<p>Write a function that takes a number as a parameter and returns the last digit of this number.</p>
+<ul class="simple">
+<li><p>Hint: Use the modulus operator (%) to get the last digit.</p></li>
+<li><p>Print the output of this function when the input is 234.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">last_digit</span> <span class="o">=</span> <span class="n">x</span><span class="o">%</span><span class="k">10</span>
+    <span class="k">return</span> <span class="n">last_digit</span>
+
+<span class="n">f</span><span class="p">(</span><span class="mi">234</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Warm Up Question<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<p>Write a function that takes a number as a parameter and returns the following: <span class="math notranslate nohighlight">\(\frac{4x^2-2x+5}{x^3-4x}\)</span></p>
+<ul class="simple">
+<li><p>Print the output of this function when the input is 5.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">numerator</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">5</span>
+    <span class="n">denominator</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">x</span>
+    <span class="n">quotient</span> <span class="o">=</span> <span class="n">numerator</span><span class="o">/</span><span class="n">denominator</span>
+    <span class="k">return</span> <span class="n">quotient</span>
+
+<span class="n">f</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9047619047619048
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id2">
+<h2>Warm Up Question<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p>Write a function named lb_g that takes a parameter lb representing a weight in pound and returns its equivalent value in grams (g).</p>
+<ul class="simple">
+<li><p>1 lb = 453.592 g</p></li>
+<li><p>Print the output of this conversion function when the input is 200 pounds.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lb_g</span><span class="p">(</span><span class="n">lb</span><span class="p">):</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="n">lb</span><span class="o">*</span><span class="mf">453.592</span>
+    <span class="k">return</span> <span class="n">g</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">lb_g</span><span class="p">(</span><span class="mi">200</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>90718.4
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id3">
+<h2>Warm Up Question<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<p>Write a function named support that prints “Applause!” each time it is called.</p>
+<ul class="simple">
+<li><p>Call the function two times and display its output.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">support</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Applause!&#39;</span><span class="p">)</span>
+
+<span class="n">support</span><span class="p">()</span>
+<span class="n">support</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Applause!
+Applause!
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id4">
+<h2>Warm Up Question<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<p>Write a function that takes two integer parameters: x and y.</p>
+<ul class="simple">
+<li><p>The default value of y is 10.</p></li>
+<li><p>The function should return the product of these two numbers.</p></li>
+<li><p>Call the function both with and without providing a value for y.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20
+40
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-1-harmonic-mean">
+<h2>Question-1: Harmonic Mean<a class="headerlink" href="#question-1-harmonic-mean" title="Permalink to this heading">#</a></h2>
+<p>Write a function that takes three numbers as parameters and returns the harmonic mean of these numbers using the formula:
+<span class="math notranslate nohighlight">\(\displaystyle H(x, y, z) = \frac{3}{\frac{1}{x}+\frac{1}{y}+\frac{1}{z}}\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">harmonic_mean</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">3</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="o">/</span><span class="n">y</span><span class="o">+</span><span class="mi">1</span><span class="o">/</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-2-circle">
+<h2>Question-2: Circle<a class="headerlink" href="#question-2-circle" title="Permalink to this heading">#</a></h2>
+<p>Write a function that takes two parameters: radius (<span class="math notranslate nohighlight">\(r\)</span>) with a default value of 1, and calculation_type with a default value of “area”.</p>
+<ul class="simple">
+<li><p>If calculation_type is area (<span class="math notranslate nohighlight">\(\pi r^2\)</span>) the function returns the area of the circle, rounded to the nearest hundredth.</p></li>
+<li><p>If calculation_type is perimeter(<span class="math notranslate nohighlight">\(2\pi r\)</span>)  the function returns the perimeter of the circle, rounded to the nearest hundredth.</p></li>
+<li><p>If calculation_type is both  the function returns a tuple containing both the perimeter and the area of the circle, each rounded to the nearest hundredth.</p></li>
+<li><p>If calculation_type is anything else, it prints a “not valid type” warning.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">def</span> <span class="nf">circle</span><span class="p">(</span><span class="n">r</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">calculation_type</span><span class="o">=</span><span class="s1">&#39;area&#39;</span><span class="p">):</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">P</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">r</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="nb">type</span> <span class="o">==</span> <span class="s1">&#39;area&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">A</span>
+    <span class="k">elif</span> <span class="nb">type</span> <span class="o">==</span> <span class="s1">&#39;perimeter&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">P</span>
+    <span class="k">elif</span> <span class="nb">type</span> <span class="o">==</span> <span class="s1">&#39;both&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">P</span><span class="p">,</span> <span class="n">A</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Not valid type.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-3-algebraic-operations">
+<h2>Question-3: Algebraic Operations<a class="headerlink" href="#question-3-algebraic-operations" title="Permalink to this heading">#</a></h2>
+<p>Write a function that takes two numbers as parameters and returns the results of the four basic operations.</p>
+<ul class="simple">
+<li><p>If the second number is zero for division, print a warning message about division by zero.</p></li>
+<li><p>Round the result of the division to the nearest hundredth.</p></li>
+</ul>
+<p><strong>Sample Output:</strong>  alg_operation(3,7)</p>
+<p>3 + 7 = 10<br />
+3 - 7 = -4<br />
+3 x 7 = 21<br />
+3 / 7 = 0.43</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">alg_operation</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> + </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s1"> = </span><span class="si">{</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> - </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s1"> = </span><span class="si">{</span><span class="n">x</span><span class="o">-</span><span class="n">y</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> x </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s1"> = </span><span class="si">{</span><span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+  <span class="k">if</span> <span class="n">y</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> / </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s1"> = </span><span class="si">{</span><span class="n">x</span><span class="o">/</span><span class="n">y</span><span class="si">:</span><span class="s1">.2</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Warning: Zero Division&#39;</span><span class="p">)</span>
+
+<span class="n">alg_operation</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="question-4-letters">
+<h2>Question-4: Letters<a class="headerlink" href="#question-4-letters" title="Permalink to this heading">#</a></h2>
+<p>Write a function that takes a number as its input and returns the first corresponding number of lowercase letters from the alphabet.</p>
+<ul class="simple">
+<li><p>If the input number exceeds the total number of letters in the alphabet, the function returns all letters.</p></li>
+<li><p>If the input is zero or negative, it returns an empty string.</p></li>
+</ul>
+<p><strong>Sample Output</strong></p>
+<p>print(letter_func(4))<br />
+abcd</p>
+<p>print(letter_func(-5))<br />
+(No Output)</p>
+<p>print(letter_func(40))<br />
+abcdefghijklmnopqrstuvwxyz</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">string</span>
+
+<span class="k">def</span> <span class="nf">letter_func</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+  <span class="n">letters</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">ascii_lowercase</span>
+  <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">letters</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">letters</span>
+  <span class="k">elif</span> <span class="n">n</span><span class="o">&lt;=</span><span class="mi">0</span><span class="p">:</span>
+    <span class="k">return</span> <span class="s1">&#39;&#39;</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">letters</span><span class="p">[:</span><span class="n">n</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">letter_func</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">letter_func</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">letter_func</span><span class="p">(</span><span class="mi">40</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<section id="question-5-distance">
+<h2>Question-5: Distance<a class="headerlink" href="#question-5-distance" title="Permalink to this heading">#</a></h2>
+<p>Write a function that takes four parameters: the (x, y) coordinates of two points, A and B.</p>
+<ul class="simple">
+<li><p>Plot a red line connecting these two points on a graph.</p></li>
+<li><p>Label points A and B by adding texts next to each point.</p></li>
+<li><p>Calculate the distance between these points and display it as text in the middle of the line.</p></li>
+<li><p>Rotate the text for better visibility.</p></li>
+</ul>
+<p><strong>Sample Output</strong></p>
+<p><img alt="" src="_images/plot_dist.png" /></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">plot_func</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="n">x2</span><span class="p">,</span><span class="n">y2</span><span class="p">):</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">],</span> <span class="p">[</span><span class="n">y1</span><span class="p">,</span><span class="n">y2</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+  <span class="n">dist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">x2</span><span class="o">-</span><span class="n">x1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">y2</span><span class="o">-</span><span class="n">y1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">((</span><span class="n">x1</span><span class="o">+</span><span class="n">x2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="n">y1</span><span class="o">+</span><span class="n">y2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="mf">0.1</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">dist</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;pict/plot_dist.png&#39;</span><span class="p">)</span>
+<span class="n">plot_func</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="question-6-password-check">
+<h2>Question-6: Password Check<a class="headerlink" href="#question-6-password-check" title="Permalink to this heading">#</a></h2>
+<p>Select a 4-digit password. Then, write a function that takes a 4-digit number as its parameter.</p>
+<ul class="simple">
+<li><p>If the provided number is within 10 units of the chosen password, the function should print a message granting permission to enter; otherwise, it should print a message denying entrance.</p></li>
+</ul>
+<p><strong>Sample Output</strong></p>
+<p>password_check(1234)<br />
+DENY!</p>
+<p>password_check(4325)<br />
+ACCEPT!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="n">password</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">9999</span><span class="p">)</span>
+<span class="n">password</span><span class="o">=</span><span class="mi">4325</span>
+<span class="k">def</span> <span class="nf">password_check</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+  <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">password</span> <span class="o">-</span> <span class="n">number</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ACCEPT!&#39;</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DENY!&#39;</span><span class="p">)</span>
+
+<span class="n">password_check</span><span class="p">(</span><span class="mi">1234</span><span class="p">)</span>
+<span class="n">password_check</span><span class="p">(</span><span class="mi">4325</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="question-7-random-points">
+<h2>Question-7: Random Points<a class="headerlink" href="#question-7-random-points" title="Permalink to this heading">#</a></h2>
+<p>Write a function that takes a parameter representing the number of points to plot in green.</p>
+<ul class="simple">
+<li><p>This function should generate random points, each with random sizes and transparencies, and plot them on a graph.</p></li>
+<li><p>The sizes of the points should be integers ranging from 5 to 800.</p></li>
+<li><p>The transparencies should be decimal numbers between 0 and 1.</p></li>
+<li><p>The x and y coordinates of the points should be decimal numbers ranging from 5 to 10.</p></li>
+</ul>
+<p><strong>Sample Output</strong></p>
+<p><img alt="" src="_images/plot_rand_points.png" /></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="k">def</span> <span class="nf">rand_point</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">sizes</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">800</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span> 
+    <span class="n">alphas</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span> 
+    <span class="n">x_values</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+    <span class="n">y_values</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_values</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">y_values</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">sizes</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="n">alphas</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;pict/plot_rand_points.png&#39;</span><span class="p">)</span>
+
+<span class="n">rand_point</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="question-8-pyramid">
+<h2>Question-8: Pyramid<a class="headerlink" href="#question-8-pyramid" title="Permalink to this heading">#</a></h2>
+<p>Write a function that takes five parameters representing:</p>
+<ol class="arabic simple">
+<li><p>The x-coordinate of the right upper corner of the rectangle.</p></li>
+<li><p>The y-coordinate of the right upper corner of the rectangle.</p></li>
+<li><p>The width of the rectangle.</p></li>
+<li><p>The length of the rectangle.</p></li>
+<li><p>The color of the rectangle.</p></li>
+</ol>
+<p>The function should:</p>
+<ul class="simple">
+<li><p>Plot the corresponding rectangle.</p></li>
+<li><p>Plot the point (0,0) in blue color.</p></li>
+<li><p>Draw four dotted blue lines from the point (0,0) to each corner of the rectangle.</p></li>
+<li><p>Remove the axis.</p></li>
+</ul>
+<p>Sample plot:</p>
+<p><img alt="" src="_images/func_pyramid.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="k">def</span> <span class="nf">rect</span><span class="p">(</span><span class="n">xr</span><span class="p">,</span> <span class="n">yr</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">xr</span><span class="o">-</span><span class="n">width</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">yr</span><span class="o">-</span><span class="n">length</span><span class="p">]</span> <span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">xr</span><span class="o">-</span><span class="n">width</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">yr</span><span class="p">]</span> <span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">xr</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">yr</span><span class="o">-</span><span class="n">length</span><span class="p">]</span> <span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">xr</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">yr</span><span class="p">]</span> <span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">xr</span><span class="p">,</span> <span class="n">xr</span><span class="o">-</span><span class="n">width</span><span class="p">,</span> <span class="n">xr</span><span class="o">-</span><span class="n">width</span><span class="p">,</span> <span class="n">xr</span><span class="p">,</span> <span class="n">xr</span><span class="p">],</span> <span class="p">[</span><span class="n">yr</span><span class="p">,</span> <span class="n">yr</span><span class="p">,</span> <span class="n">yr</span><span class="o">-</span><span class="n">length</span><span class="p">,</span> <span class="n">yr</span><span class="o">-</span><span class="n">length</span><span class="p">,</span> <span class="n">yr</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+    
+<span class="n">rect</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;pict/func_pyramid.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/f4b8b12f6dd2bd2f80cb48c2c8efdedabf89abbae9ed8b825ec6f3d31b76b4e2.png" src="_images/f4b8b12f6dd2bd2f80cb48c2c8efdedabf89abbae9ed8b825ec6f3d31b76b4e2.png" />
+</div>
+</div>
+</section>
+<section id="question-9-equation-of-a-line">
+<h2>Question-9: Equation of a Line<a class="headerlink" href="#question-9-equation-of-a-line" title="Permalink to this heading">#</a></h2>
+<p>Write a function that takes four parameters representing:</p>
+<ol class="arabic simple">
+<li><p>The x-coordinate of the first point.</p></li>
+<li><p>The y-coordinate of the first point.</p></li>
+<li><p>The x-coordinate of the second point.</p></li>
+<li><p>The y-coordinate of the second point.</p></li>
+</ol>
+<p>The function should return the equation of the line that passes through these two points using the slope-intercept form
+<span class="math notranslate nohighlight">\(y=mx+b\)</span> , where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(m\)</span> is the slope, calculated as <span class="math notranslate nohighlight">\(m=\frac{y_2-y_1}{x_2-x1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(b\)</span> is the y-intercept, calculated as <span class="math notranslate nohighlight">\(b = y_2 - mx_2\)</span>.</p></li>
+</ul>
+<p>Warning: If <span class="math notranslate nohighlight">\(x_2=x_1\)</span> , the equation of the line is <span class="math notranslate nohighlight">\(x=x_2\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">linear_equ</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x2</span> <span class="o">!=</span> <span class="n">x1</span><span class="p">:</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">y2</span><span class="o">-</span><span class="n">y1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">x2</span><span class="o">-</span><span class="n">x1</span><span class="p">)</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">y2</span><span class="o">-</span><span class="n">m</span><span class="o">*</span><span class="n">x2</span>
+        <span class="k">if</span> <span class="n">y1</span> <span class="o">==</span> <span class="n">y2</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;y = </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;y = </span><span class="si">{</span><span class="n">m</span><span class="si">}</span><span class="s1">x+</span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;x = </span><span class="si">{</span><span class="n">x1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        
+<span class="n">linear_equ</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>y = 0.25x+2.5
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-10-pitch-monitor">
+<h2>Question-10: Pitch Monitor<a class="headerlink" href="#question-10-pitch-monitor" title="Permalink to this heading">#</a></h2>
+<p>Write a function that takes a list of whole numbers representing pitches and visualize the pitches, using the print() function and * characters.</p>
+<ul class="simple">
+<li><p>The length of the pitch list is the number of <code class="docutils literal notranslate"><span class="pre">*</span></code> columns.</p></li>
+<li><p>The numbers in the list represent the number of <code class="docutils literal notranslate"><span class="pre">*</span></code> characters in each column.</p></li>
+<li><p>For example, if pitch_list = [2, 5, 3, 4], then:</p>
+<ul>
+<li><p>The first column has 2 stars.</p></li>
+<li><p>The second column has 5 stars.</p></li>
+<li><p>The third column has 3 stars.</p></li>
+<li><p>The fourth column has 4 stars.</p></li>
+</ul>
+</li>
+</ul>
+<p>Sample Output for pitch_list = [2,5,3,4]:</p>
+<p><img alt="" src="_images/pitches.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pitches_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">pitches_list2</span> <span class="o">=</span> <span class="n">pitches_list</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">pitches_list</span><span class="p">)):</span>
+    <span class="n">maximum</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">pitches_list2</span><span class="p">)</span>
+    <span class="n">print_list</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pitches_list2</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">pitches_list2</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="n">maximum</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;* &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+            <span class="n">pitches_list2</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;  &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">()</span>    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  *     
+  *   * 
+  * * * 
+* * * * 
+* * * * 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="business-application">
+<h2>Business Application<a class="headerlink" href="#business-application" title="Permalink to this heading">#</a></h2>
+<section id="question-simple-interest">
+<h3>Question: Simple Interest<a class="headerlink" href="#question-simple-interest" title="Permalink to this heading">#</a></h3>
+<p>Write a function that takes the principal amount, annual interest rate, and time period in years as parameters and returns the interest amount and final amount as a tuple.</p>
+<ul class="simple">
+<li><p>The annual interest rate is in decimal form.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">simple_interest</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+    <span class="n">interest</span> <span class="o">=</span> <span class="n">P</span><span class="o">*</span><span class="n">r</span><span class="o">*</span><span class="n">t</span>
+    <span class="k">return</span> <span class="n">interest</span><span class="p">,</span> <span class="n">interest</span><span class="o">+</span><span class="n">P</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">simple_interest</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mf">0.20</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(60.0, 160.0)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-cost">
+<h3>Question: Cost<a class="headerlink" href="#question-cost" title="Permalink to this heading">#</a></h3>
+<p>Total cost (C) has two parts:</p>
+<ol class="arabic simple">
+<li><p>Variable Costs:  Expense that changes in proportion to number of items produced.</p>
+<ul class="simple">
+<li><p>Variable Cost = Number of items produced <span class="math notranslate nohighlight">\(\cdot\)</span> Cost of producing one item</p></li>
+</ul>
+</li>
+<li><p>Fixed Costs: Does not depend on the number of the items produced.</p>
+<ul class="simple">
+<li><p>Examples: rent, lease costs, salaries, utility bills, insurance</p></li>
+</ul>
+</li>
+</ol>
+<p>It costs a company 80 dollars to produce one item, and the company has fixed costs of
+850 dollars and <span class="math notranslate nohighlight">\(n\)</span> represents the number of items produced.</p>
+<ul class="simple">
+<li><p>Write a function which has the paramter <span class="math notranslate nohighlight">\(n\)</span> and returns the total cost.</p></li>
+<li><p>Find the cost of producing 6 items.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">cost</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">80</span><span class="o">*</span><span class="n">n</span><span class="o">+</span><span class="mi">850</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">cost</span><span class="p">(</span><span class="mi">6</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<section id="question-linear-depreciation">
+<h3>Question: Linear Depreciation<a class="headerlink" href="#question-linear-depreciation" title="Permalink to this heading">#</a></h3>
+<p>The value of a new machine is <span class="math notranslate nohighlight">\(100,000\)</span> dollars and its values is depreciated by <span class="math notranslate nohighlight">\(7500\)</span> dollars per year.</p>
+<ul class="simple">
+<li><p>Write a function which has only one parameter <span class="math notranslate nohighlight">\(t\)</span> that represents the year and returns the value of the machine after <span class="math notranslate nohighlight">\(t\)</span> years.</p></li>
+<li><p>Find the value of the machine after 6 years.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">value</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">100_000</span> <span class="o">-</span> <span class="mi">7500</span><span class="o">*</span><span class="n">t</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">(</span><span class="mi">6</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<section id="question-exponential-depreciation">
+<h3>Question: Exponential Depreciation<a class="headerlink" href="#question-exponential-depreciation" title="Permalink to this heading">#</a></h3>
+<p>The value <span class="math notranslate nohighlight">\(V\)</span> of a truck in dollars is given by the formula <span class="math notranslate nohighlight">\(V(t)=140000(1.35)^{-0.6t}\)</span>  where <span class="math notranslate nohighlight">\(t\)</span> is the age of the truck in years.</p>
+<ul class="simple">
+<li><p>Write a function which has only one parameter <span class="math notranslate nohighlight">\(t\)</span> that represents the year and returns the value of the truck after <span class="math notranslate nohighlight">\(t\)</span> years.</p></li>
+<li><p>Find the value of the truck after 6 years.</p></li>
+<li><p>Plot the graph of values of the truck in 30 years.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">value</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">140000</span><span class="o">*</span><span class="p">(</span><span class="mf">1.35</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">0.6</span><span class="o">*</span><span class="n">t</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">(</span><span class="mi">6</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">value</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">140000</span><span class="o">*</span><span class="p">(</span><span class="mf">1.35</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">0.6</span><span class="o">*</span><span class="n">t</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">(</span><span class="mi">6</span><span class="p">))</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">31</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">value</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>47525.47531955799
+</pre></div>
+</div>
+<img alt="_images/bd3e9d4443bd5c3ff501ea7a18e338e1a2c5e569e18d4fbe23fa423328bbb023.png" src="_images/bd3e9d4443bd5c3ff501ea7a18e338e1a2c5e569e18d4fbe23fa423328bbb023.png" />
+</div>
+</div>
+</section>
+<section id="question-plumber-charge">
+<h3>Question: Plumber Charge<a class="headerlink" href="#question-plumber-charge" title="Permalink to this heading">#</a></h3>
+<p>A plumber charges a fixed fee of 150 dollars if the working time does not exceed 2 hours. If it exceeds 2 hours, he charges an extra 80 dollars for each additional hour. Write a function that takes one parameter, hours, and calculates the total cost based on the hours provided.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plumber</span><span class="p">(</span><span class="n">hours</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">hours</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">150</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">150</span> <span class="o">+</span> <span class="p">(</span><span class="n">hours</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="mi">80</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-monthly-plan">
+<h3>Question: Monthly Plan<a class="headerlink" href="#question-monthly-plan" title="Permalink to this heading">#</a></h3>
+<p>A gym company offers two plans: Basic and Professional. The details for each plan are as follows:</p>
+<ul class="simple">
+<li><p>Basic Plan:</p>
+<ul>
+<li><p>Fixed fee: 5 dollars</p></li>
+<li><p>Cost per hour: 5 cents</p></li>
+</ul>
+</li>
+<li><p>Professional Plan:</p>
+<ul>
+<li><p>Fixed fee: 10 dollars</p></li>
+<li><p>Cost per hour: 6 cents</p></li>
+</ul>
+</li>
+</ul>
+<p>Write a function that takes two parameters, plan (either “Basic” or “Professional”) and hours, and calculates the total cost based on the plan and hours provided.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gym_cost</span><span class="p">(</span><span class="n">plan</span><span class="p">,</span> <span class="n">hours</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">plan</span> <span class="o">==</span> <span class="s1">&#39;Basic&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">5</span> <span class="o">+</span> <span class="n">hours</span><span class="o">*</span><span class="mf">0.05</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">hours</span><span class="o">*</span><span class="mf">0.06</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Functions Exercises and Solutions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up-question">Warm Up Question</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Warm Up Question</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Warm Up Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Warm Up Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Warm Up Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-harmonic-mean">Question-1: Harmonic Mean</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-circle">Question-2: Circle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-algebraic-operations">Question-3: Algebraic Operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4-letters">Question-4: Letters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5-distance">Question-5: Distance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6-password-check">Question-6: Password Check</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7-random-points">Question-7: Random Points</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8-pyramid">Question-8: Pyramid</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-9-equation-of-a-line">Question-9: Equation of a Line</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-10-pitch-monitor">Question-10: Pitch Monitor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#business-application">Business Application</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-simple-interest">Question: Simple Interest</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-cost">Question: Cost</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-linear-depreciation">Question: Linear Depreciation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-exponential-depreciation">Question: Exponential Depreciation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-plumber-charge">Question: Plumber Charge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-monthly-plan">Question: Monthly Plan</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Yusuf Danisman
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <div>
+<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://licensebuttons.net/l/by-nc-sa/3.0/88x31.png"></a>
+    All content on this site (unless otherwise specified) is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 license</a>
+</div>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
