@@ -286,6 +286,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="project_elections.html">Project: Election Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project_smoothing.html">Project: Smoothing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project_riemann.html">Project: Approximating Areas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_soccer.html">Project: Soccer</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="appendix.html">Appendix</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -443,6 +444,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up-question-1">Warm Up Question-1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up-question-2">Warm Up Question-2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up-question-3">Warm Up Question-3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up-question-4">Warm Up Question-4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up-question-5">Warm Up Question-5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up-question-6">Warm Up Question-6</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question-1</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question-2</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question-3</a></li>
@@ -461,6 +468,127 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="sets-exercises-and-solutions">
 <h1>Sets Exercises and Solutions<a class="headerlink" href="#sets-exercises-and-solutions" title="Permalink to this heading">#</a></h1>
+<section id="warm-up-question-1">
+<h2>Warm Up Question-1<a class="headerlink" href="#warm-up-question-1" title="Permalink to this heading">#</a></h2>
+<p>Create a set that includes an integer, a decimal number, a string, and a boolean value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mixed_set</span> <span class="o">=</span> <span class="p">{</span><span class="mf">4.56</span><span class="p">,</span> <span class="s1">&#39;Bird&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">}</span>
+<span class="n">mixed_set</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{4.56, &#39;Bird&#39;, False, True}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="warm-up-question-2">
+<h2>Warm Up Question-2<a class="headerlink" href="#warm-up-question-2" title="Permalink to this heading">#</a></h2>
+<p>Calculate the maximum value, minimum value, total sum, and the count of elements in the sequence of numbers
+9,3,1,7,4,2,8,76,10 using a set.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">{</span><span class="mi">9</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">76</span><span class="p">,</span><span class="mi">10</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Count  : </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Maximum: </span><span class="si">{</span><span class="nb">max</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Minimum: </span><span class="si">{</span><span class="nb">min</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Sum    : </span><span class="si">{</span><span class="nb">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Count  : 9
+Maximum: 76
+Minimum: 1
+Sum    : 120
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="warm-up-question-3">
+<h2>Warm Up Question-3<a class="headerlink" href="#warm-up-question-3" title="Permalink to this heading">#</a></h2>
+<p>Add three additional elements to this set: {4,6,1}.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">{</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span>
+<span class="n">numbers</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">numbers</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">numbers</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 4, 6, 10, 20, 30}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="warm-up-question-4">
+<h2>Warm Up Question-4<a class="headerlink" href="#warm-up-question-4" title="Permalink to this heading">#</a></h2>
+<p>Count the number of the unique values in the following  sequence: 4,2,8,3,3,9,3,3,5,6,7,8.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">{</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39; Unique Values: </span><span class="si">{</span><span class="n">numbers</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39; Number of Unique Values: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Unique Values: {2, 3, 4, 5, 6, 7, 8, 9}
+ Number of Unique Values: 8
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="warm-up-question-5">
+<h2>Warm Up Question-5<a class="headerlink" href="#warm-up-question-5" title="Permalink to this heading">#</a></h2>
+<p>Use the remove() method to delete 6 from the set {9,7,1,2,6,3,4,5,8,6}.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">{</span><span class="mi">9</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">}</span>
+<span class="n">numbers</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 2, 3, 5, 6, 7, 8, 9}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="warm-up-question-6">
+<h2>Warm Up Question-6<a class="headerlink" href="#warm-up-question-6" title="Permalink to this heading">#</a></h2>
+<p>Calculate the sum of the odd numbers in this set: {5, 6, 1, 2, 3, 9, 8}</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">{</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">}</span>
+<span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span><span class="k">2</span> == 1 :
+        <span class="n">total</span> <span class="o">+=</span> <span class="n">i</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="question-1">
 <h2>Question-1<a class="headerlink" href="#question-1" title="Permalink to this heading">#</a></h2>
 <p>Create a set with the elements: <em>1, 2.5, True, ‘Texas’, (10,20,30)</em><br />
@@ -656,6 +784,12 @@ Unique numbers  : {5, 6, 7}</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up-question-1">Warm Up Question-1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up-question-2">Warm Up Question-2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up-question-3">Warm Up Question-3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up-question-4">Warm Up Question-4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up-question-5">Warm Up Question-5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up-question-6">Warm Up Question-6</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question-1</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question-2</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question-3</a></li>

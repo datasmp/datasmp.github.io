@@ -62,9 +62,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'project_soccer_prep';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'project_soccer';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Appendix" href="appendix.html" />
+    <link rel="prev" title="Project: Approximating Areas" href="project_riemann.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -165,7 +167,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="preface.html">Preface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="acknowledge.html">Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python.html">Python Introduction</a></li>
@@ -281,12 +283,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="dictionaries_business.html">Dictionaries Business</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="projects.html">Projects</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="projects.html">Projects</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="project_factorization.html">Project: Factorization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project_elections.html">Project: Election Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project_smoothing.html">Project: Smoothing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project_riemann.html">Project: Approximating Areas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="project_soccer.html">Project: Soccer</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Project: Soccer</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="appendix.html">Appendix</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -352,7 +354,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/project_soccer_prep.ipynb" target="_blank"
+      <li><a href="_sources/project_soccer.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -465,7 +467,6 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#future-work">Future work</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#save-as-an-excel-file">Save as an Excel File</a></li>
 </ul>
             </nav>
         </div>
@@ -1258,131 +1259,6 @@ Team               : PSV Eindhoven
 <li><p>Identify the team with the largest point difference from the second-highest team.</p></li>
 </ul>
 </section>
-<section id="save-as-an-excel-file">
-<h2>Save as an Excel File<a class="headerlink" href="#save-as-an-excel-file" title="Permalink to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">ep</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
-<span class="k">for</span> <span class="n">league</span> <span class="ow">in</span> <span class="n">leagues</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">league</span><span class="p">:</span>
-        <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)]</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
-
-<span class="c1"># df.to_excel(&#39;soccer_teamx.xlsx&#39;)</span>
-<span class="c1"># df.to_csv(&#39;soccer_teamx.csv&#39;)</span>
-
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>team</th>
-      <th>pos</th>
-      <th>points</th>
-      <th>matches_played</th>
-      <th>wins</th>
-      <th>draws</th>
-      <th>losses</th>
-      <th>goals_for</th>
-      <th>goals_against</th>
-      <th>goal_diff</th>
-      <th>top_scorer</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Liverpool</td>
-      <td>1</td>
-      <td>53</td>
-      <td>23</td>
-      <td>16</td>
-      <td>16</td>
-      <td>1</td>
-      <td>54</td>
-      <td>21</td>
-      <td>+33</td>
-      <td>Mohamed Salah - 19</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Arsenal</td>
-      <td>2</td>
-      <td>47</td>
-      <td>23</td>
-      <td>13</td>
-      <td>13</td>
-      <td>2</td>
-      <td>44</td>
-      <td>21</td>
-      <td>+23</td>
-      <td>Kai Havertz - 8</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Nott'ham Forest</td>
-      <td>3</td>
-      <td>44</td>
-      <td>23</td>
-      <td>13</td>
-      <td>13</td>
-      <td>5</td>
-      <td>33</td>
-      <td>27</td>
-      <td>+6</td>
-      <td>Chris Wood - 14</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Manchester City</td>
-      <td>4</td>
-      <td>41</td>
-      <td>23</td>
-      <td>12</td>
-      <td>12</td>
-      <td>6</td>
-      <td>47</td>
-      <td>30</td>
-      <td>+17</td>
-      <td>Erling Haaland - 18</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Newcastle Utd</td>
-      <td>5</td>
-      <td>41</td>
-      <td>23</td>
-      <td>12</td>
-      <td>12</td>
-      <td>6</td>
-      <td>41</td>
-      <td>27</td>
-      <td>+14</td>
-      <td>Alexander Isak - 17</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1415,6 +1291,24 @@ Team               : PSV Eindhoven
                 <footer class="prev-next-footer">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="project_riemann.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Project: Approximating Areas</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="appendix.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Appendix</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -1451,7 +1345,6 @@ Team               : PSV Eindhoven
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#future-work">Future work</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#save-as-an-excel-file">Save as an Excel File</a></li>
 </ul>
   </nav></div>
 

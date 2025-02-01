@@ -581,7 +581,7 @@ Type of empty_set: &lt;class &#39;set&#39;&gt;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;USA&#39;, True, 2, 9.123}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{True, 2, &#39;USA&#39;, 9.123}
 </pre></div>
 </div>
 </div>
@@ -624,6 +624,17 @@ Type of empty_set: &lt;class &#39;set&#39;&gt;
 
 </pre></div>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Create a set containing the names of three different animals and display the type of it.</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">animals</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Lion&#39;</span><span class="p">,</span> <span class="s1">&#39;Bird&#39;</span><span class="p">,</span> <span class="s1">&#39;Cat&#39;</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">animals</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
 </section>
 <section id="set-function">
 <h2>set() function<a class="headerlink" href="#set-function" title="Permalink to this heading">#</a></h2>
@@ -639,7 +650,7 @@ Type of empty_set: &lt;class &#39;set&#39;&gt;
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Type of char_set: &lt;class &#39;set&#39;&gt;
-char_set        : {&#39;e&#39;, &#39;H&#39;, &#39;l&#39;, &#39;o&#39;}
+char_set        : {&#39;H&#39;, &#39;e&#39;, &#39;o&#39;, &#39;l&#39;}
 </pre></div>
 </div>
 </div>
@@ -718,6 +729,17 @@ number_list        : [1, 2, 3, 4]
 </div>
 </div>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Convert the following tuple to a set: (‘a’, ‘c’, ‘a’, ‘a’, ‘c’)</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">letters</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">letters</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
 </section>
 <section id="functions-on-sets">
 <h2>Functions on sets<a class="headerlink" href="#functions-on-sets" title="Permalink to this heading">#</a></h2>
@@ -760,6 +782,20 @@ Maximum: t
 Minimum: a
 </pre></div>
 </div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Calculate the maximum value, minimum value, total sum, and the count of elements in the sequence of numbers 10, 7, 1, 3, 15, 8 using a set.</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">{</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">8</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Count  : </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Maximum: </span><span class="si">{</span><span class="nb">max</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Minimum: </span><span class="si">{</span><span class="nb">min</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Sum    : </span><span class="si">{</span><span class="nb">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
 </div>
 </div>
 </section>
@@ -810,6 +846,22 @@ Minimum: a
 set1 (No change on set1): {1, 2, 3, 4, 5}
 </pre></div>
 </div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Display the common numbers in the two given lists.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span>
+<span class="n">list2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span>
+<span class="n">list2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Common Numbers: </span><span class="si">{</span><span class="nb">set</span><span class="p">(</span><span class="n">list1</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="nb">set</span><span class="p">(</span><span class="n">list2</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
 </div>
 </div>
 </section>
@@ -940,6 +992,22 @@ set2 ^ set1: {1, 2, 6, 7}
 </div>
 </div>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Display the numbers that appear in only one list.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span>
+<span class="n">list2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span>
+<span class="n">list2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The numbers in only one set: </span><span class="si">{</span><span class="nb">set</span><span class="p">(</span><span class="n">list1</span><span class="p">)</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="nb">set</span><span class="p">(</span><span class="n">list2</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </section>
 <section id="in-not-in">
 <h3>in &amp; not in<a class="headerlink" href="#in-not-in" title="Permalink to this heading">#</a></h3>
@@ -1045,6 +1113,19 @@ set2 ^ set1: {1, 2, 6, 7}
 number_set after  using add(99): {1, 2, 3, 4, 5, 99}
 </pre></div>
 </div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Add two additional elements to this set: {‘b’, ‘c’, ‘a’, ‘d’}.</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>letters = {&#39;b&#39;, &#39;c&#39;, &#39;a&#39;, &#39;d&#39;}
+letters.add(&#39;e&#39;)
+letters.add(&#39;f&#39;)
+print(letters)```
+</pre></div>
 </div>
 </div>
 </section>
@@ -1257,6 +1338,18 @@ number_set after  using remove(): {1, 2, 4, 5}
 </div>
 </div>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Use the remove() method to delete ‘a’  from the set {‘b’, ‘c’, ‘a’, ‘d’, ‘e’}.</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">letters</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">]</span>
+<span class="n">letters</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">letters</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </section>
 <section id="update">
 <h3>update()<a class="headerlink" href="#update" title="Permalink to this heading">#</a></h3>
@@ -1277,7 +1370,7 @@ number_set after  using remove(): {1, 2, 4, 5}
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>set1 before update: {1, 2, 3}
-set1 after  update: {1, 2, 3, &#39;b&#39;, &#39;a&#39;, &#39;c&#39;, &#39;d&#39;}
+set1 after  update: {1, 2, 3, &#39;c&#39;, &#39;b&#39;, &#39;a&#39;, &#39;d&#39;}
 </pre></div>
 </div>
 </div>
@@ -1299,7 +1392,7 @@ set1 after  update: {1, 2, 3, &#39;b&#39;, &#39;a&#39;, &#39;c&#39;, &#39;d&#39;
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>myset before update: {1, 2, 3}
-myset after  update: {1, 2, 3, &#39;a&#39;, &#39;c&#39;, &#39;d&#39;, &#39;b&#39;}
+myset after  update: {1, 2, 3, &#39;b&#39;, &#39;c&#39;, &#39;a&#39;, &#39;d&#39;}
 </pre></div>
 </div>
 </div>
@@ -1318,7 +1411,7 @@ myset after  update: {1, 2, 3, &#39;a&#39;, &#39;c&#39;, &#39;d&#39;, &#39;b&#39
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>myset before update: {1, 2, 3}
-myset after  update: {1, 2, 3, &#39;a&#39;, &#39;c&#39;, &#39;d&#39;, &#39;b&#39;}
+myset after  update: {1, 2, 3, &#39;b&#39;, &#39;c&#39;, &#39;a&#39;, &#39;d&#39;}
 </pre></div>
 </div>
 </div>
@@ -1343,13 +1436,30 @@ myset after  update: {1, 2, 3, &#39;a&#39;, &#39;c&#39;, &#39;d&#39;, &#39;b&#39
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Texas
-Oklahoma
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>California
+Texas
 Arizona
-California
+Oklahoma
 Florida
 </pre></div>
 </div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Calculate the sum of the numbers greater than 5 in this set: {7, 2, 1, 4, 9, 10, 3}</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">{</span><span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+<span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="n">total</span> <span class="o">+=</span> <span class="n">i</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
+</pre></div>
 </div>
 </div>
 </section>
