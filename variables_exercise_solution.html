@@ -288,6 +288,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="project_elections.html">Project: Election Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project_smoothing.html">Project: Smoothing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project_riemann.html">Project: Approximating Areas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_soccer.html">Project: Soccer</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="appendix.html">Appendix</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -457,6 +458,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5-u-shape">Question-5: U-Shape</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6-v-shape">Question-6: V-Shape</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7-h-shape">Question-7: H-Shape</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8-receipt-generator">Question-8: Receipt Generator</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#business-applications">Business Applications</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-demand-function">Question: Demand Function</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-demand-equation">Question: Demand Equation</a></li>
@@ -492,7 +494,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4310168240
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4339102384
 &lt;class &#39;int&#39;&gt;
 </pre></div>
 </div>
@@ -811,6 +813,79 @@ Area     : 78.54
 </div>
 </div>
 </section>
+<section id="question-8-receipt-generator">
+<h2>Question-8: Receipt Generator<a class="headerlink" href="#question-8-receipt-generator" title="Permalink to this heading">#</a></h2>
+<p>The following code generates a basic store receipt.
+Improve its appereance by adding separators (dashes -) and formatting the price, tax, tip, and discount details to make it look more professional, similar to real receipts.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="n">current_date_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:%M:%S&#39;</span><span class="p">)</span>  <span class="c1"># string object</span>
+
+<span class="n">restaurant_name</span> <span class="o">=</span> <span class="s1">&#39;Olive Garden&#39;</span>
+<span class="n">price</span> <span class="o">=</span> <span class="mi">100</span>  
+<span class="n">tax</span> <span class="o">=</span> <span class="mf">0.08</span>
+<span class="n">tip</span> <span class="o">=</span> <span class="mf">0.15</span>
+<span class="n">discount</span> <span class="o">=</span> <span class="mi">7</span>
+
+<span class="n">tax_amount</span> <span class="o">=</span> <span class="n">tax</span><span class="o">*</span><span class="n">price</span>
+<span class="n">tip_amount</span> <span class="o">=</span> <span class="n">tip</span><span class="o">*</span><span class="n">price</span>
+
+<span class="n">total</span> <span class="o">=</span> <span class="n">price</span> <span class="o">+</span> <span class="n">tax_amount</span> <span class="o">+</span> <span class="n">tip_amount</span> <span class="o">-</span> <span class="n">discount</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">restaurant_name</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">current_date_time</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Total          :&#39;</span><span class="p">,</span> <span class="n">total</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+
+
+<span class="n">restaurant_name</span> <span class="o">=</span> <span class="s1">&#39;Olive Garden&#39;</span>
+<span class="n">price</span> <span class="o">=</span> <span class="mi">100</span>  
+<span class="n">tax</span> <span class="o">=</span> <span class="mf">0.08</span>
+<span class="n">tip</span> <span class="o">=</span> <span class="mf">0.15</span>
+<span class="n">discount</span> <span class="o">=</span> <span class="mi">7</span>
+
+<span class="n">tax_amount</span> <span class="o">=</span> <span class="n">tax</span><span class="o">*</span><span class="n">price</span>
+<span class="n">tip_amount</span> <span class="o">=</span> <span class="n">tip</span><span class="o">*</span><span class="n">price</span>
+
+<span class="n">total</span> <span class="o">=</span> <span class="n">price</span> <span class="o">+</span> <span class="n">tax_amount</span> <span class="o">+</span> <span class="n">tip_amount</span> <span class="o">-</span> <span class="n">discount</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">30</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">8</span><span class="p">,</span> <span class="n">restaurant_name</span><span class="p">)</span>  
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">30</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">4</span><span class="p">,</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:%M:%S&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">30</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Price   :  $&#39;</span><span class="p">,</span> <span class="n">price</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Tax     :  $&#39;</span><span class="p">,</span> <span class="n">tax_amount</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Tip     :  $&#39;</span><span class="p">,</span> <span class="n">tip_amount</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Discount: -$&#39;</span><span class="p">,</span> <span class="n">discount</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">30</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Total   :  $&#39;</span><span class="p">,</span> <span class="n">total</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">30</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>------------------------------
+         Olive Garden
+------------------------------
+     2025-02-11 17:24:14
+------------------------------
+Price   :  $100
+Tax     :  $8.0
+Tip     :  $15.0
+Discount: -$7
+------------------------------
+Total   :  $116.0
+------------------------------
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="business-applications">
 <h2>Business Applications<a class="headerlink" href="#business-applications" title="Permalink to this heading">#</a></h2>
 <section id="question-demand-function">
@@ -1117,6 +1192,7 @@ b) A = 1392.0</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5-u-shape">Question-5: U-Shape</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6-v-shape">Question-6: V-Shape</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7-h-shape">Question-7: H-Shape</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8-receipt-generator">Question-8: Receipt Generator</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#business-applications">Business Applications</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-demand-function">Question: Demand Function</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-demand-equation">Question: Demand Equation</a></li>

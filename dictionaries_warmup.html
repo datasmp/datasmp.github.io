@@ -288,6 +288,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="project_elections.html">Project: Election Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project_smoothing.html">Project: Smoothing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project_riemann.html">Project: Approximating Areas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_soccer.html">Project: Soccer</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="appendix.html">Appendix</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -422,7 +423,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -438,6 +441,20 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up-question-1">Warm Up Question-1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up-question-2">Warm Up Question-2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up-question-3">Warm Up Question-3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up-question-4">Warm Up Question-4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up-question-5">Warm Up Question-5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up-question-6">Warm Up Question-6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up-question-7">Warm Up Question-7</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -450,7 +467,53 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="dictionaries-warm-up">
 <h1>Dictionaries Warm Up<a class="headerlink" href="#dictionaries-warm-up" title="Permalink to this heading">#</a></h1>
 <p><img alt="Section Title: Dictionaries Warm Up" src="_images/dictionaries_warmup2.png" /></p>
-<p>Coming Soon</p>
+<section id="warm-up-question-1">
+<h2>Warm Up Question-1<a class="headerlink" href="#warm-up-question-1" title="Permalink to this heading">#</a></h2>
+<p>Create a dictionary where the keys are the names of three students, and the values are their three digit ID numbers.</p>
+</section>
+<section id="warm-up-question-2">
+<h2>Warm Up Question-2<a class="headerlink" href="#warm-up-question-2" title="Permalink to this heading">#</a></h2>
+<p>Add a new pair to the following dictionary:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">student_ID</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Joe&#39;</span><span class="p">:</span><span class="mi">394</span><span class="p">,</span> <span class="s1">&#39;Tim&#39;</span><span class="p">:</span><span class="mi">921</span><span class="p">,</span> <span class="s1">&#39;Amy&#39;</span><span class="p">:</span><span class="mi">861</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="warm-up-question-3">
+<h2>Warm Up Question-3<a class="headerlink" href="#warm-up-question-3" title="Permalink to this heading">#</a></h2>
+<p>Replace 861 with 195 in the following dictionary:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">student_ID</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Joe&#39;</span><span class="p">:</span><span class="mi">394</span><span class="p">,</span> <span class="s1">&#39;Tim&#39;</span><span class="p">:</span><span class="mi">921</span><span class="p">,</span> <span class="s1">&#39;Amy&#39;</span><span class="p">:</span><span class="mi">861</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="warm-up-question-4">
+<h2>Warm Up Question-4<a class="headerlink" href="#warm-up-question-4" title="Permalink to this heading">#</a></h2>
+<p>Remove the  (‘Joe’, 394) pair from the following dictionary:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">student_ID</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Joe&#39;</span><span class="p">:</span><span class="mi">394</span><span class="p">,</span> <span class="s1">&#39;Tim&#39;</span><span class="p">:</span><span class="mi">921</span><span class="p">,</span> <span class="s1">&#39;Amy&#39;</span><span class="p">:</span><span class="mi">861</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="warm-up-question-5">
+<h2>Warm Up Question-5<a class="headerlink" href="#warm-up-question-5" title="Permalink to this heading">#</a></h2>
+<p>Use the get() method to check for ‘Michael’ in the dictionary and return 999 if the country name is not a key.
+country_capital = {‘France’:’Paris’, ‘Italy’:’Rome’, ‘Germany’:’Berlin’}</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">student_ID</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Joe&#39;</span><span class="p">:</span><span class="mi">394</span><span class="p">,</span> <span class="s1">&#39;Tim&#39;</span><span class="p">:</span><span class="mi">921</span><span class="p">,</span> <span class="s1">&#39;Amy&#39;</span><span class="p">:</span><span class="mi">861</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="warm-up-question-6">
+<h2>Warm Up Question-6<a class="headerlink" href="#warm-up-question-6" title="Permalink to this heading">#</a></h2>
+<p>Remove the  (‘Tim’, 921) pair from the following dictionary using the pop() method::</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">student_ID</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Joe&#39;</span><span class="p">:</span><span class="mi">394</span><span class="p">,</span> <span class="s1">&#39;Tim&#39;</span><span class="p">:</span><span class="mi">921</span><span class="p">,</span> <span class="s1">&#39;Amy&#39;</span><span class="p">:</span><span class="mi">861</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="warm-up-question-7">
+<h2>Warm Up Question-7<a class="headerlink" href="#warm-up-question-7" title="Permalink to this heading">#</a></h2>
+<p>Find the sum of the values of the student_ID dictionary.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">student_ID</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Joe&#39;</span><span class="p">:</span><span class="mi">394</span><span class="p">,</span> <span class="s1">&#39;Tim&#39;</span><span class="p">:</span><span class="mi">921</span><span class="p">,</span> <span class="s1">&#39;Amy&#39;</span><span class="p">:</span><span class="mi">861</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -507,6 +570,26 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up-question-1">Warm Up Question-1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up-question-2">Warm Up Question-2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up-question-3">Warm Up Question-3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up-question-4">Warm Up Question-4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up-question-5">Warm Up Question-5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up-question-6">Warm Up Question-6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up-question-7">Warm Up Question-7</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

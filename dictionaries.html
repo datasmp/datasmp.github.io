@@ -288,6 +288,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="project_elections.html">Project: Election Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project_smoothing.html">Project: Smoothing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project_riemann.html">Project: Approximating Areas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_soccer.html">Project: Soccer</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="appendix.html">Appendix</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -675,6 +676,16 @@ Type of empty_dict: &lt;class &#39;dict&#39;&gt;
 </div>
 </div>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Create a dictionary where the keys are the names of three different countries, and the values are their respective capital cities.</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">country_capital</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;France&#39;</span><span class="p">:</span><span class="s1">&#39;Paris&#39;</span><span class="p">,</span> <span class="s1">&#39;Italy&#39;</span><span class="p">:</span><span class="s1">&#39;Rome&#39;</span><span class="p">,</span> <span class="s1">&#39;Germany&#39;</span><span class="p">:</span><span class="s1">&#39;Berlin&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
 </section>
 <section id="len">
 <h3>len()<a class="headerlink" href="#len" title="Permalink to this heading">#</a></h3>
@@ -764,6 +775,18 @@ grades dictionary after  adding a new pair: {&#39;Math&#39;: 80, &#39;Chemistry&
 </div>
 </div>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Add a new pair to the following dictionary:</p>
+<p>country_capital = {‘France’:’Paris’, ‘Italy’:’Rome’, ‘Germany’:’Berlin’}</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">country_capital</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;France&#39;</span><span class="p">:</span><span class="s1">&#39;Paris&#39;</span><span class="p">,</span> <span class="s1">&#39;Italy&#39;</span><span class="p">:</span><span class="s1">&#39;Rome&#39;</span><span class="p">,</span> <span class="s1">&#39;Germany&#39;</span><span class="p">:</span><span class="s1">&#39;Berlin&#39;</span><span class="p">}</span>
+<span class="n">country_capital</span><span class="p">[</span><span class="s1">&#39;Spain&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Madrid&#39;</span>
+</pre></div>
+</div>
+</div>
 </section>
 <section id="change-a-value">
 <h4>Change a Value<a class="headerlink" href="#change-a-value" title="Permalink to this heading">#</a></h4>
@@ -789,6 +812,18 @@ grades dictionary after adding a new pair: {&#39;Math&#39;: 80, &#39;Chemistry&#
 </div>
 </div>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Replace ‘Berlin’ with BERLIN’ in the following dictionary:</p>
+<p>country_capital = {‘France’:’Paris’, ‘Italy’:’Rome’, ‘Germany’:’Berlin’}</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">country_capital</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;France&#39;</span><span class="p">:</span><span class="s1">&#39;Paris&#39;</span><span class="p">,</span> <span class="s1">&#39;Italy&#39;</span><span class="p">:</span><span class="s1">&#39;Rome&#39;</span><span class="p">,</span> <span class="s1">&#39;Germany&#39;</span><span class="p">:</span><span class="s1">&#39;Berlin&#39;</span><span class="p">}</span>
+<span class="n">country_capital</span><span class="p">[</span><span class="s1">&#39;Germeny&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;BERLIN&#39;</span>
+</pre></div>
+</div>
+</div>
 </section>
 <section id="delete-a-pair">
 <h4>Delete a pair<a class="headerlink" href="#delete-a-pair" title="Permalink to this heading">#</a></h4>
@@ -812,6 +847,18 @@ grades dictionary after adding a new pair: {&#39;Math&#39;: 80, &#39;Chemistry&#
 grades dictionary after  deleting a  pair: {&#39;Math&#39;: 80, &#39;History&#39;: 65}
 </pre></div>
 </div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Remove the  (‘France’,’Paris’) pair from the following dictionary:</p>
+<p>country_capital = {‘France’:’Paris’, ‘Italy’:’Rome’, ‘Germany’:’Berlin’}</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">country_capital</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;France&#39;</span><span class="p">:</span><span class="s1">&#39;Paris&#39;</span><span class="p">,</span> <span class="s1">&#39;Italy&#39;</span><span class="p">:</span><span class="s1">&#39;Rome&#39;</span><span class="p">,</span> <span class="s1">&#39;Germany&#39;</span><span class="p">:</span><span class="s1">&#39;Berlin&#39;</span><span class="p">}</span>
+<span class="k">del</span> <span class="n">country_capital</span><span class="p">[</span><span class="s1">&#39;France&#39;</span><span class="p">]</span>
+</pre></div>
 </div>
 </div>
 </section>
@@ -944,6 +991,17 @@ The value of Biology key: Does Not Exist
 </div>
 </div>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Use the get() method to check for Sweden in the dictionary and return ‘DNE’ if the country name is not a key.
+country_capital = {‘France’:’Paris’, ‘Italy’:’Rome’, ‘Germany’:’Berlin’}</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">country_capital</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Sweden&#39;</span><span class="p">,</span> <span class="s1">&#39;DNE&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </section>
 <section id="items">
 <h4>items()<a class="headerlink" href="#items" title="Permalink to this heading">#</a></h4>
@@ -1013,6 +1071,18 @@ grades dictionary after  using pop(): {&#39;Math&#39;: 80, &#39;History&#39;: 65
 Removed value                       : 70
 </pre></div>
 </div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Remove the  (‘France’,’Paris’) pair from the following dictionary using the pop() method:</p>
+<p>country_capital = {‘France’:’Paris’, ‘Italy’:’Rome’, ‘Germany’:’Berlin’}</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">country_capital</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;France&#39;</span><span class="p">:</span><span class="s1">&#39;Paris&#39;</span><span class="p">,</span> <span class="s1">&#39;Italy&#39;</span><span class="p">:</span><span class="s1">&#39;Rome&#39;</span><span class="p">,</span> <span class="s1">&#39;Germany&#39;</span><span class="p">:</span><span class="s1">&#39;Berlin&#39;</span><span class="p">}</span>
+<span class="n">country_capital</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;France&#39;</span><span class="p">)</span>
+</pre></div>
 </div>
 </div>
 </section>
@@ -1171,6 +1241,40 @@ History 65
 65
 </pre></div>
 </div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Find the sum of the values of the grades dictionary.</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Math&#39;</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span> <span class="s1">&#39;Chemistry&#39;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span> <span class="s1">&#39;History&#39;</span><span class="p">:</span><span class="mi">65</span><span class="p">}</span>
+
+<span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">grade</span> <span class="ow">in</span> <span class="n">grades</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+    <span class="n">total</span> <span class="o">+=</span> <span class="n">grade</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Sum of grades = </span><span class="si">{</span><span class="n">total</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Quick Check!</p>
+<p>Find the sum of the lengths of each key in the grades dictionary.</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Math&#39;</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span> <span class="s1">&#39;Chemistry&#39;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span> <span class="s1">&#39;History&#39;</span><span class="p">:</span><span class="mi">65</span><span class="p">}</span>
+
+<span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">course</span> <span class="ow">in</span> <span class="n">grades</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="n">total</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">course</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Sum of lenghs of courses = </span><span class="si">{</span><span class="n">total</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
 </div>
 </div>
 </section>
