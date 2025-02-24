@@ -288,6 +288,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="project_elections.html">Project: Election Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project_smoothing.html">Project: Smoothing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project_riemann.html">Project: Approximating Areas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_soccer.html">Project: Soccer</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="appendix.html">Appendix</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -461,6 +462,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-10-standard-scaling">Question-10: Standard Scaling</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-11-minmax-scaling">Question-11: MinMax Scaling</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-12-square">Question-12: Square</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-13">Question-13</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-14">Question-14</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#business-applications">Business Applications</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-production-data-analysis">Question: Production Data Analysis</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-revenue">Question: Revenue</a></li>
@@ -904,6 +907,65 @@ Enter z:  4</p>
 </div>
 </div>
 </section>
+<section id="question-13">
+<h2>Question-13<a class="headerlink" href="#question-13" title="Permalink to this heading">#</a></h2>
+<p>Write a Python program that does the following:</p>
+<ul class="simple">
+<li><p>Prompts the user to enter their first name.</p></li>
+<li><p>Prompts the user to enter their last name.</p></li>
+<li><p>Prompts the user to enter their age.</p></li>
+<li><p>Prompts the user to enter their country.</p></li>
+<li><p>Prompts the user to enter their city.</p></li>
+<li><p>Stores each of these values in separate variables.
+Displays a summary message using the stored values in the following format:</p></li>
+</ul>
+<p><em>The student Jackson, Amy is 35 years old and from Madrid, Spain.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># first_name = input(&#39;Enter your first name: &#39;)</span>
+<span class="c1"># last_name  = input(&#39;Enter your last name : &#39;)</span>
+<span class="c1"># age        = int(input(&#39;Enter your age   : &#39;))</span>
+<span class="c1"># country    = input(&#39;Enter your country   : &#39;)</span>
+<span class="c1"># city       = input(&#39;Enter your city      : &#39;)</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The student &#39;</span><span class="p">,</span> <span class="n">last_name</span><span class="p">,</span> <span class="s1">&#39;, &#39;</span><span class="p">,</span> <span class="n">first_name</span><span class="p">,</span> <span class="s1">&#39; is &#39;</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="s1">&#39; years old and from &#39;</span> <span class="p">,</span> <span class="n">city</span><span class="p">,</span> <span class="s1">&#39;, &#39;</span><span class="p">,</span> <span class="n">country</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The student Jackson, Amy is 35 years old and from Madrid,Spain.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-14">
+<h2>Question-14<a class="headerlink" href="#question-14" title="Permalink to this heading">#</a></h2>
+<p>Write a program that asks the user to enter an integer and uses a single print() function to display that number of lines, each containing a single &lt; character. Hint: Use the newline character ‘\n’.</p>
+<p><em>Sample Output:</em><br />
+Enter an integer:  4<br />
+&lt;<br />
+&lt;<br />
+&lt;<br />
+&lt;</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_lines</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter an integer: &quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&lt;</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">*</span> <span class="n">num_lines</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;
+&lt;
+&lt;
+&lt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="business-applications">
 <h2>Business Applications<a class="headerlink" href="#business-applications" title="Permalink to this heading">#</a></h2>
 <section id="question-production-data-analysis">
@@ -1046,6 +1108,8 @@ A = 2250.0
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-10-standard-scaling">Question-10: Standard Scaling</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-11-minmax-scaling">Question-11: MinMax Scaling</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-12-square">Question-12: Square</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-13">Question-13</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-14">Question-14</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#business-applications">Business Applications</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-production-data-analysis">Question: Production Data Analysis</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-revenue">Question: Revenue</a></li>

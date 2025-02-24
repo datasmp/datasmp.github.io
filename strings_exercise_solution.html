@@ -286,6 +286,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="project_elections.html">Project: Election Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project_smoothing.html">Project: Smoothing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project_riemann.html">Project: Approximating Areas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_soccer.html">Project: Soccer</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="appendix.html">Appendix</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -457,6 +458,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7-house">Question-7: House</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8-password">Question-8: Password</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-9">Question-9</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-10">Question-10</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-11">Question-11</a></li>
 </ul>
             </nav>
         </div>
@@ -819,6 +822,10 @@ tItanIc
 <li><p>Import letters, punctuations, and digits from the string module.</p></li>
 <li><p>Choose random integers that can be an index for a letter, punctuation, or digit.</p></li>
 </ul>
+<p>Hint: Use the <em>random.randint(low, high)</em> function with appropriate low and high values.</p>
+<ul class="simple">
+<li><p>Refer to the appendix at the end of the book for details on the random module.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">string</span>
@@ -839,7 +846,7 @@ tItanIc
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Password: n)6
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Password: G$8
 </pre></div>
 </div>
 </div>
@@ -861,6 +868,71 @@ tItanIc
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I am in TENth grade and my CHEMISTRY teacher is Mr. Adams.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-10">
+<h2>Question-10<a class="headerlink" href="#question-10" title="Permalink to this heading">#</a></h2>
+<p>Use the given variable to produce the string <em>teXas</em>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="s1">&#39;texas&#39;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="s1">&#39;texas&#39;</span>
+<span class="n">state</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">state</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">swapcase</span><span class="p">()</span> <span class="o">+</span> <span class="n">state</span><span class="p">[</span><span class="mi">3</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;teXas&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-11">
+<h2>Question-11<a class="headerlink" href="#question-11" title="Permalink to this heading">#</a></h2>
+<p>Write a program that asks the user to enter a country name, allowing lowercase, uppercase, or mixed-case characters.</p>
+<ul class="simple">
+<li><p>Then, prompt the user to provide the index of a character within the country name.</p></li>
+<li><p>Generate a new string by swapping the case of the character at the specified index.</p></li>
+</ul>
+<p><strong>Sample Output:</strong><br />
+Enter a country name:  fRaNce<br />
+Enter the index of the character to swap case:  4<br />
+fRaNce becomes fRaNCe</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">country</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter a country name: &#39;</span><span class="p">)</span>
+<span class="n">index</span>   <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter the index of the character to swap case: &#39;</span><span class="p">))</span>
+<span class="n">result</span>  <span class="o">=</span> <span class="n">country</span><span class="p">[:</span><span class="n">index</span><span class="p">]</span> <span class="o">+</span> <span class="n">country</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="o">.</span><span class="n">swapcase</span><span class="p">()</span> <span class="o">+</span> <span class="n">country</span><span class="p">[</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">country</span><span class="si">}</span><span class="s1"> becomes </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">country</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter a country name: &#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">index</span>   <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter the index of the character to swap case: &#39;</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">result</span>  <span class="o">=</span> <span class="n">country</span><span class="p">[:</span><span class="n">index</span><span class="p">]</span> <span class="o">+</span> <span class="n">country</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="o">.</span><span class="n">swapcase</span><span class="p">()</span> <span class="o">+</span> <span class="n">country</span><span class="p">[</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.11/site-packages/ipykernel/kernelbase.py:1201,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1199</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1200</span>     <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1201</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1202</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1203</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1204</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">   </span><span class="mi">1205</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1206</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1207</span> <span class="p">)</span>
+
+<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
 </pre></div>
 </div>
 </div>
@@ -927,6 +999,8 @@ tItanIc
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7-house">Question-7: House</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8-password">Question-8: Password</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-9">Question-9</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-10">Question-10</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-11">Question-11</a></li>
 </ul>
   </nav></div>
 
