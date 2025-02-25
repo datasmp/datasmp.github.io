@@ -481,6 +481,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parsing-strings">Parsing Strings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-allignment">String Allignment</a></li>
 </ul>
             </nav>
         </div>
@@ -2580,6 +2581,163 @@ ArtHuR
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{abc}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{abc}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="string-allignment">
+<h2>String Allignment<a class="headerlink" href="#string-allignment" title="Permalink to this heading">#</a></h2>
+<p>String alignment when displaying output using the print() function can be efficiently handled with f-strings.</p>
+<p>Alignment options include left, right, and center, which can be specified using a colon (:) followed by:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code> for left alignment</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code> for right alignment</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">^</span></code> for center alignment</p></li>
+</ul>
+<p>Additionally, a number is specified after the alignment symbol, representing the total width of the output, which includes both the spaces on the left and right and the length of the string itself.</p>
+<ul class="simple">
+<li><p>Instead of spaces, any character can be used for padding on the left and/or right sides for alignment. To do this, place the desired padding character immediately before the alignment symbol mentioned above.</p></li>
+</ul>
+<ul class="simple">
+<li><p>In the following example, ‘tim’ is left-aligned using an f-string (The digits are displayed to better track the alignment:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;tim&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">:</span><span class="s1">&lt;7</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;1234567&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tim    
+1234567
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>In the following example, ‘tim’ is right-aligned using an f-string:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;tim&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">:</span><span class="s1">&gt;7</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;1234567&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    tim
+1234567
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>In the following example, ‘tim’ is centere using an f-string:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;tim&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">:</span><span class="s1">^7</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;1234567&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  tim  
+1234567
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>In the following example, ‘tim’ is left-aligned and padded with the ‘-’ character:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;tim&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">:</span><span class="s1">-&lt;7</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;1234567&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tim----
+1234567
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>In the following example, ‘tim’ is right-aligned using an f-string and padded with the ‘-’ character::</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;tim&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">:</span><span class="s1">-&gt;7</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;1234567&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>----tim
+1234567
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>In the following example, ‘tim’ is centere using an f-string and padded with the ‘-’ character::</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;tim&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">:</span><span class="s1">-^7</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;1234567&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--tim--
+1234567
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Example:</strong> The following code creates a frame for three country names.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">country1</span> <span class="o">=</span> <span class="s1">&#39;Cuba&#39;</span>
+<span class="n">country2</span> <span class="o">=</span> <span class="s1">&#39;Trinidad and Tobago&#39;</span>
+<span class="n">country3</span> <span class="o">=</span> <span class="s1">&#39;France&#39;</span>
+
+<span class="n">width</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">country1</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">country2</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">country3</span><span class="p">))</span> <span class="o">+</span> <span class="mi">10</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="p">((</span><span class="n">width</span><span class="o">*</span><span class="mi">3</span><span class="o">+</span><span class="mi">4</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;|</span><span class="si">{</span><span class="n">country1</span><span class="si">:</span><span class="s1">^</span><span class="si">{</span><span class="n">width</span><span class="si">}}</span><span class="s1">|</span><span class="si">{</span><span class="n">country2</span><span class="si">:</span><span class="s1">^</span><span class="si">{</span><span class="n">width</span><span class="si">}}</span><span class="s1">|</span><span class="si">{</span><span class="n">country3</span><span class="si">:</span><span class="s1">^</span><span class="si">{</span><span class="n">width</span><span class="si">}}</span><span class="s1">|&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="p">((</span><span class="n">width</span><span class="o">*</span><span class="mi">3</span><span class="o">+</span><span class="mi">4</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-------------------------------------------------------------------------------------------
+|            Cuba             |     Trinidad and Tobago     |           France            |
+-------------------------------------------------------------------------------------------
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <div class="toctree-wrapper compound">
 </div>
@@ -2683,6 +2841,7 @@ ArtHuR
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parsing-strings">Parsing Strings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-allignment">String Allignment</a></li>
 </ul>
   </nav></div>
 
