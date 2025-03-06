@@ -288,6 +288,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="project_elections.html">Project: Election Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project_smoothing.html">Project: Smoothing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project_riemann.html">Project: Approximating Areas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_soccer.html">Project: Soccer</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="appendix.html">Appendix</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -453,6 +454,11 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6">Question-6</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7">Question-7</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8">Question-8</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-9">Question-9</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-10">Question-10</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-11">Question-11</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-12">Question-12</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-13">Question-13</a></li>
 </ul>
             </nav>
         </div>
@@ -560,6 +566,60 @@ document.write(`
 <p>Double single quotes cannot be used to create a string.</p>
 </div>
 </section>
+<section id="question-9">
+<h2>Question-9<a class="headerlink" href="#question-9" title="Permalink to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Ashley&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>Use indexing with square brackets [].</p>
+</div>
+</section>
+<section id="question-10">
+<h2>Question-10<a class="headerlink" href="#question-10" title="Permalink to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="s1">&#39;Texas&#39;</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="n">n</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>The index n is out of range. The largest valid index is len(state) - 1, as indexing starts from 0.</p>
+</div>
+</section>
+<section id="question-11">
+<h2>Question-11<a class="headerlink" href="#question-11" title="Permalink to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">digits</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>To use string.digits, you need to import the string module first: import string</p>
+</div>
+</section>
+<section id="question-12">
+<h2>Question-12<a class="headerlink" href="#question-12" title="Permalink to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">country</span> <span class="o">=</span> <span class="s1">&#39;France&#39;</span>
+<span class="n">country</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;T&#39;</span>
+</pre></div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>Strings are immutable, meaning they cannot be modified once defined.</p>
+</div>
+</section>
+<section id="question-13">
+<h2>Question-13<a class="headerlink" href="#question-13" title="Permalink to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;a&#39;</span> <span class="n">notin</span> <span class="s1">&#39;tabele&#39;</span>
+</pre></div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>The operator for checking membership in Python is not in, not notin.</p>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -633,6 +693,11 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6">Question-6</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7">Question-7</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8">Question-8</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-9">Question-9</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-10">Question-10</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-11">Question-11</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-12">Question-12</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-13">Question-13</a></li>
 </ul>
   </nav></div>
 

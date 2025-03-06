@@ -482,6 +482,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parsing-strings">Parsing Strings</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-allignment">String Allignment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rounding">Rounding</a></li>
 </ul>
             </nav>
         </div>
@@ -2680,7 +2681,7 @@ ArtHuR
 </div>
 </div>
 <ul class="simple">
-<li><p>In the following example, ‘tim’ is right-aligned using an f-string and padded with the ‘-’ character::</p></li>
+<li><p>In the following example, ‘tim’ is right-aligned using an f-string and padded with the ‘-’ character:</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2698,7 +2699,7 @@ ArtHuR
 </div>
 </div>
 <ul class="simple">
-<li><p>In the following example, ‘tim’ is centere using an f-string and padded with the ‘-’ character::</p></li>
+<li><p>In the following example, ‘tim’ is centered using an f-string and padded with the ‘-’ character:</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2711,6 +2712,75 @@ ArtHuR
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--tim--
 1234567
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>In the following example, names are left-alligned using an f-string and padded with the ‘-’ character::</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name1</span> <span class="o">=</span> <span class="s1">&#39;Joe&#39;</span>
+<span class="n">name2</span> <span class="o">=</span> <span class="s1">&#39;Michael Jordan&#39;</span>
+<span class="n">name3</span> <span class="o">=</span> <span class="s1">&#39;Taylor&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name1</span><span class="si">:</span><span class="s1">-&lt;25</span><span class="si">}</span><span class="s1"> :&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name2</span><span class="si">:</span><span class="s1">-&lt;25</span><span class="si">}</span><span class="s1"> :&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name3</span><span class="si">:</span><span class="s1">-&lt;25</span><span class="si">}</span><span class="s1"> :&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Joe---------------------- :
+Michael Jordan----------- :
+Taylor------------------- :
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>In the following example, names are right-alligned using an f-string and padded with the ‘-’ character::</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name1</span> <span class="o">=</span> <span class="s1">&#39;Joe&#39;</span>
+<span class="n">name2</span> <span class="o">=</span> <span class="s1">&#39;Michael Jordan&#39;</span>
+<span class="n">name3</span> <span class="o">=</span> <span class="s1">&#39;Taylor&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name1</span><span class="si">:</span><span class="s1">-&gt;25</span><span class="si">}</span><span class="s1"> :&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name2</span><span class="si">:</span><span class="s1">-&gt;25</span><span class="si">}</span><span class="s1"> :&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name3</span><span class="si">:</span><span class="s1">-&gt;25</span><span class="si">}</span><span class="s1"> :&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>----------------------Joe :
+-----------Michael Jordan :
+-------------------Taylor :
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>In the following example, names are centered using an f-string and padded with the ‘-’ character::</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name1</span> <span class="o">=</span> <span class="s1">&#39;Joe&#39;</span>
+<span class="n">name2</span> <span class="o">=</span> <span class="s1">&#39;Michael Jordan&#39;</span>
+<span class="n">name3</span> <span class="o">=</span> <span class="s1">&#39;Taylor&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name1</span><span class="si">:</span><span class="s1">-^25</span><span class="si">}</span><span class="s1"> :&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name2</span><span class="si">:</span><span class="s1">-^25</span><span class="si">}</span><span class="s1"> :&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name3</span><span class="si">:</span><span class="s1">-^25</span><span class="si">}</span><span class="s1"> :&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-----------Joe----------- :
+-----Michael Jordan------ :
+---------Taylor---------- :
 </pre></div>
 </div>
 </div>
@@ -2734,6 +2804,56 @@ ArtHuR
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-------------------------------------------------------------------------------------------
 |            Cuba             |     Trinidad and Tobago     |           France            |
 -------------------------------------------------------------------------------------------
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Example:</strong> The following code creates a frame for six country names.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">country1</span> <span class="o">=</span> <span class="s1">&#39;Cuba&#39;</span>
+<span class="n">country2</span> <span class="o">=</span> <span class="s1">&#39;Trinidad and Tobago&#39;</span>
+<span class="n">country3</span> <span class="o">=</span> <span class="s1">&#39;France&#39;</span>
+<span class="n">country4</span> <span class="o">=</span> <span class="s1">&#39;United States of America&#39;</span>
+<span class="n">country5</span> <span class="o">=</span> <span class="s1">&#39;Germany&#39;</span>
+<span class="n">country6</span> <span class="o">=</span> <span class="s1">&#39;Portugal&#39;</span>
+
+
+<span class="n">width</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">country1</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">country2</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">country3</span><span class="p">))</span> <span class="o">+</span> <span class="mi">10</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="p">((</span><span class="n">width</span><span class="o">*</span><span class="mi">3</span><span class="o">+</span><span class="mi">4</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;|</span><span class="si">{</span><span class="n">country1</span><span class="si">:</span><span class="s1">^</span><span class="si">{</span><span class="n">width</span><span class="si">}}</span><span class="s1">|</span><span class="si">{</span><span class="n">country2</span><span class="si">:</span><span class="s1">^</span><span class="si">{</span><span class="n">width</span><span class="si">}}</span><span class="s1">|</span><span class="si">{</span><span class="n">country3</span><span class="si">:</span><span class="s1">^</span><span class="si">{</span><span class="n">width</span><span class="si">}}</span><span class="s1">|&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="p">((</span><span class="n">width</span><span class="o">*</span><span class="mi">3</span><span class="o">+</span><span class="mi">4</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;|</span><span class="si">{</span><span class="n">country4</span><span class="si">:</span><span class="s1">^</span><span class="si">{</span><span class="n">width</span><span class="si">}}</span><span class="s1">|</span><span class="si">{</span><span class="n">country5</span><span class="si">:</span><span class="s1">^</span><span class="si">{</span><span class="n">width</span><span class="si">}}</span><span class="s1">|</span><span class="si">{</span><span class="n">country6</span><span class="si">:</span><span class="s1">^</span><span class="si">{</span><span class="n">width</span><span class="si">}}</span><span class="s1">|&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="p">((</span><span class="n">width</span><span class="o">*</span><span class="mi">3</span><span class="o">+</span><span class="mi">4</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-------------------------------------------------------------------------------------------
+|            Cuba             |     Trinidad and Tobago     |           France            |
+-------------------------------------------------------------------------------------------
+|  United States of America   |           Germany           |          Portugal           |
+-------------------------------------------------------------------------------------------
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="rounding">
+<h2>Rounding<a class="headerlink" href="#rounding" title="Permalink to this heading">#</a></h2>
+<p>Rounding with f-strings can be done using the <code class="docutils literal notranslate"><span class="pre">:.nf</span></code> format, where <em>n</em> specifies the number of decimal places, and <em>f</em> indicates a float number.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weight</span> <span class="o">=</span> <span class="mf">123.56784</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Round to the nearest tenth   : </span><span class="si">{</span><span class="n">weight</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Round to the nearest hundreth: </span><span class="si">{</span><span class="n">weight</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Round to the nearest tenth   : 123.6
+Round to the nearest hundreth: 123.57
 </pre></div>
 </div>
 </div>
@@ -2842,6 +2962,7 @@ ArtHuR
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parsing-strings">Parsing Strings</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-allignment">String Allignment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rounding">Rounding</a></li>
 </ul>
   </nav></div>
 

@@ -460,6 +460,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-9">Question-9</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-10">Question-10</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-11">Question-11</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-12">Question-12</a></li>
 </ul>
             </nav>
         </div>
@@ -846,7 +847,7 @@ tItanIc
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Password: G$8
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Password: w_3
 </pre></div>
 </div>
 </div>
@@ -938,6 +939,28 @@ fRaNce becomes fRaNCe</p>
 </div>
 </div>
 </section>
+<section id="question-12">
+<h2>Question-12<a class="headerlink" href="#question-12" title="Permalink to this heading">#</a></h2>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">find</span></code> method to display the month part of the following date.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">date</span> <span class="o">=</span> <span class="s1">&#39;/2010?June/25&#39;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">date</span> <span class="o">=</span> <span class="s1">&#39;/2010-June/25&#39;</span>
+<span class="n">index1</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+<span class="n">index2</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="n">index1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">date</span><span class="p">[</span><span class="n">index1</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span> <span class="n">index2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>June
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1001,6 +1024,7 @@ fRaNce becomes fRaNCe</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-9">Question-9</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-10">Question-10</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-11">Question-11</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-12">Question-12</a></li>
 </ul>
   </nav></div>
 
