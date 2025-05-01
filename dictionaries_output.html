@@ -288,6 +288,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="project_elections.html">Project: Election Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project_smoothing.html">Project: Smoothing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project_riemann.html">Project: Approximating Areas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_soccer.html">Project: Soccer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_grade_system.html">Project: Grading System</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="appendix.html">Appendix</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -454,6 +456,13 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7">Question-7</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8">Question-8</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-9">Question-9</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-10">Question-10</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-11">Question-11</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-12">Question-12</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-13">Question-13</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-14">Question-14</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-15">Question-15</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-16">Question-16</a></li>
 </ul>
             </nav>
         </div>
@@ -632,6 +641,84 @@ A</p>
 30 300</p>
 </div>
 </section>
+<section id="question-10">
+<h2>Question-10<a class="headerlink" href="#question-10" title="Permalink to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Tim&#39;</span><span class="p">:</span><span class="mi">90</span><span class="p">,</span> <span class="s1">&#39;Amy&#39;</span><span class="p">:</span><span class="mi">95</span><span class="p">,</span> <span class="s1">&#39;Jack&#39;</span><span class="p">:</span><span class="mi">85</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">grades</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+</pre></div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>dict_keys([‘Tim’, ‘Amy’, ‘Jack’])</p>
+</div>
+</section>
+<section id="question-11">
+<h2>Question-11<a class="headerlink" href="#question-11" title="Permalink to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Tim&#39;</span><span class="p">:</span><span class="mi">90</span><span class="p">,</span> <span class="s1">&#39;Amy&#39;</span><span class="p">:</span><span class="mi">95</span><span class="p">,</span> <span class="s1">&#39;Jack&#39;</span><span class="p">:</span><span class="mi">85</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">grades</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+</pre></div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>dict_values([90, 95, 85])</p>
+</div>
+</section>
+<section id="question-12">
+<h2>Question-12<a class="headerlink" href="#question-12" title="Permalink to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Tim&#39;</span><span class="p">:</span><span class="mi">90</span><span class="p">,</span> <span class="s1">&#39;Amy&#39;</span><span class="p">:</span><span class="mi">95</span><span class="p">,</span> <span class="s1">&#39;Jack&#39;</span><span class="p">:</span><span class="mi">85</span><span class="p">,</span> <span class="s1">&#39;Tim&#39;</span><span class="p">:</span><span class="mi">50</span><span class="p">}</span>
+<span class="n">grades</span><span class="p">[</span><span class="s1">&#39;Tim&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>50</p>
+</div>
+</section>
+<section id="question-13">
+<h2>Question-13<a class="headerlink" href="#question-13" title="Permalink to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Tim&#39;</span><span class="p">:</span><span class="mi">90</span><span class="p">,</span> <span class="s1">&#39;Amy&#39;</span><span class="p">:</span><span class="mi">95</span><span class="p">,</span> <span class="s1">&#39;Jack&#39;</span><span class="p">:</span><span class="mi">85</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">80</span> <span class="ow">in</span> <span class="n">grades</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>False</p>
+</div>
+</section>
+<section id="question-14">
+<h2>Question-14<a class="headerlink" href="#question-14" title="Permalink to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Tim&#39;</span><span class="p">:</span><span class="mi">90</span><span class="p">,</span> <span class="s1">&#39;Amy&#39;</span><span class="p">:</span><span class="mi">95</span><span class="p">,</span> <span class="s1">&#39;Jack&#39;</span><span class="p">:</span><span class="mi">85</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Jack&#39;</span> <span class="ow">in</span> <span class="n">grades</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>True</p>
+</div>
+</section>
+<section id="question-15">
+<h2>Question-15<a class="headerlink" href="#question-15" title="Permalink to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Tim&#39;</span><span class="p">:</span><span class="mi">90</span><span class="p">,</span> <span class="s1">&#39;Amy&#39;</span><span class="p">:</span><span class="mi">95</span><span class="p">,</span> <span class="s1">&#39;Jack&#39;</span><span class="p">:</span><span class="mi">85</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">grades</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>3</p>
+</div>
+</section>
+<section id="question-16">
+<h2>Question-16<a class="headerlink" href="#question-16" title="Permalink to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Tim&#39;</span><span class="p">:</span><span class="mi">90</span><span class="p">,</span> <span class="s1">&#39;Amy&#39;</span><span class="p">:</span><span class="mi">95</span><span class="p">,</span> <span class="s1">&#39;Jack&#39;</span><span class="p">:</span><span class="mi">85</span><span class="p">}</span>
+<span class="n">grades</span><span class="p">[</span><span class="s1">&#39;Amy&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">grades</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>{‘Tim’: 90, ‘Amy’: 100, ‘Jack’: 85}</p>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -706,6 +793,13 @@ A</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7">Question-7</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8">Question-8</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-9">Question-9</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-10">Question-10</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-11">Question-11</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-12">Question-12</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-13">Question-13</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-14">Question-14</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-15">Question-15</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-16">Question-16</a></li>
 </ul>
   </nav></div>
 

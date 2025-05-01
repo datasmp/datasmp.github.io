@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'project_soccer';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Appendix" href="appendix.html" />
+    <link rel="next" title="Project: Grading System" href="project_grade_system.html" />
     <link rel="prev" title="Project: Approximating Areas" href="project_riemann.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -289,6 +289,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="project_smoothing.html">Project: Smoothing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project_riemann.html">Project: Approximating Areas</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Project: Soccer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_grade_system.html">Project: Grading System</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="appendix.html">Appendix</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -558,7 +559,7 @@ soccer data  from <a class="reference external" href="https://www.sports-referen
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">soccer_data</span><span class="o">.</span><span class="n">bundesliga</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">soccer_data</span><span class="o">.</span><span class="n">english_premier</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -641,11 +642,6 @@ soccer data  from <a class="reference external" href="https://www.sports-referen
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;team&#39;, &#39;pos&#39;, &#39;points&#39;, &#39;matches_played&#39;, &#39;wins&#39;, &#39;draws&#39;, &#39;losses&#39;, &#39;goals_for&#39;, &#39;goals_against&#39;, &#39;goal_diff&#39;, &#39;top_scorer&#39;])
-</pre></div>
-</div>
-</div>
 </div>
 <section id="most-scorer-team">
 <h3>Most Scorer Team<a class="headerlink" href="#most-scorer-team" title="Permalink to this heading">#</a></h3>
@@ -661,12 +657,6 @@ soccer data  from <a class="reference external" href="https://www.sports-referen
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Team         : </span><span class="si">{</span><span class="n">max_goals_for_team</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Max Goals For: </span><span class="si">{</span><span class="n">max_goals_for</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Team         : Liverpool
-Max Goals For: 54
 </pre></div>
 </div>
 </div>
@@ -691,12 +681,6 @@ Max Goals For: 54
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Team         : Southampton
-Min Goals For: 16
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="the-most-goals-scored-against">
@@ -713,12 +697,6 @@ Min Goals For: 16
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Team             : </span><span class="si">{</span><span class="n">max_goals_against_team</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Max Goals Against: </span><span class="si">{</span><span class="n">max_goals_against</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Team             : Southampton
-Max Goals Against: 53
 </pre></div>
 </div>
 </div>
@@ -742,12 +720,6 @@ Max Goals Against: 53
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Top Scorer : Mohamed Salah 
-Top Score  : 19
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="equal-scorer-players-in-a-team">
@@ -761,12 +733,6 @@ Top Score  : 19
     <span class="n">ts</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="s1">&#39;top_scorer&#39;</span><span class="p">]</span>
     <span class="k">if</span> <span class="n">ts</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">ts</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tomáš Souček, Jarrod Bowen - 5
-Adam Armstrong, Jan Bednarek... - 2
 </pre></div>
 </div>
 </div>
@@ -796,9 +762,6 @@ Adam Armstrong, Jan Bednarek... - 2
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/0b48e26e3113c1c47750bbd5bbeac6815fafc4dd1592f35589ff7bce94508ea7.png" src="_images/0b48e26e3113c1c47750bbd5bbeac6815fafc4dd1592f35589ff7bce94508ea7.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -806,9 +769,6 @@ Adam Armstrong, Jan Bednarek... - 2
 <span class="n">plt</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span> <span class="n">teams</span><span class="p">,</span> <span class="n">points</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/711b067b18db52c43ea4cf62aa24c7f826502f43391ce1ad23e532316436471c.png" src="_images/711b067b18db52c43ea4cf62aa24c7f826502f43391ce1ad23e532316436471c.png" />
 </div>
 </div>
 </section>
@@ -823,29 +783,6 @@ Adam Armstrong, Jan Bednarek... - 2
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">ep</span><span class="p">:</span>
     <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="s1">&#39;matches_played&#39;</span><span class="p">])</span> <span class="o">!=</span> <span class="nb">int</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="s1">&#39;wins&#39;</span><span class="p">])</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="s1">&#39;draws&#39;</span><span class="p">])</span> <span class="o">+</span><span class="nb">int</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="s1">&#39;losses&#39;</span><span class="p">]):</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="s1">&#39;team&#39;</span><span class="p">],</span> <span class="nb">int</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="s1">&#39;matches_played&#39;</span><span class="p">]),</span> <span class="nb">int</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="s1">&#39;wins&#39;</span><span class="p">]),</span> <span class="nb">int</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="s1">&#39;draws&#39;</span><span class="p">]),</span> <span class="nb">int</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="s1">&#39;losses&#39;</span><span class="p">])</span> <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Liverpool 23 16 16 1
-Arsenal 23 13 13 2
-Nott&#39;ham Forest 23 13 13 5
-Manchester City 23 12 12 6
-Newcastle Utd 23 12 12 6
-Chelsea 23 11 11 5
-Bournemouth 23 11 11 5
-Aston Villa 22 10 10 6
-Brighton 23 8 8 5
-Fulham 23 8 8 6
-Brentford 23 9 9 10
-Manchester Utd 22 8 8 10
-Crystal Palace 23 6 6 8
-West Ham 23 7 7 10
-Tottenham 23 7 7 13
-Everton 23 5 5 9
-Leicester City 23 4 4 14
-Ipswich Town 23 3 3 13
-Southampton 23 1 1 19
 </pre></div>
 </div>
 </div>
@@ -869,234 +806,24 @@ Southampton 23 1 1 19
 </div>
 </div>
 </div>
-<p>The following is the dictionary of all the leagues available in the package.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">leagues</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;team&#39;: &#39;Real Madrid&#39;,
-  &#39;pos&#39;: &#39;1&#39;,
-  &#39;points&#39;: &#39;49&#39;,
-  &#39;matches_played&#39;: &#39;21&#39;,
-  &#39;wins&#39;: &#39;15&#39;,
-  &#39;draws&#39;: &#39;15&#39;,
-  &#39;losses&#39;: &#39;2&#39;,
-  &#39;goals_for&#39;: &#39;50&#39;,
-  &#39;goals_against&#39;: &#39;20&#39;,
-  &#39;goal_diff&#39;: &#39;+30&#39;,
-  &#39;top_scorer&#39;: &#39;Kylian Mbappé - 15&#39;},
- {&#39;team&#39;: &#39;Atlético Madrid&#39;,
-  &#39;pos&#39;: &#39;2&#39;,
-  &#39;points&#39;: &#39;45&#39;,
-  &#39;matches_played&#39;: &#39;21&#39;,
-  &#39;wins&#39;: &#39;13&#39;,
-  &#39;draws&#39;: &#39;13&#39;,
-  &#39;losses&#39;: &#39;2&#39;,
-  &#39;goals_for&#39;: &#39;35&#39;,
-  &#39;goals_against&#39;: &#39;14&#39;,
-  &#39;goal_diff&#39;: &#39;+21&#39;,
-  &#39;top_scorer&#39;: &#39;Alexander Sørloth - 8&#39;},
- {&#39;team&#39;: &#39;Barcelona&#39;,
-  &#39;pos&#39;: &#39;3&#39;,
-  &#39;points&#39;: &#39;42&#39;,
-  &#39;matches_played&#39;: &#39;21&#39;,
-  &#39;wins&#39;: &#39;13&#39;,
-  &#39;draws&#39;: &#39;13&#39;,
-  &#39;losses&#39;: &#39;5&#39;,
-  &#39;goals_for&#39;: &#39;59&#39;,
-  &#39;goals_against&#39;: &#39;24&#39;,
-  &#39;goal_diff&#39;: &#39;+35&#39;,
-  &#39;top_scorer&#39;: &#39;Robert Lewandowski - 17&#39;},
- {&#39;team&#39;: &#39;Athletic Club&#39;,
-  &#39;pos&#39;: &#39;4&#39;,
-  &#39;points&#39;: &#39;40&#39;,
-  &#39;matches_played&#39;: &#39;21&#39;,
-  &#39;wins&#39;: &#39;11&#39;,
-  &#39;draws&#39;: &#39;11&#39;,
-  &#39;losses&#39;: &#39;3&#39;,
-  &#39;goals_for&#39;: &#39;31&#39;,
-  &#39;goals_against&#39;: &#39;18&#39;,
-  &#39;goal_diff&#39;: &#39;+13&#39;,
-  &#39;top_scorer&#39;: &#39;Oihan Sancet - 7&#39;},
- {&#39;team&#39;: &#39;Villarreal&#39;,
-  &#39;pos&#39;: &#39;5&#39;,
-  &#39;points&#39;: &#39;34&#39;,
-  &#39;matches_played&#39;: &#39;21&#39;,
-  &#39;wins&#39;: &#39;9&#39;,
-  &#39;draws&#39;: &#39;9&#39;,
-  &#39;losses&#39;: &#39;5&#39;,
-  &#39;goals_for&#39;: &#39;39&#39;,
-  &#39;goals_against&#39;: &#39;32&#39;,
-  &#39;goal_diff&#39;: &#39;+7&#39;,
-  &#39;top_scorer&#39;: &#39;Ayoze Pérez - 8&#39;},
- {&#39;team&#39;: &#39;Mallorca&#39;,
-  &#39;pos&#39;: &#39;6&#39;,
-  &#39;points&#39;: &#39;30&#39;,
-  &#39;matches_played&#39;: &#39;21&#39;,
-  &#39;wins&#39;: &#39;9&#39;,
-  &#39;draws&#39;: &#39;9&#39;,
-  &#39;losses&#39;: &#39;9&#39;,
-  &#39;goals_for&#39;: &#39;19&#39;,
-  &#39;goals_against&#39;: &#39;26&#39;,
-  &#39;goal_diff&#39;: &#39;-7&#39;,
-  &#39;top_scorer&#39;: &#39;Cyle Larin - 5&#39;},
- {&#39;team&#39;: &#39;Rayo Vallecano&#39;,
-  &#39;pos&#39;: &#39;7&#39;,
-  &#39;points&#39;: &#39;29&#39;,
-  &#39;matches_played&#39;: &#39;21&#39;,
-  &#39;wins&#39;: &#39;7&#39;,
-  &#39;draws&#39;: &#39;7&#39;,
-  &#39;losses&#39;: &#39;6&#39;,
-  &#39;goals_for&#39;: &#39;25&#39;,
-  &#39;goals_against&#39;: &#39;24&#39;,
-  &#39;goal_diff&#39;: &#39;+1&#39;,
-  &#39;top_scorer&#39;: &#39;Jorge de Frutos - 4&#39;},
- {&#39;team&#39;: &#39;Girona&#39;,
-  &#39;pos&#39;: &#39;8&#39;,
-  &#39;points&#39;: &#39;28&#39;,
-  &#39;matches_played&#39;: &#39;21&#39;,
-  &#39;wins&#39;: &#39;8&#39;,
-  &#39;draws&#39;: &#39;8&#39;,
-  &#39;losses&#39;: &#39;9&#39;,
-  &#39;goals_for&#39;: &#39;29&#39;,
-  &#39;goals_against&#39;: &#39;29&#39;,
-  &#39;goal_diff&#39;: &#39;0&#39;,
-  &#39;top_scorer&#39;: &#39;Cristhian Stuani - 4&#39;},
- {&#39;team&#39;: &#39;Real Sociedad&#39;,
-  &#39;pos&#39;: &#39;9&#39;,
-  &#39;points&#39;: &#39;28&#39;,
-  &#39;matches_played&#39;: &#39;21&#39;,
-  &#39;wins&#39;: &#39;8&#39;,
-  &#39;draws&#39;: &#39;8&#39;,
-  &#39;losses&#39;: &#39;9&#39;,
-  &#39;goals_for&#39;: &#39;17&#39;,
-  &#39;goals_against&#39;: &#39;17&#39;,
-  &#39;goal_diff&#39;: &#39;0&#39;,
-  &#39;top_scorer&#39;: &#39;Mikel Oyarzabal, Takefusa Kubo - 4&#39;},
- {&#39;team&#39;: &#39;Betis&#39;,
-  &#39;pos&#39;: &#39;10&#39;,
-  &#39;points&#39;: &#39;28&#39;,
-  &#39;matches_played&#39;: &#39;21&#39;,
-  &#39;wins&#39;: &#39;7&#39;,
-  &#39;draws&#39;: &#39;7&#39;,
-  &#39;losses&#39;: &#39;7&#39;,
-  &#39;goals_for&#39;: &#39;23&#39;,
-  &#39;goals_against&#39;: &#39;26&#39;,
-  &#39;goal_diff&#39;: &#39;-3&#39;,
-  &#39;top_scorer&#39;: &#39;Giovani Lo Celso - 7&#39;},
- {&#39;team&#39;: &#39;Osasuna&#39;,
-  &#39;pos&#39;: &#39;11&#39;,
-  &#39;points&#39;: &#39;27&#39;,
-  &#39;matches_played&#39;: &#39;21&#39;,
-  &#39;wins&#39;: &#39;6&#39;,
-  &#39;draws&#39;: &#39;6&#39;,
-  &#39;losses&#39;: &#39;6&#39;,
-  &#39;goals_for&#39;: &#39;25&#39;,
-  &#39;goals_against&#39;: &#39;30&#39;,
-  &#39;goal_diff&#39;: &#39;-5&#39;,
-  &#39;top_scorer&#39;: &#39;Ante Budimir - 10&#39;},
- {&#39;team&#39;: &#39;Sevilla&#39;,
-  &#39;pos&#39;: &#39;12&#39;,
-  &#39;points&#39;: &#39;27&#39;,
-  &#39;matches_played&#39;: &#39;21&#39;,
-  &#39;wins&#39;: &#39;7&#39;,
-  &#39;draws&#39;: &#39;7&#39;,
-  &#39;losses&#39;: &#39;8&#39;,
-  &#39;goals_for&#39;: &#39;24&#39;,
-  &#39;goals_against&#39;: &#39;30&#39;,
-  &#39;goal_diff&#39;: &#39;-6&#39;,
-  &#39;top_scorer&#39;: &#39;Dodi Lukebakio - 9&#39;},
- {&#39;team&#39;: &#39;Celta Vigo&#39;,
-  &#39;pos&#39;: &#39;13&#39;,
-  &#39;points&#39;: &#39;25&#39;,
-  &#39;matches_played&#39;: &#39;21&#39;,
-  &#39;wins&#39;: &#39;7&#39;,
-  &#39;draws&#39;: &#39;7&#39;,
-  &#39;losses&#39;: &#39;10&#39;,
-  &#39;goals_for&#39;: &#39;30&#39;,
-  &#39;goals_against&#39;: &#39;33&#39;,
-  &#39;goal_diff&#39;: &#39;-3&#39;,
-  &#39;top_scorer&#39;: &#39;Iago Aspas - 6&#39;},
- {&#39;team&#39;: &#39;Getafe&#39;,
-  &#39;pos&#39;: &#39;14&#39;,
-  &#39;points&#39;: &#39;23&#39;,
-  &#39;matches_played&#39;: &#39;21&#39;,
-  &#39;wins&#39;: &#39;5&#39;,
-  &#39;draws&#39;: &#39;5&#39;,
-  &#39;losses&#39;: &#39;8&#39;,
-  &#39;goals_for&#39;: &#39;17&#39;,
-  &#39;goals_against&#39;: &#39;17&#39;,
-  &#39;goal_diff&#39;: &#39;0&#39;,
-  &#39;top_scorer&#39;: &#39;Mauro Arambarri - 5&#39;},
- {&#39;team&#39;: &#39;Las Palmas&#39;,
-  &#39;pos&#39;: &#39;15&#39;,
-  &#39;points&#39;: &#39;23&#39;,
-  &#39;matches_played&#39;: &#39;21&#39;,
-  &#39;wins&#39;: &#39;6&#39;,
-  &#39;draws&#39;: &#39;6&#39;,
-  &#39;losses&#39;: &#39;10&#39;,
-  &#39;goals_for&#39;: &#39;26&#39;,
-  &#39;goals_against&#39;: &#39;34&#39;,
-  &#39;goal_diff&#39;: &#39;-8&#39;,
-  &#39;top_scorer&#39;: &#39;Sandro Ramírez - 7&#39;},
- {&#39;team&#39;: &#39;Leganés&#39;,
-  &#39;pos&#39;: &#39;16&#39;,
-  &#39;points&#39;: &#39;23&#39;,
-  &#39;matches_played&#39;: &#39;21&#39;,
-  &#39;wins&#39;: &#39;5&#39;,
-  &#39;draws&#39;: &#39;5&#39;,
-  &#39;losses&#39;: &#39;8&#39;,
-  &#39;goals_for&#39;: &#39;19&#39;,
-  &#39;goals_against&#39;: &#39;29&#39;,
-  &#39;goal_diff&#39;: &#39;-10&#39;,
-  &#39;top_scorer&#39;: &#39;Juan Cruz - 4&#39;},
- {&#39;team&#39;: &#39;Alavés&#39;,
-  &#39;pos&#39;: &#39;17&#39;,
-  &#39;points&#39;: &#39;21&#39;,
-  &#39;matches_played&#39;: &#39;21&#39;,
-  &#39;wins&#39;: &#39;5&#39;,
-  &#39;draws&#39;: &#39;5&#39;,
-  &#39;losses&#39;: &#39;10&#39;,
-  &#39;goals_for&#39;: &#39;25&#39;,
-  &#39;goals_against&#39;: &#39;33&#39;,
-  &#39;goal_diff&#39;: &#39;-8&#39;,
-  &#39;top_scorer&#39;: &#39;Kiké - 9&#39;},
- {&#39;team&#39;: &#39;Espanyol&#39;,
-  &#39;pos&#39;: &#39;18&#39;,
-  &#39;points&#39;: &#39;20&#39;,
-  &#39;matches_played&#39;: &#39;21&#39;,
-  &#39;wins&#39;: &#39;5&#39;,
-  &#39;draws&#39;: &#39;5&#39;,
-  &#39;losses&#39;: &#39;11&#39;,
-  &#39;goals_for&#39;: &#39;20&#39;,
-  &#39;goals_against&#39;: &#39;33&#39;,
-  &#39;goal_diff&#39;: &#39;-13&#39;,
-  &#39;top_scorer&#39;: &#39;Javi Puado - 7&#39;},
- {&#39;team&#39;: &#39;Valencia&#39;,
-  &#39;pos&#39;: &#39;19&#39;,
-  &#39;points&#39;: &#39;16&#39;,
-  &#39;matches_played&#39;: &#39;21&#39;,
-  &#39;wins&#39;: &#39;3&#39;,
-  &#39;draws&#39;: &#39;3&#39;,
-  &#39;losses&#39;: &#39;11&#39;,
-  &#39;goals_for&#39;: &#39;20&#39;,
-  &#39;goals_against&#39;: &#39;36&#39;,
-  &#39;goal_diff&#39;: &#39;-16&#39;,
-  &#39;top_scorer&#39;: &#39;Hugo Duro - 7&#39;},
- {&#39;team&#39;: &#39;Valladolid&#39;,
-  &#39;pos&#39;: &#39;20&#39;,
-  &#39;points&#39;: &#39;15&#39;,
-  &#39;matches_played&#39;: &#39;21&#39;,
-  &#39;wins&#39;: &#39;4&#39;,
-  &#39;draws&#39;: &#39;4&#39;,
-  &#39;losses&#39;: &#39;14&#39;,
-  &#39;goals_for&#39;: &#39;14&#39;,
-  &#39;goals_against&#39;: &#39;42&#39;,
-  &#39;goal_diff&#39;: &#39;-28&#39;,
-  &#39;top_scorer&#39;: &#39;Raúl Moro - 3&#39;}]
+</div>
+<p>The following is the dictionary of all the leagues available in the package.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">leagues_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;english_premier&#39;</span><span class="p">:</span> <span class="n">soccer_data</span><span class="o">.</span><span class="n">english_premier</span><span class="p">(),</span>
+<span class="s1">&#39;la_liga&#39;</span> <span class="p">:</span> <span class="n">soccer_data</span><span class="o">.</span><span class="n">la_liga</span><span class="p">(),</span>
+<span class="s1">&#39;ligue_1&#39;</span> <span class="p">:</span> <span class="n">soccer_data</span><span class="o">.</span><span class="n">ligue_1</span><span class="p">(),</span>
+<span class="s1">&#39;bundesliga&#39;</span> <span class="p">:</span> <span class="n">soccer_data</span><span class="o">.</span><span class="n">bundesliga</span><span class="p">(),</span>
+<span class="s1">&#39;serie_a&#39;</span> <span class="p">:</span> <span class="n">soccer_data</span><span class="o">.</span><span class="n">serie_a</span><span class="p">(),</span>
+<span class="s1">&#39;eredivisie&#39;</span> <span class="p">:</span> <span class="n">soccer_data</span><span class="o">.</span><span class="n">eredivisie</span><span class="p">(),</span>
+<span class="s1">&#39;russian_premier&#39;</span> <span class="p">:</span> <span class="n">soccer_data</span><span class="o">.</span><span class="n">russian_premier</span><span class="p">(),</span>
+<span class="s1">&#39;english_championship&#39;</span> <span class="p">:</span> <span class="n">soccer_data</span><span class="o">.</span><span class="n">english_championship</span><span class="p">()}</span>
 </pre></div>
 </div>
 </div>
@@ -1119,12 +846,6 @@ Southampton 23 1 1 19
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Top Scorer : </span><span class="si">{</span><span class="n">top_score_player</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Top Score  : </span><span class="si">{</span><span class="n">top_score</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Top Scorer : Mohamed Salah 
-Top Score  : 19
 </pre></div>
 </div>
 </div>
@@ -1154,12 +875,6 @@ Top Score  : 19
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Highest Goal Diff : 45  ---  Team: PSV Eindhoven
-Lowest  Goal Diff : -37   ---  Team: Southampton
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="the-league-with-most-goal-scored">
@@ -1174,17 +889,12 @@ Lowest  Goal Diff : -37   ---  Team: Southampton
     <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">league</span><span class="p">:</span>
         <span class="n">total</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="s1">&#39;goals_for&#39;</span><span class="p">])</span>
     <span class="k">if</span> <span class="n">total</span> <span class="o">&gt;</span> <span class="n">max_total_goal</span><span class="p">:</span>
+        
         <span class="n">max_total_goal</span> <span class="o">=</span> <span class="n">total</span>       
         <span class="n">max_total_goal_league</span> <span class="o">=</span> <span class="n">name</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Most Goal Scored League : </span><span class="si">{</span><span class="n">max_total_goal_league</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Maximum Total Goal      : </span><span class="si">{</span><span class="n">max_total_goal</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Most Goal Scored League : english_premier
-Maximum Total Goal      : 691
 </pre></div>
 </div>
 </div>
@@ -1206,12 +916,6 @@ Maximum Total Goal      : 691
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Max Point Per Game : </span><span class="si">{</span><span class="n">max_point_pg</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Team               : </span><span class="si">{</span><span class="n">max_point_pg_team</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Max Point Per Game : 2.5789473684210527
-Team               : PSV Eindhoven
 </pre></div>
 </div>
 </div>
@@ -1242,9 +946,6 @@ Team               : PSV Eindhoven
 <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/a66963eba9195bbeeb80f388a60103a43816b4d877c6aa9fc52a9f4d77497a09.png" src="_images/a66963eba9195bbeeb80f388a60103a43816b4d877c6aa9fc52a9f4d77497a09.png" />
 </div>
 </div>
 </section>
@@ -1301,11 +1002,11 @@ Team               : PSV Eindhoven
       </div>
     </a>
     <a class="right-next"
-       href="appendix.html"
+       href="project_grade_system.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Appendix</p>
+        <p class="prev-next-title">Project: Grading System</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

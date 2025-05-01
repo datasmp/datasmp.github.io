@@ -288,6 +288,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="project_elections.html">Project: Election Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project_smoothing.html">Project: Smoothing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project_riemann.html">Project: Approximating Areas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_soccer.html">Project: Soccer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_grade_system.html">Project: Grading System</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="appendix.html">Appendix</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -449,6 +451,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question-2</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question-3</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question-4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question-5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6">Question-6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7">Question-7</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8">Question-8</a></li>
 </ul>
             </nav>
         </div>
@@ -517,6 +523,49 @@ document.write(`
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
 <p>The counter i takes integer values, so it cannot be directly concatenated with ‘day-’. To resolve this issue, use <code class="docutils literal notranslate"><span class="pre">'day-'</span> <span class="pre">+</span> <span class="pre">str(i)</span></code> instead.</p>
+</div>
+</section>
+<section id="question-5">
+<h2>Question-5<a class="headerlink" href="#question-5" title="Permalink to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Tim&#39;</span><span class="p">:</span><span class="mi">90</span><span class="p">,</span> <span class="s1">&#39;Amy&#39;</span><span class="p">:</span><span class="mi">95</span><span class="p">,</span> <span class="s1">&#39;Jack&#39;</span><span class="p">:</span><span class="mi">85</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="s1">&#39;Mia&#39;</span><span class="p">]:</span><span class="mi">80</span><span class="p">}</span>
+<span class="n">grades</span>
+</pre></div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>The list [‘Bob’, ‘Mia’] cannot be used as a dictionary key because it is mutable.</p>
+</div>
+</section>
+<section id="question-6">
+<h2>Question-6<a class="headerlink" href="#question-6" title="Permalink to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">dict</span><span class="p">((</span><span class="s1">&#39;Tim&#39;</span><span class="p">,</span> <span class="s1">&#39;Jack&#39;</span><span class="p">,</span> <span class="s1">&#39;Mia&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>The dict() function expects key-value pairs, typically provided as a sequence of 2-element tuples.</p>
+</div>
+</section>
+<section id="question-7">
+<h2>Question-7<a class="headerlink" href="#question-7" title="Permalink to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;A&#39;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">:</span><span class="mi">90</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">:</span><span class="mi">75</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">:</span><span class="mi">80</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_dict</span><span class="p">[</span><span class="s1">&#39;E&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>‘E’ is not a key in my_dict.</p>
+</div>
+</section>
+<section id="question-8">
+<h2>Question-8<a class="headerlink" href="#question-8" title="Permalink to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Tim&#39;</span><span class="p">:</span><span class="mi">90</span><span class="p">,</span> <span class="s1">&#39;Amy&#39;</span><span class="p">:</span><span class="mi">95</span><span class="p">,</span> <span class="s1">&#39;Jack&#39;</span><span class="p">:</span><span class="mi">85</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">):</span><span class="mi">80</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">grades</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>‘A’ is not a key in grades dictionary. The tuple (‘A’, ‘B’) is a key.</p>
 </div>
 </section>
 </section>
@@ -588,6 +637,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question-2</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question-3</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question-4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question-5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6">Question-6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7">Question-7</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8">Question-8</a></li>
 </ul>
   </nav></div>
 
