@@ -67,8 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'project_complex_numbers_prep';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Appendix" href="appendix.html" />
-    <link rel="prev" title="Project: SP500 Companies" href="project_sp500_prep.html" />
+    <link rel="next" title="Project: Tic-tac-toe" href="project_tic_tac_toe_prep2.html" />
+    <link rel="prev" title="Project: Grading System" href="project_grade_system.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -290,11 +290,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="project_elections.html">Project: Election Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project_smoothing.html">Project: Smoothing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project_riemann.html">Project: Approximating Areas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="project_soccer.html">Project: Soccer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project_grade_system.html">Project: Grading System</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Project: Complex Numbers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project_tic_tac_toe_prep2.html">Project: Tic-tac-toe</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project_sp500_prep.html">Project: SP500 Companies</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Project: Complex Numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_soccer.html">Project: Soccer</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="appendix.html">Appendix</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -456,7 +456,10 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-representation">List Representation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string-representation">String Representation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conjugation">Conjugation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-value">Absolute Value</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graphical-representations">Graphical Representations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-value-modulus">Absolute Value (Modulus)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quadrants">Quadrants</a></li>
 </ul>
 </li>
@@ -469,11 +472,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exponentiation">Exponentiation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graphical-representations">Graphical Representations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powers-of-i">Powers of i</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#future-work">Future Work</a></li>
 </ul>
             </nav>
         </div>
@@ -487,21 +486,30 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="project-complex-numbers">
 <h1>Project: Complex Numbers<a class="headerlink" href="#project-complex-numbers" title="Permalink to this heading">#</a></h1>
+<p>Complex numbers are expressed in the form  <span class="math notranslate nohighlight">\(a+bi\)</span> where a and b are real numbers, and i is the imaginary unit defined by <span class="math notranslate nohighlight">\(i=\sqrt{-1}\)</span>.</p>
+<p>In this expression, <span class="math notranslate nohighlight">\(a\)</span> is referred to as the real part of the complex number, while <span class="math notranslate nohighlight">\(b\)</span> is the imaginary part.</p>
 <section id="basics">
 <h2>Basics<a class="headerlink" href="#basics" title="Permalink to this heading">#</a></h2>
 <section id="list-representation">
 <h3>List Representation<a class="headerlink" href="#list-representation" title="Permalink to this heading">#</a></h3>
+<p>Complex numbers can also be represented as an ordered pair <span class="math notranslate nohighlight">\([a,b]\)</span>, where the first element corresponds to the real part and the second to the imaginary part.</p>
+<p><span class="math notranslate nohighlight">\(a+bi \rightarrow [a,b]\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">complex_list</span><span class="p">(</span><span class="n">real</span><span class="p">,</span> <span class="n">imaginary</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">[</span><span class="n">real</span><span class="p">,</span> <span class="n">imaginary</span><span class="p">]</span>
-
-<span class="n">complex_list</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">complex_list</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, 3]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, 3]
 </pre></div>
 </div>
 </div>
@@ -509,6 +517,11 @@ document.write(`
 </section>
 <section id="string-representation">
 <h3>String Representation<a class="headerlink" href="#string-representation" title="Permalink to this heading">#</a></h3>
+<p>Complex numbers can also be represented as strings.</p>
+<ul class="simple">
+<li><p>Unlike standard positive numbers, when representing complex numbers with a positive imaginary part, a + sign must be explicitly included between the real and imaginary parts (e.g., “3+4i”).</p></li>
+<li><p>However, if the imaginary part is negative, the minus sign is included automatically (e.g., “3-4i”), so there is no need to add it manually.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">complex_str</span><span class="p">(</span><span class="n">complex_num</span><span class="p">):</span>
@@ -516,14 +529,42 @@ document.write(`
         <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">complex_num</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">+</span> <span class="s1">&#39;+&#39;</span>  <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">complex_num</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="s1">&#39;i&#39;</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">complex_num</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">+</span>  <span class="nb">str</span><span class="p">(</span><span class="n">complex_num</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="s1">&#39;i&#39;</span>
-
-
-<span class="n">complex_str</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]),</span> <span class="n">complex_str</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">]),</span> <span class="n">complex_str</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">]),</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">complex_str</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;2+3i&#39;, &#39;2-3i&#39;, &#39;2+0i&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;2+3i&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">complex_str</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;2-3i&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">complex_str</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;2+0i&#39;
 </pre></div>
 </div>
 </div>
@@ -531,24 +572,90 @@ document.write(`
 </section>
 <section id="conjugation">
 <h3>Conjugation<a class="headerlink" href="#conjugation" title="Permalink to this heading">#</a></h3>
+<p>The conjugate of a complex number has the same real part but the opposite sign of the imaginary part.</p>
+<ul class="simple">
+<li><p>Conjugate of <span class="math notranslate nohighlight">\(2+3i\)</span> is <span class="math notranslate nohighlight">\(2-3i\)</span>.</p></li>
+<li><p>Conjugate of <span class="math notranslate nohighlight">\(5-7i\)</span> is <span class="math notranslate nohighlight">\(5+7i\)</span>.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">complex_conjugate</span><span class="p">(</span><span class="n">complex_num</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">[</span><span class="n">complex_num</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="o">-</span><span class="n">complex_num</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
-
-<span class="n">complex_conjugate</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]),</span> <span class="n">complex_conjugate</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">complex_conjugate</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>([2, -3], [2, 5])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, -3]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">complex_conjugate</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="o">-</span><span class="mi">7</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[5, 7]
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="absolute-value">
-<h3>Absolute Value<a class="headerlink" href="#absolute-value" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="graphical-representations">
+<h2>Graphical Representations<a class="headerlink" href="#graphical-representations" title="Permalink to this heading">#</a></h2>
+<p>Complex numbers can be represented on the coordinate plane, where the horizontal axis (x-axis) corresponds to the real part and the vertical axis (y-axis) corresponds to the imaginary part.</p>
+<p><span class="math notranslate nohighlight">\(a+bi \rightarrow (a,b)\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="k">def</span> <span class="nf">plot_complex</span><span class="p">(</span><span class="n">complex_num</span><span class="p">):</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">complex_num</span>
+    <span class="n">boundary</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span><span class="o">+</span><span class="mi">2</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="n">boundary</span><span class="p">,</span> <span class="n">boundary</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span> <span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="n">boundary</span><span class="p">,</span> <span class="n">boundary</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span> <span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">a</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="mf">.2</span><span class="p">,</span> <span class="n">b</span><span class="o">+</span><span class="mf">.2</span><span class="p">,</span> <span class="n">complex_str</span><span class="p">(</span><span class="n">complex_num</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">b</span><span class="o">-</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span> <span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;real&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;imaginary&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Representation of </span><span class="si">{</span><span class="n">complex_str</span><span class="p">(</span><span class="n">complex_num</span><span class="p">)</span><span class="si">}</span><span class="s1"> on coordinate plane.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_complex</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/7fb08740b115c96d9a43513fe564bc34f9ca4066af30188bd1a0d978a2631132.png" src="_images/7fb08740b115c96d9a43513fe564bc34f9ca4066af30188bd1a0d978a2631132.png" />
+</div>
+</div>
+<section id="absolute-value-modulus">
+<h3>Absolute Value (Modulus)<a class="headerlink" href="#absolute-value-modulus" title="Permalink to this heading">#</a></h3>
+<p>The absolute value (or modulus) of a complex number is the distance between the complex number and the origin in the complex plane.</p>
+<p><span class="math notranslate nohighlight">\(|a+bi| = \sqrt{a^2+b^2}\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
@@ -569,6 +676,57 @@ document.write(`
 </section>
 <section id="quadrants">
 <h3>Quadrants<a class="headerlink" href="#quadrants" title="Permalink to this heading">#</a></h3>
+<p>The coordinate plane is divided into four quadrants, each defined by the signs of the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> coordinates:</p>
+<ul class="simple">
+<li><p>First  Quadrant: <span class="math notranslate nohighlight">\(x&gt;0,\,\, y&gt;0\)</span></p></li>
+<li><p>Second Quadrant: <span class="math notranslate nohighlight">\(x&lt;0,\,\, y&gt;0\)</span></p></li>
+<li><p>Third  Quadrant: <span class="math notranslate nohighlight">\(x&lt;0,\,\, y&lt;0\)</span></p></li>
+<li><p>Fourth Quadrant: <span class="math notranslate nohighlight">\(x&gt;0,\,\, y&lt;0\)</span></p></li>
+</ul>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Quadrant</p></th>
+<th class="head"><p>x</p></th>
+<th class="head"><p>y</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>First</p></td>
+<td><p>+</p></td>
+<td><p>+</p></td>
+</tr>
+<tr class="row-odd"><td><p>Second</p></td>
+<td><p>-</p></td>
+<td><p>+</p></td>
+</tr>
+<tr class="row-even"><td><p>Third</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+</tr>
+<tr class="row-odd"><td><p>Fourth</p></td>
+<td><p>+</p></td>
+<td><p>-</p></td>
+</tr>
+</tbody>
+</table>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="s1">&#39;First Quadrant&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="s1">&#39;Second Quadrant&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.5</span><span class="p">,</span> <span class="s1">&#39;Third Quadrant&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span> <span class="mf">1.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.5</span><span class="p">,</span> <span class="s1">&#39;Fourth Quadrant&#39;</span> <span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/e78c8e00c6467d75acf689e36b365d838001fdf8564bc538e621da568435f2c8.png" src="_images/e78c8e00c6467d75acf689e36b365d838001fdf8564bc538e621da568435f2c8.png" />
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">complex_quadrant</span><span class="p">(</span><span class="n">complex_num</span><span class="p">):</span>
@@ -582,13 +740,42 @@ document.write(`
         <span class="k">return</span> <span class="mi">4</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;Not in a quadrant&#39;</span>
-    
-<span class="n">complex_quadrant</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]),</span> <span class="n">complex_quadrant</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">]),</span> <span class="n">complex_quadrant</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">])</span>               
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">complex_quadrant</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2, &#39;Not in a quadrant&#39;, 3)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">complex_quadrant</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Not in a quadrant
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">complex_quadrant</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">])</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
 </pre></div>
 </div>
 </div>
@@ -599,19 +786,30 @@ document.write(`
 <h2>Algebraic Operations<a class="headerlink" href="#algebraic-operations" title="Permalink to this heading">#</a></h2>
 <section id="addition">
 <h3>Addition<a class="headerlink" href="#addition" title="Permalink to this heading">#</a></h3>
+<p>The sum of two complex numbers is obtained by adding their real parts and their imaginary parts separately.</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\((a + b i) + (c + d i) = (a+c)+(b+d)i \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\([a, b] + [c, d] = [a+c,\,\, b+d] \)</span></p></li>
+</ul>
+<p>Example: [1,4] + [5,8] = [1+5, 4+8] = [6, 12]</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">complex_add</span><span class="p">(</span><span class="n">complex1</span><span class="p">,</span> <span class="n">complex2</span><span class="p">):</span>
     <span class="n">real</span> <span class="o">=</span> <span class="n">complex1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">complex2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">imaginary</span> <span class="o">=</span> <span class="n">complex1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">complex2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
     <span class="k">return</span> <span class="p">[</span><span class="n">real</span><span class="p">,</span> <span class="n">imaginary</span> <span class="p">]</span>
-
-<span class="n">complex_add</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">complex_add</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[8, 12]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[6, 12]
 </pre></div>
 </div>
 </div>
@@ -619,19 +817,30 @@ document.write(`
 </section>
 <section id="subtraction">
 <h3>Subtraction<a class="headerlink" href="#subtraction" title="Permalink to this heading">#</a></h3>
+<p>The difference of two complex numbers is found by subtracting their real parts and their imaginary parts separately.</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\((a + b i) - (c + d i) = (a-c)+(b-d)i \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\([a, b] - [c, d] = [a-c,\,\, b-d] \)</span></p></li>
+</ul>
+<p>Example: [10,4] - [7,8] = [10-7, 4-8] = [3,-4]</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">complex_subtract</span><span class="p">(</span><span class="n">complex1</span><span class="p">,</span> <span class="n">complex2</span><span class="p">):</span>
     <span class="n">real</span> <span class="o">=</span> <span class="n">complex1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">complex2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">imaginary</span> <span class="o">=</span> <span class="n">complex1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">complex2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
     <span class="k">return</span> <span class="p">[</span><span class="n">real</span><span class="p">,</span> <span class="n">imaginary</span> <span class="p">]</span>
-
-<span class="n">complex_subtract</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">complex_subtract</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-6, -4]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3, -4]
 </pre></div>
 </div>
 </div>
@@ -639,19 +848,30 @@ document.write(`
 </section>
 <section id="multiplication">
 <h3>Multiplication<a class="headerlink" href="#multiplication" title="Permalink to this heading">#</a></h3>
+<p>The product of two complex numbers is calculated using the distributive property, along with the identity <span class="math notranslate nohighlight">\(i^2=-1\)</span>.</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\((a+bi)\cdot (c+di) = (ac-bd)+(ad+bc)i\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\([a,b]\cdot [c,d] = [ac-bd, ad+bc]\)</span></p></li>
+</ul>
+<p>Example: <span class="math notranslate nohighlight">\([1,3]\cdot [2,5] = [1\cdot 2-3\cdot 5, 1\cdot 5 + 2\cdot 3]= [2-15, 5+6] = [-13, 11]\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">complex_multiply</span><span class="p">(</span><span class="n">complex1</span><span class="p">,</span> <span class="n">complex2</span><span class="p">):</span>
     <span class="n">real</span> <span class="o">=</span> <span class="n">complex1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">complex2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">complex1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">complex2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
     <span class="n">imaginary</span> <span class="o">=</span> <span class="n">complex1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">complex2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">complex1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">complex2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="k">return</span> <span class="p">[</span><span class="n">real</span><span class="p">,</span> <span class="n">imaginary</span> <span class="p">]</span>
-
-<span class="n">complex_multiply</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">complex_multiply</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-13, 11]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-13, 11]
 </pre></div>
 </div>
 </div>
@@ -659,19 +879,31 @@ document.write(`
 </section>
 <section id="division">
 <h3>Division<a class="headerlink" href="#division" title="Permalink to this heading">#</a></h3>
+<p>Division of complex numbers is performed by multiplying both the numerator and the denominator by the conjugate of the denominator. This process eliminates the imaginary part from the denominator, converting it into a real number.</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle \frac{a+bi}{c+di} = \frac{(a+bi)\cdot(c-di)}{(c+di)\cdot(c-di)}\frac{(a+bi)\cdot(c-di)}{|c+di|^2} = \frac{(a+bi)\cdot(c-di)}{c^2+d^2} \)</span></p>
+<p>      <span class="math notranslate nohighlight">\( \displaystyle = \frac{(ac-bd)+(ad+bc)i}{c^2+d^2} = \frac{ac-bd}{c^2+d^2}+\frac{ad+bc}{c^2+d^2}i\)</span></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \frac{[a,b]}{[c,d]} = \frac{[a,b]\cdot[c,-d]}{[c,d]\cdot[c,-d]} = \frac{[ac-bd, ad+bc]}{[c^2+d^2, 0]}= \left[\frac{ac-bd}{c^2+d^2}, \frac{ad+bc}{c^2+d^2}\right]\)</span></p></li>
+</ul>
+<p>Example: <span class="math notranslate nohighlight">\(\displaystyle\frac{[1,2]}{[3,4]} = \frac{[1,2]\cdot[3,-4]}{[3,4]\cdot[3,-4]} = \frac{[1\cdot 3- 2\cdot (-4),1\cdot(-4)+2\cdot 3]}{3^2+(-4)^2}= \frac{[11,2]}{25} =\left[\frac{11}{25}, \frac{2}{25}\right] = [0.44, 0.08]\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">complex_division</span><span class="p">(</span><span class="n">complex1</span><span class="p">,</span> <span class="n">complex2</span><span class="p">):</span>
     <span class="n">num_list</span> <span class="o">=</span> <span class="n">complex_multiply</span><span class="p">(</span><span class="n">complex1</span><span class="p">,</span> <span class="n">complex_conjugate</span><span class="p">(</span><span class="n">complex2</span><span class="p">))</span>
     <span class="n">den</span> <span class="o">=</span> <span class="n">complex_abs</span><span class="p">(</span><span class="n">complex2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
     <span class="k">return</span> <span class="p">[</span><span class="n">num_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">den</span><span class="p">,</span> <span class="n">num_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">den</span> <span class="p">]</span>
-
-<span class="n">complex_division</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">complex_division</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.44, 0.08]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.44, 0.08]
 </pre></div>
 </div>
 </div>
@@ -679,17 +911,26 @@ document.write(`
 </section>
 <section id="reciprocal">
 <h3>Reciprocal<a class="headerlink" href="#reciprocal" title="Permalink to this heading">#</a></h3>
+<p>The reciprocal of a complex number is found by dividing 1 by the number.</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \frac{1}{[a,b]} = \frac{[1,0]}{[a,b]}\)</span></p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">complex_reciprocal</span><span class="p">(</span><span class="n">complex_num</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">complex_division</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">complex_num</span><span class="p">)</span>
-
-<span class="n">complex_reciprocal</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">complex_reciprocal</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.12, -0.16]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.12, -0.16]
 </pre></div>
 </div>
 </div>
@@ -697,6 +938,7 @@ document.write(`
 </section>
 <section id="exponentiation">
 <h3>Exponentiation<a class="headerlink" href="#exponentiation" title="Permalink to this heading">#</a></h3>
+<p>To find the <span class="math notranslate nohighlight">\(n\)</span>th power of a complex number, multiply the complex number by itself <span class="math notranslate nohighlight">\(n\)</span> times.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">complex_power</span><span class="p">(</span><span class="n">complex_num</span><span class="p">,</span> <span class="n">power</span><span class="p">):</span>
@@ -704,76 +946,50 @@ document.write(`
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">power</span><span class="p">):</span>
         <span class="n">result</span> <span class="o">=</span> <span class="n">complex_multiply</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">complex_num</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">result</span>
-
-<span class="n">complex_power</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="mi">5</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1]
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="graphical-representations">
-<h2>Graphical Representations<a class="headerlink" href="#graphical-representations" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="k">def</span> <span class="nf">plot_complex</span><span class="p">(</span><span class="n">complex_list</span><span class="p">):</span>
-    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">complex_list</span>
-    <span class="n">boundary</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">+</span><span class="mi">2</span>
-
-    <span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="n">boundary</span><span class="p">,</span> <span class="n">boundary</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span> <span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="n">boundary</span><span class="p">,</span> <span class="n">boundary</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span> <span class="p">)</span>
-
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="p">])</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
-
-    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mf">.2</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="mf">.2</span><span class="p">,</span> <span class="n">complex_str</span><span class="p">(</span><span class="n">complex_list</span><span class="p">))</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">y</span><span class="o">-</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-
-    <span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span> <span class="p">)</span>
-
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;real&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;imaginary&#39;</span><span class="p">)</span>
-    
-
-<span class="n">plot_complex</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">complex_power</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="mi">10</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/76b6fd6c1521d29d4cda82ec0b8855df6670ae275050fe5f99db099958dbd219.png" src="_images/76b6fd6c1521d29d4cda82ec0b8855df6670ae275050fe5f99db099958dbd219.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-341525, -145668]
+</pre></div>
 </div>
 </div>
-</section>
-<section id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
-<section id="powers-of-i">
-<h3>Powers of i<a class="headerlink" href="#powers-of-i" title="Permalink to this heading">#</a></h3>
-<p>Find <span class="math notranslate nohighlight">\(i^{10}\)</span></p>
+</div>
+<p>Let’s find <span class="math notranslate nohighlight">\(i^{10}\)</span> using the following fact:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( i = 0+1i = [0,1]\)</span></p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">complex_multiply</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
-
-<span class="n">complex_str</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">complex_power</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="mi">10</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;-1+0i&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-1, 0]
 </pre></div>
 </div>
 </div>
 </div>
 </section>
+</section>
+<section id="future-work">
+<h2>Future Work<a class="headerlink" href="#future-work" title="Permalink to this heading">#</a></h2>
+<p>Write a Python program that visualizes the powers of a given complex number <span class="math notranslate nohighlight">\(a+bi\)</span>
+on the complex plane. The program should:</p>
+<ul class="simple">
+<li><p>Take a complex number as a list and an integer <span class="math notranslate nohighlight">\(n\)</span></p></li>
+<li><p>Compute and plot the first <span class="math notranslate nohighlight">\(n\)</span> powers of <span class="math notranslate nohighlight">\(a+bi: (a+bi)^1, (a+bi)^2, (a+bi)^3,...,(a+bi)^n\)</span></p></li>
+<li><p>Display each point on the complex plane and connect them in order to show the trajectory.</p></li>
+<li><p>Label each point with its power <span class="math notranslate nohighlight">\((a+bi)^1, (a+bi)^2, (a+bi)^3,...,(a+bi)^n\)</span></p></li>
+</ul>
 </section>
 </section>
 
@@ -808,20 +1024,20 @@ document.write(`
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="project_sp500_prep.html"
+       href="project_grade_system.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Project: SP500 Companies</p>
+        <p class="prev-next-title">Project: Grading System</p>
       </div>
     </a>
     <a class="right-next"
-       href="appendix.html"
+       href="project_tic_tac_toe_prep2.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Appendix</p>
+        <p class="prev-next-title">Project: Tic-tac-toe</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -844,7 +1060,10 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-representation">List Representation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string-representation">String Representation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conjugation">Conjugation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-value">Absolute Value</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graphical-representations">Graphical Representations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-value-modulus">Absolute Value (Modulus)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quadrants">Quadrants</a></li>
 </ul>
 </li>
@@ -857,11 +1076,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exponentiation">Exponentiation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graphical-representations">Graphical Representations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powers-of-i">Powers of i</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#future-work">Future Work</a></li>
 </ul>
   </nav></div>
 
