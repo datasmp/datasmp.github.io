@@ -163,7 +163,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="cover.html">
-                    Cover
+                    Python In Plain Terms
                 </a>
             </li>
         </ul>
@@ -288,7 +288,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="project_elections.html">Project: Election Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project_smoothing.html">Project: Smoothing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project_riemann.html">Project: Approximating Areas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="project_soccer.html">Project: Soccer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_grade_system.html">Project: Grading System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_complex_numbers_prep.html">Project: Complex Numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_tic_tac_toe_prep2.html">Project: Tic-tac-toe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_sp500_prep.html">Project: SP500 Companies</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="appendix.html">Appendix</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -459,6 +462,12 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6-v-shape">Question-6: V-Shape</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7-h-shape">Question-7: H-Shape</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8-receipt-generator">Question-8: Receipt Generator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-9-dynamic-arrow">Question-9: Dynamic Arrow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-10-print-variables">Question-10: Print Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-11-temperature-conversion">Question-11: Temperature Conversion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-12-symbol-square">Question-12: Symbol Square</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-13-swap-digits">Question-13:  Swap Digits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-14-string-operations">Question-14: String Operations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#business-applications">Business Applications</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-demand-function">Question: Demand Function</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-demand-equation">Question: Demand Equation</a></li>
@@ -494,7 +503,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4339102384
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4312478384
 &lt;class &#39;int&#39;&gt;
 </pre></div>
 </div>
@@ -886,6 +895,216 @@ Total   :  $116.0
 </div>
 </div>
 </section>
+<section id="question-9-dynamic-arrow">
+<h2>Question-9: Dynamic Arrow<a class="headerlink" href="#question-9-dynamic-arrow" title="Permalink to this heading">#</a></h2>
+<p>Define a variable called num_dashes and set it equal to 5.<br />
+Using this variable, generate an arrow that consists of:</p>
+<ul class="simple">
+<li><p>num_dashes number of dashes (-)</p></li>
+<li><p>followed by a greater than sign (&gt;)</p></li>
+</ul>
+<p>Print the arrow.</p>
+<ul class="simple">
+<li><p>Example Output (when num_dashes = 5): —–&gt;</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 1: Define the variable</span>
+<span class="n">num_dashes</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="c1"># Step 2: Create the arrow</span>
+<span class="n">arrow</span> <span class="o">=</span> <span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="n">num_dashes</span> <span class="o">+</span> <span class="s2">&quot;&gt;&quot;</span>
+
+<span class="c1"># Step 3: Print the result</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">arrow</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-----&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-10-print-variables">
+<h2>Question-10: Print Variables<a class="headerlink" href="#question-10-print-variables" title="Permalink to this heading">#</a></h2>
+<p>Define the following variables with appropriate values and print them in one sentence:</p>
+<ul class="simple">
+<li><p>first_name</p></li>
+<li><p>last_name</p></li>
+<li><p>age</p></li>
+<li><p>state</p></li>
+</ul>
+<p>Example output format: My name is Michael Bird. I am 45 years old and live in New York.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define variables</span>
+<span class="n">first_name</span> <span class="o">=</span> <span class="s1">&#39;Michael&#39;</span>
+<span class="n">last_name</span> <span class="o">=</span> <span class="s1">&#39;Bird&#39;</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">45</span>
+<span class="n">state</span> <span class="o">=</span> <span class="s1">&#39;New York&#39;</span>
+
+<span class="c1"># Print in one sentence</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;My name is &#39;</span> <span class="o">+</span> <span class="n">first_name</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">last_name</span> <span class="o">+</span>
+      <span class="s1">&#39;. I am &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">age</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; years old and live in &#39;</span> <span class="o">+</span> <span class="n">state</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>My name is Michael Bird. I am 45 years old and live in New York.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-11-temperature-conversion">
+<h2>Question-11: Temperature Conversion<a class="headerlink" href="#question-11-temperature-conversion" title="Permalink to this heading">#</a></h2>
+<p>Define a variable called celsius and set it to 25.<br />
+Convert it to Fahrenheit using the formula:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle F = \frac{9}{5}C+32\)</span></p></li>
+</ul>
+<p>Print the result</p>
+<ul class="simple">
+<li><p>Example output format: 25 C = 77.0 F</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define variable</span>
+<span class="n">celsius</span> <span class="o">=</span> <span class="mi">25</span>
+
+<span class="c1"># Convert to Fahrenheit</span>
+<span class="n">fahrenheit</span> <span class="o">=</span> <span class="p">(</span><span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span> <span class="o">*</span> <span class="n">celsius</span> <span class="o">+</span> <span class="mi">32</span>
+
+<span class="c1"># Print result</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">celsius</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; C = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">fahrenheit</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; F&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25 C = 77.0 F
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-12-symbol-square">
+<h2>Question-12: Symbol Square<a class="headerlink" href="#question-12-symbol-square" title="Permalink to this heading">#</a></h2>
+<p>Define a variable symbol and set it to ‘*’.<br />
+Define a variable count and set it to 7.<br />
+Print a square of size count × count using the symbol variable.<br />
+Hint: Use \n to create new lines.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define variables</span>
+<span class="n">symbol</span> <span class="o">=</span> <span class="s1">&#39;* &#39;</span>
+<span class="n">count</span> <span class="o">=</span> <span class="mi">7</span>
+
+<span class="c1"># Create the square</span>
+<span class="n">square</span> <span class="o">=</span> <span class="p">(</span><span class="n">symbol</span> <span class="o">*</span> <span class="n">count</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span> <span class="o">*</span> <span class="n">count</span>
+
+<span class="c1"># Print the square</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">square</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* * * * * * * 
+* * * * * * * 
+* * * * * * * 
+* * * * * * * 
+* * * * * * * 
+* * * * * * * 
+* * * * * * * 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-13-swap-digits">
+<h2>Question-13:  Swap Digits<a class="headerlink" href="#question-13-swap-digits" title="Permalink to this heading">#</a></h2>
+<p>Define  a variable called number and assign it any two-digit integer (e.g., 47).<br />
+Swap the tens and ones digits of the number.<br />
+Store the result in a new variable called swapped_number.<br />
+Print the original number and the swapped number in a clear sentence.</p>
+<p>Example Output:</p>
+<ul class="simple">
+<li><p>Original number: 47</p></li>
+<li><p>Swapped number: 74</p></li>
+</ul>
+<p>Hint:</p>
+<ul class="simple">
+<li><p>To extract the tens digit: tens = number // 10</p></li>
+<li><p>To extract the ones digit: ones = number % 10</p></li>
+<li><p>To combine them in swapped order: swapped_number = ones * 10 + tens</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define a two-digit number</span>
+<span class="n">number</span> <span class="o">=</span> <span class="mi">47</span>
+
+<span class="c1"># Extract tens and ones digits</span>
+<span class="n">tens</span> <span class="o">=</span> <span class="n">number</span> <span class="o">//</span> <span class="mi">10</span>
+<span class="n">ones</span> <span class="o">=</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">10</span>
+
+<span class="c1"># Swap the digits</span>
+<span class="n">swapped_number</span> <span class="o">=</span> <span class="n">ones</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">tens</span>
+
+<span class="c1"># Print the result</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Original number: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">number</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Swapped number: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">swapped_number</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Original number: 47
+Swapped number: 74
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-14-string-operations">
+<h2>Question-14: String Operations<a class="headerlink" href="#question-14-string-operations" title="Permalink to this heading">#</a></h2>
+<p>Define three variables: first, middle, and last.<br />
+Generate an email in the format: <a class="reference external" href="mailto:first&#46;middle&#46;last&#37;&#52;&#48;nba&#46;com">first<span>&#46;</span>middle<span>&#46;</span>last<span>&#64;</span>nba<span>&#46;</span>com</a></p>
+<ul class="simple">
+<li><p>All lowercase (use the lower() method of strings)</p></li>
+<li><p>Replace spaces with underscores (use the replace method of strings)</p></li>
+</ul>
+<p>Display the results as:</p>
+<ul class="simple">
+<li><p>Full Name: Michael Patrick Smith</p></li>
+<li><p>Email: <a class="reference external" href="mailto:michael&#46;patrick&#46;smith&#37;&#52;&#48;nba&#46;com">michael<span>&#46;</span>patrick<span>&#46;</span>smith<span>&#64;</span>nba<span>&#46;</span>com</a></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define variables</span>
+<span class="n">first</span> <span class="o">=</span> <span class="s1">&#39;Michael&#39;</span>
+<span class="n">middle</span> <span class="o">=</span> <span class="s1">&#39;Patrick&#39;</span>
+<span class="n">last</span> <span class="o">=</span> <span class="s1">&#39;Smith&#39;</span>
+
+<span class="c1"># Combine full name</span>
+<span class="n">full_name</span> <span class="o">=</span> <span class="n">first</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">middle</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">last</span>
+
+<span class="c1"># Generate email</span>
+<span class="n">email</span> <span class="o">=</span> <span class="p">(</span><span class="n">first</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span> <span class="o">+</span> <span class="n">middle</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span> <span class="o">+</span> <span class="n">last</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;_&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;@nba.com&#39;</span>
+
+<span class="c1"># Display results</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Full Name: &#39;</span> <span class="o">+</span> <span class="n">full_name</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Email: &#39;</span> <span class="o">+</span> <span class="n">email</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Full Name: Michael Patrick Smith
+Email: michael.patrick.smith@nba.com
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="business-applications">
 <h2>Business Applications<a class="headerlink" href="#business-applications" title="Permalink to this heading">#</a></h2>
 <section id="question-demand-function">
@@ -1193,6 +1412,12 @@ b) A = 1392.0</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6-v-shape">Question-6: V-Shape</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7-h-shape">Question-7: H-Shape</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8-receipt-generator">Question-8: Receipt Generator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-9-dynamic-arrow">Question-9: Dynamic Arrow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-10-print-variables">Question-10: Print Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-11-temperature-conversion">Question-11: Temperature Conversion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-12-symbol-square">Question-12: Symbol Square</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-13-swap-digits">Question-13:  Swap Digits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-14-string-operations">Question-14: String Operations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#business-applications">Business Applications</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-demand-function">Question: Demand Function</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-demand-equation">Question: Demand Equation</a></li>
