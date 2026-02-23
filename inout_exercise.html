@@ -165,7 +165,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="cover.html">
-                    Cover
+                    Python in Plain Terms
                 </a>
             </li>
         </ul>
@@ -290,7 +290,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="project_elections.html">Project: Election Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project_smoothing.html">Project: Smoothing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project_riemann.html">Project: Approximating Areas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="project_soccer.html">Project: Soccer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_grade_system.html">Project: Grading System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_complex_numbers_prep.html">Project: Complex Numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_tic_tac_toe_prep2.html">Project: Tic-tac-toe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_sp500_prep.html">Project: SP500 Companies</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="appendix.html">Appendix</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -448,20 +451,25 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question-1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question-2</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question-3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-multi-line-print">Question-1: Multi-Line Print</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-dashed-output">Question-2: Dashed Output</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-string-mixing">Question-3: String Mixing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4-harmonic-mean">Question-4: Harmonic Mean</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question-5</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6">Question-6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5-number-pattern">Question-5: Number Pattern</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6-word-repeater">Question-6: Word Repeater</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7-standard-deviation">Question-7: Standard Deviation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8-countdown">Question-8: Countdown</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-9-arrow">Question-9: Arrow</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-10-standard-scaling">Question-10: Standard Scaling</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-11-minmax-scaling">Question-11: MinMax Scaling</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-12-square">Question-12: Square</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-13">Question-13</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-14">Question-14</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-13-user-info">Question-13: User Info</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-14-line-printer">Question-14: Line Printer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-15-evaluating-a-formula">Question-15: Evaluating a Formula</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-16-time-conversion">Question-16: Time Conversion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-17-price-formatting">Question-17: Price Formatting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-18-digit-extraction">Question-18: Digit Extraction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-19-loan-payment">Question-19: Loan Payment</a></li>
 </ul>
             </nav>
         </div>
@@ -476,21 +484,21 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="input-and-output-exercises">
 <h1>Input and Output Exercises<a class="headerlink" href="#input-and-output-exercises" title="Permalink to this heading">#</a></h1>
 <p><img alt="Section Title: IO Exercises" src="_images/io_exercises2.png" /></p>
-<section id="question-1">
-<h2>Question-1<a class="headerlink" href="#question-1" title="Permalink to this heading">#</a></h2>
+<section id="question-1-multi-line-print">
+<h2>Question-1: Multi-Line Print<a class="headerlink" href="#question-1-multi-line-print" title="Permalink to this heading">#</a></h2>
 <p>Write a single print statement that produces the following output:<br />
 A<br />
 B<br />
 CD<br />
 E</p>
 </section>
-<section id="question-2">
-<h2>Question-2<a class="headerlink" href="#question-2" title="Permalink to this heading">#</a></h2>
+<section id="question-2-dashed-output">
+<h2>Question-2: Dashed Output<a class="headerlink" href="#question-2-dashed-output" title="Permalink to this heading">#</a></h2>
 <p>Use two <em>print()</em> functions, and the strings ‘A’, ‘B’, ‘C’, ‘D’  to generate the following output.
 A—B—C—D</p>
 </section>
-<section id="question-3">
-<h2>Question-3<a class="headerlink" href="#question-3" title="Permalink to this heading">#</a></h2>
+<section id="question-3-string-mixing">
+<h2>Question-3: String Mixing<a class="headerlink" href="#question-3-string-mixing" title="Permalink to this heading">#</a></h2>
 <p>Use a single <em>print()</em> function and the strings ‘ABCDE’ and ‘FGH’ to generate the following output: <em>FGCDE</em></p>
 </section>
 <section id="question-4-harmonic-mean">
@@ -507,8 +515,8 @@ Enter y:  3<br />
 Enter z:  4</p>
 <p>H(2.0,3.0,4.0) = 2.77</p>
 </section>
-<section id="question-5">
-<h2>Question-5<a class="headerlink" href="#question-5" title="Permalink to this heading">#</a></h2>
+<section id="question-5-number-pattern">
+<h2>Question-5: Number Pattern<a class="headerlink" href="#question-5-number-pattern" title="Permalink to this heading">#</a></h2>
 <p>Write a program that prompts the user for a positive integer.</p>
 <ul class="simple">
 <li><p>Print that integer.</p></li>
@@ -525,8 +533,8 @@ Please enter an integer: 5<br />
 8-8-8-8<br />
 9-9-9-9-9</p>
 </section>
-<section id="question-6">
-<h2>Question-6<a class="headerlink" href="#question-6" title="Permalink to this heading">#</a></h2>
+<section id="question-6-word-repeater">
+<h2>Question-6: Word Repeater<a class="headerlink" href="#question-6-word-repeater" title="Permalink to this heading">#</a></h2>
 <p>Write a program that prompts the user for a number and a word using two <em>input()</em> functions.</p>
 <ul class="simple">
 <li><p>Print the given word as many times as the given number.</p></li>
@@ -594,8 +602,8 @@ Please enter an integer: 5<br />
 <p><strong>Examples</strong>
 <img alt="If the value of the length variable is three, there are three stars on each edge of the square.If the value of the length variable is five, there are five stars on each edge of the square.If the value of the length variable is seven, there are seven stars on each edge of the square.If the value of the length variable is ten, there are ten stars on each edge of the square.In the first and last rows, there is one space after each star." src="_images/square_star.png" /></p>
 </section>
-<section id="question-13">
-<h2>Question-13<a class="headerlink" href="#question-13" title="Permalink to this heading">#</a></h2>
+<section id="question-13-user-info">
+<h2>Question-13: User Info<a class="headerlink" href="#question-13-user-info" title="Permalink to this heading">#</a></h2>
 <p>Write a Python program that does the following:</p>
 <ul class="simple">
 <li><p>Prompts the user to enter their first name.</p></li>
@@ -611,8 +619,8 @@ Please enter an integer: 5<br />
 </li>
 </ul>
 </section>
-<section id="question-14">
-<h2>Question-14<a class="headerlink" href="#question-14" title="Permalink to this heading">#</a></h2>
+<section id="question-14-line-printer">
+<h2>Question-14: Line Printer<a class="headerlink" href="#question-14-line-printer" title="Permalink to this heading">#</a></h2>
 <p>Write a program that asks the user to enter an integer and uses a single print() function to display that number of lines, each containing a single &lt; character. Hint: Use the newline character ‘\n’.</p>
 <p><em>Sample Output:</em><br />
 Enter an integer:  4<br />
@@ -620,6 +628,96 @@ Enter an integer:  4<br />
 &lt;<br />
 &lt;<br />
 &lt;</p>
+</section>
+<section id="question-15-evaluating-a-formula">
+<h2>Question-15: Evaluating a Formula<a class="headerlink" href="#question-15-evaluating-a-formula" title="Permalink to this heading">#</a></h2>
+<p>Write a program that asks the user to enter four numbers: x, y, z, and t.</p>
+<p>Then compute the value: <span class="math notranslate nohighlight">\(F = \displaystyle \frac{x^2+5y-z}{\sqrt{t-3}}\)</span></p>
+<p>Finally, print the value of F rounded to two decimal places. (You may assume that t&gt;3.)</p>
+<p>Hint:You may use the sqrt function from the math module.</p>
+</section>
+<section id="question-16-time-conversion">
+<h2>Question-16: Time Conversion<a class="headerlink" href="#question-16-time-conversion" title="Permalink to this heading">#</a></h2>
+<p>Write a program that asks the user to enter the total number of seconds.</p>
+<p>Then convert the time into hours, minutes, and seconds using the format:</p>
+<ul class="simple">
+<li><p>H hours M minutes S seconds</p></li>
+</ul>
+<p>Hint: Use integer division (//) and the modulo operator (%) to compute hours, minutes, and seconds.</p>
+<p>Sample Input/Output</p>
+<ul class="simple">
+<li><p>Input: Enter total seconds: 7453</p></li>
+<li><p>Output: 2 hours 4 minutes 13 seconds</p></li>
+</ul>
+</section>
+<section id="question-17-price-formatting">
+<h2>Question-17: Price Formatting<a class="headerlink" href="#question-17-price-formatting" title="Permalink to this heading">#</a></h2>
+<p>Write a program that asks the user to enter three prices: price_1, price_2, and price_3.</p>
+<p>Then display the prices in the following format:</p>
+<ul class="simple">
+<li><p>Product-1: $0.00</p></li>
+<li><p>Product-2: $0.00</p></li>
+<li><p>Product-3: $0.00</p></li>
+</ul>
+<p>Each price should be rounded to two decimal places.</p>
+<p>Hint: Use the built-in format() method to control the number of decimal places.</p>
+<p>Sample Input/Output</p>
+<ul class="simple">
+<li><p>Input:</p>
+<ul>
+<li><p>Enter price 1: 2.5</p></li>
+<li><p>Enter price 2: 10</p></li>
+<li><p>Enter price 3: 4.789</p></li>
+</ul>
+</li>
+<li><p>Output:</p>
+<ul>
+<li><p>Enter price 1: 2.50</p></li>
+<li><p>Enter price 2: 10.00</p></li>
+<li><p>Enter price 3: 4.79</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="question-18-digit-extraction">
+<h2>Question-18: Digit Extraction<a class="headerlink" href="#question-18-digit-extraction" title="Permalink to this heading">#</a></h2>
+<p>Write a program that asks the user to enter a four-digit integer.</p>
+<p>Then print each digit separately in the following format:</p>
+<ul class="simple">
+<li><p>Thousands: 0</p></li>
+<li><p>Hundreds: 0</p></li>
+<li><p>Tens: 0</p></li>
+<li><p>Ones: 0</p></li>
+</ul>
+<p>Hint: Use integer division (//) and the modulo operator (%) to extract each digit.</p>
+</section>
+<section id="question-19-loan-payment">
+<h2>Question-19: Loan Payment<a class="headerlink" href="#question-19-loan-payment" title="Permalink to this heading">#</a></h2>
+<p>Write a program that asks the user to enter:</p>
+<ul class="simple">
+<li><p>the loan amount: P</p></li>
+<li><p>the annual interest rate: r (in percent)</p></li>
+<li><p>the number of months: n</p></li>
+</ul>
+<p>First, compute the total amount using simple interest: <span class="math notranslate nohighlight">\(\displaystyle A = P\left(1+\frac{r}{100}\right)\)</span></p>
+<p>Then compute the monthly payment: <span class="math notranslate nohighlight">\(M = \frac{A}{n}\)</span></p>
+<p>Finally, print both A and M rounded to two decimal places.</p>
+<p>Sample Input/Output</p>
+<ul class="simple">
+<li><p>Input:</p>
+<ul>
+<li><p>Enter loan amount: 1000</p></li>
+<li><p>Enter annual rate (%): 5</p></li>
+<li><p>Enter months: 10</p></li>
+</ul>
+</li>
+<li><p>Output:</p>
+<ul>
+<li><p>Total amount: $1050.00</p></li>
+<li><p>Monthly payment: $105.00</p></li>
+</ul>
+</li>
+</ul>
 </section>
 </section>
 
@@ -686,20 +784,25 @@ Enter an integer:  4<br />
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question-1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question-2</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question-3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-multi-line-print">Question-1: Multi-Line Print</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-dashed-output">Question-2: Dashed Output</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-string-mixing">Question-3: String Mixing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4-harmonic-mean">Question-4: Harmonic Mean</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question-5</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6">Question-6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5-number-pattern">Question-5: Number Pattern</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6-word-repeater">Question-6: Word Repeater</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7-standard-deviation">Question-7: Standard Deviation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8-countdown">Question-8: Countdown</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-9-arrow">Question-9: Arrow</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-10-standard-scaling">Question-10: Standard Scaling</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-11-minmax-scaling">Question-11: MinMax Scaling</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-12-square">Question-12: Square</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-13">Question-13</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-14">Question-14</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-13-user-info">Question-13: User Info</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-14-line-printer">Question-14: Line Printer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-15-evaluating-a-formula">Question-15: Evaluating a Formula</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-16-time-conversion">Question-16: Time Conversion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-17-price-formatting">Question-17: Price Formatting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-18-digit-extraction">Question-18: Digit Extraction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-19-loan-payment">Question-19: Loan Payment</a></li>
 </ul>
   </nav></div>
 
